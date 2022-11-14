@@ -1,0 +1,187 @@
+
+
+================================================================
+== Vivado HLS Report for 'COO_SpMV'
+================================================================
+* Date:           Sat Nov 12 12:25:57 2022
+
+* Version:        2016.2 (Build 1577090 on Thu Jun 02 16:59:10 MDT 2016)
+* Project:        COO_SpMV.prj
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|      8.41|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-------+-------+-------+-------+---------+
+    |    Latency    |    Interval   | Pipeline|
+    |  min  |  max  |  min  |  max  |   Type  |
+    +-------+-------+-------+-------+---------+
+    |  10113|  10113|  10114|  10114|   none  |
+    +-------+-------+-------+-------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+-------+-------+----------+-----------+-----------+-------+----------+
+        |          |    Latency    | Iteration|  Initiation Interval  |  Trip |          |
+        | Loop Name|  min  |  max  |  Latency |  achieved |   target  | Count | Pipelined|
+        +----------+-------+-------+----------+-----------+-----------+-------+----------+
+        |- Loop 1  |    100|    100|         1|          -|          -|    100|    no    |
+        |- Loop 2  |  10010|  10010|        12|          1|          1|  10000|    yes   |
+        +----------+-------+-------+----------+-----------+-----------+-------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  |
++-----------------+---------+-------+--------+-------+
+|DSP              |        -|      -|       -|      -|
+|Expression       |        -|      -|       0|     40|
+|FIFO             |        -|      -|       -|      -|
+|Instance         |        -|      5|     348|    711|
+|Memory           |        -|      -|       -|      -|
+|Multiplexer      |        -|      -|       -|     30|
+|Register         |        -|      -|     173|      8|
++-----------------+---------+-------+--------+-------+
+|Total            |        0|      5|     521|    789|
++-----------------+---------+-------+--------+-------+
+|Available        |      280|    220|  106400|  53200|
++-----------------+---------+-------+--------+-------+
+|Utilization (%)  |        0|      2|   ~0   |      1|
++-----------------+---------+-------+--------+-------+
+
++ Detail: 
+    * Instance: 
+    +------------------------------------------+---------------------------------------+---------+-------+-----+-----+
+    |                 Instance                 |                 Module                | BRAM_18K| DSP48E|  FF | LUT |
+    +------------------------------------------+---------------------------------------+---------+-------+-----+-----+
+    |COO_SpMV_fadd_32ns_32ns_32_5_full_dsp_U1  |COO_SpMV_fadd_32ns_32ns_32_5_full_dsp  |        0|      2|  205|  390|
+    |COO_SpMV_fmul_32ns_32ns_32_4_max_dsp_U2   |COO_SpMV_fmul_32ns_32ns_32_4_max_dsp   |        0|      3|  143|  321|
+    +------------------------------------------+---------------------------------------+---------+-------+-----+-----+
+    |Total                                     |                                       |        0|      5|  348|  711|
+    +------------------------------------------+---------------------------------------+---------+-------+-----+-----+
+
+    * DSP48: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +---------------------+----------+-------+---+----+------------+------------+
+    |    Variable Name    | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +---------------------+----------+-------+---+----+------------+------------+
+    |i_1_fu_172_p2        |     +    |      0|  0|   7|           7|           1|
+    |i_2_fu_189_p2        |     +    |      0|  0|  14|          14|           1|
+    |exitcond1_fu_166_p2  |   icmp   |      0|  0|   3|           7|           6|
+    |exitcond_fu_183_p2   |   icmp   |      0|  0|   5|          14|          14|
+    |tmp_2_fu_199_p2      |   icmp   |      0|  0|  11|          32|          32|
+    +---------------------+----------+-------+---+----+------------+------------+
+    |Total                |          |      0|  0|  40|          74|          54|
+    +---------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +------------------------+----+-----------+-----+-----------+
+    |          Name          | LUT| Input Size| Bits| Total Bits|
+    +------------------------+----+-----------+-----+-----------+
+    |ap_NS_fsm               |   1|          5|    1|          5|
+    |ap_reg_ppiten_pp0_it11  |   1|          2|    1|          2|
+    |i1_reg_146              |  14|          2|   14|         28|
+    |i_reg_135               |   7|          2|    7|         14|
+    |output_r_address0       |   7|          3|    7|         21|
+    +------------------------+----+-----------+-----+-----------+
+    |Total                   |  30|         14|   30|         70|
+    +------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +------------------------+----+----+-----+-----------+
+    |          Name          | FF | LUT| Bits| Const Bits|
+    +------------------------+----+----+-----+-----------+
+    |ap_CS_fsm               |   4|   0|    4|          0|
+    |ap_reg_ppiten_pp0_it0   |   1|   0|    1|          0|
+    |ap_reg_ppiten_pp0_it1   |   1|   0|    1|          0|
+    |ap_reg_ppiten_pp0_it10  |   1|   0|    1|          0|
+    |ap_reg_ppiten_pp0_it11  |   1|   0|    1|          0|
+    |ap_reg_ppiten_pp0_it2   |   1|   0|    1|          0|
+    |ap_reg_ppiten_pp0_it3   |   1|   0|    1|          0|
+    |ap_reg_ppiten_pp0_it4   |   1|   0|    1|          0|
+    |ap_reg_ppiten_pp0_it5   |   1|   0|    1|          0|
+    |ap_reg_ppiten_pp0_it6   |   1|   0|    1|          0|
+    |ap_reg_ppiten_pp0_it7   |   1|   0|    1|          0|
+    |ap_reg_ppiten_pp0_it8   |   1|   0|    1|          0|
+    |ap_reg_ppiten_pp0_it9   |   1|   0|    1|          0|
+    |i1_reg_146              |  14|   0|   14|          0|
+    |i_reg_135               |   7|   0|    7|          0|
+    |output_addr_1_reg_273   |   7|   0|    7|          0|
+    |output_load_reg_289     |  32|   0|   32|          0|
+    |tmp_2_reg_244           |   1|   0|    1|          0|
+    |tmp_5_reg_284           |  32|   0|   32|          0|
+    |tmp_7_reg_294           |  32|   0|   32|          0|
+    |val_load_reg_263        |  32|   0|   32|          0|
+    |output_addr_1_reg_273   |   0|   7|    7|          0|
+    |tmp_2_reg_244           |   0|   1|    1|          0|
+    +------------------------+----+----+-----+-----------+
+    |Total                   | 173|   8|  181|          0|
+    +------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-------------------+-----+-----+------------+--------------+--------------+
+|     RTL Ports     | Dir | Bits|  Protocol  | Source Object|    C Type    |
++-------------------+-----+-----+------------+--------------+--------------+
+|ap_clk             |  in |    1| ap_ctrl_hs |   COO_SpMV   | return value |
+|ap_rst             |  in |    1| ap_ctrl_hs |   COO_SpMV   | return value |
+|ap_start           |  in |    1| ap_ctrl_hs |   COO_SpMV   | return value |
+|ap_done            | out |    1| ap_ctrl_hs |   COO_SpMV   | return value |
+|ap_idle            | out |    1| ap_ctrl_hs |   COO_SpMV   | return value |
+|ap_ready           | out |    1| ap_ctrl_hs |   COO_SpMV   | return value |
+|row_address0       | out |   14|  ap_memory |      row     |     array    |
+|row_ce0            | out |    1|  ap_memory |      row     |     array    |
+|row_q0             |  in |   32|  ap_memory |      row     |     array    |
+|col_address0       | out |   14|  ap_memory |      col     |     array    |
+|col_ce0            | out |    1|  ap_memory |      col     |     array    |
+|col_q0             |  in |   32|  ap_memory |      col     |     array    |
+|val_r_address0     | out |   14|  ap_memory |     val_r    |     array    |
+|val_r_ce0          | out |    1|  ap_memory |     val_r    |     array    |
+|val_r_q0           |  in |   32|  ap_memory |     val_r    |     array    |
+|vector_address0    | out |    7|  ap_memory |    vector    |     array    |
+|vector_ce0         | out |    1|  ap_memory |    vector    |     array    |
+|vector_q0          |  in |   32|  ap_memory |    vector    |     array    |
+|output_r_address0  | out |    7|  ap_memory |   output_r   |     array    |
+|output_r_ce0       | out |    1|  ap_memory |   output_r   |     array    |
+|output_r_we0       | out |    1|  ap_memory |   output_r   |     array    |
+|output_r_d0        | out |   32|  ap_memory |   output_r   |     array    |
+|output_r_q0        |  in |   32|  ap_memory |   output_r   |     array    |
+|output_r_address1  | out |    7|  ap_memory |   output_r   |     array    |
+|output_r_ce1       | out |    1|  ap_memory |   output_r   |     array    |
+|output_r_we1       | out |    1|  ap_memory |   output_r   |     array    |
+|output_r_d1        | out |   32|  ap_memory |   output_r   |     array    |
+|nnz                |  in |   32|   ap_none  |      nnz     |    scalar    |
++-------------------+-----+-----+------------+--------------+--------------+
+

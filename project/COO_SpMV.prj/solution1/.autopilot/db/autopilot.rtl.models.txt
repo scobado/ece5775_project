@@ -1,0 +1,3 @@
+COO_SpMV_fadd_32ns_32ns_32_5_full_dsp
+COO_SpMV_fmul_32ns_32ns_32_4_max_dsp
+COO_SpMV

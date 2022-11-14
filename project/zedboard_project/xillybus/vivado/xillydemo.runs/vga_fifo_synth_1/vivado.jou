@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2016.2 (64-bit)
+# SW Build 1577090 on Thu Jun  2 16:32:35 MDT 2016
+# IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
+# Start of session at: Sat Nov 12 12:37:07 2022
+# Process ID: 7095
+# Current directory: /home/ak2425/ece5775/project/zedboard_project/xillybus/vivado/xillydemo.runs/vga_fifo_synth_1
+# Command line: vivado -log vga_fifo.vds -mode batch -messageDb vivado.pb -notrace -source vga_fifo.tcl
+# Log file: /home/ak2425/ece5775/project/zedboard_project/xillybus/vivado/xillydemo.runs/vga_fifo_synth_1/vga_fifo.vds
+# Journal file: /home/ak2425/ece5775/project/zedboard_project/xillybus/vivado/xillydemo.runs/vga_fifo_synth_1/vivado.jou
+#-----------------------------------------------------------
+source vga_fifo.tcl -notrace

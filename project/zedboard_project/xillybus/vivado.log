@@ -1,0 +1,375 @@
+#-----------------------------------------------------------
+# Vivado v2016.2 (64-bit)
+# SW Build 1577090 on Thu Jun  2 16:32:35 MDT 2016
+# IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
+# Start of session at: Sat Nov 12 12:35:47 2022
+# Process ID: 5357
+# Current directory: /home/ak2425/ece5775/project/zedboard_project/xillybus
+# Command line: vivado -mode batch -source xillydemo-vivado.tcl
+# Log file: /home/ak2425/ece5775/project/zedboard_project/xillybus/vivado.log
+# Journal file: /home/ak2425/ece5775/project/zedboard_project/xillybus/vivado.jou
+#-----------------------------------------------------------
+source xillydemo-vivado.tcl
+# set origin_dir [file dirname [info script]]
+# if {[string first { } $origin_dir] >= 0} {
+# send_msg_id xillydemo-1 error "The path to the the project directory contains white space(s): \"$origin_dir\". This is known to cause problems with Vivado. Please move the project to a path without white spaces, and try again."
+# }
+# set proj_name xillydemo
+# set proj_dir "[file normalize $origin_dir/vivado]"
+# set thepart "xc7z020clg484-1"
+# set essentials_dir "[file normalize "$origin_dir/../vivado-essentials"]"
+# create_project -force $proj_name "$proj_dir/"
+# set obj [get_projects $proj_name]
+# set_property "default_lib" "xil_defaultlib" $obj
+# set_property "part" $thepart $obj
+# set_property "simulator_language" "Mixed" $obj
+# set_property "source_mgmt_mode" "DisplayOnly" $obj
+# set_property target_language Verilog $obj
+# set_property "ip_repo_paths" "$essentials_dir/vivado-ip" $obj
+# update_ip_catalog
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/ak2425/ece5775/project/zedboard_project/vivado-essentials/vivado-ip'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/xilinx/xilinx_2016.2/Vivado/2016.2/data/ip'.
+# if {[string equal [get_filesets sources_1] ""]} {
+#   create_fileset -srcset sources_1
+# }
+# set obj [get_filesets sources_1]
+# set_property "edif_extra_search_paths" "[file normalize "$origin_dir/../cores"]" $obj
+# set_property "top" "xillydemo" $obj
+# set obj [get_filesets sources_1]
+# set files [list \
+#  $origin_dir/src/ \
+#  $origin_dir/src/xillydemo.v \
+#  $origin_dir/src/smbus.v \
+#  $origin_dir/src/i2s_audio.v \
+#  $origin_dir/src/xillybus.v \
+#  $origin_dir/src/xillybus_core.v \
+#  $essentials_dir/system.v \
+#  $essentials_dir/vga_fifo/vga_fifo.xci \
+#  $essentials_dir/fifo_8x2048/fifo_8x2048.xci \
+#  $essentials_dir/fifo_32x512/fifo_32x512.xci \
+#  $essentials_dir/vivado_system/vivado_system.bd \
+# ]
+# add_files -fileset $obj $files
+WARNING: [IP_Flow 19-3664] IP 'fifo_32x512' generated file not found '/home/ak2425/ece5775/project/zedboard_project/vivado-essentials/fifo_32x512/fifo_32x512.dcp'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'fifo_32x512' generated file not found '/home/ak2425/ece5775/project/zedboard_project/vivado-essentials/fifo_32x512/fifo_32x512_stub.v'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'fifo_32x512' generated file not found '/home/ak2425/ece5775/project/zedboard_project/vivado-essentials/fifo_32x512/fifo_32x512_stub.vhdl'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'fifo_32x512' generated file not found '/home/ak2425/ece5775/project/zedboard_project/vivado-essentials/fifo_32x512/fifo_32x512_funcsim.v'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'fifo_32x512' generated file not found '/home/ak2425/ece5775/project/zedboard_project/vivado-essentials/fifo_32x512/fifo_32x512_funcsim.vhdl'. Please regenerate to continue.
+WARNING: [BD 41-1661] One or more IPs have been locked in the design 'vivado_system.bd'. Please run report_ip_status for more details and recommendations on how to fix this issue.
+List of locked IPs:
+vivado_system_auto_pc_0
+vivado_system_xlconcat_0_0
+vivado_system_xbar_0
+vivado_system_processing_system7_0_0
+vivado_system_rst_processing_system7_0_100M_0
+
+WARNING: [IP_Flow 19-2162] IP 'vga_fifo' is locked:
+* IP definition 'FIFO Generator (12.0)' for IP 'vga_fifo' has a newer major version in the IP Catalog.
+* IP definition 'FIFO Generator (12.0)' for IP 'vga_fifo' has a different revision in the IP Catalog.
+Please select 'Report IP Status' from the 'Tools/Report' menu or run Tcl command 'report_ip_status' for more information.
+WARNING: [IP_Flow 19-2162] IP 'fifo_8x2048' is locked:
+* IP definition 'FIFO Generator (12.0)' for IP 'fifo_8x2048' has a newer major version in the IP Catalog.
+* IP definition 'FIFO Generator (12.0)' for IP 'fifo_8x2048' has a different revision in the IP Catalog.
+Please select 'Report IP Status' from the 'Tools/Report' menu or run Tcl command 'report_ip_status' for more information.
+WARNING: [IP_Flow 19-2162] IP 'fifo_32x512' is locked:
+* IP definition 'FIFO Generator (12.0)' for IP 'fifo_32x512' has a newer major version in the IP Catalog.
+* IP definition 'FIFO Generator (12.0)' for IP 'fifo_32x512' has a different revision in the IP Catalog.
+Please select 'Report IP Status' from the 'Tools/Report' menu or run Tcl command 'report_ip_status' for more information.
+# upgrade_ip [get_ips]
+WARNING: [Coretcl 2-1044] No upgrade is available for 'vivado_system_xillybus_ip_0_0'
+WARNING: [Coretcl 2-1044] No upgrade is available for 'vivado_system_xillybus_lite_0_0'
+WARNING: [Coretcl 2-1044] No upgrade is available for 'vivado_system_xillyvga_0_0'
+Upgrading 'fifo_32x512'
+INFO: [IP_Flow 19-1972] Upgraded fifo_32x512 from FIFO Generator 12.0 to FIFO Generator 13.1
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'fifo_32x512'...
+Upgrading 'fifo_8x2048'
+INFO: [IP_Flow 19-1972] Upgraded fifo_8x2048 from FIFO Generator 12.0 to FIFO Generator 13.1
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'fifo_8x2048'...
+Upgrading 'vga_fifo'
+INFO: [IP_Flow 19-1972] Upgraded vga_fifo from FIFO Generator 12.0 to FIFO Generator 13.1
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'vga_fifo'...
+Upgrading '/home/ak2425/ece5775/project/zedboard_project/vivado-essentials/vivado_system/vivado_system.bd'
+Adding cell -- xillybus:xillybus:xillybus_lite:1.0 - xillybus_lite_0
+Adding cell -- xillybus:xillybus:xillybus_ip:1.0 - xillybus_ip_0
+WARNING: [IP_Flow 19-3331] Invalid parameters found in dependency constraints of 'ADDRBLOCK_RANGE.S_AXI.reg0' 
+WARNING: [IP_Flow 19-3331] Invalid parameters found in dependency constraints of 'ADDRBLOCK_RANGE.XILLYBUS_M_AXI.reg0' 
+WARNING: [IP_Flow 19-3331] Invalid parameters found in dependency constraints of 'ADDRBLOCK_WIDTH.S_AXI.reg0' 
+WARNING: [IP_Flow 19-3331] Invalid parameters found in dependency constraints of 'ADDRBLOCK_WIDTH.XILLYBUS_M_AXI.reg0' 
+WARNING: [IP_Flow 19-3331] Invalid parameters found in dependency constraints of 'ADDRSPACE_RANGE.m_axi' 
+WARNING: [IP_Flow 19-3331] Invalid parameters found in dependency constraints of 'ADDRSPACE_RANGE.xillybus_S_AXI' 
+WARNING: [IP_Flow 19-3331] Invalid parameters found in dependency constraints of 'ADDRSPACE_WIDTH.m_axi' 
+WARNING: [IP_Flow 19-3331] Invalid parameters found in dependency constraints of 'ADDRSPACE_WIDTH.xillybus_S_AXI' 
+WARNING: [IP_Flow 19-3331] Invalid parameters found in dependency constraints of 'PORT_VECTOR_LEFT.m_axi_araddr' 
+WARNING: [IP_Flow 19-3331] Invalid parameters found in dependency constraints of 'PORT_VECTOR_LEFT.m_axi_awaddr' 
+WARNING: [IP_Flow 19-3331] Invalid parameters found in dependency constraints of 'PORT_VECTOR_LEFT.m_axi_rdata' 
+WARNING: [IP_Flow 19-3331] Invalid parameters found in dependency constraints of 'PORT_VECTOR_LEFT.m_axi_wdata' 
+WARNING: [IP_Flow 19-3331] Invalid parameters found in dependency constraints of 'PORT_VECTOR_LEFT.m_axi_wstrb' 
+WARNING: [IP_Flow 19-3331] Invalid parameters found in dependency constraints of 'PORT_VECTOR_LEFT.S_AXI_ARADDR' 
+WARNING: [IP_Flow 19-3331] Invalid parameters found in dependency constraints of 'PORT_VECTOR_LEFT.S_AXI_AWADDR' 
+WARNING: [IP_Flow 19-3331] Invalid parameters found in dependency constraints of 'PORT_VECTOR_LEFT.S_AXI_RDATA' 
+WARNING: [IP_Flow 19-3331] Invalid parameters found in dependency constraints of 'PORT_VECTOR_LEFT.S_AXI_WDATA' 
+WARNING: [IP_Flow 19-3331] Invalid parameters found in dependency constraints of 'PORT_VECTOR_LEFT.S_AXI_WSTRB' 
+WARNING: [IP_Flow 19-3331] Invalid parameters found in dependency constraints of 'PORT_VECTOR_LEFT.xillybus_M_AXI_ARADDR' 
+WARNING: [IP_Flow 19-3331] Invalid parameters found in dependency constraints of 'PORT_VECTOR_LEFT.xillybus_M_AXI_AWADDR' 
+WARNING: [IP_Flow 19-3331] Invalid parameters found in dependency constraints of 'PORT_VECTOR_LEFT.xillybus_M_AXI_RDATA' 
+WARNING: [IP_Flow 19-3331] Invalid parameters found in dependency constraints of 'PORT_VECTOR_LEFT.xillybus_M_AXI_WDATA' 
+WARNING: [IP_Flow 19-3331] Invalid parameters found in dependency constraints of 'PORT_VECTOR_LEFT.xillybus_M_AXI_WSTRB' 
+WARNING: [IP_Flow 19-3331] Invalid parameters found in dependency constraints of 'PORT_VECTOR_LEFT.xillybus_S_AXI_ARADDR' 
+WARNING: [IP_Flow 19-3331] Invalid parameters found in dependency constraints of 'PORT_VECTOR_LEFT.xillybus_S_AXI_AWADDR' 
+WARNING: [IP_Flow 19-3331] Invalid parameters found in dependency constraints of 'PORT_VECTOR_LEFT.xillybus_S_AXI_RDATA' 
+WARNING: [IP_Flow 19-3331] Invalid parameters found in dependency constraints of 'PORT_VECTOR_LEFT.xillybus_S_AXI_WDATA' 
+WARNING: [IP_Flow 19-3331] Invalid parameters found in dependency constraints of 'PORT_VECTOR_LEFT.xillybus_S_AXI_WSTRB' 
+Adding cell -- xillybus:xillybus:xillyvga:1.0 - xillyvga_0
+Adding cell -- xilinx.com:ip:processing_system7:5.5 - processing_system7_0
+Adding cell -- xilinx.com:ip:proc_sys_reset:5.0 - rst_processing_system7_0_100M
+Adding cell -- xilinx.com:ip:xlconcat:2.1 - xlconcat_0
+Adding cell -- xilinx.com:ip:axi_crossbar:2.1 - xbar
+Adding cell -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
+Successfully read diagram <vivado_system> from BD file </home/ak2425/ece5775/project/zedboard_project/vivado-essentials/vivado_system/vivado_system.bd>
+INFO: [IP_Flow 19-3422] Upgraded vivado_system_processing_system7_0_0 (ZYNQ7 Processing System 5.5) from revision 1 to revision 3
+INFO: [IP_Flow 19-3422] Upgraded vivado_system_processing_system7_0_axi_periph_0 (AXI Interconnect 2.1) from revision 5 to revision 10
+INFO: [IP_Flow 19-3422] Upgraded vivado_system_rst_processing_system7_0_100M_0 (Processor System Reset 5.0) from revision 7 to revision 9
+INFO: [IP_Flow 19-3422] Upgraded vivado_system_xlconcat_0_0 (Concat 2.1) from revision 1 to revision 2
+Wrote  : </home/ak2425/ece5775/project/zedboard_project/vivado-essentials/vivado_system/vivado_system.bd> 
+upgrade_ip: Time (s): cpu = 00:00:14 ; elapsed = 00:00:18 . Memory (MB): peak = 1356.832 ; gain = 178.824 ; free physical = 2768 ; free virtual = 23343
+# open_bd_design $essentials_dir/vivado_system/vivado_system.bd
+# startgroup
+# apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config {Master "/processing_system7_0/M_AXI_GP0" Clk "Auto" }  [get_bd_intf_pins xillybus_ip_0/S_AXI]
+# apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config {Master "/processing_system7_0/M_AXI_GP0" Clk "Auto" }  [get_bd_intf_pins xillyvga_0/S_AXI]
+# apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config {Master "/processing_system7_0/M_AXI_GP0" Clk "Auto" }  [get_bd_intf_pins xillybus_lite_0/S_AXI]
+# set_property range 4K [get_bd_addr_segs {processing_system7_0/Data/SEG_xillybus_ip_0_reg0}]
+# set_property range 4K [get_bd_addr_segs {processing_system7_0/Data/SEG_xillyvga_0_reg0}]
+# set_property range 4K [get_bd_addr_segs {processing_system7_0/Data/SEG_xillybus_lite_0_reg0}]
+# set_property offset 0x50000000 [get_bd_addr_segs {processing_system7_0/Data/SEG_xillybus_ip_0_reg0}]
+# set_property offset 0x50001000 [get_bd_addr_segs {processing_system7_0/Data/SEG_xillyvga_0_reg0}]
+# set_property offset 0x50002000 [get_bd_addr_segs {processing_system7_0/Data/SEG_xillybus_lite_0_reg0}]
+# endgroup
+# save_bd_design
+Wrote  : </home/ak2425/ece5775/project/zedboard_project/vivado-essentials/vivado_system/vivado_system.bd> 
+# close_bd_design vivado_system
+# if {[string equal [get_filesets constrs_1] ""]} {
+#   create_fileset -constrset constrs_1
+# }
+# set obj [get_filesets constrs_1]
+# add_files -fileset $obj -norecurse $essentials_dir/xillydemo.xdc
+# set obj [get_filesets constrs_1]
+# if {[string equal [get_filesets sim_1] ""]} {
+#   create_fileset -simset sim_1
+# }
+# set obj [get_filesets sim_1]
+# set obj [get_filesets sim_1]
+# set_property "top" "unknown" $obj
+# set_property "xsim.simulate.runtime" "1000 ns" $obj
+# set_property "xsim.simulate.uut" "UUT" $obj
+# if {[string equal [get_runs synth_1] ""]} {
+#   create_run -name synth_1 -part $thepart -flow {Vivado Synthesis 2013} -strategy "Vivado Synthesis Defaults" -constrset constrs_1
+# }
+# set obj [get_runs synth_1]
+# set_property "part" $thepart $obj
+# if {[string equal [get_runs impl_1] ""]} {
+#   create_run -name impl_1 -part $thepart -flow {Vivado Implementation 2013} -strategy "Vivado Implementation Defaults" -constrset constrs_1 -parent_run synth_1
+# }
+# set obj [get_runs impl_1]
+# set_property "part" $thepart $obj
+# set_property STEPS.ROUTE_DESIGN.TCL.POST "$essentials_dir/showstopper.tcl" $obj
+# set_msg_config -new_severity "INFO" -id {BD 41-968} -string {{xillybus_S_AXI} } 
+# set_msg_config -new_severity "INFO" -id {BD 41-967} -string {{xillybus_ip_0/xillybus_M_AXI} } 
+# set_msg_config -new_severity "INFO" -id {BD 41-967} -string {{xillybus_ip_0/xillybus_S_AXI} } 
+# set_msg_config -new_severity "INFO" -id {BD 41-678} -string {{xillybus_S_AXI/Reg} } 
+# set_msg_config -new_severity "INFO" -id {BD 41-1356} -string {{xillybus_S_AXI/Reg} }
+# set_msg_config -new_severity "INFO" -id {BD 41-759} -string {{xlconcat_0/In} }
+# set_msg_config -new_severity "INFO" -id {BD 41-759} -string {{xlconcat_0/In} }
+WARNING: [Common 17-1361] You have specified a new message control rule that is equivalent to an existing rule with attributes ' -ruleid {6}  -id {BD 41-759}  -string {{xlconcat_0/In}}  -new_severity {INFO} '. The existing rule will be replaced.
+# set_msg_config -new_severity "INFO" -id {Netlist 29-160} -string {{vivado_system_processing_system7} }
+# puts "INFO: Project created: $proj_name"
+INFO: Project created: xillydemo
+# set scripts [glob -nocomplain -type f -directory "src/fpga-design" *.tcl]
+# foreach script $scripts {
+#   puts "Found tcl script $script"
+#   source $script
+# }
+Found tcl script src/fpga-design/COO_SpMV_ap_fadd_3_full_dsp_32_ip.tcl
+## set vivado_ver [version -short]
+## set fpo_ver 7.1
+## if {[regexp -nocase {2015\.1.*} $vivado_ver match]} {
+##     set fpo_ver 7.0
+## }
+## create_ip -name floating_point -version $fpo_ver -vendor xilinx.com -library ip -module_name COO_SpMV_ap_fadd_3_full_dsp_32
+## set_property -dict [list CONFIG.a_precision_type Single \
+##                           CONFIG.a_tuser_width 1 \
+##                           CONFIG.add_sub_value Add \
+##                           CONFIG.b_tuser_width 1 \
+##                           CONFIG.c_a_exponent_width 8 \
+##                           CONFIG.c_a_fraction_width 24 \
+##                           CONFIG.c_compare_operation Programmable \
+##                           CONFIG.c_has_divide_by_zero false \
+##                           CONFIG.c_has_invalid_op false \
+##                           CONFIG.c_has_overflow false \
+##                           CONFIG.c_has_underflow false \
+##                           CONFIG.c_latency 3 \
+##                           CONFIG.c_mult_usage Full_Usage \
+##                           CONFIG.c_optimization Speed_Optimized \
+##                           CONFIG.c_rate 1 \
+##                           CONFIG.c_result_exponent_width 8 \
+##                           CONFIG.c_result_fraction_width 24 \
+##                           CONFIG.component_name COO_SpMV_ap_fadd_3_full_dsp_32 \
+##                           CONFIG.flow_control NonBlocking \
+##                           CONFIG.has_a_tlast false \
+##                           CONFIG.has_a_tuser false \
+##                           CONFIG.has_aclken true \
+##                           CONFIG.has_aresetn false \
+##                           CONFIG.has_b_tlast false \
+##                           CONFIG.has_b_tuser false \
+##                           CONFIG.has_operation_tlast false \
+##                           CONFIG.has_operation_tuser false \
+##                           CONFIG.has_result_tready false \
+##                           CONFIG.maximum_latency false \
+##                           CONFIG.operation_tuser_width 1 \
+##                           CONFIG.operation_type Add_Subtract \
+##                           CONFIG.result_precision_type Single \
+##                           CONFIG.result_tlast_behv Null] -objects [get_ips COO_SpMV_ap_fadd_3_full_dsp_32] -quiet
+## set_property generate_synth_checkpoint false [get_files COO_SpMV_ap_fadd_3_full_dsp_32.xci]
+## generate_target {synthesis simulation} [get_files COO_SpMV_ap_fadd_3_full_dsp_32.xci]
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'COO_SpMV_ap_fadd_3_full_dsp_32'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'COO_SpMV_ap_fadd_3_full_dsp_32'...
+Found tcl script src/fpga-design/COO_SpMV_ap_fmul_2_max_dsp_32_ip.tcl
+## set vivado_ver [version -short]
+## set fpo_ver 7.1
+## if {[regexp -nocase {2015\.1.*} $vivado_ver match]} {
+##     set fpo_ver 7.0
+## }
+## create_ip -name floating_point -version $fpo_ver -vendor xilinx.com -library ip -module_name COO_SpMV_ap_fmul_2_max_dsp_32
+## set_property -dict [list CONFIG.a_precision_type Single \
+##                           CONFIG.a_tuser_width 1 \
+##                           CONFIG.add_sub_value Both \
+##                           CONFIG.b_tuser_width 1 \
+##                           CONFIG.c_a_exponent_width 8 \
+##                           CONFIG.c_a_fraction_width 24 \
+##                           CONFIG.c_compare_operation Programmable \
+##                           CONFIG.c_has_divide_by_zero false \
+##                           CONFIG.c_has_invalid_op false \
+##                           CONFIG.c_has_overflow false \
+##                           CONFIG.c_has_underflow false \
+##                           CONFIG.c_latency 2 \
+##                           CONFIG.c_mult_usage Max_Usage \
+##                           CONFIG.c_optimization Speed_Optimized \
+##                           CONFIG.c_rate 1 \
+##                           CONFIG.c_result_exponent_width 8 \
+##                           CONFIG.c_result_fraction_width 24 \
+##                           CONFIG.component_name COO_SpMV_ap_fmul_2_max_dsp_32 \
+##                           CONFIG.flow_control NonBlocking \
+##                           CONFIG.has_a_tlast false \
+##                           CONFIG.has_a_tuser false \
+##                           CONFIG.has_aclken true \
+##                           CONFIG.has_aresetn false \
+##                           CONFIG.has_b_tlast false \
+##                           CONFIG.has_b_tuser false \
+##                           CONFIG.has_operation_tlast false \
+##                           CONFIG.has_operation_tuser false \
+##                           CONFIG.has_result_tready false \
+##                           CONFIG.maximum_latency false \
+##                           CONFIG.operation_tuser_width 1 \
+##                           CONFIG.operation_type Multiply \
+##                           CONFIG.result_precision_type Single \
+##                           CONFIG.result_tlast_behv Null] -objects [get_ips COO_SpMV_ap_fmul_2_max_dsp_32] -quiet
+## set_property generate_synth_checkpoint false [get_files COO_SpMV_ap_fmul_2_max_dsp_32.xci]
+## generate_target {synthesis simulation} [get_files COO_SpMV_ap_fmul_2_max_dsp_32.xci]
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'COO_SpMV_ap_fmul_2_max_dsp_32'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'COO_SpMV_ap_fmul_2_max_dsp_32'...
+# launch_runs -jobs 8 impl_1 -to_step write_bitstream
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'vga_fifo'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'fifo_8x2048'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'fifo_32x512'...
+Adding cell -- xillybus:xillybus:xillybus_lite:1.0 - xillybus_lite_0
+Adding cell -- xillybus:xillybus:xillybus_ip:1.0 - xillybus_ip_0
+Adding cell -- xillybus:xillybus:xillyvga:1.0 - xillyvga_0
+Adding cell -- xilinx.com:ip:processing_system7:5.5 - processing_system7_0
+Adding cell -- xilinx.com:ip:proc_sys_reset:5.0 - rst_processing_system7_0_100M
+Adding cell -- xilinx.com:ip:xlconcat:2.1 - xlconcat_0
+Adding cell -- xilinx.com:ip:axi_crossbar:2.1 - xbar
+Successfully read diagram <vivado_system> from BD file </home/ak2425/ece5775/project/zedboard_project/vivado-essentials/vivado_system/vivado_system.bd>
+CRITICAL WARNING: [BD 41-968] AXI interface port /xillybus_M_AXI is not associated to any clock port. It may not work correctly. Please update ASSOCIATED_BUSIF parameter of a clock port to include this interface port.
+INFO: [BD 41-968] AXI interface port /xillybus_S_AXI is not associated to any clock port. It may not work correctly. Please update ASSOCIATED_BUSIF parameter of a clock port to include this interface port.
+INFO: [BD 41-967] AXI interface pin /xillybus_ip_0/xillybus_M_AXI is not associated to any clock pin. It may not work correctly.
+INFO: [BD 41-967] AXI interface pin /xillybus_ip_0/xillybus_S_AXI is not associated to any clock pin. It may not work correctly.
+INFO: [BD 41-1356] Address block </xillybus_S_AXI/Reg> is not mapped into </xillybus_ip_0/xillybus_S_AXI>. Please use Address Editor to either map or exclude it.
+WARNING: [BD 41-237] Bus Interface property AWUSER_WIDTH does not match between /processing_system7_0/S_AXI_ACP(5) and /xillybus_ip_0/m_axi(0)
+WARNING: [BD 41-237] Bus Interface property ARUSER_WIDTH does not match between /processing_system7_0/S_AXI_ACP(5) and /xillybus_ip_0/m_axi(0)
+INFO: [BD 41-759] The input pins (listed below) are either not connected or do not have a source port, and they don't have a tie-off specified. 
+Please check your design and connect them if needed: 
+/xlconcat_0/In0
+/xlconcat_0/In1
+/xlconcat_0/In2
+/xlconcat_0/In3
+/xlconcat_0/In4
+/xlconcat_0/In5
+/xlconcat_0/In6
+/xlconcat_0/In7
+/xlconcat_0/In8
+/xlconcat_0/In9
+/xlconcat_0/In10
+/xlconcat_0/In11
+/xlconcat_0/In12
+/xlconcat_0/In13
+
+Verilog Output written to : /home/ak2425/ece5775/project/zedboard_project/vivado-essentials/vivado_system/hdl/vivado_system.v
+Verilog Output written to : /home/ak2425/ece5775/project/zedboard_project/vivado-essentials/vivado_system/hdl/vivado_system_wrapper.v
+Wrote  : </home/ak2425/ece5775/project/zedboard_project/vivado-essentials/vivado_system/vivado_system.bd> 
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xillybus_lite_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xillybus_ip_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xillyvga_0 .
+WARNING: [xilinx.com:ip:processing_system7:5.5-1] vivado_system_processing_system7_0_0: The Zynq BFM requires an AXI BFM license to run. Please ensure that you have purchased and setup the AXI BFM license prior to running simulation with this block. Please contact your Xilinx sales office for more information on purchasing this license
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_processing_system7_0_100M .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconcat_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0_axi_periph/xbar .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0_axi_periph/m00_couplers/auto_pc .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0_axi_periph/m01_couplers/auto_pc .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0_axi_periph/m02_couplers/auto_pc .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0_axi_periph/s00_couplers/auto_pc .
+Exporting to file /home/ak2425/ece5775/project/zedboard_project/vivado-essentials/vivado_system/hw_handoff/vivado_system.hwh
+WARNING: [IP_Flow 19-3331] Invalid parameters found in dependency constraints of 'ADDRBLOCK_RANGE.S_AXI.reg0' 
+WARNING: [IP_Flow 19-3331] Invalid parameters found in dependency constraints of 'ADDRBLOCK_RANGE.XILLYBUS_M_AXI.reg0' 
+WARNING: [IP_Flow 19-3331] Invalid parameters found in dependency constraints of 'ADDRBLOCK_WIDTH.S_AXI.reg0' 
+WARNING: [IP_Flow 19-3331] Invalid parameters found in dependency constraints of 'ADDRBLOCK_WIDTH.XILLYBUS_M_AXI.reg0' 
+WARNING: [IP_Flow 19-3331] Invalid parameters found in dependency constraints of 'ADDRSPACE_RANGE.m_axi' 
+WARNING: [IP_Flow 19-3331] Invalid parameters found in dependency constraints of 'ADDRSPACE_RANGE.xillybus_S_AXI' 
+WARNING: [IP_Flow 19-3331] Invalid parameters found in dependency constraints of 'ADDRSPACE_WIDTH.m_axi' 
+WARNING: [IP_Flow 19-3331] Invalid parameters found in dependency constraints of 'ADDRSPACE_WIDTH.xillybus_S_AXI' 
+WARNING: [IP_Flow 19-3331] Invalid parameters found in dependency constraints of 'PORT_VECTOR_LEFT.m_axi_araddr' 
+WARNING: [IP_Flow 19-3331] Invalid parameters found in dependency constraints of 'PORT_VECTOR_LEFT.m_axi_awaddr' 
+WARNING: [IP_Flow 19-3331] Invalid parameters found in dependency constraints of 'PORT_VECTOR_LEFT.m_axi_rdata' 
+WARNING: [IP_Flow 19-3331] Invalid parameters found in dependency constraints of 'PORT_VECTOR_LEFT.m_axi_wdata' 
+WARNING: [IP_Flow 19-3331] Invalid parameters found in dependency constraints of 'PORT_VECTOR_LEFT.m_axi_wstrb' 
+WARNING: [IP_Flow 19-3331] Invalid parameters found in dependency constraints of 'PORT_VECTOR_LEFT.S_AXI_ARADDR' 
+WARNING: [IP_Flow 19-3331] Invalid parameters found in dependency constraints of 'PORT_VECTOR_LEFT.S_AXI_AWADDR' 
+WARNING: [IP_Flow 19-3331] Invalid parameters found in dependency constraints of 'PORT_VECTOR_LEFT.S_AXI_RDATA' 
+WARNING: [IP_Flow 19-3331] Invalid parameters found in dependency constraints of 'PORT_VECTOR_LEFT.S_AXI_WDATA' 
+WARNING: [IP_Flow 19-3331] Invalid parameters found in dependency constraints of 'PORT_VECTOR_LEFT.S_AXI_WSTRB' 
+WARNING: [IP_Flow 19-3331] Invalid parameters found in dependency constraints of 'PORT_VECTOR_LEFT.xillybus_M_AXI_ARADDR' 
+WARNING: [IP_Flow 19-3331] Invalid parameters found in dependency constraints of 'PORT_VECTOR_LEFT.xillybus_M_AXI_AWADDR' 
+WARNING: [IP_Flow 19-3331] Invalid parameters found in dependency constraints of 'PORT_VECTOR_LEFT.xillybus_M_AXI_RDATA' 
+WARNING: [IP_Flow 19-3331] Invalid parameters found in dependency constraints of 'PORT_VECTOR_LEFT.xillybus_M_AXI_WDATA' 
+WARNING: [IP_Flow 19-3331] Invalid parameters found in dependency constraints of 'PORT_VECTOR_LEFT.xillybus_M_AXI_WSTRB' 
+WARNING: [IP_Flow 19-3331] Invalid parameters found in dependency constraints of 'PORT_VECTOR_LEFT.xillybus_S_AXI_ARADDR' 
+WARNING: [IP_Flow 19-3331] Invalid parameters found in dependency constraints of 'PORT_VECTOR_LEFT.xillybus_S_AXI_AWADDR' 
+WARNING: [IP_Flow 19-3331] Invalid parameters found in dependency constraints of 'PORT_VECTOR_LEFT.xillybus_S_AXI_RDATA' 
+WARNING: [IP_Flow 19-3331] Invalid parameters found in dependency constraints of 'PORT_VECTOR_LEFT.xillybus_S_AXI_WDATA' 
+WARNING: [IP_Flow 19-3331] Invalid parameters found in dependency constraints of 'PORT_VECTOR_LEFT.xillybus_S_AXI_WSTRB' 
+Generated Block Design Tcl file /home/ak2425/ece5775/project/zedboard_project/vivado-essentials/vivado_system/hw_handoff/vivado_system_bd.tcl
+Generated Hardware Definition File /home/ak2425/ece5775/project/zedboard_project/vivado-essentials/vivado_system/hdl/vivado_system.hwdef
+[Sat Nov 12 12:37:07 2022] Launched vga_fifo_synth_1, fifo_32x512_synth_1, fifo_8x2048_synth_1, synth_1...
+Run output will be captured here:
+vga_fifo_synth_1: /home/ak2425/ece5775/project/zedboard_project/xillybus/vivado/xillydemo.runs/vga_fifo_synth_1/runme.log
+fifo_32x512_synth_1: /home/ak2425/ece5775/project/zedboard_project/xillybus/vivado/xillydemo.runs/fifo_32x512_synth_1/runme.log
+fifo_8x2048_synth_1: /home/ak2425/ece5775/project/zedboard_project/xillybus/vivado/xillydemo.runs/fifo_8x2048_synth_1/runme.log
+synth_1: /home/ak2425/ece5775/project/zedboard_project/xillybus/vivado/xillydemo.runs/synth_1/runme.log
+[Sat Nov 12 12:37:07 2022] Launched impl_1...
+Run output will be captured here: /home/ak2425/ece5775/project/zedboard_project/xillybus/vivado/xillydemo.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:26 ; elapsed = 00:00:37 . Memory (MB): peak = 1540.105 ; gain = 178.055 ; free physical = 2926 ; free virtual = 23731
+# wait_on_run impl_1
+[Sat Nov 12 12:37:07 2022] Waiting for impl_1 to finish...
+[Sat Nov 12 12:40:09 2022] impl_1 finished
+wait_on_run: Time (s): cpu = 00:05:37 ; elapsed = 00:03:02 . Memory (MB): peak = 1540.105 ; gain = 0.000 ; free physical = 3178 ; free virtual = 23219
+INFO: [Common 17-206] Exiting Vivado at Sat Nov 12 12:40:09 2022...

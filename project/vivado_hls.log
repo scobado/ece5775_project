@@ -1,0 +1,82 @@
+================================================================
+  Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC
+  Version 2016.2
+  Build 1577090 on Thu Jun 02 16:59:10 MDT 2016
+  Copyright (C) 1986-2016 Xilinx, Inc. All Rights Reserved.
+================================================================
+INFO: [HLS 200-10] Running '/opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/bin/unwrapped/lnx64.o/vivado_hls'
+INFO: [HLS 200-10] For user 'ak2425' on host 'en-ec-ecelinux-01.coecis.cornell.edu' (Linux_x86_64 version 3.10.0-1160.76.1.el7.x86_64) on Sat Nov 12 12:25:49 EST 2022
+INFO: [HLS 200-10] On os "CentOS Linux release 7.9.2009 (Core)"
+INFO: [HLS 200-10] In directory '/home/ak2425/ece5775/project'
+INFO: [HLS 200-10] Creating and opening project '/home/ak2425/ece5775/project/COO_SpMV.prj'.
+INFO: [HLS 200-10] Adding design file 'COO_SpMV.cpp' to the project
+INFO: [HLS 200-10] Adding test bench file 'COO_SpMV_test.cpp' to the project
+INFO: [HLS 200-10] Creating and opening solution '/home/ak2425/ece5775/project/COO_SpMV.prj/solution1'.
+INFO: [HLS 200-10] Cleaning up the solution database.
+INFO: [HLS 200-10] Setting target device to 'xc7z020clg484-1'
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+make[1]: Entering directory `/home/ak2425/ece5775/project/COO_SpMV.prj/solution1/csim/build'
+   Compiling ../../../../COO_SpMV_test.cpp in debug mode
+   Compiling ../../../../COO_SpMV.cpp in debug mode
+   Generating csim.exe
+make[1]: Leaving directory `/home/ak2425/ece5775/project/COO_SpMV.prj/solution1/csim/build'
+Testing COO SpMV
+[32mPassed :)
+[0m[32mPassed :)
+[0m[32mPassed :)
+[0m[32mPassed :)
+[0m[32mPassed :)
+[0m[32mPassed :)
+[0m[32mPassed :)
+[0m[32mPassed :)
+[0m[32mPassed :)
+[0m[32mPassed :)
+[0mINFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [HLS 200-10] Analyzing design file 'COO_SpMV.cpp' ... 
+INFO: [HLS 200-10] Validating synthesis directives ...
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-10] Checking synthesizability ...
+WARNING: [ANALYSIS 214-52] Found false 'RAW' inter dependency for variable 'output' (COO_SpMV.cpp:19).
+WARNING: [ANALYSIS 214-52] Asserting false dependency between 'load' operation 'output.load'(COO_SpMV.cpp:27:11) from variable 'output'(COO_SpMV.cpp:19) and 'store' operation to variable 'output'(COO_SpMV.cpp:19) according to false dependency pragma(COO_SpMV.cpp:25:1), this may lead to incorrect RTL generation.
+WARNING: [ANALYSIS 214-52] Asserting false dependency between 'store' operation to variable 'output'(COO_SpMV.cpp:19) and 'load' operation 'output.load'(COO_SpMV.cpp:27:11) from variable 'output'(COO_SpMV.cpp:19) according to false dependency pragma(COO_SpMV.cpp:25:1), this may lead to incorrect RTL generation.
+INFO: [HLS 200-111] Elapsed time: 2.4 seconds; current memory usage: 64.2 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'COO_SpMV' ...
+WARNING: [SYN 201-107] Renaming port name 'COO_SpMV/val' to 'COO_SpMV/val_r' to avoid the conflict with HDL keywords or other object names.
+WARNING: [SYN 201-107] Renaming port name 'COO_SpMV/output' to 'COO_SpMV/output_r' to avoid the conflict with HDL keywords or other object names.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Scheduling module 'COO_SpMV' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 2'.
+INFO: [SCHED 204-61] Pipelining result: Target II: 1, Final II: 1, Depth: 12.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Elapsed time: 0.04 seconds; current memory usage: 64.7 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Exploring micro-architecture for module 'COO_SpMV' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Elapsed time: 0.01 seconds; current memory usage: 65 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'COO_SpMV' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'COO_SpMV/row' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'COO_SpMV/col' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'COO_SpMV/val_r' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'COO_SpMV/vector' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'COO_SpMV/output_r' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'COO_SpMV/nnz' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'COO_SpMV' to 'ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Generating core module 'COO_SpMV_fadd_32ns_32ns_32_5_full_dsp': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'COO_SpMV_fmul_32ns_32ns_32_4_max_dsp': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'COO_SpMV'.
+INFO: [HLS 200-111] Elapsed time: 0.05 seconds; current memory usage: 65.4 MB.
+INFO: [HLS 200-10] Finished generating all RTL models.
+INFO: [SYSC 207-301] Generating SystemC RTL for COO_SpMV.
+INFO: [VHDL 208-304] Generating VHDL RTL for COO_SpMV.
+INFO: [VLOG 209-307] Generating Verilog RTL for COO_SpMV.
+INFO: [HLS 200-112] Total elapsed time: 9.625 seconds; peak memory usage: 65.4 MB.

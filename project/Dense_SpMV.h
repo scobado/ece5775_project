@@ -1,0 +1,1 @@
+void Dense_SpMV(const float input[], const float vector[], float output[]);

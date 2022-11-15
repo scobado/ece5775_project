@@ -15,5 +15,8 @@
     <clockList>
         <clock name="default" period="10" default="false"/>
     </clockList>
+    <config>
+        <schedule model="COO_SpMV"/>
+    </config>
 </AutoPilot:solution>
 

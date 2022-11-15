@@ -22,11 +22,6 @@ const Port_Property HLS_Design_Meta::port_props[]={
 	Port_Property("output_r_ce0", 1, hls_out, 4, "ap_memory", "mem_ce", 1),
 	Port_Property("output_r_we0", 1, hls_out, 4, "ap_memory", "mem_we", 1),
 	Port_Property("output_r_d0", 32, hls_out, 4, "ap_memory", "mem_din", 1),
-	Port_Property("output_r_q0", 32, hls_in, 4, "ap_memory", "mem_dout", 1),
-	Port_Property("output_r_address1", 7, hls_out, 4, "ap_memory", "mem_address", 1),
-	Port_Property("output_r_ce1", 1, hls_out, 4, "ap_memory", "mem_ce", 1),
-	Port_Property("output_r_we1", 1, hls_out, 4, "ap_memory", "mem_we", 1),
-	Port_Property("output_r_d1", 32, hls_out, 4, "ap_memory", "mem_din", 1),
 	Port_Property("nnz", 32, hls_in, 5, "ap_none", "in_data", 1),
 };
 const char* HLS_Design_Meta::dut_name = "COO_SpMV";

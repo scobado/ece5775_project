@@ -4,6 +4,15 @@ make[1]: Entering directory `/home/sec322/ece5775/ece5775_project/project/COO_Sp
    Generating csim.exe
 make[1]: Leaving directory `/home/sec322/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/csim/build'
 Testing COO SpMV
--28.5 -87.9 [31mFailed :(
+[32mPassed :)
+[0m[32mPassed :)
+[0m[32mPassed :)
+[0m[32mPassed :)
+[0m[32mPassed :)
+[0m[32mPassed :)
+[0m[32mPassed :)
+[0m[32mPassed :)
+[0m[32mPassed :)
+[0m[32mPassed :)
 [0m
 INFO: [SIM 1] CSim done with 0 errors.

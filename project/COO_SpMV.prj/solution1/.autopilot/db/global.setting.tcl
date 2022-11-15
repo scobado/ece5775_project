@@ -43,7 +43,7 @@ set SCTraceOption "all"
 set TargetInfo "xc7z020:clg484:-1"
 set SourceFiles {sc {} c ../../COO_SpMV.cpp}
 set SourceFlags {sc {} c {{ }}}
-set DirectiveFile {/home/ak2425/ece5775/project/COO_SpMV.prj/solution1/solution1.directive}
+set DirectiveFile {/home/sec322/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/solution1.directive}
 set TBFiles {verilog ../../COO_SpMV_test.cpp bc ../../COO_SpMV_test.cpp sc ../../COO_SpMV_test.cpp vhdl ../../COO_SpMV_test.cpp c {} cas ../../COO_SpMV_test.cpp}
 set SpecLanguage "C"
 set TVInFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}

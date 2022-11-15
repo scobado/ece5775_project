@@ -3,10 +3,10 @@
 typedef ap_uint<32> bit32_t;
 
 // Top function for synthesis
-void dut (
-  hls::stream<bit32_t> &strm_in,
-  hls::stream<bit32_t> &strm_out
-);
+// void dut (
+//   hls::stream<bit32_t> &strm_in,
+//   hls::stream<bit32_t> &strm_out
+// );
 
 int count_nnz(const float input[size][size]);
 

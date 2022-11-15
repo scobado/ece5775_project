@@ -33,46 +33,79 @@ void COO_SpMV(int row[matrix_size], int col[matrix_size], float val[matrix_size]
     }
 
     // store all multiplication values in temporary buffer
-    for (int i = 0; i < nnz; i++) {
-        temp1.shift_pixels_down(row[i]);
-        temp1.insert_top_row(val[i] * vector[col[i]], row[i]);
+    for (int i = 0; i < matrix_size; i++) {
+        if (i < nnz) {
+            temp1.shift_pixels_down(row[i]);
+            temp1.insert_top_row(val[i] * vector[col[i]], row[i]);
+        }
     }
 
-    bool done = false;
-    while (!done) {
-        
-        done = true;
+    for (int k = 0; k < 5; k++) {
+
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < 20; j++) {
-                if (temp1.getval(0, i) != 0.0 && temp1.getval(1, i) != 0.0) {
+                float sum = temp1.getval(0, i) + temp1.getval(1, i);
+                if (sum != 0) {
                     temp2.shift_pixels_down(i);
-                    temp2.insert_top_row(temp1.getval(0, i) + temp1.getval(1, i), i);
-                    temp1.shift_pixels_up(i);
-                    temp1.shift_pixels_up(i);
-                    done = false;
-                } else if (j == 0 && temp1.getval(0, i) != 0.0) {
-                    output[i] = temp1.getval(0, i);
+                    temp2.insert_top_row(sum, i);
                 }
+                temp1.shift_pixels_up(i);
+                temp1.shift_pixels_up(i);
             }
         }
 
-        if (done) break;
-
-        done = true;
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < 20; j++) {
-                if (temp2.getval(0, i) != 0.0 && temp2.getval(1, i) != 0.0) {
+                float sum = temp2.getval(0, i) + temp2.getval(1, i);
+                if (sum != 0) {
                     temp1.shift_pixels_down(i);
-                    temp1.insert_top_row(temp2.getval(0, i) + temp2.getval(1, i), i);
-                    temp2.shift_pixels_up(i);
-                    temp2.shift_pixels_up(i);
-                    done = false;
-                } else if (j == 0 && temp2.getval(0, i) != 0.0) {
-                    output[i] = temp2.getval(0, i);
+                    temp1.insert_top_row(sum, i);
                 }
+                temp2.shift_pixels_up(i);
+                temp2.shift_pixels_up(i);
             }
         }
     }
+
+    for (int i = 0; i < size; i++) {
+        output[i] = temp1.getval(0, i);
+    }
+
+    // bool done = false;
+    // while (!done) {
+        
+    //     done = true;
+    //     for (int i = 0; i < size; i++) {
+    //         for (int j = 0; j < 20; j++) {
+    //             if (temp1.getval(0, i) != 0.0 && temp1.getval(1, i) != 0.0) {
+    //                 temp2.shift_pixels_down(i);
+    //                 temp2.insert_top_row(temp1.getval(0, i) + temp1.getval(1, i), i);
+    //                 temp1.shift_pixels_up(i);
+    //                 temp1.shift_pixels_up(i);
+    //                 done = false;
+    //             } else if (j == 0 && temp1.getval(0, i) != 0.0) {
+    //                 output[i] = temp1.getval(0, i);
+    //             }
+    //         }
+    //     }
+
+    //     if (done) break;
+
+    //     done = true;
+    //     for (int i = 0; i < size; i++) {
+    //         for (int j = 0; j < 20; j++) {
+    //             if (temp2.getval(0, i) != 0.0 && temp2.getval(1, i) != 0.0) {
+    //                 temp1.shift_pixels_down(i);
+    //                 temp1.insert_top_row(temp2.getval(0, i) + temp2.getval(1, i), i);
+    //                 temp2.shift_pixels_up(i);
+    //                 temp2.shift_pixels_up(i);
+    //                 done = false;
+    //             } else if (j == 0 && temp2.getval(0, i) != 0.0) {
+    //                 output[i] = temp2.getval(0, i);
+    //             }
+    //         }
+    //     }
+    // }
 }
 
 //==========================================================================

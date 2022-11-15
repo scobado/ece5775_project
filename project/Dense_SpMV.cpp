@@ -16,13 +16,13 @@ using namespace std;
 // Dense matrix-vector multiplication
 //==========================================================================
 
-void Dense_SpMV(const float input[matrix_size], const float vector[size], float output[size]) {
+void Dense_SpMV(const float input[size][size], const float vector[size], float output[size]) {
   for(int i = 0; i < size; i++)
     output[i] = 0;
     
   for(int i = 0; i < size; i++) {
     for(int j = 0; j < size; j++) {
-      output[i] += input[i*size+j] * vector[j];
+      output[i] += input[i][j] * vector[j];
     }
   }
 }

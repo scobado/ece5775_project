@@ -9,78 +9,71 @@
 #include <iostream>
 #include <stdio.h>
 #include "model.h"
+#include <hls_video.h>
 
 using namespace std;
-
-void top( float matrix_1[size][size]  ) {
-  
-  for (int i = 0; i < size; i++ )
-    dest[i] = 0;
-
-  int nnz = count_nnz(matrix_1);
-  int row_1[nnz];
-  int col_1[nnz];
-  float val_1[nnz];
-  create_COO(matrix_1, row_1, col_1, val_1);
-  COO_SpMV(row_1, col_1, val_1, vector, dest, nnz);
-
-}
-
-void dut(
-    hls::stream<bit32_t> &strm_in,
-    hls::stream<bit32_t> &strm_out
-)
-{
-//   digit input;
-  float dest[size];
-
-
-  // ------------------------------------------------------
-  // Input processing
-  // ------------------------------------------------------
-  // Read the two input 32-bit words (low word first)
-  bit32_t input_lo = strm_in.read();
-  bit32_t input_hi = strm_in.read();
-
-  // Concatenate input raw bits
-  input(31, 0) = input_lo;
-  input(input.length()-1, 32) = input_hi;
-  
-  // ------------------------------------------------------
-  // Call DIGITREC and output processing
-  // ------------------------------------------------------
-  // Write out the recognized digit 
-  strm_out.write( digitrec( input ) );
-
-}
 
 //==========================================================================
 // COO Format: 3 arrays representing non-zero elements [row, col, value]
 //==========================================================================
 
 void COO_SpMV(int row[matrix_size], int col[matrix_size], float val[matrix_size], const float vector[size], float output[size], int nnz) {
+    
+    hls::LineBuffer<20, size, float> temp1;
+    hls::LineBuffer<20, size, float> temp2;
+
     for(int i = 0; i < size; i++) {
         output[i] = 0;
+        for (int j = 0; j < 20; j++) {
+            temp1.shift_pixels_down(i);
+            temp1.insert_top_row(0.0, i);
+            temp2.shift_pixels_down(i);
+            temp2.insert_top_row(0.0, i);
+        }
     }
-    for(int i = 0; i < matrix_size; i++) {
-        #pragma HLS PIPELINE
-        #pragma HLS DEPENDENCE variable=output inter RAW false 
-        if (i < nnz)
-          output[row[i]] += val[i] * vector[col[i]];
+
+    // store all multiplication values in temporary buffer
+    for (int i = 0; i < nnz; i++) {
+        temp1.shift_pixels_down(row[i]);
+        temp1.insert_top_row(val[i] * vector[col[i]], row[i]);
+    }
+
+    bool done = false;
+    while (!done) {
+        
+        done = true;
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < 20; j++) {
+                if (temp1.getval(0, i) != 0.0 && temp1.getval(1, i) != 0.0) {
+                    temp2.shift_pixels_down(i);
+                    temp2.insert_top_row(temp1.getval(0, i) + temp1.getval(1, i), i);
+                    temp1.shift_pixels_up(i);
+                    temp1.shift_pixels_up(i);
+                    done = false;
+                } else if (j == 0 && temp1.getval(0, i) != 0.0) {
+                    output[i] = temp1.getval(0, i);
+                }
+            }
+        }
+
+        if (done) break;
+
+        done = true;
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < 20; j++) {
+                if (temp2.getval(0, i) != 0.0 && temp2.getval(1, i) != 0.0) {
+                    temp1.shift_pixels_down(i);
+                    temp1.insert_top_row(temp2.getval(0, i) + temp2.getval(1, i), i);
+                    temp2.shift_pixels_up(i);
+                    temp2.shift_pixels_up(i);
+                    done = false;
+                } else if (j == 0 && temp2.getval(0, i) != 0.0) {
+                    output[i] = temp2.getval(0, i);
+                }
+            }
+        }
     }
 }
-
-// void create_COO(const float input[matrix_size], int row[matrix_size], int col[matrix_size], float val[matrix_size]) {
-//     int counter = 0;
-//     for(int i = 0; i < matrix_size; i++) {
-//       if (input[i] != 0) {
-//           row[counter] = i/size;
-//           col[counter] = i%size;
-//           val[counter] = input[i];
-//           counter += 1;
-//       }
-//     }
-// }
 
 //==========================================================================
 // Convert a given matrix to COO format
@@ -91,17 +84,14 @@ void create_COO(const float input[size][size], int row[matrix_size], int col[mat
     int counter = 0;
     for(int i = 0; i < size; i++) {
         for(int j = 0; j < size; j++) {
-            if (input[j][i] != 0) {
-                row[counter] = j;
-                col[counter] = i;
-                val[counter] = input[j][i];
+            if (input[i][j] != 0) {
+                row[counter] = i;
+                col[counter] = j;
+                val[counter] = input[i][j];
                 counter += 1;
             }
         }
     }
-    // for(int i = 0; i < counter; i ++) {
-    //     printf("%d ", row[i]);
-    // }
 }
 
 //==========================================================================

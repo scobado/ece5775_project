@@ -9,50 +9,10 @@ Copyright (C) 1986-2016 Xilinx, Inc. All Rights Reserved.
 @I [SYN-201] Setting up clock 'default' with a period of 10ns.
 @I [SIM-1] CSim done with 0 errors.
 @I [HLS-10] Analyzing design file 'COO_SpMV.cpp' ... 
-@I [HLS-10] Validating synthesis directives ...
-@I [HLS-10] Starting code transformations ...
-@I [HLS-10] Checking synthesizability ...
-@W [ANALYSIS-52] Found false 'RAW' inter dependency for variable 'output' (COO_SpMV.cpp:19).
-@W [ANALYSIS-52] Asserting false dependency between 'load' operation 'output.load'(COO_SpMV.cpp:27:11) from variable 'output'(COO_SpMV.cpp:19) and 'store' operation to variable 'output'(COO_SpMV.cpp:19) according to false dependency pragma(COO_SpMV.cpp:25:1), this may lead to incorrect RTL generation.
-@W [ANALYSIS-52] Asserting false dependency between 'store' operation to variable 'output'(COO_SpMV.cpp:19) and 'load' operation 'output.load'(COO_SpMV.cpp:27:11) from variable 'output'(COO_SpMV.cpp:19) according to false dependency pragma(COO_SpMV.cpp:25:1), this may lead to incorrect RTL generation.
-@I [HLS-111] Elapsed time: 2.4 seconds; current memory usage: 64.2 MB.
-@I [HLS-10] Starting hardware synthesis ...
-@I [HLS-10] Synthesizing 'COO_SpMV' ...
-@W [SYN-107] Renaming port name 'COO_SpMV/val' to 'COO_SpMV/val_r' to avoid the conflict with HDL keywords or other object names.
-@W [SYN-107] Renaming port name 'COO_SpMV/output' to 'COO_SpMV/output_r' to avoid the conflict with HDL keywords or other object names.
-@I [HLS-10] ----------------------------------------------------------------
-@I [HLS-10] -- Scheduling module 'COO_SpMV' 
-@I [HLS-10] ----------------------------------------------------------------
-@I [SCHED-11] Starting scheduling ...
-@I [SCHED-61] Pipelining loop 'Loop 2'.
-@I [SCHED-61] Pipelining result: Target II: 1, Final II: 1, Depth: 12.
-@I [SCHED-11] Finished scheduling.
-@I [HLS-111] Elapsed time: 0.04 seconds; current memory usage: 64.7 MB.
-@I [HLS-10] ----------------------------------------------------------------
-@I [HLS-10] -- Exploring micro-architecture for module 'COO_SpMV' 
-@I [HLS-10] ----------------------------------------------------------------
-@I [BIND-100] Starting micro-architecture generation ...
-@I [BIND-101] Performing variable lifetime analysis.
-@I [BIND-101] Exploring resource sharing.
-@I [BIND-101] Binding ...
-@I [BIND-100] Finished micro-architecture generation.
-@I [HLS-111] Elapsed time: 0.01 seconds; current memory usage: 65 MB.
-@I [HLS-10] ----------------------------------------------------------------
-@I [HLS-10] -- Generating RTL for module 'COO_SpMV' 
-@I [HLS-10] ----------------------------------------------------------------
-@I [RTGEN-500] Setting interface mode on port 'COO_SpMV/row' to 'ap_memory'.
-@I [RTGEN-500] Setting interface mode on port 'COO_SpMV/col' to 'ap_memory'.
-@I [RTGEN-500] Setting interface mode on port 'COO_SpMV/val_r' to 'ap_memory'.
-@I [RTGEN-500] Setting interface mode on port 'COO_SpMV/vector' to 'ap_memory'.
-@I [RTGEN-500] Setting interface mode on port 'COO_SpMV/output_r' to 'ap_memory'.
-@I [RTGEN-500] Setting interface mode on port 'COO_SpMV/nnz' to 'ap_none'.
-@I [RTGEN-500] Setting interface mode on function 'COO_SpMV' to 'ap_ctrl_hs'.
-@I [RTGEN-100] Generating core module 'COO_SpMV_fadd_32ns_32ns_32_5_full_dsp': 1 instance(s).
-@I [RTGEN-100] Generating core module 'COO_SpMV_fmul_32ns_32ns_32_4_max_dsp': 1 instance(s).
-@I [RTGEN-100] Finished creating RTL model for 'COO_SpMV'.
-@I [HLS-111] Elapsed time: 0.05 seconds; current memory usage: 65.4 MB.
-@I [HLS-10] Finished generating all RTL models.
-@I [SYSC-301] Generating SystemC RTL for COO_SpMV.
-@I [VHDL-304] Generating VHDL RTL for COO_SpMV.
-@I [VLOG-307] Generating Verilog RTL for COO_SpMV.
-@I [HLS-112] Total elapsed time: 9.625 seconds; peak memory usage: 65.4 MB.
+Source processing failed.
+    while executing
+"source [lindex $::argv 1] "
+    ("uplevel" body line 1)
+    invoked from within
+"uplevel \#0 { source [lindex $::argv 1] } "
+

@@ -9,49 +9,58 @@
 #include <iostream>
 #include <stdio.h>
 #include "model.h"
+#include "COO_SpMV.h"
+#include <fstream>
+#include <iomanip>
 
 using namespace std;
 
-void top( float matrix_1[size][size]  ) {
-  
-  for (int i = 0; i < size; i++ )
-    dest[i] = 0;
-
-  int nnz = count_nnz(matrix_1);
-  int row_1[nnz];
-  int col_1[nnz];
-  float val_1[nnz];
-  create_COO(matrix_1, row_1, col_1, val_1);
-  COO_SpMV(row_1, col_1, val_1, vector, dest, nnz);
-
-}
+//----------------------------------------------------------
+// Top function
+//----------------------------------------------------------
 
 void dut(
     hls::stream<bit32_t> &strm_in,
     hls::stream<bit32_t> &strm_out
 )
 {
-//   digit input;
+  float matrix[size][size];
+  float vector[size];
+  union { float fval; int ival} u;
+
   float dest[size];
 
+  // read the matrix 
+  for ( int i = 0; i < size; i ++) {
+    for (int j = 0; j < size; j ++) {
+        u.ival = strm_in.read();
+        matrix[i][j] = (float)u.ival;        
+    }
+  }
 
-  // ------------------------------------------------------
-  // Input processing
-  // ------------------------------------------------------
-  // Read the two input 32-bit words (low word first)
-  bit32_t input_lo = strm_in.read();
-  bit32_t input_hi = strm_in.read();
+  // read the vector
+  for ( int i = 0; i < size; i ++) {
+    u.ival = strm_in.read();
+    vector[i] = (float)u.ival;
+  }
 
-  // Concatenate input raw bits
-  input(31, 0) = input_lo;
-  input(input.length()-1, 32) = input_hi;
-  
-  // ------------------------------------------------------
-  // Call DIGITREC and output processing
-  // ------------------------------------------------------
-  // Write out the recognized digit 
-  strm_out.write( digitrec( input ) );
+  // call count_nnz
+  int nnz = count_nnz(matrix);
 
+  int row[nnz];
+  int col[nnz];
+  float val[nnz];
+
+  // call create_COO
+  create_COO(matrix, row, col, val);
+
+  // call COO_SpMV
+  COO_SpMV(row, col, val, vector, dest, nnz);
+ 
+  // write out the result
+  for ( int i = 0; i < size; i ++) {
+    strm_out.write(dest[i]);
+  }
 }
 
 //==========================================================================

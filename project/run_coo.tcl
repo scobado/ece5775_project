@@ -27,7 +27,7 @@ set hls_prj "COO_SpMV.prj"
 # Open/reset the project
 open_project ${hls_prj} -reset
 # Top function of the design is "COO SpMV"
-set_top COO_SpMV
+set_top worker
 
 # Add design and testbench files
 add_files COO_SpMV.cpp
@@ -41,10 +41,10 @@ set_part {xc7z020clg484-1}
 create_clock -period 10
 
 # Simulate the C++ design
-#csim_design
+csim_design
 # Synthesis the design
 csynth_design
 # Co-simulate the design
-cosim_design
+#cosim_design
 
 exit

@@ -1,0 +1,350 @@
+
+
+================================================================
+== Vivado HLS Report for 'worker'
+================================================================
+* Date:           Fri Nov 18 18:42:36 2022
+
+* Version:        2016.2 (Build 1577090 on Thu Jun 02 16:59:10 MDT 2016)
+* Project:        COO_SpMV.prj
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|      8.16|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-------+-------+-------+-------+---------+
+    |    Latency    |    Interval   | Pipeline|
+    |  min  |  max  |  min  |  max  |   Type  |
+    +-------+-------+-------+-------+---------+
+    |  61500|  61500|  61501|  61501|   none  |
+    +-------+-------+-------+-------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |          |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name| min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |- Loop 1  |  100|  100|         1|          -|          -|   100|    no    |
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states: 17
+* Pipeline: 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / (exitcond1)
+	2  / (!exitcond1)
+3 --> 
+	4  / true
+4 --> 
+	5  / true
+5 --> 
+	6  / true
+6 --> 
+	7  / true
+7 --> 
+	8  / true
+8 --> 
+	9  / true
+9 --> 
+	10  / true
+10 --> 
+	11  / true
+11 --> 
+	12  / true
+12 --> 
+	13  / true
+13 --> 
+	14  / true
+14 --> 
+	15  / true
+15 --> 
+	16  / true
+16 --> 
+	17  / true
+17 --> 
+* FSM state operations: 
+
+ <State 1>: 1.57ns
+ST_1: stg_18 [1/1] 0.00ns
+:0  call void (...)* @_ssdm_op_SpecBitsMap([25 x float]* %dest_3), !map !42
+
+ST_1: stg_19 [1/1] 0.00ns
+:1  call void (...)* @_ssdm_op_SpecBitsMap([25 x float]* %dest_2), !map !48
+
+ST_1: stg_20 [1/1] 0.00ns
+:2  call void (...)* @_ssdm_op_SpecBitsMap([25 x float]* %dest_1), !map !54
+
+ST_1: stg_21 [1/1] 0.00ns
+:3  call void (...)* @_ssdm_op_SpecBitsMap([25 x float]* %dest_0), !map !60
+
+ST_1: stg_22 [1/1] 0.00ns
+:4  call void (...)* @_ssdm_op_SpecTopModule([7 x i8]* @worker_str) nounwind
+
+ST_1: row_1 [1/1] 0.00ns
+:5  %row_1 = alloca [2500 x i7], align 1
+
+ST_1: col_1 [1/1] 0.00ns
+:6  %col_1 = alloca [2500 x i7], align 1
+
+ST_1: val_1 [1/1] 0.00ns
+:7  %val_1 = alloca [2500 x float], align 16
+
+ST_1: stg_26 [1/1] 1.57ns
+:8  br label %1
+
+
+ <State 2>: 5.06ns
+ST_2: i [1/1] 0.00ns
+:0  %i = phi i7 [ 0, %0 ], [ %i_1, %3 ]
+
+ST_2: phi_mul [1/1] 0.00ns
+:1  %phi_mul = phi i15 [ 0, %0 ], [ %next_mul, %3 ]
+
+ST_2: phi_urem [1/1] 0.00ns
+:2  %phi_urem = phi i7 [ 0, %0 ], [ %idx_urem, %3 ]
+
+ST_2: exitcond1 [1/1] 1.97ns
+:3  %exitcond1 = icmp eq i7 %i, -28
+
+ST_2: empty [1/1] 0.00ns
+:4  %empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 100, i64 100, i64 100) nounwind
+
+ST_2: i_1 [1/1] 1.72ns
+:5  %i_1 = add i7 %i, 1
+
+ST_2: stg_33 [1/1] 0.00ns
+:6  br i1 %exitcond1, label %.preheader.0, label %2
+
+ST_2: next_mul [1/1] 1.96ns
+:0  %next_mul = add i15 %phi_mul, 164
+
+ST_2: tmp [1/1] 0.00ns
+:1  %tmp = call i3 @_ssdm_op_PartSelect.i3.i15.i32.i32(i15 %phi_mul, i32 12, i32 14)
+
+ST_2: newIndex7 [1/1] 0.00ns
+:2  %newIndex7 = zext i7 %phi_urem to i64
+
+ST_2: dest_0_addr [1/1] 0.00ns
+:3  %dest_0_addr = getelementptr [25 x float]* %dest_0, i64 0, i64 %newIndex7
+
+ST_2: dest_1_addr [1/1] 0.00ns
+:4  %dest_1_addr = getelementptr [25 x float]* %dest_1, i64 0, i64 %newIndex7
+
+ST_2: dest_2_addr [1/1] 0.00ns
+:5  %dest_2_addr = getelementptr [25 x float]* %dest_2, i64 0, i64 %newIndex7
+
+ST_2: dest_3_addr [1/1] 0.00ns
+:6  %dest_3_addr = getelementptr [25 x float]* %dest_3, i64 0, i64 %newIndex7
+
+ST_2: stg_41 [1/1] 1.88ns
+:7  switch i3 %tmp, label %branch3 [
+    i3 0, label %branch0
+    i3 1, label %branch1
+    i3 2, label %branch2
+  ]
+
+ST_2: stg_42 [1/1] 2.39ns
+branch2:0  store float 0.000000e+00, float* %dest_2_addr, align 4
+
+ST_2: stg_43 [1/1] 0.00ns
+branch2:1  br label %3
+
+ST_2: stg_44 [1/1] 2.39ns
+branch1:0  store float 0.000000e+00, float* %dest_1_addr, align 4
+
+ST_2: stg_45 [1/1] 0.00ns
+branch1:1  br label %3
+
+ST_2: stg_46 [1/1] 2.39ns
+branch0:0  store float 0.000000e+00, float* %dest_0_addr, align 4
+
+ST_2: stg_47 [1/1] 0.00ns
+branch0:1  br label %3
+
+ST_2: stg_48 [1/1] 2.39ns
+branch3:0  store float 0.000000e+00, float* %dest_3_addr, align 4
+
+ST_2: stg_49 [1/1] 0.00ns
+branch3:1  br label %3
+
+ST_2: next_urem [1/1] 1.72ns
+:0  %next_urem = add i7 %phi_urem, 1
+
+ST_2: tmp_2 [1/1] 1.97ns
+:1  %tmp_2 = icmp ult i7 %next_urem, 25
+
+ST_2: idx_urem [1/1] 1.37ns
+:2  %idx_urem = select i1 %tmp_2, i7 %next_urem, i7 0
+
+ST_2: stg_53 [1/1] 0.00ns
+:3  br label %1
+
+ST_2: tmp_1 [2/2] 1.04ns
+.preheader.0:0  %tmp_1 = call fastcc i32 @worker_create_COO([2500 x i7]* %row_1, [2500 x i7]* %col_1, [2500 x float]* %val_1, i8 0)
+
+
+ <State 3>: 0.00ns
+ST_3: tmp_1 [1/2] 0.00ns
+.preheader.0:0  %tmp_1 = call fastcc i32 @worker_create_COO([2500 x i7]* %row_1, [2500 x i7]* %col_1, [2500 x float]* %val_1, i8 0)
+
+
+ <State 4>: 1.04ns
+ST_4: stg_56 [2/2] 1.04ns
+.preheader.0:1  call fastcc void @worker_COO_SpMV([2500 x i7]* %row_1, [2500 x i7]* %col_1, [2500 x float]* %val_1, [25 x float]* %dest_0, [25 x float]* %dest_1, [25 x float]* %dest_2, [25 x float]* %dest_3, i32 %tmp_1)
+
+
+ <State 5>: 0.00ns
+ST_5: stg_57 [1/2] 0.00ns
+.preheader.0:1  call fastcc void @worker_COO_SpMV([2500 x i7]* %row_1, [2500 x i7]* %col_1, [2500 x float]* %val_1, [25 x float]* %dest_0, [25 x float]* %dest_1, [25 x float]* %dest_2, [25 x float]* %dest_3, i32 %tmp_1)
+
+
+ <State 6>: 1.04ns
+ST_6: tmp_3 [2/2] 1.04ns
+.preheader.0:2  %tmp_3 = call fastcc i32 @worker_create_COO([2500 x i7]* %row_1, [2500 x i7]* %col_1, [2500 x float]* %val_1, i8 25)
+
+
+ <State 7>: 0.00ns
+ST_7: tmp_3 [1/2] 0.00ns
+.preheader.0:2  %tmp_3 = call fastcc i32 @worker_create_COO([2500 x i7]* %row_1, [2500 x i7]* %col_1, [2500 x float]* %val_1, i8 25)
+
+
+ <State 8>: 1.04ns
+ST_8: stg_60 [2/2] 1.04ns
+.preheader.0:3  call fastcc void @worker_COO_SpMV([2500 x i7]* %row_1, [2500 x i7]* %col_1, [2500 x float]* %val_1, [25 x float]* %dest_0, [25 x float]* %dest_1, [25 x float]* %dest_2, [25 x float]* %dest_3, i32 %tmp_3)
+
+
+ <State 9>: 0.00ns
+ST_9: stg_61 [1/2] 0.00ns
+.preheader.0:3  call fastcc void @worker_COO_SpMV([2500 x i7]* %row_1, [2500 x i7]* %col_1, [2500 x float]* %val_1, [25 x float]* %dest_0, [25 x float]* %dest_1, [25 x float]* %dest_2, [25 x float]* %dest_3, i32 %tmp_3)
+
+
+ <State 10>: 1.04ns
+ST_10: tmp_5 [2/2] 1.04ns
+.preheader.0:4  %tmp_5 = call fastcc i32 @worker_create_COO([2500 x i7]* %row_1, [2500 x i7]* %col_1, [2500 x float]* %val_1, i8 50)
+
+
+ <State 11>: 0.00ns
+ST_11: tmp_5 [1/2] 0.00ns
+.preheader.0:4  %tmp_5 = call fastcc i32 @worker_create_COO([2500 x i7]* %row_1, [2500 x i7]* %col_1, [2500 x float]* %val_1, i8 50)
+
+
+ <State 12>: 1.04ns
+ST_12: stg_64 [2/2] 1.04ns
+.preheader.0:5  call fastcc void @worker_COO_SpMV([2500 x i7]* %row_1, [2500 x i7]* %col_1, [2500 x float]* %val_1, [25 x float]* %dest_0, [25 x float]* %dest_1, [25 x float]* %dest_2, [25 x float]* %dest_3, i32 %tmp_5)
+
+
+ <State 13>: 0.00ns
+ST_13: stg_65 [1/2] 0.00ns
+.preheader.0:5  call fastcc void @worker_COO_SpMV([2500 x i7]* %row_1, [2500 x i7]* %col_1, [2500 x float]* %val_1, [25 x float]* %dest_0, [25 x float]* %dest_1, [25 x float]* %dest_2, [25 x float]* %dest_3, i32 %tmp_5)
+
+
+ <State 14>: 1.04ns
+ST_14: tmp_7 [2/2] 1.04ns
+.preheader.0:6  %tmp_7 = call fastcc i32 @worker_create_COO([2500 x i7]* %row_1, [2500 x i7]* %col_1, [2500 x float]* %val_1, i8 75)
+
+
+ <State 15>: 0.00ns
+ST_15: tmp_7 [1/2] 0.00ns
+.preheader.0:6  %tmp_7 = call fastcc i32 @worker_create_COO([2500 x i7]* %row_1, [2500 x i7]* %col_1, [2500 x float]* %val_1, i8 75)
+
+
+ <State 16>: 1.04ns
+ST_16: stg_68 [2/2] 1.04ns
+.preheader.0:7  call fastcc void @worker_COO_SpMV([2500 x i7]* %row_1, [2500 x i7]* %col_1, [2500 x float]* %val_1, [25 x float]* %dest_0, [25 x float]* %dest_1, [25 x float]* %dest_2, [25 x float]* %dest_3, i32 %tmp_7)
+
+
+ <State 17>: 0.00ns
+ST_17: stg_69 [1/2] 0.00ns
+.preheader.0:7  call fastcc void @worker_COO_SpMV([2500 x i7]* %row_1, [2500 x i7]* %col_1, [2500 x float]* %val_1, [25 x float]* %dest_0, [25 x float]* %dest_1, [25 x float]* %dest_2, [25 x float]* %dest_3, i32 %tmp_7)
+
+ST_17: stg_70 [1/1] 0.00ns
+.preheader.0:8  ret void
+
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ No timing violations. 
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

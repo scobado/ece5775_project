@@ -16,14 +16,7 @@
         <clock name="default" period="10" default="false"/>
     </clockList>
     <config>
-        <schedule model="COO_SpMV"/>
+        <schedule model="worker"/>
     </config>
-    <Simulation argv="">
-        <SimFlow name="cosim" setup="false" dumpTrace="none" optimizeCompile="false" ldflags="" mflags="" compiledLibrary="" reduce_diskspace="false" toolName="auto">
-            <Rtl name="systemc" active="false"/>
-            <Rtl name="verilog" active="true"/>
-            <Rtl name="vhdl" active="false"/>
-        </SimFlow>
-    </Simulation>
 </AutoPilot:solution>
 

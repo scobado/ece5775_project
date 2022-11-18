@@ -10,6 +10,8 @@
 
 int count_nnz(const float input[size][size]);
 
-int create_COO(const float input[size][size], int row[], int col[], float val[]);
+int create_COO(const float input[size][size], int row[], int col[], float val[], int block);
 
 void COO_SpMV(int row[], int col[], float val[], const float vector[], float output[], int nnz);
+
+void worker(float dest[size]);

@@ -5,6 +5,9 @@
 
 const int size = 100;
 const int matrix_size = size * size;
+const int PE = 4;
+const int block_size = size / PE;
+const int coo_size = size * block_size;
 
 // import sparse matrices
 

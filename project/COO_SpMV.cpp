@@ -67,10 +67,7 @@ using namespace std;
 //==========================================================================
 
 void COO_SpMV(int row[matrix_size], int col[matrix_size], float val[matrix_size], const float vector[size], float output[size], int nnz) {
-    for(int i = 0; i < size; i++) {
-        output[i] = 0;
-    }
-    for(int i = 0; i < matrix_size; i++) {
+    for(int i = 0; i < coo_size; i++) {
         #pragma HLS PIPELINE
         #pragma HLS DEPENDENCE variable=output inter RAW false 
         if (i < nnz)
@@ -95,43 +92,35 @@ void COO_SpMV(int row[matrix_size], int col[matrix_size], float val[matrix_size]
 // Traverse in column major order to solve output dependence
 //==========================================================================
 
-int create_COO(const float input[size][size], int row[matrix_size], int col[matrix_size], float val[matrix_size]) {
+int create_COO(const float input[size][size], int row[matrix_size], int col[matrix_size], float val[matrix_size], int block) {
     int counter = 0;
-    int temp_row[matrix_size];
-    int temp_col[matrix_size];
-    float temp_val[matrix_size];
-    for(int i = 0; i < size; i++) {
+    int temp_row[coo_size];
+    int temp_col[coo_size];
+    float temp_val[coo_size];
+    for(int i = 0; i < block_size; i++) {
         for(int j = 0; j < size; j++) {
-            if (input[i][j] != 0) {
-                temp_row[counter] = i;
+            if (input[block+i][j] != 0) {
+                temp_row[counter] = block+i;
                 temp_col[counter] = j;
-                temp_val[counter] = input[i][j];
+                temp_val[counter] = input[block+i][j];
                 counter += 1;
             }
         }
     }
-    // printf("Temp row\n");
-    // for(int i = 0; i < counter; i ++) {
-    //     printf("%d ", temp_row[i]);
-    // }
     int cur_ind = 0;
     int start = 1;
-    for (int i = 0; i < matrix_size; i++) {
+    for (int i = 0; i < coo_size; i++) {
         if (i < counter) {
             row[cur_ind] = temp_row[i];
             col[cur_ind] = temp_col[i];
             val[cur_ind] = temp_val[i];
-            cur_ind += 8; // assuming fp add takes 6 cycles
+            cur_ind += 8; // assuming fp add takes 8 cycles
             if (cur_ind >= counter) {
                 cur_ind = start;
                 start++;
             }
         }
     }
-    // printf("\n Actual row\n");
-    // for(int i = 0; i < counter; i ++) {
-    //     printf("%d ", row[i]);
-    // }
     return counter;
 }
 
@@ -151,4 +140,107 @@ int count_nnz(const float input[size][size]) {
     return counter;
 }
 
+void copy(float matrix[size][size], float sub_matrix[block_size][size], int start) {
+    for (int i = 0; i < block_size; i++) {
+        for (int j = 0; j < size; j++) {
+            sub_matrix[i][j] = matrix[i+start][j];
+        }
+    }
+}
 
+void worker(float dest[size]) {
+//   float dest[size];
+
+  #pragma HLS array_partition variable=matrix_1 block factor=PE dim=1
+  #pragma HLS array_partition variable=dest block factor=PE
+
+  for (int i = 0; i < size; i++ )
+    dest[i] = 0;
+
+  // int nnz = count_nnz(matrix_1);
+  for (int i = 0; i < PE; i++) {
+    #pragma HLS UNROLL
+
+    int row_1[coo_size];
+    int col_1[coo_size];
+    float val_1[coo_size];
+
+    int nnz = create_COO(matrix_1, row_1, col_1, val_1, i*block_size);
+    COO_SpMV(row_1, col_1, val_1, vector, dest, nnz);
+  }
+
+//   int nnz = create_COO(matrix_1, row_1, col_1, val_1);
+//   COO_SpMV(row_1, col_1, val_1, vector, dest, nnz);
+
+//   // nnz = count_nnz(matrix_2);
+//   int row_2[matrix_size];
+//   int col_2[matrix_size];
+//   float val_2[matrix_size];
+
+//   nnz = create_COO(matrix_2, row_2, col_2, val_2);
+//   COO_SpMV(row_2, col_2, val_2, vector, dest, nnz);
+
+//   // nnz = count_nnz(matrix_3);
+//   int row_3[matrix_size];
+//   int col_3[matrix_size];
+//   float val_3[matrix_size];
+
+//   nnz = create_COO(matrix_3, row_3, col_3, val_3);
+//   COO_SpMV(row_3, col_3, val_3, vector, dest, nnz);
+
+//   // nnz = count_nnz(matrix_4);
+//   int row_4[matrix_size];
+//   int col_4[matrix_size];
+//   float val_4[matrix_size];
+
+//   nnz = create_COO(matrix_4, row_4, col_4, val_4);
+//   COO_SpMV(row_4, col_4, val_4, vector, dest, nnz);
+
+//   // nnz = count_nnz(matrix_5);
+//   int row_5[matrix_size];
+//   int col_5[matrix_size];
+//   float val_5[matrix_size];
+
+//   nnz = create_COO(matrix_5, row_5, col_5, val_5);
+//   COO_SpMV(row_5, col_5, val_5, vector, dest, nnz);
+
+//   // nnz = count_nnz(matrix_6);
+//   int row_6[matrix_size];
+//   int col_6[matrix_size];
+//   float val_6[matrix_size];
+
+//   nnz = create_COO(matrix_6, row_6, col_6, val_6);
+//   COO_SpMV(row_6, col_6, val_6, vector, dest, nnz);
+
+//   // nnz = count_nnz(matrix_7);
+//   int row_7[matrix_size];
+//   int col_7[matrix_size];
+//   float val_7[matrix_size];
+
+//   nnz = create_COO(matrix_7, row_7, col_7, val_7);
+//   COO_SpMV(row_7, col_7, val_7, vector, dest, nnz);
+
+//   // nnz = count_nnz(matrix_8);
+//   int row_8[matrix_size];
+//   int col_8[matrix_size];
+//   float val_8[matrix_size];
+
+//   nnz = create_COO(matrix_8, row_8, col_8, val_8);
+//   COO_SpMV(row_8, col_8, val_8, vector, dest, nnz);
+
+//   // nnz = count_nnz(matrix_9);
+//   int row_9[matrix_size];
+//   int col_9[matrix_size];
+//   float val_9[matrix_size];
+
+//   nnz = create_COO(matrix_9, row_9, col_9, val_9);
+//   COO_SpMV(row_9, col_9, val_9, vector, dest, nnz);
+
+//   // nnz = count_nnz(matrix_10);
+//   int row_10[matrix_size];
+//   int col_10[matrix_size];
+//   float val_10[matrix_size];
+
+//   nnz = create_COO(matrix_10, row_10, col_10, val_10);
+//   COO_SpMV(row_10, col_10, val_10, vector, dest, nnz);
+}

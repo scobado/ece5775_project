@@ -1,7 +1,0 @@
-Running: xsim.dir/COO_SpMV/xsimk -simmode gui -wdb COO_SpMV.wdb -simrunnum 0 -socket 47350
-Design successfully loaded
-Design Loading Memory Usage: 52260 KB (Peak: 54152 KB)
-Design Loading CPU Usage: 20 ms
-Simulation completed
-Simulation Memory Usage: 134204 KB (Peak: 248884 KB)
-Simulation CPU Usage: 6820 ms

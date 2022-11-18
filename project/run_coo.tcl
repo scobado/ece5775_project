@@ -44,6 +44,7 @@ create_clock -period 10
 csim_design
 # Synthesis the design
 csynth_design
-
+# Co-simulate the design
+#cosim_design
 
 exit

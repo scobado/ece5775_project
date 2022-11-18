@@ -9,122 +9,135 @@
 #include <iostream>
 #include <stdio.h>
 #include "model.h"
-#include <hls_video.h>
 
 using namespace std;
+
+//----------------------------------------------------------
+// Top function
+//----------------------------------------------------------
+
+// void dut(
+//     hls::stream<bit32_t> &strm_in,
+//     hls::stream<bit32_t> &strm_out
+// )
+// {
+//   float matrix[size][size];
+//   float vector[size];
+//   union { float fval; int ival} u;
+
+//   float dest[size];
+//   for (int i = 0; i < size; i++ )
+//     dest[i] = 0;
+
+//   // read the matrix 
+//   for ( int i = 0; i < size; i ++) {
+//     for (int j = 0; j < size; j ++) {
+//         u.ival = strm_in.read();
+//         matrix[i][j] = u.fval;        
+//     }
+//   }
+
+//   // read the vector
+//   for ( int i = 0; i < size; i ++) {
+//     u.ival = strm_in.read();
+//     vector[i] = u.fval;
+//   }
+
+//   // call count_nnz
+//   int nnz = count_nnz(matrix);
+
+//   int row[nnz];
+//   int col[nnz];
+//   float val[nnz];
+
+//   // call create_COO
+//   create_COO(matrix, row, col, val);
+
+//   // call COO_SpMV
+//   COO_SpMV(row, col, val, vector, dest, nnz);
+ 
+//   // write out the result
+//   for ( int i = 0; i < size; i ++) {
+//     strm_out.write(dest[i]);
+//   }
+// }
 
 //==========================================================================
 // COO Format: 3 arrays representing non-zero elements [row, col, value]
 //==========================================================================
 
 void COO_SpMV(int row[matrix_size], int col[matrix_size], float val[matrix_size], const float vector[size], float output[size], int nnz) {
-    
-    hls::LineBuffer<20, size, float> temp1;
-    hls::LineBuffer<20, size, float> temp2;
-
-    for(int i = 0; i < size; i++) {
+    LOOP_A: for(int i = 0; i < size; i++) {
         output[i] = 0;
-        for (int j = 0; j < 20; j++) {
-            temp1.shift_pixels_down(i);
-            temp1.insert_top_row(0.0, i);
-            temp2.shift_pixels_down(i);
-            temp2.insert_top_row(0.0, i);
-        }
     }
-
-    // store all multiplication values in temporary buffer
-    for (int i = 0; i < matrix_size; i++) {
-        if (i < nnz) {
-            temp1.shift_pixels_down(row[i]);
-            temp1.insert_top_row(val[i] * vector[col[i]], row[i]);
-        }
+    LOOP_B: for(int i = 0; i < matrix_size; i++) {
+        // #pragma HLS PIPELINE
+        // #pragma HLS DEPENDENCE variable=output inter RAW false 
+        if (i < nnz)
+          output[row[i]] += val[i] * vector[col[i]];
     }
-
-    for (int k = 0; k < 5; k++) {
-
-        for (int i = 0; i < size; i++) {
-            for (int j = 0; j < 20; j++) {
-                float sum = temp1.getval(0, i) + temp1.getval(1, i);
-                if (sum != 0) {
-                    temp2.shift_pixels_down(i);
-                    temp2.insert_top_row(sum, i);
-                }
-                temp1.shift_pixels_up(i);
-                temp1.shift_pixels_up(i);
-            }
-        }
-
-        for (int i = 0; i < size; i++) {
-            for (int j = 0; j < 20; j++) {
-                float sum = temp2.getval(0, i) + temp2.getval(1, i);
-                if (sum != 0) {
-                    temp1.shift_pixels_down(i);
-                    temp1.insert_top_row(sum, i);
-                }
-                temp2.shift_pixels_up(i);
-                temp2.shift_pixels_up(i);
-            }
-        }
+    float x = 0.0;
+    LOOP_C: for(int i = 0; i < 10; i++) {
+        #pragma HLS PIPELINE
+        x += 1.5;
     }
-
-    for (int i = 0; i < size; i++) {
-        output[i] = temp1.getval(0, i);
-    }
-
-    // bool done = false;
-    // while (!done) {
-        
-    //     done = true;
-    //     for (int i = 0; i < size; i++) {
-    //         for (int j = 0; j < 20; j++) {
-    //             if (temp1.getval(0, i) != 0.0 && temp1.getval(1, i) != 0.0) {
-    //                 temp2.shift_pixels_down(i);
-    //                 temp2.insert_top_row(temp1.getval(0, i) + temp1.getval(1, i), i);
-    //                 temp1.shift_pixels_up(i);
-    //                 temp1.shift_pixels_up(i);
-    //                 done = false;
-    //             } else if (j == 0 && temp1.getval(0, i) != 0.0) {
-    //                 output[i] = temp1.getval(0, i);
-    //             }
-    //         }
-    //     }
-
-    //     if (done) break;
-
-    //     done = true;
-    //     for (int i = 0; i < size; i++) {
-    //         for (int j = 0; j < 20; j++) {
-    //             if (temp2.getval(0, i) != 0.0 && temp2.getval(1, i) != 0.0) {
-    //                 temp1.shift_pixels_down(i);
-    //                 temp1.insert_top_row(temp2.getval(0, i) + temp2.getval(1, i), i);
-    //                 temp2.shift_pixels_up(i);
-    //                 temp2.shift_pixels_up(i);
-    //                 done = false;
-    //             } else if (j == 0 && temp2.getval(0, i) != 0.0) {
-    //                 output[i] = temp2.getval(0, i);
-    //             }
-    //         }
-    //     }
-    // }
 }
+
+// void create_COO(const float input[matrix_size], int row[matrix_size], int col[matrix_size], float val[matrix_size]) {
+//     int counter = 0;
+//     for(int i = 0; i < matrix_size; i++) {
+//       if (input[i] != 0) {
+//           row[counter] = i/size;
+//           col[counter] = i%size;
+//           val[counter] = input[i];
+//           counter += 1;
+//       }
+//     }
+// }
 
 //==========================================================================
 // Convert a given matrix to COO format
 // Traverse in column major order to solve output dependence
 //==========================================================================
 
-void create_COO(const float input[size][size], int row[matrix_size], int col[matrix_size], float val[matrix_size]) {
+int create_COO(const float input[size][size], int row[matrix_size], int col[matrix_size], float val[matrix_size]) {
     int counter = 0;
+    int temp_row[matrix_size];
+    int temp_col[matrix_size];
+    float temp_val[matrix_size];
     for(int i = 0; i < size; i++) {
         for(int j = 0; j < size; j++) {
             if (input[i][j] != 0) {
-                row[counter] = i;
-                col[counter] = j;
-                val[counter] = input[i][j];
+                temp_row[counter] = i;
+                temp_col[counter] = j;
+                temp_val[counter] = input[i][j];
                 counter += 1;
             }
         }
     }
+    // printf("Temp row\n");
+    // for(int i = 0; i < counter; i ++) {
+    //     printf("%d ", temp_row[i]);
+    // }
+    int cur_ind = 0;
+    int start = 1;
+    for (int i = 0; i < matrix_size; i++) {
+        if (i < counter) {
+            row[cur_ind] = temp_row[i];
+            col[cur_ind] = temp_col[i];
+            val[cur_ind] = temp_val[i];
+            cur_ind += 6; // assuming fp add takes 6 cycles
+            if (cur_ind >= counter) {
+                cur_ind = start;
+                start++;
+            }
+        }
+    }
+    // printf("\n Actual row\n");
+    // for(int i = 0; i < counter; i ++) {
+    //     printf("%d ", row[i]);
+    // }
+    return counter;
 }
 
 //==========================================================================

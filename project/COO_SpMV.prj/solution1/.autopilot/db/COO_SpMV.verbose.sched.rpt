@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'COO_SpMV'
 ================================================================
-* Date:           Tue Nov 15 12:09:56 2022
+* Date:           Fri Nov 18 16:37:43 2022
 
 * Version:        2016.2 (Build 1577090 on Thu Jun 02 16:59:10 MDT 2016)
 * Project:        COO_SpMV.prj
@@ -25,32 +25,25 @@
 
 + Latency (clock cycles): 
     * Summary: 
-    +--------+--------+--------+--------+---------+
-    |     Latency     |     Interval    | Pipeline|
-    |   min  |   max  |   min  |   max  |   Type  |
-    +--------+--------+--------+--------+---------+
-    |  227419|  267419|  227420|  267420|   none  |
-    +--------+--------+--------+--------+---------+
+    +-------+--------+-------+--------+---------+
+    |     Latency    |    Interval    | Pipeline|
+    |  min  |   max  |  min  |   max  |   Type  |
+    +-------+--------+-------+--------+---------+
+    |  20102|  120102|  20103|  120103|   none  |
+    +-------+--------+-------+--------+---------+
 
     + Detail: 
         * Instance: 
         N/A
 
         * Loop: 
-        +-----------------+--------+--------+----------+-----------+-----------+-------+----------+
-        |                 |     Latency     | Iteration|  Initiation Interval  |  Trip |          |
-        |    Loop Name    |   min  |   max  |  Latency |  achieved |   target  | Count | Pipelined|
-        +-----------------+--------+--------+----------+-----------+-----------+-------+----------+
-        |- Loop 1         |    4200|    4200|        42|          -|          -|    100|    no    |
-        | + Loop 1.1      |      40|      40|         2|          -|          -|     20|    no    |
-        |- Loop 2         |   20000|   60000|   2 ~ 6  |          -|          -|  10000|    no    |
-        |- Loop 3         |  203015|  203015|     40603|          -|          -|      5|    no    |
-        | + Loop 3.1      |   20300|   20300|       203|          -|          -|    100|    no    |
-        |  ++ Loop 3.1.1  |     200|     200|        10|          -|          -|     20|    no    |
-        | + Loop 3.2      |   20300|   20300|       203|          -|          -|    100|    no    |
-        |  ++ Loop 3.2.1  |     200|     200|        10|          -|          -|     20|    no    |
-        |- Loop 4         |     200|     200|         2|          -|          -|    100|    no    |
-        +-----------------+--------+--------+----------+-----------+-----------+-------+----------+
+        +----------+-------+--------+----------+-----------+-----------+-------+----------+
+        |          |     Latency    | Iteration|  Initiation Interval  |  Trip |          |
+        | Loop Name|  min  |   max  |  Latency |  achieved |   target  | Count | Pipelined|
+        +----------+-------+--------+----------+-----------+-----------+-------+----------+
+        |- LOOP_A  |    100|     100|         1|          -|          -|    100|    no    |
+        |- LOOP_B  |  20000|  120000|  2 ~ 12  |          -|          -|  10000|    no    |
+        +----------+-------+--------+----------+-----------+-----------+-------+----------+
 
 ============================================================
 + Verbose Summary: Synthesis Manager
@@ -78,7 +71,7 @@ IsGatedGlobalClock: 0
 ============================================================
 + Verbose Summary: Schedule
 ============================================================
-* Number of FSM states: 37
+* Number of FSM states: 14
 * Pipeline: 0
 * Dataflow Pipeline: 0
 
@@ -86,17 +79,15 @@ IsGatedGlobalClock: 0
 1 --> 
 	2  / true
 2 --> 
-	5  / (exitcond8)
-	3  / (!exitcond8)
+	3  / (exitcond2)
+	2  / (!exitcond2)
 3 --> 
-	2  / (exitcond7)
-	4  / (!exitcond7)
+	4  / (!exitcond1 & tmp_2)
+	14  / (!exitcond1 & !tmp_2)
 4 --> 
-	3  / true
+	5  / true
 5 --> 
-	11  / (exitcond6)
-	6  / (!exitcond6 & tmp_1)
-	10  / (!exitcond6 & !tmp_1)
+	6  / true
 6 --> 
 	7  / true
 7 --> 
@@ -106,2297 +97,220 @@ IsGatedGlobalClock: 0
 9 --> 
 	10  / true
 10 --> 
-	5  / true
+	11  / true
 11 --> 
-	12  / (!exitcond5)
-	36  / (exitcond5)
+	12  / true
 12 --> 
-	13  / (!exitcond4)
-	24  / (exitcond4)
+	13  / true
 13 --> 
 	14  / true
 14 --> 
-	12  / (exitcond3)
-	15  / (!exitcond3)
-15 --> 
-	16  / true
-16 --> 
-	17  / true
-17 --> 
-	18  / true
-18 --> 
-	19  / true
-19 --> 
-	20  / true
-20 --> 
-	21  / true
-21 --> 
-	22  / true
-22 --> 
-	23  / true
-23 --> 
-	14  / true
-24 --> 
-	11  / (exitcond2)
-	25  / (!exitcond2)
-25 --> 
-	26  / true
-26 --> 
-	24  / (exitcond1)
-	27  / (!exitcond1)
-27 --> 
-	28  / true
-28 --> 
-	29  / true
-29 --> 
-	30  / true
-30 --> 
-	31  / true
-31 --> 
-	32  / true
-32 --> 
-	33  / true
-33 --> 
-	34  / true
-34 --> 
-	35  / true
-35 --> 
-	26  / true
-36 --> 
-	37  / (!exitcond)
-37 --> 
-	36  / true
+	3  / true
 * FSM state operations: 
 
  <State 1>: 1.57ns
-ST_1: stg_38 [1/1] 0.00ns
-:0  call void (...)* @_ssdm_op_SpecBitsMap([10000 x i32]* %row) nounwind, !map !99
+ST_1: stg_15 [1/1] 0.00ns
+:0  call void (...)* @_ssdm_op_SpecBitsMap([10000 x i32]* %row) nounwind, !map !32
 
-ST_1: stg_39 [1/1] 0.00ns
-:1  call void (...)* @_ssdm_op_SpecBitsMap([10000 x i32]* %col) nounwind, !map !105
+ST_1: stg_16 [1/1] 0.00ns
+:1  call void (...)* @_ssdm_op_SpecBitsMap([10000 x i32]* %col) nounwind, !map !38
 
-ST_1: stg_40 [1/1] 0.00ns
-:2  call void (...)* @_ssdm_op_SpecBitsMap([10000 x float]* %val_r) nounwind, !map !109
+ST_1: stg_17 [1/1] 0.00ns
+:2  call void (...)* @_ssdm_op_SpecBitsMap([10000 x float]* %val_r) nounwind, !map !42
 
-ST_1: stg_41 [1/1] 0.00ns
-:3  call void (...)* @_ssdm_op_SpecBitsMap([100 x float]* %vector) nounwind, !map !113
+ST_1: stg_18 [1/1] 0.00ns
+:3  call void (...)* @_ssdm_op_SpecBitsMap([100 x float]* %vector) nounwind, !map !46
 
-ST_1: stg_42 [1/1] 0.00ns
-:4  call void (...)* @_ssdm_op_SpecBitsMap([100 x float]* %output_r) nounwind, !map !119
+ST_1: stg_19 [1/1] 0.00ns
+:4  call void (...)* @_ssdm_op_SpecBitsMap([100 x float]* %output_r) nounwind, !map !52
 
-ST_1: stg_43 [1/1] 0.00ns
-:5  call void (...)* @_ssdm_op_SpecBitsMap(i32 %nnz) nounwind, !map !123
+ST_1: stg_20 [1/1] 0.00ns
+:5  call void (...)* @_ssdm_op_SpecBitsMap(i32 %nnz) nounwind, !map !56
 
-ST_1: stg_44 [1/1] 0.00ns
+ST_1: stg_21 [1/1] 0.00ns
 :6  call void (...)* @_ssdm_op_SpecTopModule([9 x i8]* @COO_SpMV_str) nounwind
 
 ST_1: nnz_read [1/1] 0.00ns
 :7  %nnz_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %nnz) nounwind
 
-ST_1: temp1_val_0 [1/1] 0.00ns
-:8  %temp1_val_0 = alloca [100 x float], align 4
-
-ST_1: temp1_val_1 [1/1] 0.00ns
-:9  %temp1_val_1 = alloca [100 x float], align 4
-
-ST_1: temp1_val_2 [1/1] 0.00ns
-:10  %temp1_val_2 = alloca [100 x float], align 4
-
-ST_1: temp1_val_3 [1/1] 0.00ns
-:11  %temp1_val_3 = alloca [100 x float], align 4
-
-ST_1: temp1_val_4 [1/1] 0.00ns
-:12  %temp1_val_4 = alloca [100 x float], align 4
-
-ST_1: temp1_val_5 [1/1] 0.00ns
-:13  %temp1_val_5 = alloca [100 x float], align 4
-
-ST_1: temp1_val_6 [1/1] 0.00ns
-:14  %temp1_val_6 = alloca [100 x float], align 4
-
-ST_1: temp1_val_7 [1/1] 0.00ns
-:15  %temp1_val_7 = alloca [100 x float], align 4
-
-ST_1: temp1_val_8 [1/1] 0.00ns
-:16  %temp1_val_8 = alloca [100 x float], align 4
-
-ST_1: temp1_val_9 [1/1] 0.00ns
-:17  %temp1_val_9 = alloca [100 x float], align 4
-
-ST_1: temp1_val_10 [1/1] 0.00ns
-:18  %temp1_val_10 = alloca [100 x float], align 4
-
-ST_1: temp1_val_11 [1/1] 0.00ns
-:19  %temp1_val_11 = alloca [100 x float], align 4
-
-ST_1: temp1_val_12 [1/1] 0.00ns
-:20  %temp1_val_12 = alloca [100 x float], align 4
-
-ST_1: temp1_val_13 [1/1] 0.00ns
-:21  %temp1_val_13 = alloca [100 x float], align 4
-
-ST_1: temp1_val_14 [1/1] 0.00ns
-:22  %temp1_val_14 = alloca [100 x float], align 4
-
-ST_1: temp1_val_15 [1/1] 0.00ns
-:23  %temp1_val_15 = alloca [100 x float], align 4
-
-ST_1: temp1_val_16 [1/1] 0.00ns
-:24  %temp1_val_16 = alloca [100 x float], align 4
-
-ST_1: temp1_val_17 [1/1] 0.00ns
-:25  %temp1_val_17 = alloca [100 x float], align 4
-
-ST_1: temp1_val_18 [1/1] 0.00ns
-:26  %temp1_val_18 = alloca [100 x float], align 4
-
-ST_1: temp1_val_19 [1/1] 0.00ns
-:27  %temp1_val_19 = alloca [100 x float], align 4
-
-ST_1: temp2_val_0 [1/1] 0.00ns
-:28  %temp2_val_0 = alloca [100 x float], align 4
-
-ST_1: temp2_val_1 [1/1] 0.00ns
-:29  %temp2_val_1 = alloca [100 x float], align 4
-
-ST_1: temp2_val_2 [1/1] 0.00ns
-:30  %temp2_val_2 = alloca [100 x float], align 4
-
-ST_1: temp2_val_3 [1/1] 0.00ns
-:31  %temp2_val_3 = alloca [100 x float], align 4
-
-ST_1: temp2_val_4 [1/1] 0.00ns
-:32  %temp2_val_4 = alloca [100 x float], align 4
-
-ST_1: temp2_val_5 [1/1] 0.00ns
-:33  %temp2_val_5 = alloca [100 x float], align 4
-
-ST_1: temp2_val_6 [1/1] 0.00ns
-:34  %temp2_val_6 = alloca [100 x float], align 4
-
-ST_1: temp2_val_7 [1/1] 0.00ns
-:35  %temp2_val_7 = alloca [100 x float], align 4
-
-ST_1: temp2_val_8 [1/1] 0.00ns
-:36  %temp2_val_8 = alloca [100 x float], align 4
-
-ST_1: temp2_val_9 [1/1] 0.00ns
-:37  %temp2_val_9 = alloca [100 x float], align 4
-
-ST_1: temp2_val_10 [1/1] 0.00ns
-:38  %temp2_val_10 = alloca [100 x float], align 4
-
-ST_1: temp2_val_11 [1/1] 0.00ns
-:39  %temp2_val_11 = alloca [100 x float], align 4
-
-ST_1: temp2_val_12 [1/1] 0.00ns
-:40  %temp2_val_12 = alloca [100 x float], align 4
-
-ST_1: temp2_val_13 [1/1] 0.00ns
-:41  %temp2_val_13 = alloca [100 x float], align 4
-
-ST_1: temp2_val_14 [1/1] 0.00ns
-:42  %temp2_val_14 = alloca [100 x float], align 4
-
-ST_1: temp2_val_15 [1/1] 0.00ns
-:43  %temp2_val_15 = alloca [100 x float], align 4
-
-ST_1: temp2_val_16 [1/1] 0.00ns
-:44  %temp2_val_16 = alloca [100 x float], align 4
-
-ST_1: temp2_val_17 [1/1] 0.00ns
-:45  %temp2_val_17 = alloca [100 x float], align 4
-
-ST_1: temp2_val_18 [1/1] 0.00ns
-:46  %temp2_val_18 = alloca [100 x float], align 4
-
-ST_1: temp2_val_19 [1/1] 0.00ns
-:47  %temp2_val_19 = alloca [100 x float], align 4
-
-ST_1: rbegin_i1 [1/1] 0.00ns
-:48  %rbegin_i1 = call i32 (...)* @_ssdm_op_SpecRegionBegin([56 x i8]* @hls_KD_KD_LineBuffer_MD_20_MC) nounwind
-
-ST_1: rend_i18 [1/1] 0.00ns
-:49  %rend_i18 = call i32 (...)* @_ssdm_op_SpecRegionEnd([56 x i8]* @hls_KD_KD_LineBuffer_MD_20_MC, i32 %rbegin_i1) nounwind
-
-ST_1: rbegin_i [1/1] 0.00ns
-:50  %rbegin_i = call i32 (...)* @_ssdm_op_SpecRegionBegin([56 x i8]* @hls_KD_KD_LineBuffer_MD_20_MC) nounwind
-
-ST_1: rend_i [1/1] 0.00ns
-:51  %rend_i = call i32 (...)* @_ssdm_op_SpecRegionEnd([56 x i8]* @hls_KD_KD_LineBuffer_MD_20_MC, i32 %rbegin_i) nounwind
-
-ST_1: stg_90 [1/1] 1.57ns
-:52  br label %.loopexit
+ST_1: stg_23 [1/1] 1.57ns
+:8  br label %1
 
 
  <State 2>: 3.54ns
-ST_2: col_assign [1/1] 0.00ns
-.loopexit:0  %col_assign = phi i7 [ 0, %0 ], [ %i_1, %2 ]
+ST_2: i [1/1] 0.00ns
+:0  %i = phi i7 [ 0, %0 ], [ %i_1, %2 ]
 
-ST_2: exitcond8 [1/1] 1.97ns
-.loopexit:1  %exitcond8 = icmp eq i7 %col_assign, -28
+ST_2: exitcond2 [1/1] 1.97ns
+:1  %exitcond2 = icmp eq i7 %i, -28
 
 ST_2: empty [1/1] 0.00ns
-.loopexit:2  %empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 100, i64 100, i64 100) nounwind
+:2  %empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 100, i64 100, i64 100) nounwind
 
 ST_2: i_1 [1/1] 1.72ns
-.loopexit:3  %i_1 = add i7 %col_assign, 1
+:3  %i_1 = add i7 %i, 1
 
-ST_2: stg_95 [1/1] 1.57ns
-.loopexit:4  br i1 %exitcond8, label %.preheader14, label %1
+ST_2: stg_28 [1/1] 1.57ns
+:4  br i1 %exitcond2, label %.preheader3, label %2
+
+ST_2: stg_29 [1/1] 0.00ns
+:0  call void (...)* @_ssdm_op_SpecLoopName([7 x i8]* @p_str) nounwind
 
 ST_2: tmp [1/1] 0.00ns
-:0  %tmp = zext i7 %col_assign to i64
+:1  %tmp = zext i7 %i to i64
 
 ST_2: output_addr [1/1] 0.00ns
-:1  %output_addr = getelementptr [100 x float]* %output_r, i64 0, i64 %tmp
+:2  %output_addr = getelementptr [100 x float]* %output_r, i64 0, i64 %tmp
 
-ST_2: stg_98 [1/1] 2.71ns
-:2  store float 0.000000e+00, float* %output_addr, align 4
+ST_2: stg_32 [1/1] 2.71ns
+:3  store float 0.000000e+00, float* %output_addr, align 4
 
-ST_2: temp1_val_18_addr_1 [1/1] 0.00ns
-:3  %temp1_val_18_addr_1 = getelementptr [100 x float]* %temp1_val_18, i64 0, i64 %tmp
-
-ST_2: temp1_val_19_addr_1 [1/1] 0.00ns
-:4  %temp1_val_19_addr_1 = getelementptr [100 x float]* %temp1_val_19, i64 0, i64 %tmp
-
-ST_2: temp1_val_17_addr_1 [1/1] 0.00ns
-:5  %temp1_val_17_addr_1 = getelementptr [100 x float]* %temp1_val_17, i64 0, i64 %tmp
-
-ST_2: temp1_val_16_addr_1 [1/1] 0.00ns
-:6  %temp1_val_16_addr_1 = getelementptr [100 x float]* %temp1_val_16, i64 0, i64 %tmp
-
-ST_2: temp1_val_15_addr_1 [1/1] 0.00ns
-:7  %temp1_val_15_addr_1 = getelementptr [100 x float]* %temp1_val_15, i64 0, i64 %tmp
-
-ST_2: temp1_val_14_addr_1 [1/1] 0.00ns
-:8  %temp1_val_14_addr_1 = getelementptr [100 x float]* %temp1_val_14, i64 0, i64 %tmp
-
-ST_2: temp1_val_13_addr_1 [1/1] 0.00ns
-:9  %temp1_val_13_addr_1 = getelementptr [100 x float]* %temp1_val_13, i64 0, i64 %tmp
-
-ST_2: temp1_val_12_addr_1 [1/1] 0.00ns
-:10  %temp1_val_12_addr_1 = getelementptr [100 x float]* %temp1_val_12, i64 0, i64 %tmp
-
-ST_2: temp1_val_11_addr_1 [1/1] 0.00ns
-:11  %temp1_val_11_addr_1 = getelementptr [100 x float]* %temp1_val_11, i64 0, i64 %tmp
-
-ST_2: temp1_val_10_addr_1 [1/1] 0.00ns
-:12  %temp1_val_10_addr_1 = getelementptr [100 x float]* %temp1_val_10, i64 0, i64 %tmp
-
-ST_2: temp1_val_9_addr_1 [1/1] 0.00ns
-:13  %temp1_val_9_addr_1 = getelementptr [100 x float]* %temp1_val_9, i64 0, i64 %tmp
-
-ST_2: temp1_val_8_addr_1 [1/1] 0.00ns
-:14  %temp1_val_8_addr_1 = getelementptr [100 x float]* %temp1_val_8, i64 0, i64 %tmp
-
-ST_2: temp1_val_7_addr_1 [1/1] 0.00ns
-:15  %temp1_val_7_addr_1 = getelementptr [100 x float]* %temp1_val_7, i64 0, i64 %tmp
-
-ST_2: temp1_val_6_addr_1 [1/1] 0.00ns
-:16  %temp1_val_6_addr_1 = getelementptr [100 x float]* %temp1_val_6, i64 0, i64 %tmp
-
-ST_2: temp1_val_5_addr_1 [1/1] 0.00ns
-:17  %temp1_val_5_addr_1 = getelementptr [100 x float]* %temp1_val_5, i64 0, i64 %tmp
-
-ST_2: temp1_val_4_addr_1 [1/1] 0.00ns
-:18  %temp1_val_4_addr_1 = getelementptr [100 x float]* %temp1_val_4, i64 0, i64 %tmp
-
-ST_2: temp1_val_3_addr_1 [1/1] 0.00ns
-:19  %temp1_val_3_addr_1 = getelementptr [100 x float]* %temp1_val_3, i64 0, i64 %tmp
-
-ST_2: temp1_val_2_addr_1 [1/1] 0.00ns
-:20  %temp1_val_2_addr_1 = getelementptr [100 x float]* %temp1_val_2, i64 0, i64 %tmp
-
-ST_2: temp1_val_1_addr_1 [1/1] 0.00ns
-:21  %temp1_val_1_addr_1 = getelementptr [100 x float]* %temp1_val_1, i64 0, i64 %tmp
-
-ST_2: temp1_val_0_addr_1 [1/1] 0.00ns
-:22  %temp1_val_0_addr_1 = getelementptr [100 x float]* %temp1_val_0, i64 0, i64 %tmp
-
-ST_2: temp2_val_18_addr [1/1] 0.00ns
-:23  %temp2_val_18_addr = getelementptr [100 x float]* %temp2_val_18, i64 0, i64 %tmp
-
-ST_2: temp2_val_19_addr [1/1] 0.00ns
-:24  %temp2_val_19_addr = getelementptr [100 x float]* %temp2_val_19, i64 0, i64 %tmp
-
-ST_2: temp2_val_17_addr [1/1] 0.00ns
-:25  %temp2_val_17_addr = getelementptr [100 x float]* %temp2_val_17, i64 0, i64 %tmp
-
-ST_2: temp2_val_16_addr [1/1] 0.00ns
-:26  %temp2_val_16_addr = getelementptr [100 x float]* %temp2_val_16, i64 0, i64 %tmp
-
-ST_2: temp2_val_15_addr [1/1] 0.00ns
-:27  %temp2_val_15_addr = getelementptr [100 x float]* %temp2_val_15, i64 0, i64 %tmp
-
-ST_2: temp2_val_14_addr [1/1] 0.00ns
-:28  %temp2_val_14_addr = getelementptr [100 x float]* %temp2_val_14, i64 0, i64 %tmp
-
-ST_2: temp2_val_13_addr [1/1] 0.00ns
-:29  %temp2_val_13_addr = getelementptr [100 x float]* %temp2_val_13, i64 0, i64 %tmp
-
-ST_2: temp2_val_12_addr [1/1] 0.00ns
-:30  %temp2_val_12_addr = getelementptr [100 x float]* %temp2_val_12, i64 0, i64 %tmp
-
-ST_2: temp2_val_11_addr [1/1] 0.00ns
-:31  %temp2_val_11_addr = getelementptr [100 x float]* %temp2_val_11, i64 0, i64 %tmp
-
-ST_2: temp2_val_10_addr [1/1] 0.00ns
-:32  %temp2_val_10_addr = getelementptr [100 x float]* %temp2_val_10, i64 0, i64 %tmp
-
-ST_2: temp2_val_9_addr [1/1] 0.00ns
-:33  %temp2_val_9_addr = getelementptr [100 x float]* %temp2_val_9, i64 0, i64 %tmp
-
-ST_2: temp2_val_8_addr [1/1] 0.00ns
-:34  %temp2_val_8_addr = getelementptr [100 x float]* %temp2_val_8, i64 0, i64 %tmp
-
-ST_2: temp2_val_7_addr [1/1] 0.00ns
-:35  %temp2_val_7_addr = getelementptr [100 x float]* %temp2_val_7, i64 0, i64 %tmp
-
-ST_2: temp2_val_6_addr [1/1] 0.00ns
-:36  %temp2_val_6_addr = getelementptr [100 x float]* %temp2_val_6, i64 0, i64 %tmp
-
-ST_2: temp2_val_5_addr [1/1] 0.00ns
-:37  %temp2_val_5_addr = getelementptr [100 x float]* %temp2_val_5, i64 0, i64 %tmp
-
-ST_2: temp2_val_4_addr [1/1] 0.00ns
-:38  %temp2_val_4_addr = getelementptr [100 x float]* %temp2_val_4, i64 0, i64 %tmp
-
-ST_2: temp2_val_3_addr [1/1] 0.00ns
-:39  %temp2_val_3_addr = getelementptr [100 x float]* %temp2_val_3, i64 0, i64 %tmp
-
-ST_2: temp2_val_2_addr [1/1] 0.00ns
-:40  %temp2_val_2_addr = getelementptr [100 x float]* %temp2_val_2, i64 0, i64 %tmp
-
-ST_2: temp2_val_1_addr [1/1] 0.00ns
-:41  %temp2_val_1_addr = getelementptr [100 x float]* %temp2_val_1, i64 0, i64 %tmp
-
-ST_2: temp2_val_0_addr [1/1] 0.00ns
-:42  %temp2_val_0_addr = getelementptr [100 x float]* %temp2_val_0, i64 0, i64 %tmp
-
-ST_2: stg_139 [1/1] 1.57ns
-:43  br label %2
+ST_2: stg_33 [1/1] 0.00ns
+:4  br label %1
 
 
  <State 3>: 2.71ns
-ST_3: j [1/1] 0.00ns
-:0  %j = phi i5 [ 0, %1 ], [ %j_1, %.preheader.i45.0 ]
+ST_3: i1 [1/1] 0.00ns
+.preheader3:0  %i1 = phi i14 [ %i_2, %._crit_edge ], [ 0, %1 ]
 
-ST_3: exitcond7 [1/1] 1.91ns
-:1  %exitcond7 = icmp eq i5 %j, -12
+ST_3: i1_cast1 [1/1] 0.00ns
+.preheader3:1  %i1_cast1 = zext i14 %i1 to i32
 
-ST_3: empty_6 [1/1] 0.00ns
-:2  %empty_6 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 20, i64 20, i64 20) nounwind
+ST_3: exitcond1 [1/1] 2.21ns
+.preheader3:2  %exitcond1 = icmp eq i14 %i1, -6384
 
-ST_3: j_1 [1/1] 1.72ns
-:3  %j_1 = add i5 %j, 1
+ST_3: empty_2 [1/1] 0.00ns
+.preheader3:3  %empty_2 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 10000, i64 10000, i64 10000) nounwind
 
-ST_3: stg_144 [1/1] 0.00ns
-:4  br i1 %exitcond7, label %.loopexit, label %.preheader.i45.0
+ST_3: i_2 [1/1] 1.96ns
+.preheader3:4  %i_2 = add i14 %i1, 1
 
-ST_3: temp1_val_18_load_1 [2/2] 2.71ns
-.preheader.i45.0:0  %temp1_val_18_load_1 = load float* %temp1_val_18_addr_1, align 4
+ST_3: stg_39 [1/1] 0.00ns
+.preheader3:5  br i1 %exitcond1, label %.preheader.preheader, label %3
 
-ST_3: temp1_val_17_load_1 [2/2] 2.71ns
-.preheader.i45.0:2  %temp1_val_17_load_1 = load float* %temp1_val_17_addr_1, align 4
+ST_3: stg_40 [1/1] 0.00ns
+:0  call void (...)* @_ssdm_op_SpecLoopName([7 x i8]* @p_str1) nounwind
 
-ST_3: temp1_val_16_load_1 [2/2] 2.71ns
-.preheader.i45.0:4  %temp1_val_16_load_1 = load float* %temp1_val_16_addr_1, align 4
+ST_3: tmp_2 [1/1] 2.52ns
+:1  %tmp_2 = icmp slt i32 %i1_cast1, %nnz_read
 
-ST_3: temp1_val_15_load_1 [2/2] 2.71ns
-.preheader.i45.0:6  %temp1_val_15_load_1 = load float* %temp1_val_15_addr_1, align 4
+ST_3: stg_42 [1/1] 0.00ns
+:2  br i1 %tmp_2, label %4, label %._crit_edge
 
-ST_3: temp1_val_14_load_1 [2/2] 2.71ns
-.preheader.i45.0:8  %temp1_val_14_load_1 = load float* %temp1_val_14_addr_1, align 4
+ST_3: tmp_3 [1/1] 0.00ns
+:0  %tmp_3 = zext i14 %i1 to i64
 
-ST_3: temp1_val_13_load_1 [2/2] 2.71ns
-.preheader.i45.0:10  %temp1_val_13_load_1 = load float* %temp1_val_13_addr_1, align 4
+ST_3: val_addr [1/1] 0.00ns
+:1  %val_addr = getelementptr [10000 x float]* %val_r, i64 0, i64 %tmp_3
 
-ST_3: temp1_val_12_load_1 [2/2] 2.71ns
-.preheader.i45.0:12  %temp1_val_12_load_1 = load float* %temp1_val_12_addr_1, align 4
+ST_3: val_load [2/2] 2.71ns
+:2  %val_load = load float* %val_addr, align 4
 
-ST_3: temp1_val_11_load_1 [2/2] 2.71ns
-.preheader.i45.0:14  %temp1_val_11_load_1 = load float* %temp1_val_11_addr_1, align 4
+ST_3: col_addr [1/1] 0.00ns
+:3  %col_addr = getelementptr [10000 x i32]* %col, i64 0, i64 %tmp_3
 
-ST_3: temp1_val_10_load_1 [2/2] 2.71ns
-.preheader.i45.0:16  %temp1_val_10_load_1 = load float* %temp1_val_10_addr_1, align 4
+ST_3: col_load [2/2] 2.71ns
+:4  %col_load = load i32* %col_addr, align 4
 
-ST_3: temp1_val_9_load_1 [2/2] 2.71ns
-.preheader.i45.0:18  %temp1_val_9_load_1 = load float* %temp1_val_9_addr_1, align 4
+ST_3: row_addr [1/1] 0.00ns
+:9  %row_addr = getelementptr [10000 x i32]* %row, i64 0, i64 %tmp_3
 
-ST_3: temp1_val_8_load_1 [2/2] 2.71ns
-.preheader.i45.0:20  %temp1_val_8_load_1 = load float* %temp1_val_8_addr_1, align 4
+ST_3: row_load [2/2] 2.71ns
+:10  %row_load = load i32* %row_addr, align 4
 
-ST_3: temp1_val_7_load_1 [2/2] 2.71ns
-.preheader.i45.0:22  %temp1_val_7_load_1 = load float* %temp1_val_7_addr_1, align 4
-
-ST_3: temp1_val_6_load_1 [2/2] 2.71ns
-.preheader.i45.0:24  %temp1_val_6_load_1 = load float* %temp1_val_6_addr_1, align 4
-
-ST_3: temp1_val_5_load_1 [2/2] 2.71ns
-.preheader.i45.0:26  %temp1_val_5_load_1 = load float* %temp1_val_5_addr_1, align 4
-
-ST_3: temp1_val_4_load_1 [2/2] 2.71ns
-.preheader.i45.0:28  %temp1_val_4_load_1 = load float* %temp1_val_4_addr_1, align 4
-
-ST_3: temp1_val_3_load_1 [2/2] 2.71ns
-.preheader.i45.0:30  %temp1_val_3_load_1 = load float* %temp1_val_3_addr_1, align 4
-
-ST_3: temp1_val_2_load_1 [2/2] 2.71ns
-.preheader.i45.0:32  %temp1_val_2_load_1 = load float* %temp1_val_2_addr_1, align 4
-
-ST_3: temp1_val_1_load_1 [2/2] 2.71ns
-.preheader.i45.0:34  %temp1_val_1_load_1 = load float* %temp1_val_1_addr_1, align 4
-
-ST_3: temp1_val_0_load_1 [2/2] 2.71ns
-.preheader.i45.0:36  %temp1_val_0_load_1 = load float* %temp1_val_0_addr_1, align 4
-
-ST_3: temp2_val_18_load [2/2] 2.71ns
-.preheader.i45.0:39  %temp2_val_18_load = load float* %temp2_val_18_addr, align 4
-
-ST_3: temp2_val_17_load [2/2] 2.71ns
-.preheader.i45.0:41  %temp2_val_17_load = load float* %temp2_val_17_addr, align 4
-
-ST_3: temp2_val_16_load [2/2] 2.71ns
-.preheader.i45.0:43  %temp2_val_16_load = load float* %temp2_val_16_addr, align 4
-
-ST_3: temp2_val_15_load [2/2] 2.71ns
-.preheader.i45.0:45  %temp2_val_15_load = load float* %temp2_val_15_addr, align 4
-
-ST_3: temp2_val_14_load [2/2] 2.71ns
-.preheader.i45.0:47  %temp2_val_14_load = load float* %temp2_val_14_addr, align 4
-
-ST_3: temp2_val_13_load [2/2] 2.71ns
-.preheader.i45.0:49  %temp2_val_13_load = load float* %temp2_val_13_addr, align 4
-
-ST_3: temp2_val_12_load [2/2] 2.71ns
-.preheader.i45.0:51  %temp2_val_12_load = load float* %temp2_val_12_addr, align 4
-
-ST_3: temp2_val_11_load [2/2] 2.71ns
-.preheader.i45.0:53  %temp2_val_11_load = load float* %temp2_val_11_addr, align 4
-
-ST_3: temp2_val_10_load [2/2] 2.71ns
-.preheader.i45.0:55  %temp2_val_10_load = load float* %temp2_val_10_addr, align 4
-
-ST_3: temp2_val_9_load [2/2] 2.71ns
-.preheader.i45.0:57  %temp2_val_9_load = load float* %temp2_val_9_addr, align 4
-
-ST_3: temp2_val_8_load [2/2] 2.71ns
-.preheader.i45.0:59  %temp2_val_8_load = load float* %temp2_val_8_addr, align 4
-
-ST_3: temp2_val_7_load [2/2] 2.71ns
-.preheader.i45.0:61  %temp2_val_7_load = load float* %temp2_val_7_addr, align 4
-
-ST_3: temp2_val_6_load [2/2] 2.71ns
-.preheader.i45.0:63  %temp2_val_6_load = load float* %temp2_val_6_addr, align 4
-
-ST_3: temp2_val_5_load [2/2] 2.71ns
-.preheader.i45.0:65  %temp2_val_5_load = load float* %temp2_val_5_addr, align 4
-
-ST_3: temp2_val_4_load [2/2] 2.71ns
-.preheader.i45.0:67  %temp2_val_4_load = load float* %temp2_val_4_addr, align 4
-
-ST_3: temp2_val_3_load [2/2] 2.71ns
-.preheader.i45.0:69  %temp2_val_3_load = load float* %temp2_val_3_addr, align 4
-
-ST_3: temp2_val_2_load [2/2] 2.71ns
-.preheader.i45.0:71  %temp2_val_2_load = load float* %temp2_val_2_addr, align 4
-
-ST_3: temp2_val_1_load [2/2] 2.71ns
-.preheader.i45.0:73  %temp2_val_1_load = load float* %temp2_val_1_addr, align 4
-
-ST_3: temp2_val_0_load [2/2] 2.71ns
-.preheader.i45.0:75  %temp2_val_0_load = load float* %temp2_val_0_addr, align 4
+ST_3: stg_50 [1/1] 0.00ns
+.preheader.preheader:0  ret void
 
 
  <State 4>: 5.42ns
-ST_4: temp1_val_18_load_1 [1/2] 2.71ns
-.preheader.i45.0:0  %temp1_val_18_load_1 = load float* %temp1_val_18_addr_1, align 4
+ST_4: val_load [1/2] 2.71ns
+:2  %val_load = load float* %val_addr, align 4
 
-ST_4: stg_184 [1/1] 2.71ns
-.preheader.i45.0:1  store float %temp1_val_18_load_1, float* %temp1_val_19_addr_1, align 4
+ST_4: col_load [1/2] 2.71ns
+:4  %col_load = load i32* %col_addr, align 4
 
-ST_4: temp1_val_17_load_1 [1/2] 2.71ns
-.preheader.i45.0:2  %temp1_val_17_load_1 = load float* %temp1_val_17_addr_1, align 4
+ST_4: tmp_4 [1/1] 0.00ns
+:5  %tmp_4 = sext i32 %col_load to i64
 
-ST_4: stg_186 [1/1] 2.71ns
-.preheader.i45.0:3  store float %temp1_val_17_load_1, float* %temp1_val_18_addr_1, align 4
+ST_4: vector_addr [1/1] 0.00ns
+:6  %vector_addr = getelementptr [100 x float]* %vector, i64 0, i64 %tmp_4
 
-ST_4: temp1_val_16_load_1 [1/2] 2.71ns
-.preheader.i45.0:4  %temp1_val_16_load_1 = load float* %temp1_val_16_addr_1, align 4
+ST_4: vector_load [2/2] 2.71ns
+:7  %vector_load = load float* %vector_addr, align 4
 
-ST_4: stg_188 [1/1] 2.71ns
-.preheader.i45.0:5  store float %temp1_val_16_load_1, float* %temp1_val_17_addr_1, align 4
+ST_4: row_load [1/2] 2.71ns
+:10  %row_load = load i32* %row_addr, align 4
 
-ST_4: temp1_val_15_load_1 [1/2] 2.71ns
-.preheader.i45.0:6  %temp1_val_15_load_1 = load float* %temp1_val_15_addr_1, align 4
+ST_4: tmp_6 [1/1] 0.00ns
+:11  %tmp_6 = sext i32 %row_load to i64
 
-ST_4: stg_190 [1/1] 2.71ns
-.preheader.i45.0:7  store float %temp1_val_15_load_1, float* %temp1_val_16_addr_1, align 4
+ST_4: output_addr_1 [1/1] 0.00ns
+:12  %output_addr_1 = getelementptr [100 x float]* %output_r, i64 0, i64 %tmp_6
 
-ST_4: temp1_val_14_load_1 [1/2] 2.71ns
-.preheader.i45.0:8  %temp1_val_14_load_1 = load float* %temp1_val_14_addr_1, align 4
 
-ST_4: stg_192 [1/1] 2.71ns
-.preheader.i45.0:9  store float %temp1_val_14_load_1, float* %temp1_val_15_addr_1, align 4
+ <State 5>: 8.41ns
+ST_5: vector_load [1/2] 2.71ns
+:7  %vector_load = load float* %vector_addr, align 4
 
-ST_4: temp1_val_13_load_1 [1/2] 2.71ns
-.preheader.i45.0:10  %temp1_val_13_load_1 = load float* %temp1_val_13_addr_1, align 4
+ST_5: tmp_5 [4/4] 5.70ns
+:8  %tmp_5 = fmul float %val_load, %vector_load
 
-ST_4: stg_194 [1/1] 2.71ns
-.preheader.i45.0:11  store float %temp1_val_13_load_1, float* %temp1_val_14_addr_1, align 4
 
-ST_4: temp1_val_12_load_1 [1/2] 2.71ns
-.preheader.i45.0:12  %temp1_val_12_load_1 = load float* %temp1_val_12_addr_1, align 4
+ <State 6>: 5.70ns
+ST_6: tmp_5 [3/4] 5.70ns
+:8  %tmp_5 = fmul float %val_load, %vector_load
 
-ST_4: stg_196 [1/1] 2.71ns
-.preheader.i45.0:13  store float %temp1_val_12_load_1, float* %temp1_val_13_addr_1, align 4
 
-ST_4: temp1_val_11_load_1 [1/2] 2.71ns
-.preheader.i45.0:14  %temp1_val_11_load_1 = load float* %temp1_val_11_addr_1, align 4
+ <State 7>: 5.70ns
+ST_7: tmp_5 [2/4] 5.70ns
+:8  %tmp_5 = fmul float %val_load, %vector_load
 
-ST_4: stg_198 [1/1] 2.71ns
-.preheader.i45.0:15  store float %temp1_val_11_load_1, float* %temp1_val_12_addr_1, align 4
-
-ST_4: temp1_val_10_load_1 [1/2] 2.71ns
-.preheader.i45.0:16  %temp1_val_10_load_1 = load float* %temp1_val_10_addr_1, align 4
-
-ST_4: stg_200 [1/1] 2.71ns
-.preheader.i45.0:17  store float %temp1_val_10_load_1, float* %temp1_val_11_addr_1, align 4
-
-ST_4: temp1_val_9_load_1 [1/2] 2.71ns
-.preheader.i45.0:18  %temp1_val_9_load_1 = load float* %temp1_val_9_addr_1, align 4
-
-ST_4: stg_202 [1/1] 2.71ns
-.preheader.i45.0:19  store float %temp1_val_9_load_1, float* %temp1_val_10_addr_1, align 4
-
-ST_4: temp1_val_8_load_1 [1/2] 2.71ns
-.preheader.i45.0:20  %temp1_val_8_load_1 = load float* %temp1_val_8_addr_1, align 4
-
-ST_4: stg_204 [1/1] 2.71ns
-.preheader.i45.0:21  store float %temp1_val_8_load_1, float* %temp1_val_9_addr_1, align 4
-
-ST_4: temp1_val_7_load_1 [1/2] 2.71ns
-.preheader.i45.0:22  %temp1_val_7_load_1 = load float* %temp1_val_7_addr_1, align 4
-
-ST_4: stg_206 [1/1] 2.71ns
-.preheader.i45.0:23  store float %temp1_val_7_load_1, float* %temp1_val_8_addr_1, align 4
-
-ST_4: temp1_val_6_load_1 [1/2] 2.71ns
-.preheader.i45.0:24  %temp1_val_6_load_1 = load float* %temp1_val_6_addr_1, align 4
-
-ST_4: stg_208 [1/1] 2.71ns
-.preheader.i45.0:25  store float %temp1_val_6_load_1, float* %temp1_val_7_addr_1, align 4
-
-ST_4: temp1_val_5_load_1 [1/2] 2.71ns
-.preheader.i45.0:26  %temp1_val_5_load_1 = load float* %temp1_val_5_addr_1, align 4
-
-ST_4: stg_210 [1/1] 2.71ns
-.preheader.i45.0:27  store float %temp1_val_5_load_1, float* %temp1_val_6_addr_1, align 4
-
-ST_4: temp1_val_4_load_1 [1/2] 2.71ns
-.preheader.i45.0:28  %temp1_val_4_load_1 = load float* %temp1_val_4_addr_1, align 4
-
-ST_4: stg_212 [1/1] 2.71ns
-.preheader.i45.0:29  store float %temp1_val_4_load_1, float* %temp1_val_5_addr_1, align 4
-
-ST_4: temp1_val_3_load_1 [1/2] 2.71ns
-.preheader.i45.0:30  %temp1_val_3_load_1 = load float* %temp1_val_3_addr_1, align 4
-
-ST_4: stg_214 [1/1] 2.71ns
-.preheader.i45.0:31  store float %temp1_val_3_load_1, float* %temp1_val_4_addr_1, align 4
-
-ST_4: temp1_val_2_load_1 [1/2] 2.71ns
-.preheader.i45.0:32  %temp1_val_2_load_1 = load float* %temp1_val_2_addr_1, align 4
-
-ST_4: stg_216 [1/1] 2.71ns
-.preheader.i45.0:33  store float %temp1_val_2_load_1, float* %temp1_val_3_addr_1, align 4
-
-ST_4: temp1_val_1_load_1 [1/2] 2.71ns
-.preheader.i45.0:34  %temp1_val_1_load_1 = load float* %temp1_val_1_addr_1, align 4
-
-ST_4: stg_218 [1/1] 2.71ns
-.preheader.i45.0:35  store float %temp1_val_1_load_1, float* %temp1_val_2_addr_1, align 4
-
-ST_4: temp1_val_0_load_1 [1/2] 2.71ns
-.preheader.i45.0:36  %temp1_val_0_load_1 = load float* %temp1_val_0_addr_1, align 4
-
-ST_4: stg_220 [1/1] 2.71ns
-.preheader.i45.0:37  store float %temp1_val_0_load_1, float* %temp1_val_1_addr_1, align 4
-
-ST_4: stg_221 [1/1] 2.71ns
-.preheader.i45.0:38  store float 0.000000e+00, float* %temp1_val_0_addr_1, align 4
-
-ST_4: temp2_val_18_load [1/2] 2.71ns
-.preheader.i45.0:39  %temp2_val_18_load = load float* %temp2_val_18_addr, align 4
-
-ST_4: stg_223 [1/1] 2.71ns
-.preheader.i45.0:40  store float %temp2_val_18_load, float* %temp2_val_19_addr, align 4
-
-ST_4: temp2_val_17_load [1/2] 2.71ns
-.preheader.i45.0:41  %temp2_val_17_load = load float* %temp2_val_17_addr, align 4
-
-ST_4: stg_225 [1/1] 2.71ns
-.preheader.i45.0:42  store float %temp2_val_17_load, float* %temp2_val_18_addr, align 4
-
-ST_4: temp2_val_16_load [1/2] 2.71ns
-.preheader.i45.0:43  %temp2_val_16_load = load float* %temp2_val_16_addr, align 4
-
-ST_4: stg_227 [1/1] 2.71ns
-.preheader.i45.0:44  store float %temp2_val_16_load, float* %temp2_val_17_addr, align 4
-
-ST_4: temp2_val_15_load [1/2] 2.71ns
-.preheader.i45.0:45  %temp2_val_15_load = load float* %temp2_val_15_addr, align 4
-
-ST_4: stg_229 [1/1] 2.71ns
-.preheader.i45.0:46  store float %temp2_val_15_load, float* %temp2_val_16_addr, align 4
-
-ST_4: temp2_val_14_load [1/2] 2.71ns
-.preheader.i45.0:47  %temp2_val_14_load = load float* %temp2_val_14_addr, align 4
-
-ST_4: stg_231 [1/1] 2.71ns
-.preheader.i45.0:48  store float %temp2_val_14_load, float* %temp2_val_15_addr, align 4
-
-ST_4: temp2_val_13_load [1/2] 2.71ns
-.preheader.i45.0:49  %temp2_val_13_load = load float* %temp2_val_13_addr, align 4
-
-ST_4: stg_233 [1/1] 2.71ns
-.preheader.i45.0:50  store float %temp2_val_13_load, float* %temp2_val_14_addr, align 4
-
-ST_4: temp2_val_12_load [1/2] 2.71ns
-.preheader.i45.0:51  %temp2_val_12_load = load float* %temp2_val_12_addr, align 4
-
-ST_4: stg_235 [1/1] 2.71ns
-.preheader.i45.0:52  store float %temp2_val_12_load, float* %temp2_val_13_addr, align 4
-
-ST_4: temp2_val_11_load [1/2] 2.71ns
-.preheader.i45.0:53  %temp2_val_11_load = load float* %temp2_val_11_addr, align 4
-
-ST_4: stg_237 [1/1] 2.71ns
-.preheader.i45.0:54  store float %temp2_val_11_load, float* %temp2_val_12_addr, align 4
-
-ST_4: temp2_val_10_load [1/2] 2.71ns
-.preheader.i45.0:55  %temp2_val_10_load = load float* %temp2_val_10_addr, align 4
-
-ST_4: stg_239 [1/1] 2.71ns
-.preheader.i45.0:56  store float %temp2_val_10_load, float* %temp2_val_11_addr, align 4
-
-ST_4: temp2_val_9_load [1/2] 2.71ns
-.preheader.i45.0:57  %temp2_val_9_load = load float* %temp2_val_9_addr, align 4
-
-ST_4: stg_241 [1/1] 2.71ns
-.preheader.i45.0:58  store float %temp2_val_9_load, float* %temp2_val_10_addr, align 4
-
-ST_4: temp2_val_8_load [1/2] 2.71ns
-.preheader.i45.0:59  %temp2_val_8_load = load float* %temp2_val_8_addr, align 4
-
-ST_4: stg_243 [1/1] 2.71ns
-.preheader.i45.0:60  store float %temp2_val_8_load, float* %temp2_val_9_addr, align 4
-
-ST_4: temp2_val_7_load [1/2] 2.71ns
-.preheader.i45.0:61  %temp2_val_7_load = load float* %temp2_val_7_addr, align 4
-
-ST_4: stg_245 [1/1] 2.71ns
-.preheader.i45.0:62  store float %temp2_val_7_load, float* %temp2_val_8_addr, align 4
-
-ST_4: temp2_val_6_load [1/2] 2.71ns
-.preheader.i45.0:63  %temp2_val_6_load = load float* %temp2_val_6_addr, align 4
-
-ST_4: stg_247 [1/1] 2.71ns
-.preheader.i45.0:64  store float %temp2_val_6_load, float* %temp2_val_7_addr, align 4
-
-ST_4: temp2_val_5_load [1/2] 2.71ns
-.preheader.i45.0:65  %temp2_val_5_load = load float* %temp2_val_5_addr, align 4
-
-ST_4: stg_249 [1/1] 2.71ns
-.preheader.i45.0:66  store float %temp2_val_5_load, float* %temp2_val_6_addr, align 4
-
-ST_4: temp2_val_4_load [1/2] 2.71ns
-.preheader.i45.0:67  %temp2_val_4_load = load float* %temp2_val_4_addr, align 4
-
-ST_4: stg_251 [1/1] 2.71ns
-.preheader.i45.0:68  store float %temp2_val_4_load, float* %temp2_val_5_addr, align 4
-
-ST_4: temp2_val_3_load [1/2] 2.71ns
-.preheader.i45.0:69  %temp2_val_3_load = load float* %temp2_val_3_addr, align 4
-
-ST_4: stg_253 [1/1] 2.71ns
-.preheader.i45.0:70  store float %temp2_val_3_load, float* %temp2_val_4_addr, align 4
-
-ST_4: temp2_val_2_load [1/2] 2.71ns
-.preheader.i45.0:71  %temp2_val_2_load = load float* %temp2_val_2_addr, align 4
-
-ST_4: stg_255 [1/1] 2.71ns
-.preheader.i45.0:72  store float %temp2_val_2_load, float* %temp2_val_3_addr, align 4
-
-ST_4: temp2_val_1_load [1/2] 2.71ns
-.preheader.i45.0:73  %temp2_val_1_load = load float* %temp2_val_1_addr, align 4
-
-ST_4: stg_257 [1/1] 2.71ns
-.preheader.i45.0:74  store float %temp2_val_1_load, float* %temp2_val_2_addr, align 4
-
-ST_4: temp2_val_0_load [1/2] 2.71ns
-.preheader.i45.0:75  %temp2_val_0_load = load float* %temp2_val_0_addr, align 4
-
-ST_4: stg_259 [1/1] 2.71ns
-.preheader.i45.0:76  store float %temp2_val_0_load, float* %temp2_val_1_addr, align 4
-
-ST_4: stg_260 [1/1] 2.71ns
-.preheader.i45.0:77  store float 0.000000e+00, float* %temp2_val_0_addr, align 4
-
-ST_4: stg_261 [1/1] 0.00ns
-.preheader.i45.0:78  br label %2
-
-
- <State 5>: 3.78ns
-ST_5: i1 [1/1] 0.00ns
-.preheader14:0  %i1 = phi i14 [ %i_2, %._crit_edge ], [ 0, %.loopexit ]
-
-ST_5: i1_cast4 [1/1] 0.00ns
-.preheader14:1  %i1_cast4 = zext i14 %i1 to i32
-
-ST_5: exitcond6 [1/1] 2.21ns
-.preheader14:2  %exitcond6 = icmp eq i14 %i1, -6384
-
-ST_5: empty_7 [1/1] 0.00ns
-.preheader14:3  %empty_7 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 10000, i64 10000, i64 10000) nounwind
-
-ST_5: i_2 [1/1] 1.96ns
-.preheader14:4  %i_2 = add i14 %i1, 1
-
-ST_5: stg_267 [1/1] 1.57ns
-.preheader14:5  br i1 %exitcond6, label %.preheader13, label %3
-
-ST_5: tmp_1 [1/1] 2.52ns
-:0  %tmp_1 = icmp slt i32 %i1_cast4, %nnz_read
-
-ST_5: stg_269 [1/1] 0.00ns
-:1  br i1 %tmp_1, label %.preheader.preheader.i29, label %._crit_edge
-
-ST_5: tmp_5 [1/1] 0.00ns
-.preheader.preheader.i29:0  %tmp_5 = zext i14 %i1 to i64
-
-ST_5: row_addr [1/1] 0.00ns
-.preheader.preheader.i29:1  %row_addr = getelementptr [10000 x i32]* %row, i64 0, i64 %tmp_5
-
-ST_5: row_load [2/2] 2.71ns
-.preheader.preheader.i29:2  %row_load = load i32* %row_addr, align 4
-
-ST_5: val_addr [1/1] 0.00ns
-.preheader.preheader.i29:62  %val_addr = getelementptr [10000 x float]* %val_r, i64 0, i64 %tmp_5
-
-ST_5: val_load [2/2] 2.71ns
-.preheader.preheader.i29:63  %val_load = load float* %val_addr, align 4
-
-ST_5: col_addr [1/1] 0.00ns
-.preheader.preheader.i29:64  %col_addr = getelementptr [10000 x i32]* %col, i64 0, i64 %tmp_5
-
-ST_5: col_load [2/2] 2.71ns
-.preheader.preheader.i29:65  %col_load = load i32* %col_addr, align 4
-
-
- <State 6>: 5.42ns
-ST_6: row_load [1/2] 2.71ns
-.preheader.preheader.i29:2  %row_load = load i32* %row_addr, align 4
-
-ST_6: tmp_8 [1/1] 0.00ns
-.preheader.preheader.i29:3  %tmp_8 = zext i32 %row_load to i64
-
-ST_6: temp1_val_18_addr [1/1] 0.00ns
-.preheader.preheader.i29:4  %temp1_val_18_addr = getelementptr [100 x float]* %temp1_val_18, i64 0, i64 %tmp_8
-
-ST_6: temp1_val_18_load [2/2] 2.71ns
-.preheader.preheader.i29:5  %temp1_val_18_load = load float* %temp1_val_18_addr, align 4
-
-ST_6: val_load [1/2] 2.71ns
-.preheader.preheader.i29:63  %val_load = load float* %val_addr, align 4
-
-ST_6: col_load [1/2] 2.71ns
-.preheader.preheader.i29:65  %col_load = load i32* %col_addr, align 4
-
-ST_6: tmp_s [1/1] 0.00ns
-.preheader.preheader.i29:66  %tmp_s = sext i32 %col_load to i64
-
-ST_6: vector_addr [1/1] 0.00ns
-.preheader.preheader.i29:67  %vector_addr = getelementptr [100 x float]* %vector, i64 0, i64 %tmp_s
-
-ST_6: vector_load [2/2] 2.71ns
-.preheader.preheader.i29:68  %vector_load = load float* %vector_addr, align 4
-
-
- <State 7>: 8.41ns
-ST_7: temp1_val_18_load [1/2] 2.71ns
-.preheader.preheader.i29:5  %temp1_val_18_load = load float* %temp1_val_18_addr, align 4
-
-ST_7: temp1_val_19_addr [1/1] 0.00ns
-.preheader.preheader.i29:6  %temp1_val_19_addr = getelementptr [100 x float]* %temp1_val_19, i64 0, i64 %tmp_8
-
-ST_7: stg_288 [1/1] 2.71ns
-.preheader.preheader.i29:7  store float %temp1_val_18_load, float* %temp1_val_19_addr, align 4
-
-ST_7: temp1_val_17_addr [1/1] 0.00ns
-.preheader.preheader.i29:8  %temp1_val_17_addr = getelementptr [100 x float]* %temp1_val_17, i64 0, i64 %tmp_8
-
-ST_7: temp1_val_17_load [2/2] 2.71ns
-.preheader.preheader.i29:9  %temp1_val_17_load = load float* %temp1_val_17_addr, align 4
-
-ST_7: temp1_val_16_addr [1/1] 0.00ns
-.preheader.preheader.i29:11  %temp1_val_16_addr = getelementptr [100 x float]* %temp1_val_16, i64 0, i64 %tmp_8
-
-ST_7: temp1_val_16_load [2/2] 2.71ns
-.preheader.preheader.i29:12  %temp1_val_16_load = load float* %temp1_val_16_addr, align 4
-
-ST_7: temp1_val_15_addr [1/1] 0.00ns
-.preheader.preheader.i29:14  %temp1_val_15_addr = getelementptr [100 x float]* %temp1_val_15, i64 0, i64 %tmp_8
-
-ST_7: temp1_val_15_load [2/2] 2.71ns
-.preheader.preheader.i29:15  %temp1_val_15_load = load float* %temp1_val_15_addr, align 4
-
-ST_7: temp1_val_14_addr [1/1] 0.00ns
-.preheader.preheader.i29:17  %temp1_val_14_addr = getelementptr [100 x float]* %temp1_val_14, i64 0, i64 %tmp_8
-
-ST_7: temp1_val_14_load [2/2] 2.71ns
-.preheader.preheader.i29:18  %temp1_val_14_load = load float* %temp1_val_14_addr, align 4
-
-ST_7: temp1_val_13_addr [1/1] 0.00ns
-.preheader.preheader.i29:20  %temp1_val_13_addr = getelementptr [100 x float]* %temp1_val_13, i64 0, i64 %tmp_8
-
-ST_7: temp1_val_13_load [2/2] 2.71ns
-.preheader.preheader.i29:21  %temp1_val_13_load = load float* %temp1_val_13_addr, align 4
-
-ST_7: temp1_val_12_addr [1/1] 0.00ns
-.preheader.preheader.i29:23  %temp1_val_12_addr = getelementptr [100 x float]* %temp1_val_12, i64 0, i64 %tmp_8
-
-ST_7: temp1_val_12_load [2/2] 2.71ns
-.preheader.preheader.i29:24  %temp1_val_12_load = load float* %temp1_val_12_addr, align 4
-
-ST_7: temp1_val_11_addr [1/1] 0.00ns
-.preheader.preheader.i29:26  %temp1_val_11_addr = getelementptr [100 x float]* %temp1_val_11, i64 0, i64 %tmp_8
-
-ST_7: temp1_val_11_load [2/2] 2.71ns
-.preheader.preheader.i29:27  %temp1_val_11_load = load float* %temp1_val_11_addr, align 4
-
-ST_7: temp1_val_10_addr [1/1] 0.00ns
-.preheader.preheader.i29:29  %temp1_val_10_addr = getelementptr [100 x float]* %temp1_val_10, i64 0, i64 %tmp_8
-
-ST_7: temp1_val_10_load [2/2] 2.71ns
-.preheader.preheader.i29:30  %temp1_val_10_load = load float* %temp1_val_10_addr, align 4
-
-ST_7: temp1_val_9_addr [1/1] 0.00ns
-.preheader.preheader.i29:32  %temp1_val_9_addr = getelementptr [100 x float]* %temp1_val_9, i64 0, i64 %tmp_8
-
-ST_7: temp1_val_9_load [2/2] 2.71ns
-.preheader.preheader.i29:33  %temp1_val_9_load = load float* %temp1_val_9_addr, align 4
-
-ST_7: temp1_val_8_addr [1/1] 0.00ns
-.preheader.preheader.i29:35  %temp1_val_8_addr = getelementptr [100 x float]* %temp1_val_8, i64 0, i64 %tmp_8
-
-ST_7: temp1_val_8_load [2/2] 2.71ns
-.preheader.preheader.i29:36  %temp1_val_8_load = load float* %temp1_val_8_addr, align 4
-
-ST_7: temp1_val_7_addr [1/1] 0.00ns
-.preheader.preheader.i29:38  %temp1_val_7_addr = getelementptr [100 x float]* %temp1_val_7, i64 0, i64 %tmp_8
-
-ST_7: temp1_val_7_load [2/2] 2.71ns
-.preheader.preheader.i29:39  %temp1_val_7_load = load float* %temp1_val_7_addr, align 4
-
-ST_7: temp1_val_6_addr [1/1] 0.00ns
-.preheader.preheader.i29:41  %temp1_val_6_addr = getelementptr [100 x float]* %temp1_val_6, i64 0, i64 %tmp_8
-
-ST_7: temp1_val_6_load [2/2] 2.71ns
-.preheader.preheader.i29:42  %temp1_val_6_load = load float* %temp1_val_6_addr, align 4
-
-ST_7: temp1_val_5_addr [1/1] 0.00ns
-.preheader.preheader.i29:44  %temp1_val_5_addr = getelementptr [100 x float]* %temp1_val_5, i64 0, i64 %tmp_8
-
-ST_7: temp1_val_5_load [2/2] 2.71ns
-.preheader.preheader.i29:45  %temp1_val_5_load = load float* %temp1_val_5_addr, align 4
-
-ST_7: temp1_val_4_addr [1/1] 0.00ns
-.preheader.preheader.i29:47  %temp1_val_4_addr = getelementptr [100 x float]* %temp1_val_4, i64 0, i64 %tmp_8
-
-ST_7: temp1_val_4_load [2/2] 2.71ns
-.preheader.preheader.i29:48  %temp1_val_4_load = load float* %temp1_val_4_addr, align 4
-
-ST_7: temp1_val_3_addr [1/1] 0.00ns
-.preheader.preheader.i29:50  %temp1_val_3_addr = getelementptr [100 x float]* %temp1_val_3, i64 0, i64 %tmp_8
-
-ST_7: temp1_val_3_load [2/2] 2.71ns
-.preheader.preheader.i29:51  %temp1_val_3_load = load float* %temp1_val_3_addr, align 4
-
-ST_7: temp1_val_2_addr [1/1] 0.00ns
-.preheader.preheader.i29:53  %temp1_val_2_addr = getelementptr [100 x float]* %temp1_val_2, i64 0, i64 %tmp_8
-
-ST_7: temp1_val_2_load [2/2] 2.71ns
-.preheader.preheader.i29:54  %temp1_val_2_load = load float* %temp1_val_2_addr, align 4
-
-ST_7: temp1_val_1_addr [1/1] 0.00ns
-.preheader.preheader.i29:56  %temp1_val_1_addr = getelementptr [100 x float]* %temp1_val_1, i64 0, i64 %tmp_8
-
-ST_7: temp1_val_1_load [2/2] 2.71ns
-.preheader.preheader.i29:57  %temp1_val_1_load = load float* %temp1_val_1_addr, align 4
-
-ST_7: temp1_val_0_addr [1/1] 0.00ns
-.preheader.preheader.i29:59  %temp1_val_0_addr = getelementptr [100 x float]* %temp1_val_0, i64 0, i64 %tmp_8
-
-ST_7: temp1_val_0_load [2/2] 2.71ns
-.preheader.preheader.i29:60  %temp1_val_0_load = load float* %temp1_val_0_addr, align 4
-
-ST_7: vector_load [1/2] 2.71ns
-.preheader.preheader.i29:68  %vector_load = load float* %vector_addr, align 4
-
-ST_7: value_assign [4/4] 5.70ns
-.preheader.preheader.i29:69  %value_assign = fmul float %val_load, %vector_load
+ST_7: output_load [2/2] 2.71ns
+:13  %output_load = load float* %output_addr_1, align 4
 
 
  <State 8>: 5.70ns
-ST_8: temp1_val_17_load [1/2] 2.71ns
-.preheader.preheader.i29:9  %temp1_val_17_load = load float* %temp1_val_17_addr, align 4
+ST_8: tmp_5 [1/4] 5.70ns
+:8  %tmp_5 = fmul float %val_load, %vector_load
 
-ST_8: stg_328 [1/1] 2.71ns
-.preheader.preheader.i29:10  store float %temp1_val_17_load, float* %temp1_val_18_addr, align 4
+ST_8: output_load [1/2] 2.71ns
+:13  %output_load = load float* %output_addr_1, align 4
 
-ST_8: temp1_val_16_load [1/2] 2.71ns
-.preheader.preheader.i29:12  %temp1_val_16_load = load float* %temp1_val_16_addr, align 4
 
-ST_8: stg_330 [1/1] 2.71ns
-.preheader.preheader.i29:13  store float %temp1_val_16_load, float* %temp1_val_17_addr, align 4
+ <State 9>: 7.26ns
+ST_9: tmp_7 [5/5] 7.26ns
+:14  %tmp_7 = fadd float %output_load, %tmp_5
 
-ST_8: temp1_val_15_load [1/2] 2.71ns
-.preheader.preheader.i29:15  %temp1_val_15_load = load float* %temp1_val_15_addr, align 4
 
-ST_8: stg_332 [1/1] 2.71ns
-.preheader.preheader.i29:16  store float %temp1_val_15_load, float* %temp1_val_16_addr, align 4
+ <State 10>: 7.26ns
+ST_10: tmp_7 [4/5] 7.26ns
+:14  %tmp_7 = fadd float %output_load, %tmp_5
 
-ST_8: temp1_val_14_load [1/2] 2.71ns
-.preheader.preheader.i29:18  %temp1_val_14_load = load float* %temp1_val_14_addr, align 4
 
-ST_8: stg_334 [1/1] 2.71ns
-.preheader.preheader.i29:19  store float %temp1_val_14_load, float* %temp1_val_15_addr, align 4
+ <State 11>: 7.26ns
+ST_11: tmp_7 [3/5] 7.26ns
+:14  %tmp_7 = fadd float %output_load, %tmp_5
 
-ST_8: temp1_val_13_load [1/2] 2.71ns
-.preheader.preheader.i29:21  %temp1_val_13_load = load float* %temp1_val_13_addr, align 4
 
-ST_8: stg_336 [1/1] 2.71ns
-.preheader.preheader.i29:22  store float %temp1_val_13_load, float* %temp1_val_14_addr, align 4
+ <State 12>: 7.26ns
+ST_12: tmp_7 [2/5] 7.26ns
+:14  %tmp_7 = fadd float %output_load, %tmp_5
 
-ST_8: temp1_val_12_load [1/2] 2.71ns
-.preheader.preheader.i29:24  %temp1_val_12_load = load float* %temp1_val_12_addr, align 4
 
-ST_8: stg_338 [1/1] 2.71ns
-.preheader.preheader.i29:25  store float %temp1_val_12_load, float* %temp1_val_13_addr, align 4
-
-ST_8: temp1_val_11_load [1/2] 2.71ns
-.preheader.preheader.i29:27  %temp1_val_11_load = load float* %temp1_val_11_addr, align 4
-
-ST_8: stg_340 [1/1] 2.71ns
-.preheader.preheader.i29:28  store float %temp1_val_11_load, float* %temp1_val_12_addr, align 4
-
-ST_8: temp1_val_10_load [1/2] 2.71ns
-.preheader.preheader.i29:30  %temp1_val_10_load = load float* %temp1_val_10_addr, align 4
-
-ST_8: stg_342 [1/1] 2.71ns
-.preheader.preheader.i29:31  store float %temp1_val_10_load, float* %temp1_val_11_addr, align 4
-
-ST_8: temp1_val_9_load [1/2] 2.71ns
-.preheader.preheader.i29:33  %temp1_val_9_load = load float* %temp1_val_9_addr, align 4
-
-ST_8: stg_344 [1/1] 2.71ns
-.preheader.preheader.i29:34  store float %temp1_val_9_load, float* %temp1_val_10_addr, align 4
-
-ST_8: temp1_val_8_load [1/2] 2.71ns
-.preheader.preheader.i29:36  %temp1_val_8_load = load float* %temp1_val_8_addr, align 4
-
-ST_8: stg_346 [1/1] 2.71ns
-.preheader.preheader.i29:37  store float %temp1_val_8_load, float* %temp1_val_9_addr, align 4
-
-ST_8: temp1_val_7_load [1/2] 2.71ns
-.preheader.preheader.i29:39  %temp1_val_7_load = load float* %temp1_val_7_addr, align 4
-
-ST_8: stg_348 [1/1] 2.71ns
-.preheader.preheader.i29:40  store float %temp1_val_7_load, float* %temp1_val_8_addr, align 4
-
-ST_8: temp1_val_6_load [1/2] 2.71ns
-.preheader.preheader.i29:42  %temp1_val_6_load = load float* %temp1_val_6_addr, align 4
-
-ST_8: stg_350 [1/1] 2.71ns
-.preheader.preheader.i29:43  store float %temp1_val_6_load, float* %temp1_val_7_addr, align 4
-
-ST_8: temp1_val_5_load [1/2] 2.71ns
-.preheader.preheader.i29:45  %temp1_val_5_load = load float* %temp1_val_5_addr, align 4
-
-ST_8: stg_352 [1/1] 2.71ns
-.preheader.preheader.i29:46  store float %temp1_val_5_load, float* %temp1_val_6_addr, align 4
-
-ST_8: temp1_val_4_load [1/2] 2.71ns
-.preheader.preheader.i29:48  %temp1_val_4_load = load float* %temp1_val_4_addr, align 4
-
-ST_8: stg_354 [1/1] 2.71ns
-.preheader.preheader.i29:49  store float %temp1_val_4_load, float* %temp1_val_5_addr, align 4
-
-ST_8: temp1_val_3_load [1/2] 2.71ns
-.preheader.preheader.i29:51  %temp1_val_3_load = load float* %temp1_val_3_addr, align 4
-
-ST_8: stg_356 [1/1] 2.71ns
-.preheader.preheader.i29:52  store float %temp1_val_3_load, float* %temp1_val_4_addr, align 4
-
-ST_8: temp1_val_2_load [1/2] 2.71ns
-.preheader.preheader.i29:54  %temp1_val_2_load = load float* %temp1_val_2_addr, align 4
-
-ST_8: stg_358 [1/1] 2.71ns
-.preheader.preheader.i29:55  store float %temp1_val_2_load, float* %temp1_val_3_addr, align 4
-
-ST_8: temp1_val_1_load [1/2] 2.71ns
-.preheader.preheader.i29:57  %temp1_val_1_load = load float* %temp1_val_1_addr, align 4
-
-ST_8: stg_360 [1/1] 2.71ns
-.preheader.preheader.i29:58  store float %temp1_val_1_load, float* %temp1_val_2_addr, align 4
-
-ST_8: temp1_val_0_load [1/2] 2.71ns
-.preheader.preheader.i29:60  %temp1_val_0_load = load float* %temp1_val_0_addr, align 4
-
-ST_8: stg_362 [1/1] 2.71ns
-.preheader.preheader.i29:61  store float %temp1_val_0_load, float* %temp1_val_1_addr, align 4
-
-ST_8: value_assign [3/4] 5.70ns
-.preheader.preheader.i29:69  %value_assign = fmul float %val_load, %vector_load
-
-
- <State 9>: 5.70ns
-ST_9: value_assign [2/4] 5.70ns
-.preheader.preheader.i29:69  %value_assign = fmul float %val_load, %vector_load
-
-
- <State 10>: 8.41ns
-ST_10: value_assign [1/4] 5.70ns
-.preheader.preheader.i29:69  %value_assign = fmul float %val_load, %vector_load
-
-ST_10: stg_366 [1/1] 2.71ns
-.preheader.preheader.i29:70  store float %value_assign, float* %temp1_val_0_addr, align 4
-
-ST_10: stg_367 [1/1] 0.00ns
-.preheader.preheader.i29:71  br label %._crit_edge
-
-ST_10: stg_368 [1/1] 0.00ns
-._crit_edge:0  br label %.preheader14
-
-
- <State 11>: 3.19ns
-ST_11: k [1/1] 0.00ns
-.preheader13:0  %k = phi i3 [ 0, %.preheader14 ], [ %k_1, %.preheader10 ]
-
-ST_11: exitcond5 [1/1] 1.62ns
-.preheader13:1  %exitcond5 = icmp eq i3 %k, -3
-
-ST_11: empty_8 [1/1] 0.00ns
-.preheader13:2  %empty_8 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 5, i64 5, i64 5) nounwind
-
-ST_11: k_1 [1/1] 0.80ns
-.preheader13:3  %k_1 = add i3 %k, 1
-
-ST_11: stg_373 [1/1] 1.57ns
-.preheader13:4  br i1 %exitcond5, label %.preheader, label %.preheader12
-
-
- <State 12>: 3.54ns
-ST_12: col_assign_2 [1/1] 0.00ns
-.preheader12:0  %col_assign_2 = phi i7 [ 0, %.preheader13 ], [ %i_3, %.preheader11 ]
-
-ST_12: exitcond4 [1/1] 1.97ns
-.preheader12:1  %exitcond4 = icmp eq i7 %col_assign_2, -28
-
-ST_12: empty_9 [1/1] 0.00ns
-.preheader12:2  %empty_9 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 100, i64 100, i64 100) nounwind
-
-ST_12: i_3 [1/1] 1.72ns
-.preheader12:3  %i_3 = add i7 %col_assign_2, 1
-
-ST_12: stg_378 [1/1] 1.57ns
-.preheader12:4  br i1 %exitcond4, label %.preheader10, label %.preheader11.preheader
-
-ST_12: tmp_3 [1/1] 0.00ns
-.preheader11.preheader:0  %tmp_3 = zext i7 %col_assign_2 to i64
-
-ST_12: temp1_val_19_addr_2 [1/1] 0.00ns
-.preheader11.preheader:40  %temp1_val_19_addr_2 = getelementptr [100 x float]* %temp1_val_19, i64 0, i64 %tmp_3
-
-ST_12: temp1_val_19_load [2/2] 2.71ns
-.preheader11.preheader:41  %temp1_val_19_load = load float* %temp1_val_19_addr_2, align 4
-
-
- <State 13>: 2.71ns
-ST_13: temp1_val_0_addr_3 [1/1] 0.00ns
-.preheader11.preheader:1  %temp1_val_0_addr_3 = getelementptr [100 x float]* %temp1_val_0, i64 0, i64 %tmp_3
-
-ST_13: temp1_val_1_addr_2 [1/1] 0.00ns
-.preheader11.preheader:2  %temp1_val_1_addr_2 = getelementptr [100 x float]* %temp1_val_1, i64 0, i64 %tmp_3
-
-ST_13: temp2_val_18_addr_1 [1/1] 0.00ns
-.preheader11.preheader:3  %temp2_val_18_addr_1 = getelementptr [100 x float]* %temp2_val_18, i64 0, i64 %tmp_3
-
-ST_13: temp2_val_19_addr_1 [1/1] 0.00ns
-.preheader11.preheader:4  %temp2_val_19_addr_1 = getelementptr [100 x float]* %temp2_val_19, i64 0, i64 %tmp_3
-
-ST_13: temp2_val_17_addr_1 [1/1] 0.00ns
-.preheader11.preheader:5  %temp2_val_17_addr_1 = getelementptr [100 x float]* %temp2_val_17, i64 0, i64 %tmp_3
-
-ST_13: temp2_val_16_addr_1 [1/1] 0.00ns
-.preheader11.preheader:6  %temp2_val_16_addr_1 = getelementptr [100 x float]* %temp2_val_16, i64 0, i64 %tmp_3
-
-ST_13: temp2_val_15_addr_1 [1/1] 0.00ns
-.preheader11.preheader:7  %temp2_val_15_addr_1 = getelementptr [100 x float]* %temp2_val_15, i64 0, i64 %tmp_3
-
-ST_13: temp2_val_14_addr_1 [1/1] 0.00ns
-.preheader11.preheader:8  %temp2_val_14_addr_1 = getelementptr [100 x float]* %temp2_val_14, i64 0, i64 %tmp_3
-
-ST_13: temp2_val_13_addr_1 [1/1] 0.00ns
-.preheader11.preheader:9  %temp2_val_13_addr_1 = getelementptr [100 x float]* %temp2_val_13, i64 0, i64 %tmp_3
-
-ST_13: temp2_val_12_addr_1 [1/1] 0.00ns
-.preheader11.preheader:10  %temp2_val_12_addr_1 = getelementptr [100 x float]* %temp2_val_12, i64 0, i64 %tmp_3
-
-ST_13: temp2_val_11_addr_1 [1/1] 0.00ns
-.preheader11.preheader:11  %temp2_val_11_addr_1 = getelementptr [100 x float]* %temp2_val_11, i64 0, i64 %tmp_3
-
-ST_13: temp2_val_10_addr_1 [1/1] 0.00ns
-.preheader11.preheader:12  %temp2_val_10_addr_1 = getelementptr [100 x float]* %temp2_val_10, i64 0, i64 %tmp_3
-
-ST_13: temp2_val_9_addr_1 [1/1] 0.00ns
-.preheader11.preheader:13  %temp2_val_9_addr_1 = getelementptr [100 x float]* %temp2_val_9, i64 0, i64 %tmp_3
-
-ST_13: temp2_val_8_addr_1 [1/1] 0.00ns
-.preheader11.preheader:14  %temp2_val_8_addr_1 = getelementptr [100 x float]* %temp2_val_8, i64 0, i64 %tmp_3
-
-ST_13: temp2_val_7_addr_1 [1/1] 0.00ns
-.preheader11.preheader:15  %temp2_val_7_addr_1 = getelementptr [100 x float]* %temp2_val_7, i64 0, i64 %tmp_3
-
-ST_13: temp2_val_6_addr_1 [1/1] 0.00ns
-.preheader11.preheader:16  %temp2_val_6_addr_1 = getelementptr [100 x float]* %temp2_val_6, i64 0, i64 %tmp_3
-
-ST_13: temp2_val_5_addr_1 [1/1] 0.00ns
-.preheader11.preheader:17  %temp2_val_5_addr_1 = getelementptr [100 x float]* %temp2_val_5, i64 0, i64 %tmp_3
-
-ST_13: temp2_val_4_addr_1 [1/1] 0.00ns
-.preheader11.preheader:18  %temp2_val_4_addr_1 = getelementptr [100 x float]* %temp2_val_4, i64 0, i64 %tmp_3
-
-ST_13: temp2_val_3_addr_1 [1/1] 0.00ns
-.preheader11.preheader:19  %temp2_val_3_addr_1 = getelementptr [100 x float]* %temp2_val_3, i64 0, i64 %tmp_3
-
-ST_13: temp2_val_2_addr_1 [1/1] 0.00ns
-.preheader11.preheader:20  %temp2_val_2_addr_1 = getelementptr [100 x float]* %temp2_val_2, i64 0, i64 %tmp_3
-
-ST_13: temp2_val_1_addr_2 [1/1] 0.00ns
-.preheader11.preheader:21  %temp2_val_1_addr_2 = getelementptr [100 x float]* %temp2_val_1, i64 0, i64 %tmp_3
-
-ST_13: temp2_val_0_addr_2 [1/1] 0.00ns
-.preheader11.preheader:22  %temp2_val_0_addr_2 = getelementptr [100 x float]* %temp2_val_0, i64 0, i64 %tmp_3
-
-ST_13: temp1_val_2_addr_2 [1/1] 0.00ns
-.preheader11.preheader:23  %temp1_val_2_addr_2 = getelementptr [100 x float]* %temp1_val_2, i64 0, i64 %tmp_3
-
-ST_13: temp1_val_3_addr_2 [1/1] 0.00ns
-.preheader11.preheader:24  %temp1_val_3_addr_2 = getelementptr [100 x float]* %temp1_val_3, i64 0, i64 %tmp_3
-
-ST_13: temp1_val_4_addr_2 [1/1] 0.00ns
-.preheader11.preheader:25  %temp1_val_4_addr_2 = getelementptr [100 x float]* %temp1_val_4, i64 0, i64 %tmp_3
-
-ST_13: temp1_val_5_addr_2 [1/1] 0.00ns
-.preheader11.preheader:26  %temp1_val_5_addr_2 = getelementptr [100 x float]* %temp1_val_5, i64 0, i64 %tmp_3
-
-ST_13: temp1_val_6_addr_2 [1/1] 0.00ns
-.preheader11.preheader:27  %temp1_val_6_addr_2 = getelementptr [100 x float]* %temp1_val_6, i64 0, i64 %tmp_3
-
-ST_13: temp1_val_7_addr_2 [1/1] 0.00ns
-.preheader11.preheader:28  %temp1_val_7_addr_2 = getelementptr [100 x float]* %temp1_val_7, i64 0, i64 %tmp_3
-
-ST_13: temp1_val_8_addr_2 [1/1] 0.00ns
-.preheader11.preheader:29  %temp1_val_8_addr_2 = getelementptr [100 x float]* %temp1_val_8, i64 0, i64 %tmp_3
-
-ST_13: temp1_val_9_addr_2 [1/1] 0.00ns
-.preheader11.preheader:30  %temp1_val_9_addr_2 = getelementptr [100 x float]* %temp1_val_9, i64 0, i64 %tmp_3
-
-ST_13: temp1_val_10_addr_2 [1/1] 0.00ns
-.preheader11.preheader:31  %temp1_val_10_addr_2 = getelementptr [100 x float]* %temp1_val_10, i64 0, i64 %tmp_3
-
-ST_13: temp1_val_11_addr_2 [1/1] 0.00ns
-.preheader11.preheader:32  %temp1_val_11_addr_2 = getelementptr [100 x float]* %temp1_val_11, i64 0, i64 %tmp_3
-
-ST_13: temp1_val_12_addr_2 [1/1] 0.00ns
-.preheader11.preheader:33  %temp1_val_12_addr_2 = getelementptr [100 x float]* %temp1_val_12, i64 0, i64 %tmp_3
-
-ST_13: temp1_val_13_addr_2 [1/1] 0.00ns
-.preheader11.preheader:34  %temp1_val_13_addr_2 = getelementptr [100 x float]* %temp1_val_13, i64 0, i64 %tmp_3
-
-ST_13: temp1_val_14_addr_2 [1/1] 0.00ns
-.preheader11.preheader:35  %temp1_val_14_addr_2 = getelementptr [100 x float]* %temp1_val_14, i64 0, i64 %tmp_3
-
-ST_13: temp1_val_15_addr_2 [1/1] 0.00ns
-.preheader11.preheader:36  %temp1_val_15_addr_2 = getelementptr [100 x float]* %temp1_val_15, i64 0, i64 %tmp_3
-
-ST_13: temp1_val_16_addr_2 [1/1] 0.00ns
-.preheader11.preheader:37  %temp1_val_16_addr_2 = getelementptr [100 x float]* %temp1_val_16, i64 0, i64 %tmp_3
-
-ST_13: temp1_val_17_addr_2 [1/1] 0.00ns
-.preheader11.preheader:38  %temp1_val_17_addr_2 = getelementptr [100 x float]* %temp1_val_17, i64 0, i64 %tmp_3
-
-ST_13: temp1_val_18_addr_2 [1/1] 0.00ns
-.preheader11.preheader:39  %temp1_val_18_addr_2 = getelementptr [100 x float]* %temp1_val_18, i64 0, i64 %tmp_3
-
-ST_13: temp1_val_19_load [1/2] 2.71ns
-.preheader11.preheader:41  %temp1_val_19_load = load float* %temp1_val_19_addr_2, align 4
-
-ST_13: stg_422 [1/1] 1.57ns
-.preheader11.preheader:42  br label %.preheader11
+ <State 13>: 7.26ns
+ST_13: tmp_7 [1/5] 7.26ns
+:14  %tmp_7 = fadd float %output_load, %tmp_5
 
 
  <State 14>: 2.71ns
-ST_14: j3 [1/1] 0.00ns
-.preheader11:0  %j3 = phi i5 [ %j_2, %.preheader.i92.0 ], [ 0, %.preheader11.preheader ]
+ST_14: stg_71 [1/1] 2.71ns
+:15  store float %tmp_7, float* %output_addr_1, align 4
 
-ST_14: exitcond3 [1/1] 1.91ns
-.preheader11:1  %exitcond3 = icmp eq i5 %j3, -12
+ST_14: stg_72 [1/1] 0.00ns
+:16  br label %._crit_edge
 
-ST_14: empty_10 [1/1] 0.00ns
-.preheader11:2  %empty_10 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 20, i64 20, i64 20) nounwind
-
-ST_14: j_2 [1/1] 1.72ns
-.preheader11:3  %j_2 = add i5 %j3, 1
-
-ST_14: stg_427 [1/1] 0.00ns
-.preheader11:4  br i1 %exitcond3, label %.preheader12, label %getval.exit65
-
-ST_14: temp1_val_0_load_3 [2/2] 2.71ns
-getval.exit65:0  %temp1_val_0_load_3 = load float* %temp1_val_0_addr_3, align 4
-
-ST_14: temp1_val_1_load_2 [2/2] 2.71ns
-getval.exit65:1  %temp1_val_1_load_2 = load float* %temp1_val_1_addr_2, align 4
-
-
- <State 15>: 2.71ns
-ST_15: temp1_val_0_load_3 [1/2] 2.71ns
-getval.exit65:0  %temp1_val_0_load_3 = load float* %temp1_val_0_addr_3, align 4
-
-ST_15: temp1_val_1_load_2 [1/2] 2.71ns
-getval.exit65:1  %temp1_val_1_load_2 = load float* %temp1_val_1_addr_2, align 4
-
-
- <State 16>: 7.26ns
-ST_16: sum [5/5] 7.26ns
-getval.exit65:2  %sum = fadd float %temp1_val_0_load_3, %temp1_val_1_load_2
-
-
- <State 17>: 7.26ns
-ST_17: sum [4/5] 7.26ns
-getval.exit65:2  %sum = fadd float %temp1_val_0_load_3, %temp1_val_1_load_2
-
-
- <State 18>: 7.26ns
-ST_18: sum [3/5] 7.26ns
-getval.exit65:2  %sum = fadd float %temp1_val_0_load_3, %temp1_val_1_load_2
-
-
- <State 19>: 7.26ns
-ST_19: sum [2/5] 7.26ns
-getval.exit65:2  %sum = fadd float %temp1_val_0_load_3, %temp1_val_1_load_2
-
-
- <State 20>: 7.26ns
-ST_20: sum [1/5] 7.26ns
-getval.exit65:2  %sum = fadd float %temp1_val_0_load_3, %temp1_val_1_load_2
-
-
- <State 21>: 8.16ns
-ST_21: sum_to_int [1/1] 0.00ns
-getval.exit65:3  %sum_to_int = bitcast float %sum to i32
-
-ST_21: tmp_6 [1/1] 0.00ns
-getval.exit65:4  %tmp_6 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %sum_to_int, i32 23, i32 30)
-
-ST_21: tmp_7 [1/1] 0.00ns
-getval.exit65:5  %tmp_7 = trunc i32 %sum_to_int to i23
-
-ST_21: notlhs [1/1] 2.00ns
-getval.exit65:6  %notlhs = icmp ne i8 %tmp_6, -1
-
-ST_21: notrhs [1/1] 2.39ns
-getval.exit65:7  %notrhs = icmp eq i23 %tmp_7, 0
-
-ST_21: tmp_9 [1/1] 0.00ns (grouped into LUT with out node tmp_11)
-getval.exit65:8  %tmp_9 = or i1 %notrhs, %notlhs
-
-ST_21: tmp_10 [1/1] 6.79ns
-getval.exit65:9  %tmp_10 = fcmp oeq float %sum, 0.000000e+00
-
-ST_21: tmp_11 [1/1] 1.37ns (out node of the LUT)
-getval.exit65:10  %tmp_11 = and i1 %tmp_9, %tmp_10
-
-ST_21: stg_445 [1/1] 0.00ns
-getval.exit65:11  br i1 %tmp_11, label %.preheader.i92.0, label %.preheader.i24.0
-
-ST_21: temp2_val_18_load_1 [2/2] 2.71ns
-.preheader.i24.0:0  %temp2_val_18_load_1 = load float* %temp2_val_18_addr_1, align 4
-
-ST_21: temp2_val_17_load_1 [2/2] 2.71ns
-.preheader.i24.0:2  %temp2_val_17_load_1 = load float* %temp2_val_17_addr_1, align 4
-
-ST_21: temp2_val_16_load_1 [2/2] 2.71ns
-.preheader.i24.0:4  %temp2_val_16_load_1 = load float* %temp2_val_16_addr_1, align 4
-
-ST_21: temp2_val_15_load_1 [2/2] 2.71ns
-.preheader.i24.0:6  %temp2_val_15_load_1 = load float* %temp2_val_15_addr_1, align 4
-
-ST_21: temp2_val_14_load_1 [2/2] 2.71ns
-.preheader.i24.0:8  %temp2_val_14_load_1 = load float* %temp2_val_14_addr_1, align 4
-
-ST_21: temp2_val_13_load_1 [2/2] 2.71ns
-.preheader.i24.0:10  %temp2_val_13_load_1 = load float* %temp2_val_13_addr_1, align 4
-
-ST_21: temp2_val_12_load_1 [2/2] 2.71ns
-.preheader.i24.0:12  %temp2_val_12_load_1 = load float* %temp2_val_12_addr_1, align 4
-
-ST_21: temp2_val_11_load_1 [2/2] 2.71ns
-.preheader.i24.0:14  %temp2_val_11_load_1 = load float* %temp2_val_11_addr_1, align 4
-
-ST_21: temp2_val_10_load_1 [2/2] 2.71ns
-.preheader.i24.0:16  %temp2_val_10_load_1 = load float* %temp2_val_10_addr_1, align 4
-
-ST_21: temp2_val_9_load_1 [2/2] 2.71ns
-.preheader.i24.0:18  %temp2_val_9_load_1 = load float* %temp2_val_9_addr_1, align 4
-
-ST_21: temp2_val_8_load_1 [2/2] 2.71ns
-.preheader.i24.0:20  %temp2_val_8_load_1 = load float* %temp2_val_8_addr_1, align 4
-
-ST_21: temp2_val_7_load_1 [2/2] 2.71ns
-.preheader.i24.0:22  %temp2_val_7_load_1 = load float* %temp2_val_7_addr_1, align 4
-
-ST_21: temp2_val_6_load_1 [2/2] 2.71ns
-.preheader.i24.0:24  %temp2_val_6_load_1 = load float* %temp2_val_6_addr_1, align 4
-
-ST_21: temp2_val_5_load_1 [2/2] 2.71ns
-.preheader.i24.0:26  %temp2_val_5_load_1 = load float* %temp2_val_5_addr_1, align 4
-
-ST_21: temp2_val_4_load_1 [2/2] 2.71ns
-.preheader.i24.0:28  %temp2_val_4_load_1 = load float* %temp2_val_4_addr_1, align 4
-
-ST_21: temp2_val_3_load_1 [2/2] 2.71ns
-.preheader.i24.0:30  %temp2_val_3_load_1 = load float* %temp2_val_3_addr_1, align 4
-
-ST_21: temp2_val_2_load_1 [2/2] 2.71ns
-.preheader.i24.0:32  %temp2_val_2_load_1 = load float* %temp2_val_2_addr_1, align 4
-
-ST_21: temp2_val_1_load_2 [2/2] 2.71ns
-.preheader.i24.0:34  %temp2_val_1_load_2 = load float* %temp2_val_1_addr_2, align 4
-
-ST_21: temp2_val_0_load_2 [2/2] 2.71ns
-.preheader.i24.0:36  %temp2_val_0_load_2 = load float* %temp2_val_0_addr_2, align 4
-
-
- <State 22>: 5.42ns
-ST_22: temp2_val_18_load_1 [1/2] 2.71ns
-.preheader.i24.0:0  %temp2_val_18_load_1 = load float* %temp2_val_18_addr_1, align 4
-
-ST_22: stg_466 [1/1] 2.71ns
-.preheader.i24.0:1  store float %temp2_val_18_load_1, float* %temp2_val_19_addr_1, align 4
-
-ST_22: temp2_val_17_load_1 [1/2] 2.71ns
-.preheader.i24.0:2  %temp2_val_17_load_1 = load float* %temp2_val_17_addr_1, align 4
-
-ST_22: stg_468 [1/1] 2.71ns
-.preheader.i24.0:3  store float %temp2_val_17_load_1, float* %temp2_val_18_addr_1, align 4
-
-ST_22: temp2_val_16_load_1 [1/2] 2.71ns
-.preheader.i24.0:4  %temp2_val_16_load_1 = load float* %temp2_val_16_addr_1, align 4
-
-ST_22: stg_470 [1/1] 2.71ns
-.preheader.i24.0:5  store float %temp2_val_16_load_1, float* %temp2_val_17_addr_1, align 4
-
-ST_22: temp2_val_15_load_1 [1/2] 2.71ns
-.preheader.i24.0:6  %temp2_val_15_load_1 = load float* %temp2_val_15_addr_1, align 4
-
-ST_22: stg_472 [1/1] 2.71ns
-.preheader.i24.0:7  store float %temp2_val_15_load_1, float* %temp2_val_16_addr_1, align 4
-
-ST_22: temp2_val_14_load_1 [1/2] 2.71ns
-.preheader.i24.0:8  %temp2_val_14_load_1 = load float* %temp2_val_14_addr_1, align 4
-
-ST_22: stg_474 [1/1] 2.71ns
-.preheader.i24.0:9  store float %temp2_val_14_load_1, float* %temp2_val_15_addr_1, align 4
-
-ST_22: temp2_val_13_load_1 [1/2] 2.71ns
-.preheader.i24.0:10  %temp2_val_13_load_1 = load float* %temp2_val_13_addr_1, align 4
-
-ST_22: stg_476 [1/1] 2.71ns
-.preheader.i24.0:11  store float %temp2_val_13_load_1, float* %temp2_val_14_addr_1, align 4
-
-ST_22: temp2_val_12_load_1 [1/2] 2.71ns
-.preheader.i24.0:12  %temp2_val_12_load_1 = load float* %temp2_val_12_addr_1, align 4
-
-ST_22: stg_478 [1/1] 2.71ns
-.preheader.i24.0:13  store float %temp2_val_12_load_1, float* %temp2_val_13_addr_1, align 4
-
-ST_22: temp2_val_11_load_1 [1/2] 2.71ns
-.preheader.i24.0:14  %temp2_val_11_load_1 = load float* %temp2_val_11_addr_1, align 4
-
-ST_22: stg_480 [1/1] 2.71ns
-.preheader.i24.0:15  store float %temp2_val_11_load_1, float* %temp2_val_12_addr_1, align 4
-
-ST_22: temp2_val_10_load_1 [1/2] 2.71ns
-.preheader.i24.0:16  %temp2_val_10_load_1 = load float* %temp2_val_10_addr_1, align 4
-
-ST_22: stg_482 [1/1] 2.71ns
-.preheader.i24.0:17  store float %temp2_val_10_load_1, float* %temp2_val_11_addr_1, align 4
-
-ST_22: temp2_val_9_load_1 [1/2] 2.71ns
-.preheader.i24.0:18  %temp2_val_9_load_1 = load float* %temp2_val_9_addr_1, align 4
-
-ST_22: stg_484 [1/1] 2.71ns
-.preheader.i24.0:19  store float %temp2_val_9_load_1, float* %temp2_val_10_addr_1, align 4
-
-ST_22: temp2_val_8_load_1 [1/2] 2.71ns
-.preheader.i24.0:20  %temp2_val_8_load_1 = load float* %temp2_val_8_addr_1, align 4
-
-ST_22: stg_486 [1/1] 2.71ns
-.preheader.i24.0:21  store float %temp2_val_8_load_1, float* %temp2_val_9_addr_1, align 4
-
-ST_22: temp2_val_7_load_1 [1/2] 2.71ns
-.preheader.i24.0:22  %temp2_val_7_load_1 = load float* %temp2_val_7_addr_1, align 4
-
-ST_22: stg_488 [1/1] 2.71ns
-.preheader.i24.0:23  store float %temp2_val_7_load_1, float* %temp2_val_8_addr_1, align 4
-
-ST_22: temp2_val_6_load_1 [1/2] 2.71ns
-.preheader.i24.0:24  %temp2_val_6_load_1 = load float* %temp2_val_6_addr_1, align 4
-
-ST_22: stg_490 [1/1] 2.71ns
-.preheader.i24.0:25  store float %temp2_val_6_load_1, float* %temp2_val_7_addr_1, align 4
-
-ST_22: temp2_val_5_load_1 [1/2] 2.71ns
-.preheader.i24.0:26  %temp2_val_5_load_1 = load float* %temp2_val_5_addr_1, align 4
-
-ST_22: stg_492 [1/1] 2.71ns
-.preheader.i24.0:27  store float %temp2_val_5_load_1, float* %temp2_val_6_addr_1, align 4
-
-ST_22: temp2_val_4_load_1 [1/2] 2.71ns
-.preheader.i24.0:28  %temp2_val_4_load_1 = load float* %temp2_val_4_addr_1, align 4
-
-ST_22: stg_494 [1/1] 2.71ns
-.preheader.i24.0:29  store float %temp2_val_4_load_1, float* %temp2_val_5_addr_1, align 4
-
-ST_22: temp2_val_3_load_1 [1/2] 2.71ns
-.preheader.i24.0:30  %temp2_val_3_load_1 = load float* %temp2_val_3_addr_1, align 4
-
-ST_22: stg_496 [1/1] 2.71ns
-.preheader.i24.0:31  store float %temp2_val_3_load_1, float* %temp2_val_4_addr_1, align 4
-
-ST_22: temp2_val_2_load_1 [1/2] 2.71ns
-.preheader.i24.0:32  %temp2_val_2_load_1 = load float* %temp2_val_2_addr_1, align 4
-
-ST_22: stg_498 [1/1] 2.71ns
-.preheader.i24.0:33  store float %temp2_val_2_load_1, float* %temp2_val_3_addr_1, align 4
-
-ST_22: temp2_val_1_load_2 [1/2] 2.71ns
-.preheader.i24.0:34  %temp2_val_1_load_2 = load float* %temp2_val_1_addr_2, align 4
-
-ST_22: stg_500 [1/1] 2.71ns
-.preheader.i24.0:35  store float %temp2_val_1_load_2, float* %temp2_val_2_addr_1, align 4
-
-ST_22: temp2_val_0_load_2 [1/2] 2.71ns
-.preheader.i24.0:36  %temp2_val_0_load_2 = load float* %temp2_val_0_addr_2, align 4
-
-ST_22: stg_502 [1/1] 2.71ns
-.preheader.i24.0:37  store float %temp2_val_0_load_2, float* %temp2_val_1_addr_2, align 4
-
-ST_22: stg_503 [1/1] 2.71ns
-.preheader.i24.0:38  store float %sum, float* %temp2_val_0_addr_2, align 4
-
-ST_22: stg_504 [1/1] 0.00ns
-.preheader.i24.0:39  br label %.preheader.i92.0
-
-ST_22: temp1_val_2_load_2 [2/2] 2.71ns
-.preheader.i92.0:0  %temp1_val_2_load_2 = load float* %temp1_val_2_addr_2, align 4
-
-ST_22: temp1_val_3_load_2 [2/2] 2.71ns
-.preheader.i92.0:1  %temp1_val_3_load_2 = load float* %temp1_val_3_addr_2, align 4
-
-ST_22: temp1_val_4_load_2 [2/2] 2.71ns
-.preheader.i92.0:2  %temp1_val_4_load_2 = load float* %temp1_val_4_addr_2, align 4
-
-ST_22: temp1_val_5_load_2 [2/2] 2.71ns
-.preheader.i92.0:3  %temp1_val_5_load_2 = load float* %temp1_val_5_addr_2, align 4
-
-ST_22: temp1_val_6_load_2 [2/2] 2.71ns
-.preheader.i92.0:4  %temp1_val_6_load_2 = load float* %temp1_val_6_addr_2, align 4
-
-ST_22: temp1_val_7_load_2 [2/2] 2.71ns
-.preheader.i92.0:5  %temp1_val_7_load_2 = load float* %temp1_val_7_addr_2, align 4
-
-ST_22: temp1_val_8_load_2 [2/2] 2.71ns
-.preheader.i92.0:6  %temp1_val_8_load_2 = load float* %temp1_val_8_addr_2, align 4
-
-ST_22: temp1_val_9_load_2 [2/2] 2.71ns
-.preheader.i92.0:7  %temp1_val_9_load_2 = load float* %temp1_val_9_addr_2, align 4
-
-ST_22: temp1_val_10_load_2 [2/2] 2.71ns
-.preheader.i92.0:8  %temp1_val_10_load_2 = load float* %temp1_val_10_addr_2, align 4
-
-ST_22: temp1_val_11_load_2 [2/2] 2.71ns
-.preheader.i92.0:9  %temp1_val_11_load_2 = load float* %temp1_val_11_addr_2, align 4
-
-ST_22: temp1_val_12_load_2 [2/2] 2.71ns
-.preheader.i92.0:10  %temp1_val_12_load_2 = load float* %temp1_val_12_addr_2, align 4
-
-ST_22: temp1_val_13_load_2 [2/2] 2.71ns
-.preheader.i92.0:11  %temp1_val_13_load_2 = load float* %temp1_val_13_addr_2, align 4
-
-ST_22: temp1_val_14_load_2 [2/2] 2.71ns
-.preheader.i92.0:12  %temp1_val_14_load_2 = load float* %temp1_val_14_addr_2, align 4
-
-ST_22: temp1_val_15_load_2 [2/2] 2.71ns
-.preheader.i92.0:13  %temp1_val_15_load_2 = load float* %temp1_val_15_addr_2, align 4
-
-ST_22: temp1_val_16_load_2 [2/2] 2.71ns
-.preheader.i92.0:14  %temp1_val_16_load_2 = load float* %temp1_val_16_addr_2, align 4
-
-ST_22: temp1_val_17_load_2 [2/2] 2.71ns
-.preheader.i92.0:15  %temp1_val_17_load_2 = load float* %temp1_val_17_addr_2, align 4
-
-ST_22: temp1_val_18_load_2 [2/2] 2.71ns
-.preheader.i92.0:16  %temp1_val_18_load_2 = load float* %temp1_val_18_addr_2, align 4
-
-
- <State 23>: 5.42ns
-ST_23: temp1_val_2_load_2 [1/2] 2.71ns
-.preheader.i92.0:0  %temp1_val_2_load_2 = load float* %temp1_val_2_addr_2, align 4
-
-ST_23: temp1_val_3_load_2 [1/2] 2.71ns
-.preheader.i92.0:1  %temp1_val_3_load_2 = load float* %temp1_val_3_addr_2, align 4
-
-ST_23: temp1_val_4_load_2 [1/2] 2.71ns
-.preheader.i92.0:2  %temp1_val_4_load_2 = load float* %temp1_val_4_addr_2, align 4
-
-ST_23: temp1_val_5_load_2 [1/2] 2.71ns
-.preheader.i92.0:3  %temp1_val_5_load_2 = load float* %temp1_val_5_addr_2, align 4
-
-ST_23: temp1_val_6_load_2 [1/2] 2.71ns
-.preheader.i92.0:4  %temp1_val_6_load_2 = load float* %temp1_val_6_addr_2, align 4
-
-ST_23: temp1_val_7_load_2 [1/2] 2.71ns
-.preheader.i92.0:5  %temp1_val_7_load_2 = load float* %temp1_val_7_addr_2, align 4
-
-ST_23: temp1_val_8_load_2 [1/2] 2.71ns
-.preheader.i92.0:6  %temp1_val_8_load_2 = load float* %temp1_val_8_addr_2, align 4
-
-ST_23: temp1_val_9_load_2 [1/2] 2.71ns
-.preheader.i92.0:7  %temp1_val_9_load_2 = load float* %temp1_val_9_addr_2, align 4
-
-ST_23: temp1_val_10_load_2 [1/2] 2.71ns
-.preheader.i92.0:8  %temp1_val_10_load_2 = load float* %temp1_val_10_addr_2, align 4
-
-ST_23: temp1_val_11_load_2 [1/2] 2.71ns
-.preheader.i92.0:9  %temp1_val_11_load_2 = load float* %temp1_val_11_addr_2, align 4
-
-ST_23: temp1_val_12_load_2 [1/2] 2.71ns
-.preheader.i92.0:10  %temp1_val_12_load_2 = load float* %temp1_val_12_addr_2, align 4
-
-ST_23: temp1_val_13_load_2 [1/2] 2.71ns
-.preheader.i92.0:11  %temp1_val_13_load_2 = load float* %temp1_val_13_addr_2, align 4
-
-ST_23: temp1_val_14_load_2 [1/2] 2.71ns
-.preheader.i92.0:12  %temp1_val_14_load_2 = load float* %temp1_val_14_addr_2, align 4
-
-ST_23: temp1_val_15_load_2 [1/2] 2.71ns
-.preheader.i92.0:13  %temp1_val_15_load_2 = load float* %temp1_val_15_addr_2, align 4
-
-ST_23: temp1_val_16_load_2 [1/2] 2.71ns
-.preheader.i92.0:14  %temp1_val_16_load_2 = load float* %temp1_val_16_addr_2, align 4
-
-ST_23: temp1_val_17_load_2 [1/2] 2.71ns
-.preheader.i92.0:15  %temp1_val_17_load_2 = load float* %temp1_val_17_addr_2, align 4
-
-ST_23: temp1_val_18_load_2 [1/2] 2.71ns
-.preheader.i92.0:16  %temp1_val_18_load_2 = load float* %temp1_val_18_addr_2, align 4
-
-ST_23: stg_539 [1/1] 2.71ns
-.preheader.i92.0:17  store float %temp1_val_2_load_2, float* %temp1_val_0_addr_3, align 4
-
-ST_23: stg_540 [1/1] 2.71ns
-.preheader.i92.0:18  store float %temp1_val_3_load_2, float* %temp1_val_1_addr_2, align 4
-
-ST_23: stg_541 [1/1] 2.71ns
-.preheader.i92.0:19  store float %temp1_val_4_load_2, float* %temp1_val_2_addr_2, align 4
-
-ST_23: stg_542 [1/1] 2.71ns
-.preheader.i92.0:20  store float %temp1_val_5_load_2, float* %temp1_val_3_addr_2, align 4
-
-ST_23: stg_543 [1/1] 2.71ns
-.preheader.i92.0:21  store float %temp1_val_6_load_2, float* %temp1_val_4_addr_2, align 4
-
-ST_23: stg_544 [1/1] 2.71ns
-.preheader.i92.0:22  store float %temp1_val_7_load_2, float* %temp1_val_5_addr_2, align 4
-
-ST_23: stg_545 [1/1] 2.71ns
-.preheader.i92.0:23  store float %temp1_val_8_load_2, float* %temp1_val_6_addr_2, align 4
-
-ST_23: stg_546 [1/1] 2.71ns
-.preheader.i92.0:24  store float %temp1_val_9_load_2, float* %temp1_val_7_addr_2, align 4
-
-ST_23: stg_547 [1/1] 2.71ns
-.preheader.i92.0:25  store float %temp1_val_10_load_2, float* %temp1_val_8_addr_2, align 4
-
-ST_23: stg_548 [1/1] 2.71ns
-.preheader.i92.0:26  store float %temp1_val_11_load_2, float* %temp1_val_9_addr_2, align 4
-
-ST_23: stg_549 [1/1] 2.71ns
-.preheader.i92.0:27  store float %temp1_val_12_load_2, float* %temp1_val_10_addr_2, align 4
-
-ST_23: stg_550 [1/1] 2.71ns
-.preheader.i92.0:28  store float %temp1_val_13_load_2, float* %temp1_val_11_addr_2, align 4
-
-ST_23: stg_551 [1/1] 2.71ns
-.preheader.i92.0:29  store float %temp1_val_14_load_2, float* %temp1_val_12_addr_2, align 4
-
-ST_23: stg_552 [1/1] 2.71ns
-.preheader.i92.0:30  store float %temp1_val_15_load_2, float* %temp1_val_13_addr_2, align 4
-
-ST_23: stg_553 [1/1] 2.71ns
-.preheader.i92.0:31  store float %temp1_val_16_load_2, float* %temp1_val_14_addr_2, align 4
-
-ST_23: stg_554 [1/1] 2.71ns
-.preheader.i92.0:32  store float %temp1_val_17_load_2, float* %temp1_val_15_addr_2, align 4
-
-ST_23: stg_555 [1/1] 2.71ns
-.preheader.i92.0:33  store float %temp1_val_18_load_2, float* %temp1_val_16_addr_2, align 4
-
-ST_23: stg_556 [1/1] 2.71ns
-.preheader.i92.0:34  store float %temp1_val_19_load, float* %temp1_val_17_addr_2, align 4
-
-ST_23: stg_557 [1/1] 2.71ns
-.preheader.i92.0:35  store float %temp1_val_19_load, float* %temp1_val_18_addr_2, align 4
-
-ST_23: stg_558 [1/1] 0.00ns
-.preheader.i92.0:36  br label %.preheader11
-
-
- <State 24>: 2.71ns
-ST_24: col_assign_4 [1/1] 0.00ns
-.preheader10:0  %col_assign_4 = phi i7 [ 0, %.preheader12 ], [ %i_4, %.preheader9 ]
-
-ST_24: exitcond2 [1/1] 1.97ns
-.preheader10:1  %exitcond2 = icmp eq i7 %col_assign_4, -28
-
-ST_24: empty_11 [1/1] 0.00ns
-.preheader10:2  %empty_11 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 100, i64 100, i64 100) nounwind
-
-ST_24: i_4 [1/1] 1.72ns
-.preheader10:3  %i_4 = add i7 %col_assign_4, 1
-
-ST_24: stg_563 [1/1] 0.00ns
-.preheader10:4  br i1 %exitcond2, label %.preheader13, label %.preheader9.preheader
-
-ST_24: tmp_4 [1/1] 0.00ns
-.preheader9.preheader:0  %tmp_4 = zext i7 %col_assign_4 to i64
-
-ST_24: temp2_val_19_addr_2 [1/1] 0.00ns
-.preheader9.preheader:40  %temp2_val_19_addr_2 = getelementptr [100 x float]* %temp2_val_19, i64 0, i64 %tmp_4
-
-ST_24: temp2_val_19_load [2/2] 2.71ns
-.preheader9.preheader:41  %temp2_val_19_load = load float* %temp2_val_19_addr_2, align 4
-
-
- <State 25>: 2.71ns
-ST_25: temp2_val_0_addr_1 [1/1] 0.00ns
-.preheader9.preheader:1  %temp2_val_0_addr_1 = getelementptr [100 x float]* %temp2_val_0, i64 0, i64 %tmp_4
-
-ST_25: temp2_val_1_addr_1 [1/1] 0.00ns
-.preheader9.preheader:2  %temp2_val_1_addr_1 = getelementptr [100 x float]* %temp2_val_1, i64 0, i64 %tmp_4
-
-ST_25: temp1_val_18_addr_3 [1/1] 0.00ns
-.preheader9.preheader:3  %temp1_val_18_addr_3 = getelementptr [100 x float]* %temp1_val_18, i64 0, i64 %tmp_4
-
-ST_25: temp1_val_19_addr_3 [1/1] 0.00ns
-.preheader9.preheader:4  %temp1_val_19_addr_3 = getelementptr [100 x float]* %temp1_val_19, i64 0, i64 %tmp_4
-
-ST_25: temp1_val_17_addr_3 [1/1] 0.00ns
-.preheader9.preheader:5  %temp1_val_17_addr_3 = getelementptr [100 x float]* %temp1_val_17, i64 0, i64 %tmp_4
-
-ST_25: temp1_val_16_addr_3 [1/1] 0.00ns
-.preheader9.preheader:6  %temp1_val_16_addr_3 = getelementptr [100 x float]* %temp1_val_16, i64 0, i64 %tmp_4
-
-ST_25: temp1_val_15_addr_3 [1/1] 0.00ns
-.preheader9.preheader:7  %temp1_val_15_addr_3 = getelementptr [100 x float]* %temp1_val_15, i64 0, i64 %tmp_4
-
-ST_25: temp1_val_14_addr_3 [1/1] 0.00ns
-.preheader9.preheader:8  %temp1_val_14_addr_3 = getelementptr [100 x float]* %temp1_val_14, i64 0, i64 %tmp_4
-
-ST_25: temp1_val_13_addr_3 [1/1] 0.00ns
-.preheader9.preheader:9  %temp1_val_13_addr_3 = getelementptr [100 x float]* %temp1_val_13, i64 0, i64 %tmp_4
-
-ST_25: temp1_val_12_addr_3 [1/1] 0.00ns
-.preheader9.preheader:10  %temp1_val_12_addr_3 = getelementptr [100 x float]* %temp1_val_12, i64 0, i64 %tmp_4
-
-ST_25: temp1_val_11_addr_3 [1/1] 0.00ns
-.preheader9.preheader:11  %temp1_val_11_addr_3 = getelementptr [100 x float]* %temp1_val_11, i64 0, i64 %tmp_4
-
-ST_25: temp1_val_10_addr_3 [1/1] 0.00ns
-.preheader9.preheader:12  %temp1_val_10_addr_3 = getelementptr [100 x float]* %temp1_val_10, i64 0, i64 %tmp_4
-
-ST_25: temp1_val_9_addr_3 [1/1] 0.00ns
-.preheader9.preheader:13  %temp1_val_9_addr_3 = getelementptr [100 x float]* %temp1_val_9, i64 0, i64 %tmp_4
-
-ST_25: temp1_val_8_addr_3 [1/1] 0.00ns
-.preheader9.preheader:14  %temp1_val_8_addr_3 = getelementptr [100 x float]* %temp1_val_8, i64 0, i64 %tmp_4
-
-ST_25: temp1_val_7_addr_3 [1/1] 0.00ns
-.preheader9.preheader:15  %temp1_val_7_addr_3 = getelementptr [100 x float]* %temp1_val_7, i64 0, i64 %tmp_4
-
-ST_25: temp1_val_6_addr_3 [1/1] 0.00ns
-.preheader9.preheader:16  %temp1_val_6_addr_3 = getelementptr [100 x float]* %temp1_val_6, i64 0, i64 %tmp_4
-
-ST_25: temp1_val_5_addr_3 [1/1] 0.00ns
-.preheader9.preheader:17  %temp1_val_5_addr_3 = getelementptr [100 x float]* %temp1_val_5, i64 0, i64 %tmp_4
-
-ST_25: temp1_val_4_addr_3 [1/1] 0.00ns
-.preheader9.preheader:18  %temp1_val_4_addr_3 = getelementptr [100 x float]* %temp1_val_4, i64 0, i64 %tmp_4
-
-ST_25: temp1_val_3_addr_3 [1/1] 0.00ns
-.preheader9.preheader:19  %temp1_val_3_addr_3 = getelementptr [100 x float]* %temp1_val_3, i64 0, i64 %tmp_4
-
-ST_25: temp1_val_2_addr_3 [1/1] 0.00ns
-.preheader9.preheader:20  %temp1_val_2_addr_3 = getelementptr [100 x float]* %temp1_val_2, i64 0, i64 %tmp_4
-
-ST_25: temp1_val_1_addr_3 [1/1] 0.00ns
-.preheader9.preheader:21  %temp1_val_1_addr_3 = getelementptr [100 x float]* %temp1_val_1, i64 0, i64 %tmp_4
-
-ST_25: temp1_val_0_addr_4 [1/1] 0.00ns
-.preheader9.preheader:22  %temp1_val_0_addr_4 = getelementptr [100 x float]* %temp1_val_0, i64 0, i64 %tmp_4
-
-ST_25: temp2_val_2_addr_2 [1/1] 0.00ns
-.preheader9.preheader:23  %temp2_val_2_addr_2 = getelementptr [100 x float]* %temp2_val_2, i64 0, i64 %tmp_4
-
-ST_25: temp2_val_3_addr_2 [1/1] 0.00ns
-.preheader9.preheader:24  %temp2_val_3_addr_2 = getelementptr [100 x float]* %temp2_val_3, i64 0, i64 %tmp_4
-
-ST_25: temp2_val_4_addr_2 [1/1] 0.00ns
-.preheader9.preheader:25  %temp2_val_4_addr_2 = getelementptr [100 x float]* %temp2_val_4, i64 0, i64 %tmp_4
-
-ST_25: temp2_val_5_addr_2 [1/1] 0.00ns
-.preheader9.preheader:26  %temp2_val_5_addr_2 = getelementptr [100 x float]* %temp2_val_5, i64 0, i64 %tmp_4
-
-ST_25: temp2_val_6_addr_2 [1/1] 0.00ns
-.preheader9.preheader:27  %temp2_val_6_addr_2 = getelementptr [100 x float]* %temp2_val_6, i64 0, i64 %tmp_4
-
-ST_25: temp2_val_7_addr_2 [1/1] 0.00ns
-.preheader9.preheader:28  %temp2_val_7_addr_2 = getelementptr [100 x float]* %temp2_val_7, i64 0, i64 %tmp_4
-
-ST_25: temp2_val_8_addr_2 [1/1] 0.00ns
-.preheader9.preheader:29  %temp2_val_8_addr_2 = getelementptr [100 x float]* %temp2_val_8, i64 0, i64 %tmp_4
-
-ST_25: temp2_val_9_addr_2 [1/1] 0.00ns
-.preheader9.preheader:30  %temp2_val_9_addr_2 = getelementptr [100 x float]* %temp2_val_9, i64 0, i64 %tmp_4
-
-ST_25: temp2_val_10_addr_2 [1/1] 0.00ns
-.preheader9.preheader:31  %temp2_val_10_addr_2 = getelementptr [100 x float]* %temp2_val_10, i64 0, i64 %tmp_4
-
-ST_25: temp2_val_11_addr_2 [1/1] 0.00ns
-.preheader9.preheader:32  %temp2_val_11_addr_2 = getelementptr [100 x float]* %temp2_val_11, i64 0, i64 %tmp_4
-
-ST_25: temp2_val_12_addr_2 [1/1] 0.00ns
-.preheader9.preheader:33  %temp2_val_12_addr_2 = getelementptr [100 x float]* %temp2_val_12, i64 0, i64 %tmp_4
-
-ST_25: temp2_val_13_addr_2 [1/1] 0.00ns
-.preheader9.preheader:34  %temp2_val_13_addr_2 = getelementptr [100 x float]* %temp2_val_13, i64 0, i64 %tmp_4
-
-ST_25: temp2_val_14_addr_2 [1/1] 0.00ns
-.preheader9.preheader:35  %temp2_val_14_addr_2 = getelementptr [100 x float]* %temp2_val_14, i64 0, i64 %tmp_4
-
-ST_25: temp2_val_15_addr_2 [1/1] 0.00ns
-.preheader9.preheader:36  %temp2_val_15_addr_2 = getelementptr [100 x float]* %temp2_val_15, i64 0, i64 %tmp_4
-
-ST_25: temp2_val_16_addr_2 [1/1] 0.00ns
-.preheader9.preheader:37  %temp2_val_16_addr_2 = getelementptr [100 x float]* %temp2_val_16, i64 0, i64 %tmp_4
-
-ST_25: temp2_val_17_addr_2 [1/1] 0.00ns
-.preheader9.preheader:38  %temp2_val_17_addr_2 = getelementptr [100 x float]* %temp2_val_17, i64 0, i64 %tmp_4
-
-ST_25: temp2_val_18_addr_2 [1/1] 0.00ns
-.preheader9.preheader:39  %temp2_val_18_addr_2 = getelementptr [100 x float]* %temp2_val_18, i64 0, i64 %tmp_4
-
-ST_25: temp2_val_19_load [1/2] 2.71ns
-.preheader9.preheader:41  %temp2_val_19_load = load float* %temp2_val_19_addr_2, align 4
-
-ST_25: stg_607 [1/1] 1.57ns
-.preheader9.preheader:42  br label %.preheader9
-
-
- <State 26>: 2.71ns
-ST_26: j5 [1/1] 0.00ns
-.preheader9:0  %j5 = phi i5 [ %j_3, %.preheader.i76.0 ], [ 0, %.preheader9.preheader ]
-
-ST_26: exitcond1 [1/1] 1.91ns
-.preheader9:1  %exitcond1 = icmp eq i5 %j5, -12
-
-ST_26: empty_12 [1/1] 0.00ns
-.preheader9:2  %empty_12 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 20, i64 20, i64 20) nounwind
-
-ST_26: j_3 [1/1] 1.72ns
-.preheader9:3  %j_3 = add i5 %j5, 1
-
-ST_26: stg_612 [1/1] 0.00ns
-.preheader9:4  br i1 %exitcond1, label %.preheader10, label %getval.exit61
-
-ST_26: temp2_val_0_load_1 [2/2] 2.71ns
-getval.exit61:0  %temp2_val_0_load_1 = load float* %temp2_val_0_addr_1, align 4
-
-ST_26: temp2_val_1_load_1 [2/2] 2.71ns
-getval.exit61:1  %temp2_val_1_load_1 = load float* %temp2_val_1_addr_1, align 4
-
-
- <State 27>: 2.71ns
-ST_27: temp2_val_0_load_1 [1/2] 2.71ns
-getval.exit61:0  %temp2_val_0_load_1 = load float* %temp2_val_0_addr_1, align 4
-
-ST_27: temp2_val_1_load_1 [1/2] 2.71ns
-getval.exit61:1  %temp2_val_1_load_1 = load float* %temp2_val_1_addr_1, align 4
-
-
- <State 28>: 7.26ns
-ST_28: sum_1 [5/5] 7.26ns
-getval.exit61:2  %sum_1 = fadd float %temp2_val_0_load_1, %temp2_val_1_load_1
-
-
- <State 29>: 7.26ns
-ST_29: sum_1 [4/5] 7.26ns
-getval.exit61:2  %sum_1 = fadd float %temp2_val_0_load_1, %temp2_val_1_load_1
-
-
- <State 30>: 7.26ns
-ST_30: sum_1 [3/5] 7.26ns
-getval.exit61:2  %sum_1 = fadd float %temp2_val_0_load_1, %temp2_val_1_load_1
-
-
- <State 31>: 7.26ns
-ST_31: sum_1 [2/5] 7.26ns
-getval.exit61:2  %sum_1 = fadd float %temp2_val_0_load_1, %temp2_val_1_load_1
-
-
- <State 32>: 7.26ns
-ST_32: sum_1 [1/5] 7.26ns
-getval.exit61:2  %sum_1 = fadd float %temp2_val_0_load_1, %temp2_val_1_load_1
-
-
- <State 33>: 8.16ns
-ST_33: sum_1_to_int [1/1] 0.00ns
-getval.exit61:3  %sum_1_to_int = bitcast float %sum_1 to i32
-
-ST_33: tmp_12 [1/1] 0.00ns
-getval.exit61:4  %tmp_12 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %sum_1_to_int, i32 23, i32 30)
-
-ST_33: tmp_13 [1/1] 0.00ns
-getval.exit61:5  %tmp_13 = trunc i32 %sum_1_to_int to i23
-
-ST_33: notlhs7 [1/1] 2.00ns
-getval.exit61:6  %notlhs7 = icmp ne i8 %tmp_12, -1
-
-ST_33: notrhs8 [1/1] 2.39ns
-getval.exit61:7  %notrhs8 = icmp eq i23 %tmp_13, 0
-
-ST_33: tmp_14 [1/1] 0.00ns (grouped into LUT with out node tmp_16)
-getval.exit61:8  %tmp_14 = or i1 %notrhs8, %notlhs7
-
-ST_33: tmp_15 [1/1] 6.79ns
-getval.exit61:9  %tmp_15 = fcmp oeq float %sum_1, 0.000000e+00
-
-ST_33: tmp_16 [1/1] 1.37ns (out node of the LUT)
-getval.exit61:10  %tmp_16 = and i1 %tmp_14, %tmp_15
-
-ST_33: stg_630 [1/1] 0.00ns
-getval.exit61:11  br i1 %tmp_16, label %.preheader.i76.0, label %.preheader.i.0
-
-ST_33: temp1_val_18_load_3 [2/2] 2.71ns
-.preheader.i.0:0  %temp1_val_18_load_3 = load float* %temp1_val_18_addr_3, align 4
-
-ST_33: temp1_val_17_load_3 [2/2] 2.71ns
-.preheader.i.0:2  %temp1_val_17_load_3 = load float* %temp1_val_17_addr_3, align 4
-
-ST_33: temp1_val_16_load_3 [2/2] 2.71ns
-.preheader.i.0:4  %temp1_val_16_load_3 = load float* %temp1_val_16_addr_3, align 4
-
-ST_33: temp1_val_15_load_3 [2/2] 2.71ns
-.preheader.i.0:6  %temp1_val_15_load_3 = load float* %temp1_val_15_addr_3, align 4
-
-ST_33: temp1_val_14_load_3 [2/2] 2.71ns
-.preheader.i.0:8  %temp1_val_14_load_3 = load float* %temp1_val_14_addr_3, align 4
-
-ST_33: temp1_val_13_load_3 [2/2] 2.71ns
-.preheader.i.0:10  %temp1_val_13_load_3 = load float* %temp1_val_13_addr_3, align 4
-
-ST_33: temp1_val_12_load_3 [2/2] 2.71ns
-.preheader.i.0:12  %temp1_val_12_load_3 = load float* %temp1_val_12_addr_3, align 4
-
-ST_33: temp1_val_11_load_3 [2/2] 2.71ns
-.preheader.i.0:14  %temp1_val_11_load_3 = load float* %temp1_val_11_addr_3, align 4
-
-ST_33: temp1_val_10_load_3 [2/2] 2.71ns
-.preheader.i.0:16  %temp1_val_10_load_3 = load float* %temp1_val_10_addr_3, align 4
-
-ST_33: temp1_val_9_load_3 [2/2] 2.71ns
-.preheader.i.0:18  %temp1_val_9_load_3 = load float* %temp1_val_9_addr_3, align 4
-
-ST_33: temp1_val_8_load_3 [2/2] 2.71ns
-.preheader.i.0:20  %temp1_val_8_load_3 = load float* %temp1_val_8_addr_3, align 4
-
-ST_33: temp1_val_7_load_3 [2/2] 2.71ns
-.preheader.i.0:22  %temp1_val_7_load_3 = load float* %temp1_val_7_addr_3, align 4
-
-ST_33: temp1_val_6_load_3 [2/2] 2.71ns
-.preheader.i.0:24  %temp1_val_6_load_3 = load float* %temp1_val_6_addr_3, align 4
-
-ST_33: temp1_val_5_load_3 [2/2] 2.71ns
-.preheader.i.0:26  %temp1_val_5_load_3 = load float* %temp1_val_5_addr_3, align 4
-
-ST_33: temp1_val_4_load_3 [2/2] 2.71ns
-.preheader.i.0:28  %temp1_val_4_load_3 = load float* %temp1_val_4_addr_3, align 4
-
-ST_33: temp1_val_3_load_3 [2/2] 2.71ns
-.preheader.i.0:30  %temp1_val_3_load_3 = load float* %temp1_val_3_addr_3, align 4
-
-ST_33: temp1_val_2_load_3 [2/2] 2.71ns
-.preheader.i.0:32  %temp1_val_2_load_3 = load float* %temp1_val_2_addr_3, align 4
-
-ST_33: temp1_val_1_load_3 [2/2] 2.71ns
-.preheader.i.0:34  %temp1_val_1_load_3 = load float* %temp1_val_1_addr_3, align 4
-
-ST_33: temp1_val_0_load_4 [2/2] 2.71ns
-.preheader.i.0:36  %temp1_val_0_load_4 = load float* %temp1_val_0_addr_4, align 4
-
-
- <State 34>: 5.42ns
-ST_34: temp1_val_18_load_3 [1/2] 2.71ns
-.preheader.i.0:0  %temp1_val_18_load_3 = load float* %temp1_val_18_addr_3, align 4
-
-ST_34: stg_651 [1/1] 2.71ns
-.preheader.i.0:1  store float %temp1_val_18_load_3, float* %temp1_val_19_addr_3, align 4
-
-ST_34: temp1_val_17_load_3 [1/2] 2.71ns
-.preheader.i.0:2  %temp1_val_17_load_3 = load float* %temp1_val_17_addr_3, align 4
-
-ST_34: stg_653 [1/1] 2.71ns
-.preheader.i.0:3  store float %temp1_val_17_load_3, float* %temp1_val_18_addr_3, align 4
-
-ST_34: temp1_val_16_load_3 [1/2] 2.71ns
-.preheader.i.0:4  %temp1_val_16_load_3 = load float* %temp1_val_16_addr_3, align 4
-
-ST_34: stg_655 [1/1] 2.71ns
-.preheader.i.0:5  store float %temp1_val_16_load_3, float* %temp1_val_17_addr_3, align 4
-
-ST_34: temp1_val_15_load_3 [1/2] 2.71ns
-.preheader.i.0:6  %temp1_val_15_load_3 = load float* %temp1_val_15_addr_3, align 4
-
-ST_34: stg_657 [1/1] 2.71ns
-.preheader.i.0:7  store float %temp1_val_15_load_3, float* %temp1_val_16_addr_3, align 4
-
-ST_34: temp1_val_14_load_3 [1/2] 2.71ns
-.preheader.i.0:8  %temp1_val_14_load_3 = load float* %temp1_val_14_addr_3, align 4
-
-ST_34: stg_659 [1/1] 2.71ns
-.preheader.i.0:9  store float %temp1_val_14_load_3, float* %temp1_val_15_addr_3, align 4
-
-ST_34: temp1_val_13_load_3 [1/2] 2.71ns
-.preheader.i.0:10  %temp1_val_13_load_3 = load float* %temp1_val_13_addr_3, align 4
-
-ST_34: stg_661 [1/1] 2.71ns
-.preheader.i.0:11  store float %temp1_val_13_load_3, float* %temp1_val_14_addr_3, align 4
-
-ST_34: temp1_val_12_load_3 [1/2] 2.71ns
-.preheader.i.0:12  %temp1_val_12_load_3 = load float* %temp1_val_12_addr_3, align 4
-
-ST_34: stg_663 [1/1] 2.71ns
-.preheader.i.0:13  store float %temp1_val_12_load_3, float* %temp1_val_13_addr_3, align 4
-
-ST_34: temp1_val_11_load_3 [1/2] 2.71ns
-.preheader.i.0:14  %temp1_val_11_load_3 = load float* %temp1_val_11_addr_3, align 4
-
-ST_34: stg_665 [1/1] 2.71ns
-.preheader.i.0:15  store float %temp1_val_11_load_3, float* %temp1_val_12_addr_3, align 4
-
-ST_34: temp1_val_10_load_3 [1/2] 2.71ns
-.preheader.i.0:16  %temp1_val_10_load_3 = load float* %temp1_val_10_addr_3, align 4
-
-ST_34: stg_667 [1/1] 2.71ns
-.preheader.i.0:17  store float %temp1_val_10_load_3, float* %temp1_val_11_addr_3, align 4
-
-ST_34: temp1_val_9_load_3 [1/2] 2.71ns
-.preheader.i.0:18  %temp1_val_9_load_3 = load float* %temp1_val_9_addr_3, align 4
-
-ST_34: stg_669 [1/1] 2.71ns
-.preheader.i.0:19  store float %temp1_val_9_load_3, float* %temp1_val_10_addr_3, align 4
-
-ST_34: temp1_val_8_load_3 [1/2] 2.71ns
-.preheader.i.0:20  %temp1_val_8_load_3 = load float* %temp1_val_8_addr_3, align 4
-
-ST_34: stg_671 [1/1] 2.71ns
-.preheader.i.0:21  store float %temp1_val_8_load_3, float* %temp1_val_9_addr_3, align 4
-
-ST_34: temp1_val_7_load_3 [1/2] 2.71ns
-.preheader.i.0:22  %temp1_val_7_load_3 = load float* %temp1_val_7_addr_3, align 4
-
-ST_34: stg_673 [1/1] 2.71ns
-.preheader.i.0:23  store float %temp1_val_7_load_3, float* %temp1_val_8_addr_3, align 4
-
-ST_34: temp1_val_6_load_3 [1/2] 2.71ns
-.preheader.i.0:24  %temp1_val_6_load_3 = load float* %temp1_val_6_addr_3, align 4
-
-ST_34: stg_675 [1/1] 2.71ns
-.preheader.i.0:25  store float %temp1_val_6_load_3, float* %temp1_val_7_addr_3, align 4
-
-ST_34: temp1_val_5_load_3 [1/2] 2.71ns
-.preheader.i.0:26  %temp1_val_5_load_3 = load float* %temp1_val_5_addr_3, align 4
-
-ST_34: stg_677 [1/1] 2.71ns
-.preheader.i.0:27  store float %temp1_val_5_load_3, float* %temp1_val_6_addr_3, align 4
-
-ST_34: temp1_val_4_load_3 [1/2] 2.71ns
-.preheader.i.0:28  %temp1_val_4_load_3 = load float* %temp1_val_4_addr_3, align 4
-
-ST_34: stg_679 [1/1] 2.71ns
-.preheader.i.0:29  store float %temp1_val_4_load_3, float* %temp1_val_5_addr_3, align 4
-
-ST_34: temp1_val_3_load_3 [1/2] 2.71ns
-.preheader.i.0:30  %temp1_val_3_load_3 = load float* %temp1_val_3_addr_3, align 4
-
-ST_34: stg_681 [1/1] 2.71ns
-.preheader.i.0:31  store float %temp1_val_3_load_3, float* %temp1_val_4_addr_3, align 4
-
-ST_34: temp1_val_2_load_3 [1/2] 2.71ns
-.preheader.i.0:32  %temp1_val_2_load_3 = load float* %temp1_val_2_addr_3, align 4
-
-ST_34: stg_683 [1/1] 2.71ns
-.preheader.i.0:33  store float %temp1_val_2_load_3, float* %temp1_val_3_addr_3, align 4
-
-ST_34: temp1_val_1_load_3 [1/2] 2.71ns
-.preheader.i.0:34  %temp1_val_1_load_3 = load float* %temp1_val_1_addr_3, align 4
-
-ST_34: stg_685 [1/1] 2.71ns
-.preheader.i.0:35  store float %temp1_val_1_load_3, float* %temp1_val_2_addr_3, align 4
-
-ST_34: temp1_val_0_load_4 [1/2] 2.71ns
-.preheader.i.0:36  %temp1_val_0_load_4 = load float* %temp1_val_0_addr_4, align 4
-
-ST_34: stg_687 [1/1] 2.71ns
-.preheader.i.0:37  store float %temp1_val_0_load_4, float* %temp1_val_1_addr_3, align 4
-
-ST_34: stg_688 [1/1] 2.71ns
-.preheader.i.0:38  store float %sum_1, float* %temp1_val_0_addr_4, align 4
-
-ST_34: stg_689 [1/1] 0.00ns
-.preheader.i.0:39  br label %.preheader.i76.0
-
-ST_34: temp2_val_2_load_2 [2/2] 2.71ns
-.preheader.i76.0:0  %temp2_val_2_load_2 = load float* %temp2_val_2_addr_2, align 4
-
-ST_34: temp2_val_3_load_2 [2/2] 2.71ns
-.preheader.i76.0:1  %temp2_val_3_load_2 = load float* %temp2_val_3_addr_2, align 4
-
-ST_34: temp2_val_4_load_2 [2/2] 2.71ns
-.preheader.i76.0:2  %temp2_val_4_load_2 = load float* %temp2_val_4_addr_2, align 4
-
-ST_34: temp2_val_5_load_2 [2/2] 2.71ns
-.preheader.i76.0:3  %temp2_val_5_load_2 = load float* %temp2_val_5_addr_2, align 4
-
-ST_34: temp2_val_6_load_2 [2/2] 2.71ns
-.preheader.i76.0:4  %temp2_val_6_load_2 = load float* %temp2_val_6_addr_2, align 4
-
-ST_34: temp2_val_7_load_2 [2/2] 2.71ns
-.preheader.i76.0:5  %temp2_val_7_load_2 = load float* %temp2_val_7_addr_2, align 4
-
-ST_34: temp2_val_8_load_2 [2/2] 2.71ns
-.preheader.i76.0:6  %temp2_val_8_load_2 = load float* %temp2_val_8_addr_2, align 4
-
-ST_34: temp2_val_9_load_2 [2/2] 2.71ns
-.preheader.i76.0:7  %temp2_val_9_load_2 = load float* %temp2_val_9_addr_2, align 4
-
-ST_34: temp2_val_10_load_2 [2/2] 2.71ns
-.preheader.i76.0:8  %temp2_val_10_load_2 = load float* %temp2_val_10_addr_2, align 4
-
-ST_34: temp2_val_11_load_2 [2/2] 2.71ns
-.preheader.i76.0:9  %temp2_val_11_load_2 = load float* %temp2_val_11_addr_2, align 4
-
-ST_34: temp2_val_12_load_2 [2/2] 2.71ns
-.preheader.i76.0:10  %temp2_val_12_load_2 = load float* %temp2_val_12_addr_2, align 4
-
-ST_34: temp2_val_13_load_2 [2/2] 2.71ns
-.preheader.i76.0:11  %temp2_val_13_load_2 = load float* %temp2_val_13_addr_2, align 4
-
-ST_34: temp2_val_14_load_2 [2/2] 2.71ns
-.preheader.i76.0:12  %temp2_val_14_load_2 = load float* %temp2_val_14_addr_2, align 4
-
-ST_34: temp2_val_15_load_2 [2/2] 2.71ns
-.preheader.i76.0:13  %temp2_val_15_load_2 = load float* %temp2_val_15_addr_2, align 4
-
-ST_34: temp2_val_16_load_2 [2/2] 2.71ns
-.preheader.i76.0:14  %temp2_val_16_load_2 = load float* %temp2_val_16_addr_2, align 4
-
-ST_34: temp2_val_17_load_2 [2/2] 2.71ns
-.preheader.i76.0:15  %temp2_val_17_load_2 = load float* %temp2_val_17_addr_2, align 4
-
-ST_34: temp2_val_18_load_2 [2/2] 2.71ns
-.preheader.i76.0:16  %temp2_val_18_load_2 = load float* %temp2_val_18_addr_2, align 4
-
-
- <State 35>: 5.42ns
-ST_35: temp2_val_2_load_2 [1/2] 2.71ns
-.preheader.i76.0:0  %temp2_val_2_load_2 = load float* %temp2_val_2_addr_2, align 4
-
-ST_35: temp2_val_3_load_2 [1/2] 2.71ns
-.preheader.i76.0:1  %temp2_val_3_load_2 = load float* %temp2_val_3_addr_2, align 4
-
-ST_35: temp2_val_4_load_2 [1/2] 2.71ns
-.preheader.i76.0:2  %temp2_val_4_load_2 = load float* %temp2_val_4_addr_2, align 4
-
-ST_35: temp2_val_5_load_2 [1/2] 2.71ns
-.preheader.i76.0:3  %temp2_val_5_load_2 = load float* %temp2_val_5_addr_2, align 4
-
-ST_35: temp2_val_6_load_2 [1/2] 2.71ns
-.preheader.i76.0:4  %temp2_val_6_load_2 = load float* %temp2_val_6_addr_2, align 4
-
-ST_35: temp2_val_7_load_2 [1/2] 2.71ns
-.preheader.i76.0:5  %temp2_val_7_load_2 = load float* %temp2_val_7_addr_2, align 4
-
-ST_35: temp2_val_8_load_2 [1/2] 2.71ns
-.preheader.i76.0:6  %temp2_val_8_load_2 = load float* %temp2_val_8_addr_2, align 4
-
-ST_35: temp2_val_9_load_2 [1/2] 2.71ns
-.preheader.i76.0:7  %temp2_val_9_load_2 = load float* %temp2_val_9_addr_2, align 4
-
-ST_35: temp2_val_10_load_2 [1/2] 2.71ns
-.preheader.i76.0:8  %temp2_val_10_load_2 = load float* %temp2_val_10_addr_2, align 4
-
-ST_35: temp2_val_11_load_2 [1/2] 2.71ns
-.preheader.i76.0:9  %temp2_val_11_load_2 = load float* %temp2_val_11_addr_2, align 4
-
-ST_35: temp2_val_12_load_2 [1/2] 2.71ns
-.preheader.i76.0:10  %temp2_val_12_load_2 = load float* %temp2_val_12_addr_2, align 4
-
-ST_35: temp2_val_13_load_2 [1/2] 2.71ns
-.preheader.i76.0:11  %temp2_val_13_load_2 = load float* %temp2_val_13_addr_2, align 4
-
-ST_35: temp2_val_14_load_2 [1/2] 2.71ns
-.preheader.i76.0:12  %temp2_val_14_load_2 = load float* %temp2_val_14_addr_2, align 4
-
-ST_35: temp2_val_15_load_2 [1/2] 2.71ns
-.preheader.i76.0:13  %temp2_val_15_load_2 = load float* %temp2_val_15_addr_2, align 4
-
-ST_35: temp2_val_16_load_2 [1/2] 2.71ns
-.preheader.i76.0:14  %temp2_val_16_load_2 = load float* %temp2_val_16_addr_2, align 4
-
-ST_35: temp2_val_17_load_2 [1/2] 2.71ns
-.preheader.i76.0:15  %temp2_val_17_load_2 = load float* %temp2_val_17_addr_2, align 4
-
-ST_35: temp2_val_18_load_2 [1/2] 2.71ns
-.preheader.i76.0:16  %temp2_val_18_load_2 = load float* %temp2_val_18_addr_2, align 4
-
-ST_35: stg_724 [1/1] 2.71ns
-.preheader.i76.0:17  store float %temp2_val_2_load_2, float* %temp2_val_0_addr_1, align 4
-
-ST_35: stg_725 [1/1] 2.71ns
-.preheader.i76.0:18  store float %temp2_val_3_load_2, float* %temp2_val_1_addr_1, align 4
-
-ST_35: stg_726 [1/1] 2.71ns
-.preheader.i76.0:19  store float %temp2_val_4_load_2, float* %temp2_val_2_addr_2, align 4
-
-ST_35: stg_727 [1/1] 2.71ns
-.preheader.i76.0:20  store float %temp2_val_5_load_2, float* %temp2_val_3_addr_2, align 4
-
-ST_35: stg_728 [1/1] 2.71ns
-.preheader.i76.0:21  store float %temp2_val_6_load_2, float* %temp2_val_4_addr_2, align 4
-
-ST_35: stg_729 [1/1] 2.71ns
-.preheader.i76.0:22  store float %temp2_val_7_load_2, float* %temp2_val_5_addr_2, align 4
-
-ST_35: stg_730 [1/1] 2.71ns
-.preheader.i76.0:23  store float %temp2_val_8_load_2, float* %temp2_val_6_addr_2, align 4
-
-ST_35: stg_731 [1/1] 2.71ns
-.preheader.i76.0:24  store float %temp2_val_9_load_2, float* %temp2_val_7_addr_2, align 4
-
-ST_35: stg_732 [1/1] 2.71ns
-.preheader.i76.0:25  store float %temp2_val_10_load_2, float* %temp2_val_8_addr_2, align 4
-
-ST_35: stg_733 [1/1] 2.71ns
-.preheader.i76.0:26  store float %temp2_val_11_load_2, float* %temp2_val_9_addr_2, align 4
-
-ST_35: stg_734 [1/1] 2.71ns
-.preheader.i76.0:27  store float %temp2_val_12_load_2, float* %temp2_val_10_addr_2, align 4
-
-ST_35: stg_735 [1/1] 2.71ns
-.preheader.i76.0:28  store float %temp2_val_13_load_2, float* %temp2_val_11_addr_2, align 4
-
-ST_35: stg_736 [1/1] 2.71ns
-.preheader.i76.0:29  store float %temp2_val_14_load_2, float* %temp2_val_12_addr_2, align 4
-
-ST_35: stg_737 [1/1] 2.71ns
-.preheader.i76.0:30  store float %temp2_val_15_load_2, float* %temp2_val_13_addr_2, align 4
-
-ST_35: stg_738 [1/1] 2.71ns
-.preheader.i76.0:31  store float %temp2_val_16_load_2, float* %temp2_val_14_addr_2, align 4
-
-ST_35: stg_739 [1/1] 2.71ns
-.preheader.i76.0:32  store float %temp2_val_17_load_2, float* %temp2_val_15_addr_2, align 4
-
-ST_35: stg_740 [1/1] 2.71ns
-.preheader.i76.0:33  store float %temp2_val_18_load_2, float* %temp2_val_16_addr_2, align 4
-
-ST_35: stg_741 [1/1] 2.71ns
-.preheader.i76.0:34  store float %temp2_val_19_load, float* %temp2_val_17_addr_2, align 4
-
-ST_35: stg_742 [1/1] 2.71ns
-.preheader.i76.0:35  store float %temp2_val_19_load, float* %temp2_val_18_addr_2, align 4
-
-ST_35: stg_743 [1/1] 0.00ns
-.preheader.i76.0:36  br label %.preheader9
-
-
- <State 36>: 2.71ns
-ST_36: col_assign_3 [1/1] 0.00ns
-.preheader:0  %col_assign_3 = phi i7 [ %i, %getval.exit ], [ 0, %.preheader13 ]
-
-ST_36: exitcond [1/1] 1.97ns
-.preheader:1  %exitcond = icmp eq i7 %col_assign_3, -28
-
-ST_36: empty_13 [1/1] 0.00ns
-.preheader:2  %empty_13 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 100, i64 100, i64 100) nounwind
-
-ST_36: i [1/1] 1.72ns
-.preheader:3  %i = add i7 %col_assign_3, 1
-
-ST_36: stg_748 [1/1] 0.00ns
-.preheader:4  br i1 %exitcond, label %4, label %getval.exit
-
-ST_36: tmp_2 [1/1] 0.00ns
-getval.exit:0  %tmp_2 = zext i7 %col_assign_3 to i64
-
-ST_36: temp1_val_0_addr_2 [1/1] 0.00ns
-getval.exit:1  %temp1_val_0_addr_2 = getelementptr [100 x float]* %temp1_val_0, i64 0, i64 %tmp_2
-
-ST_36: temp1_val_0_load_2 [2/2] 2.71ns
-getval.exit:2  %temp1_val_0_load_2 = load float* %temp1_val_0_addr_2, align 4
-
-ST_36: stg_752 [1/1] 0.00ns
-:0  ret void
-
-
- <State 37>: 5.42ns
-ST_37: temp1_val_0_load_2 [1/2] 2.71ns
-getval.exit:2  %temp1_val_0_load_2 = load float* %temp1_val_0_addr_2, align 4
-
-ST_37: output_addr_1 [1/1] 0.00ns
-getval.exit:3  %output_addr_1 = getelementptr [100 x float]* %output_r, i64 0, i64 %tmp_2
-
-ST_37: stg_755 [1/1] 2.71ns
-getval.exit:4  store float %temp1_val_0_load_2, float* %output_addr_1, align 4
-
-ST_37: stg_756 [1/1] 0.00ns
-getval.exit:5  br label %.preheader
+ST_14: stg_73 [1/1] 0.00ns
+._crit_edge:0  br label %.preheader3
 
 
 
@@ -2430,29 +344,6 @@ N/A
 	State 12
 	State 13
 	State 14
-	State 15
-	State 16
-	State 17
-	State 18
-	State 19
-	State 20
-	State 21
-	State 22
-	State 23
-	State 24
-	State 25
-	State 26
-	State 27
-	State 28
-	State 29
-	State 30
-	State 31
-	State 32
-	State 33
-	State 34
-	State 35
-	State 36
-	State 37
 
 
 ============================================================

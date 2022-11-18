@@ -5,21 +5,21 @@
   Copyright (C) 1986-2016 Xilinx, Inc. All Rights Reserved.
 ================================================================
 INFO: [HLS 200-10] Running '/opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/bin/unwrapped/lnx64.o/vivado_hls'
-INFO: [HLS 200-10] For user 'sec322' on host 'en-ec-ecelinux-01.coecis.cornell.edu' (Linux_x86_64 version 3.10.0-1160.76.1.el7.x86_64) on Tue Nov 15 12:08:08 EST 2022
+INFO: [HLS 200-10] For user 'ak2425' on host 'en-ec-ecelinux-04.coecis.cornell.edu' (Linux_x86_64 version 3.10.0-1160.76.1.el7.x86_64) on Fri Nov 18 16:37:35 EST 2022
 INFO: [HLS 200-10] On os "CentOS Linux release 7.9.2009 (Core)"
-INFO: [HLS 200-10] In directory '/home/sec322/ece5775/ece5775_project/project'
-INFO: [HLS 200-10] Creating and opening project '/home/sec322/ece5775/ece5775_project/project/COO_SpMV.prj'.
+INFO: [HLS 200-10] In directory '/home/ak2425/ece5775/ece5775_project/project'
+INFO: [HLS 200-10] Opening and resetting project '/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj'.
 INFO: [HLS 200-10] Adding design file 'COO_SpMV.cpp' to the project
 INFO: [HLS 200-10] Adding test bench file 'COO_SpMV_test.cpp' to the project
-INFO: [HLS 200-10] Creating and opening solution '/home/sec322/ece5775/ece5775_project/project/COO_SpMV.prj/solution1'.
+INFO: [HLS 200-10] Opening and resetting solution '/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1'.
 INFO: [HLS 200-10] Cleaning up the solution database.
 INFO: [HLS 200-10] Setting target device to 'xc7z020clg484-1'
 INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
-make[1]: Entering directory `/home/sec322/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/csim/build'
+make[1]: Entering directory `/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/csim/build'
    Compiling ../../../../COO_SpMV_test.cpp in debug mode
    Compiling ../../../../COO_SpMV.cpp in debug mode
    Generating csim.exe
-make[1]: Leaving directory `/home/sec322/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/csim/build'
+make[1]: Leaving directory `/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/csim/build'
 Testing COO SpMV
 [32mPassed :)
 [0m[32mPassed :)
@@ -35,118 +35,8 @@ Testing COO SpMV
 INFO: [HLS 200-10] Analyzing design file 'COO_SpMV.cpp' ... 
 INFO: [HLS 200-10] Validating synthesis directives ...
 INFO: [HLS 200-10] Starting code transformations ...
-INFO: [XFORM 203-603] Inlining function 'hls::LineBuffer<20, 100, float, 0>::shift_pixels_down' into 'COO_SpMV' (COO_SpMV.cpp:61).
-INFO: [XFORM 203-603] Inlining function 'hls::LineBuffer<20, 100, float, 0>::shift_pixels_down' into 'COO_SpMV' (COO_SpMV.cpp:49).
-INFO: [XFORM 203-603] Inlining function 'hls::LineBuffer<20, 100, float, 0>::shift_pixels_down' into 'COO_SpMV' (COO_SpMV.cpp:38).
-INFO: [XFORM 203-603] Inlining function 'hls::LineBuffer<20, 100, float, 0>::shift_pixels_down' into 'COO_SpMV' (COO_SpMV.cpp:30).
-INFO: [XFORM 203-603] Inlining function 'hls::LineBuffer<20, 100, float, 0>::shift_pixels_down' into 'COO_SpMV' (COO_SpMV.cpp:28).
-INFO: [XFORM 203-603] Inlining function 'hls::LineBuffer<20, 100, float, 0>::insert_top_row' into 'COO_SpMV' (COO_SpMV.cpp:62).
-INFO: [XFORM 203-603] Inlining function 'hls::LineBuffer<20, 100, float, 0>::insert_top_row' into 'COO_SpMV' (COO_SpMV.cpp:50).
-INFO: [XFORM 203-603] Inlining function 'hls::LineBuffer<20, 100, float, 0>::insert_top_row' into 'COO_SpMV' (COO_SpMV.cpp:39).
-INFO: [XFORM 203-603] Inlining function 'hls::LineBuffer<20, 100, float, 0>::insert_top_row' into 'COO_SpMV' (COO_SpMV.cpp:31).
-INFO: [XFORM 203-603] Inlining function 'hls::LineBuffer<20, 100, float, 0>::insert_top_row' into 'COO_SpMV' (COO_SpMV.cpp:29).
-INFO: [XFORM 203-603] Inlining function 'hls::LineBuffer<20, 100, float, 0>::getval' into 'COO_SpMV' (COO_SpMV.cpp:71).
-INFO: [XFORM 203-603] Inlining function 'hls::LineBuffer<20, 100, float, 0>::getval' into 'COO_SpMV' (COO_SpMV.cpp:59).
-INFO: [XFORM 203-603] Inlining function 'hls::LineBuffer<20, 100, float, 0>::getval' into 'COO_SpMV' (COO_SpMV.cpp:59).
-INFO: [XFORM 203-603] Inlining function 'hls::LineBuffer<20, 100, float, 0>::getval' into 'COO_SpMV' (COO_SpMV.cpp:47).
-INFO: [XFORM 203-603] Inlining function 'hls::LineBuffer<20, 100, float, 0>::getval' into 'COO_SpMV' (COO_SpMV.cpp:47).
-INFO: [XFORM 203-603] Inlining function 'hls::LineBuffer<20, 100, float, 0>::shift_pixels_up' into 'COO_SpMV' (COO_SpMV.cpp:65).
-INFO: [XFORM 203-603] Inlining function 'hls::LineBuffer<20, 100, float, 0>::shift_pixels_up' into 'COO_SpMV' (COO_SpMV.cpp:64).
-INFO: [XFORM 203-603] Inlining function 'hls::LineBuffer<20, 100, float, 0>::shift_pixels_up' into 'COO_SpMV' (COO_SpMV.cpp:53).
-INFO: [XFORM 203-603] Inlining function 'hls::LineBuffer<20, 100, float, 0>::shift_pixels_up' into 'COO_SpMV' (COO_SpMV.cpp:52).
 INFO: [HLS 200-10] Checking synthesizability ...
-INFO: [XFORM 203-501] Unrolling loop 'Loop-1.1.1' (/opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/autopilot/hls/hls_video_mem.h:687) in function 'COO_SpMV' completely.
-INFO: [XFORM 203-501] Unrolling loop 'Loop-1.1.2' (/opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/autopilot/hls/hls_video_mem.h:687) in function 'COO_SpMV' completely.
-INFO: [XFORM 203-501] Unrolling loop 'Loop-2.1' (/opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/autopilot/hls/hls_video_mem.h:687) in function 'COO_SpMV' completely.
-INFO: [XFORM 203-501] Unrolling loop 'Loop-3.1.1.1' (/opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/autopilot/hls/hls_video_mem.h:687) in function 'COO_SpMV' completely.
-INFO: [XFORM 203-501] Unrolling loop 'Loop-3.1.1.2' (/opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/autopilot/hls/hls_video_mem.h:727) in function 'COO_SpMV' completely.
-INFO: [XFORM 203-501] Unrolling loop 'Loop-3.1.1.3' (/opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/autopilot/hls/hls_video_mem.h:727) in function 'COO_SpMV' completely.
-INFO: [XFORM 203-501] Unrolling loop 'Loop-3.2.1.1' (/opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/autopilot/hls/hls_video_mem.h:687) in function 'COO_SpMV' completely.
-INFO: [XFORM 203-501] Unrolling loop 'Loop-3.2.1.2' (/opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/autopilot/hls/hls_video_mem.h:727) in function 'COO_SpMV' completely.
-INFO: [XFORM 203-501] Unrolling loop 'Loop-3.2.1.3' (/opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/autopilot/hls/hls_video_mem.h:727) in function 'COO_SpMV' completely.
-INFO: [XFORM 203-101] Partitioning array 'temp1.val' (COO_SpMV.cpp:22) in dimension 1 completely.
-INFO: [XFORM 203-101] Partitioning array 'temp2.val' (COO_SpMV.cpp:23) in dimension 1 completely.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'temp1.val[18]' (COO_SpMV.cpp:22).
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'temp1.val[19]' (COO_SpMV.cpp:22).
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'temp1.val[0]' (COO_SpMV.cpp:22).
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'temp1.val[1]' (COO_SpMV.cpp:22).
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'temp1.val[2]' (COO_SpMV.cpp:22).
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'temp1.val[3]' (COO_SpMV.cpp:22).
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'temp1.val[4]' (COO_SpMV.cpp:22).
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'temp1.val[5]' (COO_SpMV.cpp:22).
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'temp1.val[6]' (COO_SpMV.cpp:22).
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'temp1.val[7]' (COO_SpMV.cpp:22).
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'temp1.val[8]' (COO_SpMV.cpp:22).
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'temp1.val[9]' (COO_SpMV.cpp:22).
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'temp1.val[10]' (COO_SpMV.cpp:22).
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'temp1.val[11]' (COO_SpMV.cpp:22).
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'temp1.val[12]' (COO_SpMV.cpp:22).
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'temp1.val[13]' (COO_SpMV.cpp:22).
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'temp1.val[14]' (COO_SpMV.cpp:22).
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'temp1.val[15]' (COO_SpMV.cpp:22).
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'temp1.val[16]' (COO_SpMV.cpp:22).
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'temp1.val[17]' (COO_SpMV.cpp:22).
-WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'temp1.val[18]' (COO_SpMV.cpp:22).
-WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'temp1.val[19]' (COO_SpMV.cpp:22).
-WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'temp1.val[0]' (COO_SpMV.cpp:22).
-WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'temp1.val[1]' (COO_SpMV.cpp:22).
-WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'temp1.val[2]' (COO_SpMV.cpp:22).
-WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'temp1.val[3]' (COO_SpMV.cpp:22).
-WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'temp1.val[4]' (COO_SpMV.cpp:22).
-WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'temp1.val[5]' (COO_SpMV.cpp:22).
-WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'temp1.val[6]' (COO_SpMV.cpp:22).
-WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'temp1.val[7]' (COO_SpMV.cpp:22).
-WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'temp1.val[8]' (COO_SpMV.cpp:22).
-WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'temp1.val[9]' (COO_SpMV.cpp:22).
-WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'temp1.val[10]' (COO_SpMV.cpp:22).
-WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'temp1.val[11]' (COO_SpMV.cpp:22).
-WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'temp1.val[12]' (COO_SpMV.cpp:22).
-WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'temp1.val[13]' (COO_SpMV.cpp:22).
-WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'temp1.val[14]' (COO_SpMV.cpp:22).
-WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'temp1.val[15]' (COO_SpMV.cpp:22).
-WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'temp1.val[16]' (COO_SpMV.cpp:22).
-WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'temp1.val[17]' (COO_SpMV.cpp:22).
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'temp2.val[0]' (COO_SpMV.cpp:23).
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'temp2.val[1]' (COO_SpMV.cpp:23).
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'temp2.val[2]' (COO_SpMV.cpp:23).
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'temp2.val[3]' (COO_SpMV.cpp:23).
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'temp2.val[4]' (COO_SpMV.cpp:23).
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'temp2.val[5]' (COO_SpMV.cpp:23).
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'temp2.val[6]' (COO_SpMV.cpp:23).
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'temp2.val[7]' (COO_SpMV.cpp:23).
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'temp2.val[8]' (COO_SpMV.cpp:23).
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'temp2.val[9]' (COO_SpMV.cpp:23).
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'temp2.val[10]' (COO_SpMV.cpp:23).
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'temp2.val[11]' (COO_SpMV.cpp:23).
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'temp2.val[12]' (COO_SpMV.cpp:23).
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'temp2.val[13]' (COO_SpMV.cpp:23).
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'temp2.val[14]' (COO_SpMV.cpp:23).
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'temp2.val[15]' (COO_SpMV.cpp:23).
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'temp2.val[16]' (COO_SpMV.cpp:23).
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'temp2.val[17]' (COO_SpMV.cpp:23).
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'temp2.val[18]' (COO_SpMV.cpp:23).
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'temp2.val[19]' (COO_SpMV.cpp:23).
-WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'temp2.val[0]' (COO_SpMV.cpp:23).
-WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'temp2.val[1]' (COO_SpMV.cpp:23).
-WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'temp2.val[2]' (COO_SpMV.cpp:23).
-WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'temp2.val[3]' (COO_SpMV.cpp:23).
-WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'temp2.val[4]' (COO_SpMV.cpp:23).
-WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'temp2.val[5]' (COO_SpMV.cpp:23).
-WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'temp2.val[6]' (COO_SpMV.cpp:23).
-WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'temp2.val[7]' (COO_SpMV.cpp:23).
-WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'temp2.val[8]' (COO_SpMV.cpp:23).
-WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'temp2.val[9]' (COO_SpMV.cpp:23).
-WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'temp2.val[10]' (COO_SpMV.cpp:23).
-WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'temp2.val[11]' (COO_SpMV.cpp:23).
-WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'temp2.val[12]' (COO_SpMV.cpp:23).
-WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'temp2.val[13]' (COO_SpMV.cpp:23).
-WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'temp2.val[14]' (COO_SpMV.cpp:23).
-WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'temp2.val[15]' (COO_SpMV.cpp:23).
-WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'temp2.val[16]' (COO_SpMV.cpp:23).
-WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'temp2.val[17]' (COO_SpMV.cpp:23).
-WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'temp2.val[18]' (COO_SpMV.cpp:23).
-WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'temp2.val[19]' (COO_SpMV.cpp:23).
-INFO: [HLS 200-111] Elapsed time: 7.74 seconds; current memory usage: 257 MB.
+INFO: [HLS 200-111] Elapsed time: 2.24 seconds; current memory usage: 64.1 MB.
 INFO: [HLS 200-10] Starting hardware synthesis ...
 INFO: [HLS 200-10] Synthesizing 'COO_SpMV' ...
 WARNING: [SYN 201-107] Renaming port name 'COO_SpMV/val' to 'COO_SpMV/val_r' to avoid the conflict with HDL keywords or other object names.
@@ -156,7 +46,7 @@ INFO: [HLS 200-10] -- Scheduling module 'COO_SpMV'
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Elapsed time: 0.35 seconds; current memory usage: 260 MB.
+INFO: [HLS 200-111] Elapsed time: 0.04 seconds; current memory usage: 64.7 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Exploring micro-architecture for module 'COO_SpMV' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -165,7 +55,7 @@ INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Elapsed time: 0.17 seconds; current memory usage: 261 MB.
+INFO: [HLS 200-111] Elapsed time: 0.03 seconds; current memory usage: 64.9 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'COO_SpMV' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -177,13 +67,11 @@ INFO: [RTGEN 206-500] Setting interface mode on port 'COO_SpMV/output_r' to 'ap_
 INFO: [RTGEN 206-500] Setting interface mode on port 'COO_SpMV/nnz' to 'ap_none'.
 INFO: [RTGEN 206-500] Setting interface mode on function 'COO_SpMV' to 'ap_ctrl_hs'.
 INFO: [RTGEN 206-100] Generating core module 'COO_SpMV_fadd_32ns_32ns_32_5_full_dsp': 1 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'COO_SpMV_fcmp_32ns_32ns_1_1': 1 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'COO_SpMV_fmul_32ns_32ns_32_4_max_dsp': 1 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'COO_SpMV'.
-INFO: [HLS 200-111] Elapsed time: 0.25 seconds; current memory usage: 264 MB.
-INFO: [RTMG 210-278] Implementing memory 'COO_SpMV_temp1_val_0_ram' using block RAMs.
+INFO: [HLS 200-111] Elapsed time: 0.04 seconds; current memory usage: 65.3 MB.
 INFO: [HLS 200-10] Finished generating all RTL models.
 INFO: [SYSC 207-301] Generating SystemC RTL for COO_SpMV.
 INFO: [VHDL 208-304] Generating VHDL RTL for COO_SpMV.
 INFO: [VLOG 209-307] Generating Verilog RTL for COO_SpMV.
-INFO: [HLS 200-112] Total elapsed time: 111.734 seconds; peak memory usage: 264 MB.
+INFO: [HLS 200-112] Total elapsed time: 8.934 seconds; peak memory usage: 65.3 MB.

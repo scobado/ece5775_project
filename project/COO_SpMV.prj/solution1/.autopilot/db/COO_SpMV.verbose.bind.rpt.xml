@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'COO_SpMV'" level="0">
-<item name = "Date">Tue Nov 15 12:09:57 2022
+<item name = "Date">Fri Nov 18 16:37:43 2022
 </item>
 <item name = "Version">2016.2 (Build 1577090 on Thu Jun 02 16:59:10 MDT 2016)</item>
 <item name = "Project">COO_SpMV.prj</item>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">, min, max, min, max, Type</keys>
-<column name="">227419, 267419, 227420, 267420, none</column>
+<column name="">20102, 120102, 20103, 120103, none</column>
 </table>
 </item>
 <item name = "Detail">
@@ -35,15 +35,8 @@
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- Loop 1">4200, 4200, 42, -, -, 100, no</column>
-<column name=" + Loop 1.1">40, 40, 2, -, -, 20, no</column>
-<column name="- Loop 2">20000, 60000, 2 ~ 6, -, -, 10000, no</column>
-<column name="- Loop 3">203015, 203015, 40603, -, -, 5, no</column>
-<column name=" + Loop 3.1">20300, 20300, 203, -, -, 100, no</column>
-<column name="  ++ Loop 3.1.1">200, 200, 10, -, -, 20, no</column>
-<column name=" + Loop 3.2">20300, 20300, 203, -, -, 100, no</column>
-<column name="  ++ Loop 3.2.1">200, 200, 10, -, -, 20, no</column>
-<column name="- Loop 4">200, 200, 2, -, -, 100, no</column>
+<column name="- LOOP_A">100, 100, 1, -, -, 100, no</column>
+<column name="- LOOP_B">20000, 120000, 2 ~ 12, -, -, 10000, no</column>
 </table>
 </item>
 </section>

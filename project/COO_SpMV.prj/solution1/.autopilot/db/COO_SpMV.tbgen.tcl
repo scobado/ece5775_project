@@ -15,7 +15,7 @@ set C_modelArgList {
 	{ col int 32 regular {array 10000 { 1 3 } 1 1 }  }
 	{ val_r float 32 regular {array 10000 { 1 3 } 1 1 }  }
 	{ vector float 32 regular {array 100 { 1 3 } 1 1 }  }
-	{ output_r float 32 regular {array 100 { 2 3 } 1 1 }  }
+	{ output_r float 32 regular {array 100 { 2 0 } 1 1 }  }
 	{ nnz int 32 regular  }
 }
 set C_modelArgMapList {[ 
@@ -26,7 +26,7 @@ set C_modelArgMapList {[
  	{ "Name" : "output_r", "interface" : "memory", "bitwidth" : 32, "direction" : "READWRITE", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "output","cData": "float","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 99,"step" : 1}]}]}]} , 
  	{ "Name" : "nnz", "interface" : "wire", "bitwidth" : 32, "direction" : "READONLY", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "nnz","cData": "int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 0,"step" : 0}]}]}]} ]}
 # RTL Port declarations: 
-set portNum 24
+set portNum 28
 set portList { 
 	{ ap_clk sc_in sc_logic 1 clock -1 } 
 	{ ap_rst sc_in sc_logic 1 reset -1 active_high_sync } 
@@ -51,6 +51,10 @@ set portList {
 	{ output_r_we0 sc_out sc_logic 1 signal 4 } 
 	{ output_r_d0 sc_out sc_lv 32 signal 4 } 
 	{ output_r_q0 sc_in sc_lv 32 signal 4 } 
+	{ output_r_address1 sc_out sc_lv 7 signal 4 } 
+	{ output_r_ce1 sc_out sc_logic 1 signal 4 } 
+	{ output_r_we1 sc_out sc_logic 1 signal 4 } 
+	{ output_r_d1 sc_out sc_lv 32 signal 4 } 
 	{ nnz sc_in sc_lv 32 signal 5 } 
 }
 set NewPortList {[ 
@@ -77,6 +81,10 @@ set NewPortList {[
  	{ "name": "output_r_we0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "output_r", "role": "we0" }} , 
  	{ "name": "output_r_d0", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "output_r", "role": "d0" }} , 
  	{ "name": "output_r_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "output_r", "role": "q0" }} , 
+ 	{ "name": "output_r_address1", "direction": "out", "datatype": "sc_lv", "bitwidth":7, "type": "signal", "bundle":{"name": "output_r", "role": "address1" }} , 
+ 	{ "name": "output_r_ce1", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "output_r", "role": "ce1" }} , 
+ 	{ "name": "output_r_we1", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "output_r", "role": "we1" }} , 
+ 	{ "name": "output_r_d1", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "output_r", "role": "d1" }} , 
  	{ "name": "nnz", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "nnz", "role": "default" }}  ]}
 
 set RtlHierarchyInfo {[
@@ -94,8 +102,8 @@ set RtlHierarchyInfo {[
 	{"Level" : "1", "Path" : "`AUTOTB_DUT_INST.COO_SpMV_fmul_32ns_32ns_32_4_max_dsp_U2", "Parent" : "0", "Child" : []}]}
 
 set PerformanceInfo {[
-	{"Name" : "Latency", "Min" : "20102", "Max" : "120102"}
-	, {"Name" : "Interval", "Min" : "20103", "Max" : "120103"}
+	{"Name" : "Latency", "Min" : "10113", "Max" : "10113"}
+	, {"Name" : "Interval", "Min" : "10114", "Max" : "10114"}
 ]}
 
 set Spec2ImplPortList { 
@@ -103,7 +111,7 @@ set Spec2ImplPortList {
 	col { ap_memory {  { col_address0 mem_address 1 14 }  { col_ce0 mem_ce 1 1 }  { col_q0 mem_dout 0 32 } } }
 	val_r { ap_memory {  { val_r_address0 mem_address 1 14 }  { val_r_ce0 mem_ce 1 1 }  { val_r_q0 mem_dout 0 32 } } }
 	vector { ap_memory {  { vector_address0 mem_address 1 7 }  { vector_ce0 mem_ce 1 1 }  { vector_q0 mem_dout 0 32 } } }
-	output_r { ap_memory {  { output_r_address0 mem_address 1 7 }  { output_r_ce0 mem_ce 1 1 }  { output_r_we0 mem_we 1 1 }  { output_r_d0 mem_din 1 32 }  { output_r_q0 mem_dout 0 32 } } }
+	output_r { ap_memory {  { output_r_address0 mem_address 1 7 }  { output_r_ce0 mem_ce 1 1 }  { output_r_we0 mem_we 1 1 }  { output_r_d0 mem_din 1 32 }  { output_r_q0 mem_dout 0 32 }  { output_r_address1 mem_address 1 7 }  { output_r_ce1 mem_ce 1 1 }  { output_r_we1 mem_we 1 1 }  { output_r_d1 mem_din 1 32 } } }
 	nnz { ap_none {  { nnz in_data 0 32 } } }
 }
 

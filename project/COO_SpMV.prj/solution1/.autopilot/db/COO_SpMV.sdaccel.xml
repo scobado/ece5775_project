@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'COO_SpMV'" level="0">
-<item name = "Date">Fri Nov 18 16:37:43 2022
+<item name = "Date">Fri Nov 18 16:49:39 2022
 </item>
 <item name = "Version">2016.2 (Build 1577090 on Thu Jun 02 16:59:10 MDT 2016)</item>
 <item name = "Project">COO_SpMV.prj</item>
@@ -22,7 +22,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">, min, max, min, max, Type</keys>
-<column name="">20102, 120102, 20103, 120103, none</column>
+<column name="">10113, 10113, 10114, 10114, none</column>
 </table>
 </item>
 <item name = "Detail">
@@ -34,7 +34,7 @@
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
 <column name="- LOOP_A">100, 100, 1, -, -, 100, no</column>
-<column name="- LOOP_B">20000, 120000, 2 ~ 12, -, -, 10000, no</column>
+<column name="- LOOP_B">10010, 10010, 12, 1, 1, 10000, yes</column>
 </table>
 </item>
 </section>
@@ -51,8 +51,8 @@
 <column name="FIFO">-, -, -, -</column>
 <column name="Instance">-, 5, 348, 711</column>
 <column name="Memory">-, -, -, -</column>
-<column name="Multiplexer">-, -, -, 66</column>
-<column name="Register">-, -, 185, -</column>
+<column name="Multiplexer">-, -, -, 30</column>
+<column name="Register">-, -, 173, 8</column>
 <specialColumn name="Available">280, 220, 106400, 53200</specialColumn>
 <specialColumn name="Utilization (%)">0, 2, ~0, 1</specialColumn>
 </table>
@@ -79,34 +79,47 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP48E, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="i_1_fu_159_p2">+, 0, 0, 7, 7, 1</column>
-<column name="i_2_fu_180_p2">+, 0, 0, 14, 14, 1</column>
-<column name="exitcond1_fu_174_p2">icmp, 0, 0, 5, 14, 14</column>
-<column name="exitcond2_fu_153_p2">icmp, 0, 0, 3, 7, 6</column>
-<column name="tmp_2_fu_186_p2">icmp, 0, 0, 11, 32, 32</column>
+<column name="i_1_fu_176_p2">+, 0, 0, 7, 7, 1</column>
+<column name="i_2_fu_193_p2">+, 0, 0, 14, 14, 1</column>
+<column name="exitcond1_fu_170_p2">icmp, 0, 0, 3, 7, 6</column>
+<column name="exitcond_fu_187_p2">icmp, 0, 0, 5, 14, 14</column>
+<column name="tmp_2_fu_203_p2">icmp, 0, 0, 11, 32, 32</column>
 </table>
 </item>
 <item name = "Multiplexer"><table name="" hasTotal="1">
 <keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
-<column name="ap_NS_fsm">6, 15, 1, 15</column>
-<column name="i1_reg_133">14, 2, 14, 28</column>
-<column name="i_reg_122">7, 2, 7, 14</column>
+<column name="ap_NS_fsm">1, 5, 1, 5</column>
+<column name="ap_reg_ppiten_pp0_it11">1, 2, 1, 2</column>
+<column name="i1_reg_150">14, 2, 14, 28</column>
+<column name="i_reg_139">7, 2, 7, 14</column>
 <column name="output_r_address0">7, 3, 7, 21</column>
-<column name="output_r_d0">32, 3, 32, 96</column>
 </table>
 </item>
 <item name = "Register"><table name="" hasTotal="1">
 <keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
-<column name="ap_CS_fsm">14, 0, 14, 0</column>
-<column name="i1_reg_133">14, 0, 14, 0</column>
-<column name="i_2_reg_224">14, 0, 14, 0</column>
-<column name="i_reg_122">7, 0, 7, 0</column>
-<column name="output_addr_1_reg_258">7, 0, 7, 0</column>
-<column name="output_load_reg_273">32, 0, 32, 0</column>
-<column name="tmp_2_reg_229">1, 0, 1, 0</column>
-<column name="tmp_5_reg_268">32, 0, 32, 0</column>
-<column name="tmp_7_reg_278">32, 0, 32, 0</column>
-<column name="val_load_reg_248">32, 0, 32, 0</column>
+<column name="ap_CS_fsm">4, 0, 4, 0</column>
+<column name="ap_reg_ppiten_pp0_it0">1, 0, 1, 0</column>
+<column name="ap_reg_ppiten_pp0_it1">1, 0, 1, 0</column>
+<column name="ap_reg_ppiten_pp0_it10">1, 0, 1, 0</column>
+<column name="ap_reg_ppiten_pp0_it11">1, 0, 1, 0</column>
+<column name="ap_reg_ppiten_pp0_it2">1, 0, 1, 0</column>
+<column name="ap_reg_ppiten_pp0_it3">1, 0, 1, 0</column>
+<column name="ap_reg_ppiten_pp0_it4">1, 0, 1, 0</column>
+<column name="ap_reg_ppiten_pp0_it5">1, 0, 1, 0</column>
+<column name="ap_reg_ppiten_pp0_it6">1, 0, 1, 0</column>
+<column name="ap_reg_ppiten_pp0_it7">1, 0, 1, 0</column>
+<column name="ap_reg_ppiten_pp0_it8">1, 0, 1, 0</column>
+<column name="ap_reg_ppiten_pp0_it9">1, 0, 1, 0</column>
+<column name="i1_reg_150">14, 0, 14, 0</column>
+<column name="i_reg_139">7, 0, 7, 0</column>
+<column name="output_addr_1_reg_277">7, 0, 7, 0</column>
+<column name="output_load_reg_293">32, 0, 32, 0</column>
+<column name="tmp_2_reg_248">1, 0, 1, 0</column>
+<column name="tmp_5_reg_288">32, 0, 32, 0</column>
+<column name="tmp_7_reg_298">32, 0, 32, 0</column>
+<column name="val_load_reg_267">32, 0, 32, 0</column>
+<column name="output_addr_1_reg_277">0, 7, 7, 0</column>
+<column name="tmp_2_reg_248">0, 1, 1, 0</column>
 </table>
 </item>
 </section>
@@ -139,6 +152,10 @@
 <column name="output_r_we0">out, 1, ap_memory, output_r, array</column>
 <column name="output_r_d0">out, 32, ap_memory, output_r, array</column>
 <column name="output_r_q0">in, 32, ap_memory, output_r, array</column>
+<column name="output_r_address1">out, 7, ap_memory, output_r, array</column>
+<column name="output_r_ce1">out, 1, ap_memory, output_r, array</column>
+<column name="output_r_we1">out, 1, ap_memory, output_r, array</column>
+<column name="output_r_d1">out, 32, ap_memory, output_r, array</column>
 <column name="nnz">in, 32, ap_none, nnz, scalar</column>
 </table>
 </item>

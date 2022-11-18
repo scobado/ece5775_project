@@ -67,19 +67,14 @@ using namespace std;
 //==========================================================================
 
 void COO_SpMV(int row[matrix_size], int col[matrix_size], float val[matrix_size], const float vector[size], float output[size], int nnz) {
-    LOOP_A: for(int i = 0; i < size; i++) {
+    for(int i = 0; i < size; i++) {
         output[i] = 0;
     }
-    LOOP_B: for(int i = 0; i < matrix_size; i++) {
-        // #pragma HLS PIPELINE
-        // #pragma HLS DEPENDENCE variable=output inter RAW false 
+    for(int i = 0; i < matrix_size; i++) {
+        #pragma HLS PIPELINE
+        #pragma HLS DEPENDENCE variable=output inter RAW false 
         if (i < nnz)
           output[row[i]] += val[i] * vector[col[i]];
-    }
-    float x = 0.0;
-    LOOP_C: for(int i = 0; i < 10; i++) {
-        #pragma HLS PIPELINE
-        x += 1.5;
     }
 }
 
@@ -126,7 +121,7 @@ int create_COO(const float input[size][size], int row[matrix_size], int col[matr
             row[cur_ind] = temp_row[i];
             col[cur_ind] = temp_col[i];
             val[cur_ind] = temp_val[i];
-            cur_ind += 6; // assuming fp add takes 6 cycles
+            cur_ind += 8; // assuming fp add takes 6 cycles
             if (cur_ind >= counter) {
                 cur_ind = start;
                 start++;

@@ -5,7 +5,8 @@ target triple = "x86_64-unknown-linux-gnu"
 @llvm_global_ctors_1 = appending global [1 x void ()*] [void ()* @_GLOBAL__I_a] ; [#uses=0 type=[1 x void ()*]*]
 @llvm_global_ctors_0 = appending global [1 x i32] [i32 65535] ; [#uses=0 type=[1 x i32]*]
 @COO_SpMV_str = internal unnamed_addr constant [9 x i8] c"COO_SpMV\00" ; [#uses=1 type=[9 x i8]*]
-@p_str1 = private unnamed_addr constant [7 x i8] c"LOOP_B\00", align 1 ; [#uses=1 type=[7 x i8]*]
+@p_str2 = private unnamed_addr constant [1 x i8] zeroinitializer, align 1 ; [#uses=1 type=[1 x i8]*]
+@p_str1 = private unnamed_addr constant [7 x i8] c"LOOP_B\00", align 1 ; [#uses=3 type=[7 x i8]*]
 @p_str = private unnamed_addr constant [7 x i8] c"LOOP_A\00", align 1 ; [#uses=1 type=[7 x i8]*]
 
 ; [#uses=9]
@@ -13,6 +14,24 @@ declare void @llvm.dbg.value(metadata, i64, metadata) nounwind readnone
 
 ; [#uses=1]
 define weak void @_ssdm_op_SpecTopModule(...) {
+entry:
+  ret void
+}
+
+; [#uses=1]
+define weak i32 @_ssdm_op_SpecRegionEnd(...) {
+entry:
+  ret i32 0
+}
+
+; [#uses=1]
+define weak i32 @_ssdm_op_SpecRegionBegin(...) {
+entry:
+  ret i32 0
+}
+
+; [#uses=1]
+define weak void @_ssdm_op_SpecPipeline(...) nounwind {
 entry:
   ret void
 }
@@ -41,6 +60,9 @@ entry:
   ret i32 %0
 }
 
+; [#uses=0]
+declare void @_ssdm_SpecDependence(...) nounwind
+
 ; [#uses=1]
 declare void @_GLOBAL__I_a() nounwind section ".text.startup"
 
@@ -65,10 +87,10 @@ define void @COO_SpMV([10000 x i32]* %row, [10000 x i32]* %col, [10000 x float]*
 
 ; <label>:1                                       ; preds = %2, %0
   %i = phi i7 [ 0, %0 ], [ %i_1, %2 ]             ; [#uses=3 type=i7]
-  %exitcond2 = icmp eq i7 %i, -28, !dbg !94       ; [#uses=1 type=i1] [debug line = 70:26]
+  %exitcond1 = icmp eq i7 %i, -28, !dbg !94       ; [#uses=1 type=i1] [debug line = 70:26]
   %empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 100, i64 100, i64 100) nounwind ; [#uses=0 type=i32]
   %i_1 = add i7 %i, 1, !dbg !97                   ; [#uses=1 type=i7] [debug line = 70:38]
-  br i1 %exitcond2, label %.preheader3, label %2, !dbg !94 ; [debug line = 70:26]
+  br i1 %exitcond1, label %.preheader, label %2, !dbg !94 ; [debug line = 70:26]
 
 ; <label>:2                                       ; preds = %1
   call void (...)* @_ssdm_op_SpecLoopName([7 x i8]* @p_str) nounwind, !dbg !98 ; [debug line = 70:44]
@@ -78,44 +100,47 @@ define void @COO_SpMV([10000 x i32]* %row, [10000 x i32]* %col, [10000 x float]*
   call void @llvm.dbg.value(metadata !{i7 %i_1}, i64 0, metadata !101), !dbg !97 ; [debug line = 70:38] [debug variable = i]
   br label %1, !dbg !97                           ; [debug line = 70:38]
 
-.preheader3:                                      ; preds = %._crit_edge, %1
+.preheader:                                       ; preds = %._crit_edge, %1
   %i1 = phi i14 [ %i_2, %._crit_edge ], [ 0, %1 ] ; [#uses=4 type=i14]
-  %i1_cast1 = zext i14 %i1 to i32, !dbg !102      ; [#uses=1 type=i32] [debug line = 73:26]
-  %exitcond1 = icmp eq i14 %i1, -6384, !dbg !102  ; [#uses=1 type=i1] [debug line = 73:26]
-  %empty_2 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 10000, i64 10000, i64 10000) nounwind ; [#uses=0 type=i32]
+  %exitcond = icmp eq i14 %i1, -6384, !dbg !102   ; [#uses=1 type=i1] [debug line = 73:26]
   %i_2 = add i14 %i1, 1, !dbg !104                ; [#uses=1 type=i14] [debug line = 73:45]
-  br i1 %exitcond1, label %.preheader.preheader, label %3, !dbg !102 ; [debug line = 73:26]
+  br i1 %exitcond, label %5, label %3, !dbg !102  ; [debug line = 73:26]
 
-; <label>:3                                       ; preds = %.preheader3
+; <label>:3                                       ; preds = %.preheader
+  %i1_cast1 = zext i14 %i1 to i32, !dbg !102      ; [#uses=1 type=i32] [debug line = 73:26]
+  %empty_2 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 10000, i64 10000, i64 10000) nounwind ; [#uses=0 type=i32]
   call void (...)* @_ssdm_op_SpecLoopName([7 x i8]* @p_str1) nounwind, !dbg !105 ; [debug line = 73:51]
-  %tmp_2 = icmp slt i32 %i1_cast1, %nnz_read, !dbg !107 ; [#uses=1 type=i1] [debug line = 76:9]
-  br i1 %tmp_2, label %4, label %._crit_edge, !dbg !107 ; [debug line = 76:9]
+  %tmp_8 = call i32 (...)* @_ssdm_op_SpecRegionBegin([7 x i8]* @p_str1) nounwind, !dbg !105 ; [#uses=1 type=i32] [debug line = 73:51]
+  call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str2) nounwind, !dbg !107 ; [debug line = 74:1]
+  %tmp_2 = icmp slt i32 %i1_cast1, %nnz_read, !dbg !108 ; [#uses=1 type=i1] [debug line = 76:2]
+  br i1 %tmp_2, label %4, label %._crit_edge, !dbg !108 ; [debug line = 76:2]
 
 ; <label>:4                                       ; preds = %3
-  %tmp_3 = zext i14 %i1 to i64, !dbg !108         ; [#uses=3 type=i64] [debug line = 77:11]
-  %val_addr = getelementptr [10000 x float]* %val, i64 0, i64 %tmp_3, !dbg !108 ; [#uses=1 type=float*] [debug line = 77:11]
-  %val_load = load float* %val_addr, align 4, !dbg !108 ; [#uses=1 type=float] [debug line = 77:11]
-  %col_addr = getelementptr [10000 x i32]* %col, i64 0, i64 %tmp_3, !dbg !108 ; [#uses=1 type=i32*] [debug line = 77:11]
-  %col_load = load i32* %col_addr, align 4, !dbg !108 ; [#uses=1 type=i32] [debug line = 77:11]
-  %tmp_4 = sext i32 %col_load to i64, !dbg !108   ; [#uses=1 type=i64] [debug line = 77:11]
-  %vector_addr = getelementptr [100 x float]* %vector, i64 0, i64 %tmp_4, !dbg !108 ; [#uses=1 type=float*] [debug line = 77:11]
-  %vector_load = load float* %vector_addr, align 4, !dbg !108 ; [#uses=1 type=float] [debug line = 77:11]
-  %tmp_5 = fmul float %val_load, %vector_load, !dbg !108 ; [#uses=1 type=float] [debug line = 77:11]
-  %row_addr = getelementptr [10000 x i32]* %row, i64 0, i64 %tmp_3, !dbg !108 ; [#uses=1 type=i32*] [debug line = 77:11]
-  %row_load = load i32* %row_addr, align 4, !dbg !108 ; [#uses=1 type=i32] [debug line = 77:11]
-  %tmp_6 = sext i32 %row_load to i64, !dbg !108   ; [#uses=1 type=i64] [debug line = 77:11]
-  %output_addr_1 = getelementptr [100 x float]* %output, i64 0, i64 %tmp_6, !dbg !108 ; [#uses=2 type=float*] [debug line = 77:11]
-  %output_load = load float* %output_addr_1, align 4, !dbg !108 ; [#uses=1 type=float] [debug line = 77:11]
-  %tmp_7 = fadd float %output_load, %tmp_5, !dbg !108 ; [#uses=1 type=float] [debug line = 77:11]
-  store float %tmp_7, float* %output_addr_1, align 4, !dbg !108 ; [debug line = 77:11]
-  br label %._crit_edge, !dbg !108                ; [debug line = 77:11]
+  %tmp_3 = zext i14 %i1 to i64, !dbg !109         ; [#uses=3 type=i64] [debug line = 77:11]
+  %val_addr = getelementptr [10000 x float]* %val, i64 0, i64 %tmp_3, !dbg !109 ; [#uses=1 type=float*] [debug line = 77:11]
+  %val_load = load float* %val_addr, align 4, !dbg !109 ; [#uses=1 type=float] [debug line = 77:11]
+  %col_addr = getelementptr [10000 x i32]* %col, i64 0, i64 %tmp_3, !dbg !109 ; [#uses=1 type=i32*] [debug line = 77:11]
+  %col_load = load i32* %col_addr, align 4, !dbg !109 ; [#uses=1 type=i32] [debug line = 77:11]
+  %tmp_4 = sext i32 %col_load to i64, !dbg !109   ; [#uses=1 type=i64] [debug line = 77:11]
+  %vector_addr = getelementptr [100 x float]* %vector, i64 0, i64 %tmp_4, !dbg !109 ; [#uses=1 type=float*] [debug line = 77:11]
+  %vector_load = load float* %vector_addr, align 4, !dbg !109 ; [#uses=1 type=float] [debug line = 77:11]
+  %tmp_5 = fmul float %val_load, %vector_load, !dbg !109 ; [#uses=1 type=float] [debug line = 77:11]
+  %row_addr = getelementptr [10000 x i32]* %row, i64 0, i64 %tmp_3, !dbg !109 ; [#uses=1 type=i32*] [debug line = 77:11]
+  %row_load = load i32* %row_addr, align 4, !dbg !109 ; [#uses=1 type=i32] [debug line = 77:11]
+  %tmp_6 = sext i32 %row_load to i64, !dbg !109   ; [#uses=1 type=i64] [debug line = 77:11]
+  %output_addr_1 = getelementptr [100 x float]* %output, i64 0, i64 %tmp_6, !dbg !109 ; [#uses=2 type=float*] [debug line = 77:11]
+  %output_load = load float* %output_addr_1, align 4, !dbg !109 ; [#uses=1 type=float] [debug line = 77:11]
+  %tmp_7 = fadd float %output_load, %tmp_5, !dbg !109 ; [#uses=1 type=float] [debug line = 77:11]
+  store float %tmp_7, float* %output_addr_1, align 4, !dbg !109 ; [debug line = 77:11]
+  br label %._crit_edge, !dbg !109                ; [debug line = 77:11]
 
 ._crit_edge:                                      ; preds = %4, %3
-  call void @llvm.dbg.value(metadata !{i14 %i_2}, i64 0, metadata !109), !dbg !104 ; [debug line = 73:45] [debug variable = i]
-  br label %.preheader3, !dbg !104                ; [debug line = 73:45]
+  %empty_3 = call i32 (...)* @_ssdm_op_SpecRegionEnd([7 x i8]* @p_str1, i32 %tmp_8) nounwind, !dbg !110 ; [#uses=0 type=i32] [debug line = 78:5]
+  call void @llvm.dbg.value(metadata !{i14 %i_2}, i64 0, metadata !111), !dbg !104 ; [debug line = 73:45] [debug variable = i]
+  br label %.preheader, !dbg !104                 ; [debug line = 73:45]
 
-.preheader.preheader:                             ; preds = %.preheader3
-  ret void, !dbg !110                             ; [debug line = 84:1]
+; <label>:5                                       ; preds = %.preheader
+  ret void, !dbg !112                             ; [debug line = 79:1]
 }
 
 !opencl.kernels = !{!0, !7, !13, !19, !19}
@@ -229,7 +254,9 @@ define void @COO_SpMV([10000 x i32]* %row, [10000 x i32]* %col, [10000 x float]*
 !104 = metadata !{i32 73, i32 45, metadata !103, null}
 !105 = metadata !{i32 73, i32 51, metadata !106, null}
 !106 = metadata !{i32 786443, metadata !103, i32 73, i32 50, metadata !64, i32 4} ; [ DW_TAG_lexical_block ]
-!107 = metadata !{i32 76, i32 9, metadata !106, null}
-!108 = metadata !{i32 77, i32 11, metadata !106, null}
-!109 = metadata !{i32 786688, metadata !103, metadata !"i", metadata !64, i32 73, metadata !68, i32 0, i32 0} ; [ DW_TAG_auto_variable ]
-!110 = metadata !{i32 84, i32 1, metadata !96, null}
+!107 = metadata !{i32 74, i32 1, metadata !106, null}
+!108 = metadata !{i32 76, i32 2, metadata !106, null}
+!109 = metadata !{i32 77, i32 11, metadata !106, null}
+!110 = metadata !{i32 78, i32 5, metadata !106, null}
+!111 = metadata !{i32 786688, metadata !103, metadata !"i", metadata !64, i32 73, metadata !68, i32 0, i32 0} ; [ DW_TAG_auto_variable ]
+!112 = metadata !{i32 79, i32 1, metadata !96, null}

@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'COO_SpMV'" level="0">
-<item name = "Date">Fri Nov 18 16:37:43 2022
+<item name = "Date">Fri Nov 18 16:49:39 2022
 </item>
 <item name = "Version">2016.2 (Build 1577090 on Thu Jun 02 16:59:10 MDT 2016)</item>
 <item name = "Project">COO_SpMV.prj</item>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">, min, max, min, max, Type</keys>
-<column name="">20102, 120102, 20103, 120103, none</column>
+<column name="">10113, 10113, 10114, 10114, none</column>
 </table>
 </item>
 <item name = "Detail">
@@ -36,7 +36,7 @@
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
 <column name="- LOOP_A">100, 100, 1, -, -, 100, no</column>
-<column name="- LOOP_B">20000, 120000, 2 ~ 12, -, -, 10000, no</column>
+<column name="- LOOP_B">10010, 10010, 12, 1, 1, 10000, yes</column>
 </table>
 </item>
 </section>

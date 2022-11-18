@@ -5,12 +5,28 @@ target triple = "x86_64-unknown-linux-gnu"
 @llvm_global_ctors_1 = appending global [1 x void ()*] [void ()* @_GLOBAL__I_a]
 @llvm_global_ctors_0 = appending global [1 x i32] [i32 65535]
 @COO_SpMV_str = internal unnamed_addr constant [9 x i8] c"COO_SpMV\00"
+@p_str2 = private unnamed_addr constant [1 x i8] zeroinitializer, align 1
 @p_str1 = private unnamed_addr constant [7 x i8] c"LOOP_B\00", align 1
 @p_str = private unnamed_addr constant [7 x i8] c"LOOP_A\00", align 1
 
 declare void @llvm.dbg.value(metadata, i64, metadata) nounwind readnone
 
 define weak void @_ssdm_op_SpecTopModule(...) {
+entry:
+  ret void
+}
+
+define weak i32 @_ssdm_op_SpecRegionEnd(...) {
+entry:
+  ret i32 0
+}
+
+define weak i32 @_ssdm_op_SpecRegionBegin(...) {
+entry:
+  ret i32 0
+}
+
+define weak void @_ssdm_op_SpecPipeline(...) nounwind {
 entry:
   ret void
 }
@@ -35,6 +51,8 @@ entry:
   ret i32 %0
 }
 
+declare void @_ssdm_SpecDependence(...) nounwind
+
 declare void @_GLOBAL__I_a() nounwind section ".text.startup"
 
 define void @COO_SpMV([10000 x i32]* %row, [10000 x i32]* %col, [10000 x float]* %val_r, [100 x float]* %vector, [100 x float]* %output_r, i32 %nnz) nounwind uwtable {
@@ -50,10 +68,10 @@ define void @COO_SpMV([10000 x i32]* %row, [10000 x i32]* %col, [10000 x float]*
 
 ; <label>:1                                       ; preds = %2, %0
   %i = phi i7 [ 0, %0 ], [ %i_1, %2 ]
-  %exitcond2 = icmp eq i7 %i, -28
+  %exitcond1 = icmp eq i7 %i, -28
   %empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 100, i64 100, i64 100) nounwind
   %i_1 = add i7 %i, 1
-  br i1 %exitcond2, label %.preheader3, label %2
+  br i1 %exitcond1, label %.preheader, label %2
 
 ; <label>:2                                       ; preds = %1
   call void (...)* @_ssdm_op_SpecLoopName([7 x i8]* @p_str) nounwind
@@ -62,16 +80,18 @@ define void @COO_SpMV([10000 x i32]* %row, [10000 x i32]* %col, [10000 x float]*
   store float 0.000000e+00, float* %output_addr, align 4
   br label %1
 
-.preheader3:                                      ; preds = %1, %._crit_edge
+.preheader:                                       ; preds = %1, %._crit_edge
   %i1 = phi i14 [ %i_2, %._crit_edge ], [ 0, %1 ]
-  %i1_cast1 = zext i14 %i1 to i32
-  %exitcond1 = icmp eq i14 %i1, -6384
-  %empty_2 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 10000, i64 10000, i64 10000) nounwind
+  %exitcond = icmp eq i14 %i1, -6384
   %i_2 = add i14 %i1, 1
-  br i1 %exitcond1, label %.preheader.preheader, label %3
+  br i1 %exitcond, label %5, label %3
 
-; <label>:3                                       ; preds = %.preheader3
+; <label>:3                                       ; preds = %.preheader
+  %i1_cast1 = zext i14 %i1 to i32
+  %empty_2 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 10000, i64 10000, i64 10000) nounwind
   call void (...)* @_ssdm_op_SpecLoopName([7 x i8]* @p_str1) nounwind
+  %tmp_8 = call i32 (...)* @_ssdm_op_SpecRegionBegin([7 x i8]* @p_str1) nounwind
+  call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str2) nounwind
   %tmp_2 = icmp slt i32 %i1_cast1, %nnz_read
   br i1 %tmp_2, label %4, label %._crit_edge
 
@@ -95,9 +115,10 @@ define void @COO_SpMV([10000 x i32]* %row, [10000 x i32]* %col, [10000 x float]*
   br label %._crit_edge
 
 ._crit_edge:                                      ; preds = %4, %3
-  br label %.preheader3
+  %empty_3 = call i32 (...)* @_ssdm_op_SpecRegionEnd([7 x i8]* @p_str1, i32 %tmp_8) nounwind
+  br label %.preheader
 
-.preheader.preheader:                             ; preds = %.preheader3
+; <label>:5                                       ; preds = %.preheader
   ret void
 }
 

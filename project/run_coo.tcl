@@ -56,10 +56,10 @@ set_directive_pipeline worker/LOOP_DEST1_ST
 
 
 # Simulate the C++ design
-csim_design
+# csim_design
 # Synthesis the design
 csynth_design
 # Co-simulate the design
-# cosim_design
+cosim_design
 
 exit

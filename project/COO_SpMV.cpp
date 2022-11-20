@@ -70,7 +70,7 @@ void COO_SpMV(int row[coo_size], int col[coo_size], float val[coo_size], const f
     for(int i = 0; i < coo_size; i++) {
         #pragma HLS PIPELINE
         #pragma HLS DEPENDENCE variable=output inter RAW false 
-        if (i < nnz)
+        if (i < nnz && row[i] > -1)
           output[row[i]] += val[i] * vector[col[i]];
     }
 }
@@ -109,11 +109,15 @@ int create_COO(const float input[block_size][size], int row[coo_size], int col[c
     }
     int cur_ind = 0;
     int start = 1;
+
+    int temp_row1[coo_size];
+    int temp_col1[coo_size];
+    float temp_val1[coo_size];
     for (int i = 0; i < coo_size; i++) {
         if (i < counter) {
-            row[cur_ind] = temp_row[i];
-            col[cur_ind] = temp_col[i];
-            val[cur_ind] = temp_val[i];
+            temp_row1[cur_ind] = temp_row[i];
+            temp_col1[cur_ind] = temp_col[i];
+            temp_val1[cur_ind] = temp_val[i];
             cur_ind += 8; // assuming fp add takes 8 cycles
             if (cur_ind >= counter) {
                 cur_ind = start;
@@ -121,7 +125,40 @@ int create_COO(const float input[block_size][size], int row[coo_size], int col[c
             }
         }
     }
-    return counter;
+
+    cur_ind = 0;
+    int add_counter = 0;
+    for (int i = 0; i < coo_size; i++) {
+        if (i < counter) {
+            for (int j = 1; j < 8; j++)  {
+                if (i-j >= 0 && temp_row1[i] == temp_row1[i-j] && i-j > 0) {
+                    // printf("HERE\n");
+                    for (int k = 0; k < 8; k++) {
+                        if (k >= j) {
+                            row[cur_ind] = -1;
+                            col[cur_ind] = -1;
+                            val[cur_ind] = 0;
+                            cur_ind++;
+                            add_counter++;
+                        }
+                    }
+                }
+            }
+            row[cur_ind] = temp_row1[i];
+            col[cur_ind] = temp_col1[i];
+            val[cur_ind] = temp_val1[i];
+            cur_ind++;
+        }
+    }
+
+    // for (int i = 0; i < coo_size; i++) {
+    //     if (i < counter+add_counter)
+    //         printf("%d ", row[i]);
+    // }
+    // printf("\n");
+
+
+    return counter+add_counter+1;
 }
 
 //==========================================================================

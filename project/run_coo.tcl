@@ -40,11 +40,23 @@ set_part {xc7z020clg484-1}
 # Target clock period is 10ns
 create_clock -period 10
 
+set_directive_inline -off create_COO
+set_directive_inline -off COO_SpMV
+set_directive_array_partition -type complete -dim 1 worker matrix_1
+set_directive_array_partition -type complete -dim 1 worker dest_1
+set_directive_array_partition -type complete -dim 1 worker row_1
+set_directive_array_partition -type complete -dim 1 worker col_1
+set_directive_array_partition -type complete -dim 1 worker val_1
+
+set_directive_unroll worker/LOOP_PE
+set_directive_unroll worker/LOOP_DEST1
+
+
 # Simulate the C++ design
 csim_design
 # Synthesis the design
 csynth_design
 # Co-simulate the design
-#cosim_design
+# cosim_design
 
 exit

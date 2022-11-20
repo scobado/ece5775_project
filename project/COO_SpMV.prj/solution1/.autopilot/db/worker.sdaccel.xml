@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'worker'" level="0">
-<item name = "Date">Fri Nov 18 18:42:37 2022
+<item name = "Date">Sun Nov 20 12:28:56 2022
 </item>
 <item name = "Version">2016.2 (Build 1577090 on Thu Jun 02 16:59:10 MDT 2016)</item>
 <item name = "Project">COO_SpMV.prj</item>
@@ -22,20 +22,26 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">, min, max, min, max, Type</keys>
-<column name="">61500, 61500, 61501, 61501, none</column>
+<column name="">27942, 27942, 27943, 27943, none</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="7">Instance, Module, min, max, min, max, Type</keys>
-<column name="grp_worker_COO_SpMV_fu_191">worker_COO_SpMV, 2519, 2519, 2519, 2519, none</column>
-<column name="grp_worker_create_COO_fu_209">worker_create_COO, 12827, 12827, 12827, 12827, none</column>
+<column name="grp_worker_COO_SpMV_fu_1096">worker_COO_SpMV, 2512, 2512, 2512, 2512, none</column>
+<column name="grp_worker_COO_SpMV_fu_1107">worker_COO_SpMV, 2512, 2512, 2512, 2512, none</column>
+<column name="grp_worker_COO_SpMV_fu_1118">worker_COO_SpMV, 2512, 2512, 2512, 2512, none</column>
+<column name="grp_worker_create_COO_fu_1129">worker_create_COO, 12552, 12552, 12552, 12552, none</column>
+<column name="grp_worker_create_COO_fu_1139">worker_create_COO, 12552, 12552, 12552, 12552, none</column>
+<column name="grp_worker_create_COO_fu_1148">worker_create_COO, 12552, 12552, 12552, 12552, none</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
 <column name="- Loop 1">100, 100, 1, -, -, 100, no</column>
+<column name="- Loop 2">208, 208, 52, -, -, 4, no</column>
+<column name=" + Loop 2.1">50, 50, 2, -, -, 25, no</column>
 </table>
 </item>
 </section>
@@ -48,22 +54,27 @@
 <item name = "Summary"><table name="" hasTotal="1">
 <keys size="5">Name, BRAM_18K, DSP48E, FF, LUT</keys>
 <column name="DSP">-, -, -, -</column>
-<column name="Expression">-, -, 0, 42</column>
+<column name="Expression">-, -, 0, 36</column>
 <column name="FIFO">-, -, -, -</column>
-<column name="Instance">79, 9, 1139, 1845</column>
-<column name="Memory">12, -, 0, 0</column>
-<column name="Multiplexer">-, -, -, 119</column>
-<column name="Register">-, -, 80, -</column>
+<column name="Instance">39, 15, 2460, 4310</column>
+<column name="Memory">88, -, 0, 0</column>
+<column name="Multiplexer">-, -, -, 603</column>
+<column name="Register">-, -, 169, -</column>
 <specialColumn name="Available">280, 220, 106400, 53200</specialColumn>
-<specialColumn name="Utilization (%)">32, 4, 1, 3</specialColumn>
+<specialColumn name="Utilization (%)">45, 6, 2, 9</specialColumn>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="1">
 <keys size="6">Instance, Module, BRAM_18K, DSP48E, FF, LUT</keys>
-<column name="grp_worker_COO_SpMV_fu_191">worker_COO_SpMV, 1, 7, 716, 1023</column>
-<column name="grp_worker_create_COO_fu_209">worker_create_COO, 78, 2, 423, 822</column>
+<column name="grp_worker_COO_SpMV_fu_1096">worker_COO_SpMV, 1, 5, 514, 764</column>
+<column name="grp_worker_COO_SpMV_fu_1107">worker_COO_SpMV, 1, 5, 514, 764</column>
+<column name="grp_worker_COO_SpMV_fu_1118">worker_COO_SpMV, 1, 5, 514, 764</column>
+<column name="grp_worker_create_COO_fu_1129">worker_create_COO, 12, 0, 306, 662</column>
+<column name="grp_worker_create_COO_fu_1139">worker_create_COO, 12, 0, 306, 662</column>
+<column name="grp_worker_create_COO_fu_1148">worker_create_COO, 12, 0, 306, 662</column>
+<column name="worker_mux_4to1_sel2_32_1_U17">worker_mux_4to1_sel2_32_1, 0, 0, 0, 32</column>
 </table>
 </item>
 <item name = "DSP48"><table name="" hasTotal="0">
@@ -72,9 +83,26 @@
 </item>
 <item name = "Memory"><table name="" hasTotal="1">
 <keys size="9">Memory, Module, BRAM_18K, FF, LUT, Words, Bits, Banks, W*Bits*Banks</keys>
-<column name="row_1_U">worker_row_1, 2, 0, 0, 2500, 7, 1, 17500</column>
-<column name="col_1_U">worker_row_1, 2, 0, 0, 2500, 7, 1, 17500</column>
-<column name="val_1_U">worker_val_1, 8, 0, 0, 2500, 32, 1, 80000</column>
+<column name="col_1_0_U">worker_create_COO_temp_col, 2, 0, 0, 2500, 7, 1, 17500</column>
+<column name="col_1_1_U">worker_create_COO_temp_col, 2, 0, 0, 2500, 7, 1, 17500</column>
+<column name="col_1_2_U">worker_create_COO_temp_col, 2, 0, 0, 2500, 7, 1, 17500</column>
+<column name="col_1_3_U">worker_create_COO_temp_col, 2, 0, 0, 2500, 7, 1, 17500</column>
+<column name="row_1_0_U">worker_create_COO_temp_row, 2, 0, 0, 2500, 5, 1, 12500</column>
+<column name="row_1_1_U">worker_create_COO_temp_row, 2, 0, 0, 2500, 5, 1, 12500</column>
+<column name="row_1_2_U">worker_create_COO_temp_row, 2, 0, 0, 2500, 5, 1, 12500</column>
+<column name="row_1_3_U">worker_create_COO_temp_row, 2, 0, 0, 2500, 5, 1, 12500</column>
+<column name="val_1_0_U">worker_create_COO_temp_val, 8, 0, 0, 2500, 32, 1, 80000</column>
+<column name="val_1_1_U">worker_create_COO_temp_val, 8, 0, 0, 2500, 32, 1, 80000</column>
+<column name="val_1_2_U">worker_create_COO_temp_val, 8, 0, 0, 2500, 32, 1, 80000</column>
+<column name="val_1_3_U">worker_create_COO_temp_val, 8, 0, 0, 2500, 32, 1, 80000</column>
+<column name="dest_1_0_U">worker_dest_1_0, 2, 0, 0, 25, 32, 1, 800</column>
+<column name="dest_1_1_U">worker_dest_1_0, 2, 0, 0, 25, 32, 1, 800</column>
+<column name="dest_1_2_U">worker_dest_1_0, 2, 0, 0, 25, 32, 1, 800</column>
+<column name="dest_1_3_U">worker_dest_1_0, 2, 0, 0, 25, 32, 1, 800</column>
+<column name="matrix_1_0_U">worker_matrix_1_0, 8, 0, 0, 2500, 32, 1, 80000</column>
+<column name="matrix_1_1_U">worker_matrix_1_1, 8, 0, 0, 2500, 32, 1, 80000</column>
+<column name="matrix_1_2_U">worker_matrix_1_2, 8, 0, 0, 2500, 32, 1, 80000</column>
+<column name="matrix_1_3_U">worker_matrix_1_3, 8, 0, 0, 2500, 32, 1, 80000</column>
 </table>
 </item>
 <item name = "FIFO"><table name="" hasTotal="1">
@@ -83,50 +111,101 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP48E, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="i_1_fu_264_p2">+, 0, 0, 7, 7, 1</column>
-<column name="next_mul_fu_270_p2">+, 0, 0, 15, 15, 8</column>
-<column name="next_urem_fu_294_p2">+, 0, 0, 7, 7, 1</column>
-<column name="exitcond1_fu_258_p2">icmp, 0, 0, 3, 7, 6</column>
-<column name="tmp_2_fu_300_p2">icmp, 0, 0, 3, 7, 5</column>
-<column name="idx_urem_fu_306_p3">select, 0, 0, 7, 1, 7</column>
+<column name="i_1_fu_1168_p2">+, 0, 0, 7, 7, 1</column>
+<column name="i_2_fu_1191_p2">+, 0, 0, 3, 3, 1</column>
+<column name="j_fu_1211_p2">+, 0, 0, 5, 5, 1</column>
+<column name="next_mul_fu_1179_p2">+, 0, 0, 7, 7, 5</column>
+<column name="tmp_9_fu_1225_p2">+, 0, 0, 7, 7, 7</column>
+<column name="exitcond1_fu_1185_p2">icmp, 0, 0, 2, 3, 4</column>
+<column name="exitcond4_fu_1162_p2">icmp, 0, 0, 3, 7, 6</column>
+<column name="exitcond_fu_1205_p2">icmp, 0, 0, 2, 5, 4</column>
 </table>
 </item>
 <item name = "Multiplexer"><table name="" hasTotal="1">
 <keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
-<column name="ap_NS_fsm">15, 18, 1, 18</column>
-<column name="col_1_address0">12, 3, 12, 36</column>
-<column name="col_1_ce0">1, 3, 1, 3</column>
-<column name="dest_0_address0">5, 3, 5, 15</column>
-<column name="dest_0_ce0">1, 3, 1, 3</column>
-<column name="dest_0_ce1">1, 2, 1, 2</column>
-<column name="dest_1_address0">5, 3, 5, 15</column>
-<column name="dest_1_ce0">1, 3, 1, 3</column>
-<column name="dest_1_ce1">1, 2, 1, 2</column>
-<column name="dest_2_address0">5, 3, 5, 15</column>
-<column name="dest_2_ce0">1, 3, 1, 3</column>
-<column name="dest_2_ce1">1, 2, 1, 2</column>
-<column name="dest_3_address0">5, 3, 5, 15</column>
-<column name="dest_3_ce0">1, 3, 1, 3</column>
-<column name="dest_3_ce1">1, 2, 1, 2</column>
-<column name="grp_worker_create_COO_fu_209_block_r">8, 5, 8, 40</column>
-<column name="i_reg_158">7, 2, 7, 14</column>
-<column name="phi_mul_reg_169">15, 2, 15, 30</column>
-<column name="phi_urem_reg_180">7, 2, 7, 14</column>
-<column name="row_1_address0">12, 3, 12, 36</column>
-<column name="row_1_ce0">1, 3, 1, 3</column>
-<column name="val_1_address0">12, 3, 12, 36</column>
-<column name="val_1_ce0">1, 3, 1, 3</column>
+<column name="ap_NS_fsm">18, 22, 1, 22</column>
+<column name="col_1_0_address0">12, 3, 12, 36</column>
+<column name="col_1_0_ce0">1, 3, 1, 3</column>
+<column name="col_1_1_address0">12, 3, 12, 36</column>
+<column name="col_1_1_ce0">1, 3, 1, 3</column>
+<column name="col_1_2_address0">12, 3, 12, 36</column>
+<column name="col_1_2_ce0">1, 3, 1, 3</column>
+<column name="col_1_3_address0">12, 3, 12, 36</column>
+<column name="col_1_3_ce0">1, 3, 1, 3</column>
+<column name="dest_1_0_address0">15, 15, 5, 75</column>
+<column name="dest_1_0_address1">15, 15, 5, 75</column>
+<column name="dest_1_0_ce0">1, 3, 1, 3</column>
+<column name="dest_1_0_ce1">1, 3, 1, 3</column>
+<column name="dest_1_0_d1">32, 3, 32, 96</column>
+<column name="dest_1_0_we1">1, 3, 1, 3</column>
+<column name="dest_1_1_address0">15, 15, 5, 75</column>
+<column name="dest_1_1_address1">15, 15, 5, 75</column>
+<column name="dest_1_1_ce0">1, 3, 1, 3</column>
+<column name="dest_1_1_ce1">1, 3, 1, 3</column>
+<column name="dest_1_1_d1">32, 3, 32, 96</column>
+<column name="dest_1_1_we1">1, 3, 1, 3</column>
+<column name="dest_1_2_address0">15, 15, 5, 75</column>
+<column name="dest_1_2_address1">15, 15, 5, 75</column>
+<column name="dest_1_2_ce0">1, 3, 1, 3</column>
+<column name="dest_1_2_ce1">1, 3, 1, 3</column>
+<column name="dest_1_2_d1">32, 3, 32, 96</column>
+<column name="dest_1_2_we1">1, 3, 1, 3</column>
+<column name="dest_1_3_address0">15, 15, 5, 75</column>
+<column name="dest_1_3_address1">15, 15, 5, 75</column>
+<column name="dest_1_3_ce0">1, 3, 1, 3</column>
+<column name="dest_1_3_ce1">1, 3, 1, 3</column>
+<column name="dest_1_3_d1">32, 3, 32, 96</column>
+<column name="dest_1_3_we1">1, 3, 1, 3</column>
+<column name="dest_address0">7, 3, 7, 21</column>
+<column name="dest_d0">32, 3, 32, 96</column>
+<column name="grp_worker_COO_SpMV_fu_1096_col_q0">7, 3, 7, 21</column>
+<column name="grp_worker_COO_SpMV_fu_1096_output_r_q0">32, 3, 32, 96</column>
+<column name="grp_worker_COO_SpMV_fu_1096_row_q0">5, 3, 5, 15</column>
+<column name="grp_worker_COO_SpMV_fu_1096_val_r_q0">32, 3, 32, 96</column>
+<column name="grp_worker_create_COO_fu_1129_input_r_q0">32, 3, 32, 96</column>
+<column name="i2_reg_1062">3, 2, 3, 6</column>
+<column name="i_reg_1051">7, 2, 7, 14</column>
+<column name="j3_reg_1085">5, 2, 5, 10</column>
+<column name="phi_mul_reg_1073">7, 2, 7, 14</column>
+<column name="row_1_0_address0">12, 3, 12, 36</column>
+<column name="row_1_0_ce0">1, 3, 1, 3</column>
+<column name="row_1_1_address0">12, 3, 12, 36</column>
+<column name="row_1_1_ce0">1, 3, 1, 3</column>
+<column name="row_1_2_address0">12, 3, 12, 36</column>
+<column name="row_1_2_ce0">1, 3, 1, 3</column>
+<column name="row_1_3_address0">12, 3, 12, 36</column>
+<column name="row_1_3_ce0">1, 3, 1, 3</column>
+<column name="val_1_0_address0">12, 3, 12, 36</column>
+<column name="val_1_0_ce0">1, 3, 1, 3</column>
+<column name="val_1_1_address0">12, 3, 12, 36</column>
+<column name="val_1_1_ce0">1, 3, 1, 3</column>
+<column name="val_1_2_address0">12, 3, 12, 36</column>
+<column name="val_1_2_ce0">1, 3, 1, 3</column>
+<column name="val_1_3_address0">12, 3, 12, 36</column>
+<column name="val_1_3_ce0">1, 3, 1, 3</column>
 </table>
 </item>
 <item name = "Register"><table name="" hasTotal="1">
 <keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
-<column name="ap_CS_fsm">17, 0, 17, 0</column>
-<column name="ap_reg_grp_worker_COO_SpMV_fu_191_ap_start">1, 0, 1, 0</column>
-<column name="ap_reg_grp_worker_create_COO_fu_209_ap_start">1, 0, 1, 0</column>
-<column name="i_reg_158">7, 0, 7, 0</column>
-<column name="phi_mul_reg_169">15, 0, 15, 0</column>
-<column name="phi_urem_reg_180">7, 0, 7, 0</column>
-<column name="reg_253">32, 0, 32, 0</column>
+<column name="ap_CS_fsm">21, 0, 21, 0</column>
+<column name="ap_reg_grp_worker_COO_SpMV_fu_1096_ap_start">1, 0, 1, 0</column>
+<column name="ap_reg_grp_worker_COO_SpMV_fu_1107_ap_start">1, 0, 1, 0</column>
+<column name="ap_reg_grp_worker_COO_SpMV_fu_1118_ap_start">1, 0, 1, 0</column>
+<column name="ap_reg_grp_worker_create_COO_fu_1129_ap_start">1, 0, 1, 0</column>
+<column name="ap_reg_grp_worker_create_COO_fu_1139_ap_start">1, 0, 1, 0</column>
+<column name="ap_reg_grp_worker_create_COO_fu_1148_ap_start">1, 0, 1, 0</column>
+<column name="i2_reg_1062">3, 0, 3, 0</column>
+<column name="i_2_reg_1275">3, 0, 3, 0</column>
+<column name="i_reg_1051">7, 0, 7, 0</column>
+<column name="j3_reg_1085">5, 0, 5, 0</column>
+<column name="j_reg_1288">5, 0, 5, 0</column>
+<column name="next_mul_reg_1267">7, 0, 7, 0</column>
+<column name="phi_mul_reg_1073">7, 0, 7, 0</column>
+<column name="reg_1157">32, 0, 32, 0</column>
+<column name="tmp_3_reg_1257">32, 0, 32, 0</column>
+<column name="tmp_4_reg_1262">32, 0, 32, 0</column>
+<column name="tmp_6_reg_1280">2, 0, 2, 0</column>
+<column name="tmp_9_reg_1313">7, 0, 7, 0</column>
 </table>
 </item>
 </section>
@@ -142,54 +221,21 @@
 <column name="ap_done">out, 1, ap_ctrl_hs, worker, return value</column>
 <column name="ap_idle">out, 1, ap_ctrl_hs, worker, return value</column>
 <column name="ap_ready">out, 1, ap_ctrl_hs, worker, return value</column>
-<column name="dest_0_address0">out, 5, ap_memory, dest_0, array</column>
-<column name="dest_0_ce0">out, 1, ap_memory, dest_0, array</column>
-<column name="dest_0_we0">out, 1, ap_memory, dest_0, array</column>
-<column name="dest_0_d0">out, 32, ap_memory, dest_0, array</column>
-<column name="dest_0_q0">in, 32, ap_memory, dest_0, array</column>
-<column name="dest_0_address1">out, 5, ap_memory, dest_0, array</column>
-<column name="dest_0_ce1">out, 1, ap_memory, dest_0, array</column>
-<column name="dest_0_we1">out, 1, ap_memory, dest_0, array</column>
-<column name="dest_0_d1">out, 32, ap_memory, dest_0, array</column>
-<column name="dest_1_address0">out, 5, ap_memory, dest_1, array</column>
-<column name="dest_1_ce0">out, 1, ap_memory, dest_1, array</column>
-<column name="dest_1_we0">out, 1, ap_memory, dest_1, array</column>
-<column name="dest_1_d0">out, 32, ap_memory, dest_1, array</column>
-<column name="dest_1_q0">in, 32, ap_memory, dest_1, array</column>
-<column name="dest_1_address1">out, 5, ap_memory, dest_1, array</column>
-<column name="dest_1_ce1">out, 1, ap_memory, dest_1, array</column>
-<column name="dest_1_we1">out, 1, ap_memory, dest_1, array</column>
-<column name="dest_1_d1">out, 32, ap_memory, dest_1, array</column>
-<column name="dest_2_address0">out, 5, ap_memory, dest_2, array</column>
-<column name="dest_2_ce0">out, 1, ap_memory, dest_2, array</column>
-<column name="dest_2_we0">out, 1, ap_memory, dest_2, array</column>
-<column name="dest_2_d0">out, 32, ap_memory, dest_2, array</column>
-<column name="dest_2_q0">in, 32, ap_memory, dest_2, array</column>
-<column name="dest_2_address1">out, 5, ap_memory, dest_2, array</column>
-<column name="dest_2_ce1">out, 1, ap_memory, dest_2, array</column>
-<column name="dest_2_we1">out, 1, ap_memory, dest_2, array</column>
-<column name="dest_2_d1">out, 32, ap_memory, dest_2, array</column>
-<column name="dest_3_address0">out, 5, ap_memory, dest_3, array</column>
-<column name="dest_3_ce0">out, 1, ap_memory, dest_3, array</column>
-<column name="dest_3_we0">out, 1, ap_memory, dest_3, array</column>
-<column name="dest_3_d0">out, 32, ap_memory, dest_3, array</column>
-<column name="dest_3_q0">in, 32, ap_memory, dest_3, array</column>
-<column name="dest_3_address1">out, 5, ap_memory, dest_3, array</column>
-<column name="dest_3_ce1">out, 1, ap_memory, dest_3, array</column>
-<column name="dest_3_we1">out, 1, ap_memory, dest_3, array</column>
-<column name="dest_3_d1">out, 32, ap_memory, dest_3, array</column>
+<column name="dest_address0">out, 7, ap_memory, dest, array</column>
+<column name="dest_ce0">out, 1, ap_memory, dest, array</column>
+<column name="dest_we0">out, 1, ap_memory, dest, array</column>
+<column name="dest_d0">out, 32, ap_memory, dest, array</column>
 </table>
 </item>
 </section>
 
 <section name = "Critical Path" level="0">
-<item name = "Max Delay">5.06</item>
+<item name = "Max Delay">6.67</item>
 <item name = "Critical Path Table"><table name="Critical Path Table" hasTotal="0">
 <keys size="15">Name, Operator, Delay, Accumulated Delay, Store Source, Resource, Core, Interface, Type, Port, Array, Scope, Pointer, Callee, Phi Node</keys>
-<column name="'phi_urem'">phi, 0.00, 0.00, -, -, -, -, -, -, -, -, -, -, &apos;idx_urem&apos;</column>
-<column name="'next_urem'">add, 1.72, 1.72, -, -, -, -, -, -, -, -, -, -, -</column>
-<column name="'tmp_2'">icmp, 1.97, 3.69, -, -, -, -, -, -, -, -, -, -, -</column>
-<column name="'idx_urem'">select, 1.37, 5.06, -, -, -, -, -, -, -, -, -, -, -</column>
+<column name="'dest_1_0_load', COO_SpMV.cpp:209">load, 2.39, 2.39, -, -, -, -, -, -, &apos;dest_1[0]&apos;, COO_SpMV.cpp:173, -, -, -, -</column>
+<column name="'tmp_5', COO_SpMV.cpp:209">mux, 1.57, 3.96, -, -, -, -, -, -, -, -, -, -, -</column>
+<column name="COO_SpMV.cpp:209">store, 2.71, 6.67, &apos;tmp_5&apos;, COO_SpMV.cpp:209, -, -, -, -, -, &apos;dest&apos;, -, -, -, -</column>
 </table>
 </item>
 </section>

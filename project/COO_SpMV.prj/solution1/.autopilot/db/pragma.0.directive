@@ -3,23 +3,5 @@
 <directive functionLabel="" functionName="COO_SpMV" label="">
 <pragma name="PIPELINE"/>
 </directive>
-<directive functionLabel="" functionName="worker" label="">
-<pragma name="ARRAY_PARTITION">
-<option name="variable" positionalBoolean="4" value="matrix_1"/>
-<option name="block" positionalBoolean="type" value=""/>
-<option name="factor" value="PE"/>
-<option name="dim" value="0"/>
-</pragma>
-</directive>
-<directive functionLabel="" functionName="worker" label="">
-<pragma name="ARRAY_PARTITION">
-<option name="variable" positionalBoolean="4" value="dest"/>
-<option name="block" positionalBoolean="type" value=""/>
-<option name="factor" value="PE"/>
-</pragma>
-</directive>
-<directive functionLabel="" functionName="worker" label="">
-<pragma name="UNROLL"/>
-</directive>
 </sourceFile>
 </AutoPilot:ProjectResources>

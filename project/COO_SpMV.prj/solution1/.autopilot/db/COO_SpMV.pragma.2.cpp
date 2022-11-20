@@ -34872,7 +34872,7 @@ const int coo_size = size * block_size;
 
 // import sparse matrices
 
-const float matrix_1[size][size] = {
+const float matrix_1[PE][block_size][size] = {
 
 
 # 1 "./data/sparse_1.dat" 1
@@ -35101,7 +35101,10 @@ using namespace std;
 // COO Format: 3 arrays representing non-zero elements [row, col, value]
 //==========================================================================
 
-void COO_SpMV(int row[matrix_size], int col[matrix_size], float val[matrix_size], const float vector[size], float output[size], int nnz) {_ssdm_SpecArrayDimSize(val,matrix_size);_ssdm_SpecArrayDimSize(output,size);_ssdm_SpecArrayDimSize(col,matrix_size);_ssdm_SpecArrayDimSize(vector,size);_ssdm_SpecArrayDimSize(row,matrix_size);
+void COO_SpMV(int row[coo_size], int col[coo_size], float val[coo_size], const float vector[size], float output[size], int nnz) {_ssdm_SpecArrayDimSize(val,coo_size);_ssdm_SpecArrayDimSize(output,size);_ssdm_SpecArrayDimSize(col,coo_size);_ssdm_SpecArrayDimSize(vector,size);_ssdm_SpecArrayDimSize(row,coo_size);
+_ssdm_InlineSelf(2, "");
+# 69 "COO_SpMV.cpp"
+
     for(int i = 0; i < coo_size; i++) {
 _ssdm_op_SpecPipeline(-1, 1, 1, 0, "");
 _ssdm_SpecDependence( output, 0, 0, 0, 0, 1);
@@ -35127,17 +35130,20 @@ _ssdm_SpecDependence( output, 0, 0, 0, 0, 1);
 // Traverse in column major order to solve output dependence
 //==========================================================================
 
-int create_COO(const float input[size][size], int row[matrix_size], int col[matrix_size], float val[matrix_size], int block) {_ssdm_SpecArrayDimSize(val,matrix_size);_ssdm_SpecArrayDimSize(input,size);_ssdm_SpecArrayDimSize(col,matrix_size);_ssdm_SpecArrayDimSize(row,matrix_size);
+int create_COO(const float input[block_size][size], int row[coo_size], int col[coo_size], float val[coo_size]) {_ssdm_SpecArrayDimSize(val,coo_size);_ssdm_SpecArrayDimSize(input,block_size);_ssdm_SpecArrayDimSize(col,coo_size);_ssdm_SpecArrayDimSize(row,coo_size);
+_ssdm_InlineSelf(2, "");
+# 95 "COO_SpMV.cpp"
+
     int counter = 0;
-    int temp_row[matrix_size];
-    int temp_col[matrix_size];
-    float temp_val[matrix_size];
+    int temp_row[coo_size];
+    int temp_col[coo_size];
+    float temp_val[coo_size];
     for(int i = 0; i < block_size; i++) {
         for(int j = 0; j < size; j++) {
-            if (input[block+i][j] != 0) {
-                temp_row[counter] = block+i;
+            if (input[i][j] != 0) {
+                temp_row[counter] = i;
                 temp_col[counter] = j;
-                temp_val[counter] = input[block+i][j];
+                temp_val[counter] = input[i][j];
                 counter += 1;
             }
         }
@@ -35175,33 +35181,95 @@ int count_nnz(const float input[size][size]) {_ssdm_SpecArrayDimSize(input,size)
     return counter;
 }
 
-void copy(float matrix[size][size], float sub_matrix[block_size][size], int start) {_ssdm_SpecArrayDimSize(sub_matrix,block_size);_ssdm_SpecArrayDimSize(matrix,size);
-    for (int i = 0; i < block_size; i++) {
-        for (int j = 0; j < size; j++) {
-            sub_matrix[i][j] = matrix[i+start][j];
-        }
-    }
-}
+// void copy(const float matrix[size][size], float sub_matrix[block_size][size], int start) {
+//     for (int i = 0; i < block_size; i++) {
+//         for (int j = 0; j < size; j++) {
+//             sub_matrix[i][j] = matrix[i+start][j];
+//         }
+//     }
+// }
+
+// void v_copy(float vector_copy[PE][size]) {
+//     for (int i=0; i<PE; i++) {
+//         for (int j=0; j<size; j++) {
+//             vector_copy[i][j] = vector[j];
+//         }
+//     }
+// }
 
 void worker(float dest[size]) {_ssdm_SpecArrayDimSize(dest,size);
+_ssdm_SpecArrayPartition( matrix_1, 1, "COMPLETE", 0, "");
+# 159 "COO_SpMV.cpp"
+
 //   float dest[size];
 
-_ssdm_SpecArrayPartition( matrix_1, 0, "BLOCK", PE, "");
-_ssdm_SpecArrayPartition( dest, 1, "BLOCK", PE, "");
+//   float vector_copy[PE][size];
+//   v_copy(vector_copy);
 
- for (int i = 0; i < size; i++ )
+  for (int i = 0; i < size; i++ )
     dest[i] = 0;
 
+//   float sub_matrix_1[PE][block_size][size];
+//   for (int i = 0; i < PE; i++) {
+//     int start = i*block_size;
+//     copy(matrix_1, sub_matrix_1[i], start);
+//   }
+  float dest_1[PE][block_size];
+_ssdm_SpecArrayPartition( dest_1, 1, "COMPLETE", 0, "");
+# 173 "COO_SpMV.cpp"
+
+
+  int row_1[PE][coo_size];
+_ssdm_SpecArrayPartition( row_1, 1, "COMPLETE", 0, "");
+# 175 "COO_SpMV.cpp"
+
+  int col_1[PE][coo_size];
+_ssdm_SpecArrayPartition( col_1, 1, "COMPLETE", 0, "");
+# 176 "COO_SpMV.cpp"
+
+  float val_1[PE][coo_size];
+_ssdm_SpecArrayPartition( val_1, 1, "COMPLETE", 0, "");
+# 177 "COO_SpMV.cpp"
+
+
+//   #pragma HLS array_partition variable=sub_matrix_1 complete dim=1
+//   #pragma HLS array_partition variable=dest_1 complete dim=1
+//   #pragma HLS array_partition variable=vector_copy complete dim=1
+//   #pragma HLS array_partition variable=row_1 complete dim=1
+//   #pragma HLS array_partition variable=col_1 complete dim=1
+//   #pragma HLS array_partition variable=val_1 complete dim=1
+
   // int nnz = count_nnz(matrix_1);
-  for (int i = 0; i < PE; i++) {
+  LOOP_PE: for (int i = 0; i < PE; i++) {
 _ssdm_Unroll(0,0,0, "");
+# 187 "COO_SpMV.cpp"
 
- int row_1[coo_size];
-    int col_1[coo_size];
-    float val_1[coo_size];
+    // #pragma HLS unroll
+    // float dest_1[PE][block_size];
+    // int start = i*block_size;
 
-    int nnz = create_COO(matrix_1, row_1, col_1, val_1, i*block_size);
-    COO_SpMV(row_1, col_1, val_1, vector, dest, nnz);
+    LOOP_DEST1:for(int j = 0; j < block_size; j++)
+        // #pragma HLS unroll
+
+_ssdm_Unroll(0,0,0, "");
+# 194 "COO_SpMV.cpp"
+dest_1[i][j] = 0;
+
+    // float sub_matrix_1[block_size][size];
+    // copy(matrix_1, sub_matrix_1, start);
+    int nnz = create_COO(matrix_1[i], row_1[i], col_1[i], val_1[i]);
+    COO_SpMV(row_1[i], col_1[i], val_1[i], vector, dest_1[i], nnz);
+
+    // for(int i = 0; i < block_size; i++) {
+    //     dest[start+i] = dest_1[i];
+    // }
+  }
+
+  for (int i = 0; i < PE; i++) {
+    int start = i*block_size;
+    for(int j = 0; j < block_size; j++) {
+        dest[start+j] = dest_1[i][j];
+    }
   }
 
 //   int nnz = create_COO(matrix_1, row_1, col_1, val_1);

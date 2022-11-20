@@ -12,27 +12,17 @@ Copyright (C) 1986-2016 Xilinx, Inc. All Rights Reserved.
 @I [HLS-10] Validating synthesis directives ...
 @I [HLS-10] Starting code transformations ...
 @I [HLS-10] Checking synthesizability ...
-@I [XFORM-602] Inlining function 'COO_SpMV' into 'worker' (COO_SpMV.cpp:169) automatically.
-@I [XFORM-501] Unrolling loop 'Loop-2' (COO_SpMV.cpp:161) in function 'worker' completely.
-@I [XFORM-101] Partitioning array 'matrix_1'  in dimension 1 with a block factor 4.
-@I [XFORM-101] Partitioning array 'dest' (COO_SpMV.cpp:151) in dimension 1 with a block factor 4.
-@I [XFORM-101] Partitioning array 'matrix_1.0'  in dimension 2 with a block factor 4.
-@I [XFORM-101] Partitioning array 'matrix_1.1'  in dimension 2 with a block factor 4.
-@I [XFORM-101] Partitioning array 'matrix_1.2'  in dimension 2 with a block factor 4.
-@I [XFORM-101] Partitioning array 'matrix_1.3'  in dimension 2 with a block factor 4.
-@W [ANALYSIS-52] Found false 'RAW' inter dependency for variable 'output[3]' (COO_SpMV.cpp:69).
-@W [ANALYSIS-52] Found false 'RAW' inter dependency for variable 'output[1]' (COO_SpMV.cpp:69).
-@W [ANALYSIS-52] Found false 'RAW' inter dependency for variable 'output[2]' (COO_SpMV.cpp:69).
-@W [ANALYSIS-52] Found false 'RAW' inter dependency for variable 'output[0]' (COO_SpMV.cpp:69).
-@W [ANALYSIS-52] Asserting false dependency between 'load' operation 'output[3].load' from variable 'output[3]'(COO_SpMV.cpp:69) and 'store' operation to variable 'output[3]'(COO_SpMV.cpp:69) according to false dependency pragma(COO_SpMV.cpp:72:1), this may lead to incorrect RTL generation.
-@W [ANALYSIS-52] Asserting false dependency between 'store' operation to variable 'output[3]'(COO_SpMV.cpp:69) and 'load' operation 'output[3].load' from variable 'output[3]'(COO_SpMV.cpp:69) according to false dependency pragma(COO_SpMV.cpp:72:1), this may lead to incorrect RTL generation.
-@W [ANALYSIS-52] Asserting false dependency between 'load' operation 'output[1].load' from variable 'output[1]'(COO_SpMV.cpp:69) and 'store' operation to variable 'output[1]'(COO_SpMV.cpp:69) according to false dependency pragma(COO_SpMV.cpp:72:1), this may lead to incorrect RTL generation.
-@W [ANALYSIS-52] Asserting false dependency between 'store' operation to variable 'output[1]'(COO_SpMV.cpp:69) and 'load' operation 'output[1].load' from variable 'output[1]'(COO_SpMV.cpp:69) according to false dependency pragma(COO_SpMV.cpp:72:1), this may lead to incorrect RTL generation.
-@W [ANALYSIS-52] Asserting false dependency between 'load' operation 'output[2].load' from variable 'output[2]'(COO_SpMV.cpp:69) and 'store' operation to variable 'output[2]'(COO_SpMV.cpp:69) according to false dependency pragma(COO_SpMV.cpp:72:1), this may lead to incorrect RTL generation.
-@W [ANALYSIS-52] Asserting false dependency between 'store' operation to variable 'output[2]'(COO_SpMV.cpp:69) and 'load' operation 'output[2].load' from variable 'output[2]'(COO_SpMV.cpp:69) according to false dependency pragma(COO_SpMV.cpp:72:1), this may lead to incorrect RTL generation.
-@W [ANALYSIS-52] Asserting false dependency between 'load' operation 'output[0].load' from variable 'output[0]'(COO_SpMV.cpp:69) and 'store' operation to variable 'output[0]'(COO_SpMV.cpp:69) according to false dependency pragma(COO_SpMV.cpp:72:1), this may lead to incorrect RTL generation.
-@W [ANALYSIS-52] Asserting false dependency between 'store' operation to variable 'output[0]'(COO_SpMV.cpp:69) and 'load' operation 'output[0].load' from variable 'output[0]'(COO_SpMV.cpp:69) according to false dependency pragma(COO_SpMV.cpp:72:1), this may lead to incorrect RTL generation.
-@I [HLS-111] Elapsed time: 2.71 seconds; current memory usage: 85.3 MB.
+@I [XFORM-501] Unrolling loop 'LOOP_PE' (COO_SpMV.cpp:187) in function 'worker' completely.
+@I [XFORM-501] Unrolling loop 'LOOP_DEST1' (COO_SpMV.cpp:194) in function 'worker' completely.
+@I [XFORM-101] Partitioning array 'matrix_1'  in dimension 1 completely.
+@I [XFORM-101] Partitioning array 'dest_1' (COO_SpMV.cpp:173) in dimension 1 completely.
+@I [XFORM-101] Partitioning array 'row_1' (COO_SpMV.cpp:175) in dimension 1 completely.
+@I [XFORM-101] Partitioning array 'col_1' (COO_SpMV.cpp:176) in dimension 1 completely.
+@I [XFORM-101] Partitioning array 'val_1' (COO_SpMV.cpp:177) in dimension 1 completely.
+@W [ANALYSIS-52] Found false 'RAW' inter dependency for variable 'output' (COO_SpMV.cpp:69).
+@W [ANALYSIS-52] Asserting false dependency between 'load' operation 'output.load'(COO_SpMV.cpp:74:11) from variable 'output'(COO_SpMV.cpp:69) and 'store' operation to variable 'output'(COO_SpMV.cpp:69), this may lead to incorrect RTL generation.
+@W [ANALYSIS-52] Asserting false dependency between 'store' operation to variable 'output'(COO_SpMV.cpp:69) and 'load' operation 'output.load'(COO_SpMV.cpp:74:11) from variable 'output'(COO_SpMV.cpp:69), this may lead to incorrect RTL generation.
+@I [HLS-111] Elapsed time: 4.89 seconds; current memory usage: 87.1 MB.
 @I [HLS-10] Starting hardware synthesis ...
 @I [HLS-10] Synthesizing 'worker' ...
 @I [HLS-10] ----------------------------------------------------------------
@@ -40,7 +30,7 @@ Copyright (C) 1986-2016 Xilinx, Inc. All Rights Reserved.
 @I [HLS-10] ----------------------------------------------------------------
 @I [SCHED-11] Starting scheduling ...
 @I [SCHED-11] Finished scheduling.
-@I [HLS-111] Elapsed time: 0.08 seconds; current memory usage: 86.1 MB.
+@I [HLS-111] Elapsed time: 0.07 seconds; current memory usage: 87.8 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Exploring micro-architecture for module 'worker_create_COO' 
 @I [HLS-10] ----------------------------------------------------------------
@@ -49,15 +39,15 @@ Copyright (C) 1986-2016 Xilinx, Inc. All Rights Reserved.
 @I [BIND-101] Exploring resource sharing.
 @I [BIND-101] Binding ...
 @I [BIND-100] Finished micro-architecture generation.
-@I [HLS-111] Elapsed time: 0.04 seconds; current memory usage: 86.8 MB.
+@I [HLS-111] Elapsed time: 0.02 seconds; current memory usage: 88.2 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Scheduling module 'worker_COO_SpMV' 
 @I [HLS-10] ----------------------------------------------------------------
 @I [SCHED-11] Starting scheduling ...
 @I [SCHED-61] Pipelining loop 'Loop 1'.
-@I [SCHED-61] Pipelining result: Target II: 1, Final II: 1, Depth: 19.
+@I [SCHED-61] Pipelining result: Target II: 1, Final II: 1, Depth: 12.
 @I [SCHED-11] Finished scheduling.
-@I [HLS-111] Elapsed time: 0.08 seconds; current memory usage: 87.4 MB.
+@I [HLS-111] Elapsed time: 0.05 seconds; current memory usage: 88.6 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Exploring micro-architecture for module 'worker_COO_SpMV' 
 @I [HLS-10] ----------------------------------------------------------------
@@ -66,13 +56,13 @@ Copyright (C) 1986-2016 Xilinx, Inc. All Rights Reserved.
 @I [BIND-101] Exploring resource sharing.
 @I [BIND-101] Binding ...
 @I [BIND-100] Finished micro-architecture generation.
-@I [HLS-111] Elapsed time: 0.02 seconds; current memory usage: 87.6 MB.
+@I [HLS-111] Elapsed time: 0.01 seconds; current memory usage: 88.8 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Scheduling module 'worker' 
 @I [HLS-10] ----------------------------------------------------------------
 @I [SCHED-11] Starting scheduling ...
 @I [SCHED-11] Finished scheduling.
-@I [HLS-111] Elapsed time: 0.04 seconds; current memory usage: 87.9 MB.
+@I [HLS-111] Elapsed time: 0.11 seconds; current memory usage: 89.4 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Exploring micro-architecture for module 'worker' 
 @I [HLS-10] ----------------------------------------------------------------
@@ -81,61 +71,43 @@ Copyright (C) 1986-2016 Xilinx, Inc. All Rights Reserved.
 @I [BIND-101] Exploring resource sharing.
 @I [BIND-101] Binding ...
 @I [BIND-100] Finished micro-architecture generation.
-@I [HLS-111] Elapsed time: 0.12 seconds; current memory usage: 88.2 MB.
+@I [HLS-111] Elapsed time: 0.09 seconds; current memory usage: 90.2 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Generating RTL for module 'worker_create_COO' 
 @I [HLS-10] ----------------------------------------------------------------
 @I [RTGEN-100] Generating core module 'worker_fcmp_32ns_32ns_1_1': 1 instance(s).
-@I [RTGEN-100] Generating core module 'worker_mux_16to1_sel5_32_1': 1 instance(s).
-@I [RTGEN-100] Generating core module 'worker_urem_7ns_6ns_7_11_seq': 1 instance(s).
 @I [RTGEN-100] Finished creating RTL model for 'worker_create_COO'.
-@I [HLS-111] Elapsed time: 0.21 seconds; current memory usage: 89.3 MB.
+@I [HLS-111] Elapsed time: 0.15 seconds; current memory usage: 90.8 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Generating RTL for module 'worker_COO_SpMV' 
 @I [HLS-10] ----------------------------------------------------------------
 @I [RTGEN-100] Generating core module 'worker_fadd_32ns_32ns_32_5_full_dsp': 1 instance(s).
 @I [RTGEN-100] Generating core module 'worker_fmul_32ns_32ns_32_4_max_dsp': 1 instance(s).
-@I [RTGEN-100] Generating core module 'worker_mul_7ns_34ns_65_3': 1 instance(s).
-@I [RTGEN-100] Generating core module 'worker_mux_4to1_sel32_32_1': 1 instance(s).
-@I [RTGEN-100] Generating core module 'worker_urem_7ns_6ns_7_11': 1 instance(s).
 @I [RTGEN-100] Finished creating RTL model for 'worker_COO_SpMV'.
-@I [HLS-111] Elapsed time: 0.21 seconds; current memory usage: 92 MB.
+@I [HLS-111] Elapsed time: 0.1 seconds; current memory usage: 92.5 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Generating RTL for module 'worker' 
 @I [HLS-10] ----------------------------------------------------------------
-@I [RTGEN-500] Setting interface mode on port 'worker/dest_0' to 'ap_memory'.
-@I [RTGEN-500] Setting interface mode on port 'worker/dest_1' to 'ap_memory'.
-@I [RTGEN-500] Setting interface mode on port 'worker/dest_2' to 'ap_memory'.
-@I [RTGEN-500] Setting interface mode on port 'worker/dest_3' to 'ap_memory'.
+@I [RTGEN-500] Setting interface mode on port 'worker/dest' to 'ap_memory'.
 @I [RTGEN-500] Setting interface mode on function 'worker' to 'ap_ctrl_hs'.
+@I [RTGEN-100] Generating core module 'worker_mux_4to1_sel2_32_1': 1 instance(s).
 @I [RTGEN-100] Finished creating RTL model for 'worker'.
-@I [HLS-111] Elapsed time: 0.23 seconds; current memory usage: 93.7 MB.
-@I [RTMG-282] Generating pipelined core: 'worker_urem_7ns_6ns_7_11_seq_div'
-@I [RTMG-279] Implementing memory 'worker_create_COO_matrix_1_0_0_rom' using auto ROMs.
-@I [RTMG-279] Implementing memory 'worker_create_COO_matrix_1_0_1_rom' using auto ROMs.
-@I [RTMG-279] Implementing memory 'worker_create_COO_matrix_1_0_2_rom' using auto ROMs.
-@I [RTMG-279] Implementing memory 'worker_create_COO_matrix_1_0_3_rom' using auto ROMs.
-@I [RTMG-279] Implementing memory 'worker_create_COO_matrix_1_1_0_rom' using auto ROMs.
-@I [RTMG-279] Implementing memory 'worker_create_COO_matrix_1_1_1_rom' using auto ROMs.
-@I [RTMG-279] Implementing memory 'worker_create_COO_matrix_1_1_2_rom' using auto ROMs.
-@I [RTMG-279] Implementing memory 'worker_create_COO_matrix_1_1_3_rom' using auto ROMs.
-@I [RTMG-279] Implementing memory 'worker_create_COO_matrix_1_2_0_rom' using auto ROMs.
-@I [RTMG-279] Implementing memory 'worker_create_COO_matrix_1_2_1_rom' using auto ROMs.
-@I [RTMG-279] Implementing memory 'worker_create_COO_matrix_1_2_2_rom' using auto ROMs.
-@I [RTMG-279] Implementing memory 'worker_create_COO_matrix_1_2_3_rom' using auto ROMs.
-@I [RTMG-279] Implementing memory 'worker_create_COO_matrix_1_3_0_rom' using auto ROMs.
-@I [RTMG-279] Implementing memory 'worker_create_COO_matrix_1_3_1_rom' using auto ROMs.
-@I [RTMG-279] Implementing memory 'worker_create_COO_matrix_1_3_2_rom' using auto ROMs.
-@I [RTMG-279] Implementing memory 'worker_create_COO_matrix_1_3_3_rom' using auto ROMs.
+@I [HLS-111] Elapsed time: 0.15 seconds; current memory usage: 94.5 MB.
 @I [RTMG-278] Implementing memory 'worker_create_COO_temp_row_ram' using block RAMs.
+@I [RTMG-278] Implementing memory 'worker_create_COO_temp_col_ram' using block RAMs.
 @I [RTMG-278] Implementing memory 'worker_create_COO_temp_val_ram' using block RAMs.
-@I [RTMG-282] Generating pipelined core: 'worker_urem_7ns_6ns_7_11_div'
-@I [RTMG-282] Generating pipelined core: 'worker_mul_7ns_34ns_65_3_Mul3S_0'
 @I [RTMG-279] Implementing memory 'worker_COO_SpMV_vector_rom' using auto ROMs.
-@I [RTMG-278] Implementing memory 'worker_row_1_ram' using block RAMs.
-@I [RTMG-278] Implementing memory 'worker_val_1_ram' using block RAMs.
+@W [RTMG-274] Memory 'worker_matrix_1_0' is read-only, switch it to a ROM.
+@I [RTMG-279] Implementing memory 'worker_matrix_1_0_rom' using block ROMs.
+@W [RTMG-274] Memory 'worker_matrix_1_1' is read-only, switch it to a ROM.
+@I [RTMG-279] Implementing memory 'worker_matrix_1_1_rom' using block ROMs.
+@W [RTMG-274] Memory 'worker_matrix_1_2' is read-only, switch it to a ROM.
+@I [RTMG-279] Implementing memory 'worker_matrix_1_2_rom' using block ROMs.
+@W [RTMG-274] Memory 'worker_matrix_1_3' is read-only, switch it to a ROM.
+@I [RTMG-279] Implementing memory 'worker_matrix_1_3_rom' using block ROMs.
+@I [RTMG-278] Implementing memory 'worker_dest_1_0_ram' using block RAMs.
 @I [HLS-10] Finished generating all RTL models.
 @I [SYSC-301] Generating SystemC RTL for worker.
 @I [VHDL-304] Generating VHDL RTL for worker.
 @I [VLOG-307] Generating Verilog RTL for worker.
-@I [HLS-112] Total elapsed time: 14.740 seconds; peak memory usage: 93.7 MB.
+@I [HLS-112] Total elapsed time: 13.398 seconds; peak memory usage: 94.5 MB.

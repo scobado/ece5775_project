@@ -11,7 +11,7 @@ const int coo_size = size * block_size;
 
 // import sparse matrices
 
-const float matrix_1[size][size] = {
+const float matrix_1[PE][block_size][size] = {
     #include"data/sparse_1.dat"
 };
 

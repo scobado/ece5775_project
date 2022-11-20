@@ -648,3 +648,12 @@
 #pragma line 1 "./data/result_10.dat" 1 ::: 34978
 #pragma line 100 "./model.h" 2 ::: 34980
 #pragma line 12 "COO_SpMV.cpp" 2 ::: 34982
+#pragma line 69 "COO_SpMV.cpp" ::: 35042
+#pragma line 95 "COO_SpMV.cpp" ::: 35071
+#pragma line 159 "COO_SpMV.cpp" ::: 35138
+#pragma line 173 "COO_SpMV.cpp" ::: 35155
+#pragma line 175 "COO_SpMV.cpp" ::: 35160
+#pragma line 176 "COO_SpMV.cpp" ::: 35164
+#pragma line 177 "COO_SpMV.cpp" ::: 35168
+#pragma line 187 "COO_SpMV.cpp" ::: 35181
+#pragma line 194 "COO_SpMV.cpp" ::: 35191

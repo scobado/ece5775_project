@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'worker'
 ================================================================
-* Date:           Fri Nov 18 18:42:37 2022
+* Date:           Sun Nov 20 12:28:56 2022
 
 * Version:        2016.2 (Build 1577090 on Thu Jun 02 16:59:10 MDT 2016)
 * Project:        COO_SpMV.prj
@@ -29,26 +29,32 @@
     |    Latency    |    Interval   | Pipeline|
     |  min  |  max  |  min  |  max  |   Type  |
     +-------+-------+-------+-------+---------+
-    |  61500|  61500|  61501|  61501|   none  |
+    |  27942|  27942|  27943|  27943|   none  |
     +-------+-------+-------+-------+---------+
 
     + Detail: 
         * Instance: 
-        +------------------------------+-------------------+-------+-------+-------+-------+---------+
-        |                              |                   |    Latency    |    Interval   | Pipeline|
-        |           Instance           |       Module      |  min  |  max  |  min  |  max  |   Type  |
-        +------------------------------+-------------------+-------+-------+-------+-------+---------+
-        |grp_worker_COO_SpMV_fu_191    |worker_COO_SpMV    |   2519|   2519|   2519|   2519|   none  |
-        |grp_worker_create_COO_fu_209  |worker_create_COO  |  12827|  12827|  12827|  12827|   none  |
-        +------------------------------+-------------------+-------+-------+-------+-------+---------+
+        +-------------------------------+-------------------+-------+-------+-------+-------+---------+
+        |                               |                   |    Latency    |    Interval   | Pipeline|
+        |            Instance           |       Module      |  min  |  max  |  min  |  max  |   Type  |
+        +-------------------------------+-------------------+-------+-------+-------+-------+---------+
+        |grp_worker_COO_SpMV_fu_1096    |worker_COO_SpMV    |   2512|   2512|   2512|   2512|   none  |
+        |grp_worker_COO_SpMV_fu_1107    |worker_COO_SpMV    |   2512|   2512|   2512|   2512|   none  |
+        |grp_worker_COO_SpMV_fu_1118    |worker_COO_SpMV    |   2512|   2512|   2512|   2512|   none  |
+        |grp_worker_create_COO_fu_1129  |worker_create_COO  |  12552|  12552|  12552|  12552|   none  |
+        |grp_worker_create_COO_fu_1139  |worker_create_COO  |  12552|  12552|  12552|  12552|   none  |
+        |grp_worker_create_COO_fu_1148  |worker_create_COO  |  12552|  12552|  12552|  12552|   none  |
+        +-------------------------------+-------------------+-------+-------+-------+-------+---------+
 
         * Loop: 
-        +----------+-----+-----+----------+-----------+-----------+------+----------+
-        |          |  Latency  | Iteration|  Initiation Interval  | Trip |          |
-        | Loop Name| min | max |  Latency |  achieved |   target  | Count| Pipelined|
-        +----------+-----+-----+----------+-----------+-----------+------+----------+
-        |- Loop 1  |  100|  100|         1|          -|          -|   100|    no    |
-        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        +-------------+-----+-----+----------+-----------+-----------+------+----------+
+        |             |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        |  Loop Name  | min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------+-----+-----+----------+-----------+-----------+------+----------+
+        |- Loop 1     |  100|  100|         1|          -|          -|   100|    no    |
+        |- Loop 2     |  208|  208|        52|          -|          -|     4|    no    |
+        | + Loop 2.1  |   50|   50|         2|          -|          -|    25|    no    |
+        +-------------+-----+-----+----------+-----------+-----------+------+----------+
 
 
 
@@ -60,107 +66,180 @@
 |       Name      | BRAM_18K| DSP48E|   FF   |  LUT  |
 +-----------------+---------+-------+--------+-------+
 |DSP              |        -|      -|       -|      -|
-|Expression       |        -|      -|       0|     42|
+|Expression       |        -|      -|       0|     36|
 |FIFO             |        -|      -|       -|      -|
-|Instance         |       79|      9|    1139|   1845|
-|Memory           |       12|      -|       0|      0|
-|Multiplexer      |        -|      -|       -|    119|
-|Register         |        -|      -|      80|      -|
+|Instance         |       39|     15|    2460|   4310|
+|Memory           |       88|      -|       0|      0|
+|Multiplexer      |        -|      -|       -|    603|
+|Register         |        -|      -|     169|      -|
 +-----------------+---------+-------+--------+-------+
-|Total            |       91|      9|    1219|   2006|
+|Total            |      127|     15|    2629|   4949|
 +-----------------+---------+-------+--------+-------+
 |Available        |      280|    220|  106400|  53200|
 +-----------------+---------+-------+--------+-------+
-|Utilization (%)  |       32|      4|       1|      3|
+|Utilization (%)  |       45|      6|       2|      9|
 +-----------------+---------+-------+--------+-------+
 
 + Detail: 
     * Instance: 
-    +------------------------------+-------------------+---------+-------+-----+------+
-    |           Instance           |       Module      | BRAM_18K| DSP48E|  FF |  LUT |
-    +------------------------------+-------------------+---------+-------+-----+------+
-    |grp_worker_COO_SpMV_fu_191    |worker_COO_SpMV    |        1|      7|  716|  1023|
-    |grp_worker_create_COO_fu_209  |worker_create_COO  |       78|      2|  423|   822|
-    +------------------------------+-------------------+---------+-------+-----+------+
-    |Total                         |                   |       79|      9| 1139|  1845|
-    +------------------------------+-------------------+---------+-------+-----+------+
+    +-------------------------------+---------------------------+---------+-------+-----+-----+
+    |            Instance           |           Module          | BRAM_18K| DSP48E|  FF | LUT |
+    +-------------------------------+---------------------------+---------+-------+-----+-----+
+    |grp_worker_COO_SpMV_fu_1096    |worker_COO_SpMV            |        1|      5|  514|  764|
+    |grp_worker_COO_SpMV_fu_1107    |worker_COO_SpMV            |        1|      5|  514|  764|
+    |grp_worker_COO_SpMV_fu_1118    |worker_COO_SpMV            |        1|      5|  514|  764|
+    |grp_worker_create_COO_fu_1129  |worker_create_COO          |       12|      0|  306|  662|
+    |grp_worker_create_COO_fu_1139  |worker_create_COO          |       12|      0|  306|  662|
+    |grp_worker_create_COO_fu_1148  |worker_create_COO          |       12|      0|  306|  662|
+    |worker_mux_4to1_sel2_32_1_U17  |worker_mux_4to1_sel2_32_1  |        0|      0|    0|   32|
+    +-------------------------------+---------------------------+---------+-------+-----+-----+
+    |Total                          |                           |       39|     15| 2460| 4310|
+    +-------------------------------+---------------------------+---------+-------+-----+-----+
 
     * DSP48: 
     N/A
 
     * Memory: 
-    +---------+--------------+---------+---+----+------+-----+------+-------------+
-    |  Memory |    Module    | BRAM_18K| FF| LUT| Words| Bits| Banks| W*Bits*Banks|
-    +---------+--------------+---------+---+----+------+-----+------+-------------+
-    |row_1_U  |worker_row_1  |        2|  0|   0|  2500|    7|     1|        17500|
-    |col_1_U  |worker_row_1  |        2|  0|   0|  2500|    7|     1|        17500|
-    |val_1_U  |worker_val_1  |        8|  0|   0|  2500|   32|     1|        80000|
-    +---------+--------------+---------+---+----+------+-----+------+-------------+
-    |Total    |              |       12|  0|   0|  7500|   46|     3|       115000|
-    +---------+--------------+---------+---+----+------+-----+------+-------------+
+    +--------------+----------------------------+---------+---+----+------+-----+------+-------------+
+    |    Memory    |           Module           | BRAM_18K| FF| LUT| Words| Bits| Banks| W*Bits*Banks|
+    +--------------+----------------------------+---------+---+----+------+-----+------+-------------+
+    |col_1_0_U     |worker_create_COO_temp_col  |        2|  0|   0|  2500|    7|     1|        17500|
+    |col_1_1_U     |worker_create_COO_temp_col  |        2|  0|   0|  2500|    7|     1|        17500|
+    |col_1_2_U     |worker_create_COO_temp_col  |        2|  0|   0|  2500|    7|     1|        17500|
+    |col_1_3_U     |worker_create_COO_temp_col  |        2|  0|   0|  2500|    7|     1|        17500|
+    |row_1_0_U     |worker_create_COO_temp_row  |        2|  0|   0|  2500|    5|     1|        12500|
+    |row_1_1_U     |worker_create_COO_temp_row  |        2|  0|   0|  2500|    5|     1|        12500|
+    |row_1_2_U     |worker_create_COO_temp_row  |        2|  0|   0|  2500|    5|     1|        12500|
+    |row_1_3_U     |worker_create_COO_temp_row  |        2|  0|   0|  2500|    5|     1|        12500|
+    |val_1_0_U     |worker_create_COO_temp_val  |        8|  0|   0|  2500|   32|     1|        80000|
+    |val_1_1_U     |worker_create_COO_temp_val  |        8|  0|   0|  2500|   32|     1|        80000|
+    |val_1_2_U     |worker_create_COO_temp_val  |        8|  0|   0|  2500|   32|     1|        80000|
+    |val_1_3_U     |worker_create_COO_temp_val  |        8|  0|   0|  2500|   32|     1|        80000|
+    |dest_1_0_U    |worker_dest_1_0             |        2|  0|   0|    25|   32|     1|          800|
+    |dest_1_1_U    |worker_dest_1_0             |        2|  0|   0|    25|   32|     1|          800|
+    |dest_1_2_U    |worker_dest_1_0             |        2|  0|   0|    25|   32|     1|          800|
+    |dest_1_3_U    |worker_dest_1_0             |        2|  0|   0|    25|   32|     1|          800|
+    |matrix_1_0_U  |worker_matrix_1_0           |        8|  0|   0|  2500|   32|     1|        80000|
+    |matrix_1_1_U  |worker_matrix_1_1           |        8|  0|   0|  2500|   32|     1|        80000|
+    |matrix_1_2_U  |worker_matrix_1_2           |        8|  0|   0|  2500|   32|     1|        80000|
+    |matrix_1_3_U  |worker_matrix_1_3           |        8|  0|   0|  2500|   32|     1|        80000|
+    +--------------+----------------------------+---------+---+----+------+-----+------+-------------+
+    |Total         |                            |       88|  0|   0| 40100|  432|    20|       763200|
+    +--------------+----------------------------+---------+---+----+------+-----+------+-------------+
 
     * FIFO: 
     N/A
 
     * Expression: 
-    +---------------------+----------+-------+---+----+------------+------------+
-    |    Variable Name    | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
-    +---------------------+----------+-------+---+----+------------+------------+
-    |i_1_fu_264_p2        |     +    |      0|  0|   7|           7|           1|
-    |next_mul_fu_270_p2   |     +    |      0|  0|  15|          15|           8|
-    |next_urem_fu_294_p2  |     +    |      0|  0|   7|           7|           1|
-    |exitcond1_fu_258_p2  |   icmp   |      0|  0|   3|           7|           6|
-    |tmp_2_fu_300_p2      |   icmp   |      0|  0|   3|           7|           5|
-    |idx_urem_fu_306_p3   |  select  |      0|  0|   7|           1|           7|
-    +---------------------+----------+-------+---+----+------------+------------+
-    |Total                |          |      0|  0|  42|          44|          28|
-    +---------------------+----------+-------+---+----+------------+------------+
+    +----------------------+----------+-------+---+----+------------+------------+
+    |     Variable Name    | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +----------------------+----------+-------+---+----+------------+------------+
+    |i_1_fu_1168_p2        |     +    |      0|  0|   7|           7|           1|
+    |i_2_fu_1191_p2        |     +    |      0|  0|   3|           3|           1|
+    |j_fu_1211_p2          |     +    |      0|  0|   5|           5|           1|
+    |next_mul_fu_1179_p2   |     +    |      0|  0|   7|           7|           5|
+    |tmp_9_fu_1225_p2      |     +    |      0|  0|   7|           7|           7|
+    |exitcond1_fu_1185_p2  |   icmp   |      0|  0|   2|           3|           4|
+    |exitcond4_fu_1162_p2  |   icmp   |      0|  0|   3|           7|           6|
+    |exitcond_fu_1205_p2   |   icmp   |      0|  0|   2|           5|           4|
+    +----------------------+----------+-------+---+----+------------+------------+
+    |Total                 |          |      0|  0|  36|          44|          29|
+    +----------------------+----------+-------+---+----+------------+------------+
 
     * Multiplexer: 
-    +--------------------------------------+----+-----------+-----+-----------+
-    |                 Name                 | LUT| Input Size| Bits| Total Bits|
-    +--------------------------------------+----+-----------+-----+-----------+
-    |ap_NS_fsm                             |  15|         18|    1|         18|
-    |col_1_address0                        |  12|          3|   12|         36|
-    |col_1_ce0                             |   1|          3|    1|          3|
-    |dest_0_address0                       |   5|          3|    5|         15|
-    |dest_0_ce0                            |   1|          3|    1|          3|
-    |dest_0_ce1                            |   1|          2|    1|          2|
-    |dest_1_address0                       |   5|          3|    5|         15|
-    |dest_1_ce0                            |   1|          3|    1|          3|
-    |dest_1_ce1                            |   1|          2|    1|          2|
-    |dest_2_address0                       |   5|          3|    5|         15|
-    |dest_2_ce0                            |   1|          3|    1|          3|
-    |dest_2_ce1                            |   1|          2|    1|          2|
-    |dest_3_address0                       |   5|          3|    5|         15|
-    |dest_3_ce0                            |   1|          3|    1|          3|
-    |dest_3_ce1                            |   1|          2|    1|          2|
-    |grp_worker_create_COO_fu_209_block_r  |   8|          5|    8|         40|
-    |i_reg_158                             |   7|          2|    7|         14|
-    |phi_mul_reg_169                       |  15|          2|   15|         30|
-    |phi_urem_reg_180                      |   7|          2|    7|         14|
-    |row_1_address0                        |  12|          3|   12|         36|
-    |row_1_ce0                             |   1|          3|    1|          3|
-    |val_1_address0                        |  12|          3|   12|         36|
-    |val_1_ce0                             |   1|          3|    1|          3|
-    +--------------------------------------+----+-----------+-----+-----------+
-    |Total                                 | 119|         79|  105|        313|
-    +--------------------------------------+----+-----------+-----+-----------+
+    +------------------------------------------+----+-----------+-----+-----------+
+    |                   Name                   | LUT| Input Size| Bits| Total Bits|
+    +------------------------------------------+----+-----------+-----+-----------+
+    |ap_NS_fsm                                 |  18|         22|    1|         22|
+    |col_1_0_address0                          |  12|          3|   12|         36|
+    |col_1_0_ce0                               |   1|          3|    1|          3|
+    |col_1_1_address0                          |  12|          3|   12|         36|
+    |col_1_1_ce0                               |   1|          3|    1|          3|
+    |col_1_2_address0                          |  12|          3|   12|         36|
+    |col_1_2_ce0                               |   1|          3|    1|          3|
+    |col_1_3_address0                          |  12|          3|   12|         36|
+    |col_1_3_ce0                               |   1|          3|    1|          3|
+    |dest_1_0_address0                         |  15|         15|    5|         75|
+    |dest_1_0_address1                         |  15|         15|    5|         75|
+    |dest_1_0_ce0                              |   1|          3|    1|          3|
+    |dest_1_0_ce1                              |   1|          3|    1|          3|
+    |dest_1_0_d1                               |  32|          3|   32|         96|
+    |dest_1_0_we1                              |   1|          3|    1|          3|
+    |dest_1_1_address0                         |  15|         15|    5|         75|
+    |dest_1_1_address1                         |  15|         15|    5|         75|
+    |dest_1_1_ce0                              |   1|          3|    1|          3|
+    |dest_1_1_ce1                              |   1|          3|    1|          3|
+    |dest_1_1_d1                               |  32|          3|   32|         96|
+    |dest_1_1_we1                              |   1|          3|    1|          3|
+    |dest_1_2_address0                         |  15|         15|    5|         75|
+    |dest_1_2_address1                         |  15|         15|    5|         75|
+    |dest_1_2_ce0                              |   1|          3|    1|          3|
+    |dest_1_2_ce1                              |   1|          3|    1|          3|
+    |dest_1_2_d1                               |  32|          3|   32|         96|
+    |dest_1_2_we1                              |   1|          3|    1|          3|
+    |dest_1_3_address0                         |  15|         15|    5|         75|
+    |dest_1_3_address1                         |  15|         15|    5|         75|
+    |dest_1_3_ce0                              |   1|          3|    1|          3|
+    |dest_1_3_ce1                              |   1|          3|    1|          3|
+    |dest_1_3_d1                               |  32|          3|   32|         96|
+    |dest_1_3_we1                              |   1|          3|    1|          3|
+    |dest_address0                             |   7|          3|    7|         21|
+    |dest_d0                                   |  32|          3|   32|         96|
+    |grp_worker_COO_SpMV_fu_1096_col_q0        |   7|          3|    7|         21|
+    |grp_worker_COO_SpMV_fu_1096_output_r_q0   |  32|          3|   32|         96|
+    |grp_worker_COO_SpMV_fu_1096_row_q0        |   5|          3|    5|         15|
+    |grp_worker_COO_SpMV_fu_1096_val_r_q0      |  32|          3|   32|         96|
+    |grp_worker_create_COO_fu_1129_input_r_q0  |  32|          3|   32|         96|
+    |i2_reg_1062                               |   3|          2|    3|          6|
+    |i_reg_1051                                |   7|          2|    7|         14|
+    |j3_reg_1085                               |   5|          2|    5|         10|
+    |phi_mul_reg_1073                          |   7|          2|    7|         14|
+    |row_1_0_address0                          |  12|          3|   12|         36|
+    |row_1_0_ce0                               |   1|          3|    1|          3|
+    |row_1_1_address0                          |  12|          3|   12|         36|
+    |row_1_1_ce0                               |   1|          3|    1|          3|
+    |row_1_2_address0                          |  12|          3|   12|         36|
+    |row_1_2_ce0                               |   1|          3|    1|          3|
+    |row_1_3_address0                          |  12|          3|   12|         36|
+    |row_1_3_ce0                               |   1|          3|    1|          3|
+    |val_1_0_address0                          |  12|          3|   12|         36|
+    |val_1_0_ce0                               |   1|          3|    1|          3|
+    |val_1_1_address0                          |  12|          3|   12|         36|
+    |val_1_1_ce0                               |   1|          3|    1|          3|
+    |val_1_2_address0                          |  12|          3|   12|         36|
+    |val_1_2_ce0                               |   1|          3|    1|          3|
+    |val_1_3_address0                          |  12|          3|   12|         36|
+    |val_1_3_ce0                               |   1|          3|    1|          3|
+    +------------------------------------------+----+-----------+-----+-----------+
+    |Total                                     | 603|        291|  506|       1995|
+    +------------------------------------------+----+-----------+-----+-----------+
 
     * Register: 
-    +----------------------------------------------+----+----+-----+-----------+
-    |                     Name                     | FF | LUT| Bits| Const Bits|
-    +----------------------------------------------+----+----+-----+-----------+
-    |ap_CS_fsm                                     |  17|   0|   17|          0|
-    |ap_reg_grp_worker_COO_SpMV_fu_191_ap_start    |   1|   0|    1|          0|
-    |ap_reg_grp_worker_create_COO_fu_209_ap_start  |   1|   0|    1|          0|
-    |i_reg_158                                     |   7|   0|    7|          0|
-    |phi_mul_reg_169                               |  15|   0|   15|          0|
-    |phi_urem_reg_180                              |   7|   0|    7|          0|
-    |reg_253                                       |  32|   0|   32|          0|
-    +----------------------------------------------+----+----+-----+-----------+
-    |Total                                         |  80|   0|   80|          0|
-    +----------------------------------------------+----+----+-----+-----------+
+    +-----------------------------------------------+----+----+-----+-----------+
+    |                      Name                     | FF | LUT| Bits| Const Bits|
+    +-----------------------------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                                      |  21|   0|   21|          0|
+    |ap_reg_grp_worker_COO_SpMV_fu_1096_ap_start    |   1|   0|    1|          0|
+    |ap_reg_grp_worker_COO_SpMV_fu_1107_ap_start    |   1|   0|    1|          0|
+    |ap_reg_grp_worker_COO_SpMV_fu_1118_ap_start    |   1|   0|    1|          0|
+    |ap_reg_grp_worker_create_COO_fu_1129_ap_start  |   1|   0|    1|          0|
+    |ap_reg_grp_worker_create_COO_fu_1139_ap_start  |   1|   0|    1|          0|
+    |ap_reg_grp_worker_create_COO_fu_1148_ap_start  |   1|   0|    1|          0|
+    |i2_reg_1062                                    |   3|   0|    3|          0|
+    |i_2_reg_1275                                   |   3|   0|    3|          0|
+    |i_reg_1051                                     |   7|   0|    7|          0|
+    |j3_reg_1085                                    |   5|   0|    5|          0|
+    |j_reg_1288                                     |   5|   0|    5|          0|
+    |next_mul_reg_1267                              |   7|   0|    7|          0|
+    |phi_mul_reg_1073                               |   7|   0|    7|          0|
+    |reg_1157                                       |  32|   0|   32|          0|
+    |tmp_3_reg_1257                                 |  32|   0|   32|          0|
+    |tmp_4_reg_1262                                 |  32|   0|   32|          0|
+    |tmp_6_reg_1280                                 |   2|   0|    2|          0|
+    |tmp_9_reg_1313                                 |   7|   0|    7|          0|
+    +-----------------------------------------------+----+----+-----+-----------+
+    |Total                                          | 169|   0|  169|          0|
+    +-----------------------------------------------+----+----+-----+-----------+
 
 
 
@@ -168,50 +247,18 @@
 == Interface
 ================================================================
 * Summary: 
-+-----------------+-----+-----+------------+--------------+--------------+
-|    RTL Ports    | Dir | Bits|  Protocol  | Source Object|    C Type    |
-+-----------------+-----+-----+------------+--------------+--------------+
-|ap_clk           |  in |    1| ap_ctrl_hs |    worker    | return value |
-|ap_rst           |  in |    1| ap_ctrl_hs |    worker    | return value |
-|ap_start         |  in |    1| ap_ctrl_hs |    worker    | return value |
-|ap_done          | out |    1| ap_ctrl_hs |    worker    | return value |
-|ap_idle          | out |    1| ap_ctrl_hs |    worker    | return value |
-|ap_ready         | out |    1| ap_ctrl_hs |    worker    | return value |
-|dest_0_address0  | out |    5|  ap_memory |    dest_0    |     array    |
-|dest_0_ce0       | out |    1|  ap_memory |    dest_0    |     array    |
-|dest_0_we0       | out |    1|  ap_memory |    dest_0    |     array    |
-|dest_0_d0        | out |   32|  ap_memory |    dest_0    |     array    |
-|dest_0_q0        |  in |   32|  ap_memory |    dest_0    |     array    |
-|dest_0_address1  | out |    5|  ap_memory |    dest_0    |     array    |
-|dest_0_ce1       | out |    1|  ap_memory |    dest_0    |     array    |
-|dest_0_we1       | out |    1|  ap_memory |    dest_0    |     array    |
-|dest_0_d1        | out |   32|  ap_memory |    dest_0    |     array    |
-|dest_1_address0  | out |    5|  ap_memory |    dest_1    |     array    |
-|dest_1_ce0       | out |    1|  ap_memory |    dest_1    |     array    |
-|dest_1_we0       | out |    1|  ap_memory |    dest_1    |     array    |
-|dest_1_d0        | out |   32|  ap_memory |    dest_1    |     array    |
-|dest_1_q0        |  in |   32|  ap_memory |    dest_1    |     array    |
-|dest_1_address1  | out |    5|  ap_memory |    dest_1    |     array    |
-|dest_1_ce1       | out |    1|  ap_memory |    dest_1    |     array    |
-|dest_1_we1       | out |    1|  ap_memory |    dest_1    |     array    |
-|dest_1_d1        | out |   32|  ap_memory |    dest_1    |     array    |
-|dest_2_address0  | out |    5|  ap_memory |    dest_2    |     array    |
-|dest_2_ce0       | out |    1|  ap_memory |    dest_2    |     array    |
-|dest_2_we0       | out |    1|  ap_memory |    dest_2    |     array    |
-|dest_2_d0        | out |   32|  ap_memory |    dest_2    |     array    |
-|dest_2_q0        |  in |   32|  ap_memory |    dest_2    |     array    |
-|dest_2_address1  | out |    5|  ap_memory |    dest_2    |     array    |
-|dest_2_ce1       | out |    1|  ap_memory |    dest_2    |     array    |
-|dest_2_we1       | out |    1|  ap_memory |    dest_2    |     array    |
-|dest_2_d1        | out |   32|  ap_memory |    dest_2    |     array    |
-|dest_3_address0  | out |    5|  ap_memory |    dest_3    |     array    |
-|dest_3_ce0       | out |    1|  ap_memory |    dest_3    |     array    |
-|dest_3_we0       | out |    1|  ap_memory |    dest_3    |     array    |
-|dest_3_d0        | out |   32|  ap_memory |    dest_3    |     array    |
-|dest_3_q0        |  in |   32|  ap_memory |    dest_3    |     array    |
-|dest_3_address1  | out |    5|  ap_memory |    dest_3    |     array    |
-|dest_3_ce1       | out |    1|  ap_memory |    dest_3    |     array    |
-|dest_3_we1       | out |    1|  ap_memory |    dest_3    |     array    |
-|dest_3_d1        | out |   32|  ap_memory |    dest_3    |     array    |
-+-----------------+-----+-----+------------+--------------+--------------+
++---------------+-----+-----+------------+--------------+--------------+
+|   RTL Ports   | Dir | Bits|  Protocol  | Source Object|    C Type    |
++---------------+-----+-----+------------+--------------+--------------+
+|ap_clk         |  in |    1| ap_ctrl_hs |    worker    | return value |
+|ap_rst         |  in |    1| ap_ctrl_hs |    worker    | return value |
+|ap_start       |  in |    1| ap_ctrl_hs |    worker    | return value |
+|ap_done        | out |    1| ap_ctrl_hs |    worker    | return value |
+|ap_idle        | out |    1| ap_ctrl_hs |    worker    | return value |
+|ap_ready       | out |    1| ap_ctrl_hs |    worker    | return value |
+|dest_address0  | out |    7|  ap_memory |     dest     |     array    |
+|dest_ce0       | out |    1|  ap_memory |     dest     |     array    |
+|dest_we0       | out |    1|  ap_memory |     dest     |     array    |
+|dest_d0        | out |   32|  ap_memory |     dest     |     array    |
++---------------+-----+-----+------------+--------------+--------------+
 

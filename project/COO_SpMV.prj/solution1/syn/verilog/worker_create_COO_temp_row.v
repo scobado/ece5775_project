@@ -8,9 +8,9 @@
 `timescale 1 ns / 1 ps
 module worker_create_COO_temp_row_ram (addr0, ce0, d0, we0, q0,  clk);
 
-parameter DWIDTH = 7;
-parameter AWIDTH = 14;
-parameter MEM_SIZE = 10000;
+parameter DWIDTH = 5;
+parameter AWIDTH = 12;
+parameter MEM_SIZE = 2500;
 
 input[AWIDTH-1:0] addr0;
 input ce0;
@@ -52,9 +52,9 @@ module worker_create_COO_temp_row(
     d0,
     q0);
 
-parameter DataWidth = 32'd7;
-parameter AddressRange = 32'd10000;
-parameter AddressWidth = 32'd14;
+parameter DataWidth = 32'd5;
+parameter AddressRange = 32'd2500;
+parameter AddressWidth = 32'd12;
 input reset;
 input clk;
 input[AddressWidth - 1:0] address0;

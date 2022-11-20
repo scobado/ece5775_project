@@ -21,9 +21,9 @@ using namespace sc_dt;
 
 struct worker_create_COO_temp_row_ram : public sc_core::sc_module {
 
-  static const unsigned DataWidth = 7;
-  static const unsigned AddressRange = 10000;
-  static const unsigned AddressWidth = 14;
+  static const unsigned DataWidth = 5;
+  static const unsigned AddressRange = 2500;
+  static const unsigned AddressWidth = 12;
 
 //latency = 1
 //input_reg = 1
@@ -78,9 +78,9 @@ void prc_write_0()
 SC_MODULE(worker_create_COO_temp_row) {
 
 
-static const unsigned DataWidth = 7;
-static const unsigned AddressRange = 10000;
-static const unsigned AddressWidth = 14;
+static const unsigned DataWidth = 5;
+static const unsigned AddressRange = 2500;
+static const unsigned AddressWidth = 12;
 
 sc_core::sc_in <sc_lv<AddressWidth> > address0;
 sc_core::sc_in<sc_logic> ce0;

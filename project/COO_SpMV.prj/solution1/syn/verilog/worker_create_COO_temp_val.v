@@ -9,8 +9,8 @@
 module worker_create_COO_temp_val_ram (addr0, ce0, d0, we0, q0,  clk);
 
 parameter DWIDTH = 32;
-parameter AWIDTH = 14;
-parameter MEM_SIZE = 10000;
+parameter AWIDTH = 12;
+parameter MEM_SIZE = 2500;
 
 input[AWIDTH-1:0] addr0;
 input ce0;
@@ -53,8 +53,8 @@ module worker_create_COO_temp_val(
     q0);
 
 parameter DataWidth = 32'd32;
-parameter AddressRange = 32'd10000;
-parameter AddressWidth = 32'd14;
+parameter AddressRange = 32'd2500;
+parameter AddressWidth = 32'd12;
 input reset;
 input clk;
 input[AddressWidth - 1:0] address0;

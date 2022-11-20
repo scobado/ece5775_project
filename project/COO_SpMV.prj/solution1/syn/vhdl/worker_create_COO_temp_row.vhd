@@ -13,9 +13,9 @@ use ieee.std_logic_unsigned.all;
 entity worker_create_COO_temp_row_ram is 
     generic(
             mem_type    : string := "block"; 
-            dwidth     : integer := 7; 
-            awidth     : integer := 14; 
-            mem_size    : integer := 10000
+            dwidth     : integer := 5; 
+            awidth     : integer := 12; 
+            mem_size    : integer := 2500
     ); 
     port (
           addr0     : in std_logic_vector(awidth-1 downto 0); 
@@ -76,9 +76,9 @@ use IEEE.std_logic_1164.all;
 
 entity worker_create_COO_temp_row is
     generic (
-        DataWidth : INTEGER := 7;
-        AddressRange : INTEGER := 10000;
-        AddressWidth : INTEGER := 14);
+        DataWidth : INTEGER := 5;
+        AddressRange : INTEGER := 2500;
+        AddressWidth : INTEGER := 12);
     port (
         reset : IN STD_LOGIC;
         clk : IN STD_LOGIC;

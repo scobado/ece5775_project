@@ -12,56 +12,6 @@
 
 using namespace std;
 
-//----------------------------------------------------------
-// Top function
-//----------------------------------------------------------
-
-// void dut(
-//     hls::stream<bit32_t> &strm_in,
-//     hls::stream<bit32_t> &strm_out
-// )
-// {
-//   float matrix[size][size];
-//   float vector[size];
-//   union { float fval; int ival} u;
-
-//   float dest[size];
-//   for (int i = 0; i < size; i++ )
-//     dest[i] = 0;
-
-//   // read the matrix 
-//   for ( int i = 0; i < size; i ++) {
-//     for (int j = 0; j < size; j ++) {
-//         u.ival = strm_in.read();
-//         matrix[i][j] = u.fval;        
-//     }
-//   }
-
-//   // read the vector
-//   for ( int i = 0; i < size; i ++) {
-//     u.ival = strm_in.read();
-//     vector[i] = u.fval;
-//   }
-
-//   // call count_nnz
-//   int nnz = count_nnz(matrix);
-
-//   int row[nnz];
-//   int col[nnz];
-//   float val[nnz];
-
-//   // call create_COO
-//   create_COO(matrix, row, col, val);
-
-//   // call COO_SpMV
-//   COO_SpMV(row, col, val, vector, dest, nnz);
- 
-//   // write out the result
-//   for ( int i = 0; i < size; i ++) {
-//     strm_out.write(dest[i]);
-//   }
-// }
-
 //==========================================================================
 // COO Format: 3 arrays representing non-zero elements [row, col, value]
 //==========================================================================
@@ -74,18 +24,6 @@ void COO_SpMV(int row[coo_size], int col[coo_size], float val[coo_size], const f
           output[row[i]] += val[i] * vector[col[i]];
     }
 }
-
-// void create_COO(const float input[matrix_size], int row[matrix_size], int col[matrix_size], float val[matrix_size]) {
-//     int counter = 0;
-//     for(int i = 0; i < matrix_size; i++) {
-//       if (input[i] != 0) {
-//           row[counter] = i/size;
-//           col[counter] = i%size;
-//           val[counter] = input[i];
-//           counter += 1;
-//       }
-//     }
-// }
 
 //==========================================================================
 // Convert a given matrix to COO format
@@ -128,20 +66,21 @@ int create_COO(const float input[block_size][size], int row[coo_size], int col[c
 
     cur_ind = 0;
     int add_counter = 0;
-    for (int i = 0; i < coo_size; i++) {
+    LOOP_BUFFER: for (int i = 0; i < coo_size; i++) {
         if (i < counter) {
-            for (int j = 1; j < 8; j++)  {
-                if (i-j >= 0 && temp_row1[i] == temp_row1[i-j] && i-j > 0) {
-                    // printf("HERE\n");
-                    for (int k = 0; k < 8; k++) {
-                        if (k >= j) {
-                            row[cur_ind] = -1;
-                            col[cur_ind] = -1;
-                            val[cur_ind] = 0;
-                            cur_ind++;
-                            add_counter++;
-                        }
-                    }
+            if (i-7 >= 0 && temp_row1[i] == temp_row1[i-7]) {
+                row[cur_ind] = -1;
+                col[cur_ind] = -1;
+                val[cur_ind] = 0;
+                cur_ind++;
+                add_counter++;
+            } else if (i-1 >= 0 && temp_row1[i] == temp_row1[i-1]) {
+                for (int j = 0; j < 8; j++) {
+                    row[cur_ind] = -1;
+                    col[cur_ind] = -1;
+                    val[cur_ind] = 0;
+                    cur_ind++;
+                    add_counter++;
                 }
             }
             row[cur_ind] = temp_row1[i];
@@ -159,22 +98,6 @@ int create_COO(const float input[block_size][size], int row[coo_size], int col[c
 
 
     return counter+add_counter+1;
-}
-
-//==========================================================================
-// Count the number of non-zero elements in a sparse matrix
-//==========================================================================
-
-int count_nnz(const float input[size][size]) {
-    int counter = 0;
-    for(int i = 0; i < size; i++) {
-        for(int j = 0; j < size; j++) {
-            if (input[i][j] != 0) {
-                counter += 1;
-            }
-        }
-    }
-    return counter;
 }
 
 //==========================================================================

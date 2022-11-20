@@ -53,13 +53,14 @@ set_directive_unroll worker/LOOP_PE
 set_directive_unroll worker/LOOP_DEST1
 
 set_directive_pipeline worker/LOOP_DEST1_ST
+set_directive_pipeline create_COO/LOOP_BUFFER
 
 
 # Simulate the C++ design
-# csim_design
+csim_design
 # Synthesis the design
 csynth_design
 # Co-simulate the design
-cosim_design
+# cosim_design
 
 exit

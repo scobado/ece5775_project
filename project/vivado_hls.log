@@ -5,7 +5,7 @@
   Copyright (C) 1986-2016 Xilinx, Inc. All Rights Reserved.
 ================================================================
 INFO: [HLS 200-10] Running '/opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/bin/unwrapped/lnx64.o/vivado_hls'
-INFO: [HLS 200-10] For user 'ak2425' on host 'en-ec-ecelinux-07.coecis.cornell.edu' (Linux_x86_64 version 3.10.0-1160.76.1.el7.x86_64) on Sun Nov 20 12:28:45 EST 2022
+INFO: [HLS 200-10] For user 'ak2425' on host 'en-ec-ecelinux-07.coecis.cornell.edu' (Linux_x86_64 version 3.10.0-1160.76.1.el7.x86_64) on Sun Nov 20 12:38:05 EST 2022
 INFO: [HLS 200-10] On os "CentOS Linux release 7.9.2009 (Core)"
 INFO: [HLS 200-10] In directory '/home/ak2425/ece5775/ece5775_project/project'
 INFO: [HLS 200-10] Opening and resetting project '/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj'.
@@ -27,17 +27,18 @@ INFO: [HLS 200-10] Analyzing design file 'COO_SpMV.cpp' ...
 INFO: [HLS 200-10] Validating synthesis directives ...
 INFO: [HLS 200-10] Starting code transformations ...
 INFO: [HLS 200-10] Checking synthesizability ...
-INFO: [XFORM 203-501] Unrolling loop 'LOOP_PE' (COO_SpMV.cpp:187) in function 'worker' completely.
-INFO: [XFORM 203-501] Unrolling loop 'LOOP_DEST1' (COO_SpMV.cpp:194) in function 'worker' completely.
+INFO: [XFORM 203-501] Unrolling loop 'LOOP_PE' (COO_SpMV.cpp:154) in function 'worker' completely.
+INFO: [XFORM 203-501] Unrolling loop 'LOOP_DEST1' (COO_SpMV.cpp:156) in function 'worker' completely.
 INFO: [XFORM 203-101] Partitioning array 'matrix_1'  in dimension 1 completely.
-INFO: [XFORM 203-101] Partitioning array 'dest_1' (COO_SpMV.cpp:173) in dimension 1 completely.
-INFO: [XFORM 203-101] Partitioning array 'row_1' (COO_SpMV.cpp:175) in dimension 1 completely.
-INFO: [XFORM 203-101] Partitioning array 'col_1' (COO_SpMV.cpp:176) in dimension 1 completely.
-INFO: [XFORM 203-101] Partitioning array 'val_1' (COO_SpMV.cpp:177) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'dest_1' (COO_SpMV.cpp:149) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'row_1' (COO_SpMV.cpp:150) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'col_1' (COO_SpMV.cpp:151) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'val_1' (COO_SpMV.cpp:152) in dimension 1 completely.
+INFO: [XFORM 203-541] Flattening a loop nest 'LOOP_DEST1_PE' (COO_SpMV.cpp:162:48) in function 'worker'.
 WARNING: [ANALYSIS 214-52] Found false 'RAW' inter dependency for variable 'output' (COO_SpMV.cpp:69).
 WARNING: [ANALYSIS 214-52] Asserting false dependency between 'load' operation 'output.load'(COO_SpMV.cpp:74:11) from variable 'output'(COO_SpMV.cpp:69) and 'store' operation to variable 'output'(COO_SpMV.cpp:69), this may lead to incorrect RTL generation.
 WARNING: [ANALYSIS 214-52] Asserting false dependency between 'store' operation to variable 'output'(COO_SpMV.cpp:69) and 'load' operation 'output.load'(COO_SpMV.cpp:74:11) from variable 'output'(COO_SpMV.cpp:69), this may lead to incorrect RTL generation.
-INFO: [HLS 200-111] Elapsed time: 4.89 seconds; current memory usage: 87.1 MB.
+INFO: [HLS 200-111] Elapsed time: 5.12 seconds; current memory usage: 87.1 MB.
 INFO: [HLS 200-10] Starting hardware synthesis ...
 INFO: [HLS 200-10] Synthesizing 'worker' ...
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -45,7 +46,7 @@ INFO: [HLS 200-10] -- Scheduling module 'worker_create_COO'
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Elapsed time: 0.07 seconds; current memory usage: 87.8 MB.
+INFO: [HLS 200-111] Elapsed time: 0.06 seconds; current memory usage: 87.7 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Exploring micro-architecture for module 'worker_create_COO' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -54,7 +55,7 @@ INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Elapsed time: 0.02 seconds; current memory usage: 88.2 MB.
+INFO: [HLS 200-111] Elapsed time: 0.02 seconds; current memory usage: 88.1 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Scheduling module 'worker_COO_SpMV' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -62,7 +63,7 @@ INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
 INFO: [SCHED 204-61] Pipelining result: Target II: 1, Final II: 1, Depth: 12.
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Elapsed time: 0.05 seconds; current memory usage: 88.6 MB.
+INFO: [HLS 200-111] Elapsed time: 0.07 seconds; current memory usage: 88.5 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Exploring micro-architecture for module 'worker_COO_SpMV' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -71,13 +72,21 @@ INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Elapsed time: 0.01 seconds; current memory usage: 88.8 MB.
+INFO: [HLS 200-111] Elapsed time: 0.02 seconds; current memory usage: 88.6 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Scheduling module 'worker' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'LOOP_DEST1_PE_LOOP_DEST1_ST'.
+INFO: [SCHED 204-61] Pipelining result: Target II: 1, Final II: 1, Depth: 2.
+WARNING: [SCHED 204-21] Estimated clock period (9.09ns) exceeds the target (target clock period: 10ns, clock uncertainty: 1.25ns, effective delay budget: 8.75ns).
+WARNING: [SCHED 204-21] The critical path consists of the following:
+	'mul' operation ('start_mid2', COO_SpMV.cpp:163) (3.36 ns)
+	'add' operation ('tmp_7', COO_SpMV.cpp:165) (3.02 ns)
+	'getelementptr' operation ('dest_addr', COO_SpMV.cpp:165) (0 ns)
+	'store' operation (COO_SpMV.cpp:165) of variable 'tmp', COO_SpMV.cpp:165 on array 'dest' (2.71 ns)
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Elapsed time: 0.11 seconds; current memory usage: 89.4 MB.
+INFO: [HLS 200-111] Elapsed time: 0.1 seconds; current memory usage: 89.3 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Exploring micro-architecture for module 'worker' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -86,28 +95,29 @@ INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Elapsed time: 0.09 seconds; current memory usage: 90.2 MB.
+INFO: [HLS 200-111] Elapsed time: 0.14 seconds; current memory usage: 90.2 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'worker_create_COO' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [RTGEN 206-100] Generating core module 'worker_fcmp_32ns_32ns_1_1': 1 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'worker_create_COO'.
-INFO: [HLS 200-111] Elapsed time: 0.15 seconds; current memory usage: 90.8 MB.
+INFO: [HLS 200-111] Elapsed time: 0.14 seconds; current memory usage: 90.8 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'worker_COO_SpMV' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [RTGEN 206-100] Generating core module 'worker_fadd_32ns_32ns_32_5_full_dsp': 1 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'worker_fmul_32ns_32ns_32_4_max_dsp': 1 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'worker_COO_SpMV'.
-INFO: [HLS 200-111] Elapsed time: 0.1 seconds; current memory usage: 92.5 MB.
+INFO: [HLS 200-111] Elapsed time: 0.11 seconds; current memory usage: 92.5 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'worker' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [RTGEN 206-500] Setting interface mode on port 'worker/dest' to 'ap_memory'.
 INFO: [RTGEN 206-500] Setting interface mode on function 'worker' to 'ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Generating core module 'worker_mac_muladd_6ns_3ns_5ns_7_1': 1 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'worker_mux_4to1_sel2_32_1': 1 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'worker'.
-INFO: [HLS 200-111] Elapsed time: 0.15 seconds; current memory usage: 94.5 MB.
+INFO: [HLS 200-111] Elapsed time: 0.22 seconds; current memory usage: 94.4 MB.
 INFO: [RTMG 210-278] Implementing memory 'worker_create_COO_temp_row_ram' using block RAMs.
 INFO: [RTMG 210-278] Implementing memory 'worker_create_COO_temp_col_ram' using block RAMs.
 INFO: [RTMG 210-278] Implementing memory 'worker_create_COO_temp_val_ram' using block RAMs.
@@ -125,4 +135,4 @@ INFO: [HLS 200-10] Finished generating all RTL models.
 INFO: [SYSC 207-301] Generating SystemC RTL for worker.
 INFO: [VHDL 208-304] Generating VHDL RTL for worker.
 INFO: [VLOG 209-307] Generating Verilog RTL for worker.
-INFO: [HLS 200-112] Total elapsed time: 13.398 seconds; peak memory usage: 94.5 MB.
+INFO: [HLS 200-112] Total elapsed time: 15.267 seconds; peak memory usage: 94.4 MB.

@@ -35128,93 +35128,52 @@ int count_nnz(const float input[size][size]) {_ssdm_SpecArrayDimSize(input,size)
     return counter;
 }
 
-// void copy(const float matrix[size][size], float sub_matrix[block_size][size], int start) {
-//     for (int i = 0; i < block_size; i++) {
-//         for (int j = 0; j < size; j++) {
-//             sub_matrix[i][j] = matrix[i+start][j];
-//         }
-//     }
-// }
-
-// void v_copy(float vector_copy[PE][size]) {
-//     for (int i=0; i<PE; i++) {
-//         for (int j=0; j<size; j++) {
-//             vector_copy[i][j] = vector[j];
-//         }
-//     }
-// }
+//==========================================================================
+// TODO: Some worker description here...
+//==========================================================================
 
 void worker(float dest[size]) {_ssdm_SpecArrayDimSize(dest,size);
 _ssdm_SpecArrayPartition( matrix_1, 1, "COMPLETE", 0, "");
-#159 "COO_SpMV.cpp"
+#147 "COO_SpMV.cpp"
 
-//   float dest[size];
 
-//   float vector_copy[PE][size];
-//   v_copy(vector_copy);
-
-  for (int i = 0; i < size; i++ )
-    dest[i] = 0;
-
-//   float sub_matrix_1[PE][block_size][size];
-//   for (int i = 0; i < PE; i++) {
-//     int start = i*block_size;
-//     copy(matrix_1, sub_matrix_1[i], start);
-//   }
   float dest_1[PE][block_size];
 _ssdm_SpecArrayPartition( dest_1, 1, "COMPLETE", 0, "");
-#173 "COO_SpMV.cpp"
-
+#149 "COO_SpMV.cpp"
 
   int row_1[PE][coo_size];
 _ssdm_SpecArrayPartition( row_1, 1, "COMPLETE", 0, "");
-#175 "COO_SpMV.cpp"
+#150 "COO_SpMV.cpp"
 
   int col_1[PE][coo_size];
 _ssdm_SpecArrayPartition( col_1, 1, "COMPLETE", 0, "");
-#176 "COO_SpMV.cpp"
+#151 "COO_SpMV.cpp"
 
   float val_1[PE][coo_size];
 _ssdm_SpecArrayPartition( val_1, 1, "COMPLETE", 0, "");
-#177 "COO_SpMV.cpp"
+#152 "COO_SpMV.cpp"
 
 
-//   #pragma HLS array_partition variable=sub_matrix_1 complete dim=1
-//   #pragma HLS array_partition variable=dest_1 complete dim=1
-//   #pragma HLS array_partition variable=vector_copy complete dim=1
-//   #pragma HLS array_partition variable=row_1 complete dim=1
-//   #pragma HLS array_partition variable=col_1 complete dim=1
-//   #pragma HLS array_partition variable=val_1 complete dim=1
-
-  // int nnz = count_nnz(matrix_1);
   LOOP_PE: for (int i = 0; i < PE; i++) {
 _ssdm_Unroll(0,0,0, "");
-#187 "COO_SpMV.cpp"
-
-    // #pragma HLS unroll
-    // float dest_1[PE][block_size];
-    // int start = i*block_size;
+#154 "COO_SpMV.cpp"
 
     LOOP_DEST1:for(int j = 0; j < block_size; j++)
-        // #pragma HLS unroll
         
 _ssdm_Unroll(0,0,0, "");
-#194 "COO_SpMV.cpp"
+#156 "COO_SpMV.cpp"
 dest_1[i][j] = 0;
 
-    // float sub_matrix_1[block_size][size];
-    // copy(matrix_1, sub_matrix_1, start);
     int nnz = create_COO(matrix_1[i], row_1[i], col_1[i], val_1[i]);
     COO_SpMV(row_1[i], col_1[i], val_1[i], vector, dest_1[i], nnz);
-
-    // for(int i = 0; i < block_size; i++) {
-    //     dest[start+i] = dest_1[i];
-    // }
   }
 
-  for (int i = 0; i < PE; i++) {
+  LOOP_DEST1_PE: for (int i = 0; i < PE; i++) {
     int start = i*block_size;
-    for(int j = 0; j < block_size; j++) {
+    LOOP_DEST1_ST: for(int j = 0; j < block_size; j++) {
+_ssdm_op_SpecPipeline(-1, 1, 1, 0, "");
+#164 "COO_SpMV.cpp"
+
         dest[start+j] = dest_1[i][j];
     }
   }

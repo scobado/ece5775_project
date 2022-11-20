@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'worker_COO_SpMV'" level="0">
-<item name = "Date">Sun Nov 20 12:28:56 2022
+<item name = "Date">Sun Nov 20 12:38:17 2022
 </item>
 <item name = "Version">2016.2 (Build 1577090 on Thu Jun 02 16:59:10 MDT 2016)</item>
 <item name = "Project">COO_SpMV.prj</item>
@@ -81,9 +81,9 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP48E, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="i_5_fu_137_p2">+, 0, 0, 12, 12, 1</column>
+<column name="i_3_fu_137_p2">+, 0, 0, 12, 12, 1</column>
 <column name="exitcond_fu_131_p2">icmp, 0, 0, 5, 12, 12</column>
-<column name="tmp_fu_147_p2">icmp, 0, 0, 11, 32, 32</column>
+<column name="tmp4_fu_147_p2">icmp, 0, 0, 11, 32, 32</column>
 </table>
 </item>
 <item name = "Multiplexer"><table name="" hasTotal="1">
@@ -112,13 +112,13 @@
 <column name="output_addr_reg_221">5, 0, 5, 0</column>
 <column name="output_load_reg_232">32, 0, 32, 0</column>
 <column name="row_load_reg_211">5, 0, 5, 0</column>
-<column name="tmp_3_reg_237">32, 0, 32, 0</column>
+<column name="tmp4_reg_182">1, 0, 1, 0</column>
+<column name="tmp_1_reg_237">32, 0, 32, 0</column>
 <column name="tmp_8_reg_227">32, 0, 32, 0</column>
-<column name="tmp_reg_182">1, 0, 1, 0</column>
 <column name="val_load_reg_201">32, 0, 32, 0</column>
 <column name="output_addr_reg_221">0, 5, 5, 0</column>
 <column name="row_load_reg_211">0, 5, 5, 0</column>
-<column name="tmp_reg_182">0, 1, 1, 0</column>
+<column name="tmp4_reg_182">0, 1, 1, 0</column>
 </table>
 </item>
 </section>

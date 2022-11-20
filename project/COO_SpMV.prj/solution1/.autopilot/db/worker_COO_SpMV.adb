@@ -300,7 +300,7 @@
             <Obj>
               <type>0</type>
               <id>12</id>
-              <name>i_5</name>
+              <name>i_3</name>
               <fileName>COO_SpMV.cpp</fileName>
               <fileDirectory>..</fileDirectory>
               <lineNumber>70</lineNumber>
@@ -324,7 +324,7 @@
                 </item>
               </inlineStackInfo>
               <originalName>i</originalName>
-              <rtlName>i_5_fu_137_p2</rtlName>
+              <rtlName>i_3_fu_137_p2</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>12</bitwidth>
@@ -426,7 +426,7 @@
             <Obj>
               <type>0</type>
               <id>19</id>
-              <name>tmp</name>
+              <name>tmp4</name>
               <fileName>COO_SpMV.cpp</fileName>
               <fileDirectory>..</fileDirectory>
               <lineNumber>73</lineNumber>
@@ -450,7 +450,7 @@
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>tmp_fu_147_p2</rtlName>
+              <rtlName>tmp4_fu_147_p2</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>1</bitwidth>
@@ -1096,7 +1096,7 @@
             <Obj>
               <type>0</type>
               <id>36</id>
-              <name>tmp_3</name>
+              <name>tmp_1</name>
               <fileName>COO_SpMV.cpp</fileName>
               <fileDirectory>..</fileDirectory>
               <lineNumber>74</lineNumber>
@@ -2631,7 +2631,7 @@
           </second>
         </item>
         <item>
-          <first>i_5_fu_137_p2 ( + ) </first>
+          <first>i_3_fu_137_p2 ( + ) </first>
           <second>
             <count>4</count>
             <item_version>0</item_version>
@@ -2654,7 +2654,7 @@
           </second>
         </item>
         <item>
-          <first>tmp_fu_147_p2 ( icmp ) </first>
+          <first>tmp4_fu_147_p2 ( icmp ) </first>
           <second>
             <count>4</count>
             <item_version>0</item_version>
@@ -3120,7 +3120,26 @@
           </second>
         </item>
         <item>
-          <first>tmp_3_reg_237</first>
+          <first>tmp4_reg_182</first>
+          <second>
+            <count>3</count>
+            <item_version>0</item_version>
+            <item>
+              <first>(Bits)</first>
+              <second>1</second>
+            </item>
+            <item>
+              <first>(Consts)</first>
+              <second>0</second>
+            </item>
+            <item>
+              <first>FF</first>
+              <second>1</second>
+            </item>
+          </second>
+        </item>
+        <item>
+          <first>tmp_1_reg_237</first>
           <second>
             <count>3</count>
             <item_version>0</item_version>
@@ -3154,25 +3173,6 @@
             <item>
               <first>FF</first>
               <second>32</second>
-            </item>
-          </second>
-        </item>
-        <item>
-          <first>tmp_reg_182</first>
-          <second>
-            <count>3</count>
-            <item_version>0</item_version>
-            <item>
-              <first>(Bits)</first>
-              <second>1</second>
-            </item>
-            <item>
-              <first>(Consts)</first>
-              <second>0</second>
-            </item>
-            <item>
-              <first>FF</first>
-              <second>1</second>
             </item>
           </second>
         </item>
@@ -3228,7 +3228,7 @@
           </second>
         </item>
         <item>
-          <first>i_5_fu_137_p2 ( + ) </first>
+          <first>i_3_fu_137_p2 ( + ) </first>
           <second>
             <count>1</count>
             <item_version>0</item_version>
@@ -3236,7 +3236,7 @@
           </second>
         </item>
         <item>
-          <first>tmp_fu_147_p2 ( icmp ) </first>
+          <first>tmp4_fu_147_p2 ( icmp ) </first>
           <second>
             <count>1</count>
             <item_version>0</item_version>
@@ -3735,7 +3735,7 @@
         </second>
       </item>
       <item>
-        <first>i_5_fu_137</first>
+        <first>i_3_fu_137</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -3775,6 +3775,14 @@
         </second>
       </item>
       <item>
+        <first>tmp4_fu_147</first>
+        <second>
+          <count>1</count>
+          <item_version>0</item_version>
+          <item>19</item>
+        </second>
+      </item>
+      <item>
         <first>tmp_7_fu_159</first>
         <second>
           <count>1</count>
@@ -3788,14 +3796,6 @@
           <count>1</count>
           <item_version>0</item_version>
           <item>33</item>
-        </second>
-      </item>
-      <item>
-        <first>tmp_fu_147</first>
-        <second>
-          <count>1</count>
-          <item_version>0</item_version>
-          <item>19</item>
         </second>
       </item>
       <item>
@@ -4093,7 +4093,7 @@
         </second>
       </item>
       <item>
-        <first>i_5_reg_177</first>
+        <first>i_3_reg_177</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -4149,7 +4149,15 @@
         </second>
       </item>
       <item>
-        <first>tmp_3_reg_237</first>
+        <first>tmp4_reg_182</first>
+        <second>
+          <count>1</count>
+          <item_version>0</item_version>
+          <item>19</item>
+        </second>
+      </item>
+      <item>
+        <first>tmp_1_reg_237</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -4162,14 +4170,6 @@
           <count>1</count>
           <item_version>0</item_version>
           <item>30</item>
-        </second>
-      </item>
-      <item>
-        <first>tmp_reg_182</first>
-        <second>
-          <count>1</count>
-          <item_version>0</item_version>
-          <item>19</item>
         </second>
       </item>
       <item>

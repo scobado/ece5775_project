@@ -480,7 +480,7 @@
             <Obj>
               <type>0</type>
               <id>17</id>
-              <name>i_4</name>
+              <name>i_2</name>
               <fileName>COO_SpMV.cpp</fileName>
               <fileDirectory>..</fileDirectory>
               <lineNumber>100</lineNumber>
@@ -504,7 +504,7 @@
                 </item>
               </inlineStackInfo>
               <originalName>i</originalName>
-              <rtlName>i_4_fu_261_p2</rtlName>
+              <rtlName>i_2_fu_261_p2</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>5</bitwidth>
@@ -805,7 +805,7 @@
             <Obj>
               <type>0</type>
               <id>28</id>
-              <name>tmp_12_cast</name>
+              <name>tmp_11_cast</name>
               <fileName>COO_SpMV.cpp</fileName>
               <fileDirectory>..</fileDirectory>
               <lineNumber>102</lineNumber>
@@ -829,7 +829,7 @@
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>tmp_12_cast_fu_299_p1</rtlName>
+              <rtlName>tmp_11_cast_fu_299_p1</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>64</bitwidth>
@@ -971,50 +971,6 @@
             <Obj>
               <type>0</type>
               <id>32</id>
-              <name>tmp_7</name>
-              <fileName>COO_SpMV.cpp</fileName>
-              <fileDirectory>..</fileDirectory>
-              <lineNumber>102</lineNumber>
-              <contextFuncName>create_COO</contextFuncName>
-              <inlineStackInfo>
-                <count>1</count>
-                <item_version>0</item_version>
-                <item>
-                  <first>/home/ak2425/ece5775/ece5775_project/project</first>
-                  <second>
-                    <count>1</count>
-                    <item_version>0</item_version>
-                    <item>
-                      <first>
-                        <first>COO_SpMV.cpp</first>
-                        <second>create_COO</second>
-                      </first>
-                      <second>102</second>
-                    </item>
-                  </second>
-                </item>
-              </inlineStackInfo>
-              <originalName/>
-              <rtlName>tmp_7_fu_307_p4</rtlName>
-              <coreName/>
-            </Obj>
-            <bitwidth>8</bitwidth>
-          </Value>
-          <oprand_edges>
-            <count>4</count>
-            <item_version>0</item_version>
-            <item>166</item>
-            <item>167</item>
-            <item>169</item>
-            <item>171</item>
-          </oprand_edges>
-          <opcode>partselect</opcode>
-        </item>
-        <item class_id_reference="9" object_id="_28">
-          <Value>
-            <Obj>
-              <type>0</type>
-              <id>33</id>
               <name>tmp</name>
               <fileName>COO_SpMV.cpp</fileName>
               <fileDirectory>..</fileDirectory>
@@ -1039,7 +995,51 @@
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>tmp_fu_317_p1</rtlName>
+              <rtlName>tmp_fu_307_p4</rtlName>
+              <coreName/>
+            </Obj>
+            <bitwidth>8</bitwidth>
+          </Value>
+          <oprand_edges>
+            <count>4</count>
+            <item_version>0</item_version>
+            <item>166</item>
+            <item>167</item>
+            <item>169</item>
+            <item>171</item>
+          </oprand_edges>
+          <opcode>partselect</opcode>
+        </item>
+        <item class_id_reference="9" object_id="_28">
+          <Value>
+            <Obj>
+              <type>0</type>
+              <id>33</id>
+              <name>tmp_10</name>
+              <fileName>COO_SpMV.cpp</fileName>
+              <fileDirectory>..</fileDirectory>
+              <lineNumber>102</lineNumber>
+              <contextFuncName>create_COO</contextFuncName>
+              <inlineStackInfo>
+                <count>1</count>
+                <item_version>0</item_version>
+                <item>
+                  <first>/home/ak2425/ece5775/ece5775_project/project</first>
+                  <second>
+                    <count>1</count>
+                    <item_version>0</item_version>
+                    <item>
+                      <first>
+                        <first>COO_SpMV.cpp</first>
+                        <second>create_COO</second>
+                      </first>
+                      <second>102</second>
+                    </item>
+                  </second>
+                </item>
+              </inlineStackInfo>
+              <originalName/>
+              <rtlName>tmp_10_fu_317_p1</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>23</bitwidth>
@@ -1140,7 +1140,7 @@
             <Obj>
               <type>0</type>
               <id>36</id>
-              <name>tmp_9</name>
+              <name>tmp_7</name>
               <fileName>COO_SpMV.cpp</fileName>
               <fileDirectory>..</fileDirectory>
               <lineNumber>102</lineNumber>
@@ -1164,7 +1164,7 @@
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>tmp_9_fu_333_p2</rtlName>
+              <rtlName>tmp_7_fu_333_p2</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>1</bitwidth>
@@ -1182,7 +1182,7 @@
             <Obj>
               <type>0</type>
               <id>37</id>
-              <name>tmp_2</name>
+              <name>tmp_8</name>
               <fileName>COO_SpMV.cpp</fileName>
               <fileDirectory>..</fileDirectory>
               <lineNumber>102</lineNumber>
@@ -1224,7 +1224,7 @@
             <Obj>
               <type>0</type>
               <id>38</id>
-              <name>tmp_8</name>
+              <name>tmp_9</name>
               <fileName>COO_SpMV.cpp</fileName>
               <fileDirectory>..</fileDirectory>
               <lineNumber>102</lineNumber>
@@ -1248,7 +1248,7 @@
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>tmp_8_fu_339_p2</rtlName>
+              <rtlName>tmp_9_fu_339_p2</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>1</bitwidth>
@@ -2065,7 +2065,7 @@
             <Obj>
               <type>0</type>
               <id>65</id>
-              <name>i_3</name>
+              <name>i_1</name>
               <fileName>COO_SpMV.cpp</fileName>
               <fileDirectory>..</fileDirectory>
               <lineNumber>112</lineNumber>
@@ -2089,7 +2089,7 @@
                 </item>
               </inlineStackInfo>
               <originalName>i</originalName>
-              <rtlName>i_3_fu_373_p2</rtlName>
+              <rtlName>i_1_fu_373_p2</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>12</bitwidth>
@@ -6346,7 +6346,7 @@
           </second>
         </item>
         <item>
-          <first>i_3_fu_373_p2 ( + ) </first>
+          <first>i_1_fu_373_p2 ( + ) </first>
           <second>
             <count>4</count>
             <item_version>0</item_version>
@@ -6369,7 +6369,7 @@
           </second>
         </item>
         <item>
-          <first>i_4_fu_261_p2 ( + ) </first>
+          <first>i_2_fu_261_p2 ( + ) </first>
           <second>
             <count>4</count>
             <item_version>0</item_version>
@@ -6607,7 +6607,7 @@
           </second>
         </item>
         <item>
-          <first>tmp_8_fu_339_p2 ( and ) </first>
+          <first>tmp_7_fu_333_p2 ( or ) </first>
           <second>
             <count>4</count>
             <item_version>0</item_version>
@@ -6630,7 +6630,7 @@
           </second>
         </item>
         <item>
-          <first>tmp_9_fu_333_p2 ( or ) </first>
+          <first>tmp_9_fu_339_p2 ( and ) </first>
           <second>
             <count>4</count>
             <item_version>0</item_version>
@@ -7164,7 +7164,7 @@
           </second>
         </item>
         <item>
-          <first>i_3_reg_508</first>
+          <first>i_1_reg_508</first>
           <second>
             <count>3</count>
             <item_version>0</item_version>
@@ -7183,7 +7183,7 @@
           </second>
         </item>
         <item>
-          <first>i_4_reg_463</first>
+          <first>i_2_reg_463</first>
           <second>
             <count>3</count>
             <item_version>0</item_version>
@@ -7391,7 +7391,7 @@
           </second>
         </item>
         <item>
-          <first>i_3_fu_373_p2 ( + ) </first>
+          <first>i_1_fu_373_p2 ( + ) </first>
           <second>
             <count>1</count>
             <item_version>0</item_version>
@@ -7399,7 +7399,7 @@
           </second>
         </item>
         <item>
-          <first>i_4_fu_261_p2 ( + ) </first>
+          <first>i_2_fu_261_p2 ( + ) </first>
           <second>
             <count>1</count>
             <item_version>0</item_version>
@@ -7479,19 +7479,19 @@
           </second>
         </item>
         <item>
-          <first>tmp_8_fu_339_p2 ( and ) </first>
-          <second>
-            <count>1</count>
-            <item_version>0</item_version>
-            <item>38</item>
-          </second>
-        </item>
-        <item>
-          <first>tmp_9_fu_333_p2 ( or ) </first>
+          <first>tmp_7_fu_333_p2 ( or ) </first>
           <second>
             <count>1</count>
             <item_version>0</item_version>
             <item>36</item>
+          </second>
+        </item>
+        <item>
+          <first>tmp_9_fu_339_p2 ( and ) </first>
+          <second>
+            <count>1</count>
+            <item_version>0</item_version>
+            <item>38</item>
           </second>
         </item>
         <item>
@@ -8831,7 +8831,7 @@
         </second>
       </item>
       <item>
-        <first>i_3_fu_373</first>
+        <first>i_1_fu_373</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -8839,7 +8839,7 @@
         </second>
       </item>
       <item>
-        <first>i_4_fu_261</first>
+        <first>i_2_fu_261</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9023,7 +9023,15 @@
         </second>
       </item>
       <item>
-        <first>tmp_12_cast_fu_299</first>
+        <first>tmp_10_fu_317</first>
+        <second>
+          <count>1</count>
+          <item_version>0</item_version>
+          <item>33</item>
+        </second>
+      </item>
+      <item>
+        <first>tmp_11_cast_fu_299</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9044,14 +9052,6 @@
           <count>1</count>
           <item_version>0</item_version>
           <item>27</item>
-        </second>
-      </item>
-      <item>
-        <first>tmp_2_fu_236</first>
-        <second>
-          <count>1</count>
-          <item_version>0</item_version>
-          <item>37</item>
         </second>
       </item>
       <item>
@@ -9087,23 +9087,7 @@
         </second>
       </item>
       <item>
-        <first>tmp_7_fu_307</first>
-        <second>
-          <count>1</count>
-          <item_version>0</item_version>
-          <item>32</item>
-        </second>
-      </item>
-      <item>
-        <first>tmp_8_fu_339</first>
-        <second>
-          <count>1</count>
-          <item_version>0</item_version>
-          <item>38</item>
-        </second>
-      </item>
-      <item>
-        <first>tmp_9_fu_333</first>
+        <first>tmp_7_fu_333</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9111,11 +9095,27 @@
         </second>
       </item>
       <item>
-        <first>tmp_fu_317</first>
+        <first>tmp_8_fu_236</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
-          <item>33</item>
+          <item>37</item>
+        </second>
+      </item>
+      <item>
+        <first>tmp_9_fu_339</first>
+        <second>
+          <count>1</count>
+          <item_version>0</item_version>
+          <item>38</item>
+        </second>
+      </item>
+      <item>
+        <first>tmp_fu_307</first>
+        <second>
+          <count>1</count>
+          <item_version>0</item_version>
+          <item>32</item>
         </second>
       </item>
       <item>
@@ -9509,7 +9509,7 @@
         </second>
       </item>
       <item>
-        <first>i_3_reg_508</first>
+        <first>i_1_reg_508</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9517,7 +9517,7 @@
         </second>
       </item>
       <item>
-        <first>i_4_reg_463</first>
+        <first>i_2_reg_463</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>

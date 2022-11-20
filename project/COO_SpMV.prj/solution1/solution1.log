@@ -12,17 +12,18 @@ Copyright (C) 1986-2016 Xilinx, Inc. All Rights Reserved.
 @I [HLS-10] Validating synthesis directives ...
 @I [HLS-10] Starting code transformations ...
 @I [HLS-10] Checking synthesizability ...
-@I [XFORM-501] Unrolling loop 'LOOP_PE' (COO_SpMV.cpp:187) in function 'worker' completely.
-@I [XFORM-501] Unrolling loop 'LOOP_DEST1' (COO_SpMV.cpp:194) in function 'worker' completely.
+@I [XFORM-501] Unrolling loop 'LOOP_PE' (COO_SpMV.cpp:154) in function 'worker' completely.
+@I [XFORM-501] Unrolling loop 'LOOP_DEST1' (COO_SpMV.cpp:156) in function 'worker' completely.
 @I [XFORM-101] Partitioning array 'matrix_1'  in dimension 1 completely.
-@I [XFORM-101] Partitioning array 'dest_1' (COO_SpMV.cpp:173) in dimension 1 completely.
-@I [XFORM-101] Partitioning array 'row_1' (COO_SpMV.cpp:175) in dimension 1 completely.
-@I [XFORM-101] Partitioning array 'col_1' (COO_SpMV.cpp:176) in dimension 1 completely.
-@I [XFORM-101] Partitioning array 'val_1' (COO_SpMV.cpp:177) in dimension 1 completely.
+@I [XFORM-101] Partitioning array 'dest_1' (COO_SpMV.cpp:149) in dimension 1 completely.
+@I [XFORM-101] Partitioning array 'row_1' (COO_SpMV.cpp:150) in dimension 1 completely.
+@I [XFORM-101] Partitioning array 'col_1' (COO_SpMV.cpp:151) in dimension 1 completely.
+@I [XFORM-101] Partitioning array 'val_1' (COO_SpMV.cpp:152) in dimension 1 completely.
+@I [XFORM-541] Flattening a loop nest 'LOOP_DEST1_PE' (COO_SpMV.cpp:162:48) in function 'worker'.
 @W [ANALYSIS-52] Found false 'RAW' inter dependency for variable 'output' (COO_SpMV.cpp:69).
 @W [ANALYSIS-52] Asserting false dependency between 'load' operation 'output.load'(COO_SpMV.cpp:74:11) from variable 'output'(COO_SpMV.cpp:69) and 'store' operation to variable 'output'(COO_SpMV.cpp:69), this may lead to incorrect RTL generation.
 @W [ANALYSIS-52] Asserting false dependency between 'store' operation to variable 'output'(COO_SpMV.cpp:69) and 'load' operation 'output.load'(COO_SpMV.cpp:74:11) from variable 'output'(COO_SpMV.cpp:69), this may lead to incorrect RTL generation.
-@I [HLS-111] Elapsed time: 4.89 seconds; current memory usage: 87.1 MB.
+@I [HLS-111] Elapsed time: 5.12 seconds; current memory usage: 87.1 MB.
 @I [HLS-10] Starting hardware synthesis ...
 @I [HLS-10] Synthesizing 'worker' ...
 @I [HLS-10] ----------------------------------------------------------------
@@ -30,7 +31,7 @@ Copyright (C) 1986-2016 Xilinx, Inc. All Rights Reserved.
 @I [HLS-10] ----------------------------------------------------------------
 @I [SCHED-11] Starting scheduling ...
 @I [SCHED-11] Finished scheduling.
-@I [HLS-111] Elapsed time: 0.07 seconds; current memory usage: 87.8 MB.
+@I [HLS-111] Elapsed time: 0.06 seconds; current memory usage: 87.7 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Exploring micro-architecture for module 'worker_create_COO' 
 @I [HLS-10] ----------------------------------------------------------------
@@ -39,7 +40,7 @@ Copyright (C) 1986-2016 Xilinx, Inc. All Rights Reserved.
 @I [BIND-101] Exploring resource sharing.
 @I [BIND-101] Binding ...
 @I [BIND-100] Finished micro-architecture generation.
-@I [HLS-111] Elapsed time: 0.02 seconds; current memory usage: 88.2 MB.
+@I [HLS-111] Elapsed time: 0.02 seconds; current memory usage: 88.1 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Scheduling module 'worker_COO_SpMV' 
 @I [HLS-10] ----------------------------------------------------------------
@@ -47,7 +48,7 @@ Copyright (C) 1986-2016 Xilinx, Inc. All Rights Reserved.
 @I [SCHED-61] Pipelining loop 'Loop 1'.
 @I [SCHED-61] Pipelining result: Target II: 1, Final II: 1, Depth: 12.
 @I [SCHED-11] Finished scheduling.
-@I [HLS-111] Elapsed time: 0.05 seconds; current memory usage: 88.6 MB.
+@I [HLS-111] Elapsed time: 0.07 seconds; current memory usage: 88.5 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Exploring micro-architecture for module 'worker_COO_SpMV' 
 @I [HLS-10] ----------------------------------------------------------------
@@ -56,13 +57,21 @@ Copyright (C) 1986-2016 Xilinx, Inc. All Rights Reserved.
 @I [BIND-101] Exploring resource sharing.
 @I [BIND-101] Binding ...
 @I [BIND-100] Finished micro-architecture generation.
-@I [HLS-111] Elapsed time: 0.01 seconds; current memory usage: 88.8 MB.
+@I [HLS-111] Elapsed time: 0.02 seconds; current memory usage: 88.6 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Scheduling module 'worker' 
 @I [HLS-10] ----------------------------------------------------------------
 @I [SCHED-11] Starting scheduling ...
+@I [SCHED-61] Pipelining loop 'LOOP_DEST1_PE_LOOP_DEST1_ST'.
+@I [SCHED-61] Pipelining result: Target II: 1, Final II: 1, Depth: 2.
+@W [SCHED-21] Estimated clock period (9.09ns) exceeds the target (target clock period: 10ns, clock uncertainty: 1.25ns, effective delay budget: 8.75ns).
+@W [SCHED-21] The critical path consists of the following:
+	'mul' operation ('start_mid2', COO_SpMV.cpp:163) (3.36 ns)
+	'add' operation ('tmp_7', COO_SpMV.cpp:165) (3.02 ns)
+	'getelementptr' operation ('dest_addr', COO_SpMV.cpp:165) (0 ns)
+	'store' operation (COO_SpMV.cpp:165) of variable 'tmp', COO_SpMV.cpp:165 on array 'dest' (2.71 ns)
 @I [SCHED-11] Finished scheduling.
-@I [HLS-111] Elapsed time: 0.11 seconds; current memory usage: 89.4 MB.
+@I [HLS-111] Elapsed time: 0.1 seconds; current memory usage: 89.3 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Exploring micro-architecture for module 'worker' 
 @I [HLS-10] ----------------------------------------------------------------
@@ -71,28 +80,29 @@ Copyright (C) 1986-2016 Xilinx, Inc. All Rights Reserved.
 @I [BIND-101] Exploring resource sharing.
 @I [BIND-101] Binding ...
 @I [BIND-100] Finished micro-architecture generation.
-@I [HLS-111] Elapsed time: 0.09 seconds; current memory usage: 90.2 MB.
+@I [HLS-111] Elapsed time: 0.14 seconds; current memory usage: 90.2 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Generating RTL for module 'worker_create_COO' 
 @I [HLS-10] ----------------------------------------------------------------
 @I [RTGEN-100] Generating core module 'worker_fcmp_32ns_32ns_1_1': 1 instance(s).
 @I [RTGEN-100] Finished creating RTL model for 'worker_create_COO'.
-@I [HLS-111] Elapsed time: 0.15 seconds; current memory usage: 90.8 MB.
+@I [HLS-111] Elapsed time: 0.14 seconds; current memory usage: 90.8 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Generating RTL for module 'worker_COO_SpMV' 
 @I [HLS-10] ----------------------------------------------------------------
 @I [RTGEN-100] Generating core module 'worker_fadd_32ns_32ns_32_5_full_dsp': 1 instance(s).
 @I [RTGEN-100] Generating core module 'worker_fmul_32ns_32ns_32_4_max_dsp': 1 instance(s).
 @I [RTGEN-100] Finished creating RTL model for 'worker_COO_SpMV'.
-@I [HLS-111] Elapsed time: 0.1 seconds; current memory usage: 92.5 MB.
+@I [HLS-111] Elapsed time: 0.11 seconds; current memory usage: 92.5 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Generating RTL for module 'worker' 
 @I [HLS-10] ----------------------------------------------------------------
 @I [RTGEN-500] Setting interface mode on port 'worker/dest' to 'ap_memory'.
 @I [RTGEN-500] Setting interface mode on function 'worker' to 'ap_ctrl_hs'.
+@I [RTGEN-100] Generating core module 'worker_mac_muladd_6ns_3ns_5ns_7_1': 1 instance(s).
 @I [RTGEN-100] Generating core module 'worker_mux_4to1_sel2_32_1': 1 instance(s).
 @I [RTGEN-100] Finished creating RTL model for 'worker'.
-@I [HLS-111] Elapsed time: 0.15 seconds; current memory usage: 94.5 MB.
+@I [HLS-111] Elapsed time: 0.22 seconds; current memory usage: 94.4 MB.
 @I [RTMG-278] Implementing memory 'worker_create_COO_temp_row_ram' using block RAMs.
 @I [RTMG-278] Implementing memory 'worker_create_COO_temp_col_ram' using block RAMs.
 @I [RTMG-278] Implementing memory 'worker_create_COO_temp_val_ram' using block RAMs.
@@ -110,4 +120,4 @@ Copyright (C) 1986-2016 Xilinx, Inc. All Rights Reserved.
 @I [SYSC-301] Generating SystemC RTL for worker.
 @I [VHDL-304] Generating VHDL RTL for worker.
 @I [VLOG-307] Generating Verilog RTL for worker.
-@I [HLS-112] Total elapsed time: 13.398 seconds; peak memory usage: 94.5 MB.
+@I [HLS-112] Total elapsed time: 15.267 seconds; peak memory usage: 94.4 MB.

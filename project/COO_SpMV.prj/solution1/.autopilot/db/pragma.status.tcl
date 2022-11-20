@@ -7,3 +7,4 @@ lappend pragmaStatus5 {pragma "ARRAY_PARTITION" source "/home/ak2425/ece5775/ece
 lappend pragmaStatus6 {pragma "ARRAY_PARTITION" source "/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.cpp" location "worker" found 1 funcFound 1 applied 1 ambiguous 0 reason "null" variable "val_1"}
 lappend pragmaStatus7 {pragma "UNROLL" source "/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.cpp" location "worker/LOOP_PE" found 1 funcFound 1 applied 1 ambiguous 0 reason "null"}
 lappend pragmaStatus8 {pragma "UNROLL" source "/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.cpp" location "worker/LOOP_DEST1" found 1 funcFound 1 applied 1 ambiguous 0 reason "null"}
+lappend pragmaStatus9 {pragma "PIPELINE" source "/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.cpp" location "worker/LOOP_DEST1_ST" found 1 funcFound 1 applied 1 ambiguous 0 reason "null"}

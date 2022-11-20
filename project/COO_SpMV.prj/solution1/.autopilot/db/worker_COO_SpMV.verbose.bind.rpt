@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'worker_COO_SpMV'
 ================================================================
-* Date:           Sun Nov 20 12:28:55 2022
+* Date:           Sun Nov 20 12:38:16 2022
 
 * Version:        2016.2 (Build 1577090 on Thu Jun 02 16:59:10 MDT 2016)
 * Project:        COO_SpMV.prj
@@ -119,13 +119,13 @@ ST_1: stg_16 [1/1] 1.57ns
 
  <State 2>: 2.71ns
 ST_2: i [1/1] 0.00ns
-:0  %i = phi i12 [ 0, %0 ], [ %i_5, %._crit_edge ]
+:0  %i = phi i12 [ 0, %0 ], [ %i_3, %._crit_edge ]
 
 ST_2: exitcond [1/1] 2.14ns
 :1  %exitcond = icmp eq i12 %i, -1596
 
-ST_2: i_5 [1/1] 1.84ns
-:2  %i_5 = add i12 %i, 1
+ST_2: i_3 [1/1] 1.84ns
+:2  %i_3 = add i12 %i, 1
 
 ST_2: stg_20 [1/1] 0.00ns
 :3  br i1 %exitcond, label %3, label %2
@@ -133,11 +133,11 @@ ST_2: stg_20 [1/1] 0.00ns
 ST_2: i_cast1 [1/1] 0.00ns
 :0  %i_cast1 = zext i12 %i to i32
 
-ST_2: tmp [1/1] 2.52ns
-:4  %tmp = icmp slt i32 %i_cast1, %nnz_read
+ST_2: tmp4 [1/1] 2.52ns
+:4  %tmp4 = icmp slt i32 %i_cast1, %nnz_read
 
 ST_2: stg_23 [1/1] 0.00ns
-:5  br i1 %tmp, label %branch2, label %._crit_edge
+:5  br i1 %tmp4, label %branch2, label %._crit_edge
 
 ST_2: tmp_s [1/1] 0.00ns
 branch2:0  %tmp_s = zext i12 %i to i64
@@ -217,48 +217,48 @@ branch2:13  %output_load = load float* %output_addr, align 4
 
 
  <State 8>: 7.26ns
-ST_8: tmp_3 [5/5] 7.26ns
-branch2:14  %tmp_3 = fadd float %output_load, %tmp_8
+ST_8: tmp_1 [5/5] 7.26ns
+branch2:14  %tmp_1 = fadd float %output_load, %tmp_8
 
 
  <State 9>: 7.26ns
-ST_9: tmp_3 [4/5] 7.26ns
-branch2:14  %tmp_3 = fadd float %output_load, %tmp_8
+ST_9: tmp_1 [4/5] 7.26ns
+branch2:14  %tmp_1 = fadd float %output_load, %tmp_8
 
 
  <State 10>: 7.26ns
-ST_10: tmp_3 [3/5] 7.26ns
-branch2:14  %tmp_3 = fadd float %output_load, %tmp_8
+ST_10: tmp_1 [3/5] 7.26ns
+branch2:14  %tmp_1 = fadd float %output_load, %tmp_8
 
 
  <State 11>: 7.26ns
-ST_11: tmp_3 [2/5] 7.26ns
-branch2:14  %tmp_3 = fadd float %output_load, %tmp_8
+ST_11: tmp_1 [2/5] 7.26ns
+branch2:14  %tmp_1 = fadd float %output_load, %tmp_8
 
 
  <State 12>: 7.26ns
-ST_12: tmp_3 [1/5] 7.26ns
-branch2:14  %tmp_3 = fadd float %output_load, %tmp_8
+ST_12: tmp_1 [1/5] 7.26ns
+branch2:14  %tmp_1 = fadd float %output_load, %tmp_8
 
 
  <State 13>: 2.39ns
 ST_13: empty [1/1] 0.00ns
 :1  %empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 2500, i64 2500, i64 2500)
 
-ST_13: tmp_6 [1/1] 0.00ns
-:2  %tmp_6 = call i32 (...)* @_ssdm_op_SpecRegionBegin([12 x i8]* @p_str1) nounwind
+ST_13: tmp [1/1] 0.00ns
+:2  %tmp = call i32 (...)* @_ssdm_op_SpecRegionBegin([12 x i8]* @p_str1) nounwind
 
 ST_13: stg_53 [1/1] 0.00ns
 :3  call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str) nounwind
 
 ST_13: stg_54 [1/1] 2.39ns
-branch2:15  store float %tmp_3, float* %output_addr, align 4
+branch2:15  store float %tmp_1, float* %output_addr, align 4
 
 ST_13: stg_55 [1/1] 0.00ns
 branch2:16  br label %._crit_edge
 
-ST_13: empty_10 [1/1] 0.00ns
-._crit_edge:0  %empty_10 = call i32 (...)* @_ssdm_op_SpecRegionEnd([12 x i8]* @p_str1, i32 %tmp_6) nounwind
+ST_13: empty_9 [1/1] 0.00ns
+._crit_edge:0  %empty_9 = call i32 (...)* @_ssdm_op_SpecRegionEnd([12 x i8]* @p_str1, i32 %tmp) nounwind
 
 ST_13: stg_57 [1/1] 0.00ns
 ._crit_edge:1  br label %1
@@ -298,10 +298,10 @@ nnz_read    (read             ) [ 001111111111110]
 stg_16      (br               ) [ 011111111111110]
 i           (phi              ) [ 001000000000000]
 exitcond    (icmp             ) [ 001111111111110]
-i_5         (add              ) [ 011111111111110]
+i_3         (add              ) [ 011111111111110]
 stg_20      (br               ) [ 000000000000000]
 i_cast1     (zext             ) [ 000000000000000]
-tmp         (icmp             ) [ 001111111111110]
+tmp4        (icmp             ) [ 001111111111110]
 stg_23      (br               ) [ 000000000000000]
 tmp_s       (zext             ) [ 000000000000000]
 val_addr    (getelementptr    ) [ 001100000000000]
@@ -317,13 +317,13 @@ tmp_9       (zext             ) [ 000000000000000]
 output_addr (getelementptr    ) [ 001000011111110]
 tmp_8       (fmul             ) [ 001000001111100]
 output_load (load             ) [ 001000001111100]
-tmp_3       (fadd             ) [ 001000000000010]
+tmp_1       (fadd             ) [ 001000000000010]
 empty       (speclooptripcount) [ 000000000000000]
-tmp_6       (specregionbegin  ) [ 000000000000000]
+tmp         (specregionbegin  ) [ 000000000000000]
 stg_53      (specpipeline     ) [ 000000000000000]
 stg_54      (store            ) [ 000000000000000]
 stg_55      (br               ) [ 000000000000000]
-empty_10    (specregionend    ) [ 000000000000000]
+empty_9     (specregionend    ) [ 000000000000000]
 stg_57      (br               ) [ 011111111111110]
 stg_58      (ret              ) [ 000000000000000]
 </LifeTime>
@@ -697,7 +697,7 @@ stg_58      (ret              ) [ 000000000000000]
 </pin_list>
 <bind>
 <opcode="fadd(9) " fcode="fadd"/>
-<opset="tmp_3/8 "/>
+<opset="tmp_1/8 "/>
 </bind>
 </comp>
 
@@ -725,7 +725,7 @@ stg_58      (ret              ) [ 000000000000000]
 </bind>
 </comp>
 
-<comp id="137" class="1004" name="i_5_fu_137">
+<comp id="137" class="1004" name="i_3_fu_137">
 <pin_list>
 <pin id="138" dir="0" index="0" bw="12" slack="0"/>
 <pin id="139" dir="0" index="1" bw="1" slack="0"/>
@@ -733,7 +733,7 @@ stg_58      (ret              ) [ 000000000000000]
 </pin_list>
 <bind>
 <opcode="add(8) " fcode="add"/>
-<opset="i_5/2 "/>
+<opset="i_3/2 "/>
 </bind>
 </comp>
 
@@ -748,7 +748,7 @@ stg_58      (ret              ) [ 000000000000000]
 </bind>
 </comp>
 
-<comp id="147" class="1004" name="tmp_fu_147">
+<comp id="147" class="1004" name="tmp4_fu_147">
 <pin_list>
 <pin id="148" dir="0" index="0" bw="12" slack="0"/>
 <pin id="149" dir="0" index="1" bw="32" slack="1"/>
@@ -756,7 +756,7 @@ stg_58      (ret              ) [ 000000000000000]
 </pin_list>
 <bind>
 <opcode="icmp(45) " fcode="icmp"/>
-<opset="tmp/2 "/>
+<opset="tmp4/2 "/>
 </bind>
 </comp>
 
@@ -813,23 +813,23 @@ stg_58      (ret              ) [ 000000000000000]
 </bind>
 </comp>
 
-<comp id="177" class="1005" name="i_5_reg_177">
+<comp id="177" class="1005" name="i_3_reg_177">
 <pin_list>
 <pin id="178" dir="0" index="0" bw="12" slack="0"/>
 <pin id="179" dir="1" index="1" bw="12" slack="0"/>
 </pin_list>
 <bind>
-<opset="i_5 "/>
+<opset="i_3 "/>
 </bind>
 </comp>
 
-<comp id="182" class="1005" name="tmp_reg_182">
+<comp id="182" class="1005" name="tmp4_reg_182">
 <pin_list>
 <pin id="183" dir="0" index="0" bw="1" slack="1"/>
 <pin id="184" dir="1" index="1" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<opset="tmp "/>
+<opset="tmp4 "/>
 </bind>
 </comp>
 
@@ -933,13 +933,13 @@ stg_58      (ret              ) [ 000000000000000]
 </bind>
 </comp>
 
-<comp id="237" class="1005" name="tmp_3_reg_237">
+<comp id="237" class="1005" name="tmp_1_reg_237">
 <pin_list>
 <pin id="238" dir="0" index="0" bw="32" slack="1"/>
 <pin id="239" dir="1" index="1" bw="32" slack="1"/>
 </pin_list>
 <bind>
-<opset="tmp_3 "/>
+<opset="tmp_1 "/>
 </bind>
 </comp>
 
@@ -1089,10 +1089,10 @@ stg_58      (ret              ) [ 000000000000000]
 	State 1
 	State 2
 		exitcond : 1
-		i_5 : 1
+		i_3 : 1
 		stg_20 : 2
 		i_cast1 : 1
-		tmp : 2
+		tmp4 : 2
 		stg_23 : 3
 		tmp_s : 1
 		val_addr : 2
@@ -1118,7 +1118,7 @@ stg_58      (ret              ) [ 000000000000000]
 	State 11
 	State 12
 	State 13
-		empty_10 : 1
+		empty_9 : 1
 	State 14
 
 
@@ -1135,9 +1135,9 @@ stg_58      (ret              ) [ 000000000000000]
 |   fmul   |      grp_fu_126     |    3    |   143   |   321   |
 |----------|---------------------|---------|---------|---------|
 |   icmp   |   exitcond_fu_131   |    0    |    0    |    5    |
-|          |      tmp_fu_147     |    0    |    0    |    11   |
+|          |     tmp4_fu_147     |    0    |    0    |    11   |
 |----------|---------------------|---------|---------|---------|
-|    add   |      i_5_fu_137     |    0    |    0    |    12   |
+|    add   |      i_3_fu_137     |    0    |    0    |    12   |
 |----------|---------------------|---------|---------|---------|
 |   read   | nnz_read_read_fu_42 |    0    |    0    |    0    |
 |----------|---------------------|---------|---------|---------|
@@ -1158,16 +1158,16 @@ N/A
 +-------------------+--------+
 |  col_addr_reg_191 |   12   |
 |  exitcond_reg_173 |    1   |
-|    i_5_reg_177    |   12   |
+|    i_3_reg_177    |   12   |
 |     i_reg_111     |   12   |
 |  nnz_read_reg_168 |   32   |
 |output_addr_reg_221|    5   |
 |output_load_reg_232|   32   |
 |  row_addr_reg_196 |   12   |
 |  row_load_reg_211 |    5   |
-|   tmp_3_reg_237   |   32   |
+|    tmp4_reg_182   |    1   |
+|   tmp_1_reg_237   |   32   |
 |   tmp_8_reg_227   |   32   |
-|    tmp_reg_182    |    1   |
 |  val_addr_reg_186 |   12   |
 |  val_load_reg_201 |   32   |
 |vector_addr_reg_206|    7   |

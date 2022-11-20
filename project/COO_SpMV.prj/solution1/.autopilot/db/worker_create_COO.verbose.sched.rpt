@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'worker_create_COO'
 ================================================================
-* Date:           Sun Nov 20 12:28:55 2022
+* Date:           Sun Nov 20 12:38:16 2022
 
 * Version:        2016.2 (Build 1577090 on Thu Jun 02 16:59:10 MDT 2016)
 * Project:        COO_SpMV.prj
@@ -117,7 +117,7 @@ ST_1: stg_13 [1/1] 1.57ns
 
  <State 2>: 3.48ns
 ST_2: i [1/1] 0.00ns
-.loopexit:0  %i = phi i5 [ 0, %0 ], [ %i_4, %.preheader3 ]
+.loopexit:0  %i = phi i5 [ 0, %0 ], [ %i_2, %.preheader3 ]
 
 ST_2: phi_mul [1/1] 0.00ns
 .loopexit:1  %phi_mul = phi i12 [ 0, %0 ], [ %next_mul, %.preheader3 ]
@@ -131,8 +131,8 @@ ST_2: exitcond2 [1/1] 1.91ns
 ST_2: empty [1/1] 0.00ns
 .loopexit:4  %empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 25, i64 25, i64 25)
 
-ST_2: i_4 [1/1] 1.72ns
-.loopexit:5  %i_4 = add i5 %i, 1
+ST_2: i_2 [1/1] 1.72ns
+.loopexit:5  %i_2 = add i5 %i, 1
 
 ST_2: stg_20 [1/1] 1.57ns
 .loopexit:6  br i1 %exitcond2, label %.preheader.preheader, label %.preheader3
@@ -160,8 +160,8 @@ ST_3: j [1/1] 0.00ns
 ST_3: exitcond1 [1/1] 1.97ns
 .preheader3:1  %exitcond1 = icmp eq i7 %j, -28
 
-ST_3: empty_7 [1/1] 0.00ns
-.preheader3:2  %empty_7 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 100, i64 100, i64 100)
+ST_3: empty_6 [1/1] 0.00ns
+.preheader3:2  %empty_6 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 100, i64 100, i64 100)
 
 ST_3: j_1 [1/1] 1.72ns
 .preheader3:3  %j_1 = add i7 %j, 1
@@ -175,11 +175,11 @@ branch0:0  %tmp_1_cast = zext i7 %j to i12
 ST_3: tmp_1 [1/1] 1.84ns
 branch0:1  %tmp_1 = add i12 %phi_mul, %tmp_1_cast
 
-ST_3: tmp_12_cast [1/1] 0.00ns
-branch0:2  %tmp_12_cast = zext i12 %tmp_1 to i64
+ST_3: tmp_11_cast [1/1] 0.00ns
+branch0:2  %tmp_11_cast = zext i12 %tmp_1 to i64
 
 ST_3: input_addr [1/1] 0.00ns
-branch0:3  %input_addr = getelementptr [2500 x float]* %input_r, i64 0, i64 %tmp_12_cast
+branch0:3  %input_addr = getelementptr [2500 x float]* %input_r, i64 0, i64 %tmp_11_cast
 
 ST_3: input_load [2/2] 2.71ns
 branch0:4  %input_load = load float* %input_addr, align 4
@@ -194,29 +194,29 @@ branch0:4  %input_load = load float* %input_addr, align 4
 ST_5: input_load_to_int [1/1] 0.00ns
 branch0:5  %input_load_to_int = bitcast float %input_load to i32
 
-ST_5: tmp_7 [1/1] 0.00ns
-branch0:6  %tmp_7 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %input_load_to_int, i32 23, i32 30)
-
 ST_5: tmp [1/1] 0.00ns
-branch0:7  %tmp = trunc i32 %input_load_to_int to i23
+branch0:6  %tmp = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %input_load_to_int, i32 23, i32 30)
+
+ST_5: tmp_10 [1/1] 0.00ns
+branch0:7  %tmp_10 = trunc i32 %input_load_to_int to i23
 
 ST_5: notlhs [1/1] 2.00ns
-branch0:8  %notlhs = icmp ne i8 %tmp_7, -1
+branch0:8  %notlhs = icmp ne i8 %tmp, -1
 
 ST_5: notrhs [1/1] 2.39ns
-branch0:9  %notrhs = icmp eq i23 %tmp, 0
+branch0:9  %notrhs = icmp eq i23 %tmp_10, 0
 
-ST_5: tmp_9 [1/1] 0.00ns (grouped into LUT with out node tmp_8)
-branch0:10  %tmp_9 = or i1 %notrhs, %notlhs
+ST_5: tmp_7 [1/1] 0.00ns (grouped into LUT with out node tmp_9)
+branch0:10  %tmp_7 = or i1 %notrhs, %notlhs
 
-ST_5: tmp_2 [1/1] 6.79ns
-branch0:11  %tmp_2 = fcmp oeq float %input_load, 0.000000e+00
+ST_5: tmp_8 [1/1] 6.79ns
+branch0:11  %tmp_8 = fcmp oeq float %input_load, 0.000000e+00
 
-ST_5: tmp_8 [1/1] 1.37ns (out node of the LUT)
-branch0:12  %tmp_8 = and i1 %tmp_9, %tmp_2
+ST_5: tmp_9 [1/1] 1.37ns (out node of the LUT)
+branch0:12  %tmp_9 = and i1 %tmp_7, %tmp_8
 
 ST_5: stg_45 [1/1] 0.00ns
-branch0:13  br i1 %tmp_8, label %.preheader3.backedge, label %1
+branch0:13  br i1 %tmp_9, label %.preheader3.backedge, label %1
 
 ST_5: counter_load_2 [1/1] 0.00ns
 :0  %counter_load_2 = load i32* %counter
@@ -257,7 +257,7 @@ ST_5: stg_57 [1/1] 0.00ns
 
  <State 6>: 2.71ns
 ST_6: i1 [1/1] 0.00ns
-.preheader:0  %i1 = phi i12 [ 0, %.preheader.preheader ], [ %i_3, %.preheader.backedge ]
+.preheader:0  %i1 = phi i12 [ 0, %.preheader.preheader ], [ %i_1, %.preheader.backedge ]
 
 ST_6: i1_cast1 [1/1] 0.00ns
 .preheader:1  %i1_cast1 = zext i12 %i1 to i32
@@ -265,11 +265,11 @@ ST_6: i1_cast1 [1/1] 0.00ns
 ST_6: exitcond [1/1] 2.14ns
 .preheader:2  %exitcond = icmp eq i12 %i1, -1596
 
-ST_6: empty_8 [1/1] 0.00ns
-.preheader:3  %empty_8 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 2500, i64 2500, i64 2500)
+ST_6: empty_7 [1/1] 0.00ns
+.preheader:3  %empty_7 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 2500, i64 2500, i64 2500)
 
-ST_6: i_3 [1/1] 1.84ns
-.preheader:4  %i_3 = add i12 %i1, 1
+ST_6: i_1 [1/1] 1.84ns
+.preheader:4  %i_1 = add i12 %i1, 1
 
 ST_6: stg_63 [1/1] 0.00ns
 .preheader:5  br i1 %exitcond, label %3, label %2

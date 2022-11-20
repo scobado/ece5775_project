@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'worker_COO_SpMV'
 ================================================================
-* Date:           Sun Nov 20 12:28:55 2022
+* Date:           Sun Nov 20 12:38:16 2022
 
 * Version:        2016.2 (Build 1577090 on Thu Jun 02 16:59:10 MDT 2016)
 * Project:        COO_SpMV.prj
@@ -119,13 +119,13 @@ ST_1: stg_16 [1/1] 1.57ns
 
  <State 2>: 2.71ns
 ST_2: i [1/1] 0.00ns
-:0  %i = phi i12 [ 0, %0 ], [ %i_5, %._crit_edge ]
+:0  %i = phi i12 [ 0, %0 ], [ %i_3, %._crit_edge ]
 
 ST_2: exitcond [1/1] 2.14ns
 :1  %exitcond = icmp eq i12 %i, -1596
 
-ST_2: i_5 [1/1] 1.84ns
-:2  %i_5 = add i12 %i, 1
+ST_2: i_3 [1/1] 1.84ns
+:2  %i_3 = add i12 %i, 1
 
 ST_2: stg_20 [1/1] 0.00ns
 :3  br i1 %exitcond, label %3, label %2
@@ -133,11 +133,11 @@ ST_2: stg_20 [1/1] 0.00ns
 ST_2: i_cast1 [1/1] 0.00ns
 :0  %i_cast1 = zext i12 %i to i32
 
-ST_2: tmp [1/1] 2.52ns
-:4  %tmp = icmp slt i32 %i_cast1, %nnz_read
+ST_2: tmp4 [1/1] 2.52ns
+:4  %tmp4 = icmp slt i32 %i_cast1, %nnz_read
 
 ST_2: stg_23 [1/1] 0.00ns
-:5  br i1 %tmp, label %branch2, label %._crit_edge
+:5  br i1 %tmp4, label %branch2, label %._crit_edge
 
 ST_2: tmp_s [1/1] 0.00ns
 branch2:0  %tmp_s = zext i12 %i to i64
@@ -217,48 +217,48 @@ branch2:13  %output_load = load float* %output_addr, align 4
 
 
  <State 8>: 7.26ns
-ST_8: tmp_3 [5/5] 7.26ns
-branch2:14  %tmp_3 = fadd float %output_load, %tmp_8
+ST_8: tmp_1 [5/5] 7.26ns
+branch2:14  %tmp_1 = fadd float %output_load, %tmp_8
 
 
  <State 9>: 7.26ns
-ST_9: tmp_3 [4/5] 7.26ns
-branch2:14  %tmp_3 = fadd float %output_load, %tmp_8
+ST_9: tmp_1 [4/5] 7.26ns
+branch2:14  %tmp_1 = fadd float %output_load, %tmp_8
 
 
  <State 10>: 7.26ns
-ST_10: tmp_3 [3/5] 7.26ns
-branch2:14  %tmp_3 = fadd float %output_load, %tmp_8
+ST_10: tmp_1 [3/5] 7.26ns
+branch2:14  %tmp_1 = fadd float %output_load, %tmp_8
 
 
  <State 11>: 7.26ns
-ST_11: tmp_3 [2/5] 7.26ns
-branch2:14  %tmp_3 = fadd float %output_load, %tmp_8
+ST_11: tmp_1 [2/5] 7.26ns
+branch2:14  %tmp_1 = fadd float %output_load, %tmp_8
 
 
  <State 12>: 7.26ns
-ST_12: tmp_3 [1/5] 7.26ns
-branch2:14  %tmp_3 = fadd float %output_load, %tmp_8
+ST_12: tmp_1 [1/5] 7.26ns
+branch2:14  %tmp_1 = fadd float %output_load, %tmp_8
 
 
  <State 13>: 2.39ns
 ST_13: empty [1/1] 0.00ns
 :1  %empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 2500, i64 2500, i64 2500)
 
-ST_13: tmp_6 [1/1] 0.00ns
-:2  %tmp_6 = call i32 (...)* @_ssdm_op_SpecRegionBegin([12 x i8]* @p_str1) nounwind
+ST_13: tmp [1/1] 0.00ns
+:2  %tmp = call i32 (...)* @_ssdm_op_SpecRegionBegin([12 x i8]* @p_str1) nounwind
 
 ST_13: stg_53 [1/1] 0.00ns
 :3  call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str) nounwind
 
 ST_13: stg_54 [1/1] 2.39ns
-branch2:15  store float %tmp_3, float* %output_addr, align 4
+branch2:15  store float %tmp_1, float* %output_addr, align 4
 
 ST_13: stg_55 [1/1] 0.00ns
 branch2:16  br label %._crit_edge
 
-ST_13: empty_10 [1/1] 0.00ns
-._crit_edge:0  %empty_10 = call i32 (...)* @_ssdm_op_SpecRegionEnd([12 x i8]* @p_str1, i32 %tmp_6) nounwind
+ST_13: empty_9 [1/1] 0.00ns
+._crit_edge:0  %empty_9 = call i32 (...)* @_ssdm_op_SpecRegionEnd([12 x i8]* @p_str1, i32 %tmp) nounwind
 
 ST_13: stg_57 [1/1] 0.00ns
 ._crit_edge:1  br label %1

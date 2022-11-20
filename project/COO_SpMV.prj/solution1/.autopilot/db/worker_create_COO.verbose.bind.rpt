@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'worker_create_COO'
 ================================================================
-* Date:           Sun Nov 20 12:28:55 2022
+* Date:           Sun Nov 20 12:38:16 2022
 
 * Version:        2016.2 (Build 1577090 on Thu Jun 02 16:59:10 MDT 2016)
 * Project:        COO_SpMV.prj
@@ -117,7 +117,7 @@ ST_1: stg_13 [1/1] 1.57ns
 
  <State 2>: 3.48ns
 ST_2: i [1/1] 0.00ns
-.loopexit:0  %i = phi i5 [ 0, %0 ], [ %i_4, %.preheader3 ]
+.loopexit:0  %i = phi i5 [ 0, %0 ], [ %i_2, %.preheader3 ]
 
 ST_2: phi_mul [1/1] 0.00ns
 .loopexit:1  %phi_mul = phi i12 [ 0, %0 ], [ %next_mul, %.preheader3 ]
@@ -131,8 +131,8 @@ ST_2: exitcond2 [1/1] 1.91ns
 ST_2: empty [1/1] 0.00ns
 .loopexit:4  %empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 25, i64 25, i64 25)
 
-ST_2: i_4 [1/1] 1.72ns
-.loopexit:5  %i_4 = add i5 %i, 1
+ST_2: i_2 [1/1] 1.72ns
+.loopexit:5  %i_2 = add i5 %i, 1
 
 ST_2: stg_20 [1/1] 1.57ns
 .loopexit:6  br i1 %exitcond2, label %.preheader.preheader, label %.preheader3
@@ -160,8 +160,8 @@ ST_3: j [1/1] 0.00ns
 ST_3: exitcond1 [1/1] 1.97ns
 .preheader3:1  %exitcond1 = icmp eq i7 %j, -28
 
-ST_3: empty_7 [1/1] 0.00ns
-.preheader3:2  %empty_7 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 100, i64 100, i64 100)
+ST_3: empty_6 [1/1] 0.00ns
+.preheader3:2  %empty_6 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 100, i64 100, i64 100)
 
 ST_3: j_1 [1/1] 1.72ns
 .preheader3:3  %j_1 = add i7 %j, 1
@@ -175,11 +175,11 @@ branch0:0  %tmp_1_cast = zext i7 %j to i12
 ST_3: tmp_1 [1/1] 1.84ns
 branch0:1  %tmp_1 = add i12 %phi_mul, %tmp_1_cast
 
-ST_3: tmp_12_cast [1/1] 0.00ns
-branch0:2  %tmp_12_cast = zext i12 %tmp_1 to i64
+ST_3: tmp_11_cast [1/1] 0.00ns
+branch0:2  %tmp_11_cast = zext i12 %tmp_1 to i64
 
 ST_3: input_addr [1/1] 0.00ns
-branch0:3  %input_addr = getelementptr [2500 x float]* %input_r, i64 0, i64 %tmp_12_cast
+branch0:3  %input_addr = getelementptr [2500 x float]* %input_r, i64 0, i64 %tmp_11_cast
 
 ST_3: input_load [2/2] 2.71ns
 branch0:4  %input_load = load float* %input_addr, align 4
@@ -194,29 +194,29 @@ branch0:4  %input_load = load float* %input_addr, align 4
 ST_5: input_load_to_int [1/1] 0.00ns
 branch0:5  %input_load_to_int = bitcast float %input_load to i32
 
-ST_5: tmp_7 [1/1] 0.00ns
-branch0:6  %tmp_7 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %input_load_to_int, i32 23, i32 30)
-
 ST_5: tmp [1/1] 0.00ns
-branch0:7  %tmp = trunc i32 %input_load_to_int to i23
+branch0:6  %tmp = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %input_load_to_int, i32 23, i32 30)
+
+ST_5: tmp_10 [1/1] 0.00ns
+branch0:7  %tmp_10 = trunc i32 %input_load_to_int to i23
 
 ST_5: notlhs [1/1] 2.00ns
-branch0:8  %notlhs = icmp ne i8 %tmp_7, -1
+branch0:8  %notlhs = icmp ne i8 %tmp, -1
 
 ST_5: notrhs [1/1] 2.39ns
-branch0:9  %notrhs = icmp eq i23 %tmp, 0
+branch0:9  %notrhs = icmp eq i23 %tmp_10, 0
 
-ST_5: tmp_9 [1/1] 0.00ns (grouped into LUT with out node tmp_8)
-branch0:10  %tmp_9 = or i1 %notrhs, %notlhs
+ST_5: tmp_7 [1/1] 0.00ns (grouped into LUT with out node tmp_9)
+branch0:10  %tmp_7 = or i1 %notrhs, %notlhs
 
-ST_5: tmp_2 [1/1] 6.79ns
-branch0:11  %tmp_2 = fcmp oeq float %input_load, 0.000000e+00
+ST_5: tmp_8 [1/1] 6.79ns
+branch0:11  %tmp_8 = fcmp oeq float %input_load, 0.000000e+00
 
-ST_5: tmp_8 [1/1] 1.37ns (out node of the LUT)
-branch0:12  %tmp_8 = and i1 %tmp_9, %tmp_2
+ST_5: tmp_9 [1/1] 1.37ns (out node of the LUT)
+branch0:12  %tmp_9 = and i1 %tmp_7, %tmp_8
 
 ST_5: stg_45 [1/1] 0.00ns
-branch0:13  br i1 %tmp_8, label %.preheader3.backedge, label %1
+branch0:13  br i1 %tmp_9, label %.preheader3.backedge, label %1
 
 ST_5: counter_load_2 [1/1] 0.00ns
 :0  %counter_load_2 = load i32* %counter
@@ -257,7 +257,7 @@ ST_5: stg_57 [1/1] 0.00ns
 
  <State 6>: 2.71ns
 ST_6: i1 [1/1] 0.00ns
-.preheader:0  %i1 = phi i12 [ 0, %.preheader.preheader ], [ %i_3, %.preheader.backedge ]
+.preheader:0  %i1 = phi i12 [ 0, %.preheader.preheader ], [ %i_1, %.preheader.backedge ]
 
 ST_6: i1_cast1 [1/1] 0.00ns
 .preheader:1  %i1_cast1 = zext i12 %i1 to i32
@@ -265,11 +265,11 @@ ST_6: i1_cast1 [1/1] 0.00ns
 ST_6: exitcond [1/1] 2.14ns
 .preheader:2  %exitcond = icmp eq i12 %i1, -1596
 
-ST_6: empty_8 [1/1] 0.00ns
-.preheader:3  %empty_8 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 2500, i64 2500, i64 2500)
+ST_6: empty_7 [1/1] 0.00ns
+.preheader:3  %empty_7 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 2500, i64 2500, i64 2500)
 
-ST_6: i_3 [1/1] 1.84ns
-.preheader:4  %i_3 = add i12 %i1, 1
+ST_6: i_1 [1/1] 1.84ns
+.preheader:4  %i_1 = add i12 %i1, 1
 
 ST_6: stg_63 [1/1] 0.00ns
 .preheader:5  br i1 %exitcond, label %3, label %2
@@ -410,7 +410,7 @@ phi_mul           (phi              ) [ 00111100]
 next_mul          (add              ) [ 01111100]
 exitcond2         (icmp             ) [ 00111100]
 empty             (speclooptripcount) [ 00000000]
-i_4               (add              ) [ 01111100]
+i_2               (add              ) [ 01111100]
 stg_20            (br               ) [ 00111100]
 cur_ind_1         (alloca           ) [ 00111111]
 cur_ind           (alloca           ) [ 00111111]
@@ -419,22 +419,22 @@ stg_24            (store            ) [ 00000000]
 stg_25            (br               ) [ 00111111]
 j                 (phi              ) [ 00011100]
 exitcond1         (icmp             ) [ 00111100]
-empty_7           (speclooptripcount) [ 00000000]
+empty_6           (speclooptripcount) [ 00000000]
 j_1               (add              ) [ 00111100]
 stg_30            (br               ) [ 01111100]
 tmp_1_cast        (zext             ) [ 00000000]
 tmp_1             (add              ) [ 00000000]
-tmp_12_cast       (zext             ) [ 00000000]
+tmp_11_cast       (zext             ) [ 00000000]
 input_addr        (getelementptr    ) [ 00001000]
 input_load        (load             ) [ 00000100]
 input_load_to_int (bitcast          ) [ 00000000]
-tmp_7             (partselect       ) [ 00000000]
-tmp               (trunc            ) [ 00000000]
+tmp               (partselect       ) [ 00000000]
+tmp_10            (trunc            ) [ 00000000]
 notlhs            (icmp             ) [ 00000000]
 notrhs            (icmp             ) [ 00000000]
-tmp_9             (or               ) [ 00000000]
-tmp_2             (fcmp             ) [ 00000000]
-tmp_8             (and              ) [ 00111100]
+tmp_7             (or               ) [ 00000000]
+tmp_8             (fcmp             ) [ 00000000]
+tmp_9             (and              ) [ 00111100]
 stg_45            (br               ) [ 00000000]
 counter_load_2    (load             ) [ 00000000]
 tmp_6             (sext             ) [ 00000000]
@@ -451,8 +451,8 @@ stg_57            (br               ) [ 00111100]
 i1                (phi              ) [ 00000010]
 i1_cast1          (zext             ) [ 00000000]
 exitcond          (icmp             ) [ 00000011]
-empty_8           (speclooptripcount) [ 00000000]
-i_3               (add              ) [ 00100011]
+empty_7           (speclooptripcount) [ 00000000]
+i_1               (add              ) [ 00100011]
 stg_63            (br               ) [ 00000000]
 counter_load      (load             ) [ 00000001]
 tmp_s             (icmp             ) [ 00000011]
@@ -1130,7 +1130,7 @@ stg_96            (br               ) [ 00100011]
 </bind>
 </comp>
 
-<comp id="236" class="1004" name="tmp_2_fu_236">
+<comp id="236" class="1004" name="tmp_8_fu_236">
 <pin_list>
 <pin id="237" dir="0" index="0" bw="32" slack="1"/>
 <pin id="238" dir="0" index="1" bw="32" slack="0"/>
@@ -1138,7 +1138,7 @@ stg_96            (br               ) [ 00100011]
 </pin_list>
 <bind>
 <opcode="fcmp(46) " fcode="fcmp"/>
-<opset="tmp_2/5 "/>
+<opset="tmp_8/5 "/>
 </bind>
 </comp>
 
@@ -1189,7 +1189,7 @@ stg_96            (br               ) [ 00100011]
 </bind>
 </comp>
 
-<comp id="261" class="1004" name="i_4_fu_261">
+<comp id="261" class="1004" name="i_2_fu_261">
 <pin_list>
 <pin id="262" dir="0" index="0" bw="5" slack="0"/>
 <pin id="263" dir="0" index="1" bw="1" slack="0"/>
@@ -1197,7 +1197,7 @@ stg_96            (br               ) [ 00100011]
 </pin_list>
 <bind>
 <opcode="add(8) " fcode="add"/>
-<opset="i_4/2 "/>
+<opset="i_2/2 "/>
 </bind>
 </comp>
 
@@ -1272,14 +1272,14 @@ stg_96            (br               ) [ 00100011]
 </bind>
 </comp>
 
-<comp id="299" class="1004" name="tmp_12_cast_fu_299">
+<comp id="299" class="1004" name="tmp_11_cast_fu_299">
 <pin_list>
 <pin id="300" dir="0" index="0" bw="12" slack="0"/>
 <pin id="301" dir="1" index="1" bw="64" slack="0"/>
 </pin_list>
 <bind>
 <opcode="zext(34) " fcode="zext"/>
-<opset="tmp_12_cast/3 "/>
+<opset="tmp_11_cast/3 "/>
 </bind>
 </comp>
 
@@ -1294,7 +1294,7 @@ stg_96            (br               ) [ 00100011]
 </bind>
 </comp>
 
-<comp id="307" class="1004" name="tmp_7_fu_307">
+<comp id="307" class="1004" name="tmp_fu_307">
 <pin_list>
 <pin id="308" dir="0" index="0" bw="8" slack="0"/>
 <pin id="309" dir="0" index="1" bw="32" slack="0"/>
@@ -1304,18 +1304,18 @@ stg_96            (br               ) [ 00100011]
 </pin_list>
 <bind>
 <opcode="partselect(1002) " fcode="partselect"/>
-<opset="tmp_7/5 "/>
+<opset="tmp/5 "/>
 </bind>
 </comp>
 
-<comp id="317" class="1004" name="tmp_fu_317">
+<comp id="317" class="1004" name="tmp_10_fu_317">
 <pin_list>
 <pin id="318" dir="0" index="0" bw="32" slack="0"/>
 <pin id="319" dir="1" index="1" bw="23" slack="0"/>
 </pin_list>
 <bind>
 <opcode="trunc(33) " fcode="trunc"/>
-<opset="tmp/5 "/>
+<opset="tmp_10/5 "/>
 </bind>
 </comp>
 
@@ -1343,7 +1343,7 @@ stg_96            (br               ) [ 00100011]
 </bind>
 </comp>
 
-<comp id="333" class="1004" name="tmp_9_fu_333">
+<comp id="333" class="1004" name="tmp_7_fu_333">
 <pin_list>
 <pin id="334" dir="0" index="0" bw="1" slack="0"/>
 <pin id="335" dir="0" index="1" bw="1" slack="0"/>
@@ -1351,11 +1351,11 @@ stg_96            (br               ) [ 00100011]
 </pin_list>
 <bind>
 <opcode="or(24) " fcode="or"/>
-<opset="tmp_9/5 "/>
+<opset="tmp_7/5 "/>
 </bind>
 </comp>
 
-<comp id="339" class="1004" name="tmp_8_fu_339">
+<comp id="339" class="1004" name="tmp_9_fu_339">
 <pin_list>
 <pin id="340" dir="0" index="0" bw="1" slack="0"/>
 <pin id="341" dir="0" index="1" bw="1" slack="0"/>
@@ -1363,7 +1363,7 @@ stg_96            (br               ) [ 00100011]
 </pin_list>
 <bind>
 <opcode="and(23) " fcode="and"/>
-<opset="tmp_8/5 "/>
+<opset="tmp_9/5 "/>
 </bind>
 </comp>
 
@@ -1425,7 +1425,7 @@ stg_96            (br               ) [ 00100011]
 </bind>
 </comp>
 
-<comp id="373" class="1004" name="i_3_fu_373">
+<comp id="373" class="1004" name="i_1_fu_373">
 <pin_list>
 <pin id="374" dir="0" index="0" bw="12" slack="0"/>
 <pin id="375" dir="0" index="1" bw="1" slack="0"/>
@@ -1433,7 +1433,7 @@ stg_96            (br               ) [ 00100011]
 </pin_list>
 <bind>
 <opcode="add(8) " fcode="add"/>
-<opset="i_3/6 "/>
+<opset="i_1/6 "/>
 </bind>
 </comp>
 
@@ -1599,13 +1599,13 @@ stg_96            (br               ) [ 00100011]
 </bind>
 </comp>
 
-<comp id="463" class="1005" name="i_4_reg_463">
+<comp id="463" class="1005" name="i_2_reg_463">
 <pin_list>
 <pin id="464" dir="0" index="0" bw="5" slack="0"/>
 <pin id="465" dir="1" index="1" bw="5" slack="0"/>
 </pin_list>
 <bind>
-<opset="i_4 "/>
+<opset="i_2 "/>
 </bind>
 </comp>
 
@@ -1659,13 +1659,13 @@ stg_96            (br               ) [ 00100011]
 </bind>
 </comp>
 
-<comp id="508" class="1005" name="i_3_reg_508">
+<comp id="508" class="1005" name="i_1_reg_508">
 <pin_list>
 <pin id="509" dir="0" index="0" bw="12" slack="0"/>
 <pin id="510" dir="1" index="1" bw="12" slack="0"/>
 </pin_list>
 <bind>
-<opset="i_3 "/>
+<opset="i_1 "/>
 </bind>
 </comp>
 
@@ -2036,7 +2036,7 @@ stg_96            (br               ) [ 00100011]
 	State 2
 		next_mul : 1
 		exitcond2 : 1
-		i_4 : 1
+		i_2 : 1
 		stg_20 : 2
 		stg_23 : 1
 		stg_24 : 1
@@ -2046,17 +2046,17 @@ stg_96            (br               ) [ 00100011]
 		stg_30 : 2
 		tmp_1_cast : 1
 		tmp_1 : 2
-		tmp_12_cast : 3
+		tmp_11_cast : 3
 		input_addr : 4
 		input_load : 5
 	State 4
 	State 5
-		tmp_7 : 1
 		tmp : 1
+		tmp_10 : 1
 		notlhs : 2
 		notrhs : 2
+		tmp_7 : 3
 		tmp_9 : 3
-		tmp_8 : 3
 		stg_45 : 3
 		tmp_6 : 1
 		temp_row_addr_1 : 2
@@ -2070,7 +2070,7 @@ stg_96            (br               ) [ 00100011]
 	State 6
 		i1_cast1 : 1
 		exitcond : 1
-		i_3 : 1
+		i_1 : 1
 		stg_63 : 2
 		tmp_s : 2
 		stg_66 : 3
@@ -2107,14 +2107,14 @@ stg_96            (br               ) [ 00100011]
 |----------|--------------------|---------|---------|---------|
 | Operation|   Functional Unit  |  DSP48E |    FF   |   LUT   |
 |----------|--------------------|---------|---------|---------|
-|   fcmp   |    tmp_2_fu_236    |    0    |    66   |   239   |
+|   fcmp   |    tmp_8_fu_236    |    0    |    66   |   239   |
 |----------|--------------------|---------|---------|---------|
 |          |   next_mul_fu_249  |    0    |    0    |    12   |
-|          |     i_4_fu_261     |    0    |    0    |    5    |
+|          |     i_2_fu_261     |    0    |    0    |    5    |
 |          |     j_1_fu_283     |    0    |    0    |    7    |
 |    add   |    tmp_1_fu_293    |    0    |    0    |    12   |
 |          |  counter_1_fu_352  |    0    |    0    |    32   |
-|          |     i_3_fu_373     |    0    |    0    |    12   |
+|          |     i_1_fu_373     |    0    |    0    |    12   |
 |          |  cur_ind_2_fu_405  |    0    |    0    |    32   |
 |          |    start_fu_416    |    0    |    0    |    32   |
 |----------|--------------------|---------|---------|---------|
@@ -2129,18 +2129,18 @@ stg_96            (br               ) [ 00100011]
 |          |    tmp_s_fu_379    |    0    |    0    |    11   |
 |          |    tmp_5_fu_411    |    0    |    0    |    11   |
 |----------|--------------------|---------|---------|---------|
-|    or    |    tmp_9_fu_333    |    0    |    0    |    1    |
+|    or    |    tmp_7_fu_333    |    0    |    0    |    1    |
 |----------|--------------------|---------|---------|---------|
-|    and   |    tmp_8_fu_339    |    0    |    0    |    1    |
+|    and   |    tmp_9_fu_339    |    0    |    0    |    1    |
 |----------|--------------------|---------|---------|---------|
 |          |  tmp_1_cast_fu_289 |    0    |    0    |    0    |
-|   zext   | tmp_12_cast_fu_299 |    0    |    0    |    0    |
+|   zext   | tmp_11_cast_fu_299 |    0    |    0    |    0    |
 |          |   i1_cast1_fu_363  |    0    |    0    |    0    |
 |          |    tmp_3_fu_385    |    0    |    0    |    0    |
 |----------|--------------------|---------|---------|---------|
-|partselect|    tmp_7_fu_307    |    0    |    0    |    0    |
+|partselect|     tmp_fu_307     |    0    |    0    |    0    |
 |----------|--------------------|---------|---------|---------|
-|   trunc  |     tmp_fu_317     |    0    |    0    |    0    |
+|   trunc  |    tmp_10_fu_317   |    0    |    0    |    0    |
 |----------|--------------------|---------|---------|---------|
 |   sext   |    tmp_6_fu_345    |    0    |    0    |    0    |
 |          |    tmp_4_fu_398    |    0    |    0    |    0    |
@@ -2168,8 +2168,8 @@ Memories:
 |  cur_ind_1_reg_468  |   32   |
 |   cur_ind_reg_475   |   32   |
 |      i1_reg_225     |   12   |
-|     i_3_reg_508     |   12   |
-|     i_4_reg_463     |    5   |
+|     i_1_reg_508     |   12   |
+|     i_2_reg_463     |    5   |
 |      i_reg_187      |    5   |
 |  input_addr_reg_490 |   12   |
 |  input_load_reg_495 |   32   |

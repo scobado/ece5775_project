@@ -51,6 +51,9 @@
         <directive functionName="worker" label="LOOP_DEST1" functionLabel="">
             <pragma name="UNROLL"/>
         </directive>
+        <directive functionName="worker" label="LOOP_DEST1_ST" functionLabel="">
+            <pragma name="PIPELINE"/>
+        </directive>
     </sourceFile>
 </AutoPilot:ProjectResources>
 

@@ -42,6 +42,7 @@ create_clock -period 10
 
 set_directive_inline -off create_COO
 set_directive_inline -off COO_SpMV
+
 set_directive_array_partition -type complete -dim 1 worker matrix_1
 set_directive_array_partition -type complete -dim 1 worker dest_1
 set_directive_array_partition -type complete -dim 1 worker row_1
@@ -50,6 +51,8 @@ set_directive_array_partition -type complete -dim 1 worker val_1
 
 set_directive_unroll worker/LOOP_PE
 set_directive_unroll worker/LOOP_DEST1
+
+set_directive_pipeline worker/LOOP_DEST1_ST
 
 
 # Simulate the C++ design

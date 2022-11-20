@@ -138,7 +138,7 @@
 
 <node id="10" bw="12" op_0_bw="12" op_1_bw="0">
 <![CDATA[
-:0  %i = phi i12 [ 0, %0 ], [ %i_5, %._crit_edge ]
+:0  %i = phi i12 [ 0, %0 ], [ %i_3, %._crit_edge ]
 
 ]]></node>
 <StgValue><ssdm name="i"/></StgValue>
@@ -168,10 +168,10 @@
 
 <node id="12" bw="12" op_0_bw="12" op_1_bw="12">
 <![CDATA[
-:2  %i_5 = add i12 %i, 1
+:2  %i_3 = add i12 %i, 1
 
 ]]></node>
-<StgValue><ssdm name="i_5"/></StgValue>
+<StgValue><ssdm name="i_3"/></StgValue>
 </operation>
 
 <operation id="20" st_id="2" stage="1" lat="1">
@@ -215,10 +215,10 @@
 
 <node id="19" bw="1" op_0_bw="32" op_1_bw="32">
 <![CDATA[
-:4  %tmp = icmp slt i32 %i_cast1, %nnz_read
+:4  %tmp4 = icmp slt i32 %i_cast1, %nnz_read
 
 ]]></node>
-<StgValue><ssdm name="tmp"/></StgValue>
+<StgValue><ssdm name="tmp4"/></StgValue>
 </operation>
 
 <operation id="23" st_id="2" stage="1" lat="1">
@@ -231,7 +231,7 @@
 
 <node id="20" bw="0" op_0_bw="1" op_1_bw="0" op_2_bw="0">
 <![CDATA[
-:5  br i1 %tmp, label %branch2, label %._crit_edge
+:5  br i1 %tmp4, label %branch2, label %._crit_edge
 
 ]]></node>
 <StgValue><ssdm name=""/></StgValue>
@@ -242,7 +242,7 @@
 <MemPortIdVec></MemPortIdVec>
 <condition id="18">
 <or_exp><and_exp><literal name="exitcond" val="0"/>
-<literal name="tmp" val="1"/>
+<literal name="tmp4" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -259,7 +259,7 @@ branch2:0  %tmp_s = zext i12 %i to i64
 <MemPortIdVec></MemPortIdVec>
 <condition id="18">
 <or_exp><and_exp><literal name="exitcond" val="0"/>
-<literal name="tmp" val="1"/>
+<literal name="tmp4" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -276,7 +276,7 @@ branch2:1  %val_addr = getelementptr [2500 x float]* %val_r, i64 0, i64 %tmp_s
 <MemPortIdVec></MemPortIdVec>
 <condition id="18">
 <or_exp><and_exp><literal name="exitcond" val="0"/>
-<literal name="tmp" val="1"/>
+<literal name="tmp4" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -293,7 +293,7 @@ branch2:2  %val_load = load float* %val_addr, align 4
 <MemPortIdVec></MemPortIdVec>
 <condition id="18">
 <or_exp><and_exp><literal name="exitcond" val="0"/>
-<literal name="tmp" val="1"/>
+<literal name="tmp4" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -310,7 +310,7 @@ branch2:3  %col_addr = getelementptr [2500 x i7]* %col, i64 0, i64 %tmp_s
 <MemPortIdVec></MemPortIdVec>
 <condition id="18">
 <or_exp><and_exp><literal name="exitcond" val="0"/>
-<literal name="tmp" val="1"/>
+<literal name="tmp4" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -327,7 +327,7 @@ branch2:4  %col_load = load i7* %col_addr, align 1
 <MemPortIdVec></MemPortIdVec>
 <condition id="18">
 <or_exp><and_exp><literal name="exitcond" val="0"/>
-<literal name="tmp" val="1"/>
+<literal name="tmp4" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -344,7 +344,7 @@ branch2:9  %row_addr = getelementptr [2500 x i5]* %row, i64 0, i64 %tmp_s
 <MemPortIdVec></MemPortIdVec>
 <condition id="18">
 <or_exp><and_exp><literal name="exitcond" val="0"/>
-<literal name="tmp" val="1"/>
+<literal name="tmp4" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -363,7 +363,7 @@ branch2:10  %row_load = load i5* %row_addr, align 1
 <core>RAM</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="21">
-<or_exp><and_exp><literal name="tmp" val="1"/>
+<or_exp><and_exp><literal name="tmp4" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -379,7 +379,7 @@ branch2:2  %val_load = load float* %val_addr, align 4
 <core>RAM</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="21">
-<or_exp><and_exp><literal name="tmp" val="1"/>
+<or_exp><and_exp><literal name="tmp4" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -395,7 +395,7 @@ branch2:4  %col_load = load i7* %col_addr, align 1
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="21">
-<or_exp><and_exp><literal name="tmp" val="1"/>
+<or_exp><and_exp><literal name="tmp4" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -411,7 +411,7 @@ branch2:5  %tmp_7 = zext i7 %col_load to i64
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="21">
-<or_exp><and_exp><literal name="tmp" val="1"/>
+<or_exp><and_exp><literal name="tmp4" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -427,7 +427,7 @@ branch2:6  %vector_addr = getelementptr inbounds [100 x float]* @vector, i64 0, 
 <core>ROM_nP</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="21">
-<or_exp><and_exp><literal name="tmp" val="1"/>
+<or_exp><and_exp><literal name="tmp4" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -443,7 +443,7 @@ branch2:7  %vector_load = load float* %vector_addr, align 4
 <core>RAM</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="21">
-<or_exp><and_exp><literal name="tmp" val="1"/>
+<or_exp><and_exp><literal name="tmp4" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -462,7 +462,7 @@ branch2:10  %row_load = load i5* %row_addr, align 1
 <core>ROM_nP</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="21">
-<or_exp><and_exp><literal name="tmp" val="1"/>
+<or_exp><and_exp><literal name="tmp4" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -478,7 +478,7 @@ branch2:7  %vector_load = load float* %vector_addr, align 4
 <core>FMul</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="21">
-<or_exp><and_exp><literal name="tmp" val="1"/>
+<or_exp><and_exp><literal name="tmp4" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -497,7 +497,7 @@ branch2:8  %tmp_8 = fmul float %val_load, %vector_load
 <core>FMul</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="21">
-<or_exp><and_exp><literal name="tmp" val="1"/>
+<or_exp><and_exp><literal name="tmp4" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -516,7 +516,7 @@ branch2:8  %tmp_8 = fmul float %val_load, %vector_load
 <core>FMul</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="21">
-<or_exp><and_exp><literal name="tmp" val="1"/>
+<or_exp><and_exp><literal name="tmp4" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -532,7 +532,7 @@ branch2:8  %tmp_8 = fmul float %val_load, %vector_load
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="21">
-<or_exp><and_exp><literal name="tmp" val="1"/>
+<or_exp><and_exp><literal name="tmp4" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -548,7 +548,7 @@ branch2:11  %tmp_9 = zext i5 %row_load to i64
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="21">
-<or_exp><and_exp><literal name="tmp" val="1"/>
+<or_exp><and_exp><literal name="tmp4" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -564,7 +564,7 @@ branch2:12  %output_addr = getelementptr [25 x float]* %output_r, i64 0, i64 %tm
 <core>RAM</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="21">
-<or_exp><and_exp><literal name="tmp" val="1"/>
+<or_exp><and_exp><literal name="tmp4" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -583,7 +583,7 @@ branch2:13  %output_load = load float* %output_addr, align 4
 <core>FMul</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="21">
-<or_exp><and_exp><literal name="tmp" val="1"/>
+<or_exp><and_exp><literal name="tmp4" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -599,7 +599,7 @@ branch2:8  %tmp_8 = fmul float %val_load, %vector_load
 <core>RAM</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="21">
-<or_exp><and_exp><literal name="tmp" val="1"/>
+<or_exp><and_exp><literal name="tmp4" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -618,16 +618,16 @@ branch2:13  %output_load = load float* %output_addr, align 4
 <core>FAddSub</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="21">
-<or_exp><and_exp><literal name="tmp" val="1"/>
+<or_exp><and_exp><literal name="tmp4" val="1"/>
 </and_exp></or_exp>
 </condition>
 
 <node id="36" bw="32" op_0_bw="32" op_1_bw="32">
 <![CDATA[
-branch2:14  %tmp_3 = fadd float %output_load, %tmp_8
+branch2:14  %tmp_1 = fadd float %output_load, %tmp_8
 
 ]]></node>
-<StgValue><ssdm name="tmp_3"/></StgValue>
+<StgValue><ssdm name="tmp_1"/></StgValue>
 </operation>
 </state>
 
@@ -637,16 +637,16 @@ branch2:14  %tmp_3 = fadd float %output_load, %tmp_8
 <core>FAddSub</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="21">
-<or_exp><and_exp><literal name="tmp" val="1"/>
+<or_exp><and_exp><literal name="tmp4" val="1"/>
 </and_exp></or_exp>
 </condition>
 
 <node id="36" bw="32" op_0_bw="32" op_1_bw="32">
 <![CDATA[
-branch2:14  %tmp_3 = fadd float %output_load, %tmp_8
+branch2:14  %tmp_1 = fadd float %output_load, %tmp_8
 
 ]]></node>
-<StgValue><ssdm name="tmp_3"/></StgValue>
+<StgValue><ssdm name="tmp_1"/></StgValue>
 </operation>
 </state>
 
@@ -656,16 +656,16 @@ branch2:14  %tmp_3 = fadd float %output_load, %tmp_8
 <core>FAddSub</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="21">
-<or_exp><and_exp><literal name="tmp" val="1"/>
+<or_exp><and_exp><literal name="tmp4" val="1"/>
 </and_exp></or_exp>
 </condition>
 
 <node id="36" bw="32" op_0_bw="32" op_1_bw="32">
 <![CDATA[
-branch2:14  %tmp_3 = fadd float %output_load, %tmp_8
+branch2:14  %tmp_1 = fadd float %output_load, %tmp_8
 
 ]]></node>
-<StgValue><ssdm name="tmp_3"/></StgValue>
+<StgValue><ssdm name="tmp_1"/></StgValue>
 </operation>
 </state>
 
@@ -675,16 +675,16 @@ branch2:14  %tmp_3 = fadd float %output_load, %tmp_8
 <core>FAddSub</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="21">
-<or_exp><and_exp><literal name="tmp" val="1"/>
+<or_exp><and_exp><literal name="tmp4" val="1"/>
 </and_exp></or_exp>
 </condition>
 
 <node id="36" bw="32" op_0_bw="32" op_1_bw="32">
 <![CDATA[
-branch2:14  %tmp_3 = fadd float %output_load, %tmp_8
+branch2:14  %tmp_1 = fadd float %output_load, %tmp_8
 
 ]]></node>
-<StgValue><ssdm name="tmp_3"/></StgValue>
+<StgValue><ssdm name="tmp_1"/></StgValue>
 </operation>
 </state>
 
@@ -694,16 +694,16 @@ branch2:14  %tmp_3 = fadd float %output_load, %tmp_8
 <core>FAddSub</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="21">
-<or_exp><and_exp><literal name="tmp" val="1"/>
+<or_exp><and_exp><literal name="tmp4" val="1"/>
 </and_exp></or_exp>
 </condition>
 
 <node id="36" bw="32" op_0_bw="32" op_1_bw="32">
 <![CDATA[
-branch2:14  %tmp_3 = fadd float %output_load, %tmp_8
+branch2:14  %tmp_1 = fadd float %output_load, %tmp_8
 
 ]]></node>
-<StgValue><ssdm name="tmp_3"/></StgValue>
+<StgValue><ssdm name="tmp_1"/></StgValue>
 </operation>
 </state>
 
@@ -733,10 +733,10 @@ branch2:14  %tmp_3 = fadd float %output_load, %tmp_8
 
 <node id="17" bw="32" op_0_bw="32" op_1_bw="0">
 <![CDATA[
-:2  %tmp_6 = call i32 (...)* @_ssdm_op_SpecRegionBegin([12 x i8]* @p_str1) nounwind
+:2  %tmp = call i32 (...)* @_ssdm_op_SpecRegionBegin([12 x i8]* @p_str1) nounwind
 
 ]]></node>
-<StgValue><ssdm name="tmp_6"/></StgValue>
+<StgValue><ssdm name="tmp"/></StgValue>
 </operation>
 
 <operation id="53" st_id="13" stage="1" lat="1">
@@ -758,13 +758,13 @@ branch2:14  %tmp_3 = fadd float %output_load, %tmp_8
 <core>RAM</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="21">
-<or_exp><and_exp><literal name="tmp" val="1"/>
+<or_exp><and_exp><literal name="tmp4" val="1"/>
 </and_exp></or_exp>
 </condition>
 
 <node id="37" bw="0" op_0_bw="32" op_1_bw="5">
 <![CDATA[
-branch2:15  store float %tmp_3, float* %output_addr, align 4
+branch2:15  store float %tmp_1, float* %output_addr, align 4
 
 ]]></node>
 <StgValue><ssdm name=""/></StgValue>
@@ -774,7 +774,7 @@ branch2:15  store float %tmp_3, float* %output_addr, align 4
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="21">
-<or_exp><and_exp><literal name="tmp" val="1"/>
+<or_exp><and_exp><literal name="tmp4" val="1"/>
 </and_exp></or_exp>
 </condition>
 
@@ -796,10 +796,10 @@ branch2:16  br label %._crit_edge
 
 <node id="40" bw="32" op_0_bw="32" op_1_bw="0" op_2_bw="32">
 <![CDATA[
-._crit_edge:0  %empty_10 = call i32 (...)* @_ssdm_op_SpecRegionEnd([12 x i8]* @p_str1, i32 %tmp_6) nounwind
+._crit_edge:0  %empty_9 = call i32 (...)* @_ssdm_op_SpecRegionEnd([12 x i8]* @p_str1, i32 %tmp) nounwind
 
 ]]></node>
-<StgValue><ssdm name="empty_10"/></StgValue>
+<StgValue><ssdm name="empty_9"/></StgValue>
 </operation>
 
 <operation id="57" st_id="13" stage="1" lat="1">

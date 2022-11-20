@@ -103,8 +103,8 @@ wire   [11:0] next_mul_fu_249_p2;
 reg   [11:0] next_mul_reg_455;
 reg    ap_sig_cseq_ST_st2_fsm_1;
 reg    ap_sig_64;
-wire   [4:0] i_4_fu_261_p2;
-reg   [4:0] i_4_reg_463;
+wire   [4:0] i_2_fu_261_p2;
+reg   [4:0] i_2_reg_463;
 wire   [6:0] j_1_fu_283_p2;
 reg   [6:0] j_1_reg_485;
 reg    ap_sig_cseq_ST_st3_fsm_2;
@@ -113,8 +113,8 @@ wire   [0:0] exitcond1_fu_277_p2;
 reg   [31:0] input_load_reg_495;
 reg    ap_sig_cseq_ST_st4_fsm_3;
 reg    ap_sig_89;
-wire   [11:0] i_3_fu_373_p2;
-reg   [11:0] i_3_reg_508;
+wire   [11:0] i_1_fu_373_p2;
+reg   [11:0] i_1_reg_508;
 reg    ap_sig_cseq_ST_st6_fsm_5;
 reg    ap_sig_98;
 reg   [31:0] counter_load_reg_513;
@@ -142,9 +142,9 @@ wire   [0:0] exitcond2_fu_255_p2;
 reg   [11:0] i1_reg_225;
 reg    ap_sig_cseq_ST_st7_fsm_6;
 reg    ap_sig_180;
-wire   [63:0] tmp_12_cast_fu_299_p1;
+wire   [63:0] tmp_11_cast_fu_299_p1;
 wire  signed [63:0] tmp_6_fu_345_p1;
-wire   [0:0] tmp_8_fu_339_p2;
+wire   [0:0] tmp_9_fu_339_p2;
 wire   [63:0] tmp_3_fu_385_p1;
 wire  signed [63:0] tmp_4_fu_398_p1;
 reg   [31:0] counter_fu_58;
@@ -156,12 +156,12 @@ wire   [31:0] p_start_fu_422_p3;
 wire   [11:0] tmp_1_cast_fu_289_p1;
 wire   [11:0] tmp_1_fu_293_p2;
 wire   [31:0] input_load_to_int_fu_304_p1;
-wire   [7:0] tmp_7_fu_307_p4;
-wire   [22:0] tmp_fu_317_p1;
+wire   [7:0] tmp_fu_307_p4;
+wire   [22:0] tmp_10_fu_317_p1;
 wire   [0:0] notrhs_fu_327_p2;
 wire   [0:0] notlhs_fu_321_p2;
-wire   [0:0] tmp_9_fu_333_p2;
-wire   [0:0] tmp_2_fu_236_p2;
+wire   [0:0] tmp_7_fu_333_p2;
+wire   [0:0] tmp_8_fu_236_p2;
 wire   [31:0] i1_cast1_fu_363_p1;
 wire   [31:0] cur_ind_2_fu_405_p2;
 wire   [0:0] tmp_5_fu_411_p2;
@@ -225,7 +225,7 @@ worker_fcmp_32ns_32ns_1_1_U1(
     .din0(input_load_reg_495),
     .din1(ap_const_lv32_0),
     .opcode(ap_const_lv5_1),
-    .dout(tmp_2_fu_236_p2)
+    .dout(tmp_8_fu_236_p2)
 );
 
 always @ (posedge ap_clk) begin
@@ -237,7 +237,7 @@ always @ (posedge ap_clk) begin
 end
 
 always @ (posedge ap_clk) begin
-    if (((1'b1 == ap_sig_cseq_ST_st5_fsm_4) & (1'b0 == tmp_8_fu_339_p2))) begin
+    if (((1'b1 == ap_sig_cseq_ST_st5_fsm_4) & (1'b0 == tmp_9_fu_339_p2))) begin
         counter_fu_58 <= counter_1_fu_352_p2;
     end else if (((1'b1 == ap_sig_cseq_ST_st1_fsm_0) & ~(ap_start == 1'b0))) begin
         counter_fu_58 <= ap_const_lv32_0;
@@ -262,7 +262,7 @@ end
 
 always @ (posedge ap_clk) begin
     if ((1'b1 == ap_sig_cseq_ST_st7_fsm_6)) begin
-        i1_reg_225 <= i_3_reg_508;
+        i1_reg_225 <= i_1_reg_508;
     end else if (((1'b1 == ap_sig_cseq_ST_st2_fsm_1) & ~(1'b0 == exitcond2_fu_255_p2))) begin
         i1_reg_225 <= ap_const_lv12_0;
     end
@@ -270,7 +270,7 @@ end
 
 always @ (posedge ap_clk) begin
     if (((1'b1 == ap_sig_cseq_ST_st3_fsm_2) & ~(exitcond1_fu_277_p2 == 1'b0))) begin
-        i_reg_187 <= i_4_reg_463;
+        i_reg_187 <= i_2_reg_463;
     end else if (((1'b1 == ap_sig_cseq_ST_st1_fsm_0) & ~(ap_start == 1'b0))) begin
         i_reg_187 <= ap_const_lv5_0;
     end
@@ -301,13 +301,13 @@ end
 
 always @ (posedge ap_clk) begin
     if ((1'b1 == ap_sig_cseq_ST_st6_fsm_5)) begin
-        i_3_reg_508 <= i_3_fu_373_p2;
+        i_1_reg_508 <= i_1_fu_373_p2;
     end
 end
 
 always @ (posedge ap_clk) begin
     if ((1'b1 == ap_sig_cseq_ST_st2_fsm_1)) begin
-        i_4_reg_463 <= i_4_fu_261_p2;
+        i_2_reg_463 <= i_2_fu_261_p2;
         next_mul_reg_455 <= next_mul_fu_249_p2;
     end
 end
@@ -463,7 +463,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_sig_cseq_ST_st5_fsm_4) & (1'b0 == tmp_8_fu_339_p2))) begin
+    if (((1'b1 == ap_sig_cseq_ST_st5_fsm_4) & (1'b0 == tmp_9_fu_339_p2))) begin
         temp_col_we0 = 1'b1;
     end else begin
         temp_col_we0 = 1'b0;
@@ -489,7 +489,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_sig_cseq_ST_st5_fsm_4) & (1'b0 == tmp_8_fu_339_p2))) begin
+    if (((1'b1 == ap_sig_cseq_ST_st5_fsm_4) & (1'b0 == tmp_9_fu_339_p2))) begin
         temp_row_we0 = 1'b1;
     end else begin
         temp_row_we0 = 1'b0;
@@ -515,7 +515,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_sig_cseq_ST_st5_fsm_4) & (1'b0 == tmp_8_fu_339_p2))) begin
+    if (((1'b1 == ap_sig_cseq_ST_st5_fsm_4) & (1'b0 == tmp_9_fu_339_p2))) begin
         temp_val_we0 = 1'b1;
     end else begin
         temp_val_we0 = 1'b0;
@@ -629,21 +629,21 @@ assign exitcond_fu_367_p2 = ((i1_reg_225 == ap_const_lv12_9C4) ? 1'b1 : 1'b0);
 
 assign i1_cast1_fu_363_p1 = i1_reg_225;
 
-assign i_3_fu_373_p2 = (i1_reg_225 + ap_const_lv12_1);
+assign i_1_fu_373_p2 = (i1_reg_225 + ap_const_lv12_1);
 
-assign i_4_fu_261_p2 = (i_reg_187 + ap_const_lv5_1);
+assign i_2_fu_261_p2 = (i_reg_187 + ap_const_lv5_1);
 
 assign input_load_to_int_fu_304_p1 = input_load_reg_495;
 
-assign input_r_address0 = tmp_12_cast_fu_299_p1;
+assign input_r_address0 = tmp_11_cast_fu_299_p1;
 
 assign j_1_fu_283_p2 = (j_reg_212 + ap_const_lv7_1);
 
 assign next_mul_fu_249_p2 = (phi_mul_reg_200 + ap_const_lv12_64);
 
-assign notlhs_fu_321_p2 = ((tmp_7_fu_307_p4 != ap_const_lv8_FF) ? 1'b1 : 1'b0);
+assign notlhs_fu_321_p2 = ((tmp_fu_307_p4 != ap_const_lv8_FF) ? 1'b1 : 1'b0);
 
-assign notrhs_fu_327_p2 = ((tmp_fu_317_p1 == ap_const_lv23_0) ? 1'b1 : 1'b0);
+assign notrhs_fu_327_p2 = ((tmp_10_fu_317_p1 == ap_const_lv23_0) ? 1'b1 : 1'b0);
 
 assign p_start_fu_422_p3 = ((tmp_5_fu_411_p2[0:0] === 1'b1) ? cur_ind_2_fu_405_p2 : cur_ind_1_fu_74);
 
@@ -655,7 +655,9 @@ assign start_0_s_fu_430_p3 = ((tmp_5_fu_411_p2[0:0] === 1'b1) ? cur_ind_1_fu_74 
 
 assign start_fu_416_p2 = (cur_ind_1_fu_74 + ap_const_lv32_1);
 
-assign tmp_12_cast_fu_299_p1 = tmp_1_fu_293_p2;
+assign tmp_10_fu_317_p1 = input_load_to_int_fu_304_p1[22:0];
+
+assign tmp_11_cast_fu_299_p1 = tmp_1_fu_293_p2;
 
 assign tmp_1_cast_fu_289_p1 = j_reg_212;
 
@@ -669,13 +671,11 @@ assign tmp_5_fu_411_p2 = (($signed(cur_ind_2_fu_405_p2) < $signed(counter_load_r
 
 assign tmp_6_fu_345_p1 = $signed(counter_fu_58);
 
-assign tmp_7_fu_307_p4 = {{input_load_to_int_fu_304_p1[ap_const_lv32_1E : ap_const_lv32_17]}};
+assign tmp_7_fu_333_p2 = (notrhs_fu_327_p2 | notlhs_fu_321_p2);
 
-assign tmp_8_fu_339_p2 = (tmp_9_fu_333_p2 & tmp_2_fu_236_p2);
+assign tmp_9_fu_339_p2 = (tmp_7_fu_333_p2 & tmp_8_fu_236_p2);
 
-assign tmp_9_fu_333_p2 = (notrhs_fu_327_p2 | notlhs_fu_321_p2);
-
-assign tmp_fu_317_p1 = input_load_to_int_fu_304_p1[22:0];
+assign tmp_fu_307_p4 = {{input_load_to_int_fu_304_p1[ap_const_lv32_1E : ap_const_lv32_17]}};
 
 assign tmp_s_fu_379_p2 = (($signed(i1_cast1_fu_363_p1) < $signed(counter_fu_58)) ? 1'b1 : 1'b0);
 

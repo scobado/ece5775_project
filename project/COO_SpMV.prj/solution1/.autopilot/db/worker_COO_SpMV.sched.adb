@@ -300,7 +300,7 @@
 					<Obj>
 						<type>0</type>
 						<id>12</id>
-						<name>i_5</name>
+						<name>i_3</name>
 						<fileName>COO_SpMV.cpp</fileName>
 						<fileDirectory>/home/ak2425/ece5775/ece5775_project/project</fileDirectory>
 						<lineNumber>70</lineNumber>
@@ -426,7 +426,7 @@
 					<Obj>
 						<type>0</type>
 						<id>19</id>
-						<name>tmp</name>
+						<name>tmp4</name>
 						<fileName>COO_SpMV.cpp</fileName>
 						<fileDirectory>/home/ak2425/ece5775/ece5775_project/project</fileDirectory>
 						<lineNumber>73</lineNumber>
@@ -1096,7 +1096,7 @@
 					<Obj>
 						<type>0</type>
 						<id>36</id>
-						<name>tmp_3</name>
+						<name>tmp_1</name>
 						<fileName>COO_SpMV.cpp</fileName>
 						<fileDirectory>/home/ak2425/ece5775/ece5775_project/project</fileDirectory>
 						<lineNumber>74</lineNumber>

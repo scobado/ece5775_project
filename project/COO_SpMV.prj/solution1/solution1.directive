@@ -45,14 +45,21 @@
                 <option name="dim" value="1"/>
             </pragma>
         </directive>
-        <directive functionName="worker" label="LOOP_PE" functionLabel="">
+        <directive functionName="worker" label="" functionLabel="">
+            <pragma name="ARRAY_PARTITION">
+                <option name="variable" value="row_nnz" positionalBoolean="4"/>
+                <option name="complete" value="" positionalBoolean="type"/>
+                <option name="dim" value="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="worker" label="LOOP_PE1" functionLabel="">
+            <pragma name="UNROLL"/>
+        </directive>
+        <directive functionName="worker" label="LOOP_PE2" functionLabel="">
             <pragma name="UNROLL"/>
         </directive>
         <directive functionName="worker" label="LOOP_DEST1" functionLabel="">
             <pragma name="UNROLL"/>
-        </directive>
-        <directive functionName="worker" label="LOOP_DEST1_ST" functionLabel="">
-            <pragma name="PIPELINE"/>
         </directive>
     </sourceFile>
 </AutoPilot:ProjectResources>

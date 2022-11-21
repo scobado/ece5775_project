@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'worker'
 ================================================================
-* Date:           Sun Nov 20 12:38:16 2022
+* Date:           Mon Nov 21 16:31:04 2022
 
 * Version:        2016.2 (Build 1577090 on Thu Jun 02 16:59:10 MDT 2016)
 * Project:        COO_SpMV.prj
@@ -20,7 +20,7 @@
     +--------+-------+----------+------------+
     |  Clock | Target| Estimated| Uncertainty|
     +--------+-------+----------+------------+
-    |ap_clk  |  10.00|      9.09|        1.25|
+    |ap_clk  |  10.00|      8.16|        1.25|
     +--------+-------+----------+------------+
 
 + Latency (clock cycles): 
@@ -29,7 +29,7 @@
     |    Latency    |    Interval   | Pipeline|
     |  min  |  max  |  min  |  max  |   Type  |
     +-------+-------+-------+-------+---------+
-    |  27734|  27734|  27735|  27735|   none  |
+    |  12955|  75455|  12956|  75456|   none  |
     +-------+-------+-------+-------+---------+
 
     + Detail: 
@@ -37,12 +37,17 @@
         N/A
 
         * Loop: 
-        +-------------------------------+-----+-----+----------+-----------+-----------+------+----------+
-        |                               |  Latency  | Iteration|  Initiation Interval  | Trip |          |
-        |           Loop Name           | min | max |  Latency |  achieved |   target  | Count| Pipelined|
-        +-------------------------------+-----+-----+----------+-----------+-----------+------+----------+
-        |- LOOP_DEST1_PE_LOOP_DEST1_ST  |  100|  100|         2|          1|          1|   100|    yes   |
-        +-------------------------------+-----+-----+----------+-----------+-----------+------+----------+
+        +-------------+-----+-----+----------+-----------+-----------+------+----------+
+        |             |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        |  Loop Name  | min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------+-----+-----+----------+-----------+-----------+------+----------+
+        |- Loop 1     |   24|   24|         1|          -|          -|    25|    no    |
+        |- Loop 2     |   24|   24|         1|          -|          -|    25|    no    |
+        |- Loop 3     |   24|   24|         1|          -|          -|    25|    no    |
+        |- Loop 4     |   24|   24|         1|          -|          -|    25|    no    |
+        |- Loop 5     |  208|  208|        52|          -|          -|     4|    no    |
+        | + Loop 5.1  |   50|   50|         2|          -|          -|    25|    no    |
+        +-------------+-----+-----+----------+-----------+-----------+------+----------+
 
 ============================================================
 + Verbose Summary: Synthesis Manager
@@ -66,29 +71,29 @@ IsDontTouch: 0
 HasImplIP: 0
 IsGatedGlobalClock: 0
 
-+ Individual pipeline summary: 
-  * Pipeline-0: initiation interval (II) = 1, depth = 2
-
 
 ============================================================
 + Verbose Summary: Schedule
 ============================================================
-* Number of FSM states: 20
-* Pipeline: 1
-  Pipeline-0: II = 1, D = 2, States = { 18 19 }
+* Number of FSM states: 24
+* Pipeline: 0
 * Dataflow Pipeline: 0
 
 * FSM state transitions: 
 1 --> 
 	2  / true
 2 --> 
-	3  / true
+	2  / (!exitcond4)
+	3  / (exitcond4)
 3 --> 
-	4  / true
+	3  / (!exitcond4_1)
+	4  / (exitcond4_1)
 4 --> 
-	5  / true
+	4  / (!exitcond4_2)
+	5  / (exitcond4_2)
 5 --> 
-	6  / true
+	5  / (!exitcond4_3)
+	6  / (exitcond4_3)
 6 --> 
 	7  / true
 7 --> 
@@ -114,879 +119,974 @@ IsGatedGlobalClock: 0
 17 --> 
 	18  / true
 18 --> 
-	20  / (exitcond_flatten)
-	19  / (!exitcond_flatten)
+	19  / true
 19 --> 
-	18  / true
+	20  / true
 20 --> 
+	21  / true
+21 --> 
+	22  / true
+22 --> 
+	23  / (!exitcond1)
+23 --> 
+	22  / (exitcond)
+	24  / (!exitcond)
+24 --> 
+	23  / true
 * FSM state operations: 
 
- <State 1>: 2.39ns
+ <State 1>: 1.57ns
+ST_1: stg_25 [1/1] 0.00ns
+:0  call void (...)* @_ssdm_op_SpecBitsMap([100 x float]* %dest) nounwind, !map !35
+
+ST_1: stg_26 [1/1] 0.00ns
+:1  call void (...)* @_ssdm_op_SpecTopModule([7 x i8]* @worker_str) nounwind
+
 ST_1: dest_1_0 [1/1] 0.00ns
-.preheader.preheader:2  %dest_1_0 = alloca [25 x float], align 4
+:2  %dest_1_0 = alloca [25 x float], align 4
 
 ST_1: dest_1_1 [1/1] 0.00ns
-.preheader.preheader:3  %dest_1_1 = alloca [25 x float], align 4
+:3  %dest_1_1 = alloca [25 x float], align 4
 
 ST_1: dest_1_2 [1/1] 0.00ns
-.preheader.preheader:4  %dest_1_2 = alloca [25 x float], align 4
+:4  %dest_1_2 = alloca [25 x float], align 4
 
 ST_1: dest_1_3 [1/1] 0.00ns
-.preheader.preheader:5  %dest_1_3 = alloca [25 x float], align 4
+:5  %dest_1_3 = alloca [25 x float], align 4
 
 ST_1: row_1_0 [1/1] 0.00ns
-.preheader.preheader:6  %row_1_0 = alloca [2500 x i5], align 1
+:6  %row_1_0 = alloca [2500 x i6], align 1
 
 ST_1: row_1_1 [1/1] 0.00ns
-.preheader.preheader:7  %row_1_1 = alloca [2500 x i5], align 1
+:7  %row_1_1 = alloca [2500 x i6], align 1
 
 ST_1: row_1_2 [1/1] 0.00ns
-.preheader.preheader:8  %row_1_2 = alloca [2500 x i5], align 1
+:8  %row_1_2 = alloca [2500 x i6], align 1
 
 ST_1: row_1_3 [1/1] 0.00ns
-.preheader.preheader:9  %row_1_3 = alloca [2500 x i5], align 1
+:9  %row_1_3 = alloca [2500 x i6], align 1
 
 ST_1: col_1_0 [1/1] 0.00ns
-.preheader.preheader:10  %col_1_0 = alloca [2500 x i7], align 1
+:10  %col_1_0 = alloca [2500 x i8], align 1
 
 ST_1: col_1_1 [1/1] 0.00ns
-.preheader.preheader:11  %col_1_1 = alloca [2500 x i7], align 1
+:11  %col_1_1 = alloca [2500 x i8], align 1
 
 ST_1: col_1_2 [1/1] 0.00ns
-.preheader.preheader:12  %col_1_2 = alloca [2500 x i7], align 1
+:12  %col_1_2 = alloca [2500 x i8], align 1
 
 ST_1: col_1_3 [1/1] 0.00ns
-.preheader.preheader:13  %col_1_3 = alloca [2500 x i7], align 1
+:13  %col_1_3 = alloca [2500 x i8], align 1
 
 ST_1: val_1_0 [1/1] 0.00ns
-.preheader.preheader:14  %val_1_0 = alloca [2500 x float], align 4
+:14  %val_1_0 = alloca [2500 x float], align 4
 
 ST_1: val_1_1 [1/1] 0.00ns
-.preheader.preheader:15  %val_1_1 = alloca [2500 x float], align 4
+:15  %val_1_1 = alloca [2500 x float], align 4
 
 ST_1: val_1_2 [1/1] 0.00ns
-.preheader.preheader:16  %val_1_2 = alloca [2500 x float], align 4
+:16  %val_1_2 = alloca [2500 x float], align 4
 
 ST_1: val_1_3 [1/1] 0.00ns
-.preheader.preheader:17  %val_1_3 = alloca [2500 x float], align 4
+:17  %val_1_3 = alloca [2500 x float], align 4
 
-ST_1: dest_1_0_addr [1/1] 0.00ns
-.preheader.preheader:18  %dest_1_0_addr = getelementptr [25 x float]* %dest_1_0, i64 0, i64 0
+ST_1: tmp [1/1] 0.00ns
+:18  %tmp = call i32 (...)* @_ssdm_op_SpecRegionBegin([9 x i8]* @p_str2) nounwind
 
-ST_1: stg_38 [1/1] 2.39ns
-.preheader.preheader:19  store float 0.000000e+00, float* %dest_1_0_addr, align 16
-
-
- <State 2>: 2.39ns
-ST_2: dest_1_0_addr_1 [1/1] 0.00ns
-.preheader.preheader:20  %dest_1_0_addr_1 = getelementptr [25 x float]* %dest_1_0, i64 0, i64 1
-
-ST_2: stg_40 [1/1] 2.39ns
-.preheader.preheader:21  store float 0.000000e+00, float* %dest_1_0_addr_1, align 4
-
-ST_2: dest_1_0_addr_2 [1/1] 0.00ns
-.preheader.preheader:22  %dest_1_0_addr_2 = getelementptr [25 x float]* %dest_1_0, i64 0, i64 2
-
-ST_2: stg_42 [1/1] 2.39ns
-.preheader.preheader:23  store float 0.000000e+00, float* %dest_1_0_addr_2, align 8
+ST_1: stg_44 [1/1] 1.57ns
+:19  br label %2
 
 
- <State 3>: 2.39ns
-ST_3: dest_1_0_addr_3 [1/1] 0.00ns
-.preheader.preheader:24  %dest_1_0_addr_3 = getelementptr [25 x float]* %dest_1_0, i64 0, i64 3
+ <State 2>: 1.91ns
+ST_2: j [1/1] 0.00ns
+:0  %j = phi i5 [ 0, %0 ], [ %j_1, %2 ]
 
-ST_3: stg_44 [1/1] 2.39ns
-.preheader.preheader:25  store float 0.000000e+00, float* %dest_1_0_addr_3, align 4
+ST_2: exitcond4 [1/1] 1.91ns
+:1  %exitcond4 = icmp eq i5 %j, -7
 
-ST_3: dest_1_0_addr_4 [1/1] 0.00ns
-.preheader.preheader:26  %dest_1_0_addr_4 = getelementptr [25 x float]* %dest_1_0, i64 0, i64 4
+ST_2: empty_5 [1/1] 0.00ns
+:2  %empty_5 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 25, i64 25, i64 25) nounwind
 
-ST_3: stg_46 [1/1] 2.39ns
-.preheader.preheader:27  store float 0.000000e+00, float* %dest_1_0_addr_4, align 16
+ST_2: j_1 [1/1] 1.72ns
+:3  %j_1 = add i5 %j, 1
 
-ST_3: dest_1_1_addr [1/1] 0.00ns
-.preheader.preheader:70  %dest_1_1_addr = getelementptr [25 x float]* %dest_1_1, i64 0, i64 0
+ST_2: stg_49 [1/1] 0.00ns
+:4  br i1 %exitcond4, label %1, label %2
 
-ST_3: stg_48 [1/1] 2.39ns
-.preheader.preheader:71  store float 0.000000e+00, float* %dest_1_1_addr, align 4
+ST_2: empty [1/1] 0.00ns
+:0  %empty = call i32 (...)* @_ssdm_op_SpecRegionEnd([9 x i8]* @p_str2, i32 %tmp) nounwind
 
-ST_3: dest_1_2_addr [1/1] 0.00ns
-.preheader.preheader:122  %dest_1_2_addr = getelementptr [25 x float]* %dest_1_2, i64 0, i64 0
+ST_2: tmp_1 [1/1] 0.00ns
+:1  %tmp_1 = call i32 (...)* @_ssdm_op_SpecRegionBegin([9 x i8]* @p_str2) nounwind
 
-ST_3: stg_50 [1/1] 2.39ns
-.preheader.preheader:123  store float 0.000000e+00, float* %dest_1_2_addr, align 8
-
-ST_3: dest_1_3_addr [1/1] 0.00ns
-.preheader.preheader:174  %dest_1_3_addr = getelementptr [25 x float]* %dest_1_3, i64 0, i64 0
-
-ST_3: stg_52 [1/1] 2.39ns
-.preheader.preheader:175  store float 0.000000e+00, float* %dest_1_3_addr, align 4
+ST_2: stg_52 [1/1] 1.57ns
+:2  br label %4
 
 
- <State 4>: 2.39ns
-ST_4: dest_1_0_addr_5 [1/1] 0.00ns
-.preheader.preheader:28  %dest_1_0_addr_5 = getelementptr [25 x float]* %dest_1_0, i64 0, i64 5
+ <State 3>: 1.91ns
+ST_3: j_s [1/1] 0.00ns
+:0  %j_s = phi i5 [ 0, %1 ], [ %j_1_1, %4 ]
 
-ST_4: stg_54 [1/1] 2.39ns
-.preheader.preheader:29  store float 0.000000e+00, float* %dest_1_0_addr_5, align 4
+ST_3: exitcond4_1 [1/1] 1.91ns
+:1  %exitcond4_1 = icmp eq i5 %j_s, -7
 
-ST_4: dest_1_0_addr_6 [1/1] 0.00ns
-.preheader.preheader:30  %dest_1_0_addr_6 = getelementptr [25 x float]* %dest_1_0, i64 0, i64 6
+ST_3: empty_7 [1/1] 0.00ns
+:2  %empty_7 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 25, i64 25, i64 25) nounwind
 
-ST_4: stg_56 [1/1] 2.39ns
-.preheader.preheader:31  store float 0.000000e+00, float* %dest_1_0_addr_6, align 8
+ST_3: j_1_1 [1/1] 1.72ns
+:3  %j_1_1 = add i5 %j_s, 1
 
-ST_4: dest_1_1_addr_1 [1/1] 0.00ns
-.preheader.preheader:72  %dest_1_1_addr_1 = getelementptr [25 x float]* %dest_1_1, i64 0, i64 1
+ST_3: stg_57 [1/1] 0.00ns
+:4  br i1 %exitcond4_1, label %3, label %4
 
-ST_4: stg_58 [1/1] 2.39ns
-.preheader.preheader:73  store float 0.000000e+00, float* %dest_1_1_addr_1, align 4
+ST_3: empty_6 [1/1] 0.00ns
+:0  %empty_6 = call i32 (...)* @_ssdm_op_SpecRegionEnd([9 x i8]* @p_str2, i32 %tmp_1) nounwind
 
-ST_4: dest_1_1_addr_2 [1/1] 0.00ns
-.preheader.preheader:74  %dest_1_1_addr_2 = getelementptr [25 x float]* %dest_1_1, i64 0, i64 2
+ST_3: tmp_6 [1/1] 0.00ns
+:1  %tmp_6 = call i32 (...)* @_ssdm_op_SpecRegionBegin([9 x i8]* @p_str2) nounwind
 
-ST_4: stg_60 [1/1] 2.39ns
-.preheader.preheader:75  store float 0.000000e+00, float* %dest_1_1_addr_2, align 4
+ST_3: stg_60 [1/1] 1.57ns
+:2  br label %6
 
-ST_4: dest_1_2_addr_1 [1/1] 0.00ns
-.preheader.preheader:124  %dest_1_2_addr_1 = getelementptr [25 x float]* %dest_1_2, i64 0, i64 1
 
-ST_4: stg_62 [1/1] 2.39ns
-.preheader.preheader:125  store float 0.000000e+00, float* %dest_1_2_addr_1, align 4
+ <State 4>: 1.91ns
+ST_4: j_2 [1/1] 0.00ns
+:0  %j_2 = phi i5 [ 0, %3 ], [ %j_1_2, %6 ]
 
-ST_4: dest_1_2_addr_2 [1/1] 0.00ns
-.preheader.preheader:126  %dest_1_2_addr_2 = getelementptr [25 x float]* %dest_1_2, i64 0, i64 2
+ST_4: exitcond4_2 [1/1] 1.91ns
+:1  %exitcond4_2 = icmp eq i5 %j_2, -7
 
-ST_4: stg_64 [1/1] 2.39ns
-.preheader.preheader:127  store float 0.000000e+00, float* %dest_1_2_addr_2, align 8
+ST_4: empty_9 [1/1] 0.00ns
+:2  %empty_9 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 25, i64 25, i64 25) nounwind
 
-ST_4: dest_1_3_addr_1 [1/1] 0.00ns
-.preheader.preheader:176  %dest_1_3_addr_1 = getelementptr [25 x float]* %dest_1_3, i64 0, i64 1
+ST_4: j_1_2 [1/1] 1.72ns
+:3  %j_1_2 = add i5 %j_2, 1
 
-ST_4: stg_66 [1/1] 2.39ns
-.preheader.preheader:177  store float 0.000000e+00, float* %dest_1_3_addr_1, align 4
+ST_4: stg_65 [1/1] 0.00ns
+:4  br i1 %exitcond4_2, label %5, label %6
 
-ST_4: dest_1_3_addr_2 [1/1] 0.00ns
-.preheader.preheader:178  %dest_1_3_addr_2 = getelementptr [25 x float]* %dest_1_3, i64 0, i64 2
+ST_4: empty_8 [1/1] 0.00ns
+:0  %empty_8 = call i32 (...)* @_ssdm_op_SpecRegionEnd([9 x i8]* @p_str2, i32 %tmp_6) nounwind
 
-ST_4: stg_68 [1/1] 2.39ns
-.preheader.preheader:179  store float 0.000000e+00, float* %dest_1_3_addr_2, align 4
+ST_4: tmp_8 [1/1] 0.00ns
+:1  %tmp_8 = call i32 (...)* @_ssdm_op_SpecRegionBegin([9 x i8]* @p_str2) nounwind
+
+ST_4: stg_68 [1/1] 1.57ns
+:2  br label %7
 
 
  <State 5>: 2.39ns
-ST_5: dest_1_0_addr_7 [1/1] 0.00ns
-.preheader.preheader:32  %dest_1_0_addr_7 = getelementptr [25 x float]* %dest_1_0, i64 0, i64 7
+ST_5: j_4 [1/1] 0.00ns
+:0  %j_4 = phi i5 [ 0, %5 ], [ %j_1_3, %7 ]
 
-ST_5: stg_70 [1/1] 2.39ns
-.preheader.preheader:33  store float 0.000000e+00, float* %dest_1_0_addr_7, align 4
+ST_5: exitcond4_3 [1/1] 1.91ns
+:1  %exitcond4_3 = icmp eq i5 %j_4, -7
 
-ST_5: dest_1_0_addr_8 [1/1] 0.00ns
-.preheader.preheader:34  %dest_1_0_addr_8 = getelementptr [25 x float]* %dest_1_0, i64 0, i64 8
+ST_5: empty_11 [1/1] 0.00ns
+:2  %empty_11 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 25, i64 25, i64 25) nounwind
 
-ST_5: stg_72 [1/1] 2.39ns
-.preheader.preheader:35  store float 0.000000e+00, float* %dest_1_0_addr_8, align 16
+ST_5: j_1_3 [1/1] 1.72ns
+:3  %j_1_3 = add i5 %j_4, 1
 
-ST_5: dest_1_1_addr_3 [1/1] 0.00ns
-.preheader.preheader:76  %dest_1_1_addr_3 = getelementptr [25 x float]* %dest_1_1, i64 0, i64 3
+ST_5: stg_73 [1/1] 0.00ns
+:4  br i1 %exitcond4_3, label %.preheader6.preheader, label %7
 
-ST_5: stg_74 [1/1] 2.39ns
-.preheader.preheader:77  store float 0.000000e+00, float* %dest_1_1_addr_3, align 4
+ST_5: dest_1_0_addr [1/1] 0.00ns
+.preheader6.preheader:1  %dest_1_0_addr = getelementptr [25 x float]* %dest_1_0, i64 0, i64 0
 
-ST_5: dest_1_1_addr_4 [1/1] 0.00ns
-.preheader.preheader:78  %dest_1_1_addr_4 = getelementptr [25 x float]* %dest_1_1, i64 0, i64 4
-
-ST_5: stg_76 [1/1] 2.39ns
-.preheader.preheader:79  store float 0.000000e+00, float* %dest_1_1_addr_4, align 4
-
-ST_5: dest_1_2_addr_3 [1/1] 0.00ns
-.preheader.preheader:128  %dest_1_2_addr_3 = getelementptr [25 x float]* %dest_1_2, i64 0, i64 3
-
-ST_5: stg_78 [1/1] 2.39ns
-.preheader.preheader:129  store float 0.000000e+00, float* %dest_1_2_addr_3, align 4
-
-ST_5: dest_1_2_addr_4 [1/1] 0.00ns
-.preheader.preheader:130  %dest_1_2_addr_4 = getelementptr [25 x float]* %dest_1_2, i64 0, i64 4
-
-ST_5: stg_80 [1/1] 2.39ns
-.preheader.preheader:131  store float 0.000000e+00, float* %dest_1_2_addr_4, align 8
-
-ST_5: dest_1_3_addr_3 [1/1] 0.00ns
-.preheader.preheader:180  %dest_1_3_addr_3 = getelementptr [25 x float]* %dest_1_3, i64 0, i64 3
-
-ST_5: stg_82 [1/1] 2.39ns
-.preheader.preheader:181  store float 0.000000e+00, float* %dest_1_3_addr_3, align 4
-
-ST_5: dest_1_3_addr_4 [1/1] 0.00ns
-.preheader.preheader:182  %dest_1_3_addr_4 = getelementptr [25 x float]* %dest_1_3, i64 0, i64 4
-
-ST_5: stg_84 [1/1] 2.39ns
-.preheader.preheader:183  store float 0.000000e+00, float* %dest_1_3_addr_4, align 4
+ST_5: stg_75 [1/1] 2.39ns
+.preheader6.preheader:2  store float 0.000000e+00, float* %dest_1_0_addr, align 16
 
 
  <State 6>: 2.39ns
-ST_6: dest_1_0_addr_9 [1/1] 0.00ns
-.preheader.preheader:36  %dest_1_0_addr_9 = getelementptr [25 x float]* %dest_1_0, i64 0, i64 9
+ST_6: dest_1_0_addr_1 [1/1] 0.00ns
+.preheader6.preheader:3  %dest_1_0_addr_1 = getelementptr [25 x float]* %dest_1_0, i64 0, i64 1
 
-ST_6: stg_86 [1/1] 2.39ns
-.preheader.preheader:37  store float 0.000000e+00, float* %dest_1_0_addr_9, align 4
+ST_6: stg_77 [1/1] 2.39ns
+.preheader6.preheader:4  store float 0.000000e+00, float* %dest_1_0_addr_1, align 4
 
-ST_6: dest_1_0_addr_10 [1/1] 0.00ns
-.preheader.preheader:38  %dest_1_0_addr_10 = getelementptr [25 x float]* %dest_1_0, i64 0, i64 10
+ST_6: dest_1_0_addr_2 [1/1] 0.00ns
+.preheader6.preheader:5  %dest_1_0_addr_2 = getelementptr [25 x float]* %dest_1_0, i64 0, i64 2
 
-ST_6: stg_88 [1/1] 2.39ns
-.preheader.preheader:39  store float 0.000000e+00, float* %dest_1_0_addr_10, align 8
-
-ST_6: dest_1_1_addr_5 [1/1] 0.00ns
-.preheader.preheader:80  %dest_1_1_addr_5 = getelementptr [25 x float]* %dest_1_1, i64 0, i64 5
-
-ST_6: stg_90 [1/1] 2.39ns
-.preheader.preheader:81  store float 0.000000e+00, float* %dest_1_1_addr_5, align 4
-
-ST_6: dest_1_1_addr_6 [1/1] 0.00ns
-.preheader.preheader:82  %dest_1_1_addr_6 = getelementptr [25 x float]* %dest_1_1, i64 0, i64 6
-
-ST_6: stg_92 [1/1] 2.39ns
-.preheader.preheader:83  store float 0.000000e+00, float* %dest_1_1_addr_6, align 4
-
-ST_6: dest_1_2_addr_5 [1/1] 0.00ns
-.preheader.preheader:132  %dest_1_2_addr_5 = getelementptr [25 x float]* %dest_1_2, i64 0, i64 5
-
-ST_6: stg_94 [1/1] 2.39ns
-.preheader.preheader:133  store float 0.000000e+00, float* %dest_1_2_addr_5, align 4
-
-ST_6: dest_1_2_addr_6 [1/1] 0.00ns
-.preheader.preheader:134  %dest_1_2_addr_6 = getelementptr [25 x float]* %dest_1_2, i64 0, i64 6
-
-ST_6: stg_96 [1/1] 2.39ns
-.preheader.preheader:135  store float 0.000000e+00, float* %dest_1_2_addr_6, align 8
-
-ST_6: dest_1_3_addr_5 [1/1] 0.00ns
-.preheader.preheader:184  %dest_1_3_addr_5 = getelementptr [25 x float]* %dest_1_3, i64 0, i64 5
-
-ST_6: stg_98 [1/1] 2.39ns
-.preheader.preheader:185  store float 0.000000e+00, float* %dest_1_3_addr_5, align 4
-
-ST_6: dest_1_3_addr_6 [1/1] 0.00ns
-.preheader.preheader:186  %dest_1_3_addr_6 = getelementptr [25 x float]* %dest_1_3, i64 0, i64 6
-
-ST_6: stg_100 [1/1] 2.39ns
-.preheader.preheader:187  store float 0.000000e+00, float* %dest_1_3_addr_6, align 4
+ST_6: stg_79 [1/1] 2.39ns
+.preheader6.preheader:6  store float 0.000000e+00, float* %dest_1_0_addr_2, align 8
 
 
  <State 7>: 2.39ns
-ST_7: dest_1_0_addr_11 [1/1] 0.00ns
-.preheader.preheader:40  %dest_1_0_addr_11 = getelementptr [25 x float]* %dest_1_0, i64 0, i64 11
+ST_7: dest_1_0_addr_3 [1/1] 0.00ns
+.preheader6.preheader:7  %dest_1_0_addr_3 = getelementptr [25 x float]* %dest_1_0, i64 0, i64 3
 
-ST_7: stg_102 [1/1] 2.39ns
-.preheader.preheader:41  store float 0.000000e+00, float* %dest_1_0_addr_11, align 4
+ST_7: stg_81 [1/1] 2.39ns
+.preheader6.preheader:8  store float 0.000000e+00, float* %dest_1_0_addr_3, align 4
 
-ST_7: dest_1_0_addr_12 [1/1] 0.00ns
-.preheader.preheader:42  %dest_1_0_addr_12 = getelementptr [25 x float]* %dest_1_0, i64 0, i64 12
+ST_7: dest_1_0_addr_4 [1/1] 0.00ns
+.preheader6.preheader:9  %dest_1_0_addr_4 = getelementptr [25 x float]* %dest_1_0, i64 0, i64 4
 
-ST_7: stg_104 [1/1] 2.39ns
-.preheader.preheader:43  store float 0.000000e+00, float* %dest_1_0_addr_12, align 16
+ST_7: stg_83 [1/1] 2.39ns
+.preheader6.preheader:10  store float 0.000000e+00, float* %dest_1_0_addr_4, align 16
 
-ST_7: dest_1_1_addr_7 [1/1] 0.00ns
-.preheader.preheader:84  %dest_1_1_addr_7 = getelementptr [25 x float]* %dest_1_1, i64 0, i64 7
+ST_7: dest_1_1_addr [1/1] 0.00ns
+.preheader6.preheader:53  %dest_1_1_addr = getelementptr [25 x float]* %dest_1_1, i64 0, i64 0
 
-ST_7: stg_106 [1/1] 2.39ns
-.preheader.preheader:85  store float 0.000000e+00, float* %dest_1_1_addr_7, align 4
+ST_7: stg_85 [1/1] 2.39ns
+.preheader6.preheader:54  store float 0.000000e+00, float* %dest_1_1_addr, align 4
 
-ST_7: dest_1_1_addr_8 [1/1] 0.00ns
-.preheader.preheader:86  %dest_1_1_addr_8 = getelementptr [25 x float]* %dest_1_1, i64 0, i64 8
+ST_7: dest_1_2_addr [1/1] 0.00ns
+.preheader6.preheader:105  %dest_1_2_addr = getelementptr [25 x float]* %dest_1_2, i64 0, i64 0
 
-ST_7: stg_108 [1/1] 2.39ns
-.preheader.preheader:87  store float 0.000000e+00, float* %dest_1_1_addr_8, align 4
+ST_7: stg_87 [1/1] 2.39ns
+.preheader6.preheader:106  store float 0.000000e+00, float* %dest_1_2_addr, align 8
 
-ST_7: dest_1_2_addr_7 [1/1] 0.00ns
-.preheader.preheader:136  %dest_1_2_addr_7 = getelementptr [25 x float]* %dest_1_2, i64 0, i64 7
+ST_7: dest_1_3_addr [1/1] 0.00ns
+.preheader6.preheader:157  %dest_1_3_addr = getelementptr [25 x float]* %dest_1_3, i64 0, i64 0
 
-ST_7: stg_110 [1/1] 2.39ns
-.preheader.preheader:137  store float 0.000000e+00, float* %dest_1_2_addr_7, align 4
-
-ST_7: dest_1_2_addr_8 [1/1] 0.00ns
-.preheader.preheader:138  %dest_1_2_addr_8 = getelementptr [25 x float]* %dest_1_2, i64 0, i64 8
-
-ST_7: stg_112 [1/1] 2.39ns
-.preheader.preheader:139  store float 0.000000e+00, float* %dest_1_2_addr_8, align 8
-
-ST_7: dest_1_3_addr_7 [1/1] 0.00ns
-.preheader.preheader:188  %dest_1_3_addr_7 = getelementptr [25 x float]* %dest_1_3, i64 0, i64 7
-
-ST_7: stg_114 [1/1] 2.39ns
-.preheader.preheader:189  store float 0.000000e+00, float* %dest_1_3_addr_7, align 4
-
-ST_7: dest_1_3_addr_8 [1/1] 0.00ns
-.preheader.preheader:190  %dest_1_3_addr_8 = getelementptr [25 x float]* %dest_1_3, i64 0, i64 8
-
-ST_7: stg_116 [1/1] 2.39ns
-.preheader.preheader:191  store float 0.000000e+00, float* %dest_1_3_addr_8, align 4
+ST_7: stg_89 [1/1] 2.39ns
+.preheader6.preheader:158  store float 0.000000e+00, float* %dest_1_3_addr, align 4
 
 
  <State 8>: 2.39ns
-ST_8: dest_1_0_addr_13 [1/1] 0.00ns
-.preheader.preheader:44  %dest_1_0_addr_13 = getelementptr [25 x float]* %dest_1_0, i64 0, i64 13
+ST_8: dest_1_0_addr_5 [1/1] 0.00ns
+.preheader6.preheader:11  %dest_1_0_addr_5 = getelementptr [25 x float]* %dest_1_0, i64 0, i64 5
 
-ST_8: stg_118 [1/1] 2.39ns
-.preheader.preheader:45  store float 0.000000e+00, float* %dest_1_0_addr_13, align 4
+ST_8: stg_91 [1/1] 2.39ns
+.preheader6.preheader:12  store float 0.000000e+00, float* %dest_1_0_addr_5, align 4
 
-ST_8: dest_1_0_addr_14 [1/1] 0.00ns
-.preheader.preheader:46  %dest_1_0_addr_14 = getelementptr [25 x float]* %dest_1_0, i64 0, i64 14
+ST_8: dest_1_0_addr_6 [1/1] 0.00ns
+.preheader6.preheader:13  %dest_1_0_addr_6 = getelementptr [25 x float]* %dest_1_0, i64 0, i64 6
 
-ST_8: stg_120 [1/1] 2.39ns
-.preheader.preheader:47  store float 0.000000e+00, float* %dest_1_0_addr_14, align 8
+ST_8: stg_93 [1/1] 2.39ns
+.preheader6.preheader:14  store float 0.000000e+00, float* %dest_1_0_addr_6, align 8
 
-ST_8: dest_1_1_addr_9 [1/1] 0.00ns
-.preheader.preheader:88  %dest_1_1_addr_9 = getelementptr [25 x float]* %dest_1_1, i64 0, i64 9
+ST_8: dest_1_1_addr_1 [1/1] 0.00ns
+.preheader6.preheader:55  %dest_1_1_addr_1 = getelementptr [25 x float]* %dest_1_1, i64 0, i64 1
 
-ST_8: stg_122 [1/1] 2.39ns
-.preheader.preheader:89  store float 0.000000e+00, float* %dest_1_1_addr_9, align 4
+ST_8: stg_95 [1/1] 2.39ns
+.preheader6.preheader:56  store float 0.000000e+00, float* %dest_1_1_addr_1, align 4
 
-ST_8: dest_1_1_addr_10 [1/1] 0.00ns
-.preheader.preheader:90  %dest_1_1_addr_10 = getelementptr [25 x float]* %dest_1_1, i64 0, i64 10
+ST_8: dest_1_1_addr_2 [1/1] 0.00ns
+.preheader6.preheader:57  %dest_1_1_addr_2 = getelementptr [25 x float]* %dest_1_1, i64 0, i64 2
 
-ST_8: stg_124 [1/1] 2.39ns
-.preheader.preheader:91  store float 0.000000e+00, float* %dest_1_1_addr_10, align 4
+ST_8: stg_97 [1/1] 2.39ns
+.preheader6.preheader:58  store float 0.000000e+00, float* %dest_1_1_addr_2, align 4
 
-ST_8: dest_1_2_addr_9 [1/1] 0.00ns
-.preheader.preheader:140  %dest_1_2_addr_9 = getelementptr [25 x float]* %dest_1_2, i64 0, i64 9
+ST_8: dest_1_2_addr_1 [1/1] 0.00ns
+.preheader6.preheader:107  %dest_1_2_addr_1 = getelementptr [25 x float]* %dest_1_2, i64 0, i64 1
 
-ST_8: stg_126 [1/1] 2.39ns
-.preheader.preheader:141  store float 0.000000e+00, float* %dest_1_2_addr_9, align 4
+ST_8: stg_99 [1/1] 2.39ns
+.preheader6.preheader:108  store float 0.000000e+00, float* %dest_1_2_addr_1, align 4
 
-ST_8: dest_1_2_addr_10 [1/1] 0.00ns
-.preheader.preheader:142  %dest_1_2_addr_10 = getelementptr [25 x float]* %dest_1_2, i64 0, i64 10
+ST_8: dest_1_2_addr_2 [1/1] 0.00ns
+.preheader6.preheader:109  %dest_1_2_addr_2 = getelementptr [25 x float]* %dest_1_2, i64 0, i64 2
 
-ST_8: stg_128 [1/1] 2.39ns
-.preheader.preheader:143  store float 0.000000e+00, float* %dest_1_2_addr_10, align 8
+ST_8: stg_101 [1/1] 2.39ns
+.preheader6.preheader:110  store float 0.000000e+00, float* %dest_1_2_addr_2, align 8
 
-ST_8: dest_1_3_addr_9 [1/1] 0.00ns
-.preheader.preheader:192  %dest_1_3_addr_9 = getelementptr [25 x float]* %dest_1_3, i64 0, i64 9
+ST_8: dest_1_3_addr_1 [1/1] 0.00ns
+.preheader6.preheader:159  %dest_1_3_addr_1 = getelementptr [25 x float]* %dest_1_3, i64 0, i64 1
 
-ST_8: stg_130 [1/1] 2.39ns
-.preheader.preheader:193  store float 0.000000e+00, float* %dest_1_3_addr_9, align 4
+ST_8: stg_103 [1/1] 2.39ns
+.preheader6.preheader:160  store float 0.000000e+00, float* %dest_1_3_addr_1, align 4
 
-ST_8: dest_1_3_addr_10 [1/1] 0.00ns
-.preheader.preheader:194  %dest_1_3_addr_10 = getelementptr [25 x float]* %dest_1_3, i64 0, i64 10
+ST_8: dest_1_3_addr_2 [1/1] 0.00ns
+.preheader6.preheader:161  %dest_1_3_addr_2 = getelementptr [25 x float]* %dest_1_3, i64 0, i64 2
 
-ST_8: stg_132 [1/1] 2.39ns
-.preheader.preheader:195  store float 0.000000e+00, float* %dest_1_3_addr_10, align 4
+ST_8: stg_105 [1/1] 2.39ns
+.preheader6.preheader:162  store float 0.000000e+00, float* %dest_1_3_addr_2, align 4
 
 
  <State 9>: 2.39ns
-ST_9: dest_1_0_addr_15 [1/1] 0.00ns
-.preheader.preheader:48  %dest_1_0_addr_15 = getelementptr [25 x float]* %dest_1_0, i64 0, i64 15
+ST_9: dest_1_0_addr_7 [1/1] 0.00ns
+.preheader6.preheader:15  %dest_1_0_addr_7 = getelementptr [25 x float]* %dest_1_0, i64 0, i64 7
 
-ST_9: stg_134 [1/1] 2.39ns
-.preheader.preheader:49  store float 0.000000e+00, float* %dest_1_0_addr_15, align 4
+ST_9: stg_107 [1/1] 2.39ns
+.preheader6.preheader:16  store float 0.000000e+00, float* %dest_1_0_addr_7, align 4
 
-ST_9: dest_1_0_addr_16 [1/1] 0.00ns
-.preheader.preheader:50  %dest_1_0_addr_16 = getelementptr [25 x float]* %dest_1_0, i64 0, i64 16
+ST_9: dest_1_0_addr_8 [1/1] 0.00ns
+.preheader6.preheader:17  %dest_1_0_addr_8 = getelementptr [25 x float]* %dest_1_0, i64 0, i64 8
 
-ST_9: stg_136 [1/1] 2.39ns
-.preheader.preheader:51  store float 0.000000e+00, float* %dest_1_0_addr_16, align 16
+ST_9: stg_109 [1/1] 2.39ns
+.preheader6.preheader:18  store float 0.000000e+00, float* %dest_1_0_addr_8, align 16
 
-ST_9: dest_1_1_addr_11 [1/1] 0.00ns
-.preheader.preheader:92  %dest_1_1_addr_11 = getelementptr [25 x float]* %dest_1_1, i64 0, i64 11
+ST_9: dest_1_1_addr_3 [1/1] 0.00ns
+.preheader6.preheader:59  %dest_1_1_addr_3 = getelementptr [25 x float]* %dest_1_1, i64 0, i64 3
 
-ST_9: stg_138 [1/1] 2.39ns
-.preheader.preheader:93  store float 0.000000e+00, float* %dest_1_1_addr_11, align 4
+ST_9: stg_111 [1/1] 2.39ns
+.preheader6.preheader:60  store float 0.000000e+00, float* %dest_1_1_addr_3, align 4
 
-ST_9: dest_1_1_addr_12 [1/1] 0.00ns
-.preheader.preheader:94  %dest_1_1_addr_12 = getelementptr [25 x float]* %dest_1_1, i64 0, i64 12
+ST_9: dest_1_1_addr_4 [1/1] 0.00ns
+.preheader6.preheader:61  %dest_1_1_addr_4 = getelementptr [25 x float]* %dest_1_1, i64 0, i64 4
 
-ST_9: stg_140 [1/1] 2.39ns
-.preheader.preheader:95  store float 0.000000e+00, float* %dest_1_1_addr_12, align 4
+ST_9: stg_113 [1/1] 2.39ns
+.preheader6.preheader:62  store float 0.000000e+00, float* %dest_1_1_addr_4, align 4
 
-ST_9: dest_1_2_addr_11 [1/1] 0.00ns
-.preheader.preheader:144  %dest_1_2_addr_11 = getelementptr [25 x float]* %dest_1_2, i64 0, i64 11
+ST_9: dest_1_2_addr_3 [1/1] 0.00ns
+.preheader6.preheader:111  %dest_1_2_addr_3 = getelementptr [25 x float]* %dest_1_2, i64 0, i64 3
 
-ST_9: stg_142 [1/1] 2.39ns
-.preheader.preheader:145  store float 0.000000e+00, float* %dest_1_2_addr_11, align 4
+ST_9: stg_115 [1/1] 2.39ns
+.preheader6.preheader:112  store float 0.000000e+00, float* %dest_1_2_addr_3, align 4
 
-ST_9: dest_1_2_addr_12 [1/1] 0.00ns
-.preheader.preheader:146  %dest_1_2_addr_12 = getelementptr [25 x float]* %dest_1_2, i64 0, i64 12
+ST_9: dest_1_2_addr_4 [1/1] 0.00ns
+.preheader6.preheader:113  %dest_1_2_addr_4 = getelementptr [25 x float]* %dest_1_2, i64 0, i64 4
 
-ST_9: stg_144 [1/1] 2.39ns
-.preheader.preheader:147  store float 0.000000e+00, float* %dest_1_2_addr_12, align 8
+ST_9: stg_117 [1/1] 2.39ns
+.preheader6.preheader:114  store float 0.000000e+00, float* %dest_1_2_addr_4, align 8
 
-ST_9: dest_1_3_addr_11 [1/1] 0.00ns
-.preheader.preheader:196  %dest_1_3_addr_11 = getelementptr [25 x float]* %dest_1_3, i64 0, i64 11
+ST_9: dest_1_3_addr_3 [1/1] 0.00ns
+.preheader6.preheader:163  %dest_1_3_addr_3 = getelementptr [25 x float]* %dest_1_3, i64 0, i64 3
 
-ST_9: stg_146 [1/1] 2.39ns
-.preheader.preheader:197  store float 0.000000e+00, float* %dest_1_3_addr_11, align 4
+ST_9: stg_119 [1/1] 2.39ns
+.preheader6.preheader:164  store float 0.000000e+00, float* %dest_1_3_addr_3, align 4
 
-ST_9: dest_1_3_addr_12 [1/1] 0.00ns
-.preheader.preheader:198  %dest_1_3_addr_12 = getelementptr [25 x float]* %dest_1_3, i64 0, i64 12
+ST_9: dest_1_3_addr_4 [1/1] 0.00ns
+.preheader6.preheader:165  %dest_1_3_addr_4 = getelementptr [25 x float]* %dest_1_3, i64 0, i64 4
 
-ST_9: stg_148 [1/1] 2.39ns
-.preheader.preheader:199  store float 0.000000e+00, float* %dest_1_3_addr_12, align 4
+ST_9: stg_121 [1/1] 2.39ns
+.preheader6.preheader:166  store float 0.000000e+00, float* %dest_1_3_addr_4, align 4
 
 
  <State 10>: 2.39ns
-ST_10: dest_1_0_addr_17 [1/1] 0.00ns
-.preheader.preheader:52  %dest_1_0_addr_17 = getelementptr [25 x float]* %dest_1_0, i64 0, i64 17
+ST_10: dest_1_0_addr_9 [1/1] 0.00ns
+.preheader6.preheader:19  %dest_1_0_addr_9 = getelementptr [25 x float]* %dest_1_0, i64 0, i64 9
 
-ST_10: stg_150 [1/1] 2.39ns
-.preheader.preheader:53  store float 0.000000e+00, float* %dest_1_0_addr_17, align 4
+ST_10: stg_123 [1/1] 2.39ns
+.preheader6.preheader:20  store float 0.000000e+00, float* %dest_1_0_addr_9, align 4
 
-ST_10: dest_1_0_addr_18 [1/1] 0.00ns
-.preheader.preheader:54  %dest_1_0_addr_18 = getelementptr [25 x float]* %dest_1_0, i64 0, i64 18
+ST_10: dest_1_0_addr_10 [1/1] 0.00ns
+.preheader6.preheader:21  %dest_1_0_addr_10 = getelementptr [25 x float]* %dest_1_0, i64 0, i64 10
 
-ST_10: stg_152 [1/1] 2.39ns
-.preheader.preheader:55  store float 0.000000e+00, float* %dest_1_0_addr_18, align 8
+ST_10: stg_125 [1/1] 2.39ns
+.preheader6.preheader:22  store float 0.000000e+00, float* %dest_1_0_addr_10, align 8
 
-ST_10: dest_1_1_addr_13 [1/1] 0.00ns
-.preheader.preheader:96  %dest_1_1_addr_13 = getelementptr [25 x float]* %dest_1_1, i64 0, i64 13
+ST_10: dest_1_1_addr_5 [1/1] 0.00ns
+.preheader6.preheader:63  %dest_1_1_addr_5 = getelementptr [25 x float]* %dest_1_1, i64 0, i64 5
 
-ST_10: stg_154 [1/1] 2.39ns
-.preheader.preheader:97  store float 0.000000e+00, float* %dest_1_1_addr_13, align 4
+ST_10: stg_127 [1/1] 2.39ns
+.preheader6.preheader:64  store float 0.000000e+00, float* %dest_1_1_addr_5, align 4
 
-ST_10: dest_1_1_addr_14 [1/1] 0.00ns
-.preheader.preheader:98  %dest_1_1_addr_14 = getelementptr [25 x float]* %dest_1_1, i64 0, i64 14
+ST_10: dest_1_1_addr_6 [1/1] 0.00ns
+.preheader6.preheader:65  %dest_1_1_addr_6 = getelementptr [25 x float]* %dest_1_1, i64 0, i64 6
 
-ST_10: stg_156 [1/1] 2.39ns
-.preheader.preheader:99  store float 0.000000e+00, float* %dest_1_1_addr_14, align 4
+ST_10: stg_129 [1/1] 2.39ns
+.preheader6.preheader:66  store float 0.000000e+00, float* %dest_1_1_addr_6, align 4
 
-ST_10: dest_1_2_addr_13 [1/1] 0.00ns
-.preheader.preheader:148  %dest_1_2_addr_13 = getelementptr [25 x float]* %dest_1_2, i64 0, i64 13
+ST_10: dest_1_2_addr_5 [1/1] 0.00ns
+.preheader6.preheader:115  %dest_1_2_addr_5 = getelementptr [25 x float]* %dest_1_2, i64 0, i64 5
 
-ST_10: stg_158 [1/1] 2.39ns
-.preheader.preheader:149  store float 0.000000e+00, float* %dest_1_2_addr_13, align 4
+ST_10: stg_131 [1/1] 2.39ns
+.preheader6.preheader:116  store float 0.000000e+00, float* %dest_1_2_addr_5, align 4
 
-ST_10: dest_1_2_addr_14 [1/1] 0.00ns
-.preheader.preheader:150  %dest_1_2_addr_14 = getelementptr [25 x float]* %dest_1_2, i64 0, i64 14
+ST_10: dest_1_2_addr_6 [1/1] 0.00ns
+.preheader6.preheader:117  %dest_1_2_addr_6 = getelementptr [25 x float]* %dest_1_2, i64 0, i64 6
 
-ST_10: stg_160 [1/1] 2.39ns
-.preheader.preheader:151  store float 0.000000e+00, float* %dest_1_2_addr_14, align 8
+ST_10: stg_133 [1/1] 2.39ns
+.preheader6.preheader:118  store float 0.000000e+00, float* %dest_1_2_addr_6, align 8
 
-ST_10: dest_1_3_addr_13 [1/1] 0.00ns
-.preheader.preheader:200  %dest_1_3_addr_13 = getelementptr [25 x float]* %dest_1_3, i64 0, i64 13
+ST_10: dest_1_3_addr_5 [1/1] 0.00ns
+.preheader6.preheader:167  %dest_1_3_addr_5 = getelementptr [25 x float]* %dest_1_3, i64 0, i64 5
 
-ST_10: stg_162 [1/1] 2.39ns
-.preheader.preheader:201  store float 0.000000e+00, float* %dest_1_3_addr_13, align 4
+ST_10: stg_135 [1/1] 2.39ns
+.preheader6.preheader:168  store float 0.000000e+00, float* %dest_1_3_addr_5, align 4
 
-ST_10: dest_1_3_addr_14 [1/1] 0.00ns
-.preheader.preheader:202  %dest_1_3_addr_14 = getelementptr [25 x float]* %dest_1_3, i64 0, i64 14
+ST_10: dest_1_3_addr_6 [1/1] 0.00ns
+.preheader6.preheader:169  %dest_1_3_addr_6 = getelementptr [25 x float]* %dest_1_3, i64 0, i64 6
 
-ST_10: stg_164 [1/1] 2.39ns
-.preheader.preheader:203  store float 0.000000e+00, float* %dest_1_3_addr_14, align 4
+ST_10: stg_137 [1/1] 2.39ns
+.preheader6.preheader:170  store float 0.000000e+00, float* %dest_1_3_addr_6, align 4
 
 
  <State 11>: 2.39ns
-ST_11: dest_1_0_addr_19 [1/1] 0.00ns
-.preheader.preheader:56  %dest_1_0_addr_19 = getelementptr [25 x float]* %dest_1_0, i64 0, i64 19
+ST_11: dest_1_0_addr_11 [1/1] 0.00ns
+.preheader6.preheader:23  %dest_1_0_addr_11 = getelementptr [25 x float]* %dest_1_0, i64 0, i64 11
 
-ST_11: stg_166 [1/1] 2.39ns
-.preheader.preheader:57  store float 0.000000e+00, float* %dest_1_0_addr_19, align 4
+ST_11: stg_139 [1/1] 2.39ns
+.preheader6.preheader:24  store float 0.000000e+00, float* %dest_1_0_addr_11, align 4
 
-ST_11: dest_1_0_addr_20 [1/1] 0.00ns
-.preheader.preheader:58  %dest_1_0_addr_20 = getelementptr [25 x float]* %dest_1_0, i64 0, i64 20
+ST_11: dest_1_0_addr_12 [1/1] 0.00ns
+.preheader6.preheader:25  %dest_1_0_addr_12 = getelementptr [25 x float]* %dest_1_0, i64 0, i64 12
 
-ST_11: stg_168 [1/1] 2.39ns
-.preheader.preheader:59  store float 0.000000e+00, float* %dest_1_0_addr_20, align 16
+ST_11: stg_141 [1/1] 2.39ns
+.preheader6.preheader:26  store float 0.000000e+00, float* %dest_1_0_addr_12, align 16
 
-ST_11: dest_1_1_addr_15 [1/1] 0.00ns
-.preheader.preheader:100  %dest_1_1_addr_15 = getelementptr [25 x float]* %dest_1_1, i64 0, i64 15
+ST_11: dest_1_1_addr_7 [1/1] 0.00ns
+.preheader6.preheader:67  %dest_1_1_addr_7 = getelementptr [25 x float]* %dest_1_1, i64 0, i64 7
 
-ST_11: stg_170 [1/1] 2.39ns
-.preheader.preheader:101  store float 0.000000e+00, float* %dest_1_1_addr_15, align 4
+ST_11: stg_143 [1/1] 2.39ns
+.preheader6.preheader:68  store float 0.000000e+00, float* %dest_1_1_addr_7, align 4
 
-ST_11: dest_1_1_addr_16 [1/1] 0.00ns
-.preheader.preheader:102  %dest_1_1_addr_16 = getelementptr [25 x float]* %dest_1_1, i64 0, i64 16
+ST_11: dest_1_1_addr_8 [1/1] 0.00ns
+.preheader6.preheader:69  %dest_1_1_addr_8 = getelementptr [25 x float]* %dest_1_1, i64 0, i64 8
 
-ST_11: stg_172 [1/1] 2.39ns
-.preheader.preheader:103  store float 0.000000e+00, float* %dest_1_1_addr_16, align 4
+ST_11: stg_145 [1/1] 2.39ns
+.preheader6.preheader:70  store float 0.000000e+00, float* %dest_1_1_addr_8, align 4
 
-ST_11: dest_1_2_addr_15 [1/1] 0.00ns
-.preheader.preheader:152  %dest_1_2_addr_15 = getelementptr [25 x float]* %dest_1_2, i64 0, i64 15
+ST_11: dest_1_2_addr_7 [1/1] 0.00ns
+.preheader6.preheader:119  %dest_1_2_addr_7 = getelementptr [25 x float]* %dest_1_2, i64 0, i64 7
 
-ST_11: stg_174 [1/1] 2.39ns
-.preheader.preheader:153  store float 0.000000e+00, float* %dest_1_2_addr_15, align 4
+ST_11: stg_147 [1/1] 2.39ns
+.preheader6.preheader:120  store float 0.000000e+00, float* %dest_1_2_addr_7, align 4
 
-ST_11: dest_1_2_addr_16 [1/1] 0.00ns
-.preheader.preheader:154  %dest_1_2_addr_16 = getelementptr [25 x float]* %dest_1_2, i64 0, i64 16
+ST_11: dest_1_2_addr_8 [1/1] 0.00ns
+.preheader6.preheader:121  %dest_1_2_addr_8 = getelementptr [25 x float]* %dest_1_2, i64 0, i64 8
 
-ST_11: stg_176 [1/1] 2.39ns
-.preheader.preheader:155  store float 0.000000e+00, float* %dest_1_2_addr_16, align 8
+ST_11: stg_149 [1/1] 2.39ns
+.preheader6.preheader:122  store float 0.000000e+00, float* %dest_1_2_addr_8, align 8
 
-ST_11: dest_1_3_addr_15 [1/1] 0.00ns
-.preheader.preheader:204  %dest_1_3_addr_15 = getelementptr [25 x float]* %dest_1_3, i64 0, i64 15
+ST_11: dest_1_3_addr_7 [1/1] 0.00ns
+.preheader6.preheader:171  %dest_1_3_addr_7 = getelementptr [25 x float]* %dest_1_3, i64 0, i64 7
 
-ST_11: stg_178 [1/1] 2.39ns
-.preheader.preheader:205  store float 0.000000e+00, float* %dest_1_3_addr_15, align 4
+ST_11: stg_151 [1/1] 2.39ns
+.preheader6.preheader:172  store float 0.000000e+00, float* %dest_1_3_addr_7, align 4
 
-ST_11: dest_1_3_addr_16 [1/1] 0.00ns
-.preheader.preheader:206  %dest_1_3_addr_16 = getelementptr [25 x float]* %dest_1_3, i64 0, i64 16
+ST_11: dest_1_3_addr_8 [1/1] 0.00ns
+.preheader6.preheader:173  %dest_1_3_addr_8 = getelementptr [25 x float]* %dest_1_3, i64 0, i64 8
 
-ST_11: stg_180 [1/1] 2.39ns
-.preheader.preheader:207  store float 0.000000e+00, float* %dest_1_3_addr_16, align 4
+ST_11: stg_153 [1/1] 2.39ns
+.preheader6.preheader:174  store float 0.000000e+00, float* %dest_1_3_addr_8, align 4
 
 
  <State 12>: 2.39ns
-ST_12: dest_1_0_addr_21 [1/1] 0.00ns
-.preheader.preheader:60  %dest_1_0_addr_21 = getelementptr [25 x float]* %dest_1_0, i64 0, i64 21
+ST_12: dest_1_0_addr_13 [1/1] 0.00ns
+.preheader6.preheader:27  %dest_1_0_addr_13 = getelementptr [25 x float]* %dest_1_0, i64 0, i64 13
 
-ST_12: stg_182 [1/1] 2.39ns
-.preheader.preheader:61  store float 0.000000e+00, float* %dest_1_0_addr_21, align 4
+ST_12: stg_155 [1/1] 2.39ns
+.preheader6.preheader:28  store float 0.000000e+00, float* %dest_1_0_addr_13, align 4
 
-ST_12: dest_1_0_addr_22 [1/1] 0.00ns
-.preheader.preheader:62  %dest_1_0_addr_22 = getelementptr [25 x float]* %dest_1_0, i64 0, i64 22
+ST_12: dest_1_0_addr_14 [1/1] 0.00ns
+.preheader6.preheader:29  %dest_1_0_addr_14 = getelementptr [25 x float]* %dest_1_0, i64 0, i64 14
 
-ST_12: stg_184 [1/1] 2.39ns
-.preheader.preheader:63  store float 0.000000e+00, float* %dest_1_0_addr_22, align 8
+ST_12: stg_157 [1/1] 2.39ns
+.preheader6.preheader:30  store float 0.000000e+00, float* %dest_1_0_addr_14, align 8
 
-ST_12: tmp_4 [2/2] 0.00ns
-.preheader.preheader:68  %tmp_4 = call fastcc i32 @worker_create_COO([2500 x float]* @matrix_1_0, [2500 x i5]* %row_1_0, [2500 x i7]* %col_1_0, [2500 x float]* %val_1_0) nounwind
+ST_12: dest_1_1_addr_9 [1/1] 0.00ns
+.preheader6.preheader:71  %dest_1_1_addr_9 = getelementptr [25 x float]* %dest_1_1, i64 0, i64 9
 
-ST_12: dest_1_1_addr_17 [1/1] 0.00ns
-.preheader.preheader:104  %dest_1_1_addr_17 = getelementptr [25 x float]* %dest_1_1, i64 0, i64 17
+ST_12: stg_159 [1/1] 2.39ns
+.preheader6.preheader:72  store float 0.000000e+00, float* %dest_1_1_addr_9, align 4
 
-ST_12: stg_187 [1/1] 2.39ns
-.preheader.preheader:105  store float 0.000000e+00, float* %dest_1_1_addr_17, align 4
+ST_12: dest_1_1_addr_10 [1/1] 0.00ns
+.preheader6.preheader:73  %dest_1_1_addr_10 = getelementptr [25 x float]* %dest_1_1, i64 0, i64 10
 
-ST_12: dest_1_1_addr_18 [1/1] 0.00ns
-.preheader.preheader:106  %dest_1_1_addr_18 = getelementptr [25 x float]* %dest_1_1, i64 0, i64 18
+ST_12: stg_161 [1/1] 2.39ns
+.preheader6.preheader:74  store float 0.000000e+00, float* %dest_1_1_addr_10, align 4
 
-ST_12: stg_189 [1/1] 2.39ns
-.preheader.preheader:107  store float 0.000000e+00, float* %dest_1_1_addr_18, align 4
+ST_12: dest_1_2_addr_9 [1/1] 0.00ns
+.preheader6.preheader:123  %dest_1_2_addr_9 = getelementptr [25 x float]* %dest_1_2, i64 0, i64 9
 
-ST_12: dest_1_2_addr_17 [1/1] 0.00ns
-.preheader.preheader:156  %dest_1_2_addr_17 = getelementptr [25 x float]* %dest_1_2, i64 0, i64 17
+ST_12: stg_163 [1/1] 2.39ns
+.preheader6.preheader:124  store float 0.000000e+00, float* %dest_1_2_addr_9, align 4
 
-ST_12: stg_191 [1/1] 2.39ns
-.preheader.preheader:157  store float 0.000000e+00, float* %dest_1_2_addr_17, align 4
+ST_12: dest_1_2_addr_10 [1/1] 0.00ns
+.preheader6.preheader:125  %dest_1_2_addr_10 = getelementptr [25 x float]* %dest_1_2, i64 0, i64 10
 
-ST_12: dest_1_2_addr_18 [1/1] 0.00ns
-.preheader.preheader:158  %dest_1_2_addr_18 = getelementptr [25 x float]* %dest_1_2, i64 0, i64 18
+ST_12: stg_165 [1/1] 2.39ns
+.preheader6.preheader:126  store float 0.000000e+00, float* %dest_1_2_addr_10, align 8
 
-ST_12: stg_193 [1/1] 2.39ns
-.preheader.preheader:159  store float 0.000000e+00, float* %dest_1_2_addr_18, align 8
+ST_12: dest_1_3_addr_9 [1/1] 0.00ns
+.preheader6.preheader:175  %dest_1_3_addr_9 = getelementptr [25 x float]* %dest_1_3, i64 0, i64 9
 
-ST_12: dest_1_3_addr_17 [1/1] 0.00ns
-.preheader.preheader:208  %dest_1_3_addr_17 = getelementptr [25 x float]* %dest_1_3, i64 0, i64 17
+ST_12: stg_167 [1/1] 2.39ns
+.preheader6.preheader:176  store float 0.000000e+00, float* %dest_1_3_addr_9, align 4
 
-ST_12: stg_195 [1/1] 2.39ns
-.preheader.preheader:209  store float 0.000000e+00, float* %dest_1_3_addr_17, align 4
+ST_12: dest_1_3_addr_10 [1/1] 0.00ns
+.preheader6.preheader:177  %dest_1_3_addr_10 = getelementptr [25 x float]* %dest_1_3, i64 0, i64 10
 
-ST_12: dest_1_3_addr_18 [1/1] 0.00ns
-.preheader.preheader:210  %dest_1_3_addr_18 = getelementptr [25 x float]* %dest_1_3, i64 0, i64 18
-
-ST_12: stg_197 [1/1] 2.39ns
-.preheader.preheader:211  store float 0.000000e+00, float* %dest_1_3_addr_18, align 4
+ST_12: stg_169 [1/1] 2.39ns
+.preheader6.preheader:178  store float 0.000000e+00, float* %dest_1_3_addr_10, align 4
 
 
  <State 13>: 2.39ns
-ST_13: dest_1_0_addr_23 [1/1] 0.00ns
-.preheader.preheader:64  %dest_1_0_addr_23 = getelementptr [25 x float]* %dest_1_0, i64 0, i64 23
+ST_13: dest_1_0_addr_15 [1/1] 0.00ns
+.preheader6.preheader:31  %dest_1_0_addr_15 = getelementptr [25 x float]* %dest_1_0, i64 0, i64 15
 
-ST_13: stg_199 [1/1] 2.39ns
-.preheader.preheader:65  store float 0.000000e+00, float* %dest_1_0_addr_23, align 4
+ST_13: stg_171 [1/1] 2.39ns
+.preheader6.preheader:32  store float 0.000000e+00, float* %dest_1_0_addr_15, align 4
 
-ST_13: dest_1_0_addr_24 [1/1] 0.00ns
-.preheader.preheader:66  %dest_1_0_addr_24 = getelementptr [25 x float]* %dest_1_0, i64 0, i64 24
+ST_13: dest_1_0_addr_16 [1/1] 0.00ns
+.preheader6.preheader:33  %dest_1_0_addr_16 = getelementptr [25 x float]* %dest_1_0, i64 0, i64 16
 
-ST_13: stg_201 [1/1] 2.39ns
-.preheader.preheader:67  store float 0.000000e+00, float* %dest_1_0_addr_24, align 16
+ST_13: stg_173 [1/1] 2.39ns
+.preheader6.preheader:34  store float 0.000000e+00, float* %dest_1_0_addr_16, align 16
 
-ST_13: tmp_4 [1/2] 0.00ns
-.preheader.preheader:68  %tmp_4 = call fastcc i32 @worker_create_COO([2500 x float]* @matrix_1_0, [2500 x i5]* %row_1_0, [2500 x i7]* %col_1_0, [2500 x float]* %val_1_0) nounwind
+ST_13: dest_1_1_addr_11 [1/1] 0.00ns
+.preheader6.preheader:75  %dest_1_1_addr_11 = getelementptr [25 x float]* %dest_1_1, i64 0, i64 11
 
-ST_13: dest_1_1_addr_19 [1/1] 0.00ns
-.preheader.preheader:108  %dest_1_1_addr_19 = getelementptr [25 x float]* %dest_1_1, i64 0, i64 19
+ST_13: stg_175 [1/1] 2.39ns
+.preheader6.preheader:76  store float 0.000000e+00, float* %dest_1_1_addr_11, align 4
 
-ST_13: stg_204 [1/1] 2.39ns
-.preheader.preheader:109  store float 0.000000e+00, float* %dest_1_1_addr_19, align 4
+ST_13: dest_1_1_addr_12 [1/1] 0.00ns
+.preheader6.preheader:77  %dest_1_1_addr_12 = getelementptr [25 x float]* %dest_1_1, i64 0, i64 12
 
-ST_13: dest_1_1_addr_20 [1/1] 0.00ns
-.preheader.preheader:110  %dest_1_1_addr_20 = getelementptr [25 x float]* %dest_1_1, i64 0, i64 20
+ST_13: stg_177 [1/1] 2.39ns
+.preheader6.preheader:78  store float 0.000000e+00, float* %dest_1_1_addr_12, align 4
 
-ST_13: stg_206 [1/1] 2.39ns
-.preheader.preheader:111  store float 0.000000e+00, float* %dest_1_1_addr_20, align 4
+ST_13: dest_1_2_addr_11 [1/1] 0.00ns
+.preheader6.preheader:127  %dest_1_2_addr_11 = getelementptr [25 x float]* %dest_1_2, i64 0, i64 11
 
-ST_13: dest_1_2_addr_19 [1/1] 0.00ns
-.preheader.preheader:160  %dest_1_2_addr_19 = getelementptr [25 x float]* %dest_1_2, i64 0, i64 19
+ST_13: stg_179 [1/1] 2.39ns
+.preheader6.preheader:128  store float 0.000000e+00, float* %dest_1_2_addr_11, align 4
 
-ST_13: stg_208 [1/1] 2.39ns
-.preheader.preheader:161  store float 0.000000e+00, float* %dest_1_2_addr_19, align 4
+ST_13: dest_1_2_addr_12 [1/1] 0.00ns
+.preheader6.preheader:129  %dest_1_2_addr_12 = getelementptr [25 x float]* %dest_1_2, i64 0, i64 12
 
-ST_13: dest_1_2_addr_20 [1/1] 0.00ns
-.preheader.preheader:162  %dest_1_2_addr_20 = getelementptr [25 x float]* %dest_1_2, i64 0, i64 20
+ST_13: stg_181 [1/1] 2.39ns
+.preheader6.preheader:130  store float 0.000000e+00, float* %dest_1_2_addr_12, align 8
 
-ST_13: stg_210 [1/1] 2.39ns
-.preheader.preheader:163  store float 0.000000e+00, float* %dest_1_2_addr_20, align 8
+ST_13: dest_1_3_addr_11 [1/1] 0.00ns
+.preheader6.preheader:179  %dest_1_3_addr_11 = getelementptr [25 x float]* %dest_1_3, i64 0, i64 11
 
-ST_13: dest_1_3_addr_19 [1/1] 0.00ns
-.preheader.preheader:212  %dest_1_3_addr_19 = getelementptr [25 x float]* %dest_1_3, i64 0, i64 19
+ST_13: stg_183 [1/1] 2.39ns
+.preheader6.preheader:180  store float 0.000000e+00, float* %dest_1_3_addr_11, align 4
 
-ST_13: stg_212 [1/1] 2.39ns
-.preheader.preheader:213  store float 0.000000e+00, float* %dest_1_3_addr_19, align 4
+ST_13: dest_1_3_addr_12 [1/1] 0.00ns
+.preheader6.preheader:181  %dest_1_3_addr_12 = getelementptr [25 x float]* %dest_1_3, i64 0, i64 12
 
-ST_13: dest_1_3_addr_20 [1/1] 0.00ns
-.preheader.preheader:214  %dest_1_3_addr_20 = getelementptr [25 x float]* %dest_1_3, i64 0, i64 20
-
-ST_13: stg_214 [1/1] 2.39ns
-.preheader.preheader:215  store float 0.000000e+00, float* %dest_1_3_addr_20, align 4
+ST_13: stg_185 [1/1] 2.39ns
+.preheader6.preheader:182  store float 0.000000e+00, float* %dest_1_3_addr_12, align 4
 
 
  <State 14>: 2.39ns
-ST_14: stg_215 [2/2] 1.04ns
-.preheader.preheader:69  call fastcc void @worker_COO_SpMV([2500 x i5]* %row_1_0, [2500 x i7]* %col_1_0, [2500 x float]* %val_1_0, [25 x float]* %dest_1_0, i32 %tmp_4) nounwind
+ST_14: dest_1_0_addr_17 [1/1] 0.00ns
+.preheader6.preheader:35  %dest_1_0_addr_17 = getelementptr [25 x float]* %dest_1_0, i64 0, i64 17
 
-ST_14: dest_1_1_addr_21 [1/1] 0.00ns
-.preheader.preheader:112  %dest_1_1_addr_21 = getelementptr [25 x float]* %dest_1_1, i64 0, i64 21
+ST_14: stg_187 [1/1] 2.39ns
+.preheader6.preheader:36  store float 0.000000e+00, float* %dest_1_0_addr_17, align 4
 
-ST_14: stg_217 [1/1] 2.39ns
-.preheader.preheader:113  store float 0.000000e+00, float* %dest_1_1_addr_21, align 4
+ST_14: dest_1_0_addr_18 [1/1] 0.00ns
+.preheader6.preheader:37  %dest_1_0_addr_18 = getelementptr [25 x float]* %dest_1_0, i64 0, i64 18
 
-ST_14: dest_1_1_addr_22 [1/1] 0.00ns
-.preheader.preheader:114  %dest_1_1_addr_22 = getelementptr [25 x float]* %dest_1_1, i64 0, i64 22
+ST_14: stg_189 [1/1] 2.39ns
+.preheader6.preheader:38  store float 0.000000e+00, float* %dest_1_0_addr_18, align 8
 
-ST_14: stg_219 [1/1] 2.39ns
-.preheader.preheader:115  store float 0.000000e+00, float* %dest_1_1_addr_22, align 4
+ST_14: dest_1_1_addr_13 [1/1] 0.00ns
+.preheader6.preheader:79  %dest_1_1_addr_13 = getelementptr [25 x float]* %dest_1_1, i64 0, i64 13
 
-ST_14: tmp_s [2/2] 0.00ns
-.preheader.preheader:120  %tmp_s = call fastcc i32 @worker_create_COO([2500 x float]* @matrix_1_1, [2500 x i5]* %row_1_1, [2500 x i7]* %col_1_1, [2500 x float]* %val_1_1) nounwind
+ST_14: stg_191 [1/1] 2.39ns
+.preheader6.preheader:80  store float 0.000000e+00, float* %dest_1_1_addr_13, align 4
 
-ST_14: dest_1_2_addr_21 [1/1] 0.00ns
-.preheader.preheader:164  %dest_1_2_addr_21 = getelementptr [25 x float]* %dest_1_2, i64 0, i64 21
+ST_14: dest_1_1_addr_14 [1/1] 0.00ns
+.preheader6.preheader:81  %dest_1_1_addr_14 = getelementptr [25 x float]* %dest_1_1, i64 0, i64 14
 
-ST_14: stg_222 [1/1] 2.39ns
-.preheader.preheader:165  store float 0.000000e+00, float* %dest_1_2_addr_21, align 4
+ST_14: stg_193 [1/1] 2.39ns
+.preheader6.preheader:82  store float 0.000000e+00, float* %dest_1_1_addr_14, align 4
 
-ST_14: dest_1_2_addr_22 [1/1] 0.00ns
-.preheader.preheader:166  %dest_1_2_addr_22 = getelementptr [25 x float]* %dest_1_2, i64 0, i64 22
+ST_14: dest_1_2_addr_13 [1/1] 0.00ns
+.preheader6.preheader:131  %dest_1_2_addr_13 = getelementptr [25 x float]* %dest_1_2, i64 0, i64 13
 
-ST_14: stg_224 [1/1] 2.39ns
-.preheader.preheader:167  store float 0.000000e+00, float* %dest_1_2_addr_22, align 8
+ST_14: stg_195 [1/1] 2.39ns
+.preheader6.preheader:132  store float 0.000000e+00, float* %dest_1_2_addr_13, align 4
 
-ST_14: tmp_1 [2/2] 0.00ns
-.preheader.preheader:172  %tmp_1 = call fastcc i32 @worker_create_COO([2500 x float]* @matrix_1_2, [2500 x i5]* %row_1_2, [2500 x i7]* %col_1_2, [2500 x float]* %val_1_2) nounwind
+ST_14: dest_1_2_addr_14 [1/1] 0.00ns
+.preheader6.preheader:133  %dest_1_2_addr_14 = getelementptr [25 x float]* %dest_1_2, i64 0, i64 14
 
-ST_14: dest_1_3_addr_21 [1/1] 0.00ns
-.preheader.preheader:216  %dest_1_3_addr_21 = getelementptr [25 x float]* %dest_1_3, i64 0, i64 21
+ST_14: stg_197 [1/1] 2.39ns
+.preheader6.preheader:134  store float 0.000000e+00, float* %dest_1_2_addr_14, align 8
 
-ST_14: stg_227 [1/1] 2.39ns
-.preheader.preheader:217  store float 0.000000e+00, float* %dest_1_3_addr_21, align 4
+ST_14: dest_1_3_addr_13 [1/1] 0.00ns
+.preheader6.preheader:183  %dest_1_3_addr_13 = getelementptr [25 x float]* %dest_1_3, i64 0, i64 13
 
-ST_14: dest_1_3_addr_22 [1/1] 0.00ns
-.preheader.preheader:218  %dest_1_3_addr_22 = getelementptr [25 x float]* %dest_1_3, i64 0, i64 22
+ST_14: stg_199 [1/1] 2.39ns
+.preheader6.preheader:184  store float 0.000000e+00, float* %dest_1_3_addr_13, align 4
 
-ST_14: stg_229 [1/1] 2.39ns
-.preheader.preheader:219  store float 0.000000e+00, float* %dest_1_3_addr_22, align 4
+ST_14: dest_1_3_addr_14 [1/1] 0.00ns
+.preheader6.preheader:185  %dest_1_3_addr_14 = getelementptr [25 x float]* %dest_1_3, i64 0, i64 14
 
-ST_14: tmp_2 [2/2] 0.00ns
-.preheader.preheader:224  %tmp_2 = call fastcc i32 @worker_create_COO([2500 x float]* @matrix_1_3, [2500 x i5]* %row_1_3, [2500 x i7]* %col_1_3, [2500 x float]* %val_1_3) nounwind
+ST_14: stg_201 [1/1] 2.39ns
+.preheader6.preheader:186  store float 0.000000e+00, float* %dest_1_3_addr_14, align 4
 
 
  <State 15>: 2.39ns
-ST_15: stg_231 [1/2] 0.00ns
-.preheader.preheader:69  call fastcc void @worker_COO_SpMV([2500 x i5]* %row_1_0, [2500 x i7]* %col_1_0, [2500 x float]* %val_1_0, [25 x float]* %dest_1_0, i32 %tmp_4) nounwind
+ST_15: dest_1_0_addr_19 [1/1] 0.00ns
+.preheader6.preheader:39  %dest_1_0_addr_19 = getelementptr [25 x float]* %dest_1_0, i64 0, i64 19
 
-ST_15: dest_1_1_addr_23 [1/1] 0.00ns
-.preheader.preheader:116  %dest_1_1_addr_23 = getelementptr [25 x float]* %dest_1_1, i64 0, i64 23
+ST_15: stg_203 [1/1] 2.39ns
+.preheader6.preheader:40  store float 0.000000e+00, float* %dest_1_0_addr_19, align 4
 
-ST_15: stg_233 [1/1] 2.39ns
-.preheader.preheader:117  store float 0.000000e+00, float* %dest_1_1_addr_23, align 4
+ST_15: dest_1_0_addr_20 [1/1] 0.00ns
+.preheader6.preheader:41  %dest_1_0_addr_20 = getelementptr [25 x float]* %dest_1_0, i64 0, i64 20
 
-ST_15: dest_1_1_addr_24 [1/1] 0.00ns
-.preheader.preheader:118  %dest_1_1_addr_24 = getelementptr [25 x float]* %dest_1_1, i64 0, i64 24
+ST_15: stg_205 [1/1] 2.39ns
+.preheader6.preheader:42  store float 0.000000e+00, float* %dest_1_0_addr_20, align 16
 
-ST_15: stg_235 [1/1] 2.39ns
-.preheader.preheader:119  store float 0.000000e+00, float* %dest_1_1_addr_24, align 4
+ST_15: dest_1_1_addr_15 [1/1] 0.00ns
+.preheader6.preheader:83  %dest_1_1_addr_15 = getelementptr [25 x float]* %dest_1_1, i64 0, i64 15
 
-ST_15: tmp_s [1/2] 0.00ns
-.preheader.preheader:120  %tmp_s = call fastcc i32 @worker_create_COO([2500 x float]* @matrix_1_1, [2500 x i5]* %row_1_1, [2500 x i7]* %col_1_1, [2500 x float]* %val_1_1) nounwind
+ST_15: stg_207 [1/1] 2.39ns
+.preheader6.preheader:84  store float 0.000000e+00, float* %dest_1_1_addr_15, align 4
 
-ST_15: dest_1_2_addr_23 [1/1] 0.00ns
-.preheader.preheader:168  %dest_1_2_addr_23 = getelementptr [25 x float]* %dest_1_2, i64 0, i64 23
+ST_15: dest_1_1_addr_16 [1/1] 0.00ns
+.preheader6.preheader:85  %dest_1_1_addr_16 = getelementptr [25 x float]* %dest_1_1, i64 0, i64 16
 
-ST_15: stg_238 [1/1] 2.39ns
-.preheader.preheader:169  store float 0.000000e+00, float* %dest_1_2_addr_23, align 4
+ST_15: stg_209 [1/1] 2.39ns
+.preheader6.preheader:86  store float 0.000000e+00, float* %dest_1_1_addr_16, align 4
 
-ST_15: dest_1_2_addr_24 [1/1] 0.00ns
-.preheader.preheader:170  %dest_1_2_addr_24 = getelementptr [25 x float]* %dest_1_2, i64 0, i64 24
+ST_15: dest_1_2_addr_15 [1/1] 0.00ns
+.preheader6.preheader:135  %dest_1_2_addr_15 = getelementptr [25 x float]* %dest_1_2, i64 0, i64 15
 
-ST_15: stg_240 [1/1] 2.39ns
-.preheader.preheader:171  store float 0.000000e+00, float* %dest_1_2_addr_24, align 8
+ST_15: stg_211 [1/1] 2.39ns
+.preheader6.preheader:136  store float 0.000000e+00, float* %dest_1_2_addr_15, align 4
 
-ST_15: tmp_1 [1/2] 0.00ns
-.preheader.preheader:172  %tmp_1 = call fastcc i32 @worker_create_COO([2500 x float]* @matrix_1_2, [2500 x i5]* %row_1_2, [2500 x i7]* %col_1_2, [2500 x float]* %val_1_2) nounwind
+ST_15: dest_1_2_addr_16 [1/1] 0.00ns
+.preheader6.preheader:137  %dest_1_2_addr_16 = getelementptr [25 x float]* %dest_1_2, i64 0, i64 16
 
-ST_15: dest_1_3_addr_23 [1/1] 0.00ns
-.preheader.preheader:220  %dest_1_3_addr_23 = getelementptr [25 x float]* %dest_1_3, i64 0, i64 23
+ST_15: stg_213 [1/1] 2.39ns
+.preheader6.preheader:138  store float 0.000000e+00, float* %dest_1_2_addr_16, align 8
 
-ST_15: stg_243 [1/1] 2.39ns
-.preheader.preheader:221  store float 0.000000e+00, float* %dest_1_3_addr_23, align 4
+ST_15: dest_1_3_addr_15 [1/1] 0.00ns
+.preheader6.preheader:187  %dest_1_3_addr_15 = getelementptr [25 x float]* %dest_1_3, i64 0, i64 15
 
-ST_15: dest_1_3_addr_24 [1/1] 0.00ns
-.preheader.preheader:222  %dest_1_3_addr_24 = getelementptr [25 x float]* %dest_1_3, i64 0, i64 24
+ST_15: stg_215 [1/1] 2.39ns
+.preheader6.preheader:188  store float 0.000000e+00, float* %dest_1_3_addr_15, align 4
 
-ST_15: stg_245 [1/1] 2.39ns
-.preheader.preheader:223  store float 0.000000e+00, float* %dest_1_3_addr_24, align 4
+ST_15: dest_1_3_addr_16 [1/1] 0.00ns
+.preheader6.preheader:189  %dest_1_3_addr_16 = getelementptr [25 x float]* %dest_1_3, i64 0, i64 16
 
-ST_15: tmp_2 [1/2] 0.00ns
-.preheader.preheader:224  %tmp_2 = call fastcc i32 @worker_create_COO([2500 x float]* @matrix_1_3, [2500 x i5]* %row_1_3, [2500 x i7]* %col_1_3, [2500 x float]* %val_1_3) nounwind
+ST_15: stg_217 [1/1] 2.39ns
+.preheader6.preheader:190  store float 0.000000e+00, float* %dest_1_3_addr_16, align 4
 
 
- <State 16>: 1.04ns
-ST_16: stg_247 [2/2] 1.04ns
-.preheader.preheader:121  call fastcc void @worker_COO_SpMV([2500 x i5]* %row_1_1, [2500 x i7]* %col_1_1, [2500 x float]* %val_1_1, [25 x float]* %dest_1_1, i32 %tmp_s) nounwind
+ <State 16>: 2.39ns
+ST_16: dest_1_0_addr_21 [1/1] 0.00ns
+.preheader6.preheader:43  %dest_1_0_addr_21 = getelementptr [25 x float]* %dest_1_0, i64 0, i64 21
 
-ST_16: stg_248 [2/2] 1.04ns
-.preheader.preheader:173  call fastcc void @worker_COO_SpMV([2500 x i5]* %row_1_2, [2500 x i7]* %col_1_2, [2500 x float]* %val_1_2, [25 x float]* %dest_1_2, i32 %tmp_1) nounwind
+ST_16: stg_219 [1/1] 2.39ns
+.preheader6.preheader:44  store float 0.000000e+00, float* %dest_1_0_addr_21, align 4
 
-ST_16: stg_249 [2/2] 1.04ns
-.preheader.preheader:225  call fastcc void @worker_COO_SpMV([2500 x i5]* %row_1_3, [2500 x i7]* %col_1_3, [2500 x float]* %val_1_3, [25 x float]* %dest_1_3, i32 %tmp_2) nounwind
+ST_16: dest_1_0_addr_22 [1/1] 0.00ns
+.preheader6.preheader:45  %dest_1_0_addr_22 = getelementptr [25 x float]* %dest_1_0, i64 0, i64 22
 
+ST_16: stg_221 [1/1] 2.39ns
+.preheader6.preheader:46  store float 0.000000e+00, float* %dest_1_0_addr_22, align 8
 
- <State 17>: 1.57ns
-ST_17: stg_250 [1/1] 0.00ns
-.preheader.preheader:0  call void (...)* @_ssdm_op_SpecBitsMap([100 x float]* %dest) nounwind, !map !36
+ST_16: tmp_3 [2/2] 0.00ns
+.preheader6.preheader:51  %tmp_3 = call fastcc i32 @worker_create_COO([2500 x float]* @matrix_1_0, [2500 x i6]* %row_1_0, [2500 x i8]* %col_1_0, [2500 x float]* %val_1_0, [25 x i32]* @row_nnz_0) nounwind
 
-ST_17: stg_251 [1/1] 0.00ns
-.preheader.preheader:1  call void (...)* @_ssdm_op_SpecTopModule([7 x i8]* @worker_str) nounwind
+ST_16: dest_1_1_addr_17 [1/1] 0.00ns
+.preheader6.preheader:87  %dest_1_1_addr_17 = getelementptr [25 x float]* %dest_1_1, i64 0, i64 17
 
-ST_17: stg_252 [1/2] 0.00ns
-.preheader.preheader:121  call fastcc void @worker_COO_SpMV([2500 x i5]* %row_1_1, [2500 x i7]* %col_1_1, [2500 x float]* %val_1_1, [25 x float]* %dest_1_1, i32 %tmp_s) nounwind
+ST_16: stg_224 [1/1] 2.39ns
+.preheader6.preheader:88  store float 0.000000e+00, float* %dest_1_1_addr_17, align 4
 
-ST_17: stg_253 [1/2] 0.00ns
-.preheader.preheader:173  call fastcc void @worker_COO_SpMV([2500 x i5]* %row_1_2, [2500 x i7]* %col_1_2, [2500 x float]* %val_1_2, [25 x float]* %dest_1_2, i32 %tmp_1) nounwind
+ST_16: dest_1_1_addr_18 [1/1] 0.00ns
+.preheader6.preheader:89  %dest_1_1_addr_18 = getelementptr [25 x float]* %dest_1_1, i64 0, i64 18
 
-ST_17: stg_254 [1/2] 0.00ns
-.preheader.preheader:225  call fastcc void @worker_COO_SpMV([2500 x i5]* %row_1_3, [2500 x i7]* %col_1_3, [2500 x float]* %val_1_3, [25 x float]* %dest_1_3, i32 %tmp_2) nounwind
+ST_16: stg_226 [1/1] 2.39ns
+.preheader6.preheader:90  store float 0.000000e+00, float* %dest_1_1_addr_18, align 4
 
-ST_17: stg_255 [1/1] 1.57ns
-.preheader.preheader:226  br label %0
+ST_16: dest_1_2_addr_17 [1/1] 0.00ns
+.preheader6.preheader:139  %dest_1_2_addr_17 = getelementptr [25 x float]* %dest_1_2, i64 0, i64 17
 
+ST_16: stg_228 [1/1] 2.39ns
+.preheader6.preheader:140  store float 0.000000e+00, float* %dest_1_2_addr_17, align 4
 
- <State 18>: 5.67ns
-ST_18: indvar_flatten [1/1] 0.00ns
-:0  %indvar_flatten = phi i7 [ 0, %.preheader.preheader ], [ %indvar_flatten_next, %.preheader ]
+ST_16: dest_1_2_addr_18 [1/1] 0.00ns
+.preheader6.preheader:141  %dest_1_2_addr_18 = getelementptr [25 x float]* %dest_1_2, i64 0, i64 18
 
-ST_18: i1 [1/1] 0.00ns
-:1  %i1 = phi i3 [ 0, %.preheader.preheader ], [ %start_mid2_v_v, %.preheader ]
+ST_16: stg_230 [1/1] 2.39ns
+.preheader6.preheader:142  store float 0.000000e+00, float* %dest_1_2_addr_18, align 8
 
-ST_18: j2 [1/1] 0.00ns
-:2  %j2 = phi i5 [ 0, %.preheader.preheader ], [ %j, %.preheader ]
+ST_16: dest_1_3_addr_17 [1/1] 0.00ns
+.preheader6.preheader:191  %dest_1_3_addr_17 = getelementptr [25 x float]* %dest_1_3, i64 0, i64 17
 
-ST_18: exitcond_flatten [1/1] 1.97ns
-:3  %exitcond_flatten = icmp eq i7 %indvar_flatten, -28
+ST_16: stg_232 [1/1] 2.39ns
+.preheader6.preheader:192  store float 0.000000e+00, float* %dest_1_3_addr_17, align 4
 
-ST_18: indvar_flatten_next [1/1] 1.72ns
-:4  %indvar_flatten_next = add i7 %indvar_flatten, 1
+ST_16: dest_1_3_addr_18 [1/1] 0.00ns
+.preheader6.preheader:193  %dest_1_3_addr_18 = getelementptr [25 x float]* %dest_1_3, i64 0, i64 18
 
-ST_18: stg_261 [1/1] 0.00ns
-:5  br i1 %exitcond_flatten, label %1, label %.preheader
+ST_16: stg_234 [1/1] 2.39ns
+.preheader6.preheader:194  store float 0.000000e+00, float* %dest_1_3_addr_18, align 4
 
-ST_18: i [1/1] 0.80ns
-.preheader:0  %i = add i3 1, %i1
 
-ST_18: exitcond [1/1] 1.91ns
-.preheader:3  %exitcond = icmp eq i5 %j2, -7
+ <State 17>: 2.44ns
+ST_17: dest_1_0_addr_23 [1/1] 0.00ns
+.preheader6.preheader:47  %dest_1_0_addr_23 = getelementptr [25 x float]* %dest_1_0, i64 0, i64 23
 
-ST_18: j2_mid2 [1/1] 1.37ns
-.preheader:4  %j2_mid2 = select i1 %exitcond, i5 0, i5 %j2
+ST_17: stg_236 [1/1] 2.39ns
+.preheader6.preheader:48  store float 0.000000e+00, float* %dest_1_0_addr_23, align 4
 
-ST_18: start_mid2_v_v [1/1] 1.37ns
-.preheader:5  %start_mid2_v_v = select i1 %exitcond, i3 %i, i3 %i1
+ST_17: dest_1_0_addr_24 [1/1] 0.00ns
+.preheader6.preheader:49  %dest_1_0_addr_24 = getelementptr [25 x float]* %dest_1_0, i64 0, i64 24
 
-ST_18: tmp_3 [1/1] 0.00ns
-.preheader:8  %tmp_3 = trunc i3 %start_mid2_v_v to i2
+ST_17: stg_238 [1/1] 2.39ns
+.preheader6.preheader:50  store float 0.000000e+00, float* %dest_1_0_addr_24, align 16
 
-ST_18: tmp_6 [1/1] 0.00ns
-.preheader:13  %tmp_6 = zext i5 %j2_mid2 to i64
+ST_17: tmp_3 [1/2] 2.44ns
+.preheader6.preheader:51  %tmp_3 = call fastcc i32 @worker_create_COO([2500 x float]* @matrix_1_0, [2500 x i6]* %row_1_0, [2500 x i8]* %col_1_0, [2500 x float]* %val_1_0, [25 x i32]* @row_nnz_0) nounwind
 
-ST_18: dest_1_0_addr_25 [1/1] 0.00ns
-.preheader:14  %dest_1_0_addr_25 = getelementptr [25 x float]* %dest_1_0, i64 0, i64 %tmp_6
+ST_17: dest_1_1_addr_19 [1/1] 0.00ns
+.preheader6.preheader:91  %dest_1_1_addr_19 = getelementptr [25 x float]* %dest_1_1, i64 0, i64 19
 
-ST_18: dest_1_0_load [2/2] 2.39ns
-.preheader:15  %dest_1_0_load = load float* %dest_1_0_addr_25, align 4
+ST_17: stg_241 [1/1] 2.39ns
+.preheader6.preheader:92  store float 0.000000e+00, float* %dest_1_1_addr_19, align 4
 
-ST_18: dest_1_1_addr_25 [1/1] 0.00ns
-.preheader:16  %dest_1_1_addr_25 = getelementptr [25 x float]* %dest_1_1, i64 0, i64 %tmp_6
+ST_17: dest_1_1_addr_20 [1/1] 0.00ns
+.preheader6.preheader:93  %dest_1_1_addr_20 = getelementptr [25 x float]* %dest_1_1, i64 0, i64 20
 
-ST_18: dest_1_1_load [2/2] 2.39ns
-.preheader:17  %dest_1_1_load = load float* %dest_1_1_addr_25, align 4
+ST_17: stg_243 [1/1] 2.39ns
+.preheader6.preheader:94  store float 0.000000e+00, float* %dest_1_1_addr_20, align 4
 
-ST_18: dest_1_2_addr_25 [1/1] 0.00ns
-.preheader:18  %dest_1_2_addr_25 = getelementptr [25 x float]* %dest_1_2, i64 0, i64 %tmp_6
+ST_17: dest_1_2_addr_19 [1/1] 0.00ns
+.preheader6.preheader:143  %dest_1_2_addr_19 = getelementptr [25 x float]* %dest_1_2, i64 0, i64 19
 
-ST_18: dest_1_2_load [2/2] 2.39ns
-.preheader:19  %dest_1_2_load = load float* %dest_1_2_addr_25, align 4
+ST_17: stg_245 [1/1] 2.39ns
+.preheader6.preheader:144  store float 0.000000e+00, float* %dest_1_2_addr_19, align 4
 
-ST_18: dest_1_3_addr_25 [1/1] 0.00ns
-.preheader:20  %dest_1_3_addr_25 = getelementptr [25 x float]* %dest_1_3, i64 0, i64 %tmp_6
+ST_17: dest_1_2_addr_20 [1/1] 0.00ns
+.preheader6.preheader:145  %dest_1_2_addr_20 = getelementptr [25 x float]* %dest_1_2, i64 0, i64 20
 
-ST_18: dest_1_3_load [2/2] 2.39ns
-.preheader:21  %dest_1_3_load = load float* %dest_1_3_addr_25, align 4
+ST_17: stg_247 [1/1] 2.39ns
+.preheader6.preheader:146  store float 0.000000e+00, float* %dest_1_2_addr_20, align 8
 
-ST_18: j [1/1] 1.72ns
-.preheader:28  %j = add i5 1, %j2_mid2
+ST_17: dest_1_3_addr_19 [1/1] 0.00ns
+.preheader6.preheader:195  %dest_1_3_addr_19 = getelementptr [25 x float]* %dest_1_3, i64 0, i64 19
 
+ST_17: stg_249 [1/1] 2.39ns
+.preheader6.preheader:196  store float 0.000000e+00, float* %dest_1_3_addr_19, align 4
 
- <State 19>: 9.09ns
-ST_19: stg_277 [1/1] 0.00ns
-.preheader:1  call void (...)* @_ssdm_op_SpecLoopName([28 x i8]* @LOOP_DEST1_PE_LOOP_DEST1_ST_st)
+ST_17: dest_1_3_addr_20 [1/1] 0.00ns
+.preheader6.preheader:197  %dest_1_3_addr_20 = getelementptr [25 x float]* %dest_1_3, i64 0, i64 20
 
-ST_19: empty [1/1] 0.00ns
-.preheader:2  %empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 100, i64 100, i64 100) nounwind
+ST_17: stg_251 [1/1] 2.39ns
+.preheader6.preheader:198  store float 0.000000e+00, float* %dest_1_3_addr_20, align 4
 
-ST_19: start_mid2_v [1/1] 0.00ns
-.preheader:6  %start_mid2_v = zext i3 %start_mid2_v_v to i7
 
-ST_19: start_mid2 [1/1] 3.36ns
-.preheader:7  %start_mid2 = mul i7 25, %start_mid2_v
+ <State 18>: 2.39ns
+ST_18: stg_252 [2/2] 1.04ns
+.preheader6.preheader:52  call fastcc void @worker_COO_SpMV([2500 x i6]* %row_1_0, [2500 x i8]* %col_1_0, [2500 x float]* %val_1_0, [25 x float]* %dest_1_0, i32 %tmp_3) nounwind
 
-ST_19: j2_cast2 [1/1] 0.00ns
-.preheader:9  %j2_cast2 = zext i5 %j2_mid2 to i7
+ST_18: dest_1_1_addr_21 [1/1] 0.00ns
+.preheader6.preheader:95  %dest_1_1_addr_21 = getelementptr [25 x float]* %dest_1_1, i64 0, i64 21
 
-ST_19: stg_282 [1/1] 0.00ns
-.preheader:10  call void (...)* @_ssdm_op_SpecLoopName([14 x i8]* @p_str6) nounwind
+ST_18: stg_254 [1/1] 2.39ns
+.preheader6.preheader:96  store float 0.000000e+00, float* %dest_1_1_addr_21, align 4
 
-ST_19: tmp_5 [1/1] 0.00ns
-.preheader:11  %tmp_5 = call i32 (...)* @_ssdm_op_SpecRegionBegin([14 x i8]* @p_str6) nounwind
+ST_18: dest_1_1_addr_22 [1/1] 0.00ns
+.preheader6.preheader:97  %dest_1_1_addr_22 = getelementptr [25 x float]* %dest_1_1, i64 0, i64 22
 
-ST_19: stg_284 [1/1] 0.00ns
-.preheader:12  call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str) nounwind
+ST_18: stg_256 [1/1] 2.39ns
+.preheader6.preheader:98  store float 0.000000e+00, float* %dest_1_1_addr_22, align 4
 
-ST_19: dest_1_0_load [1/2] 2.39ns
-.preheader:15  %dest_1_0_load = load float* %dest_1_0_addr_25, align 4
+ST_18: tmp_4 [2/2] 0.00ns
+.preheader6.preheader:103  %tmp_4 = call fastcc i32 @worker_create_COO([2500 x float]* @matrix_1_1, [2500 x i6]* %row_1_1, [2500 x i8]* %col_1_1, [2500 x float]* %val_1_1, [25 x i32]* @row_nnz_1) nounwind
 
-ST_19: dest_1_1_load [1/2] 2.39ns
-.preheader:17  %dest_1_1_load = load float* %dest_1_1_addr_25, align 4
+ST_18: dest_1_2_addr_21 [1/1] 0.00ns
+.preheader6.preheader:147  %dest_1_2_addr_21 = getelementptr [25 x float]* %dest_1_2, i64 0, i64 21
 
-ST_19: dest_1_2_load [1/2] 2.39ns
-.preheader:19  %dest_1_2_load = load float* %dest_1_2_addr_25, align 4
+ST_18: stg_259 [1/1] 2.39ns
+.preheader6.preheader:148  store float 0.000000e+00, float* %dest_1_2_addr_21, align 4
 
-ST_19: dest_1_3_load [1/2] 2.39ns
-.preheader:21  %dest_1_3_load = load float* %dest_1_3_addr_25, align 4
+ST_18: dest_1_2_addr_22 [1/1] 0.00ns
+.preheader6.preheader:149  %dest_1_2_addr_22 = getelementptr [25 x float]* %dest_1_2, i64 0, i64 22
 
-ST_19: tmp [1/1] 1.57ns
-.preheader:22  %tmp = call float @_ssdm_op_Mux.ap_auto.4float.i2(float %dest_1_0_load, float %dest_1_1_load, float %dest_1_2_load, float %dest_1_3_load, i2 %tmp_3) nounwind
+ST_18: stg_261 [1/1] 2.39ns
+.preheader6.preheader:150  store float 0.000000e+00, float* %dest_1_2_addr_22, align 8
 
-ST_19: tmp_7 [1/1] 3.02ns
-.preheader:23  %tmp_7 = add i7 %start_mid2, %j2_cast2
+ST_18: tmp_7 [2/2] 0.00ns
+.preheader6.preheader:155  %tmp_7 = call fastcc i32 @worker_create_COO([2500 x float]* @matrix_1_2, [2500 x i6]* %row_1_2, [2500 x i8]* %col_1_2, [2500 x float]* %val_1_2, [25 x i32]* @row_nnz_2) nounwind
 
-ST_19: tmp_8 [1/1] 0.00ns
-.preheader:24  %tmp_8 = zext i7 %tmp_7 to i64
+ST_18: dest_1_3_addr_21 [1/1] 0.00ns
+.preheader6.preheader:199  %dest_1_3_addr_21 = getelementptr [25 x float]* %dest_1_3, i64 0, i64 21
 
-ST_19: dest_addr [1/1] 0.00ns
-.preheader:25  %dest_addr = getelementptr [100 x float]* %dest, i64 0, i64 %tmp_8
+ST_18: stg_264 [1/1] 2.39ns
+.preheader6.preheader:200  store float 0.000000e+00, float* %dest_1_3_addr_21, align 4
 
-ST_19: stg_293 [1/1] 2.71ns
-.preheader:26  store float %tmp, float* %dest_addr, align 4
+ST_18: dest_1_3_addr_22 [1/1] 0.00ns
+.preheader6.preheader:201  %dest_1_3_addr_22 = getelementptr [25 x float]* %dest_1_3, i64 0, i64 22
 
-ST_19: empty_5 [1/1] 0.00ns
-.preheader:27  %empty_5 = call i32 (...)* @_ssdm_op_SpecRegionEnd([14 x i8]* @p_str6, i32 %tmp_5) nounwind
+ST_18: stg_266 [1/1] 2.39ns
+.preheader6.preheader:202  store float 0.000000e+00, float* %dest_1_3_addr_22, align 4
 
-ST_19: stg_295 [1/1] 0.00ns
-.preheader:29  br label %0
+ST_18: tmp_9 [2/2] 0.00ns
+.preheader6.preheader:207  %tmp_9 = call fastcc i32 @worker_create_COO([2500 x float]* @matrix_1_3, [2500 x i6]* %row_1_3, [2500 x i8]* %col_1_3, [2500 x float]* %val_1_3, [25 x i32]* @row_nnz_3) nounwind
 
 
- <State 20>: 0.00ns
-ST_20: stg_296 [1/1] 0.00ns
+ <State 19>: 2.44ns
+ST_19: stg_268 [1/2] 0.00ns
+.preheader6.preheader:52  call fastcc void @worker_COO_SpMV([2500 x i6]* %row_1_0, [2500 x i8]* %col_1_0, [2500 x float]* %val_1_0, [25 x float]* %dest_1_0, i32 %tmp_3) nounwind
+
+ST_19: dest_1_1_addr_23 [1/1] 0.00ns
+.preheader6.preheader:99  %dest_1_1_addr_23 = getelementptr [25 x float]* %dest_1_1, i64 0, i64 23
+
+ST_19: stg_270 [1/1] 2.39ns
+.preheader6.preheader:100  store float 0.000000e+00, float* %dest_1_1_addr_23, align 4
+
+ST_19: dest_1_1_addr_24 [1/1] 0.00ns
+.preheader6.preheader:101  %dest_1_1_addr_24 = getelementptr [25 x float]* %dest_1_1, i64 0, i64 24
+
+ST_19: stg_272 [1/1] 2.39ns
+.preheader6.preheader:102  store float 0.000000e+00, float* %dest_1_1_addr_24, align 4
+
+ST_19: tmp_4 [1/2] 2.44ns
+.preheader6.preheader:103  %tmp_4 = call fastcc i32 @worker_create_COO([2500 x float]* @matrix_1_1, [2500 x i6]* %row_1_1, [2500 x i8]* %col_1_1, [2500 x float]* %val_1_1, [25 x i32]* @row_nnz_1) nounwind
+
+ST_19: dest_1_2_addr_23 [1/1] 0.00ns
+.preheader6.preheader:151  %dest_1_2_addr_23 = getelementptr [25 x float]* %dest_1_2, i64 0, i64 23
+
+ST_19: stg_275 [1/1] 2.39ns
+.preheader6.preheader:152  store float 0.000000e+00, float* %dest_1_2_addr_23, align 4
+
+ST_19: dest_1_2_addr_24 [1/1] 0.00ns
+.preheader6.preheader:153  %dest_1_2_addr_24 = getelementptr [25 x float]* %dest_1_2, i64 0, i64 24
+
+ST_19: stg_277 [1/1] 2.39ns
+.preheader6.preheader:154  store float 0.000000e+00, float* %dest_1_2_addr_24, align 8
+
+ST_19: tmp_7 [1/2] 2.44ns
+.preheader6.preheader:155  %tmp_7 = call fastcc i32 @worker_create_COO([2500 x float]* @matrix_1_2, [2500 x i6]* %row_1_2, [2500 x i8]* %col_1_2, [2500 x float]* %val_1_2, [25 x i32]* @row_nnz_2) nounwind
+
+ST_19: dest_1_3_addr_23 [1/1] 0.00ns
+.preheader6.preheader:203  %dest_1_3_addr_23 = getelementptr [25 x float]* %dest_1_3, i64 0, i64 23
+
+ST_19: stg_280 [1/1] 2.39ns
+.preheader6.preheader:204  store float 0.000000e+00, float* %dest_1_3_addr_23, align 4
+
+ST_19: dest_1_3_addr_24 [1/1] 0.00ns
+.preheader6.preheader:205  %dest_1_3_addr_24 = getelementptr [25 x float]* %dest_1_3, i64 0, i64 24
+
+ST_19: stg_282 [1/1] 2.39ns
+.preheader6.preheader:206  store float 0.000000e+00, float* %dest_1_3_addr_24, align 4
+
+ST_19: tmp_9 [1/2] 2.44ns
+.preheader6.preheader:207  %tmp_9 = call fastcc i32 @worker_create_COO([2500 x float]* @matrix_1_3, [2500 x i6]* %row_1_3, [2500 x i8]* %col_1_3, [2500 x float]* %val_1_3, [25 x i32]* @row_nnz_3) nounwind
+
+
+ <State 20>: 1.04ns
+ST_20: stg_284 [2/2] 1.04ns
+.preheader6.preheader:104  call fastcc void @worker_COO_SpMV([2500 x i6]* %row_1_1, [2500 x i8]* %col_1_1, [2500 x float]* %val_1_1, [25 x float]* %dest_1_1, i32 %tmp_4) nounwind
+
+ST_20: stg_285 [2/2] 1.04ns
+.preheader6.preheader:156  call fastcc void @worker_COO_SpMV([2500 x i6]* %row_1_2, [2500 x i8]* %col_1_2, [2500 x float]* %val_1_2, [25 x float]* %dest_1_2, i32 %tmp_7) nounwind
+
+ST_20: stg_286 [2/2] 1.04ns
+.preheader6.preheader:208  call fastcc void @worker_COO_SpMV([2500 x i6]* %row_1_3, [2500 x i8]* %col_1_3, [2500 x float]* %val_1_3, [25 x float]* %dest_1_3, i32 %tmp_9) nounwind
+
+
+ <State 21>: 1.57ns
+ST_21: empty_10 [1/1] 0.00ns
+.preheader6.preheader:0  %empty_10 = call i32 (...)* @_ssdm_op_SpecRegionEnd([9 x i8]* @p_str2, i32 %tmp_8) nounwind
+
+ST_21: stg_288 [1/2] 0.00ns
+.preheader6.preheader:104  call fastcc void @worker_COO_SpMV([2500 x i6]* %row_1_1, [2500 x i8]* %col_1_1, [2500 x float]* %val_1_1, [25 x float]* %dest_1_1, i32 %tmp_4) nounwind
+
+ST_21: stg_289 [1/2] 0.00ns
+.preheader6.preheader:156  call fastcc void @worker_COO_SpMV([2500 x i6]* %row_1_2, [2500 x i8]* %col_1_2, [2500 x float]* %val_1_2, [25 x float]* %dest_1_2, i32 %tmp_7) nounwind
+
+ST_21: stg_290 [1/2] 0.00ns
+.preheader6.preheader:208  call fastcc void @worker_COO_SpMV([2500 x i6]* %row_1_3, [2500 x i8]* %col_1_3, [2500 x float]* %val_1_3, [25 x float]* %dest_1_3, i32 %tmp_9) nounwind
+
+ST_21: stg_291 [1/1] 1.57ns
+.preheader6.preheader:209  br label %.preheader
+
+
+ <State 22>: 1.72ns
+ST_22: i3 [1/1] 0.00ns
+.preheader:0  %i3 = phi i3 [ 0, %.preheader6.preheader ], [ %i, %9 ]
+
+ST_22: phi_mul [1/1] 0.00ns
+.preheader:1  %phi_mul = phi i7 [ 0, %.preheader6.preheader ], [ %next_mul, %9 ]
+
+ST_22: next_mul [1/1] 1.72ns
+.preheader:2  %next_mul = add i7 %phi_mul, 25
+
+ST_22: exitcond1 [1/1] 1.62ns
+.preheader:3  %exitcond1 = icmp eq i3 %i3, -4
+
+ST_22: empty_12 [1/1] 0.00ns
+.preheader:4  %empty_12 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 4, i64 4, i64 4) nounwind
+
+ST_22: i [1/1] 0.80ns
+.preheader:5  %i = add i3 %i3, 1
+
+ST_22: stg_298 [1/1] 0.00ns
+.preheader:6  br i1 %exitcond1, label %11, label %8
+
+ST_22: tmp_10 [1/1] 0.00ns
+:0  %tmp_10 = trunc i3 %i3 to i2
+
+ST_22: stg_300 [1/1] 1.57ns
+:1  br label %9
+
+ST_22: stg_301 [1/1] 0.00ns
 :0  ret void
+
+
+ <State 23>: 2.39ns
+ST_23: j4 [1/1] 0.00ns
+:0  %j4 = phi i5 [ 0, %8 ], [ %j_3, %10 ]
+
+ST_23: j4_cast2 [1/1] 0.00ns
+:1  %j4_cast2 = zext i5 %j4 to i7
+
+ST_23: exitcond [1/1] 1.91ns
+:2  %exitcond = icmp eq i5 %j4, -7
+
+ST_23: empty_13 [1/1] 0.00ns
+:3  %empty_13 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 25, i64 25, i64 25) nounwind
+
+ST_23: j_3 [1/1] 1.72ns
+:4  %j_3 = add i5 %j4, 1
+
+ST_23: stg_307 [1/1] 0.00ns
+:5  br i1 %exitcond, label %.preheader, label %10
+
+ST_23: tmp_s [1/1] 0.00ns
+:0  %tmp_s = zext i5 %j4 to i64
+
+ST_23: dest_1_0_addr_25 [1/1] 0.00ns
+:1  %dest_1_0_addr_25 = getelementptr [25 x float]* %dest_1_0, i64 0, i64 %tmp_s
+
+ST_23: dest_1_0_load [2/2] 2.39ns
+:2  %dest_1_0_load = load float* %dest_1_0_addr_25, align 4
+
+ST_23: dest_1_1_addr_25 [1/1] 0.00ns
+:3  %dest_1_1_addr_25 = getelementptr [25 x float]* %dest_1_1, i64 0, i64 %tmp_s
+
+ST_23: dest_1_1_load [2/2] 2.39ns
+:4  %dest_1_1_load = load float* %dest_1_1_addr_25, align 4
+
+ST_23: dest_1_2_addr_25 [1/1] 0.00ns
+:5  %dest_1_2_addr_25 = getelementptr [25 x float]* %dest_1_2, i64 0, i64 %tmp_s
+
+ST_23: dest_1_2_load [2/2] 2.39ns
+:6  %dest_1_2_load = load float* %dest_1_2_addr_25, align 4
+
+ST_23: dest_1_3_addr_25 [1/1] 0.00ns
+:7  %dest_1_3_addr_25 = getelementptr [25 x float]* %dest_1_3, i64 0, i64 %tmp_s
+
+ST_23: dest_1_3_load [2/2] 2.39ns
+:8  %dest_1_3_load = load float* %dest_1_3_addr_25, align 4
+
+ST_23: tmp_2 [1/1] 1.72ns
+:10  %tmp_2 = add i7 %phi_mul, %j4_cast2
+
+
+ <State 24>: 6.67ns
+ST_24: dest_1_0_load [1/2] 2.39ns
+:2  %dest_1_0_load = load float* %dest_1_0_addr_25, align 4
+
+ST_24: dest_1_1_load [1/2] 2.39ns
+:4  %dest_1_1_load = load float* %dest_1_1_addr_25, align 4
+
+ST_24: dest_1_2_load [1/2] 2.39ns
+:6  %dest_1_2_load = load float* %dest_1_2_addr_25, align 4
+
+ST_24: dest_1_3_load [1/2] 2.39ns
+:8  %dest_1_3_load = load float* %dest_1_3_addr_25, align 4
+
+ST_24: tmp_11 [1/1] 1.57ns
+:9  %tmp_11 = call float @_ssdm_op_Mux.ap_auto.4float.i2(float %dest_1_0_load, float %dest_1_1_load, float %dest_1_2_load, float %dest_1_3_load, i2 %tmp_10) nounwind
+
+ST_24: tmp_5 [1/1] 0.00ns
+:11  %tmp_5 = zext i7 %tmp_2 to i64
+
+ST_24: dest_addr [1/1] 0.00ns
+:12  %dest_addr = getelementptr [100 x float]* %dest, i64 0, i64 %tmp_5
+
+ST_24: stg_325 [1/1] 2.71ns
+:13  store float %tmp_11, float* %dest_addr, align 4
+
+ST_24: stg_326 [1/1] 0.00ns
+:14  br label %9
 
 
 
@@ -995,12 +1095,7 @@ ST_20: stg_296 [1/1] 0.00ns
 ============================================================
 Target clock period: 10ns, clock uncertainty: 1.25ns.
 
- <State 19>: 9.09ns
-The critical path consists of the following:
-	'mul' operation ('start_mid2', COO_SpMV.cpp:163) (3.36 ns)
-	'add' operation ('tmp_7', COO_SpMV.cpp:165) (3.02 ns)
-	'getelementptr' operation ('dest_addr', COO_SpMV.cpp:165) (0 ns)
-	'store' operation (COO_SpMV.cpp:165) of variable 'tmp', COO_SpMV.cpp:165 on array 'dest' (2.71 ns)
+ No timing violations. 
 
 
 ============================================================
@@ -1031,6 +1126,10 @@ N/A
 	State 18
 	State 19
 	State 20
+	State 21
+	State 22
+	State 23
+	State 24
 
 
 ============================================================

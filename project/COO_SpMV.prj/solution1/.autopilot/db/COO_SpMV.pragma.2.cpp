@@ -1,5 +1,5 @@
-# 1 "/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/COO_SpMV.pragma.1.cpp"
-# 1 "/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/COO_SpMV.pragma.1.cpp" 1
+# 1 "/home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/COO_SpMV.pragma.1.cpp"
+# 1 "/home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/COO_SpMV.pragma.1.cpp" 1
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 155 "<built-in>" 3
@@ -203,7 +203,7 @@ extern "C" {
 // XSIP watermark, do not delete 67d7842dbbe25473c3c32b93c0da8047785f30d78e8a024de1b57352245f9689
 # 6 "<command line>" 2
 # 1 "<built-in>" 2
-# 1 "/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/COO_SpMV.pragma.1.cpp" 2
+# 1 "/home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/COO_SpMV.pragma.1.cpp" 2
 # 1 "COO_SpMV.cpp"
 # 1 "COO_SpMV.cpp" 1
 # 1 "<built-in>" 1
@@ -35047,136 +35047,75 @@ const float result_10[size] = {
 
 using namespace std;
 
-//----------------------------------------------------------
-// Top function
-//----------------------------------------------------------
-
-// void dut(
-//     hls::stream<bit32_t> &strm_in,
-//     hls::stream<bit32_t> &strm_out
-// )
-// {
-//   float matrix[size][size];
-//   float vector[size];
-//   union { float fval; int ival} u;
-
-//   float dest[size];
-//   for (int i = 0; i < size; i++ )
-//     dest[i] = 0;
-
-//   // read the matrix 
-//   for ( int i = 0; i < size; i ++) {
-//     for (int j = 0; j < size; j ++) {
-//         u.ival = strm_in.read();
-//         matrix[i][j] = u.fval;        
-//     }
-//   }
-
-//   // read the vector
-//   for ( int i = 0; i < size; i ++) {
-//     u.ival = strm_in.read();
-//     vector[i] = u.fval;
-//   }
-
-//   // call count_nnz
-//   int nnz = count_nnz(matrix);
-
-//   int row[nnz];
-//   int col[nnz];
-//   float val[nnz];
-
-//   // call create_COO
-//   create_COO(matrix, row, col, val);
-
-//   // call COO_SpMV
-//   COO_SpMV(row, col, val, vector, dest, nnz);
-
-//   // write out the result
-//   for ( int i = 0; i < size; i ++) {
-//     strm_out.write(dest[i]);
-//   }
-// }
-
 //==========================================================================
 // COO Format: 3 arrays representing non-zero elements [row, col, value]
 //==========================================================================
 
 void COO_SpMV(int row[coo_size], int col[coo_size], float val[coo_size], const float vector[size], float output[size], int nnz) {_ssdm_SpecArrayDimSize(val,coo_size);_ssdm_SpecArrayDimSize(output,size);_ssdm_SpecArrayDimSize(col,coo_size);_ssdm_SpecArrayDimSize(vector,size);_ssdm_SpecArrayDimSize(row,coo_size);
 _ssdm_InlineSelf(2, "");
-# 69 "COO_SpMV.cpp"
+# 19 "COO_SpMV.cpp"
 
     for(int i = 0; i < coo_size; i++) {
-_ssdm_op_SpecPipeline(-1, 1, 1, 0, "");
-_ssdm_SpecDependence( output, 0, 0, 0, 0, 1);
- if (i < nnz)
+        // #pragma HLS PIPELINE
+        // #pragma HLS DEPENDENCE variable=output inter RAW false 
+        if (i < nnz && row[i] >= 0) {
           output[row[i]] += val[i] * vector[col[i]];
+        }
     }
 }
-
-// void create_COO(const float input[matrix_size], int row[matrix_size], int col[matrix_size], float val[matrix_size]) {
-//     int counter = 0;
-//     for(int i = 0; i < matrix_size; i++) {
-//       if (input[i] != 0) {
-//           row[counter] = i/size;
-//           col[counter] = i%size;
-//           val[counter] = input[i];
-//           counter += 1;
-//       }
-//     }
-// }
 
 //==========================================================================
 // Convert a given matrix to COO format
 // Traverse in column major order to solve output dependence
 //==========================================================================
 
-int create_COO(const float input[block_size][size], int row[coo_size], int col[coo_size], float val[coo_size]) {_ssdm_SpecArrayDimSize(val,coo_size);_ssdm_SpecArrayDimSize(input,block_size);_ssdm_SpecArrayDimSize(col,coo_size);_ssdm_SpecArrayDimSize(row,coo_size);
+int create_COO(const float input[block_size][size], int row[coo_size], int col[coo_size], float val[coo_size], int nnz[block_size]) {_ssdm_SpecArrayDimSize(val,coo_size);_ssdm_SpecArrayDimSize(input,block_size);_ssdm_SpecArrayDimSize(col,coo_size);_ssdm_SpecArrayDimSize(row,coo_size);_ssdm_SpecArrayDimSize(nnz,block_size);
 _ssdm_InlineSelf(2, "");
-# 95 "COO_SpMV.cpp"
+# 34 "COO_SpMV.cpp"
 
-    int counter = 0;
-    int temp_row[coo_size];
-    int temp_col[coo_size];
-    float temp_val[coo_size];
-    for(int i = 0; i < block_size; i++) {
-        for(int j = 0; j < size; j++) {
-            if (input[i][j] != 0) {
-                temp_row[counter] = i;
-                temp_col[counter] = j;
-                temp_val[counter] = input[i][j];
-                counter += 1;
-            }
-        }
+
+    int sep = 0;
+    for (int i = 0; i < block_size; i++) {
+        if (nnz[i] > 0) sep++;
     }
-    int cur_ind = 0;
-    int start = 1;
+
     for (int i = 0; i < coo_size; i++) {
-        if (i < counter) {
-            row[cur_ind] = temp_row[i];
-            col[cur_ind] = temp_col[i];
-            val[cur_ind] = temp_val[i];
-            cur_ind += 8; // assuming fp add takes 8 cycles
-            if (cur_ind >= counter) {
-                cur_ind = start;
-                start++;
+        row[i] = -1;
+        col[i] = -1;
+        val[i] = 0;
+    }
+
+    int max_ind = 0;
+    int start = 0;
+    for (int i = 0; i < block_size; i++) {
+        if (nnz[i] > 0) {
+            int cur_ind = start;
+            for (int j = 0; j < size; j++) {
+                if (input[i][j] != 0) {
+                    row[cur_ind] = i;
+                    col[cur_ind] = j;
+                    val[cur_ind] = input[i][j];
+                    if (cur_ind > max_ind) {
+                        max_ind = cur_ind;
+                    }
+                    cur_ind += sep;
+                }
             }
+            start++;
         }
     }
-    return counter;
+
+    // printf("\nROW\n");
+    // for(int i = 0; i <= max_ind; i++)
+    //     printf("%d ",row[i]);
+
+    return max_ind+1;
 }
 
-//==========================================================================
-// Count the number of non-zero elements in a sparse matrix
-//==========================================================================
-
-int count_nnz(const float input[size][size]) {_ssdm_SpecArrayDimSize(input,size);
+int count_nnz(const float row[size]) {_ssdm_SpecArrayDimSize(row,size);
     int counter = 0;
-    for(int i = 0; i < size; i++) {
-        for(int j = 0; j < size; j++) {
-            if (input[i][j] != 0) {
-                counter += 1;
-            }
-        }
+    for (int i = 0; i < size; i++) {
+        if (row[i] != 0) counter++;
     }
     return counter;
 }
@@ -35187,46 +35126,57 @@ int count_nnz(const float input[size][size]) {_ssdm_SpecArrayDimSize(input,size)
 
 void worker(float dest[size]) {_ssdm_SpecArrayDimSize(dest,size);
 _ssdm_SpecArrayPartition( matrix_1, 1, "COMPLETE", 0, "");
-# 147 "COO_SpMV.cpp"
+# 86 "COO_SpMV.cpp"
 
 
   float dest_1[PE][block_size];
 _ssdm_SpecArrayPartition( dest_1, 1, "COMPLETE", 0, "");
-# 149 "COO_SpMV.cpp"
+# 88 "COO_SpMV.cpp"
 
   int row_1[PE][coo_size];
 _ssdm_SpecArrayPartition( row_1, 1, "COMPLETE", 0, "");
-# 150 "COO_SpMV.cpp"
+# 89 "COO_SpMV.cpp"
 
   int col_1[PE][coo_size];
 _ssdm_SpecArrayPartition( col_1, 1, "COMPLETE", 0, "");
-# 151 "COO_SpMV.cpp"
+# 90 "COO_SpMV.cpp"
 
   float val_1[PE][coo_size];
 _ssdm_SpecArrayPartition( val_1, 1, "COMPLETE", 0, "");
-# 152 "COO_SpMV.cpp"
+# 91 "COO_SpMV.cpp"
+
+  int row_nnz[PE][block_size];
+_ssdm_SpecArrayPartition( row_nnz, 1, "COMPLETE", 0, "");
+# 92 "COO_SpMV.cpp"
 
 
-  LOOP_PE: for (int i = 0; i < PE; i++) {
+  LOOP_PE1: for (int i = 0; i < PE; i++) {
 _ssdm_Unroll(0,0,0, "");
-# 154 "COO_SpMV.cpp"
+# 94 "COO_SpMV.cpp"
 
-    LOOP_DEST1:for(int j = 0; j < block_size; j++)
+    for (int j = 0; j < block_size; j++) {
+        row_nnz[i][j] = count_nnz(matrix_1[i][j]);
+    }
+  }
 
+  LOOP_PE2: for (int i = 0; i < PE; i++) {
 _ssdm_Unroll(0,0,0, "");
-# 156 "COO_SpMV.cpp"
-dest_1[i][j] = 0;
+# 100 "COO_SpMV.cpp"
 
-    int nnz = create_COO(matrix_1[i], row_1[i], col_1[i], val_1[i]);
+    LOOP_DEST1:for(int j = 0; j < block_size; j++) {
+_ssdm_Unroll(0,0,0, "");
+# 101 "COO_SpMV.cpp"
+
+        dest_1[i][j] = 0;
+    }
+
+    int nnz = create_COO(matrix_1[i], row_1[i], col_1[i], val_1[i], row_nnz[i]);
     COO_SpMV(row_1[i], col_1[i], val_1[i], vector, dest_1[i], nnz);
   }
 
-  LOOP_DEST1_PE: for (int i = 0; i < PE; i++) {
+  for (int i = 0; i < PE; i++) {
     int start = i*block_size;
-    LOOP_DEST1_ST: for(int j = 0; j < block_size; j++) {
-_ssdm_op_SpecPipeline(-1, 1, 1, 0, "");
-# 164 "COO_SpMV.cpp"
-
+    for(int j = 0; j < block_size; j++) {
         dest[start+j] = dest_1[i][j];
     }
   }

@@ -1,7 +1,3 @@
 <AutoPilot:ProjectResources xmlns:AutoPilot="com.autoesl.autopilot.ui.directiveView">
-<sourceFile name="">
-<directive functionLabel="" functionName="COO_SpMV" label="">
-<pragma name="PIPELINE"/>
-</directive>
-</sourceFile>
+<sourceFile name=""/>
 </AutoPilot:ProjectResources>

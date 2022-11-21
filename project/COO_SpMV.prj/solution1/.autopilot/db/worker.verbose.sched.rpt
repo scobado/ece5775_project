@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'worker'
 ================================================================
-* Date:           Mon Nov 21 16:31:04 2022
+* Date:           Mon Nov 21 17:02:19 2022
 
 * Version:        2016.2 (Build 1577090 on Thu Jun 02 16:59:10 MDT 2016)
 * Project:        COO_SpMV.prj
@@ -25,12 +25,12 @@
 
 + Latency (clock cycles): 
     * Summary: 
-    +-------+-------+-------+-------+---------+
-    |    Latency    |    Interval   | Pipeline|
-    |  min  |  max  |  min  |  max  |   Type  |
-    +-------+-------+-------+-------+---------+
-    |  12955|  75455|  12956|  75456|   none  |
-    +-------+-------+-------+-------+---------+
+    +------+-------+------+-------+---------+
+    |    Latency   |   Interval   | Pipeline|
+    |  min |  max  |  min |  max  |   Type  |
+    +------+-------+------+-------+---------+
+    |  8094|  23094|  8095|  23095|   none  |
+    +------+-------+------+-------+---------+
 
     + Detail: 
         * Instance: 
@@ -191,7 +191,7 @@ ST_1: val_1_3 [1/1] 0.00ns
 :17  %val_1_3 = alloca [2500 x float], align 4
 
 ST_1: tmp [1/1] 0.00ns
-:18  %tmp = call i32 (...)* @_ssdm_op_SpecRegionBegin([9 x i8]* @p_str2) nounwind
+:18  %tmp = call i32 (...)* @_ssdm_op_SpecRegionBegin([9 x i8]* @p_str3) nounwind
 
 ST_1: stg_44 [1/1] 1.57ns
 :19  br label %2
@@ -214,10 +214,10 @@ ST_2: stg_49 [1/1] 0.00ns
 :4  br i1 %exitcond4, label %1, label %2
 
 ST_2: empty [1/1] 0.00ns
-:0  %empty = call i32 (...)* @_ssdm_op_SpecRegionEnd([9 x i8]* @p_str2, i32 %tmp) nounwind
+:0  %empty = call i32 (...)* @_ssdm_op_SpecRegionEnd([9 x i8]* @p_str3, i32 %tmp) nounwind
 
 ST_2: tmp_1 [1/1] 0.00ns
-:1  %tmp_1 = call i32 (...)* @_ssdm_op_SpecRegionBegin([9 x i8]* @p_str2) nounwind
+:1  %tmp_1 = call i32 (...)* @_ssdm_op_SpecRegionBegin([9 x i8]* @p_str3) nounwind
 
 ST_2: stg_52 [1/1] 1.57ns
 :2  br label %4
@@ -240,10 +240,10 @@ ST_3: stg_57 [1/1] 0.00ns
 :4  br i1 %exitcond4_1, label %3, label %4
 
 ST_3: empty_6 [1/1] 0.00ns
-:0  %empty_6 = call i32 (...)* @_ssdm_op_SpecRegionEnd([9 x i8]* @p_str2, i32 %tmp_1) nounwind
+:0  %empty_6 = call i32 (...)* @_ssdm_op_SpecRegionEnd([9 x i8]* @p_str3, i32 %tmp_1) nounwind
 
 ST_3: tmp_6 [1/1] 0.00ns
-:1  %tmp_6 = call i32 (...)* @_ssdm_op_SpecRegionBegin([9 x i8]* @p_str2) nounwind
+:1  %tmp_6 = call i32 (...)* @_ssdm_op_SpecRegionBegin([9 x i8]* @p_str3) nounwind
 
 ST_3: stg_60 [1/1] 1.57ns
 :2  br label %6
@@ -266,10 +266,10 @@ ST_4: stg_65 [1/1] 0.00ns
 :4  br i1 %exitcond4_2, label %5, label %6
 
 ST_4: empty_8 [1/1] 0.00ns
-:0  %empty_8 = call i32 (...)* @_ssdm_op_SpecRegionEnd([9 x i8]* @p_str2, i32 %tmp_6) nounwind
+:0  %empty_8 = call i32 (...)* @_ssdm_op_SpecRegionEnd([9 x i8]* @p_str3, i32 %tmp_6) nounwind
 
 ST_4: tmp_8 [1/1] 0.00ns
-:1  %tmp_8 = call i32 (...)* @_ssdm_op_SpecRegionBegin([9 x i8]* @p_str2) nounwind
+:1  %tmp_8 = call i32 (...)* @_ssdm_op_SpecRegionBegin([9 x i8]* @p_str3) nounwind
 
 ST_4: stg_68 [1/1] 1.57ns
 :2  br label %7
@@ -963,7 +963,7 @@ ST_20: stg_286 [2/2] 1.04ns
 
  <State 21>: 1.57ns
 ST_21: empty_10 [1/1] 0.00ns
-.preheader6.preheader:0  %empty_10 = call i32 (...)* @_ssdm_op_SpecRegionEnd([9 x i8]* @p_str2, i32 %tmp_8) nounwind
+.preheader6.preheader:0  %empty_10 = call i32 (...)* @_ssdm_op_SpecRegionEnd([9 x i8]* @p_str3, i32 %tmp_8) nounwind
 
 ST_21: stg_288 [1/2] 0.00ns
 .preheader6.preheader:104  call fastcc void @worker_COO_SpMV([2500 x i6]* %row_1_1, [2500 x i8]* %col_1_1, [2500 x float]* %val_1_1, [25 x float]* %dest_1_1, i32 %tmp_4) nounwind

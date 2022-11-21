@@ -153,12 +153,12 @@ worker::worker(sc_module_name name) : sc_module(name), mVcdFile(0) {
     dest_1_0_U->address0(dest_1_0_address0);
     dest_1_0_U->ce0(dest_1_0_ce0);
     dest_1_0_U->we0(dest_1_0_we0);
-    dest_1_0_U->d0(dest_1_0_d0);
+    dest_1_0_U->d0(ap_var_for_const0);
     dest_1_0_U->q0(dest_1_0_q0);
     dest_1_0_U->address1(dest_1_0_address1);
     dest_1_0_U->ce1(dest_1_0_ce1);
     dest_1_0_U->we1(dest_1_0_we1);
-    dest_1_0_U->d1(ap_var_for_const0);
+    dest_1_0_U->d1(dest_1_0_d1);
     dest_1_0_U->q1(dest_1_0_q1);
     dest_1_1_U = new worker_dest_1_0("dest_1_1_U");
     dest_1_1_U->clk(ap_clk);
@@ -166,12 +166,12 @@ worker::worker(sc_module_name name) : sc_module(name), mVcdFile(0) {
     dest_1_1_U->address0(dest_1_1_address0);
     dest_1_1_U->ce0(dest_1_1_ce0);
     dest_1_1_U->we0(dest_1_1_we0);
-    dest_1_1_U->d0(dest_1_1_d0);
+    dest_1_1_U->d0(ap_var_for_const0);
     dest_1_1_U->q0(dest_1_1_q0);
     dest_1_1_U->address1(dest_1_1_address1);
     dest_1_1_U->ce1(dest_1_1_ce1);
     dest_1_1_U->we1(dest_1_1_we1);
-    dest_1_1_U->d1(ap_var_for_const0);
+    dest_1_1_U->d1(dest_1_1_d1);
     dest_1_1_U->q1(dest_1_1_q1);
     dest_1_2_U = new worker_dest_1_0("dest_1_2_U");
     dest_1_2_U->clk(ap_clk);
@@ -179,12 +179,12 @@ worker::worker(sc_module_name name) : sc_module(name), mVcdFile(0) {
     dest_1_2_U->address0(dest_1_2_address0);
     dest_1_2_U->ce0(dest_1_2_ce0);
     dest_1_2_U->we0(dest_1_2_we0);
-    dest_1_2_U->d0(dest_1_2_d0);
+    dest_1_2_U->d0(ap_var_for_const0);
     dest_1_2_U->q0(dest_1_2_q0);
     dest_1_2_U->address1(dest_1_2_address1);
     dest_1_2_U->ce1(dest_1_2_ce1);
     dest_1_2_U->we1(dest_1_2_we1);
-    dest_1_2_U->d1(ap_var_for_const0);
+    dest_1_2_U->d1(dest_1_2_d1);
     dest_1_2_U->q1(dest_1_2_q1);
     dest_1_3_U = new worker_dest_1_0("dest_1_3_U");
     dest_1_3_U->clk(ap_clk);
@@ -192,12 +192,12 @@ worker::worker(sc_module_name name) : sc_module(name), mVcdFile(0) {
     dest_1_3_U->address0(dest_1_3_address0);
     dest_1_3_U->ce0(dest_1_3_ce0);
     dest_1_3_U->we0(dest_1_3_we0);
-    dest_1_3_U->d0(dest_1_3_d0);
+    dest_1_3_U->d0(ap_var_for_const0);
     dest_1_3_U->q0(dest_1_3_q0);
     dest_1_3_U->address1(dest_1_3_address1);
     dest_1_3_U->ce1(dest_1_3_ce1);
     dest_1_3_U->we1(dest_1_3_we1);
-    dest_1_3_U->d1(ap_var_for_const0);
+    dest_1_3_U->d1(dest_1_3_d1);
     dest_1_3_U->q1(dest_1_3_q1);
     row_1_0_U = new worker_row_1_0("row_1_0_U");
     row_1_0_U->clk(ap_clk);
@@ -313,9 +313,11 @@ worker::worker(sc_module_name name) : sc_module(name), mVcdFile(0) {
     grp_worker_COO_SpMV_fu_1128->val_r_q0(grp_worker_COO_SpMV_fu_1128_val_r_q0);
     grp_worker_COO_SpMV_fu_1128->output_r_address0(grp_worker_COO_SpMV_fu_1128_output_r_address0);
     grp_worker_COO_SpMV_fu_1128->output_r_ce0(grp_worker_COO_SpMV_fu_1128_output_r_ce0);
-    grp_worker_COO_SpMV_fu_1128->output_r_we0(grp_worker_COO_SpMV_fu_1128_output_r_we0);
-    grp_worker_COO_SpMV_fu_1128->output_r_d0(grp_worker_COO_SpMV_fu_1128_output_r_d0);
     grp_worker_COO_SpMV_fu_1128->output_r_q0(grp_worker_COO_SpMV_fu_1128_output_r_q0);
+    grp_worker_COO_SpMV_fu_1128->output_r_address1(grp_worker_COO_SpMV_fu_1128_output_r_address1);
+    grp_worker_COO_SpMV_fu_1128->output_r_ce1(grp_worker_COO_SpMV_fu_1128_output_r_ce1);
+    grp_worker_COO_SpMV_fu_1128->output_r_we1(grp_worker_COO_SpMV_fu_1128_output_r_we1);
+    grp_worker_COO_SpMV_fu_1128->output_r_d1(grp_worker_COO_SpMV_fu_1128_output_r_d1);
     grp_worker_COO_SpMV_fu_1128->nnz(reg_1196);
     grp_worker_COO_SpMV_fu_1139 = new worker_COO_SpMV("grp_worker_COO_SpMV_fu_1139");
     grp_worker_COO_SpMV_fu_1139->ap_clk(ap_clk);
@@ -335,9 +337,11 @@ worker::worker(sc_module_name name) : sc_module(name), mVcdFile(0) {
     grp_worker_COO_SpMV_fu_1139->val_r_q0(val_1_2_q0);
     grp_worker_COO_SpMV_fu_1139->output_r_address0(grp_worker_COO_SpMV_fu_1139_output_r_address0);
     grp_worker_COO_SpMV_fu_1139->output_r_ce0(grp_worker_COO_SpMV_fu_1139_output_r_ce0);
-    grp_worker_COO_SpMV_fu_1139->output_r_we0(grp_worker_COO_SpMV_fu_1139_output_r_we0);
-    grp_worker_COO_SpMV_fu_1139->output_r_d0(grp_worker_COO_SpMV_fu_1139_output_r_d0);
     grp_worker_COO_SpMV_fu_1139->output_r_q0(dest_1_2_q0);
+    grp_worker_COO_SpMV_fu_1139->output_r_address1(grp_worker_COO_SpMV_fu_1139_output_r_address1);
+    grp_worker_COO_SpMV_fu_1139->output_r_ce1(grp_worker_COO_SpMV_fu_1139_output_r_ce1);
+    grp_worker_COO_SpMV_fu_1139->output_r_we1(grp_worker_COO_SpMV_fu_1139_output_r_we1);
+    grp_worker_COO_SpMV_fu_1139->output_r_d1(grp_worker_COO_SpMV_fu_1139_output_r_d1);
     grp_worker_COO_SpMV_fu_1139->nnz(tmp_7_reg_1351);
     grp_worker_COO_SpMV_fu_1150 = new worker_COO_SpMV("grp_worker_COO_SpMV_fu_1150");
     grp_worker_COO_SpMV_fu_1150->ap_clk(ap_clk);
@@ -357,9 +361,11 @@ worker::worker(sc_module_name name) : sc_module(name), mVcdFile(0) {
     grp_worker_COO_SpMV_fu_1150->val_r_q0(val_1_3_q0);
     grp_worker_COO_SpMV_fu_1150->output_r_address0(grp_worker_COO_SpMV_fu_1150_output_r_address0);
     grp_worker_COO_SpMV_fu_1150->output_r_ce0(grp_worker_COO_SpMV_fu_1150_output_r_ce0);
-    grp_worker_COO_SpMV_fu_1150->output_r_we0(grp_worker_COO_SpMV_fu_1150_output_r_we0);
-    grp_worker_COO_SpMV_fu_1150->output_r_d0(grp_worker_COO_SpMV_fu_1150_output_r_d0);
     grp_worker_COO_SpMV_fu_1150->output_r_q0(dest_1_3_q0);
+    grp_worker_COO_SpMV_fu_1150->output_r_address1(grp_worker_COO_SpMV_fu_1150_output_r_address1);
+    grp_worker_COO_SpMV_fu_1150->output_r_ce1(grp_worker_COO_SpMV_fu_1150_output_r_ce1);
+    grp_worker_COO_SpMV_fu_1150->output_r_we1(grp_worker_COO_SpMV_fu_1150_output_r_we1);
+    grp_worker_COO_SpMV_fu_1150->output_r_d1(grp_worker_COO_SpMV_fu_1150_output_r_d1);
     grp_worker_COO_SpMV_fu_1150->nnz(tmp_9_reg_1356);
     grp_worker_create_COO_fu_1161 = new worker_create_COO("grp_worker_create_COO_fu_1161");
     grp_worker_create_COO_fu_1161->ap_clk(ap_clk);
@@ -490,77 +496,77 @@ worker::worker(sc_module_name name) : sc_module(name), mVcdFile(0) {
     SC_METHOD(thread_ap_sig_39);
     sensitive << ( ap_CS_fsm );
 
-    SC_METHOD(thread_ap_sig_561);
+    SC_METHOD(thread_ap_sig_567);
     sensitive << ( ap_CS_fsm );
 
-    SC_METHOD(thread_ap_sig_581);
+    SC_METHOD(thread_ap_sig_587);
     sensitive << ( ap_CS_fsm );
 
-    SC_METHOD(thread_ap_sig_590);
+    SC_METHOD(thread_ap_sig_596);
     sensitive << ( ap_CS_fsm );
 
-    SC_METHOD(thread_ap_sig_597);
+    SC_METHOD(thread_ap_sig_603);
     sensitive << ( ap_CS_fsm );
 
-    SC_METHOD(thread_ap_sig_626);
+    SC_METHOD(thread_ap_sig_632);
     sensitive << ( ap_CS_fsm );
 
-    SC_METHOD(thread_ap_sig_644);
+    SC_METHOD(thread_ap_sig_650);
     sensitive << ( ap_CS_fsm );
 
-    SC_METHOD(thread_ap_sig_655);
+    SC_METHOD(thread_ap_sig_661);
     sensitive << ( ap_CS_fsm );
 
-    SC_METHOD(thread_ap_sig_669);
+    SC_METHOD(thread_ap_sig_675);
     sensitive << ( ap_CS_fsm );
 
-    SC_METHOD(thread_ap_sig_686);
+    SC_METHOD(thread_ap_sig_692);
     sensitive << ( ap_CS_fsm );
 
-    SC_METHOD(thread_ap_sig_703);
+    SC_METHOD(thread_ap_sig_709);
     sensitive << ( ap_CS_fsm );
 
-    SC_METHOD(thread_ap_sig_720);
+    SC_METHOD(thread_ap_sig_726);
     sensitive << ( ap_CS_fsm );
 
-    SC_METHOD(thread_ap_sig_737);
+    SC_METHOD(thread_ap_sig_743);
     sensitive << ( ap_CS_fsm );
 
-    SC_METHOD(thread_ap_sig_754);
+    SC_METHOD(thread_ap_sig_760);
     sensitive << ( ap_CS_fsm );
 
-    SC_METHOD(thread_ap_sig_771);
+    SC_METHOD(thread_ap_sig_777);
     sensitive << ( ap_CS_fsm );
 
-    SC_METHOD(thread_ap_sig_788);
+    SC_METHOD(thread_ap_sig_794);
     sensitive << ( ap_CS_fsm );
 
     SC_METHOD(thread_ap_sig_cseq_ST_st10_fsm_9);
-    sensitive << ( ap_sig_703 );
+    sensitive << ( ap_sig_709 );
 
     SC_METHOD(thread_ap_sig_cseq_ST_st11_fsm_10);
-    sensitive << ( ap_sig_720 );
+    sensitive << ( ap_sig_726 );
 
     SC_METHOD(thread_ap_sig_cseq_ST_st12_fsm_11);
-    sensitive << ( ap_sig_737 );
+    sensitive << ( ap_sig_743 );
 
     SC_METHOD(thread_ap_sig_cseq_ST_st13_fsm_12);
-    sensitive << ( ap_sig_754 );
+    sensitive << ( ap_sig_760 );
 
     SC_METHOD(thread_ap_sig_cseq_ST_st14_fsm_13);
-    sensitive << ( ap_sig_771 );
+    sensitive << ( ap_sig_777 );
 
     SC_METHOD(thread_ap_sig_cseq_ST_st15_fsm_14);
-    sensitive << ( ap_sig_788 );
+    sensitive << ( ap_sig_794 );
 
     SC_METHOD(thread_ap_sig_cseq_ST_st16_fsm_15);
-    sensitive << ( ap_sig_626 );
+    sensitive << ( ap_sig_632 );
 
     SC_METHOD(thread_ap_sig_cseq_ST_st17_fsm_16);
     sensitive << ( ap_sig_124 );
 
     SC_METHOD(thread_ap_sig_cseq_ST_st18_fsm_17);
-    sensitive << ( ap_sig_590 );
+    sensitive << ( ap_sig_596 );
 
     SC_METHOD(thread_ap_sig_cseq_ST_st19_fsm_18);
     sensitive << ( ap_sig_135 );
@@ -569,10 +575,10 @@ worker::worker(sc_module_name name) : sc_module(name), mVcdFile(0) {
     sensitive << ( ap_sig_39 );
 
     SC_METHOD(thread_ap_sig_cseq_ST_st20_fsm_19);
-    sensitive << ( ap_sig_597 );
+    sensitive << ( ap_sig_603 );
 
     SC_METHOD(thread_ap_sig_cseq_ST_st21_fsm_20);
-    sensitive << ( ap_sig_561 );
+    sensitive << ( ap_sig_567 );
 
     SC_METHOD(thread_ap_sig_cseq_ST_st22_fsm_21);
     sensitive << ( ap_sig_196 );
@@ -581,7 +587,7 @@ worker::worker(sc_module_name name) : sc_module(name), mVcdFile(0) {
     sensitive << ( ap_sig_213 );
 
     SC_METHOD(thread_ap_sig_cseq_ST_st24_fsm_23);
-    sensitive << ( ap_sig_581 );
+    sensitive << ( ap_sig_587 );
 
     SC_METHOD(thread_ap_sig_cseq_ST_st2_fsm_1);
     sensitive << ( ap_sig_156 );
@@ -596,16 +602,16 @@ worker::worker(sc_module_name name) : sc_module(name), mVcdFile(0) {
     sensitive << ( ap_sig_183 );
 
     SC_METHOD(thread_ap_sig_cseq_ST_st6_fsm_5);
-    sensitive << ( ap_sig_644 );
+    sensitive << ( ap_sig_650 );
 
     SC_METHOD(thread_ap_sig_cseq_ST_st7_fsm_6);
-    sensitive << ( ap_sig_655 );
+    sensitive << ( ap_sig_661 );
 
     SC_METHOD(thread_ap_sig_cseq_ST_st8_fsm_7);
-    sensitive << ( ap_sig_669 );
+    sensitive << ( ap_sig_675 );
 
     SC_METHOD(thread_ap_sig_cseq_ST_st9_fsm_8);
-    sensitive << ( ap_sig_686 );
+    sensitive << ( ap_sig_692 );
 
     SC_METHOD(thread_col_1_0_address0);
     sensitive << ( ap_sig_cseq_ST_st17_fsm_16 );
@@ -674,7 +680,9 @@ worker::worker(sc_module_name name) : sc_module(name), mVcdFile(0) {
 
     SC_METHOD(thread_dest_1_0_address1);
     sensitive << ( ap_sig_cseq_ST_st17_fsm_16 );
+    sensitive << ( ap_sig_cseq_ST_st19_fsm_18 );
     sensitive << ( ap_sig_cseq_ST_st23_fsm_22 );
+    sensitive << ( grp_worker_COO_SpMV_fu_1128_output_r_address1 );
     sensitive << ( ap_sig_cseq_ST_st16_fsm_15 );
     sensitive << ( ap_sig_cseq_ST_st6_fsm_5 );
     sensitive << ( ap_sig_cseq_ST_st7_fsm_6 );
@@ -709,7 +717,9 @@ worker::worker(sc_module_name name) : sc_module(name), mVcdFile(0) {
     SC_METHOD(thread_dest_1_0_ce1);
     sensitive << ( ap_sig_cseq_ST_st17_fsm_16 );
     sensitive << ( grp_worker_create_COO_fu_1161_ap_done );
+    sensitive << ( ap_sig_cseq_ST_st19_fsm_18 );
     sensitive << ( ap_sig_cseq_ST_st23_fsm_22 );
+    sensitive << ( grp_worker_COO_SpMV_fu_1128_output_r_ce1 );
     sensitive << ( ap_sig_cseq_ST_st16_fsm_15 );
     sensitive << ( ap_sig_cseq_ST_st6_fsm_5 );
     sensitive << ( ap_sig_cseq_ST_st7_fsm_6 );
@@ -722,11 +732,10 @@ worker::worker(sc_module_name name) : sc_module(name), mVcdFile(0) {
     sensitive << ( ap_sig_cseq_ST_st14_fsm_13 );
     sensitive << ( ap_sig_cseq_ST_st15_fsm_14 );
 
-    SC_METHOD(thread_dest_1_0_d0);
+    SC_METHOD(thread_dest_1_0_d1);
     sensitive << ( ap_sig_cseq_ST_st17_fsm_16 );
     sensitive << ( ap_sig_cseq_ST_st19_fsm_18 );
-    sensitive << ( ap_sig_cseq_ST_st5_fsm_4 );
-    sensitive << ( grp_worker_COO_SpMV_fu_1128_output_r_d0 );
+    sensitive << ( grp_worker_COO_SpMV_fu_1128_output_r_d1 );
     sensitive << ( ap_sig_cseq_ST_st16_fsm_15 );
     sensitive << ( ap_sig_cseq_ST_st6_fsm_5 );
     sensitive << ( ap_sig_cseq_ST_st7_fsm_6 );
@@ -742,9 +751,7 @@ worker::worker(sc_module_name name) : sc_module(name), mVcdFile(0) {
     SC_METHOD(thread_dest_1_0_we0);
     sensitive << ( ap_sig_cseq_ST_st17_fsm_16 );
     sensitive << ( grp_worker_create_COO_fu_1161_ap_done );
-    sensitive << ( ap_sig_cseq_ST_st19_fsm_18 );
     sensitive << ( ap_sig_cseq_ST_st5_fsm_4 );
-    sensitive << ( grp_worker_COO_SpMV_fu_1128_output_r_we0 );
     sensitive << ( exitcond4_3_fu_1237_p2 );
     sensitive << ( ap_sig_cseq_ST_st16_fsm_15 );
     sensitive << ( ap_sig_cseq_ST_st6_fsm_5 );
@@ -761,6 +768,8 @@ worker::worker(sc_module_name name) : sc_module(name), mVcdFile(0) {
     SC_METHOD(thread_dest_1_0_we1);
     sensitive << ( ap_sig_cseq_ST_st17_fsm_16 );
     sensitive << ( grp_worker_create_COO_fu_1161_ap_done );
+    sensitive << ( ap_sig_cseq_ST_st19_fsm_18 );
+    sensitive << ( grp_worker_COO_SpMV_fu_1128_output_r_we1 );
     sensitive << ( ap_sig_cseq_ST_st16_fsm_15 );
     sensitive << ( ap_sig_cseq_ST_st6_fsm_5 );
     sensitive << ( ap_sig_cseq_ST_st7_fsm_6 );
@@ -794,6 +803,8 @@ worker::worker(sc_module_name name) : sc_module(name), mVcdFile(0) {
     sensitive << ( ap_sig_cseq_ST_st17_fsm_16 );
     sensitive << ( ap_sig_cseq_ST_st19_fsm_18 );
     sensitive << ( ap_sig_cseq_ST_st23_fsm_22 );
+    sensitive << ( grp_worker_COO_SpMV_fu_1128_output_r_address1 );
+    sensitive << ( ap_sig_cseq_ST_st21_fsm_20 );
     sensitive << ( ap_sig_cseq_ST_st18_fsm_17 );
     sensitive << ( ap_sig_cseq_ST_st16_fsm_15 );
     sensitive << ( ap_sig_cseq_ST_st8_fsm_7 );
@@ -835,6 +846,8 @@ worker::worker(sc_module_name name) : sc_module(name), mVcdFile(0) {
     sensitive << ( grp_worker_create_COO_fu_1174_ap_done );
     sensitive << ( grp_worker_create_COO_fu_1185_ap_done );
     sensitive << ( ap_sig_cseq_ST_st23_fsm_22 );
+    sensitive << ( grp_worker_COO_SpMV_fu_1128_output_r_ce1 );
+    sensitive << ( ap_sig_cseq_ST_st21_fsm_20 );
     sensitive << ( ap_sig_cseq_ST_st18_fsm_17 );
     sensitive << ( ap_sig_cseq_ST_st16_fsm_15 );
     sensitive << ( ap_sig_cseq_ST_st8_fsm_7 );
@@ -846,14 +859,13 @@ worker::worker(sc_module_name name) : sc_module(name), mVcdFile(0) {
     sensitive << ( ap_sig_cseq_ST_st14_fsm_13 );
     sensitive << ( ap_sig_cseq_ST_st15_fsm_14 );
 
-    SC_METHOD(thread_dest_1_1_d0);
+    SC_METHOD(thread_dest_1_1_d1);
     sensitive << ( ap_sig_cseq_ST_st17_fsm_16 );
     sensitive << ( ap_sig_cseq_ST_st19_fsm_18 );
-    sensitive << ( grp_worker_COO_SpMV_fu_1128_output_r_d0 );
+    sensitive << ( grp_worker_COO_SpMV_fu_1128_output_r_d1 );
     sensitive << ( ap_sig_cseq_ST_st21_fsm_20 );
     sensitive << ( ap_sig_cseq_ST_st18_fsm_17 );
     sensitive << ( ap_sig_cseq_ST_st16_fsm_15 );
-    sensitive << ( ap_sig_cseq_ST_st7_fsm_6 );
     sensitive << ( ap_sig_cseq_ST_st8_fsm_7 );
     sensitive << ( ap_sig_cseq_ST_st9_fsm_8 );
     sensitive << ( ap_sig_cseq_ST_st10_fsm_9 );
@@ -870,8 +882,6 @@ worker::worker(sc_module_name name) : sc_module(name), mVcdFile(0) {
     sensitive << ( grp_worker_COO_SpMV_fu_1128_ap_done );
     sensitive << ( grp_worker_create_COO_fu_1174_ap_done );
     sensitive << ( grp_worker_create_COO_fu_1185_ap_done );
-    sensitive << ( grp_worker_COO_SpMV_fu_1128_output_r_we0 );
-    sensitive << ( ap_sig_cseq_ST_st21_fsm_20 );
     sensitive << ( ap_sig_cseq_ST_st18_fsm_17 );
     sensitive << ( ap_sig_cseq_ST_st16_fsm_15 );
     sensitive << ( ap_sig_cseq_ST_st7_fsm_6 );
@@ -891,6 +901,8 @@ worker::worker(sc_module_name name) : sc_module(name), mVcdFile(0) {
     sensitive << ( grp_worker_COO_SpMV_fu_1128_ap_done );
     sensitive << ( grp_worker_create_COO_fu_1174_ap_done );
     sensitive << ( grp_worker_create_COO_fu_1185_ap_done );
+    sensitive << ( grp_worker_COO_SpMV_fu_1128_output_r_we1 );
+    sensitive << ( ap_sig_cseq_ST_st21_fsm_20 );
     sensitive << ( ap_sig_cseq_ST_st18_fsm_17 );
     sensitive << ( ap_sig_cseq_ST_st16_fsm_15 );
     sensitive << ( ap_sig_cseq_ST_st8_fsm_7 );
@@ -923,6 +935,8 @@ worker::worker(sc_module_name name) : sc_module(name), mVcdFile(0) {
     sensitive << ( ap_sig_cseq_ST_st17_fsm_16 );
     sensitive << ( ap_sig_cseq_ST_st19_fsm_18 );
     sensitive << ( ap_sig_cseq_ST_st23_fsm_22 );
+    sensitive << ( grp_worker_COO_SpMV_fu_1139_output_r_address1 );
+    sensitive << ( ap_sig_cseq_ST_st21_fsm_20 );
     sensitive << ( ap_sig_cseq_ST_st18_fsm_17 );
     sensitive << ( ap_sig_cseq_ST_st16_fsm_15 );
     sensitive << ( ap_sig_cseq_ST_st8_fsm_7 );
@@ -964,6 +978,8 @@ worker::worker(sc_module_name name) : sc_module(name), mVcdFile(0) {
     sensitive << ( grp_worker_create_COO_fu_1174_ap_done );
     sensitive << ( grp_worker_create_COO_fu_1185_ap_done );
     sensitive << ( ap_sig_cseq_ST_st23_fsm_22 );
+    sensitive << ( grp_worker_COO_SpMV_fu_1139_output_r_ce1 );
+    sensitive << ( ap_sig_cseq_ST_st21_fsm_20 );
     sensitive << ( ap_sig_cseq_ST_st18_fsm_17 );
     sensitive << ( ap_sig_cseq_ST_st16_fsm_15 );
     sensitive << ( ap_sig_cseq_ST_st8_fsm_7 );
@@ -975,14 +991,13 @@ worker::worker(sc_module_name name) : sc_module(name), mVcdFile(0) {
     sensitive << ( ap_sig_cseq_ST_st14_fsm_13 );
     sensitive << ( ap_sig_cseq_ST_st15_fsm_14 );
 
-    SC_METHOD(thread_dest_1_2_d0);
+    SC_METHOD(thread_dest_1_2_d1);
     sensitive << ( ap_sig_cseq_ST_st17_fsm_16 );
     sensitive << ( ap_sig_cseq_ST_st19_fsm_18 );
-    sensitive << ( grp_worker_COO_SpMV_fu_1139_output_r_d0 );
+    sensitive << ( grp_worker_COO_SpMV_fu_1139_output_r_d1 );
     sensitive << ( ap_sig_cseq_ST_st21_fsm_20 );
     sensitive << ( ap_sig_cseq_ST_st18_fsm_17 );
     sensitive << ( ap_sig_cseq_ST_st16_fsm_15 );
-    sensitive << ( ap_sig_cseq_ST_st7_fsm_6 );
     sensitive << ( ap_sig_cseq_ST_st8_fsm_7 );
     sensitive << ( ap_sig_cseq_ST_st9_fsm_8 );
     sensitive << ( ap_sig_cseq_ST_st10_fsm_9 );
@@ -999,8 +1014,6 @@ worker::worker(sc_module_name name) : sc_module(name), mVcdFile(0) {
     sensitive << ( grp_worker_COO_SpMV_fu_1128_ap_done );
     sensitive << ( grp_worker_create_COO_fu_1174_ap_done );
     sensitive << ( grp_worker_create_COO_fu_1185_ap_done );
-    sensitive << ( grp_worker_COO_SpMV_fu_1139_output_r_we0 );
-    sensitive << ( ap_sig_cseq_ST_st21_fsm_20 );
     sensitive << ( ap_sig_cseq_ST_st18_fsm_17 );
     sensitive << ( ap_sig_cseq_ST_st16_fsm_15 );
     sensitive << ( ap_sig_cseq_ST_st7_fsm_6 );
@@ -1020,6 +1033,8 @@ worker::worker(sc_module_name name) : sc_module(name), mVcdFile(0) {
     sensitive << ( grp_worker_COO_SpMV_fu_1128_ap_done );
     sensitive << ( grp_worker_create_COO_fu_1174_ap_done );
     sensitive << ( grp_worker_create_COO_fu_1185_ap_done );
+    sensitive << ( grp_worker_COO_SpMV_fu_1139_output_r_we1 );
+    sensitive << ( ap_sig_cseq_ST_st21_fsm_20 );
     sensitive << ( ap_sig_cseq_ST_st18_fsm_17 );
     sensitive << ( ap_sig_cseq_ST_st16_fsm_15 );
     sensitive << ( ap_sig_cseq_ST_st8_fsm_7 );
@@ -1052,6 +1067,8 @@ worker::worker(sc_module_name name) : sc_module(name), mVcdFile(0) {
     sensitive << ( ap_sig_cseq_ST_st17_fsm_16 );
     sensitive << ( ap_sig_cseq_ST_st19_fsm_18 );
     sensitive << ( ap_sig_cseq_ST_st23_fsm_22 );
+    sensitive << ( grp_worker_COO_SpMV_fu_1150_output_r_address1 );
+    sensitive << ( ap_sig_cseq_ST_st21_fsm_20 );
     sensitive << ( ap_sig_cseq_ST_st18_fsm_17 );
     sensitive << ( ap_sig_cseq_ST_st16_fsm_15 );
     sensitive << ( ap_sig_cseq_ST_st8_fsm_7 );
@@ -1093,6 +1110,8 @@ worker::worker(sc_module_name name) : sc_module(name), mVcdFile(0) {
     sensitive << ( grp_worker_create_COO_fu_1174_ap_done );
     sensitive << ( grp_worker_create_COO_fu_1185_ap_done );
     sensitive << ( ap_sig_cseq_ST_st23_fsm_22 );
+    sensitive << ( grp_worker_COO_SpMV_fu_1150_output_r_ce1 );
+    sensitive << ( ap_sig_cseq_ST_st21_fsm_20 );
     sensitive << ( ap_sig_cseq_ST_st18_fsm_17 );
     sensitive << ( ap_sig_cseq_ST_st16_fsm_15 );
     sensitive << ( ap_sig_cseq_ST_st8_fsm_7 );
@@ -1104,14 +1123,13 @@ worker::worker(sc_module_name name) : sc_module(name), mVcdFile(0) {
     sensitive << ( ap_sig_cseq_ST_st14_fsm_13 );
     sensitive << ( ap_sig_cseq_ST_st15_fsm_14 );
 
-    SC_METHOD(thread_dest_1_3_d0);
+    SC_METHOD(thread_dest_1_3_d1);
     sensitive << ( ap_sig_cseq_ST_st17_fsm_16 );
     sensitive << ( ap_sig_cseq_ST_st19_fsm_18 );
-    sensitive << ( grp_worker_COO_SpMV_fu_1150_output_r_d0 );
+    sensitive << ( grp_worker_COO_SpMV_fu_1150_output_r_d1 );
     sensitive << ( ap_sig_cseq_ST_st21_fsm_20 );
     sensitive << ( ap_sig_cseq_ST_st18_fsm_17 );
     sensitive << ( ap_sig_cseq_ST_st16_fsm_15 );
-    sensitive << ( ap_sig_cseq_ST_st7_fsm_6 );
     sensitive << ( ap_sig_cseq_ST_st8_fsm_7 );
     sensitive << ( ap_sig_cseq_ST_st9_fsm_8 );
     sensitive << ( ap_sig_cseq_ST_st10_fsm_9 );
@@ -1128,8 +1146,6 @@ worker::worker(sc_module_name name) : sc_module(name), mVcdFile(0) {
     sensitive << ( grp_worker_COO_SpMV_fu_1128_ap_done );
     sensitive << ( grp_worker_create_COO_fu_1174_ap_done );
     sensitive << ( grp_worker_create_COO_fu_1185_ap_done );
-    sensitive << ( grp_worker_COO_SpMV_fu_1150_output_r_we0 );
-    sensitive << ( ap_sig_cseq_ST_st21_fsm_20 );
     sensitive << ( ap_sig_cseq_ST_st18_fsm_17 );
     sensitive << ( ap_sig_cseq_ST_st16_fsm_15 );
     sensitive << ( ap_sig_cseq_ST_st7_fsm_6 );
@@ -1149,6 +1165,8 @@ worker::worker(sc_module_name name) : sc_module(name), mVcdFile(0) {
     sensitive << ( grp_worker_COO_SpMV_fu_1128_ap_done );
     sensitive << ( grp_worker_create_COO_fu_1174_ap_done );
     sensitive << ( grp_worker_create_COO_fu_1185_ap_done );
+    sensitive << ( grp_worker_COO_SpMV_fu_1150_output_r_we1 );
+    sensitive << ( ap_sig_cseq_ST_st21_fsm_20 );
     sensitive << ( ap_sig_cseq_ST_st18_fsm_17 );
     sensitive << ( ap_sig_cseq_ST_st16_fsm_15 );
     sensitive << ( ap_sig_cseq_ST_st8_fsm_7 );
@@ -1489,38 +1507,38 @@ worker::worker(sc_module_name name) : sc_module(name), mVcdFile(0) {
     sc_trace(mVcdFile, dest_1_0_address0, "dest_1_0_address0");
     sc_trace(mVcdFile, dest_1_0_ce0, "dest_1_0_ce0");
     sc_trace(mVcdFile, dest_1_0_we0, "dest_1_0_we0");
-    sc_trace(mVcdFile, dest_1_0_d0, "dest_1_0_d0");
     sc_trace(mVcdFile, dest_1_0_q0, "dest_1_0_q0");
     sc_trace(mVcdFile, dest_1_0_address1, "dest_1_0_address1");
     sc_trace(mVcdFile, dest_1_0_ce1, "dest_1_0_ce1");
     sc_trace(mVcdFile, dest_1_0_we1, "dest_1_0_we1");
+    sc_trace(mVcdFile, dest_1_0_d1, "dest_1_0_d1");
     sc_trace(mVcdFile, dest_1_0_q1, "dest_1_0_q1");
     sc_trace(mVcdFile, dest_1_1_address0, "dest_1_1_address0");
     sc_trace(mVcdFile, dest_1_1_ce0, "dest_1_1_ce0");
     sc_trace(mVcdFile, dest_1_1_we0, "dest_1_1_we0");
-    sc_trace(mVcdFile, dest_1_1_d0, "dest_1_1_d0");
     sc_trace(mVcdFile, dest_1_1_q0, "dest_1_1_q0");
     sc_trace(mVcdFile, dest_1_1_address1, "dest_1_1_address1");
     sc_trace(mVcdFile, dest_1_1_ce1, "dest_1_1_ce1");
     sc_trace(mVcdFile, dest_1_1_we1, "dest_1_1_we1");
+    sc_trace(mVcdFile, dest_1_1_d1, "dest_1_1_d1");
     sc_trace(mVcdFile, dest_1_1_q1, "dest_1_1_q1");
     sc_trace(mVcdFile, dest_1_2_address0, "dest_1_2_address0");
     sc_trace(mVcdFile, dest_1_2_ce0, "dest_1_2_ce0");
     sc_trace(mVcdFile, dest_1_2_we0, "dest_1_2_we0");
-    sc_trace(mVcdFile, dest_1_2_d0, "dest_1_2_d0");
     sc_trace(mVcdFile, dest_1_2_q0, "dest_1_2_q0");
     sc_trace(mVcdFile, dest_1_2_address1, "dest_1_2_address1");
     sc_trace(mVcdFile, dest_1_2_ce1, "dest_1_2_ce1");
     sc_trace(mVcdFile, dest_1_2_we1, "dest_1_2_we1");
+    sc_trace(mVcdFile, dest_1_2_d1, "dest_1_2_d1");
     sc_trace(mVcdFile, dest_1_2_q1, "dest_1_2_q1");
     sc_trace(mVcdFile, dest_1_3_address0, "dest_1_3_address0");
     sc_trace(mVcdFile, dest_1_3_ce0, "dest_1_3_ce0");
     sc_trace(mVcdFile, dest_1_3_we0, "dest_1_3_we0");
-    sc_trace(mVcdFile, dest_1_3_d0, "dest_1_3_d0");
     sc_trace(mVcdFile, dest_1_3_q0, "dest_1_3_q0");
     sc_trace(mVcdFile, dest_1_3_address1, "dest_1_3_address1");
     sc_trace(mVcdFile, dest_1_3_ce1, "dest_1_3_ce1");
     sc_trace(mVcdFile, dest_1_3_we1, "dest_1_3_we1");
+    sc_trace(mVcdFile, dest_1_3_d1, "dest_1_3_d1");
     sc_trace(mVcdFile, dest_1_3_q1, "dest_1_3_q1");
     sc_trace(mVcdFile, row_1_0_address0, "row_1_0_address0");
     sc_trace(mVcdFile, row_1_0_ce0, "row_1_0_ce0");
@@ -1572,9 +1590,11 @@ worker::worker(sc_module_name name) : sc_module(name), mVcdFile(0) {
     sc_trace(mVcdFile, grp_worker_COO_SpMV_fu_1128_val_r_q0, "grp_worker_COO_SpMV_fu_1128_val_r_q0");
     sc_trace(mVcdFile, grp_worker_COO_SpMV_fu_1128_output_r_address0, "grp_worker_COO_SpMV_fu_1128_output_r_address0");
     sc_trace(mVcdFile, grp_worker_COO_SpMV_fu_1128_output_r_ce0, "grp_worker_COO_SpMV_fu_1128_output_r_ce0");
-    sc_trace(mVcdFile, grp_worker_COO_SpMV_fu_1128_output_r_we0, "grp_worker_COO_SpMV_fu_1128_output_r_we0");
-    sc_trace(mVcdFile, grp_worker_COO_SpMV_fu_1128_output_r_d0, "grp_worker_COO_SpMV_fu_1128_output_r_d0");
     sc_trace(mVcdFile, grp_worker_COO_SpMV_fu_1128_output_r_q0, "grp_worker_COO_SpMV_fu_1128_output_r_q0");
+    sc_trace(mVcdFile, grp_worker_COO_SpMV_fu_1128_output_r_address1, "grp_worker_COO_SpMV_fu_1128_output_r_address1");
+    sc_trace(mVcdFile, grp_worker_COO_SpMV_fu_1128_output_r_ce1, "grp_worker_COO_SpMV_fu_1128_output_r_ce1");
+    sc_trace(mVcdFile, grp_worker_COO_SpMV_fu_1128_output_r_we1, "grp_worker_COO_SpMV_fu_1128_output_r_we1");
+    sc_trace(mVcdFile, grp_worker_COO_SpMV_fu_1128_output_r_d1, "grp_worker_COO_SpMV_fu_1128_output_r_d1");
     sc_trace(mVcdFile, grp_worker_COO_SpMV_fu_1139_ap_start, "grp_worker_COO_SpMV_fu_1139_ap_start");
     sc_trace(mVcdFile, grp_worker_COO_SpMV_fu_1139_ap_done, "grp_worker_COO_SpMV_fu_1139_ap_done");
     sc_trace(mVcdFile, grp_worker_COO_SpMV_fu_1139_ap_idle, "grp_worker_COO_SpMV_fu_1139_ap_idle");
@@ -1587,8 +1607,10 @@ worker::worker(sc_module_name name) : sc_module(name), mVcdFile(0) {
     sc_trace(mVcdFile, grp_worker_COO_SpMV_fu_1139_val_r_ce0, "grp_worker_COO_SpMV_fu_1139_val_r_ce0");
     sc_trace(mVcdFile, grp_worker_COO_SpMV_fu_1139_output_r_address0, "grp_worker_COO_SpMV_fu_1139_output_r_address0");
     sc_trace(mVcdFile, grp_worker_COO_SpMV_fu_1139_output_r_ce0, "grp_worker_COO_SpMV_fu_1139_output_r_ce0");
-    sc_trace(mVcdFile, grp_worker_COO_SpMV_fu_1139_output_r_we0, "grp_worker_COO_SpMV_fu_1139_output_r_we0");
-    sc_trace(mVcdFile, grp_worker_COO_SpMV_fu_1139_output_r_d0, "grp_worker_COO_SpMV_fu_1139_output_r_d0");
+    sc_trace(mVcdFile, grp_worker_COO_SpMV_fu_1139_output_r_address1, "grp_worker_COO_SpMV_fu_1139_output_r_address1");
+    sc_trace(mVcdFile, grp_worker_COO_SpMV_fu_1139_output_r_ce1, "grp_worker_COO_SpMV_fu_1139_output_r_ce1");
+    sc_trace(mVcdFile, grp_worker_COO_SpMV_fu_1139_output_r_we1, "grp_worker_COO_SpMV_fu_1139_output_r_we1");
+    sc_trace(mVcdFile, grp_worker_COO_SpMV_fu_1139_output_r_d1, "grp_worker_COO_SpMV_fu_1139_output_r_d1");
     sc_trace(mVcdFile, grp_worker_COO_SpMV_fu_1150_ap_start, "grp_worker_COO_SpMV_fu_1150_ap_start");
     sc_trace(mVcdFile, grp_worker_COO_SpMV_fu_1150_ap_done, "grp_worker_COO_SpMV_fu_1150_ap_done");
     sc_trace(mVcdFile, grp_worker_COO_SpMV_fu_1150_ap_idle, "grp_worker_COO_SpMV_fu_1150_ap_idle");
@@ -1601,8 +1623,10 @@ worker::worker(sc_module_name name) : sc_module(name), mVcdFile(0) {
     sc_trace(mVcdFile, grp_worker_COO_SpMV_fu_1150_val_r_ce0, "grp_worker_COO_SpMV_fu_1150_val_r_ce0");
     sc_trace(mVcdFile, grp_worker_COO_SpMV_fu_1150_output_r_address0, "grp_worker_COO_SpMV_fu_1150_output_r_address0");
     sc_trace(mVcdFile, grp_worker_COO_SpMV_fu_1150_output_r_ce0, "grp_worker_COO_SpMV_fu_1150_output_r_ce0");
-    sc_trace(mVcdFile, grp_worker_COO_SpMV_fu_1150_output_r_we0, "grp_worker_COO_SpMV_fu_1150_output_r_we0");
-    sc_trace(mVcdFile, grp_worker_COO_SpMV_fu_1150_output_r_d0, "grp_worker_COO_SpMV_fu_1150_output_r_d0");
+    sc_trace(mVcdFile, grp_worker_COO_SpMV_fu_1150_output_r_address1, "grp_worker_COO_SpMV_fu_1150_output_r_address1");
+    sc_trace(mVcdFile, grp_worker_COO_SpMV_fu_1150_output_r_ce1, "grp_worker_COO_SpMV_fu_1150_output_r_ce1");
+    sc_trace(mVcdFile, grp_worker_COO_SpMV_fu_1150_output_r_we1, "grp_worker_COO_SpMV_fu_1150_output_r_we1");
+    sc_trace(mVcdFile, grp_worker_COO_SpMV_fu_1150_output_r_d1, "grp_worker_COO_SpMV_fu_1150_output_r_d1");
     sc_trace(mVcdFile, grp_worker_create_COO_fu_1161_ap_start, "grp_worker_create_COO_fu_1161_ap_start");
     sc_trace(mVcdFile, grp_worker_create_COO_fu_1161_ap_idle, "grp_worker_create_COO_fu_1161_ap_idle");
     sc_trace(mVcdFile, grp_worker_create_COO_fu_1161_ap_ready, "grp_worker_create_COO_fu_1161_ap_ready");
@@ -1672,43 +1696,43 @@ worker::worker(sc_module_name name) : sc_module(name), mVcdFile(0) {
     sc_trace(mVcdFile, exitcond4_3_fu_1237_p2, "exitcond4_3_fu_1237_p2");
     sc_trace(mVcdFile, i3_reg_1094, "i3_reg_1094");
     sc_trace(mVcdFile, ap_sig_cseq_ST_st21_fsm_20, "ap_sig_cseq_ST_st21_fsm_20");
-    sc_trace(mVcdFile, ap_sig_561, "ap_sig_561");
+    sc_trace(mVcdFile, ap_sig_567, "ap_sig_567");
     sc_trace(mVcdFile, phi_mul_reg_1105, "phi_mul_reg_1105");
     sc_trace(mVcdFile, j4_reg_1117, "j4_reg_1117");
     sc_trace(mVcdFile, ap_sig_cseq_ST_st24_fsm_23, "ap_sig_cseq_ST_st24_fsm_23");
-    sc_trace(mVcdFile, ap_sig_581, "ap_sig_581");
+    sc_trace(mVcdFile, ap_sig_587, "ap_sig_587");
     sc_trace(mVcdFile, ap_reg_grp_worker_COO_SpMV_fu_1128_ap_start, "ap_reg_grp_worker_COO_SpMV_fu_1128_ap_start");
     sc_trace(mVcdFile, ap_sig_cseq_ST_st18_fsm_17, "ap_sig_cseq_ST_st18_fsm_17");
-    sc_trace(mVcdFile, ap_sig_590, "ap_sig_590");
+    sc_trace(mVcdFile, ap_sig_596, "ap_sig_596");
     sc_trace(mVcdFile, ap_sig_cseq_ST_st20_fsm_19, "ap_sig_cseq_ST_st20_fsm_19");
-    sc_trace(mVcdFile, ap_sig_597, "ap_sig_597");
+    sc_trace(mVcdFile, ap_sig_603, "ap_sig_603");
     sc_trace(mVcdFile, ap_reg_grp_worker_COO_SpMV_fu_1139_ap_start, "ap_reg_grp_worker_COO_SpMV_fu_1139_ap_start");
     sc_trace(mVcdFile, ap_reg_grp_worker_COO_SpMV_fu_1150_ap_start, "ap_reg_grp_worker_COO_SpMV_fu_1150_ap_start");
     sc_trace(mVcdFile, ap_reg_grp_worker_create_COO_fu_1161_ap_start, "ap_reg_grp_worker_create_COO_fu_1161_ap_start");
     sc_trace(mVcdFile, ap_sig_cseq_ST_st16_fsm_15, "ap_sig_cseq_ST_st16_fsm_15");
-    sc_trace(mVcdFile, ap_sig_626, "ap_sig_626");
+    sc_trace(mVcdFile, ap_sig_632, "ap_sig_632");
     sc_trace(mVcdFile, ap_reg_grp_worker_create_COO_fu_1174_ap_start, "ap_reg_grp_worker_create_COO_fu_1174_ap_start");
     sc_trace(mVcdFile, ap_reg_grp_worker_create_COO_fu_1185_ap_start, "ap_reg_grp_worker_create_COO_fu_1185_ap_start");
     sc_trace(mVcdFile, ap_sig_cseq_ST_st6_fsm_5, "ap_sig_cseq_ST_st6_fsm_5");
-    sc_trace(mVcdFile, ap_sig_644, "ap_sig_644");
+    sc_trace(mVcdFile, ap_sig_650, "ap_sig_650");
     sc_trace(mVcdFile, ap_sig_cseq_ST_st7_fsm_6, "ap_sig_cseq_ST_st7_fsm_6");
-    sc_trace(mVcdFile, ap_sig_655, "ap_sig_655");
+    sc_trace(mVcdFile, ap_sig_661, "ap_sig_661");
     sc_trace(mVcdFile, ap_sig_cseq_ST_st8_fsm_7, "ap_sig_cseq_ST_st8_fsm_7");
-    sc_trace(mVcdFile, ap_sig_669, "ap_sig_669");
+    sc_trace(mVcdFile, ap_sig_675, "ap_sig_675");
     sc_trace(mVcdFile, ap_sig_cseq_ST_st9_fsm_8, "ap_sig_cseq_ST_st9_fsm_8");
-    sc_trace(mVcdFile, ap_sig_686, "ap_sig_686");
+    sc_trace(mVcdFile, ap_sig_692, "ap_sig_692");
     sc_trace(mVcdFile, ap_sig_cseq_ST_st10_fsm_9, "ap_sig_cseq_ST_st10_fsm_9");
-    sc_trace(mVcdFile, ap_sig_703, "ap_sig_703");
+    sc_trace(mVcdFile, ap_sig_709, "ap_sig_709");
     sc_trace(mVcdFile, ap_sig_cseq_ST_st11_fsm_10, "ap_sig_cseq_ST_st11_fsm_10");
-    sc_trace(mVcdFile, ap_sig_720, "ap_sig_720");
+    sc_trace(mVcdFile, ap_sig_726, "ap_sig_726");
     sc_trace(mVcdFile, ap_sig_cseq_ST_st12_fsm_11, "ap_sig_cseq_ST_st12_fsm_11");
-    sc_trace(mVcdFile, ap_sig_737, "ap_sig_737");
+    sc_trace(mVcdFile, ap_sig_743, "ap_sig_743");
     sc_trace(mVcdFile, ap_sig_cseq_ST_st13_fsm_12, "ap_sig_cseq_ST_st13_fsm_12");
-    sc_trace(mVcdFile, ap_sig_754, "ap_sig_754");
+    sc_trace(mVcdFile, ap_sig_760, "ap_sig_760");
     sc_trace(mVcdFile, ap_sig_cseq_ST_st14_fsm_13, "ap_sig_cseq_ST_st14_fsm_13");
-    sc_trace(mVcdFile, ap_sig_771, "ap_sig_771");
+    sc_trace(mVcdFile, ap_sig_777, "ap_sig_777");
     sc_trace(mVcdFile, ap_sig_cseq_ST_st15_fsm_14, "ap_sig_cseq_ST_st15_fsm_14");
-    sc_trace(mVcdFile, ap_sig_788, "ap_sig_788");
+    sc_trace(mVcdFile, ap_sig_794, "ap_sig_794");
     sc_trace(mVcdFile, tmp_s_fu_1287_p1, "tmp_s_fu_1287_p1");
     sc_trace(mVcdFile, tmp_5_fu_1315_p1, "tmp_5_fu_1315_p1");
     sc_trace(mVcdFile, tmp_11_fu_1301_p6, "tmp_11_fu_1301_p6");
@@ -1963,68 +1987,68 @@ void worker::thread_ap_sig_39() {
     ap_sig_39 = esl_seteq<1,1,1>(ap_CS_fsm.read().range(0, 0), ap_const_lv1_1);
 }
 
-void worker::thread_ap_sig_561() {
-    ap_sig_561 = esl_seteq<1,1,1>(ap_const_lv1_1, ap_CS_fsm.read().range(20, 20));
+void worker::thread_ap_sig_567() {
+    ap_sig_567 = esl_seteq<1,1,1>(ap_const_lv1_1, ap_CS_fsm.read().range(20, 20));
 }
 
-void worker::thread_ap_sig_581() {
-    ap_sig_581 = esl_seteq<1,1,1>(ap_const_lv1_1, ap_CS_fsm.read().range(23, 23));
+void worker::thread_ap_sig_587() {
+    ap_sig_587 = esl_seteq<1,1,1>(ap_const_lv1_1, ap_CS_fsm.read().range(23, 23));
 }
 
-void worker::thread_ap_sig_590() {
-    ap_sig_590 = esl_seteq<1,1,1>(ap_const_lv1_1, ap_CS_fsm.read().range(17, 17));
+void worker::thread_ap_sig_596() {
+    ap_sig_596 = esl_seteq<1,1,1>(ap_const_lv1_1, ap_CS_fsm.read().range(17, 17));
 }
 
-void worker::thread_ap_sig_597() {
-    ap_sig_597 = esl_seteq<1,1,1>(ap_const_lv1_1, ap_CS_fsm.read().range(19, 19));
+void worker::thread_ap_sig_603() {
+    ap_sig_603 = esl_seteq<1,1,1>(ap_const_lv1_1, ap_CS_fsm.read().range(19, 19));
 }
 
-void worker::thread_ap_sig_626() {
-    ap_sig_626 = esl_seteq<1,1,1>(ap_const_lv1_1, ap_CS_fsm.read().range(15, 15));
+void worker::thread_ap_sig_632() {
+    ap_sig_632 = esl_seteq<1,1,1>(ap_const_lv1_1, ap_CS_fsm.read().range(15, 15));
 }
 
-void worker::thread_ap_sig_644() {
-    ap_sig_644 = esl_seteq<1,1,1>(ap_const_lv1_1, ap_CS_fsm.read().range(5, 5));
+void worker::thread_ap_sig_650() {
+    ap_sig_650 = esl_seteq<1,1,1>(ap_const_lv1_1, ap_CS_fsm.read().range(5, 5));
 }
 
-void worker::thread_ap_sig_655() {
-    ap_sig_655 = esl_seteq<1,1,1>(ap_const_lv1_1, ap_CS_fsm.read().range(6, 6));
+void worker::thread_ap_sig_661() {
+    ap_sig_661 = esl_seteq<1,1,1>(ap_const_lv1_1, ap_CS_fsm.read().range(6, 6));
 }
 
-void worker::thread_ap_sig_669() {
-    ap_sig_669 = esl_seteq<1,1,1>(ap_const_lv1_1, ap_CS_fsm.read().range(7, 7));
+void worker::thread_ap_sig_675() {
+    ap_sig_675 = esl_seteq<1,1,1>(ap_const_lv1_1, ap_CS_fsm.read().range(7, 7));
 }
 
-void worker::thread_ap_sig_686() {
-    ap_sig_686 = esl_seteq<1,1,1>(ap_const_lv1_1, ap_CS_fsm.read().range(8, 8));
+void worker::thread_ap_sig_692() {
+    ap_sig_692 = esl_seteq<1,1,1>(ap_const_lv1_1, ap_CS_fsm.read().range(8, 8));
 }
 
-void worker::thread_ap_sig_703() {
-    ap_sig_703 = esl_seteq<1,1,1>(ap_const_lv1_1, ap_CS_fsm.read().range(9, 9));
+void worker::thread_ap_sig_709() {
+    ap_sig_709 = esl_seteq<1,1,1>(ap_const_lv1_1, ap_CS_fsm.read().range(9, 9));
 }
 
-void worker::thread_ap_sig_720() {
-    ap_sig_720 = esl_seteq<1,1,1>(ap_const_lv1_1, ap_CS_fsm.read().range(10, 10));
+void worker::thread_ap_sig_726() {
+    ap_sig_726 = esl_seteq<1,1,1>(ap_const_lv1_1, ap_CS_fsm.read().range(10, 10));
 }
 
-void worker::thread_ap_sig_737() {
-    ap_sig_737 = esl_seteq<1,1,1>(ap_const_lv1_1, ap_CS_fsm.read().range(11, 11));
+void worker::thread_ap_sig_743() {
+    ap_sig_743 = esl_seteq<1,1,1>(ap_const_lv1_1, ap_CS_fsm.read().range(11, 11));
 }
 
-void worker::thread_ap_sig_754() {
-    ap_sig_754 = esl_seteq<1,1,1>(ap_const_lv1_1, ap_CS_fsm.read().range(12, 12));
+void worker::thread_ap_sig_760() {
+    ap_sig_760 = esl_seteq<1,1,1>(ap_const_lv1_1, ap_CS_fsm.read().range(12, 12));
 }
 
-void worker::thread_ap_sig_771() {
-    ap_sig_771 = esl_seteq<1,1,1>(ap_const_lv1_1, ap_CS_fsm.read().range(13, 13));
+void worker::thread_ap_sig_777() {
+    ap_sig_777 = esl_seteq<1,1,1>(ap_const_lv1_1, ap_CS_fsm.read().range(13, 13));
 }
 
-void worker::thread_ap_sig_788() {
-    ap_sig_788 = esl_seteq<1,1,1>(ap_const_lv1_1, ap_CS_fsm.read().range(14, 14));
+void worker::thread_ap_sig_794() {
+    ap_sig_794 = esl_seteq<1,1,1>(ap_const_lv1_1, ap_CS_fsm.read().range(14, 14));
 }
 
 void worker::thread_ap_sig_cseq_ST_st10_fsm_9() {
-    if (ap_sig_703.read()) {
+    if (ap_sig_709.read()) {
         ap_sig_cseq_ST_st10_fsm_9 = ap_const_logic_1;
     } else {
         ap_sig_cseq_ST_st10_fsm_9 = ap_const_logic_0;
@@ -2032,7 +2056,7 @@ void worker::thread_ap_sig_cseq_ST_st10_fsm_9() {
 }
 
 void worker::thread_ap_sig_cseq_ST_st11_fsm_10() {
-    if (ap_sig_720.read()) {
+    if (ap_sig_726.read()) {
         ap_sig_cseq_ST_st11_fsm_10 = ap_const_logic_1;
     } else {
         ap_sig_cseq_ST_st11_fsm_10 = ap_const_logic_0;
@@ -2040,7 +2064,7 @@ void worker::thread_ap_sig_cseq_ST_st11_fsm_10() {
 }
 
 void worker::thread_ap_sig_cseq_ST_st12_fsm_11() {
-    if (ap_sig_737.read()) {
+    if (ap_sig_743.read()) {
         ap_sig_cseq_ST_st12_fsm_11 = ap_const_logic_1;
     } else {
         ap_sig_cseq_ST_st12_fsm_11 = ap_const_logic_0;
@@ -2048,7 +2072,7 @@ void worker::thread_ap_sig_cseq_ST_st12_fsm_11() {
 }
 
 void worker::thread_ap_sig_cseq_ST_st13_fsm_12() {
-    if (ap_sig_754.read()) {
+    if (ap_sig_760.read()) {
         ap_sig_cseq_ST_st13_fsm_12 = ap_const_logic_1;
     } else {
         ap_sig_cseq_ST_st13_fsm_12 = ap_const_logic_0;
@@ -2056,7 +2080,7 @@ void worker::thread_ap_sig_cseq_ST_st13_fsm_12() {
 }
 
 void worker::thread_ap_sig_cseq_ST_st14_fsm_13() {
-    if (ap_sig_771.read()) {
+    if (ap_sig_777.read()) {
         ap_sig_cseq_ST_st14_fsm_13 = ap_const_logic_1;
     } else {
         ap_sig_cseq_ST_st14_fsm_13 = ap_const_logic_0;
@@ -2064,7 +2088,7 @@ void worker::thread_ap_sig_cseq_ST_st14_fsm_13() {
 }
 
 void worker::thread_ap_sig_cseq_ST_st15_fsm_14() {
-    if (ap_sig_788.read()) {
+    if (ap_sig_794.read()) {
         ap_sig_cseq_ST_st15_fsm_14 = ap_const_logic_1;
     } else {
         ap_sig_cseq_ST_st15_fsm_14 = ap_const_logic_0;
@@ -2072,7 +2096,7 @@ void worker::thread_ap_sig_cseq_ST_st15_fsm_14() {
 }
 
 void worker::thread_ap_sig_cseq_ST_st16_fsm_15() {
-    if (ap_sig_626.read()) {
+    if (ap_sig_632.read()) {
         ap_sig_cseq_ST_st16_fsm_15 = ap_const_logic_1;
     } else {
         ap_sig_cseq_ST_st16_fsm_15 = ap_const_logic_0;
@@ -2088,7 +2112,7 @@ void worker::thread_ap_sig_cseq_ST_st17_fsm_16() {
 }
 
 void worker::thread_ap_sig_cseq_ST_st18_fsm_17() {
-    if (ap_sig_590.read()) {
+    if (ap_sig_596.read()) {
         ap_sig_cseq_ST_st18_fsm_17 = ap_const_logic_1;
     } else {
         ap_sig_cseq_ST_st18_fsm_17 = ap_const_logic_0;
@@ -2112,7 +2136,7 @@ void worker::thread_ap_sig_cseq_ST_st1_fsm_0() {
 }
 
 void worker::thread_ap_sig_cseq_ST_st20_fsm_19() {
-    if (ap_sig_597.read()) {
+    if (ap_sig_603.read()) {
         ap_sig_cseq_ST_st20_fsm_19 = ap_const_logic_1;
     } else {
         ap_sig_cseq_ST_st20_fsm_19 = ap_const_logic_0;
@@ -2120,7 +2144,7 @@ void worker::thread_ap_sig_cseq_ST_st20_fsm_19() {
 }
 
 void worker::thread_ap_sig_cseq_ST_st21_fsm_20() {
-    if (ap_sig_561.read()) {
+    if (ap_sig_567.read()) {
         ap_sig_cseq_ST_st21_fsm_20 = ap_const_logic_1;
     } else {
         ap_sig_cseq_ST_st21_fsm_20 = ap_const_logic_0;
@@ -2144,7 +2168,7 @@ void worker::thread_ap_sig_cseq_ST_st23_fsm_22() {
 }
 
 void worker::thread_ap_sig_cseq_ST_st24_fsm_23() {
-    if (ap_sig_581.read()) {
+    if (ap_sig_587.read()) {
         ap_sig_cseq_ST_st24_fsm_23 = ap_const_logic_1;
     } else {
         ap_sig_cseq_ST_st24_fsm_23 = ap_const_logic_0;
@@ -2184,7 +2208,7 @@ void worker::thread_ap_sig_cseq_ST_st5_fsm_4() {
 }
 
 void worker::thread_ap_sig_cseq_ST_st6_fsm_5() {
-    if (ap_sig_644.read()) {
+    if (ap_sig_650.read()) {
         ap_sig_cseq_ST_st6_fsm_5 = ap_const_logic_1;
     } else {
         ap_sig_cseq_ST_st6_fsm_5 = ap_const_logic_0;
@@ -2192,7 +2216,7 @@ void worker::thread_ap_sig_cseq_ST_st6_fsm_5() {
 }
 
 void worker::thread_ap_sig_cseq_ST_st7_fsm_6() {
-    if (ap_sig_655.read()) {
+    if (ap_sig_661.read()) {
         ap_sig_cseq_ST_st7_fsm_6 = ap_const_logic_1;
     } else {
         ap_sig_cseq_ST_st7_fsm_6 = ap_const_logic_0;
@@ -2200,7 +2224,7 @@ void worker::thread_ap_sig_cseq_ST_st7_fsm_6() {
 }
 
 void worker::thread_ap_sig_cseq_ST_st8_fsm_7() {
-    if (ap_sig_669.read()) {
+    if (ap_sig_675.read()) {
         ap_sig_cseq_ST_st8_fsm_7 = ap_const_logic_1;
     } else {
         ap_sig_cseq_ST_st8_fsm_7 = ap_const_logic_0;
@@ -2208,7 +2232,7 @@ void worker::thread_ap_sig_cseq_ST_st8_fsm_7() {
 }
 
 void worker::thread_ap_sig_cseq_ST_st9_fsm_8() {
-    if (ap_sig_686.read()) {
+    if (ap_sig_692.read()) {
         ap_sig_cseq_ST_st9_fsm_8 = ap_const_logic_1;
     } else {
         ap_sig_cseq_ST_st9_fsm_8 = ap_const_logic_0;
@@ -2356,6 +2380,8 @@ void worker::thread_dest_1_0_address1() {
         dest_1_0_address1 =  (sc_lv<5>) (ap_const_lv64_2);
     } else if (esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_cseq_ST_st23_fsm_22.read())) {
         dest_1_0_address1 =  (sc_lv<5>) (tmp_s_fu_1287_p1.read());
+    } else if (esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_cseq_ST_st19_fsm_18.read())) {
+        dest_1_0_address1 = grp_worker_COO_SpMV_fu_1128_output_r_address1.read();
     } else {
         dest_1_0_address1 =  (sc_lv<5>) ("XXXXX");
     }
@@ -2400,14 +2426,15 @@ void worker::thread_dest_1_0_ce1() {
          esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_cseq_ST_st14_fsm_13.read()) || 
          esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_cseq_ST_st15_fsm_14.read()))) {
         dest_1_0_ce1 = ap_const_logic_1;
+    } else if (esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_cseq_ST_st19_fsm_18.read())) {
+        dest_1_0_ce1 = grp_worker_COO_SpMV_fu_1128_output_r_ce1.read();
     } else {
         dest_1_0_ce1 = ap_const_logic_0;
     }
 }
 
-void worker::thread_dest_1_0_d0() {
+void worker::thread_dest_1_0_d1() {
     if ((esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_cseq_ST_st17_fsm_16.read()) || 
-         esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_cseq_ST_st5_fsm_4.read()) || 
          esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_cseq_ST_st16_fsm_15.read()) || 
          esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_cseq_ST_st6_fsm_5.read()) || 
          esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_cseq_ST_st7_fsm_6.read()) || 
@@ -2419,11 +2446,11 @@ void worker::thread_dest_1_0_d0() {
          esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_cseq_ST_st13_fsm_12.read()) || 
          esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_cseq_ST_st14_fsm_13.read()) || 
          esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_cseq_ST_st15_fsm_14.read()))) {
-        dest_1_0_d0 = ap_const_lv32_0;
+        dest_1_0_d1 = ap_const_lv32_0;
     } else if (esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_cseq_ST_st19_fsm_18.read())) {
-        dest_1_0_d0 = grp_worker_COO_SpMV_fu_1128_output_r_d0.read();
+        dest_1_0_d1 = grp_worker_COO_SpMV_fu_1128_output_r_d1.read();
     } else {
-        dest_1_0_d0 =  (sc_lv<32>) ("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+        dest_1_0_d1 =  (sc_lv<32>) ("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
     }
 }
 
@@ -2444,8 +2471,6 @@ void worker::thread_dest_1_0_we0() {
          esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_cseq_ST_st14_fsm_13.read()) || 
          esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_cseq_ST_st15_fsm_14.read()))) {
         dest_1_0_we0 = ap_const_logic_1;
-    } else if (esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_cseq_ST_st19_fsm_18.read())) {
-        dest_1_0_we0 = grp_worker_COO_SpMV_fu_1128_output_r_we0.read();
     } else {
         dest_1_0_we0 = ap_const_logic_0;
     }
@@ -2466,6 +2491,8 @@ void worker::thread_dest_1_0_we1() {
          esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_cseq_ST_st14_fsm_13.read()) || 
          esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_cseq_ST_st15_fsm_14.read()))) {
         dest_1_0_we1 = ap_const_logic_1;
+    } else if (esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_cseq_ST_st19_fsm_18.read())) {
+        dest_1_0_we1 = grp_worker_COO_SpMV_fu_1128_output_r_we1.read();
     } else {
         dest_1_0_we1 = ap_const_logic_0;
     }
@@ -2532,6 +2559,8 @@ void worker::thread_dest_1_1_address1() {
         dest_1_1_address1 =  (sc_lv<5>) (ap_const_lv64_2);
     } else if (esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_cseq_ST_st23_fsm_22.read())) {
         dest_1_1_address1 =  (sc_lv<5>) (tmp_s_fu_1287_p1.read());
+    } else if (esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_cseq_ST_st21_fsm_20.read())) {
+        dest_1_1_address1 = grp_worker_COO_SpMV_fu_1128_output_r_address1.read();
     } else {
         dest_1_1_address1 =  (sc_lv<5>) ("XXXXX");
     }
@@ -2578,17 +2607,18 @@ void worker::thread_dest_1_1_ce1() {
          esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_cseq_ST_st14_fsm_13.read()) || 
          esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_cseq_ST_st15_fsm_14.read()))) {
         dest_1_1_ce1 = ap_const_logic_1;
+    } else if (esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_cseq_ST_st21_fsm_20.read())) {
+        dest_1_1_ce1 = grp_worker_COO_SpMV_fu_1128_output_r_ce1.read();
     } else {
         dest_1_1_ce1 = ap_const_logic_0;
     }
 }
 
-void worker::thread_dest_1_1_d0() {
+void worker::thread_dest_1_1_d1() {
     if ((esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_cseq_ST_st17_fsm_16.read()) || 
          esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_cseq_ST_st19_fsm_18.read()) || 
          esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_cseq_ST_st18_fsm_17.read()) || 
          esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_cseq_ST_st16_fsm_15.read()) || 
-         esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_cseq_ST_st7_fsm_6.read()) || 
          esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_cseq_ST_st8_fsm_7.read()) || 
          esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_cseq_ST_st9_fsm_8.read()) || 
          esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_cseq_ST_st10_fsm_9.read()) || 
@@ -2597,11 +2627,11 @@ void worker::thread_dest_1_1_d0() {
          esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_cseq_ST_st13_fsm_12.read()) || 
          esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_cseq_ST_st14_fsm_13.read()) || 
          esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_cseq_ST_st15_fsm_14.read()))) {
-        dest_1_1_d0 = ap_const_lv32_0;
+        dest_1_1_d1 = ap_const_lv32_0;
     } else if (esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_cseq_ST_st21_fsm_20.read())) {
-        dest_1_1_d0 = grp_worker_COO_SpMV_fu_1128_output_r_d0.read();
+        dest_1_1_d1 = grp_worker_COO_SpMV_fu_1128_output_r_d1.read();
     } else {
-        dest_1_1_d0 =  (sc_lv<32>) ("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+        dest_1_1_d1 =  (sc_lv<32>) ("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
     }
 }
 
@@ -2622,8 +2652,6 @@ void worker::thread_dest_1_1_we0() {
          esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_cseq_ST_st14_fsm_13.read()) || 
          esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_cseq_ST_st15_fsm_14.read()))) {
         dest_1_1_we0 = ap_const_logic_1;
-    } else if (esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_cseq_ST_st21_fsm_20.read())) {
-        dest_1_1_we0 = grp_worker_COO_SpMV_fu_1128_output_r_we0.read();
     } else {
         dest_1_1_we0 = ap_const_logic_0;
     }
@@ -2645,6 +2673,8 @@ void worker::thread_dest_1_1_we1() {
          esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_cseq_ST_st14_fsm_13.read()) || 
          esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_cseq_ST_st15_fsm_14.read()))) {
         dest_1_1_we1 = ap_const_logic_1;
+    } else if (esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_cseq_ST_st21_fsm_20.read())) {
+        dest_1_1_we1 = grp_worker_COO_SpMV_fu_1128_output_r_we1.read();
     } else {
         dest_1_1_we1 = ap_const_logic_0;
     }
@@ -2711,6 +2741,8 @@ void worker::thread_dest_1_2_address1() {
         dest_1_2_address1 =  (sc_lv<5>) (ap_const_lv64_2);
     } else if (esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_cseq_ST_st23_fsm_22.read())) {
         dest_1_2_address1 =  (sc_lv<5>) (tmp_s_fu_1287_p1.read());
+    } else if (esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_cseq_ST_st21_fsm_20.read())) {
+        dest_1_2_address1 = grp_worker_COO_SpMV_fu_1139_output_r_address1.read();
     } else {
         dest_1_2_address1 =  (sc_lv<5>) ("XXXXX");
     }
@@ -2757,17 +2789,18 @@ void worker::thread_dest_1_2_ce1() {
          esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_cseq_ST_st14_fsm_13.read()) || 
          esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_cseq_ST_st15_fsm_14.read()))) {
         dest_1_2_ce1 = ap_const_logic_1;
+    } else if (esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_cseq_ST_st21_fsm_20.read())) {
+        dest_1_2_ce1 = grp_worker_COO_SpMV_fu_1139_output_r_ce1.read();
     } else {
         dest_1_2_ce1 = ap_const_logic_0;
     }
 }
 
-void worker::thread_dest_1_2_d0() {
+void worker::thread_dest_1_2_d1() {
     if ((esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_cseq_ST_st17_fsm_16.read()) || 
          esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_cseq_ST_st19_fsm_18.read()) || 
          esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_cseq_ST_st18_fsm_17.read()) || 
          esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_cseq_ST_st16_fsm_15.read()) || 
-         esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_cseq_ST_st7_fsm_6.read()) || 
          esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_cseq_ST_st8_fsm_7.read()) || 
          esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_cseq_ST_st9_fsm_8.read()) || 
          esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_cseq_ST_st10_fsm_9.read()) || 
@@ -2776,11 +2809,11 @@ void worker::thread_dest_1_2_d0() {
          esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_cseq_ST_st13_fsm_12.read()) || 
          esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_cseq_ST_st14_fsm_13.read()) || 
          esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_cseq_ST_st15_fsm_14.read()))) {
-        dest_1_2_d0 = ap_const_lv32_0;
+        dest_1_2_d1 = ap_const_lv32_0;
     } else if (esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_cseq_ST_st21_fsm_20.read())) {
-        dest_1_2_d0 = grp_worker_COO_SpMV_fu_1139_output_r_d0.read();
+        dest_1_2_d1 = grp_worker_COO_SpMV_fu_1139_output_r_d1.read();
     } else {
-        dest_1_2_d0 =  (sc_lv<32>) ("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+        dest_1_2_d1 =  (sc_lv<32>) ("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
     }
 }
 
@@ -2801,8 +2834,6 @@ void worker::thread_dest_1_2_we0() {
          esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_cseq_ST_st14_fsm_13.read()) || 
          esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_cseq_ST_st15_fsm_14.read()))) {
         dest_1_2_we0 = ap_const_logic_1;
-    } else if (esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_cseq_ST_st21_fsm_20.read())) {
-        dest_1_2_we0 = grp_worker_COO_SpMV_fu_1139_output_r_we0.read();
     } else {
         dest_1_2_we0 = ap_const_logic_0;
     }
@@ -2824,6 +2855,8 @@ void worker::thread_dest_1_2_we1() {
          esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_cseq_ST_st14_fsm_13.read()) || 
          esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_cseq_ST_st15_fsm_14.read()))) {
         dest_1_2_we1 = ap_const_logic_1;
+    } else if (esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_cseq_ST_st21_fsm_20.read())) {
+        dest_1_2_we1 = grp_worker_COO_SpMV_fu_1139_output_r_we1.read();
     } else {
         dest_1_2_we1 = ap_const_logic_0;
     }
@@ -2890,6 +2923,8 @@ void worker::thread_dest_1_3_address1() {
         dest_1_3_address1 =  (sc_lv<5>) (ap_const_lv64_2);
     } else if (esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_cseq_ST_st23_fsm_22.read())) {
         dest_1_3_address1 =  (sc_lv<5>) (tmp_s_fu_1287_p1.read());
+    } else if (esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_cseq_ST_st21_fsm_20.read())) {
+        dest_1_3_address1 = grp_worker_COO_SpMV_fu_1150_output_r_address1.read();
     } else {
         dest_1_3_address1 =  (sc_lv<5>) ("XXXXX");
     }
@@ -2936,17 +2971,18 @@ void worker::thread_dest_1_3_ce1() {
          esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_cseq_ST_st14_fsm_13.read()) || 
          esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_cseq_ST_st15_fsm_14.read()))) {
         dest_1_3_ce1 = ap_const_logic_1;
+    } else if (esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_cseq_ST_st21_fsm_20.read())) {
+        dest_1_3_ce1 = grp_worker_COO_SpMV_fu_1150_output_r_ce1.read();
     } else {
         dest_1_3_ce1 = ap_const_logic_0;
     }
 }
 
-void worker::thread_dest_1_3_d0() {
+void worker::thread_dest_1_3_d1() {
     if ((esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_cseq_ST_st17_fsm_16.read()) || 
          esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_cseq_ST_st19_fsm_18.read()) || 
          esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_cseq_ST_st18_fsm_17.read()) || 
          esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_cseq_ST_st16_fsm_15.read()) || 
-         esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_cseq_ST_st7_fsm_6.read()) || 
          esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_cseq_ST_st8_fsm_7.read()) || 
          esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_cseq_ST_st9_fsm_8.read()) || 
          esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_cseq_ST_st10_fsm_9.read()) || 
@@ -2955,11 +2991,11 @@ void worker::thread_dest_1_3_d0() {
          esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_cseq_ST_st13_fsm_12.read()) || 
          esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_cseq_ST_st14_fsm_13.read()) || 
          esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_cseq_ST_st15_fsm_14.read()))) {
-        dest_1_3_d0 = ap_const_lv32_0;
+        dest_1_3_d1 = ap_const_lv32_0;
     } else if (esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_cseq_ST_st21_fsm_20.read())) {
-        dest_1_3_d0 = grp_worker_COO_SpMV_fu_1150_output_r_d0.read();
+        dest_1_3_d1 = grp_worker_COO_SpMV_fu_1150_output_r_d1.read();
     } else {
-        dest_1_3_d0 =  (sc_lv<32>) ("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+        dest_1_3_d1 =  (sc_lv<32>) ("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
     }
 }
 
@@ -2980,8 +3016,6 @@ void worker::thread_dest_1_3_we0() {
          esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_cseq_ST_st14_fsm_13.read()) || 
          esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_cseq_ST_st15_fsm_14.read()))) {
         dest_1_3_we0 = ap_const_logic_1;
-    } else if (esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_cseq_ST_st21_fsm_20.read())) {
-        dest_1_3_we0 = grp_worker_COO_SpMV_fu_1150_output_r_we0.read();
     } else {
         dest_1_3_we0 = ap_const_logic_0;
     }
@@ -3003,6 +3037,8 @@ void worker::thread_dest_1_3_we1() {
          esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_cseq_ST_st14_fsm_13.read()) || 
          esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_cseq_ST_st15_fsm_14.read()))) {
         dest_1_3_we1 = ap_const_logic_1;
+    } else if (esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_cseq_ST_st21_fsm_20.read())) {
+        dest_1_3_we1 = grp_worker_COO_SpMV_fu_1150_output_r_we1.read();
     } else {
         dest_1_3_we1 = ap_const_logic_0;
     }

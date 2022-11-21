@@ -2,12 +2,12 @@
 # xsim v2016.2 (64-bit)
 # SW Build 1577090 on Thu Jun  2 16:32:35 MDT 2016
 # IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
-# Start of session at: Mon Nov 21 16:31:47 2022
-# Process ID: 1735
-# Current directory: /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/sim/verilog
+# Start of session at: Mon Nov 21 17:03:04 2022
+# Process ID: 62636
+# Current directory: /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/sim/verilog
 # Command line: xsim -mode tcl -source {xsim.dir/worker/xsim_script.tcl}
-# Log file: /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/sim/verilog/xsim.log
-# Journal file: /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/sim/verilog/xsim.jou
+# Log file: /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/sim/verilog/xsim.log
+# Journal file: /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/sim/verilog/xsim.jou
 #-----------------------------------------------------------
 source xsim.dir/worker/xsim_script.tcl
 # xsim {worker} -autoloadwcfg -tclbatch {worker.tcl}
@@ -26,8 +26,8 @@ Time: 100010 ps  Iteration: 0  Process: /apatb_worker_top/AESL_inst_worker/grp_w
 // Intra-Transaction Progress: Measured Latency / Latency Estimation * 100%
 ////////////////////////////////////////////////////////////////////////////////////
 // RTL Simulation : 0 / 1 [0.00%] @ "125000"
-// RTL Simulation : 1 / 1 [0.00%] @ "206005000"
+// RTL Simulation : 1 / 1 [0.00%] @ "177125000"
 ////////////////////////////////////////////////////////////////////////////////////
-$finish called at time : 206045 ns : File "/home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/sim/verilog/worker.autotb.v" Line 213
+$finish called at time : 177165 ns : File "/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/sim/verilog/worker.autotb.v" Line 213
 ## quit
-INFO: [Common 17-206] Exiting xsim at Mon Nov 21 16:31:50 2022...
+INFO: [Common 17-206] Exiting xsim at Mon Nov 21 17:03:07 2022...

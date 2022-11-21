@@ -10,6 +10,11 @@
                 <option name="off" value="" positionalBoolean="1"/>
             </pragma>
         </directive>
+        <directive functionName="count_nnz" label="" functionLabel="">
+            <pragma name="INLINE">
+                <option name="off" value="" positionalBoolean="1"/>
+            </pragma>
+        </directive>
         <directive functionName="worker" label="" functionLabel="">
             <pragma name="ARRAY_PARTITION">
                 <option name="variable" value="matrix_1" positionalBoolean="4"/>

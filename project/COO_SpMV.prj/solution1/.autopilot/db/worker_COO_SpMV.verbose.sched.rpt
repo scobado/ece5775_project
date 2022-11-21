@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'worker_COO_SpMV'
 ================================================================
-* Date:           Mon Nov 21 16:31:04 2022
+* Date:           Mon Nov 21 17:02:19 2022
 
 * Version:        2016.2 (Build 1577090 on Thu Jun 02 16:59:10 MDT 2016)
 * Project:        COO_SpMV.prj
@@ -25,24 +25,24 @@
 
 + Latency (clock cycles): 
     * Summary: 
-    +------+-------+------+-------+---------+
-    |    Latency   |   Interval   | Pipeline|
-    |  min |  max  |  min |  max  |   Type  |
-    +------+-------+------+-------+---------+
-    |  5001|  32501|  5001|  32501|   none  |
-    +------+-------+------+-------+---------+
+    +------+------+------+------+---------+
+    |   Latency   |   Interval  | Pipeline|
+    |  min |  max |  min |  max |   Type  |
+    +------+------+------+------+---------+
+    |  2513|  2513|  2513|  2513|   none  |
+    +------+------+------+------+---------+
 
     + Detail: 
         * Instance: 
         N/A
 
         * Loop: 
-        +----------+------+-------+----------+-----------+-----------+------+----------+
-        |          |    Latency   | Iteration|  Initiation Interval  | Trip |          |
-        | Loop Name|  min |  max  |  Latency |  achieved |   target  | Count| Pipelined|
-        +----------+------+-------+----------+-----------+-----------+------+----------+
-        |- Loop 1  |  5000|  32500|  2 ~ 13  |          -|          -|  2500|    no    |
-        +----------+------+-------+----------+-----------+-----------+------+----------+
+        +----------+------+------+----------+-----------+-----------+------+----------+
+        |          |   Latency   | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name|  min |  max |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+------+------+----------+-----------+-----------+------+----------+
+        |- Loop 1  |  2511|  2511|        13|          1|          1|  2500|    yes   |
+        +----------+------+------+----------+-----------+-----------+------+----------+
 
 ============================================================
 + Verbose Summary: Synthesis Manager
@@ -66,23 +66,26 @@ IsDontTouch: 0
 HasImplIP: 0
 IsGatedGlobalClock: 0
 
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 13
+
 
 ============================================================
 + Verbose Summary: Schedule
 ============================================================
-* Number of FSM states: 14
-* Pipeline: 0
+* Number of FSM states: 15
+* Pipeline: 1
+  Pipeline-0: II = 1, D = 13, States = { 2 3 4 5 6 7 8 9 10 11 12 13 14 }
 * Dataflow Pipeline: 0
 
 * FSM state transitions: 
 1 --> 
 	2  / true
 2 --> 
-	3  / (!exitcond & tmp)
-	14  / (!exitcond & !tmp)
+	15  / (exitcond)
+	3  / (!exitcond)
 3 --> 
-	4  / (!tmp_12)
-	14  / (tmp_12)
+	4  / true
 4 --> 
 	5  / true
 5 --> 
@@ -105,13 +108,14 @@ IsGatedGlobalClock: 0
 	14  / true
 14 --> 
 	2  / true
+15 --> 
 * FSM state operations: 
 
  <State 1>: 1.57ns
 ST_1: nnz_read [1/1] 1.04ns
 :0  %nnz_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %nnz)
 
-ST_1: stg_16 [1/1] 1.57ns
+ST_1: stg_17 [1/1] 1.57ns
 :1  br label %1
 
 
@@ -119,26 +123,23 @@ ST_1: stg_16 [1/1] 1.57ns
 ST_2: i [1/1] 0.00ns
 :0  %i = phi i12 [ 0, %0 ], [ %i_4, %._crit_edge ]
 
-ST_2: i_cast1 [1/1] 0.00ns
-:1  %i_cast1 = zext i12 %i to i32
-
 ST_2: exitcond [1/1] 2.14ns
-:2  %exitcond = icmp eq i12 %i, -1596
-
-ST_2: empty [1/1] 0.00ns
-:3  %empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 2500, i64 2500, i64 2500)
+:1  %exitcond = icmp eq i12 %i, -1596
 
 ST_2: i_4 [1/1] 1.84ns
-:4  %i_4 = add i12 %i, 1
+:2  %i_4 = add i12 %i, 1
 
-ST_2: stg_22 [1/1] 0.00ns
-:5  br i1 %exitcond, label %3, label %2
+ST_2: stg_21 [1/1] 0.00ns
+:3  br i1 %exitcond, label %3, label %2
+
+ST_2: i_cast1 [1/1] 0.00ns
+:0  %i_cast1 = zext i12 %i to i32
 
 ST_2: tmp [1/1] 2.52ns
-:0  %tmp = icmp slt i32 %i_cast1, %nnz_read
+:4  %tmp = icmp slt i32 %i_cast1, %nnz_read
 
 ST_2: stg_24 [1/1] 0.00ns
-:1  br i1 %tmp, label %branch0, label %._crit_edge
+:5  br i1 %tmp, label %branch0, label %._crit_edge
 
 ST_2: tmp_s [1/1] 0.00ns
 branch0:0  %tmp_s = zext i12 %i to i64
@@ -148,9 +149,6 @@ branch0:1  %row_addr = getelementptr [2500 x i6]* %row, i64 0, i64 %tmp_s
 
 ST_2: row_load [2/2] 2.71ns
 branch0:2  %row_load = load i6* %row_addr, align 1
-
-ST_2: stg_28 [1/1] 0.00ns
-:0  ret void
 
 
  <State 3>: 2.71ns
@@ -163,7 +161,7 @@ branch0:3  %extLd = sext i6 %row_load to i32
 ST_3: tmp_12 [1/1] 0.00ns
 branch0:4  %tmp_12 = call i1 @_ssdm_op_BitSelect.i1.i6.i32(i6 %row_load, i32 5)
 
-ST_3: stg_32 [1/1] 0.00ns
+ST_3: stg_31 [1/1] 0.00ns
 branch0:5  br i1 %tmp_12, label %._crit_edge, label %branch2
 
 ST_3: val_addr [1/1] 0.00ns
@@ -257,14 +255,31 @@ branch2:11  %tmp_9 = fadd float %output_load, %tmp_7
 
 
  <State 14>: 2.39ns
-ST_14: stg_56 [1/1] 2.39ns
-branch2:12  store float %tmp_9, float* %output_addr, align 4
+ST_14: empty [1/1] 0.00ns
+:1  %empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 2500, i64 2500, i64 2500)
+
+ST_14: tmp_15 [1/1] 0.00ns
+:2  %tmp_15 = call i32 (...)* @_ssdm_op_SpecRegionBegin([12 x i8]* @p_str1) nounwind
 
 ST_14: stg_57 [1/1] 0.00ns
+:3  call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str) nounwind
+
+ST_14: stg_58 [1/1] 2.39ns
+branch2:12  store float %tmp_9, float* %output_addr, align 4
+
+ST_14: stg_59 [1/1] 0.00ns
 branch2:13  br label %._crit_edge
 
-ST_14: stg_58 [1/1] 0.00ns
-._crit_edge:0  br label %1
+ST_14: empty_21 [1/1] 0.00ns
+._crit_edge:0  %empty_21 = call i32 (...)* @_ssdm_op_SpecRegionEnd([12 x i8]* @p_str1, i32 %tmp_15) nounwind
+
+ST_14: stg_61 [1/1] 0.00ns
+._crit_edge:1  br label %1
+
+
+ <State 15>: 0.00ns
+ST_15: stg_62 [1/1] 0.00ns
+:0  ret void
 
 
 
@@ -298,6 +313,7 @@ N/A
 	State 12
 	State 13
 	State 14
+	State 15
 
 
 ============================================================

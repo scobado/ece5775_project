@@ -474,7 +474,7 @@
 
 <node id="29" bw="32" op_0_bw="32" op_1_bw="0">
 <![CDATA[
-:18  %tmp = call i32 (...)* @_ssdm_op_SpecRegionBegin([9 x i8]* @p_str2) nounwind
+:18  %tmp = call i32 (...)* @_ssdm_op_SpecRegionBegin([9 x i8]* @p_str3) nounwind
 
 ]]></node>
 <StgValue><ssdm name="tmp"/></StgValue>
@@ -583,7 +583,7 @@
 
 <node id="38" bw="32" op_0_bw="32" op_1_bw="0" op_2_bw="32">
 <![CDATA[
-:0  %empty = call i32 (...)* @_ssdm_op_SpecRegionEnd([9 x i8]* @p_str2, i32 %tmp) nounwind
+:0  %empty = call i32 (...)* @_ssdm_op_SpecRegionEnd([9 x i8]* @p_str3, i32 %tmp) nounwind
 
 ]]></node>
 <StgValue><ssdm name="empty"/></StgValue>
@@ -599,7 +599,7 @@
 
 <node id="39" bw="32" op_0_bw="32" op_1_bw="0">
 <![CDATA[
-:1  %tmp_1 = call i32 (...)* @_ssdm_op_SpecRegionBegin([9 x i8]* @p_str2) nounwind
+:1  %tmp_1 = call i32 (...)* @_ssdm_op_SpecRegionBegin([9 x i8]* @p_str3) nounwind
 
 ]]></node>
 <StgValue><ssdm name="tmp_1"/></StgValue>
@@ -709,7 +709,7 @@
 
 <node id="48" bw="32" op_0_bw="32" op_1_bw="0" op_2_bw="32">
 <![CDATA[
-:0  %empty_6 = call i32 (...)* @_ssdm_op_SpecRegionEnd([9 x i8]* @p_str2, i32 %tmp_1) nounwind
+:0  %empty_6 = call i32 (...)* @_ssdm_op_SpecRegionEnd([9 x i8]* @p_str3, i32 %tmp_1) nounwind
 
 ]]></node>
 <StgValue><ssdm name="empty_6"/></StgValue>
@@ -725,7 +725,7 @@
 
 <node id="49" bw="32" op_0_bw="32" op_1_bw="0">
 <![CDATA[
-:1  %tmp_6 = call i32 (...)* @_ssdm_op_SpecRegionBegin([9 x i8]* @p_str2) nounwind
+:1  %tmp_6 = call i32 (...)* @_ssdm_op_SpecRegionBegin([9 x i8]* @p_str3) nounwind
 
 ]]></node>
 <StgValue><ssdm name="tmp_6"/></StgValue>
@@ -835,7 +835,7 @@
 
 <node id="58" bw="32" op_0_bw="32" op_1_bw="0" op_2_bw="32">
 <![CDATA[
-:0  %empty_8 = call i32 (...)* @_ssdm_op_SpecRegionEnd([9 x i8]* @p_str2, i32 %tmp_6) nounwind
+:0  %empty_8 = call i32 (...)* @_ssdm_op_SpecRegionEnd([9 x i8]* @p_str3, i32 %tmp_6) nounwind
 
 ]]></node>
 <StgValue><ssdm name="empty_8"/></StgValue>
@@ -851,7 +851,7 @@
 
 <node id="59" bw="32" op_0_bw="32" op_1_bw="0">
 <![CDATA[
-:1  %tmp_8 = call i32 (...)* @_ssdm_op_SpecRegionBegin([9 x i8]* @p_str2) nounwind
+:1  %tmp_8 = call i32 (...)* @_ssdm_op_SpecRegionBegin([9 x i8]* @p_str3) nounwind
 
 ]]></node>
 <StgValue><ssdm name="tmp_8"/></StgValue>
@@ -4205,7 +4205,7 @@
 
 <node id="68" bw="32" op_0_bw="32" op_1_bw="0" op_2_bw="32">
 <![CDATA[
-.preheader6.preheader:0  %empty_10 = call i32 (...)* @_ssdm_op_SpecRegionEnd([9 x i8]* @p_str2, i32 %tmp_8) nounwind
+.preheader6.preheader:0  %empty_10 = call i32 (...)* @_ssdm_op_SpecRegionEnd([9 x i8]* @p_str3, i32 %tmp_8) nounwind
 
 ]]></node>
 <StgValue><ssdm name="empty_10"/></StgValue>

@@ -1,19 +1,18 @@
 @I [SIM-47] Using XSIM for RTL simulation.
 @I [SIM-14] Instrumenting C test bench ...
-make[1]: Entering directory `/home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/sim/wrapc'
+make[1]: Entering directory `/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/sim/wrapc'
    Build using "/opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/lnx64/tools/gcc/bin/g++"
    Compiling COO_SpMV.cpp_pre.cpp.tb.cpp
    Compiling COO_SpMV_test.cpp_pre.cpp.tb.cpp
    Compiling apatb_worker.cpp
    Generating cosim.tv.exe
-make[1]: Leaving directory `/home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/sim/wrapc'
+make[1]: Leaving directory `/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/sim/wrapc'
 @I [SIM-302] Starting C TB testing ... 
 @I [SIM-333] Generating C post check test bench ...
 @I [SIM-12] Generating RTL test bench ...
 @I [SIM-323] Starting verilog simulation. 
 @I [SIM-15] Starting XSIM ...
 @I [SIM-316] Starting C post checking ...
-@E [SIM-361] C TB post check failed, nonzero return value '255'.
 Testing COO SpMV
 [32mPassed :)
 [0m
@@ -23,71 +22,71 @@ Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
 Running: /opt/xilinx/xilinx_2016.2/Vivado/2016.2/bin/unwrapped/lnx64.o/xelab xil_defaultlib.apatb_worker_top -prj worker.prj --initfile /opt/xilinx/xilinx_2016.2/Vivado/2016.2/bin/../data/xsim/ip/xsim_ip.ini --lib ieee_proposed=./ieee_proposed -s worker 
 Multi-threading is on. Using 8 slave threads.
 Determining compilation order of HDL files.
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/sim/verilog/worker.autotb.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/sim/verilog/worker.autotb.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module apatb_worker_top
-INFO: [VRFC 10-2458] undeclared symbol ap_clk, assumed default net type wire [/home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/sim/verilog/worker.autotb.v:80]
-INFO: [VRFC 10-2458] undeclared symbol ap_rst, assumed default net type wire [/home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/sim/verilog/worker.autotb.v:81]
-INFO: [VRFC 10-2458] undeclared symbol ap_rst_n, assumed default net type wire [/home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/sim/verilog/worker.autotb.v:94]
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/sim/verilog/AESL_automem_dest.v" into library xil_defaultlib
+INFO: [VRFC 10-2458] undeclared symbol ap_clk, assumed default net type wire [/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/sim/verilog/worker.autotb.v:80]
+INFO: [VRFC 10-2458] undeclared symbol ap_rst, assumed default net type wire [/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/sim/verilog/worker.autotb.v:81]
+INFO: [VRFC 10-2458] undeclared symbol ap_rst_n, assumed default net type wire [/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/sim/verilog/worker.autotb.v:94]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/sim/verilog/AESL_automem_dest.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module AESL_automem_dest
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/sim/verilog/worker_create_COO.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/sim/verilog/worker_create_COO.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module worker_create_COO
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/sim/verilog/worker_COO_SpMV.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/sim/verilog/worker_COO_SpMV.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module worker_COO_SpMV
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/sim/verilog/worker.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/sim/verilog/worker.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module worker
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/sim/verilog/worker_fcmp_32ns_32ns_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/sim/verilog/worker_fcmp_32ns_32ns_1_1.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module worker_fcmp_32ns_32ns_1_1
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/sim/verilog/worker_fadd_32ns_32ns_32_5_full_dsp.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/sim/verilog/worker_fadd_32ns_32ns_32_5_full_dsp.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module worker_fadd_32ns_32ns_32_5_full_dsp
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/sim/verilog/worker_fmul_32ns_32ns_32_4_max_dsp.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/sim/verilog/worker_fmul_32ns_32ns_32_4_max_dsp.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module worker_fmul_32ns_32ns_32_4_max_dsp
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/sim/verilog/worker_COO_SpMV_vector.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/sim/verilog/worker_COO_SpMV_vector.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module worker_COO_SpMV_vector_rom
 INFO: [VRFC 10-311] analyzing module worker_COO_SpMV_vector
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/sim/verilog/worker_mux_4to1_sel2_32_1.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/sim/verilog/worker_mux_4to1_sel2_32_1.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module worker_mux_4to1_sel2_32_1
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/sim/verilog/worker_matrix_1_0.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/sim/verilog/worker_matrix_1_0.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module worker_matrix_1_0_rom
 INFO: [VRFC 10-311] analyzing module worker_matrix_1_0
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/sim/verilog/worker_row_nnz_0.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/sim/verilog/worker_row_nnz_0.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module worker_row_nnz_0_rom
 INFO: [VRFC 10-311] analyzing module worker_row_nnz_0
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/sim/verilog/worker_matrix_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/sim/verilog/worker_matrix_1_1.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module worker_matrix_1_1_rom
 INFO: [VRFC 10-311] analyzing module worker_matrix_1_1
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/sim/verilog/worker_row_nnz_1.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/sim/verilog/worker_row_nnz_1.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module worker_row_nnz_1_rom
 INFO: [VRFC 10-311] analyzing module worker_row_nnz_1
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/sim/verilog/worker_matrix_1_2.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/sim/verilog/worker_matrix_1_2.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module worker_matrix_1_2_rom
 INFO: [VRFC 10-311] analyzing module worker_matrix_1_2
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/sim/verilog/worker_row_nnz_2.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/sim/verilog/worker_row_nnz_2.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module worker_row_nnz_2_rom
 INFO: [VRFC 10-311] analyzing module worker_row_nnz_2
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/sim/verilog/worker_matrix_1_3.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/sim/verilog/worker_matrix_1_3.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module worker_matrix_1_3_rom
 INFO: [VRFC 10-311] analyzing module worker_matrix_1_3
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/sim/verilog/worker_row_nnz_3.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/sim/verilog/worker_row_nnz_3.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module worker_row_nnz_3_rom
 INFO: [VRFC 10-311] analyzing module worker_row_nnz_3
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/sim/verilog/worker_dest_1_0.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/sim/verilog/worker_dest_1_0.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module worker_dest_1_0_ram
 INFO: [VRFC 10-311] analyzing module worker_dest_1_0
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/sim/verilog/worker_row_1_0.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/sim/verilog/worker_row_1_0.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module worker_row_1_0_ram
 INFO: [VRFC 10-311] analyzing module worker_row_1_0
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/sim/verilog/worker_col_1_0.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/sim/verilog/worker_col_1_0.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module worker_col_1_0_ram
 INFO: [VRFC 10-311] analyzing module worker_col_1_0
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/sim/verilog/worker_val_1_0.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/sim/verilog/worker_val_1_0.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module worker_val_1_0_ram
 INFO: [VRFC 10-311] analyzing module worker_val_1_0
-INFO: [VRFC 10-163] Analyzing VHDL file "/home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/sim/verilog/ip/xil_defaultlib/worker_ap_fcmp_0_no_dsp_32.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/sim/verilog/ip/xil_defaultlib/worker_ap_fcmp_0_no_dsp_32.vhd" into library xil_defaultlib
 INFO: [VRFC 10-307] analyzing entity worker_ap_fcmp_0_no_dsp_32
-INFO: [VRFC 10-163] Analyzing VHDL file "/home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/sim/verilog/ip/xil_defaultlib/worker_ap_fadd_3_full_dsp_32.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/sim/verilog/ip/xil_defaultlib/worker_ap_fadd_3_full_dsp_32.vhd" into library xil_defaultlib
 INFO: [VRFC 10-307] analyzing entity worker_ap_fadd_3_full_dsp_32
-INFO: [VRFC 10-163] Analyzing VHDL file "/home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/sim/verilog/ip/xil_defaultlib/worker_ap_fmul_2_max_dsp_32.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/sim/verilog/ip/xil_defaultlib/worker_ap_fmul_2_max_dsp_32.vhd" into library xil_defaultlib
 INFO: [VRFC 10-307] analyzing entity worker_ap_fmul_2_max_dsp_32
 Starting static elaboration
 WARNING: [VRFC 10-1303] range is empty (null range) [/build/xfndry/IP_2016.2/customer/vivado/data/ip/xilinx/mult_gen_v12_0/hdl/mult_gen_v12_0_vh_rfs.vhd:2255]
@@ -353,12 +352,12 @@ Time: 100010 ps  Iteration: 0  Process: /apatb_worker_top/AESL_inst_worker/grp_w
 // Intra-Transaction Progress: Measured Latency / Latency Estimation * 100%
 ////////////////////////////////////////////////////////////////////////////////////
 // RTL Simulation : 0 / 1 [0.00%] @ "125000"
-// RTL Simulation : 1 / 1 [0.00%] @ "206005000"
+// RTL Simulation : 1 / 1 [0.00%] @ "177125000"
 ////////////////////////////////////////////////////////////////////////////////////
-$finish called at time : 206045 ns : File "/home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/sim/verilog/worker.autotb.v" Line 213
+$finish called at time : 177165 ns : File "/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/sim/verilog/worker.autotb.v" Line 213
 ## quit
-INFO: [Common 17-206] Exiting xsim at Mon Nov 21 16:31:50 2022...
+INFO: [Common 17-206] Exiting xsim at Mon Nov 21 17:03:07 2022...
 Testing COO SpMV
--28.5 -87.9 [31mFailed :(
+[32mPassed :)
 [0m
-@E [SIM-4] *** C/RTL co-simulation finished: FAIL ***
+@I [SIM-1000] *** C/RTL co-simulation finished: PASS ***

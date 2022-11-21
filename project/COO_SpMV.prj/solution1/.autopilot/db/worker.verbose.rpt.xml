@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'worker'" level="0">
-<item name = "Date">Mon Nov 21 16:31:05 2022
+<item name = "Date">Mon Nov 21 17:02:20 2022
 </item>
 <item name = "Version">2016.2 (Build 1577090 on Thu Jun 02 16:59:10 MDT 2016)</item>
 <item name = "Project">COO_SpMV.prj</item>
@@ -24,16 +24,16 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">, min, max, min, max, Type</keys>
-<column name="">12955, 75455, 12956, 75456, none</column>
+<column name="">8094, 23094, 8095, 23095, none</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="7">Instance, Module, min, max, min, max, Type</keys>
-<column name="grp_worker_COO_SpMV_fu_1128">worker_COO_SpMV, 5001, 32501, 5001, 32501, none</column>
-<column name="grp_worker_COO_SpMV_fu_1139">worker_COO_SpMV, 5001, 32501, 5001, 32501, none</column>
-<column name="grp_worker_COO_SpMV_fu_1150">worker_COO_SpMV, 5001, 32501, 5001, 32501, none</column>
+<column name="grp_worker_COO_SpMV_fu_1128">worker_COO_SpMV, 2513, 2513, 2513, 2513, none</column>
+<column name="grp_worker_COO_SpMV_fu_1139">worker_COO_SpMV, 2513, 2513, 2513, 2513, none</column>
+<column name="grp_worker_COO_SpMV_fu_1150">worker_COO_SpMV, 2513, 2513, 2513, 2513, none</column>
 <column name="grp_worker_create_COO_fu_1161">worker_create_COO, 2628, 10128, 2628, 10128, none</column>
 <column name="grp_worker_create_COO_fu_1174">worker_create_COO, 2628, 10128, 2628, 10128, none</column>
 <column name="grp_worker_create_COO_fu_1185">worker_create_COO, 2628, 10128, 2628, 10128, none</column>
@@ -61,9 +61,9 @@
 <column name="DSP">-, -, -, -</column>
 <column name="Expression">-, -, 0, 54</column>
 <column name="FIFO">-, -, -, -</column>
-<column name="Instance">3, 15, 2628, 4676</column>
+<column name="Instance">3, 15, 2598, 4685</column>
 <column name="Memory">88, -, 256, 52</column>
-<column name="Multiplexer">-, -, -, 610</column>
+<column name="Multiplexer">-, -, -, 614</column>
 <column name="Register">-, -, 185, -</column>
 <specialColumn name="Available">280, 220, 106400, 53200</specialColumn>
 <specialColumn name="Utilization (%)">32, 6, 2, 10</specialColumn>
@@ -73,9 +73,9 @@
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="1">
 <keys size="6">Instance, Module, BRAM_18K, DSP48E, FF, LUT</keys>
-<column name="grp_worker_COO_SpMV_fu_1128">worker_COO_SpMV, 1, 5, 533, 757</column>
-<column name="grp_worker_COO_SpMV_fu_1139">worker_COO_SpMV, 1, 5, 533, 757</column>
-<column name="grp_worker_COO_SpMV_fu_1150">worker_COO_SpMV, 1, 5, 533, 757</column>
+<column name="grp_worker_COO_SpMV_fu_1128">worker_COO_SpMV, 1, 5, 523, 760</column>
+<column name="grp_worker_COO_SpMV_fu_1139">worker_COO_SpMV, 1, 5, 523, 760</column>
+<column name="grp_worker_COO_SpMV_fu_1150">worker_COO_SpMV, 1, 5, 523, 760</column>
 <column name="grp_worker_create_COO_fu_1161">worker_create_COO, 0, 0, 343, 791</column>
 <column name="grp_worker_create_COO_fu_1174">worker_create_COO, 0, 0, 343, 791</column>
 <column name="grp_worker_create_COO_fu_1185">worker_create_COO, 0, 0, 343, 791</column>
@@ -148,25 +148,29 @@
 <column name="col_1_3_address0">12, 3, 12, 36</column>
 <column name="col_1_3_ce0">1, 3, 1, 3</column>
 <column name="dest_1_0_address0">15, 15, 5, 75</column>
-<column name="dest_1_0_address1">15, 14, 5, 70</column>
+<column name="dest_1_0_address1">15, 15, 5, 75</column>
 <column name="dest_1_0_ce0">1, 3, 1, 3</column>
-<column name="dest_1_0_d0">32, 3, 32, 96</column>
-<column name="dest_1_0_we0">1, 3, 1, 3</column>
+<column name="dest_1_0_ce1">1, 3, 1, 3</column>
+<column name="dest_1_0_d1">32, 3, 32, 96</column>
+<column name="dest_1_0_we1">1, 3, 1, 3</column>
 <column name="dest_1_1_address0">15, 15, 5, 75</column>
-<column name="dest_1_1_address1">15, 14, 5, 70</column>
+<column name="dest_1_1_address1">15, 15, 5, 75</column>
 <column name="dest_1_1_ce0">1, 3, 1, 3</column>
-<column name="dest_1_1_d0">32, 3, 32, 96</column>
-<column name="dest_1_1_we0">1, 3, 1, 3</column>
+<column name="dest_1_1_ce1">1, 3, 1, 3</column>
+<column name="dest_1_1_d1">32, 3, 32, 96</column>
+<column name="dest_1_1_we1">1, 3, 1, 3</column>
 <column name="dest_1_2_address0">15, 15, 5, 75</column>
-<column name="dest_1_2_address1">15, 14, 5, 70</column>
+<column name="dest_1_2_address1">15, 15, 5, 75</column>
 <column name="dest_1_2_ce0">1, 3, 1, 3</column>
-<column name="dest_1_2_d0">32, 3, 32, 96</column>
-<column name="dest_1_2_we0">1, 3, 1, 3</column>
+<column name="dest_1_2_ce1">1, 3, 1, 3</column>
+<column name="dest_1_2_d1">32, 3, 32, 96</column>
+<column name="dest_1_2_we1">1, 3, 1, 3</column>
 <column name="dest_1_3_address0">15, 15, 5, 75</column>
-<column name="dest_1_3_address1">15, 14, 5, 70</column>
+<column name="dest_1_3_address1">15, 15, 5, 75</column>
 <column name="dest_1_3_ce0">1, 3, 1, 3</column>
-<column name="dest_1_3_d0">32, 3, 32, 96</column>
-<column name="dest_1_3_we0">1, 3, 1, 3</column>
+<column name="dest_1_3_ce1">1, 3, 1, 3</column>
+<column name="dest_1_3_d1">32, 3, 32, 96</column>
+<column name="dest_1_3_we1">1, 3, 1, 3</column>
 <column name="grp_worker_COO_SpMV_fu_1128_col_q0">8, 3, 8, 24</column>
 <column name="grp_worker_COO_SpMV_fu_1128_output_r_q0">32, 3, 32, 96</column>
 <column name="grp_worker_COO_SpMV_fu_1128_row_q0">6, 3, 6, 18</column>

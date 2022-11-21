@@ -50,9 +50,9 @@ set RtlHierarchyInfo {[
 		{"Name" : "row_nnz_0", "Type" : "Memory", "Direction" : "I", "BlockSignal" : [], "SubConnect" : [
 			{"SubInst" : "grp_worker_create_COO_fu_1161", "Port" : "nnz"}]}, 
 		{"Name" : "vector", "Type" : "Memory", "Direction" : "I", "BlockSignal" : [], "SubConnect" : [
+			{"SubInst" : "grp_worker_COO_SpMV_fu_1139", "Port" : "vector"}, 
 			{"SubInst" : "grp_worker_COO_SpMV_fu_1150", "Port" : "vector"}, 
-			{"SubInst" : "grp_worker_COO_SpMV_fu_1128", "Port" : "vector"}, 
-			{"SubInst" : "grp_worker_COO_SpMV_fu_1139", "Port" : "vector"}]}, 
+			{"SubInst" : "grp_worker_COO_SpMV_fu_1128", "Port" : "vector"}]}, 
 		{"Name" : "matrix_1_1", "Type" : "Memory", "Direction" : "I", "BlockSignal" : [], "SubConnect" : [
 			{"SubInst" : "grp_worker_create_COO_fu_1161", "Port" : "input_r"}]}, 
 		{"Name" : "row_nnz_1", "Type" : "Memory", "Direction" : "I", "BlockSignal" : [], "SubConnect" : [
@@ -171,8 +171,8 @@ set RtlHierarchyInfo {[
 	{"Level" : "1", "Path" : "`AUTOTB_DUT_INST.worker_mux_4to1_sel2_32_1_U15", "Parent" : "0", "Child" : []}]}
 
 set PerformanceInfo {[
-	{"Name" : "Latency", "Min" : "12955", "Max" : "75455"}
-	, {"Name" : "Interval", "Min" : "12956", "Max" : "75456"}
+	{"Name" : "Latency", "Min" : "8094", "Max" : "23094"}
+	, {"Name" : "Interval", "Min" : "8095", "Max" : "23095"}
 ]}
 
 set Spec2ImplPortList { 

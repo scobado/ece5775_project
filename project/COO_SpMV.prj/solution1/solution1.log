@@ -11,7 +11,6 @@ Copyright (C) 1986-2016 Xilinx, Inc. All Rights Reserved.
 @I [HLS-10] Validating synthesis directives ...
 @I [HLS-10] Starting code transformations ...
 @I [HLS-10] Checking synthesizability ...
-@I [XFORM-602] Inlining function 'count_nnz' into 'worker' (COO_SpMV.cpp:96) automatically.
 @I [XFORM-501] Unrolling loop 'LOOP_PE1' (COO_SpMV.cpp:94) in function 'worker' completely.
 @I [XFORM-501] Unrolling loop 'LOOP_PE2' (COO_SpMV.cpp:100) in function 'worker' completely.
 @I [XFORM-501] Unrolling loop 'LOOP_DEST1' (COO_SpMV.cpp:101) in function 'worker' completely.
@@ -21,7 +20,10 @@ Copyright (C) 1986-2016 Xilinx, Inc. All Rights Reserved.
 @I [XFORM-101] Partitioning array 'col_1' (COO_SpMV.cpp:90) in dimension 1 completely.
 @I [XFORM-101] Partitioning array 'val_1' (COO_SpMV.cpp:91) in dimension 1 completely.
 @I [XFORM-101] Partitioning array 'row_nnz' (COO_SpMV.cpp:92) in dimension 1 completely.
-@I [HLS-111] Elapsed time: 5.67 seconds; current memory usage: 87.3 MB.
+@W [ANALYSIS-52] Found false 'RAW' inter dependency for variable 'output' (COO_SpMV.cpp:19).
+@W [ANALYSIS-52] Asserting false dependency between 'load' operation 'output.load'(COO_SpMV.cpp:24:11) from variable 'output'(COO_SpMV.cpp:19) and 'store' operation to variable 'output'(COO_SpMV.cpp:19), this may lead to incorrect RTL generation.
+@W [ANALYSIS-52] Asserting false dependency between 'store' operation to variable 'output'(COO_SpMV.cpp:19) and 'load' operation 'output.load'(COO_SpMV.cpp:24:11) from variable 'output'(COO_SpMV.cpp:19), this may lead to incorrect RTL generation.
+@I [HLS-111] Elapsed time: 5.85 seconds; current memory usage: 87.4 MB.
 @I [HLS-10] Starting hardware synthesis ...
 @I [HLS-10] Synthesizing 'worker' ...
 @I [HLS-10] ----------------------------------------------------------------
@@ -29,7 +31,7 @@ Copyright (C) 1986-2016 Xilinx, Inc. All Rights Reserved.
 @I [HLS-10] ----------------------------------------------------------------
 @I [SCHED-11] Starting scheduling ...
 @I [SCHED-11] Finished scheduling.
-@I [HLS-111] Elapsed time: 0.05 seconds; current memory usage: 87.9 MB.
+@I [HLS-111] Elapsed time: 0.06 seconds; current memory usage: 88.1 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Exploring micro-architecture for module 'worker_create_COO' 
 @I [HLS-10] ----------------------------------------------------------------
@@ -38,13 +40,15 @@ Copyright (C) 1986-2016 Xilinx, Inc. All Rights Reserved.
 @I [BIND-101] Exploring resource sharing.
 @I [BIND-101] Binding ...
 @I [BIND-100] Finished micro-architecture generation.
-@I [HLS-111] Elapsed time: 0.02 seconds; current memory usage: 88.3 MB.
+@I [HLS-111] Elapsed time: 0.03 seconds; current memory usage: 88.5 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Scheduling module 'worker_COO_SpMV' 
 @I [HLS-10] ----------------------------------------------------------------
 @I [SCHED-11] Starting scheduling ...
+@I [SCHED-61] Pipelining loop 'Loop 1'.
+@I [SCHED-61] Pipelining result: Target II: 1, Final II: 1, Depth: 13.
 @I [SCHED-11] Finished scheduling.
-@I [HLS-111] Elapsed time: 0.07 seconds; current memory usage: 88.6 MB.
+@I [HLS-111] Elapsed time: 0.08 seconds; current memory usage: 88.9 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Exploring micro-architecture for module 'worker_COO_SpMV' 
 @I [HLS-10] ----------------------------------------------------------------
@@ -53,13 +57,13 @@ Copyright (C) 1986-2016 Xilinx, Inc. All Rights Reserved.
 @I [BIND-101] Exploring resource sharing.
 @I [BIND-101] Binding ...
 @I [BIND-100] Finished micro-architecture generation.
-@I [HLS-111] Elapsed time: 0.02 seconds; current memory usage: 88.8 MB.
+@I [HLS-111] Elapsed time: 0.02 seconds; current memory usage: 89.1 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Scheduling module 'worker' 
 @I [HLS-10] ----------------------------------------------------------------
 @I [SCHED-11] Starting scheduling ...
 @I [SCHED-11] Finished scheduling.
-@I [HLS-111] Elapsed time: 0.09 seconds; current memory usage: 89.5 MB.
+@I [HLS-111] Elapsed time: 0.08 seconds; current memory usage: 89.8 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Exploring micro-architecture for module 'worker' 
 @I [HLS-10] ----------------------------------------------------------------
@@ -68,20 +72,20 @@ Copyright (C) 1986-2016 Xilinx, Inc. All Rights Reserved.
 @I [BIND-101] Exploring resource sharing.
 @I [BIND-101] Binding ...
 @I [BIND-100] Finished micro-architecture generation.
-@I [HLS-111] Elapsed time: 0.1 seconds; current memory usage: 90.4 MB.
+@I [HLS-111] Elapsed time: 0.12 seconds; current memory usage: 90.7 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Generating RTL for module 'worker_create_COO' 
 @I [HLS-10] ----------------------------------------------------------------
 @I [RTGEN-100] Generating core module 'worker_fcmp_32ns_32ns_1_1': 1 instance(s).
 @I [RTGEN-100] Finished creating RTL model for 'worker_create_COO'.
-@I [HLS-111] Elapsed time: 0.16 seconds; current memory usage: 91 MB.
+@I [HLS-111] Elapsed time: 0.17 seconds; current memory usage: 91.3 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Generating RTL for module 'worker_COO_SpMV' 
 @I [HLS-10] ----------------------------------------------------------------
 @I [RTGEN-100] Generating core module 'worker_fadd_32ns_32ns_32_5_full_dsp': 1 instance(s).
 @I [RTGEN-100] Generating core module 'worker_fmul_32ns_32ns_32_4_max_dsp': 1 instance(s).
 @I [RTGEN-100] Finished creating RTL model for 'worker_COO_SpMV'.
-@I [HLS-111] Elapsed time: 0.15 seconds; current memory usage: 92.8 MB.
+@I [HLS-111] Elapsed time: 0.11 seconds; current memory usage: 93.1 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Generating RTL for module 'worker' 
 @I [HLS-10] ----------------------------------------------------------------
@@ -89,7 +93,7 @@ Copyright (C) 1986-2016 Xilinx, Inc. All Rights Reserved.
 @I [RTGEN-500] Setting interface mode on function 'worker' to 'ap_ctrl_hs'.
 @I [RTGEN-100] Generating core module 'worker_mux_4to1_sel2_32_1': 1 instance(s).
 @I [RTGEN-100] Finished creating RTL model for 'worker'.
-@I [HLS-111] Elapsed time: 0.24 seconds; current memory usage: 94.9 MB.
+@I [HLS-111] Elapsed time: 0.2 seconds; current memory usage: 95.3 MB.
 @I [RTMG-279] Implementing memory 'worker_COO_SpMV_vector_rom' using auto ROMs.
 @W [RTMG-274] Memory 'worker_matrix_1_0' is read-only, switch it to a ROM.
 @I [RTMG-279] Implementing memory 'worker_matrix_1_0_rom' using block ROMs.
@@ -123,13 +127,5 @@ Copyright (C) 1986-2016 Xilinx, Inc. All Rights Reserved.
 @I [COSIM-323] Starting verilog simulation. 
 @I [COSIM-15] Starting XSIM ...
 @I [COSIM-316] Starting C post checking ...
-@E [COSIM-361] C TB post check failed, nonzero return value '255'.
-@E [COSIM-4] *** C/RTL co-simulation finished: FAIL ***
-command 'ap_source' returned error code
-    while executing
-"source [lindex $::argv 1] "
-    ("uplevel" body line 1)
-    invoked from within
-"uplevel \#0 { source [lindex $::argv 1] } "
-
-@I [HLS-112] Total elapsed time: 57.143 seconds; peak memory usage: 94.9 MB.
+@I [COSIM-1000] *** C/RTL co-simulation finished: PASS ***
+@I [HLS-112] Total elapsed time: 60.137 seconds; peak memory usage: 95.3 MB.

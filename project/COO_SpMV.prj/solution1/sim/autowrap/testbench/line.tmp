@@ -1,7 +1,7 @@
-#pragma line 1 "/home/sec322/ece5775/final_project/project/COO_SpMV.cpp" ::: -10
+#pragma line 1 "/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.cpp" ::: -10
 #pragma line 1 "<built-in>" ::: -9
 #pragma line 1 "<command-line>" ::: -8
-#pragma line 1 "/home/sec322/ece5775/final_project/project/COO_SpMV.cpp" ::: -7
+#pragma line 1 "/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.cpp" ::: -7
 #pragma line 1 "/opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/cstdlib" 1 3 ::: 0
 #pragma line 41 "/opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/cstdlib" 3 ::: 1
 #pragma line 42 "/opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/cstdlib" 3 ::: 3
@@ -147,7 +147,7 @@
 #pragma line 98 "/opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/cstdlib" 3 ::: 1369
 #pragma line 158 "/opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/cstdlib" 3 ::: 1418
 #pragma line 193 "/opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/cstdlib" 3 ::: 1444
-#pragma line 8 "/home/sec322/ece5775/final_project/project/COO_SpMV.cpp" 2 ::: 1473
+#pragma line 8 "/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.cpp" 2 ::: 1473
 #pragma line 1 "/usr/include/math.h" 1 3 4 ::: 1474
 #pragma line 29 "/usr/include/math.h" 3 4 ::: 1475
 #pragma line 1 "/usr/include/bits/huge_val.h" 1 3 4 ::: 1480
@@ -184,7 +184,7 @@
 #pragma line 288 "/usr/include/math.h" 3 4 ::: 2487
 #pragma line 311 "/usr/include/math.h" 3 4 ::: 2501
 #pragma line 475 "/usr/include/math.h" 3 4 ::: 2516
-#pragma line 9 "/home/sec322/ece5775/final_project/project/COO_SpMV.cpp" 2 ::: 2518
+#pragma line 9 "/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.cpp" 2 ::: 2518
 #pragma line 1 "/opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/iostream" 1 3 ::: 2519
 #pragma line 37 "/opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/iostream" 3 ::: 2520
 #pragma line 38 "/opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/iostream" 3 ::: 2522
@@ -1015,7 +1015,7 @@
 #pragma line 860 "/opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/istream" 2 3 ::: 20868
 #pragma line 42 "/opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/iostream" 2 3 ::: 20869
 #pragma line 61 "/opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/iostream" 3 ::: 20874
-#pragma line 10 "/home/sec322/ece5775/final_project/project/COO_SpMV.cpp" 2 ::: 20893
+#pragma line 10 "/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.cpp" 2 ::: 20893
 #pragma line 1 "/usr/include/stdio.h" 1 3 4 ::: 20894
 #pragma line 29 "/usr/include/stdio.h" 3 4 ::: 20895
 #pragma line 1 "/opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/lnx64/tools/gcc/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.3/include/stddef.h" 1 3 4 ::: 20900
@@ -1069,51 +1069,51 @@
 #pragma line 854 "/usr/include/stdio.h" 2 3 4 ::: 21603
 #pragma line 873 "/usr/include/stdio.h" 3 4 ::: 21614
 #pragma line 943 "/usr/include/stdio.h" 3 4 ::: 21663
-#pragma line 11 "/home/sec322/ece5775/final_project/project/COO_SpMV.cpp" 2 ::: 21665
-#pragma line 1 "/home/sec322/ece5775/final_project/project/model.h" 1 ::: 21666
-#pragma line 1 "/home/sec322/ece5775/final_project/project/data/sparse_1.dat" 1 ::: 21681
-#pragma line 16 "/home/sec322/ece5775/final_project/project/model.h" 2 ::: 21683
-#pragma line 1 "/home/sec322/ece5775/final_project/project/data/sparse_2.dat" 1 ::: 21687
-#pragma line 20 "/home/sec322/ece5775/final_project/project/model.h" 2 ::: 21689
-#pragma line 1 "/home/sec322/ece5775/final_project/project/data/sparse_3.dat" 1 ::: 21693
-#pragma line 24 "/home/sec322/ece5775/final_project/project/model.h" 2 ::: 21695
-#pragma line 1 "/home/sec322/ece5775/final_project/project/data/sparse_4.dat" 1 ::: 21699
-#pragma line 28 "/home/sec322/ece5775/final_project/project/model.h" 2 ::: 21701
-#pragma line 1 "/home/sec322/ece5775/final_project/project/data/sparse_5.dat" 1 ::: 21705
-#pragma line 32 "/home/sec322/ece5775/final_project/project/model.h" 2 ::: 21707
-#pragma line 1 "/home/sec322/ece5775/final_project/project/data/sparse_6.dat" 1 ::: 21711
-#pragma line 36 "/home/sec322/ece5775/final_project/project/model.h" 2 ::: 21713
-#pragma line 1 "/home/sec322/ece5775/final_project/project/data/sparse_7.dat" 1 ::: 21717
-#pragma line 40 "/home/sec322/ece5775/final_project/project/model.h" 2 ::: 21719
-#pragma line 1 "/home/sec322/ece5775/final_project/project/data/sparse_8.dat" 1 ::: 21723
-#pragma line 44 "/home/sec322/ece5775/final_project/project/model.h" 2 ::: 21725
-#pragma line 1 "/home/sec322/ece5775/final_project/project/data/sparse_9.dat" 1 ::: 21729
-#pragma line 48 "/home/sec322/ece5775/final_project/project/model.h" 2 ::: 21731
-#pragma line 1 "/home/sec322/ece5775/final_project/project/data/sparse_10.dat" 1 ::: 21735
-#pragma line 52 "/home/sec322/ece5775/final_project/project/model.h" 2 ::: 21737
-#pragma line 1 "/home/sec322/ece5775/final_project/project/data/vector.dat" 1 ::: 21743
-#pragma line 58 "/home/sec322/ece5775/final_project/project/model.h" 2 ::: 21745
-#pragma line 1 "/home/sec322/ece5775/final_project/project/data/result_1.dat" 1 ::: 21751
-#pragma line 64 "/home/sec322/ece5775/final_project/project/model.h" 2 ::: 21753
-#pragma line 1 "/home/sec322/ece5775/final_project/project/data/result_2.dat" 1 ::: 21757
-#pragma line 68 "/home/sec322/ece5775/final_project/project/model.h" 2 ::: 21759
-#pragma line 1 "/home/sec322/ece5775/final_project/project/data/result_3.dat" 1 ::: 21763
-#pragma line 72 "/home/sec322/ece5775/final_project/project/model.h" 2 ::: 21765
-#pragma line 1 "/home/sec322/ece5775/final_project/project/data/result_4.dat" 1 ::: 21769
-#pragma line 76 "/home/sec322/ece5775/final_project/project/model.h" 2 ::: 21771
-#pragma line 1 "/home/sec322/ece5775/final_project/project/data/result_5.dat" 1 ::: 21775
-#pragma line 80 "/home/sec322/ece5775/final_project/project/model.h" 2 ::: 21777
-#pragma line 1 "/home/sec322/ece5775/final_project/project/data/result_6.dat" 1 ::: 21781
-#pragma line 84 "/home/sec322/ece5775/final_project/project/model.h" 2 ::: 21783
-#pragma line 1 "/home/sec322/ece5775/final_project/project/data/result_7.dat" 1 ::: 21787
-#pragma line 88 "/home/sec322/ece5775/final_project/project/model.h" 2 ::: 21789
-#pragma line 1 "/home/sec322/ece5775/final_project/project/data/result_8.dat" 1 ::: 21793
-#pragma line 92 "/home/sec322/ece5775/final_project/project/model.h" 2 ::: 21795
-#pragma line 1 "/home/sec322/ece5775/final_project/project/data/result_9.dat" 1 ::: 21799
-#pragma line 96 "/home/sec322/ece5775/final_project/project/model.h" 2 ::: 21801
-#pragma line 1 "/home/sec322/ece5775/final_project/project/data/result_10.dat" 1 ::: 21805
-#pragma line 100 "/home/sec322/ece5775/final_project/project/model.h" 2 ::: 21807
-#pragma line 12 "/home/sec322/ece5775/final_project/project/COO_SpMV.cpp" 2 ::: 21809
-#pragma line 86 "/home/sec322/ece5775/final_project/project/COO_SpMV.cpp" ::: 21889
-#pragma line 190 "/home/sec322/ece5775/final_project/project/COO_SpMV.cpp" ::: 21919
-#pragma line 190 "/home/sec322/ece5775/final_project/project/COO_SpMV.cpp" ::: 21923
+#pragma line 11 "/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.cpp" 2 ::: 21665
+#pragma line 1 "/home/ak2425/ece5775/ece5775_project/project/model.h" 1 ::: 21666
+#pragma line 1 "/home/ak2425/ece5775/ece5775_project/project/data/sparse_1.dat" 1 ::: 21681
+#pragma line 16 "/home/ak2425/ece5775/ece5775_project/project/model.h" 2 ::: 21683
+#pragma line 1 "/home/ak2425/ece5775/ece5775_project/project/data/sparse_2.dat" 1 ::: 21687
+#pragma line 20 "/home/ak2425/ece5775/ece5775_project/project/model.h" 2 ::: 21689
+#pragma line 1 "/home/ak2425/ece5775/ece5775_project/project/data/sparse_3.dat" 1 ::: 21693
+#pragma line 24 "/home/ak2425/ece5775/ece5775_project/project/model.h" 2 ::: 21695
+#pragma line 1 "/home/ak2425/ece5775/ece5775_project/project/data/sparse_4.dat" 1 ::: 21699
+#pragma line 28 "/home/ak2425/ece5775/ece5775_project/project/model.h" 2 ::: 21701
+#pragma line 1 "/home/ak2425/ece5775/ece5775_project/project/data/sparse_5.dat" 1 ::: 21705
+#pragma line 32 "/home/ak2425/ece5775/ece5775_project/project/model.h" 2 ::: 21707
+#pragma line 1 "/home/ak2425/ece5775/ece5775_project/project/data/sparse_6.dat" 1 ::: 21711
+#pragma line 36 "/home/ak2425/ece5775/ece5775_project/project/model.h" 2 ::: 21713
+#pragma line 1 "/home/ak2425/ece5775/ece5775_project/project/data/sparse_7.dat" 1 ::: 21717
+#pragma line 40 "/home/ak2425/ece5775/ece5775_project/project/model.h" 2 ::: 21719
+#pragma line 1 "/home/ak2425/ece5775/ece5775_project/project/data/sparse_8.dat" 1 ::: 21723
+#pragma line 44 "/home/ak2425/ece5775/ece5775_project/project/model.h" 2 ::: 21725
+#pragma line 1 "/home/ak2425/ece5775/ece5775_project/project/data/sparse_9.dat" 1 ::: 21729
+#pragma line 48 "/home/ak2425/ece5775/ece5775_project/project/model.h" 2 ::: 21731
+#pragma line 1 "/home/ak2425/ece5775/ece5775_project/project/data/sparse_10.dat" 1 ::: 21735
+#pragma line 52 "/home/ak2425/ece5775/ece5775_project/project/model.h" 2 ::: 21737
+#pragma line 1 "/home/ak2425/ece5775/ece5775_project/project/data/vector.dat" 1 ::: 21743
+#pragma line 58 "/home/ak2425/ece5775/ece5775_project/project/model.h" 2 ::: 21745
+#pragma line 1 "/home/ak2425/ece5775/ece5775_project/project/data/result_1.dat" 1 ::: 21751
+#pragma line 64 "/home/ak2425/ece5775/ece5775_project/project/model.h" 2 ::: 21753
+#pragma line 1 "/home/ak2425/ece5775/ece5775_project/project/data/result_2.dat" 1 ::: 21757
+#pragma line 68 "/home/ak2425/ece5775/ece5775_project/project/model.h" 2 ::: 21759
+#pragma line 1 "/home/ak2425/ece5775/ece5775_project/project/data/result_3.dat" 1 ::: 21763
+#pragma line 72 "/home/ak2425/ece5775/ece5775_project/project/model.h" 2 ::: 21765
+#pragma line 1 "/home/ak2425/ece5775/ece5775_project/project/data/result_4.dat" 1 ::: 21769
+#pragma line 76 "/home/ak2425/ece5775/ece5775_project/project/model.h" 2 ::: 21771
+#pragma line 1 "/home/ak2425/ece5775/ece5775_project/project/data/result_5.dat" 1 ::: 21775
+#pragma line 80 "/home/ak2425/ece5775/ece5775_project/project/model.h" 2 ::: 21777
+#pragma line 1 "/home/ak2425/ece5775/ece5775_project/project/data/result_6.dat" 1 ::: 21781
+#pragma line 84 "/home/ak2425/ece5775/ece5775_project/project/model.h" 2 ::: 21783
+#pragma line 1 "/home/ak2425/ece5775/ece5775_project/project/data/result_7.dat" 1 ::: 21787
+#pragma line 88 "/home/ak2425/ece5775/ece5775_project/project/model.h" 2 ::: 21789
+#pragma line 1 "/home/ak2425/ece5775/ece5775_project/project/data/result_8.dat" 1 ::: 21793
+#pragma line 92 "/home/ak2425/ece5775/ece5775_project/project/model.h" 2 ::: 21795
+#pragma line 1 "/home/ak2425/ece5775/ece5775_project/project/data/result_9.dat" 1 ::: 21799
+#pragma line 96 "/home/ak2425/ece5775/ece5775_project/project/model.h" 2 ::: 21801
+#pragma line 1 "/home/ak2425/ece5775/ece5775_project/project/data/result_10.dat" 1 ::: 21805
+#pragma line 100 "/home/ak2425/ece5775/ece5775_project/project/model.h" 2 ::: 21807
+#pragma line 12 "/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.cpp" 2 ::: 21809
+#pragma line 86 "/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.cpp" ::: 21889
+#pragma line 190 "/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.cpp" ::: 21919
+#pragma line 190 "/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.cpp" ::: 21923

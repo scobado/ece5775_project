@@ -35003,9 +35003,9 @@ _ssdm_InlineSelf(2, "");
 #19 "COO_SpMV.cpp"
 
     for(int i = 0; i < coo_size; i++) {
-        // #pragma HLS PIPELINE
-        // #pragma HLS DEPENDENCE variable=output inter RAW false 
-        if (i < nnz && row[i] >= 0) {
+_ssdm_op_SpecPipeline(-1, 1, 1, 0, "");
+_ssdm_SpecDependence( output, 0, 0, 0, 0, 1);
+ if (i < nnz && row[i] >= 0) {
           output[row[i]] += val[i] * vector[col[i]];
         }
     }
@@ -35060,6 +35060,9 @@ _ssdm_InlineSelf(2, "");
 }
 
 int count_nnz(const float row[size]) {_ssdm_SpecArrayDimSize(row,size);
+_ssdm_InlineSelf(2, "");
+#74 "COO_SpMV.cpp"
+
     int counter = 0;
     for (int i = 0; i < size; i++) {
         if (row[i] != 0) counter++;

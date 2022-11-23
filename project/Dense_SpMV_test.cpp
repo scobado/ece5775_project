@@ -44,32 +44,32 @@ int main( int argc, char* argv[] ) {
   Dense_SpMV(matrix_1, vector, dest);
   verify_results( dest, result_1, size );
 
-  Dense_SpMV(matrix_2, vector, dest);
-  verify_results( dest, result_2, size );
+  // Dense_SpMV(matrix_2, vector, dest);
+  // verify_results( dest, result_2, size );
 
-  Dense_SpMV(matrix_3, vector, dest);
-  verify_results( dest, result_3, size );
+  // Dense_SpMV(matrix_3, vector, dest);
+  // verify_results( dest, result_3, size );
 
-  Dense_SpMV(matrix_4, vector, dest);
-  verify_results( dest, result_4, size );
+  // Dense_SpMV(matrix_4, vector, dest);
+  // verify_results( dest, result_4, size );
 
-  Dense_SpMV(matrix_5, vector, dest);
-  verify_results( dest, result_5, size );
+  // Dense_SpMV(matrix_5, vector, dest);
+  // verify_results( dest, result_5, size );
 
-  Dense_SpMV(matrix_6, vector, dest);
-  verify_results( dest, result_6, size );
+  // Dense_SpMV(matrix_6, vector, dest);
+  // verify_results( dest, result_6, size );
 
-  Dense_SpMV(matrix_7, vector, dest);
-  verify_results( dest, result_7, size );
+  // Dense_SpMV(matrix_7, vector, dest);
+  // verify_results( dest, result_7, size );
 
-  Dense_SpMV(matrix_8, vector, dest);
-  verify_results( dest, result_8, size );
+  // Dense_SpMV(matrix_8, vector, dest);
+  // verify_results( dest, result_8, size );
 
-  Dense_SpMV(matrix_9, vector, dest);
-  verify_results( dest, result_9, size );
+  // Dense_SpMV(matrix_9, vector, dest);
+  // verify_results( dest, result_9, size );
 
-  Dense_SpMV(matrix_10, vector, dest);
-  verify_results( dest, result_10, size );
+  // Dense_SpMV(matrix_10, vector, dest);
+  // verify_results( dest, result_10, size );
 
   return 0;
 }

@@ -45,8 +45,8 @@ set_directive_inline -off COO_SpMV
 set_directive_inline -off count_nnz
 
 set_directive_array_partition -type complete -dim 1 worker matrix_1
-set_directive_array_partition -type complete -dim 1 worker matrix
-set_directive_array_partition -type complete -dim 2 worker matrix
+# set_directive_array_partition -type complete -dim 1 worker matrix
+# set_directive_array_partition -type complete -dim 2 worker matrix
 set_directive_array_partition -type complete -dim 1 worker dest_1
 set_directive_array_partition -type complete -dim 1 worker row_1
 set_directive_array_partition -type complete -dim 1 worker col_1

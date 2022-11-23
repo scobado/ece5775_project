@@ -55,6 +55,46 @@ const float matrix_10[PE][block_size][size] = {
     #include"data/sparse_10.dat"
 };
 
+// const float matrix_1[size][size] = {
+//     #include"data/sparse_1.dat"
+// };
+
+// const float matrix_2[size][size] = {
+//     #include"data/sparse_2.dat"
+// };
+
+// const float matrix_3[size][size] = {
+//     #include"data/sparse_3.dat"
+// };
+
+// const float matrix_4[size][size] = {
+//     #include"data/sparse_4.dat"
+// };
+
+// const float matrix_5[size][size] = {
+//     #include"data/sparse_5.dat"
+// };
+
+// const float matrix_6[size][size] = {
+//     #include"data/sparse_6.dat"
+// };
+
+// const float matrix_7[size][size] = {
+//     #include"data/sparse_7.dat"
+// };
+
+// const float matrix_8[size][size] = {
+//     #include"data/sparse_8.dat"
+// };
+
+// const float matrix_9[size][size] = {
+//     #include"data/sparse_9.dat"
+// };
+
+// const float matrix_10[size][size] = {
+//     #include"data/sparse_10.dat"
+// };
+
 // import vector
 
 const float vector[size] = {

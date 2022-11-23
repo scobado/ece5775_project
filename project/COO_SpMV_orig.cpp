@@ -61,4 +61,14 @@ int count_nnz(const float input[size][size]) {
     return counter;
 }
 
+void worker(float dest[size]) {
 
+  int row_1[matrix_size];
+  int col_1[matrix_size];
+  float val_1[matrix_size];
+
+  int nnz = count_nnz(matrix_1);
+  create_COO(matrix_1,row_1,col_1,val_1);
+  COO_SpMV(row_1,col_1,val_1,vector,dest,nnz);
+
+}

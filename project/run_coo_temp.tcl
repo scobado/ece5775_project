@@ -17,12 +17,20 @@
 set filename "coo_result.csv"
 file delete -force "./result/${filename}"
 
+set num_pes { 1 2 4 5 10}
+
 #------------------------------------------------------
 # run batch experiments
 #------------------------------------------------------
 
+foreach { PE } $num_pes {
+
+# Define the bitwidth macros from CFLAGs
+set CFLAGS "-DPE=${PE}"
+
 # Project name
-set hls_prj "COO_SpMV.prj"
+# set hls_prj "COO_SpMV.prj"
+set hls_prj "COO_SpMV_${PE}.prj"
 
 # Open/reset the project
 open_project ${hls_prj} -reset
@@ -30,8 +38,8 @@ open_project ${hls_prj} -reset
 set_top worker
 
 # Add design and testbench files
-add_files COO_SpMV.cpp
-add_files -tb COO_SpMV_test.cpp
+add_files COO_SpMV.cpp -cflags $CFLAGS
+add_files -tb COO_SpMV_test.cpp -cflags $CFLAGS
 
 open_solution "solution1"
 # Use Zynq device
@@ -45,8 +53,6 @@ set_directive_inline -off COO_SpMV
 set_directive_inline -off count_nnz
 
 set_directive_array_partition -type complete -dim 1 worker matrix_1
-set_directive_array_partition -type complete -dim 1 worker matrix
-set_directive_array_partition -type complete -dim 2 worker matrix
 set_directive_array_partition -type complete -dim 1 worker dest_1
 set_directive_array_partition -type complete -dim 1 worker row_1
 set_directive_array_partition -type complete -dim 1 worker col_1
@@ -57,40 +63,19 @@ set_directive_unroll worker/LOOP_PE1
 set_directive_unroll worker/LOOP_PE2
 set_directive_unroll worker/LOOP_DEST1
 
-
-
-
-
-
-
-#set_directive_inline -off create_COO
-#set_directive_inline -off COO_SpMV
-#set_directive_inline -off count_nnz
-
-#set_directive_array_partition -type complete -dim 1 worker matrix_1
-#set_directive_array_partition -type complete -dim 2 worker matrix_1
-#set_directive_array_partition -type complete -dim 1 worker dest_1
-#set_directive_array_partition -type complete -dim 1 worker row_1
-#set_directive_array_partition -type complete -dim 1 worker col_1
-#set_directive_array_partition -type complete -dim 1 worker val_1
-#set_directive_array_partition -type complete -dim 0 worker row_nnz 
-
-#set_directive_unroll worker/LOOP_PE
-#set_directive_unroll worker/LOOP_DEST1
-#set_directive_unroll worker/LOOP_NNZ_OUT
-#set_directive_unroll worker/LOOP_NNZ_IN
-
-#set_directive_pipeline worker/LOOP_DEST1_ST
-#set_directive_pipeline create_COO/LOOP_BUFFER
-
-#set_directive_pipeline count_nnz/LOOP_COUNT
-
-
 # Simulate the C++ design
 # csim_design
 # Synthesis the design
 csynth_design
 # Co-simulate the design
 cosim_design
+
+#---------------------------------------------
+# Collect & dump out results from HLS reports
+#---------------------------------------------
+set argv [list $filename $hls_prj]
+set argc 2
+source "./collect_results.tcl"
+}
 
 exit

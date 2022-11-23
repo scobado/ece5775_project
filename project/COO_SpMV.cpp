@@ -44,6 +44,8 @@ int create_COO(const float input[block_size][size], int row[coo_size], int col[c
         val[i] = 0;
     }
 
+    if (sep < 8) sep = 8;
+
     int max_ind = 0;
     int start = 0;
     for (int i = 0; i < block_size; i++) {

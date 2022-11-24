@@ -41,6 +41,6 @@ int main( int argc, char* argv[] ) {
 
   std::cout << "Testing COO SpMV\n";
   worker(dest);
-  verify_results( dest, result_1, size );
+  verify_results( dest, result_2, size );
   return 0;
 }

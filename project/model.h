@@ -5,15 +5,15 @@
 
 const int size = 100;
 const int matrix_size = size * size;
-const int PE = 10;
+const int PE = 25;
 const int block_size = size / PE;
 const int coo_size = size * block_size;
 
 // import sparse matrices
 
-const float matrix[10][PE][block_size][size] = {
-    #include"data/sparse.dat"
-};
+// const float matrix[10][PE][block_size][size] = {
+//     #include"data/sparse.dat"
+// };
 
 const float matrix_1[PE][block_size][size] = {
     #include"data/sparse_1.dat"

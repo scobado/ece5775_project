@@ -17,6 +17,7 @@ using namespace std;
 //==========================================================================
 
 void COO_SpMV(int row[coo_size], int col[coo_size], float val[coo_size], const float vector[size], float output[size], int nnz) {
+    #pragma HLS function_instantiate variable=nnz
     for(int i = 0; i < coo_size; i++) {
         #pragma HLS PIPELINE
         #pragma HLS DEPENDENCE variable=output inter RAW false 
@@ -31,7 +32,8 @@ void COO_SpMV(int row[coo_size], int col[coo_size], float val[coo_size], const f
 // Traverse in column major order to solve output dependence
 //==========================================================================
 
-int create_COO(const float input[block_size][size], int row[coo_size], int col[coo_size], float val[coo_size], int nnz[block_size]) {
+int create_COO(const float input[block_size][size], int row[coo_size], int col[coo_size], float val[coo_size], int nnz[block_size], int density) {
+    #pragma HLS function_instantiate variable=density
 
     int sep = 0;
     for (int i = 0; i < block_size; i++) {
@@ -95,7 +97,7 @@ void worker(float dest[size]) {
 
   LOOP_PE1: for (int i = 0; i < PE; i++) {
     for (int j = 0; j < block_size; j++) {
-        row_nnz[i][j] = count_nnz(matrix_1[i][j]);
+        row_nnz[i][j] = count_nnz(matrix_2[i][j]);
     }
   }
 
@@ -104,7 +106,7 @@ void worker(float dest[size]) {
         dest_1[i][j] = 0;
     }
 
-    int nnz = create_COO(matrix_1[i], row_1[i], col_1[i], val_1[i], row_nnz[i]);
+    int nnz = create_COO(matrix_2[i], row_1[i], col_1[i], val_1[i], row_nnz[i], i);
     COO_SpMV(row_1[i], col_1[i], val_1[i], vector, dest_1[i], nnz);
   }
   

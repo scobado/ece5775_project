@@ -33,5 +33,9 @@ vivado_coo:
 	@echo "Run Vivado csim and HLS for COO SpMV"
 	vivado_hls -f run_coo.tcl
 
+vivado_pagerank:
+	@echo "Run Vivado csim and HLS for PageRank"
+	vivado_hls -f run_pagerank.tcl
+
 clean:
-	rm -rf Dense_SpMV COO_SpMV *.dat *.prj *.log
+	rm -rf Dense_SpMV COO_SpMV PageRank *.dat *.prj *.log

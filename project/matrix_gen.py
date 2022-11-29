@@ -1,5 +1,8 @@
 import random
 
+matrix = []
+size = 100
+
 def matrix_gen(sparse):
 
     size = 100
@@ -61,5 +64,42 @@ def transition_matrix_gen(matrix):
 
     return result
     
+def transpose(m):
+    rez = [[m[j][i] for j in range(len(m))] for i in range(len(m[0]))]
+    return rez
 
-print(transition_matrix_gen(matrix_gen(10)))
+def is_converged(v_old, v_new):
+    diff = 0
+    square_diff = 0
+    
+    for i in range(size):
+        diff = v_old[i] - v_new[i]
+        square_diff += diff*diff
+
+    return (square_diff == 0)
+
+def pagerank(matrix):
+
+    size = 100
+    alpha = 0.85
+    v_init = [0.01] * size
+    v_old  = [0.01] * size
+    done = False
+
+    for i in range(125):
+        if(not done):
+            v_new = SpMV(matrix, v_old)
+
+            for j in range(size):
+                v_new[j] = alpha*v_init[j] + (1-alpha)*v_new[j]
+
+            done = is_converged(v_old, v_new)
+
+            for j in range(size):
+                v_old[j] = v_new[j]
+
+    return v_new
+
+matrix = transpose(transition_matrix_gen(matrix_gen(1)))
+print(matrix)
+print(pagerank(matrix))

@@ -1,7 +1,7 @@
 #=============================================================================
-# run-float.tcl 
+# run-pagerank.tcl 
 #=============================================================================
-# @brief: A Tcl script for floating-point experiments.
+# @brief: A Tcl script for pagerank experiments.
 #
 # @desc: This script runs a batch of simulation & synthesis experiments
 # to explore trade-offs between accuracy, performance, and area for 
@@ -22,12 +22,12 @@ file delete -force "./result/${filename}"
 #------------------------------------------------------
 
 # Project name
-set hls_prj "COO_SpMV.prj"
+set hls_prj "PageRank.prj"
 
 # Open/reset the project
 open_project ${hls_prj} -reset
-# Top function of the design is "COO SpMV"
-set_top worker
+# Top function of the design is "main_function"
+set_top main_function
 
 # Add design and testbench files
 add_files pagerank.cpp
@@ -40,49 +40,29 @@ set_part {xc7z020clg484-1}
 # Target clock period is 10ns
 create_clock -period 10
 
+set_directive_inline -off SpMV
+set_directive_inline -off worker
+set_directive_inline -off vector_cp
+set_directive_inline -off count_nnz
+set_directive_inline -off is_converged
 set_directive_inline -off create_COO
 set_directive_inline -off COO_SpMV
-set_directive_inline -off count_nnz
 
-set_directive_array_partition -type complete -dim 1 worker transition
-set_directive_array_partition -type complete -dim 1 worker tmp_dest
-set_directive_array_partition -type complete -dim 1 worker row
-set_directive_array_partition -type complete -dim 1 worker col
-set_directive_array_partition -type complete -dim 1 worker val
-set_directive_array_partition -type complete -dim 1 worker row_nnz 
+set_directive_array_partition -type complete -dim 1 SpMV transposed_9
+set_directive_array_partition -type complete -dim 1 SpMV tmp_dest
+set_directive_array_partition -type complete -dim 1 SpMV row
+set_directive_array_partition -type complete -dim 1 SpMV col
+set_directive_array_partition -type complete -dim 1 SpMV val
+set_directive_array_partition -type complete -dim 1 SpMV row_nnz 
+set_directive_array_partition -type complete -dim 1 main_function v_new
+set_directive_array_partition -type complete -dim 1 main_function v_old
 
-set_directive_unroll worker/LOOP_PE1
-set_directive_unroll worker/LOOP_PE2
-set_directive_unroll worker/LOOP_DEST1
-
-
-
-
-
-
-
-#set_directive_inline -off create_COO
-#set_directive_inline -off COO_SpMV
-#set_directive_inline -off count_nnz
-
-#set_directive_array_partition -type complete -dim 1 worker matrix_1
-#set_directive_array_partition -type complete -dim 2 worker matrix_1
-#set_directive_array_partition -type complete -dim 1 worker dest_1
-#set_directive_array_partition -type complete -dim 1 worker row_1
-#set_directive_array_partition -type complete -dim 1 worker col_1
-#set_directive_array_partition -type complete -dim 1 worker val_1
-#set_directive_array_partition -type complete -dim 0 worker row_nnz 
-
-#set_directive_unroll worker/LOOP_PE
-#set_directive_unroll worker/LOOP_DEST1
-#set_directive_unroll worker/LOOP_NNZ_OUT
-#set_directive_unroll worker/LOOP_NNZ_IN
-
-#set_directive_pipeline worker/LOOP_DEST1_ST
-#set_directive_pipeline create_COO/LOOP_BUFFER
-
-#set_directive_pipeline count_nnz/LOOP_COUNT
-
+set_directive_unroll SpMV/LOOP_PE1
+set_directive_unroll SpMV/LOOP_CONVERGED
+set_directive_unroll SpMV/LOOP_VCOPY
+set_directive_unroll SpMV/LOOP_VNEW
+set_directive_unroll SpMV/LOOP_PE2
+set_directive_unroll SpMV/LOOP_DEST1
 
 # Simulate the C++ design
 # csim_design

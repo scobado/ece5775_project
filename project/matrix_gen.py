@@ -10,7 +10,7 @@ def matrix_gen(sparse):
 
     for i in range(0, size*size):
         if (random.randint(0, 100) < sparse):
-            row.append(random.uniform(-10, 10))
+            row.append(1.0)
         else:
             row.append(0.0)
 
@@ -40,4 +40,26 @@ def SpMV(matrix, vector):
 
     return result
 
-print(SpMV(matrix,vector))
+def transition_matrix_gen(matrix):
+
+    size = 6
+
+    result = []
+
+    for i in range(len(matrix)):
+        rowsum = 0
+        row = []
+        for j in range(len(matrix[0])):
+            rowsum += matrix[i][j]
+        if rowsum > 0:
+            for j in range(len(matrix[0])):
+                row.append(matrix[i][j]/rowsum)
+        else:
+            for j in range(len(matrix[0])):
+                row.append(0)
+        result.append(row)
+
+    return result
+    
+
+print(transition_matrix_gen(matrix_gen(10)))

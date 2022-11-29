@@ -19,6 +19,12 @@ coo: COO_SpMV.cpp COO_SpMV_test.cpp
 	g++ $^ -o COO_SpMV -lrt
 	./COO_SpMV
 
+pagerank: pagerank.cpp
+	@echo "Compiling & simulating cnn on amdpool ..."
+	g++ $^ -o pagerank -lrt
+	./pagerank
+
+
 vivado_dense:
 	@echo "Run Vivado csim and HLS for Dense SpMV"
 	vivado_hls -f run_dense.tcl

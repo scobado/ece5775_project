@@ -16,7 +16,7 @@ using namespace std;
 // COO Format: 3 arrays representing non-zero elements [row, col, value]
 //==========================================================================
 
-void COO_SpMV(int row[coo_size], int col[coo_size], float val[coo_size], const float vector[size], float output[size], int nnz) {
+void COO_SpMV(int row[coo_size], int col[coo_size], float val[coo_size], float vector[size], float output[size], int nnz) {
     #pragma HLS function_instantiate variable=nnz
     for(int i = 0; i < coo_size; i++) {
         #pragma HLS PIPELINE
@@ -102,7 +102,7 @@ void worker(float dest[size]) {
   }
 
   LOOP_PE2: for (int i = 0; i < PE; i++) {
-    LOOP_DEST1:for(int j = 0; j < block_size; j++) {
+    LOOP_DEST1: for(int j = 0; j < block_size; j++) {
         dest_1[i][j] = 0;
     }
 

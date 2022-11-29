@@ -17,6 +17,7 @@ void verify_results( float dest[], const float ref[], int size )
   for ( i = 0; i < size; i++ ) {
     float dest_val = round(dest[i] * 10) / 10;
     float ref_val = round(ref[i] * 10) / 10;
+
     if ( !( dest_val == ref_val ) ) {
       std::cout << dest_val << " ";
       std::cout << ref_val << " ";
@@ -41,6 +42,7 @@ int main( int argc, char* argv[] ) {
 
   std::cout << "Testing PageRank\n";
   main_function(dest);
+//   float result[size] = {0.0250, 0.2375, 0.2375, 0.2375, 0.0250, 0.2375};
   verify_results( dest, ranks_1, size );
   return 0;
 }

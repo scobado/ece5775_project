@@ -84,7 +84,7 @@ int count_nnz(const float row[size]) {
 }
 
 //==========================================================================
-// TODO: Some worker description here...
+// Perform the SpMV computation and store result in dest
 //==========================================================================
 
 void worker(float dest[size]) {

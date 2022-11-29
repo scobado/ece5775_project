@@ -18,25 +18,25 @@
 #include <stdio.h>		// for printf() 
 #include <string.h>		// for memcpy()
 
-#define	N_NODES		100	// number of nodes 
+#define	N_NODES		6	// number of nodes 
 #define N_STEPS		125	// number of steps
 
-double transition[ N_NODES ][ N_NODES ] = {
-    #include"data/pagerank_1.dat"
-};
+// double transition[ N_NODES ][ N_NODES ] = {
+//     #include"data/pagerank_1.dat"
+// };
 
 typedef double Matrix[ N_NODES ][ N_NODES ];
 
-// Matrix       digraph =	{
-// 			0, 1, 1, 1, 0, 1,
-// 			0, 0, 0, 1, 1, 1,
-// 			0, 0, 0, 1, 1, 0,
-// 			1, 0, 0, 0, 1, 0,
-// 			1, 0, 1, 0, 0, 0,
-// 			0, 0, 0, 1, 0, 0
-// 			};
+Matrix       digraph =	{
+			0, 1, 1, 1, 0, 1,
+			0, 0, 0, 1, 1, 1,
+			0, 0, 0, 1, 1, 0,
+			1, 0, 0, 0, 1, 0,
+			1, 0, 1, 0, 0, 0,
+			0, 0, 0, 1, 0, 0
+			};
 
-// Matrix 	transition;
+Matrix 	transition;
 
 
 int main( int argc, char **argv )
@@ -55,18 +55,18 @@ int main( int argc, char **argv )
 	// printf( "\n" );
 	// getchar();
 
-	// // compute entries for the corresponding transition matrix
-	// for (int i = 0; i < N_NODES; i++)
-	// 	{
-	// 	double	rowsum = 0;
-	// 	for (int j = 0; j < N_NODES; j++) rowsum += digraph[i][j];
-	// 	if ( rowsum > 0 ) 
-	// 		for (int j = 0; j < N_NODES; j++) 
-	// 			transition[ i ][ j ] = digraph[i][j]/rowsum;
-	// 	else	// A fixup for the "dangling node" problem
-	// 		for (int j = 0; j < N_NODES; j++)
-	// 			transition[ i ][ j ] = 0.0;
-	// 	}
+	// compute entries for the corresponding transition matrix
+	for (int i = 0; i < N_NODES; i++)
+		{
+		double	rowsum = 0;
+		for (int j = 0; j < N_NODES; j++) rowsum += digraph[i][j];
+		if ( rowsum > 0 ) 
+			for (int j = 0; j < N_NODES; j++) 
+				transition[ i ][ j ] = digraph[i][j]/rowsum;
+		else	// A fixup for the "dangling node" problem
+			for (int j = 0; j < N_NODES; j++)
+				transition[ i ][ j ] = 0.0;
+		}
 
 	// display the specified transition matrix
 	// printf( "\n Here is the corresponding Transition Matrix: " );

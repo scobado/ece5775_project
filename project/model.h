@@ -3,11 +3,14 @@
 //===========================================================================
 // @brief: This header file include the SpMV datasets
 
-const int size = 6;
+const int size = 100;
 const int matrix_size = size * size;
 const int PE = 1;
 const int block_size = size / PE;
 const int coo_size = size * block_size;
+const int EPSILON = 100;
+const float	alpha = 0.85;
+const float alpha_complement = 1-alpha;
 
 // import sparse matrices
 
@@ -59,11 +62,11 @@ const int coo_size = size * block_size;
 //     #include"data/sparse_10.dat"
 // };
 
-// // import pagerank datasets
+// import pagerank datasets
 
-// const float pagerank_1[PE][block_size][size] = {
-//     #include"data/pagerank_1.dat"
-// };
+const float pagerank_1[PE][block_size][size] = {
+    #include"data/pagerank_1.dat"
+};
 
 // const float pagerank_2[PE][block_size][size] = {
 //     #include"data/pagerank_2.dat"
@@ -103,91 +106,91 @@ const int coo_size = size * block_size;
 
 // import vector
 
-const float vector[size] = {
-    #include"data/vector.dat"
-};
+// const float vector[size] = {
+//     #include"data/vector.dat"
+// };
 
 // import results
 
-const float result_1[size] = {
-    #include"data/result_1.dat"
-};
+// const float result_1[size] = {
+//     #include"data/result_1.dat"
+// };
 
-const float result_2[size] = {
-    #include"data/result_2.dat"
-};
+// const float result_2[size] = {
+//     #include"data/result_2.dat"
+// };
 
-const float result_3[size] = {
-    #include"data/result_3.dat"
-};
+// const float result_3[size] = {
+//     #include"data/result_3.dat"
+// };
 
-const float result_4[size] = {
-    #include"data/result_4.dat"
-};
+// const float result_4[size] = {
+//     #include"data/result_4.dat"
+// };
 
-const float result_5[size] = {
-    #include"data/result_5.dat"
-};
+// const float result_5[size] = {
+//     #include"data/result_5.dat"
+// };
 
-const float result_6[size] = {
-    #include"data/result_6.dat"
-};
+// const float result_6[size] = {
+//     #include"data/result_6.dat"
+// };
 
-const float result_7[size] = {
-    #include"data/result_7.dat"
-};
+// const float result_7[size] = {
+//     #include"data/result_7.dat"
+// };
 
-const float result_8[size] = {
-    #include"data/result_8.dat"
-};
+// const float result_8[size] = {
+//     #include"data/result_8.dat"
+// };
 
-const float result_9[size] = {
-    #include"data/result_9.dat"
-};
+// const float result_9[size] = {
+//     #include"data/result_9.dat"
+// };
 
-const float result_10[size] = {
-    #include"data/result_10.dat"
-};
+// const float result_10[size] = {
+//     #include"data/result_10.dat"
+// };
 
-// import ranks
+// // import ranks
 
 const float ranks_1[size] = {
     #include"data/ranks_1.dat"
 };
 
-const float ranks_2[size] = {
-    #include"data/ranks_2.dat"
-};
+// const float ranks_2[size] = {
+//     #include"data/ranks_2.dat"
+// };
 
-const float ranks_3[size] = {
-    #include"data/ranks_3.dat"
-};
+// const float ranks_3[size] = {
+//     #include"data/ranks_3.dat"
+// };
 
-const float ranks_4[size] = {
-    #include"data/ranks_4.dat"
-};
+// const float ranks_4[size] = {
+//     #include"data/ranks_4.dat"
+// };
 
-const float ranks_5[size] = {
-    #include"data/ranks_5.dat"
-};
+// const float ranks_5[size] = {
+//     #include"data/ranks_5.dat"
+// };
 
-const float ranks_6[size] = {
-    #include"data/ranks_6.dat"
-};
+// const float ranks_6[size] = {
+//     #include"data/ranks_6.dat"
+// };
 
-const float ranks_7[size] = {
-    #include"data/ranks_7.dat"
-};
+// const float ranks_7[size] = {
+//     #include"data/ranks_7.dat"
+// };
 
-const float ranks_8[size] = {
-    #include"data/ranks_8.dat"
-};
+// const float ranks_8[size] = {
+//     #include"data/ranks_8.dat"
+// };
 
-const float ranks_9[size] = {
-    #include"data/ranks_9.dat"
-};
+// const float ranks_9[size] = {
+//     #include"data/ranks_9.dat"
+// };
 
-const float ranks_10[size] = {
-    #include"data/ranks_10.dat"
-};
+// const float ranks_10[size] = {
+//     #include"data/ranks_10.dat"
+// };
 

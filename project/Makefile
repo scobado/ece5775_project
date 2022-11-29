@@ -19,7 +19,7 @@ coo: COO_SpMV.cpp COO_SpMV_test.cpp
 	g++ $^ -o COO_SpMV -lrt
 	./COO_SpMV
 
-pagerank: pagerank.cpp
+pagerank: pagerank.cpp pagerank_test.cpp
 	@echo "Compiling & simulating cnn on amdpool ..."
 	g++ $^ -o pagerank -lrt
 	./pagerank

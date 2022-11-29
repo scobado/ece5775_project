@@ -37,6 +37,8 @@ Matrix       digraph =	{
 			0, 0, 0, 1, 0, 0
 			};
 
+const float	alpha = 0.85;
+
 // const float	adj_transition[PE][block_size][size] {
 // 	      0.0250,  0.2375,  0.2375,  0.2375,  0.0250,  0.2375, 
 //           0.0250,  0.0250,  0.0250,  0.3083,  0.3083,  0.3083, 
@@ -97,77 +99,11 @@ void worker(float dest[size], float vector[size]) {
   }
 }
 
-
-int main( int argc, char **argv )
+void main_function(float v_new[size])
 {
-	// display our title for this demonstration 
-	printf( "\n\n An example to illustrate the PageRank algorithm \n\n" );
-
-	// display the directed graph's incidence matrix
-	printf( " Here is the incidence matrix for the directed graph: " );
-	for (int i = 0; i < size; i++)
-		{
-		printf( "\n         " );
-		for (int j = 0; j < size; j++)
-			printf( " %1.0f ", digraph[ i ][ j ] );
-		}
-	printf( "\n" );
-	getchar();
-
-	// compute entries for the corresponding transition matrix
-	// for (int i = 0; i < size; i++)
-	// 	{
-	// 	float	rowsum = 0;
-	// 	for (int j = 0; j < size; j++) rowsum += digraph[i][j];
-	// 	if ( rowsum > 0 ) 
-	// 		for (int j = 0; j < size; j++) 
-	// 			transition[ i ][ j ] = digraph[i][j]/rowsum;
-	// 	else	// A fixup for the "dangling node" problem
-	// 		for (int j = 0; j < size; j++)
-	// 			transition[ i ][ j ] = 1.0 / size;
-	// 	}
-
-	// // display the specified transition matrix
-	// printf( "\n Here is the corresponding Transition Matrix: " );
-	// for (int i = 0; i < size; i++)
-	// 	{
-	// 	printf( "\n         " );
-	// 	for (int j = 0; j < size; j++)
-	// 		printf( " %1.4f ", transition[ i ][ j ] );
-	// 	}
-	// printf( "\n\n" );
-	// getchar();
-
-	// recompute the transition matrix entries
-	float	alpha = 0.85;
-	// for (int i = 0; i < size; i++)
-	// for (int j = 0; j < size; j++)
-	// 	{
-	// 	float	entry = transition[ i ][ j ];		
-	// 	entry = (alpha * entry) + ((1.0 - alpha) / size);
-	// 	transition[ i ][ j ] = entry;
-	// 	} 
-
-	// display the modified transition matrix
-	// printf( "\n Here is the adjusted Transition Matrix: " );
-	// for (int i = 0; i < size; i++)
-	// 	{
-	// 	printf( "\n         " );
-	// 	for (int j = 0; j < size; j++)
-	// 		printf( " %1.4f ", transition[ i ][ j ] );
-	// 	}
-	// printf( "\n\n" );
-	// getchar();
-
-	// initialize the current matrix power
-	// Matrix	current = { 0 };
-	// for (int i = 0; i < size; i++)
-	// for (int j = 0; j < size; j++)
-	// 	current[ i ][ j ] = ( i == j ) ? 1.0 : 0.0;
-
 	float v_init[size] = { 0 };
 	float v_old[size] = { 0 };
-	float v_new[size] = { 0 };
+	// float v_new[size] = { 0 };
 	
 	bool done = false;
 
@@ -185,17 +121,8 @@ int main( int argc, char **argv )
 		}
 	}
 
-
-	int	node[ size ];
-	for (int j = 0; j < size; j++) {
-		node[ j ] = j;
-	}
-
 	printf( "\n Here is the resulting page-rank vector: \n" );
 	printf( "\n         " );
 	for (int j = 0; j < size; j++) printf( " %1.4f ", v_new[ j ] );
-	printf( "\n       " );
-	for (int j = 0; j < size; j++) printf( " %6c ", 'A' + node[ j ] );
-	printf( "\n\n" );
 
 }

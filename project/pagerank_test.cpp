@@ -3,7 +3,7 @@
 #include <iostream>
 #include <stdio.h>
 #include "model.h"
-#include "COO_SpMV.h"
+#include "pagerank.h"
 
 using namespace std;
 
@@ -39,8 +39,8 @@ int main( int argc, char* argv[] ) {
   for (int i = 0; i < size; i++ )
     dest[i] = 0;
 
-  std::cout << "Testing COO SpMV\n";
-  worker(dest);
-  verify_results( dest, result_2, size );
+  std::cout << "Testing PageRank\n";
+  main_function(dest);
+  verify_results( dest, ranks_1, size );
   return 0;
 }

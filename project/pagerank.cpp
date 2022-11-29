@@ -115,7 +115,7 @@ void vector_cp(float v_old[size], float v_new[size]) {
 // Perform the SpMV computation and store result in dest
 //==========================================================================
 
-void SpMV(float dest[size], float v_new[size]) {
+void SpMV(float v_new[size], float v_old[size]) {
 
   float tmp_dest[PE][block_size];
   int row[PE][coo_size];
@@ -135,13 +135,13 @@ void SpMV(float dest[size], float v_new[size]) {
     }
 
     int nnz = create_COO(pagerank_1[i], row[i], col[i], val[i], row_nnz[i], i);
-    COO_SpMV(row[i], col[i], val[i], v_new, tmp_dest[i], nnz);
+    COO_SpMV(row[i], col[i], val[i], v_old, tmp_dest[i], nnz);
   }
   
   for (int i = 0; i < PE; i++) {
     int start = i*block_size;
     for(int j = 0; j < block_size; j++) {
-        dest[start+j] = tmp_dest[i][j];
+        v_new[start+j] = tmp_dest[i][j];
     }
   }
 }
@@ -151,7 +151,11 @@ void SpMV(float dest[size], float v_new[size]) {
 //==========================================================================
 
 void main_function(float v_new[size]) {
-	float v_init[size] = { 0 };
+
+	float v_init[size];
+	for (int i = 0; i < size; i++ )
+    	v_init[i] = vector_init;
+
 	float v_old[size] = { 0 };
 	// float v_new[size] = { 0 };
 	
@@ -171,7 +175,7 @@ void main_function(float v_new[size]) {
 		}
 	}
 
-	printf( "\n Here is the resulting page-rank vector: \n" );
-	printf( "\n         " );
-	for (int j = 0; j < size; j++) printf( "%d, ", v_new[ j ] );
+	// printf( "\n Here is the resulting page-rank vector: \n" );
+	// printf( "\n         " );
+	// for (int j = 0; j < size; j++) printf( "%d, ", v_new[ j ] );
 }

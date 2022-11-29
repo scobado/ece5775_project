@@ -11,6 +11,7 @@ const int coo_size = size * block_size;
 const int EPSILON = 100;
 const float	alpha = 0.85;
 const float alpha_complement = 1-alpha;
+const float vector_init = 0.01;
 
 // import sparse matrices
 

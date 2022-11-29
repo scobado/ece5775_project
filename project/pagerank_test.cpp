@@ -17,7 +17,8 @@ void verify_results( float dest[], const float ref[], int size )
   for ( i = 0; i < size; i++ ) {
     float dest_val = round(dest[i] * 10) / 10;
     float ref_val = round(ref[i] * 10) / 10;
-
+    printf("%1.4f ", dest[i]);
+    printf("%1.4f\n", ref[i]);
     if ( !( dest_val == ref_val ) ) {
       std::cout << dest_val << " ";
       std::cout << ref_val << " ";

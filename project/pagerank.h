@@ -2,7 +2,7 @@ bool is_converged(float v_old[size], float v_new[size]);
 
 void vector_cp(float v_old[size], float v_new[size]);
 
-void SpMV(float dest[size], float v_new[size]);
+void SpMV(float v_new[size], float v_old[size]);
 
 int count_nnz(const float row[size]);
 

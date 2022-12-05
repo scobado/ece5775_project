@@ -1,7 +1,7 @@
-make[1]: Entering directory `/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/sim/wrapc'
+make[1]: Entering directory `/home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/sim/wrapc'
    Build using "/opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/lnx64/tools/gcc/bin/g++"
    Compiling COO_SpMV.cpp_pre.cpp.tb.cpp
    Compiling COO_SpMV_test.cpp_pre.cpp.tb.cpp
    Compiling apatb_worker.cpp
    Generating cosim.tv.exe
-make[1]: Leaving directory `/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/sim/wrapc'
+make[1]: Leaving directory `/home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/sim/wrapc'

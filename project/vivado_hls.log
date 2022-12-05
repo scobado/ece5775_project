@@ -5,73 +5,62 @@
   Copyright (C) 1986-2016 Xilinx, Inc. All Rights Reserved.
 ================================================================
 INFO: [HLS 200-10] Running '/opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/bin/unwrapped/lnx64.o/vivado_hls'
-INFO: [HLS 200-10] For user 'ak2425' on host 'en-ec-ecelinux-05.coecis.cornell.edu' (Linux_x86_64 version 3.10.0-1160.76.1.el7.x86_64) on Mon Nov 21 17:02:08 EST 2022
+INFO: [HLS 200-10] For user 'sec322' on host 'en-ec-ecelinux-01.coecis.cornell.edu' (Linux_x86_64 version 3.10.0-1160.76.1.el7.x86_64) on Mon Dec 05 14:00:40 EST 2022
 INFO: [HLS 200-10] On os "CentOS Linux release 7.9.2009 (Core)"
-INFO: [HLS 200-10] In directory '/home/ak2425/ece5775/ece5775_project/project'
-INFO: [HLS 200-10] Opening and resetting project '/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj'.
+INFO: [HLS 200-10] In directory '/home/sec322/ece5775/final_project/project'
+INFO: [HLS 200-10] Creating and opening project '/home/sec322/ece5775/final_project/project/COO_SpMV.prj'.
 INFO: [HLS 200-10] Adding design file 'COO_SpMV.cpp' to the project
 INFO: [HLS 200-10] Adding test bench file 'COO_SpMV_test.cpp' to the project
-INFO: [HLS 200-10] Opening and resetting solution '/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1'.
+INFO: [HLS 200-10] Creating and opening solution '/home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1'.
 INFO: [HLS 200-10] Cleaning up the solution database.
 INFO: [HLS 200-10] Setting target device to 'xc7z020clg484-1'
 INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
 INFO: [HLS 200-10] Analyzing design file 'COO_SpMV.cpp' ... 
 INFO: [HLS 200-10] Validating synthesis directives ...
+WARNING: [HLS 200-40] Directive 'INLINE' cannot be applied: Function 'create_COO' does not exist in any synthesis source file.
+WARNING: [HLS 200-40] Directive 'INLINE' cannot be applied: Function 'count_nnz' does not exist in any synthesis source file.
+WARNING: [HLS 200-40] Directive 'ARRAY_PARTITION' cannot be applied: Variable 'row_nnz' is not declared in 'worker'.
+WARNING: [HLS 200-40] Directive 'UNROLL' cannot be applied: Label 'LOOP_PE1' does not exist in function 'worker'. 
 INFO: [HLS 200-10] Starting code transformations ...
+INFO: [XFORM 203-501] Unrolling loop 'LOOP_PE2' (COO_SpMV.cpp:38) in function 'worker(float*)' completely.
 INFO: [HLS 200-10] Checking synthesizability ...
-INFO: [XFORM 203-501] Unrolling loop 'LOOP_PE1' (COO_SpMV.cpp:94) in function 'worker' completely.
-INFO: [XFORM 203-501] Unrolling loop 'LOOP_PE2' (COO_SpMV.cpp:100) in function 'worker' completely.
-INFO: [XFORM 203-501] Unrolling loop 'LOOP_DEST1' (COO_SpMV.cpp:101) in function 'worker' completely.
-INFO: [XFORM 203-101] Partitioning array 'matrix_1'  in dimension 1 completely.
-INFO: [XFORM 203-101] Partitioning array 'dest_1' (COO_SpMV.cpp:88) in dimension 1 completely.
-INFO: [XFORM 203-101] Partitioning array 'row_1' (COO_SpMV.cpp:89) in dimension 1 completely.
-INFO: [XFORM 203-101] Partitioning array 'col_1' (COO_SpMV.cpp:90) in dimension 1 completely.
-INFO: [XFORM 203-101] Partitioning array 'val_1' (COO_SpMV.cpp:91) in dimension 1 completely.
-INFO: [XFORM 203-101] Partitioning array 'row_nnz' (COO_SpMV.cpp:92) in dimension 1 completely.
-WARNING: [ANALYSIS 214-52] Found false 'RAW' inter dependency for variable 'output' (COO_SpMV.cpp:19).
-WARNING: [ANALYSIS 214-52] Asserting false dependency between 'load' operation 'output.load'(COO_SpMV.cpp:24:11) from variable 'output'(COO_SpMV.cpp:19) and 'store' operation to variable 'output'(COO_SpMV.cpp:19), this may lead to incorrect RTL generation.
-WARNING: [ANALYSIS 214-52] Asserting false dependency between 'store' operation to variable 'output'(COO_SpMV.cpp:19) and 'load' operation 'output.load'(COO_SpMV.cpp:24:11) from variable 'output'(COO_SpMV.cpp:19), this may lead to incorrect RTL generation.
-INFO: [HLS 200-111] Elapsed time: 5.85 seconds; current memory usage: 87.4 MB.
+INFO: [XFORM 203-501] Unrolling loop 'LOOP_DEST1' (COO_SpMV.cpp:39) in function 'worker' completely.
+INFO: [XFORM 203-101] Partitioning array 'val10_1'  in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'col10_1'  in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'row10_1'  in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'matrix_10'  in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'dest_1' (COO_SpMV.cpp:36) in dimension 1 completely.
+INFO: [XFORM 203-622] Instantiating function 'COO_SpMV'(COO_SpMV.cpp:19) to 'COO_SpMV.0' at call site (COO_SpMV.cpp:43) by setting 'dependence' to '0'.
+WARNING: [ANALYSIS 214-52] Found false 'RAW' inter dependency for variable 'output'.
+WARNING: [ANALYSIS 214-52] Asserting false dependency between 'load' operation 'output.load'(COO_SpMV.cpp:25:11) from variable 'output' and 'store' operation to variable 'output', this may lead to incorrect RTL generation.
+WARNING: [ANALYSIS 214-52] Asserting false dependency between 'store' operation to variable 'output' and 'load' operation 'output.load'(COO_SpMV.cpp:25:11) from variable 'output', this may lead to incorrect RTL generation.
+INFO: [HLS 200-111] Elapsed time: 3.11 seconds; current memory usage: 77.3 MB.
 INFO: [HLS 200-10] Starting hardware synthesis ...
 INFO: [HLS 200-10] Synthesizing 'worker' ...
+WARNING: [SYN 201-103] Legalizing function name 'worker_COO_SpMV.0' to 'worker_COO_SpMV_0'.
 INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-10] -- Scheduling module 'worker_create_COO' 
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [SCHED 204-11] Starting scheduling ...
-INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Elapsed time: 0.06 seconds; current memory usage: 88.1 MB.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-10] -- Exploring micro-architecture for module 'worker_create_COO' 
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [BIND 205-100] Starting micro-architecture generation ...
-INFO: [BIND 205-101] Performing variable lifetime analysis.
-INFO: [BIND 205-101] Exploring resource sharing.
-INFO: [BIND 205-101] Binding ...
-INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Elapsed time: 0.03 seconds; current memory usage: 88.5 MB.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-10] -- Scheduling module 'worker_COO_SpMV' 
+INFO: [HLS 200-10] -- Scheduling module 'worker_COO_SpMV_0' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
 INFO: [SCHED 204-61] Pipelining result: Target II: 1, Final II: 1, Depth: 13.
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Elapsed time: 0.08 seconds; current memory usage: 88.9 MB.
+INFO: [HLS 200-111] Elapsed time: 0.06 seconds; current memory usage: 77.9 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-10] -- Exploring micro-architecture for module 'worker_COO_SpMV' 
+INFO: [HLS 200-10] -- Exploring micro-architecture for module 'worker_COO_SpMV_0' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Elapsed time: 0.02 seconds; current memory usage: 89.1 MB.
+INFO: [HLS 200-111] Elapsed time: 0.01 seconds; current memory usage: 78.1 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Scheduling module 'worker' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Elapsed time: 0.08 seconds; current memory usage: 89.8 MB.
+INFO: [HLS 200-111] Elapsed time: 0.11 seconds; current memory usage: 78.8 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Exploring micro-architecture for module 'worker' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -80,62 +69,39 @@ INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Elapsed time: 0.12 seconds; current memory usage: 90.7 MB.
+INFO: [HLS 200-111] Elapsed time: 0.05 seconds; current memory usage: 79.5 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-10] -- Generating RTL for module 'worker_create_COO' 
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [RTGEN 206-100] Generating core module 'worker_fcmp_32ns_32ns_1_1': 1 instance(s).
-INFO: [RTGEN 206-100] Finished creating RTL model for 'worker_create_COO'.
-INFO: [HLS 200-111] Elapsed time: 0.17 seconds; current memory usage: 91.3 MB.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-10] -- Generating RTL for module 'worker_COO_SpMV' 
+INFO: [HLS 200-10] -- Generating RTL for module 'worker_COO_SpMV_0' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [RTGEN 206-100] Generating core module 'worker_fadd_32ns_32ns_32_5_full_dsp': 1 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'worker_fmul_32ns_32ns_32_4_max_dsp': 1 instance(s).
-INFO: [RTGEN 206-100] Finished creating RTL model for 'worker_COO_SpMV'.
-INFO: [HLS 200-111] Elapsed time: 0.11 seconds; current memory usage: 93.1 MB.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'worker_COO_SpMV_0'.
+INFO: [HLS 200-111] Elapsed time: 0.09 seconds; current memory usage: 79.9 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'worker' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [RTGEN 206-500] Setting interface mode on port 'worker/dest' to 'ap_memory'.
 INFO: [RTGEN 206-500] Setting interface mode on function 'worker' to 'ap_ctrl_hs'.
-INFO: [RTGEN 206-100] Generating core module 'worker_mux_4to1_sel2_32_1': 1 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'worker'.
-INFO: [HLS 200-111] Elapsed time: 0.2 seconds; current memory usage: 95.3 MB.
-INFO: [RTMG 210-279] Implementing memory 'worker_COO_SpMV_vector_rom' using auto ROMs.
-WARNING: [RTMG 210-274] Memory 'worker_matrix_1_0' is read-only, switch it to a ROM.
-INFO: [RTMG 210-279] Implementing memory 'worker_matrix_1_0_rom' using block ROMs.
-WARNING: [RTMG 210-274] Memory 'worker_row_nnz_0' is read-only, switch it to a ROM.
-INFO: [RTMG 210-279] Implementing memory 'worker_row_nnz_0_rom' using distributed ROMs.
-WARNING: [RTMG 210-274] Memory 'worker_matrix_1_1' is read-only, switch it to a ROM.
-INFO: [RTMG 210-279] Implementing memory 'worker_matrix_1_1_rom' using block ROMs.
-WARNING: [RTMG 210-274] Memory 'worker_row_nnz_1' is read-only, switch it to a ROM.
-INFO: [RTMG 210-279] Implementing memory 'worker_row_nnz_1_rom' using distributed ROMs.
-WARNING: [RTMG 210-274] Memory 'worker_matrix_1_2' is read-only, switch it to a ROM.
-INFO: [RTMG 210-279] Implementing memory 'worker_matrix_1_2_rom' using block ROMs.
-WARNING: [RTMG 210-274] Memory 'worker_row_nnz_2' is read-only, switch it to a ROM.
-INFO: [RTMG 210-279] Implementing memory 'worker_row_nnz_2_rom' using distributed ROMs.
-WARNING: [RTMG 210-274] Memory 'worker_matrix_1_3' is read-only, switch it to a ROM.
-INFO: [RTMG 210-279] Implementing memory 'worker_matrix_1_3_rom' using block ROMs.
-WARNING: [RTMG 210-274] Memory 'worker_row_nnz_3' is read-only, switch it to a ROM.
-INFO: [RTMG 210-279] Implementing memory 'worker_row_nnz_3_rom' using distributed ROMs.
+INFO: [HLS 200-111] Elapsed time: 0.14 seconds; current memory usage: 81.7 MB.
+INFO: [RTMG 210-279] Implementing memory 'worker_COO_SpMV_0_row10_1_0_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'worker_COO_SpMV_0_val10_1_0_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'worker_COO_SpMV_0_col10_1_0_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'worker_COO_SpMV_0_vector_rom' using auto ROMs.
 INFO: [RTMG 210-278] Implementing memory 'worker_dest_1_0_ram' using block RAMs.
-INFO: [RTMG 210-278] Implementing memory 'worker_row_1_0_ram' using block RAMs.
-INFO: [RTMG 210-278] Implementing memory 'worker_col_1_0_ram' using block RAMs.
-INFO: [RTMG 210-278] Implementing memory 'worker_val_1_0_ram' using block RAMs.
 INFO: [HLS 200-10] Finished generating all RTL models.
 INFO: [SYSC 207-301] Generating SystemC RTL for worker.
 INFO: [VHDL 208-304] Generating VHDL RTL for worker.
 INFO: [VLOG 209-307] Generating Verilog RTL for worker.
 INFO: [COSIM 212-47] Using XSIM for RTL simulation.
 INFO: [COSIM 212-14] Instrumenting C test bench ...
-make[1]: Entering directory `/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/sim/wrapc'
+make[1]: Entering directory `/home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/sim/wrapc'
    Build using "/opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/lnx64/tools/gcc/bin/g++"
    Compiling COO_SpMV.cpp_pre.cpp.tb.cpp
    Compiling COO_SpMV_test.cpp_pre.cpp.tb.cpp
    Compiling apatb_worker.cpp
    Generating cosim.tv.exe
-make[1]: Leaving directory `/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/sim/wrapc'
+make[1]: Leaving directory `/home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/sim/wrapc'
 INFO: [COSIM 212-302] Starting C TB testing ... 
 Testing COO SpMV
 [32mPassed :)
@@ -149,71 +115,39 @@ Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
 Running: /opt/xilinx/xilinx_2016.2/Vivado/2016.2/bin/unwrapped/lnx64.o/xelab xil_defaultlib.apatb_worker_top -prj worker.prj --initfile /opt/xilinx/xilinx_2016.2/Vivado/2016.2/bin/../data/xsim/ip/xsim_ip.ini --lib ieee_proposed=./ieee_proposed -s worker 
 Multi-threading is on. Using 8 slave threads.
 Determining compilation order of HDL files.
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/sim/verilog/worker.autotb.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/sim/verilog/worker.autotb.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module apatb_worker_top
-INFO: [VRFC 10-2458] undeclared symbol ap_clk, assumed default net type wire [/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/sim/verilog/worker.autotb.v:80]
-INFO: [VRFC 10-2458] undeclared symbol ap_rst, assumed default net type wire [/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/sim/verilog/worker.autotb.v:81]
-INFO: [VRFC 10-2458] undeclared symbol ap_rst_n, assumed default net type wire [/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/sim/verilog/worker.autotb.v:94]
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/sim/verilog/AESL_automem_dest.v" into library xil_defaultlib
+INFO: [VRFC 10-2458] undeclared symbol ap_clk, assumed default net type wire [/home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/sim/verilog/worker.autotb.v:80]
+INFO: [VRFC 10-2458] undeclared symbol ap_rst, assumed default net type wire [/home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/sim/verilog/worker.autotb.v:81]
+INFO: [VRFC 10-2458] undeclared symbol ap_rst_n, assumed default net type wire [/home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/sim/verilog/worker.autotb.v:94]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/sim/verilog/AESL_automem_dest.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module AESL_automem_dest
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/sim/verilog/worker_create_COO.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module worker_create_COO
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/sim/verilog/worker_COO_SpMV.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module worker_COO_SpMV
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/sim/verilog/worker.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/sim/verilog/worker_COO_SpMV_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module worker_COO_SpMV_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/sim/verilog/worker.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module worker
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/sim/verilog/worker_fcmp_32ns_32ns_1_1.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module worker_fcmp_32ns_32ns_1_1
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/sim/verilog/worker_fadd_32ns_32ns_32_5_full_dsp.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/sim/verilog/worker_fadd_32ns_32ns_32_5_full_dsp.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module worker_fadd_32ns_32ns_32_5_full_dsp
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/sim/verilog/worker_fmul_32ns_32ns_32_4_max_dsp.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/sim/verilog/worker_fmul_32ns_32ns_32_4_max_dsp.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module worker_fmul_32ns_32ns_32_4_max_dsp
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/sim/verilog/worker_COO_SpMV_vector.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module worker_COO_SpMV_vector_rom
-INFO: [VRFC 10-311] analyzing module worker_COO_SpMV_vector
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/sim/verilog/worker_mux_4to1_sel2_32_1.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module worker_mux_4to1_sel2_32_1
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/sim/verilog/worker_matrix_1_0.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module worker_matrix_1_0_rom
-INFO: [VRFC 10-311] analyzing module worker_matrix_1_0
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/sim/verilog/worker_row_nnz_0.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module worker_row_nnz_0_rom
-INFO: [VRFC 10-311] analyzing module worker_row_nnz_0
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/sim/verilog/worker_matrix_1_1.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module worker_matrix_1_1_rom
-INFO: [VRFC 10-311] analyzing module worker_matrix_1_1
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/sim/verilog/worker_row_nnz_1.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module worker_row_nnz_1_rom
-INFO: [VRFC 10-311] analyzing module worker_row_nnz_1
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/sim/verilog/worker_matrix_1_2.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module worker_matrix_1_2_rom
-INFO: [VRFC 10-311] analyzing module worker_matrix_1_2
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/sim/verilog/worker_row_nnz_2.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module worker_row_nnz_2_rom
-INFO: [VRFC 10-311] analyzing module worker_row_nnz_2
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/sim/verilog/worker_matrix_1_3.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module worker_matrix_1_3_rom
-INFO: [VRFC 10-311] analyzing module worker_matrix_1_3
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/sim/verilog/worker_row_nnz_3.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module worker_row_nnz_3_rom
-INFO: [VRFC 10-311] analyzing module worker_row_nnz_3
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/sim/verilog/worker_dest_1_0.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/sim/verilog/worker_COO_SpMV_0_row10_1_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module worker_COO_SpMV_0_row10_1_0_rom
+INFO: [VRFC 10-311] analyzing module worker_COO_SpMV_0_row10_1_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/sim/verilog/worker_COO_SpMV_0_val10_1_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module worker_COO_SpMV_0_val10_1_0_rom
+INFO: [VRFC 10-311] analyzing module worker_COO_SpMV_0_val10_1_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/sim/verilog/worker_COO_SpMV_0_col10_1_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module worker_COO_SpMV_0_col10_1_0_rom
+INFO: [VRFC 10-311] analyzing module worker_COO_SpMV_0_col10_1_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/sim/verilog/worker_COO_SpMV_0_vector.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module worker_COO_SpMV_0_vector_rom
+INFO: [VRFC 10-311] analyzing module worker_COO_SpMV_0_vector
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/sim/verilog/worker_dest_1_0.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module worker_dest_1_0_ram
 INFO: [VRFC 10-311] analyzing module worker_dest_1_0
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/sim/verilog/worker_row_1_0.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module worker_row_1_0_ram
-INFO: [VRFC 10-311] analyzing module worker_row_1_0
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/sim/verilog/worker_col_1_0.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module worker_col_1_0_ram
-INFO: [VRFC 10-311] analyzing module worker_col_1_0
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/sim/verilog/worker_val_1_0.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module worker_val_1_0_ram
-INFO: [VRFC 10-311] analyzing module worker_val_1_0
-INFO: [VRFC 10-163] Analyzing VHDL file "/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/sim/verilog/ip/xil_defaultlib/worker_ap_fcmp_0_no_dsp_32.vhd" into library xil_defaultlib
-INFO: [VRFC 10-307] analyzing entity worker_ap_fcmp_0_no_dsp_32
-INFO: [VRFC 10-163] Analyzing VHDL file "/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/sim/verilog/ip/xil_defaultlib/worker_ap_fadd_3_full_dsp_32.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/sim/verilog/ip/xil_defaultlib/worker_ap_fadd_3_full_dsp_32.vhd" into library xil_defaultlib
 INFO: [VRFC 10-307] analyzing entity worker_ap_fadd_3_full_dsp_32
-INFO: [VRFC 10-163] Analyzing VHDL file "/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/sim/verilog/ip/xil_defaultlib/worker_ap_fmul_2_max_dsp_32.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/sim/verilog/ip/xil_defaultlib/worker_ap_fmul_2_max_dsp_32.vhd" into library xil_defaultlib
 INFO: [VRFC 10-307] analyzing entity worker_ap_fmul_2_max_dsp_32
 Starting static elaboration
 WARNING: [VRFC 10-1303] range is empty (null range) [/build/xfndry/IP_2016.2/customer/vivado/data/ip/xilinx/mult_gen_v12_0/hdl/mult_gen_v12_0_vh_rfs.vhd:2255]
@@ -248,9 +182,6 @@ WARNING: [VRFC 10-1303] range is empty (null range) [/build/xfndry/IP_2016.2/cus
 WARNING: [VRFC 10-1303] range is empty (null range) [/build/xfndry/IP_2016.2/customer/vivado/data/ip/xilinx/floating_point_v7_1/hdl/floating_point_v7_1_vh_rfs.vhd:12604]
 WARNING: [VRFC 10-1303] range is empty (null range) [/build/xfndry/IP_2016.2/customer/vivado/data/ip/xilinx/floating_point_v7_1/hdl/floating_point_v7_1_vh_rfs.vhd:13629]
 WARNING: [VRFC 10-982] library name floating_point_v7_1_2 of instantiated unit conflicts with visible identifier [ip/xil_defaultlib/worker_ap_fmul_2_max_dsp_32.vhd:189]
-WARNING: [VRFC 10-1303] range is empty (null range) [/build/xfndry/IP_2016.2/customer/vivado/data/ip/xilinx/floating_point_v7_1/hdl/floating_point_v7_1_vh_rfs.vhd:90362]
-WARNING: [VRFC 10-1303] range is empty (null range) [/build/xfndry/IP_2016.2/customer/vivado/data/ip/xilinx/floating_point_v7_1/hdl/floating_point_v7_1_vh_rfs.vhd:13629]
-WARNING: [VRFC 10-982] library name floating_point_v7_1_2 of instantiated unit conflicts with visible identifier [ip/xil_defaultlib/worker_ap_fcmp_0_no_dsp_32.vhd:189]
 Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis
@@ -275,32 +206,16 @@ Compiling package unisim.vcomponents
 Compiling package ieee.vital_timing
 Compiling package ieee.vital_primitives
 Compiling package unisim.vpkg
-Compiling module xil_defaultlib.worker_matrix_1_0_rom
-Compiling module xil_defaultlib.worker_matrix_1_0(DataWidth=32,A...
-Compiling module xil_defaultlib.worker_row_nnz_0_rom
-Compiling module xil_defaultlib.worker_row_nnz_0(DataWidth=32,Ad...
-Compiling module xil_defaultlib.worker_matrix_1_1_rom
-Compiling module xil_defaultlib.worker_matrix_1_1(DataWidth=32,A...
-Compiling module xil_defaultlib.worker_row_nnz_1_rom
-Compiling module xil_defaultlib.worker_row_nnz_1(DataWidth=32,Ad...
-Compiling module xil_defaultlib.worker_matrix_1_2_rom
-Compiling module xil_defaultlib.worker_matrix_1_2(DataWidth=32,A...
-Compiling module xil_defaultlib.worker_row_nnz_2_rom
-Compiling module xil_defaultlib.worker_row_nnz_2(DataWidth=32,Ad...
-Compiling module xil_defaultlib.worker_matrix_1_3_rom
-Compiling module xil_defaultlib.worker_matrix_1_3(DataWidth=32,A...
-Compiling module xil_defaultlib.worker_row_nnz_3_rom
-Compiling module xil_defaultlib.worker_row_nnz_3(DataWidth=32,Ad...
 Compiling module xil_defaultlib.worker_dest_1_0_ram
 Compiling module xil_defaultlib.worker_dest_1_0(DataWidth=32,Add...
-Compiling module xil_defaultlib.worker_row_1_0_ram
-Compiling module xil_defaultlib.worker_row_1_0(DataWidth=6,Addre...
-Compiling module xil_defaultlib.worker_col_1_0_ram
-Compiling module xil_defaultlib.worker_col_1_0(DataWidth=8,Addre...
-Compiling module xil_defaultlib.worker_val_1_0_ram
-Compiling module xil_defaultlib.worker_val_1_0(DataWidth=32,Addr...
-Compiling module xil_defaultlib.worker_COO_SpMV_vector_rom
-Compiling module xil_defaultlib.worker_COO_SpMV_vector(DataWidth...
+Compiling module xil_defaultlib.worker_COO_SpMV_0_row10_1_0_rom
+Compiling module xil_defaultlib.worker_COO_SpMV_0_row10_1_0(Data...
+Compiling module xil_defaultlib.worker_COO_SpMV_0_val10_1_0_rom
+Compiling module xil_defaultlib.worker_COO_SpMV_0_val10_1_0(Data...
+Compiling module xil_defaultlib.worker_COO_SpMV_0_col10_1_0_rom
+Compiling module xil_defaultlib.worker_COO_SpMV_0_col10_1_0(Data...
+Compiling module xil_defaultlib.worker_COO_SpMV_0_vector_rom
+Compiling module xil_defaultlib.worker_COO_SpMV_0_vector(DataWid...
 Compiling architecture muxcy_v of entity unisim.MUXCY [muxcy_default]
 Compiling architecture synth of entity xbip_pipe_v3_0_2.xbip_pipe_v3_0_2_viv [\xbip_pipe_v3_0_2_viv(c_has_ce=1...]
 Compiling architecture rtl of entity floating_point_v7_1_2.delay [\delay(width=7,length=0)\]
@@ -431,27 +346,7 @@ Compiling architecture xilinx of entity floating_point_v7_1_2.floating_point_v7_
 Compiling architecture xilinx of entity floating_point_v7_1_2.floating_point_v7_1_2 [\floating_point_v7_1_2(c_xdevice...]
 Compiling architecture worker_ap_fmul_2_max_dsp_32_arch of entity xil_defaultlib.worker_ap_fmul_2_max_dsp_32 [worker_ap_fmul_2_max_dsp_32_defa...]
 Compiling module xil_defaultlib.worker_fmul_32ns_32ns_32_4_max_d...
-Compiling module xil_defaultlib.worker_COO_SpMV
-Compiling architecture struct of entity floating_point_v7_1_2.carry_chain [\carry_chain(c_xdevicefamily="zy...]
-Compiling architecture synth of entity floating_point_v7_1_2.compare_eq_im [\compare_eq_im(c_xdevicefamily="...]
-Compiling architecture synth of entity floating_point_v7_1_2.compare_ne_im [\compare_ne_im(c_xdevicefamily="...]
-Compiling architecture synth of entity xbip_pipe_v3_0_2.xbip_pipe_v3_0_2_viv [\xbip_pipe_v3_0_2_viv(c_has_ce=1...]
-Compiling architecture rtl of entity floating_point_v7_1_2.delay [\delay(width=2,length=0)\]
-Compiling architecture struct of entity floating_point_v7_1_2.carry_chain [\carry_chain(c_xdevicefamily="zy...]
-Compiling architecture synth of entity floating_point_v7_1_2.compare_eq_im [\compare_eq_im(c_xdevicefamily="...]
-Compiling architecture synth of entity xbip_pipe_v3_0_2.xbip_pipe_v3_0_2_viv [\xbip_pipe_v3_0_2_viv(c_has_ce=1...]
-Compiling architecture rtl of entity floating_point_v7_1_2.delay [\delay(width=11,length=0)\]
-Compiling architecture struct of entity floating_point_v7_1_2.carry_chain [\carry_chain(c_xdevicefamily="zy...]
-Compiling architecture synth of entity floating_point_v7_1_2.compare_eq [\compare_eq(c_xdevicefamily="zyn...]
-Compiling architecture struct of entity floating_point_v7_1_2.carry_chain [\carry_chain(c_xdevicefamily="zy...]
-Compiling architecture synth of entity floating_point_v7_1_2.compare_gt [\compare_gt(c_xdevicefamily="zyn...]
-Compiling architecture rtl of entity floating_point_v7_1_2.fp_cmp [\fp_cmp(c_xdevicefamily="zynq",c...]
-Compiling architecture xilinx of entity floating_point_v7_1_2.floating_point_v7_1_2_viv [\floating_point_v7_1_2_viv(c_xde...]
-Compiling architecture xilinx of entity floating_point_v7_1_2.floating_point_v7_1_2 [\floating_point_v7_1_2(c_xdevice...]
-Compiling architecture worker_ap_fcmp_0_no_dsp_32_arch of entity xil_defaultlib.worker_ap_fcmp_0_no_dsp_32 [worker_ap_fcmp_0_no_dsp_32_defau...]
-Compiling module xil_defaultlib.worker_fcmp_32ns_32ns_1_1
-Compiling module xil_defaultlib.worker_create_COO
-Compiling module xil_defaultlib.worker_mux_4to1_sel2_32_1(ID=1,d...
+Compiling module xil_defaultlib.worker_COO_SpMV_0
 Compiling module xil_defaultlib.worker
 Compiling module xil_defaultlib.AESL_automem_dest
 Compiling module xil_defaultlib.apatb_worker_top
@@ -469,23 +364,19 @@ Time resolution is 1 ps
 source worker.tcl
 ## run all
 Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
-Time: 100010 ps  Iteration: 0  Process: /apatb_worker_top/AESL_inst_worker/grp_worker_COO_SpMV_fu_1150/worker_fadd_32ns_32ns_32_5_full_dsp_U7/worker_ap_fadd_3_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/speed_op/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /opt/xilinx/xilinx_2016.2/Vivado/2016.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
-Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
-Time: 100010 ps  Iteration: 0  Process: /apatb_worker_top/AESL_inst_worker/grp_worker_COO_SpMV_fu_1139/worker_fadd_32ns_32ns_32_5_full_dsp_U7/worker_ap_fadd_3_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/speed_op/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /opt/xilinx/xilinx_2016.2/Vivado/2016.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
-Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
-Time: 100010 ps  Iteration: 0  Process: /apatb_worker_top/AESL_inst_worker/grp_worker_COO_SpMV_fu_1128/worker_fadd_32ns_32ns_32_5_full_dsp_U7/worker_ap_fadd_3_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/speed_op/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /opt/xilinx/xilinx_2016.2/Vivado/2016.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Time: 100010 ps  Iteration: 0  Process: /apatb_worker_top/AESL_inst_worker/grp_worker_COO_SpMV_0_fu_1076/worker_fadd_32ns_32ns_32_5_full_dsp_U1/worker_ap_fadd_3_full_dsp_32_u/U0/i_synth/addsub_op/ADDSUB/speed_op/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/DSP/prcs_opmode_drc  File: /opt/xilinx/xilinx_2016.2/Vivado/2016.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
 ////////////////////////////////////////////////////////////////////////////////////
 // Inter-Transaction Progress: Completed Transaction / Total Transaction
 // Intra-Transaction Progress: Measured Latency / Latency Estimation * 100%
 ////////////////////////////////////////////////////////////////////////////////////
 // RTL Simulation : 0 / 1 [0.00%] @ "125000"
-// RTL Simulation : 1 / 1 [0.00%] @ "177125000"
+// RTL Simulation : 1 / 1 [0.00%] @ "36125000"
 ////////////////////////////////////////////////////////////////////////////////////
-$finish called at time : 177165 ns : File "/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/sim/verilog/worker.autotb.v" Line 213
+$finish called at time : 36165 ns : File "/home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/sim/verilog/worker.autotb.v" Line 213
 ## quit
-INFO: [Common 17-206] Exiting xsim at Mon Nov 21 17:03:07 2022...
+INFO: [Common 17-206] Exiting xsim at Mon Dec  5 14:01:33 2022...
 INFO: [COSIM 212-316] Starting C post checking ...
 Testing COO SpMV
 [32mPassed :)
 [0mINFO: [COSIM 212-1000] *** C/RTL co-simulation finished: PASS ***
-INFO: [HLS 200-112] Total elapsed time: 60.137 seconds; peak memory usage: 95.3 MB.
+INFO: [HLS 200-112] Total elapsed time: 54.642 seconds; peak memory usage: 81.7 MB.

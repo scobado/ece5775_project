@@ -1,273 +1,273 @@
-@I [HLS-0] Workspace /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1 opened at Mon Nov 21 17:02:09 EST 2022
-@I [HLS-100] Command 'open_solution' returned 0; elapsed 0.16Total elapsed time: 1.988 sec.
+@I [HLS-0] Workspace /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1 opened at Mon Dec 05 14:00:40 EST 2022
+@I [HLS-100] Command 'open_solution' returned 0; elapsed 0.02Total elapsed time: 1.101 sec.
 @I [HLS-100] Command "set_part xc7z020clg484-1 "
 @I [HLS-100] Command "add_library xilinx/zynq/zynq:xc7z020:clg484:-1 "
 @I [HLS-100] Command "get_default_platform "
-@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0Total elapsed time: 1.999 sec.
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0Total elapsed time: 1.115 sec.
 @I [HLS-100] Command "license_isbetapart xc7z020 "
-@I [HLS-100] Command 'license_isbetapart' returned 1; elapsed 0.01Total elapsed time: 2.17 sec.
+@I [HLS-100] Command 'license_isbetapart' returned 1; elapsed 0Total elapsed time: 1.128 sec.
 @I [HLS-100] Command "open_platform DefaultPlatform "
-@I [HLS-100] Command 'open_platform' returned 0; elapsed 0Total elapsed time: 2.20 sec.
+@I [HLS-100] Command 'open_platform' returned 0; elapsed 0Total elapsed time: 1.131 sec.
 @I [HLS-100] Command "import_lib /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/xilinx/zynq/zynq "
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/xilinx/common/xilinx.lib "
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/xilinx/interface/xilinx_interface.lib "
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/xilinx/interface/plb46.lib "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 2.31 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.139 sec.
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/xilinx/interface/fsl.lib "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 2.33 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.141 sec.
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/xilinx/interface/axi4.lib "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 2.36 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 1.143 sec.
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/xilinx/interface/maxi.lib "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 2.38 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.145 sec.
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/xilinx/interface/saxilite.lib "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 2.40 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 2.40 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.147 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 1.147 sec.
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/xilinx/common/dsp48.lib "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 2.43 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.150 sec.
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/xilinx/ip/dds_compiler.lib "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 2.47 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.154 sec.
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/xilinx/ip/xfft.lib "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 2.49 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.156 sec.
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/xilinx/ip/xfir.lib "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 2.51 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.02Total elapsed time: 2.52 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.157 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 1.161 sec.
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/xilinx/common/xilinx_old.lib "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 2.56 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.165 sec.
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/xilinx/common/xilinx_vivado.lib "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 2.59 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 1.168 sec.
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/xilinx/common/xilinx.hlp "
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/xilinx/common/target_info.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 2.66 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.176 sec.
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/xilinx/interface/xilinx_interface.hlp "
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/xilinx/interface/maxi.hlp "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 2.69 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.180 sec.
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/xilinx/interface/saxilite.hlp "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 2.71 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 2.71 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.182 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.182 sec.
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/xilinx/common/dsp48.hlp "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 2.74 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 2.74 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.185 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.186 sec.
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/xilinx/zynq/dsp48e1.hlp "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 2.76 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.188 sec.
 @I [HLS-100] Command "get_default_platform "
-@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0Total elapsed time: 2.76 sec.
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0Total elapsed time: 1.188 sec.
 @I [HLS-100] Command "config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  "
-@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 2.76 sec.
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 1.189 sec.
 @I [HLS-100] Command "config_chip_info -quiet -speed medium "
-@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 2.77 sec.
-@I [HLS-100] Command 'import_lib' returned 0; elapsed 0.03Total elapsed time: 2.78 sec.
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 1.189 sec.
+@I [HLS-100] Command 'import_lib' returned 0; elapsed 0.02Total elapsed time: 1.191 sec.
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/xilinx/zynq/zynq.gen "
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/xilinx/common/virtex.gen "
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/xilinx/common/xilinx.gen "
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/xilinx/interface/plb46.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 2.86 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 1.203 sec.
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/xilinx/interface/fsl.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 2.88 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.206 sec.
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/xilinx/interface/axi4.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 2.92 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.214 sec.
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/xilinx/interface/nativeAXI4.gen "
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/xilinx/interface/saxilite.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 2.98 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.225 sec.
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/xilinx/interface/maxi.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 2.107 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 2.107 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 1.236 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 1.236 sec.
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/xilinx/scripts/xilinxcoregen.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 2.118 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 1.246 sec.
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/xilinx/interface/XilEDKCoreGen.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 2.127 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.255 sec.
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/xilinx/ip/dds_compiler.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 2.134 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.261 sec.
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/xilinx/ip/util.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 2.136 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.262 sec.
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/xilinx/ip/xfft.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.09Total elapsed time: 2.225 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.11Total elapsed time: 1.372 sec.
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/xilinx/ip/xfir.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 2.228 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.12Total elapsed time: 2.228 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.375 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.16Total elapsed time: 1.375 sec.
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/xilinx/common/dsp48.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 2.232 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.13Total elapsed time: 2.232 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.13Total elapsed time: 2.232 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.379 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.17Total elapsed time: 1.379 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.17Total elapsed time: 1.379 sec.
 @I [HLS-100] Command "get_default_platform "
-@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0Total elapsed time: 2.238 sec.
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0Total elapsed time: 1.385 sec.
 @I [HLS-100] Command "config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  "
-@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 2.238 sec.
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 1.386 sec.
 @I [HLS-100] Command "config_chip_info -quiet -speed slow "
-@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 2.238 sec.
-@I [HLS-100] Command 'add_library' returned 0; elapsed 0.17Total elapsed time: 2.243 sec.
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 1.387 sec.
+@I [HLS-100] Command 'add_library' returned 0; elapsed 0.19Total elapsed time: 1.393 sec.
 @I [HLS-100] Command "add_library xilinx/zynq/zynq_fpv6 "
 @I [HLS-100] Command "get_default_platform "
-@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0Total elapsed time: 2.245 sec.
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0Total elapsed time: 1.396 sec.
 @I [HLS-100] Command "open_platform DefaultPlatform "
-@I [HLS-100] Command 'open_platform' returned 0; elapsed 0Total elapsed time: 2.245 sec.
+@I [HLS-100] Command 'open_platform' returned 0; elapsed 0Total elapsed time: 1.397 sec.
 @I [HLS-100] Command "import_lib /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/xilinx/zynq/zynq_fpv6 "
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/xilinx/common/xilinx_fpv7.lib "
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/xilinx/common/xilinx_hp.lib "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 2.253 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 2.260 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 1.406 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 1.413 sec.
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/xilinx/common/xilinx_fpv.hlp "
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/xilinx/common/xilinx.hlp "
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/xilinx/common/target_info.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 2.273 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.423 sec.
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/xilinx/interface/xilinx_interface.hlp "
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/xilinx/interface/maxi.hlp "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 2.273 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.423 sec.
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/xilinx/interface/saxilite.hlp "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 2.273 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 2.273 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.424 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.424 sec.
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/xilinx/common/dsp48.hlp "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 2.274 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 2.275 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 2.275 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.425 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.425 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.425 sec.
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/xilinx/zynq/zynq_hp.hlp "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 2.278 sec.
-@I [HLS-100] Command 'import_lib' returned 0; elapsed 0.03Total elapsed time: 2.282 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.428 sec.
+@I [HLS-100] Command 'import_lib' returned 0; elapsed 0.03Total elapsed time: 1.432 sec.
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/xilinx/zynq/zynq_fpv6.gen "
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/xilinx/common/xilinx_fpv6.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 2.287 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 2.287 sec.
-@I [HLS-100] Command 'add_library' returned 0; elapsed 0.04Total elapsed time: 2.294 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.437 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.438 sec.
+@I [HLS-100] Command 'add_library' returned 0; elapsed 0.04Total elapsed time: 1.442 sec.
 @I [HLS-10] Setting target device to 'xc7z020clg484-1'
-@I [HLS-100] Command 'set_part' returned 0; elapsed 0.21Total elapsed time: 2.294 sec.
+@I [HLS-100] Command 'set_part' returned 0; elapsed 0.24Total elapsed time: 1.442 sec.
 @I [HLS-100] Command "create_clock -period 10 "
 @I [HLS-100] Command "config_clock -quiet -name default -period 10 -default=false "
 @I [SYN-201] Setting up clock 'default' with a period of 10ns.
-@I [HLS-100] Command 'config_clock' returned 0; elapsed 0Total elapsed time: 2.303 sec.
-@I [HLS-100] Command 'create_clock' returned 0; elapsed 0Total elapsed time: 2.303 sec.
+@I [HLS-100] Command 'config_clock' returned 0; elapsed 0Total elapsed time: 1.450 sec.
+@I [HLS-100] Command 'create_clock' returned 0; elapsed 0Total elapsed time: 1.450 sec.
 @I [HLS-100] Command "set_directive_inline -off create_COO "
 @I [HLS-0] Setting directive 'INLINE' off=positionBoolean1 
-@I [HLS-100] Command 'set_directive_inline' returned 0; elapsed 0Total elapsed time: 2.306 sec.
+@I [HLS-100] Command 'set_directive_inline' returned 0; elapsed 0Total elapsed time: 1.453 sec.
 @I [HLS-100] Command "set_directive_inline -off COO_SpMV "
 @I [HLS-0] Setting directive 'INLINE' off=positionBoolean1 
 @I [HLS-0] Setting directive 'INLINE' off=positionBoolean1 
-@I [HLS-100] Command 'set_directive_inline' returned 0; elapsed 0Total elapsed time: 2.311 sec.
+@I [HLS-100] Command 'set_directive_inline' returned 0; elapsed 0Total elapsed time: 1.457 sec.
 @I [HLS-100] Command "set_directive_inline -off count_nnz "
 @I [HLS-0] Setting directive 'INLINE' off=positionBoolean1 
 @I [HLS-0] Setting directive 'INLINE' off=positionBoolean1 
 @I [HLS-0] Setting directive 'INLINE' off=positionBoolean1 
-@I [HLS-100] Command 'set_directive_inline' returned 0; elapsed 0Total elapsed time: 2.317 sec.
-@I [HLS-100] Command "set_directive_array_partition -type complete -dim 1 worker matrix_1 "
+@I [HLS-100] Command 'set_directive_inline' returned 0; elapsed 0Total elapsed time: 1.461 sec.
+@I [HLS-100] Command "set_directive_array_partition -type complete -dim 1 worker matrix_10 "
 @I [HLS-0] Setting directive 'INLINE' off=positionBoolean1 
 @I [HLS-0] Setting directive 'INLINE' off=positionBoolean1 
 @I [HLS-0] Setting directive 'INLINE' off=positionBoolean1 
-@I [HLS-0] Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredmatrix_1 complete=positionBoolean0type dim=1 
-@I [HLS-100] Command 'set_directive_array_partition' returned 0; elapsed 0Total elapsed time: 2.322 sec.
+@I [HLS-0] Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredmatrix_10 complete=positionBoolean0type dim=1 
+@I [HLS-100] Command 'set_directive_array_partition' returned 0; elapsed 0Total elapsed time: 1.465 sec.
 @I [HLS-100] Command "set_directive_array_partition -type complete -dim 1 worker dest_1 "
 @I [HLS-0] Setting directive 'INLINE' off=positionBoolean1 
 @I [HLS-0] Setting directive 'INLINE' off=positionBoolean1 
 @I [HLS-0] Setting directive 'INLINE' off=positionBoolean1 
-@I [HLS-0] Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredmatrix_1 complete=positionBoolean0type dim=1 
+@I [HLS-0] Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredmatrix_10 complete=positionBoolean0type dim=1 
 @I [HLS-0] Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequireddest_1 complete=positionBoolean0type dim=1 
-@I [HLS-100] Command 'set_directive_array_partition' returned 0; elapsed 0Total elapsed time: 2.327 sec.
-@I [HLS-100] Command "set_directive_array_partition -type complete -dim 1 worker row_1 "
-@I [HLS-0] Setting directive 'INLINE' off=positionBoolean1 
-@I [HLS-0] Setting directive 'INLINE' off=positionBoolean1 
-@I [HLS-0] Setting directive 'INLINE' off=positionBoolean1 
-@I [HLS-0] Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredmatrix_1 complete=positionBoolean0type dim=1 
-@I [HLS-0] Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequireddest_1 complete=positionBoolean0type dim=1 
-@I [HLS-0] Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredrow_1 complete=positionBoolean0type dim=1 
-@I [HLS-100] Command 'set_directive_array_partition' returned 0; elapsed 0Total elapsed time: 2.334 sec.
-@I [HLS-100] Command "set_directive_array_partition -type complete -dim 1 worker col_1 "
-@I [HLS-0] Setting directive 'INLINE' off=positionBoolean1 
-@I [HLS-0] Setting directive 'INLINE' off=positionBoolean1 
-@I [HLS-0] Setting directive 'INLINE' off=positionBoolean1 
-@I [HLS-0] Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredmatrix_1 complete=positionBoolean0type dim=1 
-@I [HLS-0] Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequireddest_1 complete=positionBoolean0type dim=1 
-@I [HLS-0] Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredrow_1 complete=positionBoolean0type dim=1 
-@I [HLS-0] Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredcol_1 complete=positionBoolean0type dim=1 
-@I [HLS-100] Command 'set_directive_array_partition' returned 0; elapsed 0.01Total elapsed time: 2.340 sec.
-@I [HLS-100] Command "set_directive_array_partition -type complete -dim 1 worker val_1 "
-@I [HLS-0] Setting directive 'INLINE' off=positionBoolean1 
-@I [HLS-0] Setting directive 'INLINE' off=positionBoolean1 
-@I [HLS-0] Setting directive 'INLINE' off=positionBoolean1 
-@I [HLS-0] Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredmatrix_1 complete=positionBoolean0type dim=1 
-@I [HLS-0] Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequireddest_1 complete=positionBoolean0type dim=1 
-@I [HLS-0] Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredrow_1 complete=positionBoolean0type dim=1 
-@I [HLS-0] Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredcol_1 complete=positionBoolean0type dim=1 
-@I [HLS-0] Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredval_1 complete=positionBoolean0type dim=1 
-@I [HLS-100] Command 'set_directive_array_partition' returned 0; elapsed 0Total elapsed time: 2.346 sec.
+@I [HLS-100] Command 'set_directive_array_partition' returned 0; elapsed 0Total elapsed time: 1.470 sec.
 @I [HLS-100] Command "set_directive_array_partition -type complete -dim 1 worker row_nnz "
 @I [HLS-0] Setting directive 'INLINE' off=positionBoolean1 
 @I [HLS-0] Setting directive 'INLINE' off=positionBoolean1 
 @I [HLS-0] Setting directive 'INLINE' off=positionBoolean1 
-@I [HLS-0] Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredmatrix_1 complete=positionBoolean0type dim=1 
+@I [HLS-0] Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredmatrix_10 complete=positionBoolean0type dim=1 
 @I [HLS-0] Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequireddest_1 complete=positionBoolean0type dim=1 
-@I [HLS-0] Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredrow_1 complete=positionBoolean0type dim=1 
-@I [HLS-0] Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredcol_1 complete=positionBoolean0type dim=1 
-@I [HLS-0] Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredval_1 complete=positionBoolean0type dim=1 
 @I [HLS-0] Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredrow_nnz complete=positionBoolean0type dim=1 
-@I [HLS-100] Command 'set_directive_array_partition' returned 0; elapsed 0Total elapsed time: 2.353 sec.
+@I [HLS-100] Command 'set_directive_array_partition' returned 0; elapsed 0Total elapsed time: 1.475 sec.
+@I [HLS-100] Command "set_directive_array_partition -type complete -dim 1 worker row10_1 "
+@I [HLS-0] Setting directive 'INLINE' off=positionBoolean1 
+@I [HLS-0] Setting directive 'INLINE' off=positionBoolean1 
+@I [HLS-0] Setting directive 'INLINE' off=positionBoolean1 
+@I [HLS-0] Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredmatrix_10 complete=positionBoolean0type dim=1 
+@I [HLS-0] Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequireddest_1 complete=positionBoolean0type dim=1 
+@I [HLS-0] Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredrow_nnz complete=positionBoolean0type dim=1 
+@I [HLS-0] Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredrow10_1 complete=positionBoolean0type dim=1 
+@I [HLS-100] Command 'set_directive_array_partition' returned 0; elapsed 0Total elapsed time: 1.480 sec.
+@I [HLS-100] Command "set_directive_array_partition -type complete -dim 1 worker col10_1 "
+@I [HLS-0] Setting directive 'INLINE' off=positionBoolean1 
+@I [HLS-0] Setting directive 'INLINE' off=positionBoolean1 
+@I [HLS-0] Setting directive 'INLINE' off=positionBoolean1 
+@I [HLS-0] Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredmatrix_10 complete=positionBoolean0type dim=1 
+@I [HLS-0] Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequireddest_1 complete=positionBoolean0type dim=1 
+@I [HLS-0] Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredrow_nnz complete=positionBoolean0type dim=1 
+@I [HLS-0] Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredrow10_1 complete=positionBoolean0type dim=1 
+@I [HLS-0] Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredcol10_1 complete=positionBoolean0type dim=1 
+@I [HLS-100] Command 'set_directive_array_partition' returned 0; elapsed 0Total elapsed time: 1.486 sec.
+@I [HLS-100] Command "set_directive_array_partition -type complete -dim 1 worker val10_1 "
+@I [HLS-0] Setting directive 'INLINE' off=positionBoolean1 
+@I [HLS-0] Setting directive 'INLINE' off=positionBoolean1 
+@I [HLS-0] Setting directive 'INLINE' off=positionBoolean1 
+@I [HLS-0] Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredmatrix_10 complete=positionBoolean0type dim=1 
+@I [HLS-0] Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequireddest_1 complete=positionBoolean0type dim=1 
+@I [HLS-0] Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredrow_nnz complete=positionBoolean0type dim=1 
+@I [HLS-0] Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredrow10_1 complete=positionBoolean0type dim=1 
+@I [HLS-0] Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredcol10_1 complete=positionBoolean0type dim=1 
+@I [HLS-0] Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredval10_1 complete=positionBoolean0type dim=1 
+@I [HLS-100] Command 'set_directive_array_partition' returned 0; elapsed 0Total elapsed time: 1.490 sec.
 @I [HLS-100] Command "set_directive_unroll worker/LOOP_PE1 "
 @I [HLS-0] Setting directive 'INLINE' off=positionBoolean1 
 @I [HLS-0] Setting directive 'INLINE' off=positionBoolean1 
 @I [HLS-0] Setting directive 'INLINE' off=positionBoolean1 
-@I [HLS-0] Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredmatrix_1 complete=positionBoolean0type dim=1 
+@I [HLS-0] Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredmatrix_10 complete=positionBoolean0type dim=1 
 @I [HLS-0] Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequireddest_1 complete=positionBoolean0type dim=1 
-@I [HLS-0] Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredrow_1 complete=positionBoolean0type dim=1 
-@I [HLS-0] Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredcol_1 complete=positionBoolean0type dim=1 
-@I [HLS-0] Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredval_1 complete=positionBoolean0type dim=1 
 @I [HLS-0] Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredrow_nnz complete=positionBoolean0type dim=1 
+@I [HLS-0] Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredrow10_1 complete=positionBoolean0type dim=1 
+@I [HLS-0] Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredcol10_1 complete=positionBoolean0type dim=1 
+@I [HLS-0] Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredval10_1 complete=positionBoolean0type dim=1 
 @I [HLS-0] Setting directive 'UNROLL' 
-@I [HLS-100] Command 'set_directive_unroll' returned 0; elapsed 0Total elapsed time: 2.360 sec.
+@I [HLS-100] Command 'set_directive_unroll' returned 0; elapsed 0Total elapsed time: 1.495 sec.
 @I [HLS-100] Command "set_directive_unroll worker/LOOP_PE2 "
 @I [HLS-0] Setting directive 'INLINE' off=positionBoolean1 
 @I [HLS-0] Setting directive 'INLINE' off=positionBoolean1 
 @I [HLS-0] Setting directive 'INLINE' off=positionBoolean1 
-@I [HLS-0] Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredmatrix_1 complete=positionBoolean0type dim=1 
+@I [HLS-0] Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredmatrix_10 complete=positionBoolean0type dim=1 
 @I [HLS-0] Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequireddest_1 complete=positionBoolean0type dim=1 
-@I [HLS-0] Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredrow_1 complete=positionBoolean0type dim=1 
-@I [HLS-0] Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredcol_1 complete=positionBoolean0type dim=1 
-@I [HLS-0] Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredval_1 complete=positionBoolean0type dim=1 
 @I [HLS-0] Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredrow_nnz complete=positionBoolean0type dim=1 
+@I [HLS-0] Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredrow10_1 complete=positionBoolean0type dim=1 
+@I [HLS-0] Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredcol10_1 complete=positionBoolean0type dim=1 
+@I [HLS-0] Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredval10_1 complete=positionBoolean0type dim=1 
 @I [HLS-0] Setting directive 'UNROLL' 
 @I [HLS-0] Setting directive 'UNROLL' 
-@I [HLS-100] Command 'set_directive_unroll' returned 0; elapsed 0Total elapsed time: 2.367 sec.
+@I [HLS-100] Command 'set_directive_unroll' returned 0; elapsed 0Total elapsed time: 1.500 sec.
 @I [HLS-100] Command "set_directive_unroll worker/LOOP_DEST1 "
 @I [HLS-0] Setting directive 'INLINE' off=positionBoolean1 
 @I [HLS-0] Setting directive 'INLINE' off=positionBoolean1 
 @I [HLS-0] Setting directive 'INLINE' off=positionBoolean1 
-@I [HLS-0] Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredmatrix_1 complete=positionBoolean0type dim=1 
+@I [HLS-0] Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredmatrix_10 complete=positionBoolean0type dim=1 
 @I [HLS-0] Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequireddest_1 complete=positionBoolean0type dim=1 
-@I [HLS-0] Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredrow_1 complete=positionBoolean0type dim=1 
-@I [HLS-0] Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredcol_1 complete=positionBoolean0type dim=1 
-@I [HLS-0] Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredval_1 complete=positionBoolean0type dim=1 
 @I [HLS-0] Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredrow_nnz complete=positionBoolean0type dim=1 
+@I [HLS-0] Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredrow10_1 complete=positionBoolean0type dim=1 
+@I [HLS-0] Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredcol10_1 complete=positionBoolean0type dim=1 
+@I [HLS-0] Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredval10_1 complete=positionBoolean0type dim=1 
 @I [HLS-0] Setting directive 'UNROLL' 
 @I [HLS-0] Setting directive 'UNROLL' 
 @I [HLS-0] Setting directive 'UNROLL' 
-@I [HLS-100] Command 'set_directive_unroll' returned 0; elapsed 0.01Total elapsed time: 2.374 sec.
+@I [HLS-100] Command 'set_directive_unroll' returned 0; elapsed 0.01Total elapsed time: 1.506 sec.
 @I [HLS-100] Command "csynth_design "
 @I [HLS-100] Command "elaborate -effort=medium -skip_syncheck=0 -keep_printf=0 -lm=0 -skip_cdt=0 -skip_transform=0 -ng=0 -g=0 -opt_fp=0 "
 @I [HLS-10] Analyzing design file 'COO_SpMV.cpp' ... 
 @0 [HLS-0] Analyzing design file 'COO_SpMV.cpp' ... 
 @I [HLS-0] Compiling one TU...
 @I [HLS-0] 
-Checking before pre-process: exec clang -fno-limit-debug-info -gcc-toolchain "/opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/lnx64/tools/gcc" -hls    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit   -I "/opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/lnx64/tools/systemc/include" -I "/opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/include" -I "/opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/include/ap_sysc" -fexceptions -I "/opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/autopilot" -include etc/autopilot_ssdm_op.h "COO_SpMV.cpp"  -o "/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/COO_SpMV.pp.00.o"
+Checking before pre-process: exec clang -fno-limit-debug-info -gcc-toolchain "/opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/lnx64/tools/gcc" -hls    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit   -I "/opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/lnx64/tools/systemc/include" -I "/opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/include" -I "/opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/include/ap_sysc" -fexceptions -I "/opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/autopilot" -include etc/autopilot_ssdm_op.h "COO_SpMV.cpp"  -o "/home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/COO_SpMV.pp.00.o"
 
-@I [HLS-100] Command "is_encrypted /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/COO_SpMV.pp.00.o "
-@I [HLS-100] Command 'is_encrypted' returned 0; elapsed 0Total elapsed time: 2.983 sec.
+@I [HLS-100] Command "is_encrypted /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/COO_SpMV.pp.00.o "
+@I [HLS-100] Command 'is_encrypted' returned 0; elapsed 0Total elapsed time: 2.474 sec.
 @I [HLS-0] Syntax Checker time: 0 seconds per iteration
 @I [HLS-0] 
-Source preprocessing: exec clang -fno-limit-debug-info -gcc-toolchain "/opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/lnx64/tools/gcc" -hls -fno-exceptions  -D__llvm__  -CC -E "COO_SpMV.cpp"     -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/autopilot" -I "/opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h  -o "/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/COO_SpMV.pp.0.cpp"
+Source preprocessing: exec clang -fno-limit-debug-info -gcc-toolchain "/opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/lnx64/tools/gcc" -hls -fno-exceptions  -D__llvm__  -CC -E "COO_SpMV.cpp"     -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/autopilot" -I "/opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h  -o "/home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/COO_SpMV.pp.0.cpp"
 
 @I [HLS-0] GCC PP time: 0 seconds per iteration
 @I [HLS-0] Setting directive 'INLINE' off=positionBoolean1 
 @I [HLS-0] Setting directive 'INLINE' off=positionBoolean1 
 @I [HLS-0] Setting directive 'INLINE' off=positionBoolean1 
-@I [HLS-0] Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredmatrix_1 complete=positionBoolean0type dim=1 
+@I [HLS-0] Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredmatrix_10 complete=positionBoolean0type dim=1 
 @I [HLS-0] Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequireddest_1 complete=positionBoolean0type dim=1 
-@I [HLS-0] Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredrow_1 complete=positionBoolean0type dim=1 
-@I [HLS-0] Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredcol_1 complete=positionBoolean0type dim=1 
-@I [HLS-0] Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredval_1 complete=positionBoolean0type dim=1 
 @I [HLS-0] Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredrow_nnz complete=positionBoolean0type dim=1 
+@I [HLS-0] Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredrow10_1 complete=positionBoolean0type dim=1 
+@I [HLS-0] Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredcol10_1 complete=positionBoolean0type dim=1 
+@I [HLS-0] Setting directive 'ARRAY_PARTITION' partition=positionBooleanCmd variable=positionBooleanTextRequiredval10_1 complete=positionBoolean0type dim=1 
 @I [HLS-0] Setting directive 'UNROLL' 
 @I [HLS-0] Setting directive 'UNROLL' 
 @I [HLS-0] Setting directive 'UNROLL' 
 @I [HLS-100] Command "list_core -type functional_unit "
-@I [HLS-100] Command 'list_core' returned 0; elapsed 0Total elapsed time: 3.144 sec.
-@I [HLS-0] Marker-Pragma convertor: /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/COO_SpMV.pp.0.cpp /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/COO_SpMV.pp.0.cpp.ap-line.cpp /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/COO_SpMV.pp.0.cpp.ap-line.cpp.CXX 1
+@I [HLS-100] Command 'list_core' returned 0; elapsed 0Total elapsed time: 2.679 sec.
+@I [HLS-0] Marker-Pragma convertor: /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/COO_SpMV.pp.0.cpp /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/COO_SpMV.pp.0.cpp.ap-line.cpp /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/COO_SpMV.pp.0.cpp.ap-line.cpp.CXX 1
 @I [HLS-0] 
-Source processor: exec /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/tps/lnx64/jre/bin/java -Xmx512m -classpath   "/opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/lib/classes/autopilot.sourceprocessor.jar:/opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/lib/classes/org.eclipse.cdt.core_5.3.0.xilinx_patch.jar:/opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/lib/classes/org.eclipse.core.runtime_3.7.0.v20110110.jar:/opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/lib/classes/org.eclipse.equinox.common_3.6.0.v20110523.jar:/opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/lib/classes/com.ibm.icu_4.4.2.v20110208.jar:/opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/lib/classes/jargs.jar:/opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/lnx64/tools/eclipse/plugins/org.eclipse.emf.common_2.10.1.v20150123-0348.jar:/opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/lnx64/tools/eclipse/plugins/org.eclipse.emf.ecore_2.10.2.v20150123-0348.jar:/opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/lnx64/tools/eclipse/plugins/org.eclipse.emf.ecore.xmi_2.10.2.v20150123-0348.jar:/opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/lnx64/tools/eclipse/plugins/com.autoesl.autopilot.ui.directiveFileModel_1.0.0.jar:/opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/lnx64/tools/eclipse/plugins/com.autoesl.autopilot.ui.common_1.0.0.jar"  autopilot.sourceprocessor.CParser  "/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/COO_SpMV.pp.0.cpp.ap-line.cpp"  -m "worker" -o "/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/COO_SpMV.pp.0.cpp.ap-cdt.cpp" --pp --directive /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/solution1.directive --source /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.cpp --error /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db --funcunit "AddSub AddSub_DSP AddSubnS DAddSub_fulldsp DAddSub_nodsp DDiv DExp_fulldsp DExp_meddsp DExp_nodsp DLog_fulldsp DLog_meddsp DLog_nodsp DMul_fulldsp DMul_maxdsp DMul_meddsp DMul_nodsp DRSqrt DRecip DSqrt DivnS FAddSub_fulldsp FAddSub_nodsp FDiv FExp_fulldsp FExp_meddsp FExp_nodsp FLog_fulldsp FLog_meddsp FLog_nodsp FMul_fulldsp FMul_maxdsp FMul_meddsp FMul_nodsp FRSqrt_fulldsp FRSqrt_nodsp FRecip_fulldsp FRecip_nodsp FSqrt HAddSub_nodsp HDiv HMul_fulldsp HMul_maxdsp HMul_nodsp HSqrt Mul Mul2S Mul3S Mul4S Mul5S Mul6S Mul_LUT MulnS MuxnS" --ve --vetcl /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db --ca --es --gf --pd --p2d /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db --sd --scff /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/.systemc_flag --ad
+Source processor: exec /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/tps/lnx64/jre/bin/java -Xmx512m -classpath   "/opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/lib/classes/autopilot.sourceprocessor.jar:/opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/lib/classes/org.eclipse.cdt.core_5.3.0.xilinx_patch.jar:/opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/lib/classes/org.eclipse.core.runtime_3.7.0.v20110110.jar:/opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/lib/classes/org.eclipse.equinox.common_3.6.0.v20110523.jar:/opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/lib/classes/com.ibm.icu_4.4.2.v20110208.jar:/opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/lib/classes/jargs.jar:/opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/lnx64/tools/eclipse/plugins/org.eclipse.emf.common_2.10.1.v20150123-0348.jar:/opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/lnx64/tools/eclipse/plugins/org.eclipse.emf.ecore_2.10.2.v20150123-0348.jar:/opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/lnx64/tools/eclipse/plugins/org.eclipse.emf.ecore.xmi_2.10.2.v20150123-0348.jar:/opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/lnx64/tools/eclipse/plugins/com.autoesl.autopilot.ui.directiveFileModel_1.0.0.jar:/opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/lnx64/tools/eclipse/plugins/com.autoesl.autopilot.ui.common_1.0.0.jar"  autopilot.sourceprocessor.CParser  "/home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/COO_SpMV.pp.0.cpp.ap-line.cpp"  -m "worker" -o "/home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/COO_SpMV.pp.0.cpp.ap-cdt.cpp" --pp --directive /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/solution1.directive --source /home/sec322/ece5775/final_project/project/COO_SpMV.cpp --error /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db --funcunit "AddSub AddSub_DSP AddSubnS DAddSub_fulldsp DAddSub_nodsp DDiv DExp_fulldsp DExp_meddsp DExp_nodsp DLog_fulldsp DLog_meddsp DLog_nodsp DMul_fulldsp DMul_maxdsp DMul_meddsp DMul_nodsp DRSqrt DRecip DSqrt DivnS FAddSub_fulldsp FAddSub_nodsp FDiv FExp_fulldsp FExp_meddsp FExp_nodsp FLog_fulldsp FLog_meddsp FLog_nodsp FMul_fulldsp FMul_maxdsp FMul_meddsp FMul_nodsp FRSqrt_fulldsp FRSqrt_nodsp FRecip_fulldsp FRecip_nodsp FSqrt HAddSub_nodsp HDiv HMul_fulldsp HMul_maxdsp HMul_nodsp HSqrt Mul Mul2S Mul3S Mul4S Mul5S Mul6S Mul_LUT MulnS MuxnS" --ve --vetcl /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db --ca --es --gf --pd --p2d /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db --sd --scff /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/.systemc_flag --ad
 
 @I [HLS-0] Error:Syntax error in source:for (__decltype(__n + 0) __niter = __n;
 Error:Missing ; in source:t
@@ -277,70 +277,73 @@ Error:Syntax error in source:for (__decltype(__n + 0) __niter = __n;
 Error:Missing ; in source:t
 Error:Syntax error in source:)
  *__first = __tmp;
-@I [HLS-0] Marker-Pragma convertor: /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/COO_SpMV.pp.0.cpp.ap-cdt.cpp /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/COO_SpMV.pragma.0.cpp /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/COO_SpMV.pragma.0.cpp.ap-line.CXX 0
-@I [HLS-100] Command "source /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/pragma.status.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 6.251 sec.
+@I [HLS-0] Marker-Pragma convertor: /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/COO_SpMV.pp.0.cpp.ap-cdt.cpp /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/COO_SpMV.pragma.0.cpp /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/COO_SpMV.pragma.0.cpp.ap-line.CXX 0
+@I [HLS-100] Command "source /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/pragma.status.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 6.381 sec.
 @I [HLS-0] CDT processor time: 3 seconds per iteration
 @I [HLS-0] Pragma handling time: 0 seconds per iteration
 @I [HLS-0] 
-Source preprocessing: exec clang -fno-limit-debug-info -gcc-toolchain "/opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/lnx64/tools/gcc" -hls -fno-exceptions  -D__llvm__  -CC -E "/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/COO_SpMV.pragma.1.cpp"     -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/autopilot" -I "/opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h  -o "/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/COO_SpMV.pragma.2.cpp"
+Source preprocessing: exec clang -fno-limit-debug-info -gcc-toolchain "/opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/lnx64/tools/gcc" -hls -fno-exceptions  -D__llvm__  -CC -E "/home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/COO_SpMV.pragma.1.cpp"     -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/autopilot" -I "/opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h  -o "/home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/COO_SpMV.pragma.2.cpp"
 
-@I [HLS-0] exec clang -fno-limit-debug-info -gcc-toolchain /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/lnx64/tools/gcc -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions  -D__llvm__  -w  "/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/COO_SpMV.pragma.2.cpp"    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/autopilot" -I "/opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -g -o "/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/COO_SpMV.g.bc"
-@I [HLS-100] Command "source /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/ve_warning.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 7.191 sec.
+@I [HLS-0] exec clang -fno-limit-debug-info -gcc-toolchain /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/lnx64/tools/gcc -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions  -D__llvm__  -w  "/home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/COO_SpMV.pragma.2.cpp"    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/autopilot" -I "/opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -g -o "/home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/COO_SpMV.g.bc"
+@I [HLS-100] Command "source /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/ve_warning.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 7.789 sec.
 @I [HLS-10] Validating synthesis directives ...
 @0 [HLS-0] Validating synthesis directives ...
-@I [HLS-100] Command "source /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/pragma.status.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 7.200 sec.
+@I [HLS-100] Command "source /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/pragma.status.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 7.799 sec.
+@W [HLS-40] Directive 'INLINE' cannot be applied: Function 'create_COO' does not exist in any synthesis source file.
+@W [HLS-40] Directive 'INLINE' cannot be applied: Function 'count_nnz' does not exist in any synthesis source file.
+@W [HLS-40] Directive 'ARRAY_PARTITION' cannot be applied: Variable 'row_nnz' is not declared in 'worker'.
+@W [HLS-40] Directive 'UNROLL' cannot be applied: Label 'LOOP_PE1' does not exist in function 'worker'. 
 @I [HLS-0] Linking all ...
-@I [HLS-0] exec llvm-ld  "/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/COO_SpMV.bc"  -disable-opt  -L/opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/lnx64/lib -lm_basic -o "/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/a.o.pre"
+@I [HLS-0] exec llvm-ld  "/home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/COO_SpMV.bc"  -disable-opt  -L/opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/lnx64/lib -lm_basic -o "/home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/a.o.pre"
 @I [HLS-0] Link time: 0 seconds per iteration
 @I [HLS-0] Linking all ...
-@I [HLS-0] exec llvm-ld  "/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/COO_SpMV.g.bc"  -disable-opt  -L/opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/lnx64/lib -lm_basic -o "/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/a.g.pre"
+@I [HLS-0] exec llvm-ld  "/home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/COO_SpMV.g.bc"  -disable-opt  -L/opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/lnx64/lib -lm_basic -o "/home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/a.g.pre"
 @I [HLS-0] Link time: 0 seconds per iteration
 @I [HLS-100] Command "opt_and_import_c a -opt_level=2 -skip_syncheck=0 -ng=0 -keep_printf=0 "
 @I [HLS-100] Command "cleanup_all_models "
-@I [HLS-100] Command 'cleanup_all_models' returned 0; elapsed 0Total elapsed time: 7.582 sec.
+@I [HLS-100] Command 'cleanup_all_models' returned 0; elapsed 0Total elapsed time: 8.233 sec.
 @I [HLS-10] Starting code transformations ...
 @0 [HLS-0] Starting code transformations ...
-@I [HLS-0] std xform: transform -hls -share-std-xform -always-inline -promote-dbg-pointer  -interface-preproc  -scalarrepl -mem2reg -keep-read-access -instcombine -dce  -promote-dbg-pointer  -bitop-raise  -indvars -loop-simplify -xunroll  -constprop -instcombine -simplifycfg -indvars  -simplifycfg -dce -globaldce  -basicaa  -simplifycfg -mem2reg -globalopt  -global-constprop -deadargelim -instcombine -simplifycfg  -prune-eh -simplifycfg  -scalarrepl -instcombine -reassociate -licm  -simplifycfg -loop-simplify -indvars -instcombine  -simplifycfg -mem2reg -loop-simplify -indvars -instcombine  -gvn -gvn -instcombine -adce  -break-crit-edges  -simplifycfg -loop-delete  -global-array-opt -dce -dse -adce  -find-syn-modules -top worker  -deadargelim  -mem2reg -instcombine -dce  -presyn-prepare -auto-rom-infer  -interface-preproc  -syn-check -check-rec-only  -find-region -simplifycfg -func-extr -function-inline  -globaldce -mem2reg -instcombine -dce   -gvn -globaldce -adce -adse  -constprop -instcombine -bit-constprop  -instcombine -dce -simplifycfg -bitop-raise  -simplifycfg -dce -loop-delete -reassociate  -globalopt -global-privatize -mem2reg -dce  -global-constprop -pointer-simplify -constprop -dce  -func-inst -deadargelim  -promote-dbg-pointer  -norm-name   /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/a.g.0.bc -o /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/a.g.1.bc -f  -phase std-opt
+@I [HLS-0] std xform: transform -hls -share-std-xform -always-inline -promote-dbg-pointer  -interface-preproc  -scalarrepl -mem2reg -keep-read-access -instcombine -dce  -promote-dbg-pointer  -bitop-raise  -indvars -loop-simplify -xunroll  -constprop -instcombine -simplifycfg -indvars  -simplifycfg -dce -globaldce  -basicaa  -simplifycfg -mem2reg -globalopt  -global-constprop -deadargelim -instcombine -simplifycfg  -prune-eh -simplifycfg  -scalarrepl -instcombine -reassociate -licm  -simplifycfg -loop-simplify -indvars -instcombine  -simplifycfg -mem2reg -loop-simplify -indvars -instcombine  -gvn -gvn -instcombine -adce  -break-crit-edges  -simplifycfg -loop-delete  -global-array-opt -dce -dse -adce  -find-syn-modules -top worker  -deadargelim  -mem2reg -instcombine -dce  -presyn-prepare -auto-rom-infer  -interface-preproc  -syn-check -check-rec-only  -find-region -simplifycfg -func-extr -function-inline  -globaldce -mem2reg -instcombine -dce   -gvn -globaldce -adce -adse  -constprop -instcombine -bit-constprop  -instcombine -dce -simplifycfg -bitop-raise  -simplifycfg -dce -loop-delete -reassociate  -globalopt -global-privatize -mem2reg -dce  -global-constprop -pointer-simplify -constprop -dce  -func-inst -deadargelim  -promote-dbg-pointer  -norm-name   /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/a.g.0.bc -o /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/a.g.1.bc -f  -phase std-opt
+@I [XFORM-501] Unrolling loop 'LOOP_PE2' (COO_SpMV.cpp:38) in function 'worker(float*)' completely.
 @I [HLS-0] Std xform time: 0 seconds per iteration
-@I [HLS-100] Command "is_encrypted /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/a.g.1.bc "
-@I [HLS-100] Command 'is_encrypted' returned 0; elapsed 0Total elapsed time: 7.804 sec.
+@I [HLS-100] Command "is_encrypted /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/a.g.1.bc "
+@I [HLS-100] Command 'is_encrypted' returned 0; elapsed 0Total elapsed time: 8.497 sec.
 @I [HLS-10] Checking synthesizability ...
 @0 [HLS-0] Checking synthesizability ...
-@I [HLS-0] syn check 1/2: transform -hls -syn-check -check-rec-only -disaggr -scalarrepl -norm-name -dce  -mem2reg -instcombine  -function-uniquify -directive-preproc -mem2reg -dse -dce -auto-rom-infer -dce  -array-normalize -instcombine -dce  -array-seg-normalize -instcombine -dce  -array-flatten -instcombine -dce  -array-burst -dce  -deadargelim -promote-global-argument  -simplifycfg -mem2reg -globaldce -resolve-double-ptr  -dce -deadargelim -dce -instcombine  -function-inline -globaldce -dce  -doublePtrSimplify -doublePtrElim -dce  -doublePtrSimplify -promote-dbg-pointer  -dce -scalarrepl -dse -adse -instcombine  -ptrLegalization  -simplifycfg -dce -instcombine  -pointer-simplify -ptrArgReplace -dce -instcombine   -disaggr -scalarrepl -norm-name -dce  -mem2reg -instcombine -ptrLegalization   -simplifycfg -deadargelim  -instcombine -dce -inst-simplify  -function-uniquify -directive-preproc -mem2reg -dse -dce  -globaldce    /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/a.g.1.bc -o /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/a.g.2.prechk.bc -f
+@I [HLS-0] syn check 1/2: transform -hls -syn-check -check-rec-only -disaggr -scalarrepl -norm-name -dce  -mem2reg -instcombine  -function-uniquify -directive-preproc -mem2reg -dse -dce -auto-rom-infer -dce  -array-normalize -instcombine -dce  -array-seg-normalize -instcombine -dce  -array-flatten -instcombine -dce  -array-burst -dce  -deadargelim -promote-global-argument  -simplifycfg -mem2reg -globaldce -resolve-double-ptr  -dce -deadargelim -dce -instcombine  -function-inline -globaldce -dce  -doublePtrSimplify -doublePtrElim -dce  -doublePtrSimplify -promote-dbg-pointer  -dce -scalarrepl -dse -adse -instcombine  -ptrLegalization  -simplifycfg -dce -instcombine  -pointer-simplify -ptrArgReplace -dce -instcombine   -disaggr -scalarrepl -norm-name -dce  -mem2reg -instcombine -ptrLegalization   -simplifycfg -deadargelim  -instcombine -dce -inst-simplify  -function-uniquify -directive-preproc -mem2reg -dse -dce  -globaldce    /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/a.g.1.bc -o /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/a.g.2.prechk.bc -f
 @I [HLS-0] Syn check 1/2 time: 0 seconds per iteration
-@I [HLS-0] syn check 2/2: transform -syn-check   /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/a.g.2.prechk.bc -o /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/a.g.2.bc -f  -phase syn-check
+@I [HLS-0] syn check 2/2: transform -syn-check   /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/a.g.2.prechk.bc -o /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/a.g.2.bc -f  -phase syn-check
 @I [HLS-0] Syn check 2/2 time: 0 seconds per iteration
 @I [HLS-0] Compiler optimizing ...
-@I [HLS-0] Share syncheck's 1.bc for syn flow: copy /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/a.g.1.bc to /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/a.o.1.bc
-@I [HLS-0] presyn 1: transform -hls -tmp /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db -type-info  -function-uniquify -directive-preproc -mem2reg -dse -dce  -disaggr -scalarrepl -norm-name -deadargelim  -mem2reg -instcombine -dce -auto-rom-infer -dce -function-uniquify  -resource-proc  -simplifycfg -mem2reg -globaldce -resolve-double-ptr -dce -deadargelim -dce -instcombine  -clib-intrinsic-prepare -dce  -func-buffer -dce -array-normalize  -func-legal -instcombine -gvn -constprop -dce   -ptrArgReplace -mem2reg -instcombine -dce  -array-seg-normalize -deadargelim  -instcombine -dce  -pointer-simplify -dce  -port-alignment -dce  -interface-preproc  -data-pack -instcombine -dce   -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn  -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce  -loop-simplify -indvars -instcombine  -gvn -loop-simplify -mem2reg -dce -simplifycfg  -find-region -instcombine  -auto-loop-pipeline  -inst-simplify  -interface-preproc  -indvars -auto-loop-unroll -loop-simplify -loop-bound -xunroll  -constprop -instcombine -simplifycfg -indvars  -simplifycfg -dce -globaldce  -attach-range  -gvn -inst-simplify  -constprop -simplifycfg -dce  -pointer-simplify -dce  -globalopt -constprop -dce  -array-promote -constprop -instcombine -dce  -ptrArgReplace -mem2reg  -instcombine -simplifycfg -dce  -auto-par -instcombine -dce  -array-transform-check  -array-reshape -instcombine -simplifycfg -dce  -ptrArgReplace -deadargelim -mem2reg  -instcombine -simplifycfg -dce   -indvars -loop-simplify -loop-bound -xunroll  -constprop -instcombine -simplifycfg -indvars  -simplifycfg -dce -globaldce  -duplicate-dataflow-processes -globaldce  -array-partition -instcombine -simplifycfg -dce  -ptrArgReplace -global-constprop -deadargelim -mem2reg  -func-legal -instcombine -dce -global-constprop -deadargelim -mem2reg  -instcombine -simplifycfg -dce   -globalopt -constprop -dce  -array-promote -constprop -instcombine -dce  -ptrArgReplace -mem2reg  -instcombine -simplifycfg -dce   -mem-intrinsic-preproc -dce  -global-privatize  -mem2reg -globaldce  -promote-global-argument  -ptrArgReplace -mem2reg -instcombine -dce  -globalopt -mergereturn -simplify-global-access -mem2reg -dce  -pointer-simplify -dce  -functionattrs  -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn  -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce  -inst-simplify -dce -norm-name  -function-inline -globaldce  -func-inst -constprop -instcombine -simplifycfg -dce  -func-legal -dce   -loop-bound  -arraycheck -bitwidthmin -on-by-dataflow  -loop-delete -instcombine -simplifycfg  -globaldce -dce -gvn -deadargelim -dce -loop-simplify -clean-region -simplifycfg -propagate-stable-arguments  -loop-stream -instcombine -simplifycfg -dce -globaldce  -stream-intrinsic-preproc -dce  -check-ap-stream -loop-simplify -eliminate-keepreads  -extract-dataflow-in-loop -loop-simplify -dce -gvn -deadargelim -dse  -check-dataflow-syntax  -legalize-stream-variable -legalize-global -legalize-global-1  -extract-subproc -dce -dead-channel-elimination  -canonicalize-gep -globaldce -dce -gvn -deadargelim  -scalar-propagation -deadargelim -globaldce -mem2reg  -check-dataflow-channels -function-stream -annotate-dataflow-channels -dce -globaldce  -prop-fifo-spec -internal-stream-gen  -canonicalize-gep -globaldce -dce -gvn -deadargelim   -mergereturn -indvars -loop-simplify -instcombine  -array-stream -instcombine -simplifycfg -dce  -bundle-memfifo-ops -deadargelim    -function-uniquify -directive-preproc -mem2reg -dse -dce  -group-axi-access    -licm -simplifycfg -dce -loop-delete  -norm-name  /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/a.o.1.bc -o /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/a.o.1.tmp.bc -f
-@I [XFORM-501] Unrolling loop 'LOOP_PE1' (COO_SpMV.cpp:94) in function 'worker' completely.
-@I [XFORM-501] Unrolling loop 'LOOP_PE2' (COO_SpMV.cpp:100) in function 'worker' completely.
-@I [XFORM-501] Unrolling loop 'LOOP_DEST1' (COO_SpMV.cpp:101) in function 'worker' completely.
-@I [XFORM-101] Partitioning array 'matrix_1'  in dimension 1 completely.
-@I [XFORM-101] Partitioning array 'dest_1' (COO_SpMV.cpp:88) in dimension 1 completely.
-@I [XFORM-101] Partitioning array 'row_1' (COO_SpMV.cpp:89) in dimension 1 completely.
-@I [XFORM-101] Partitioning array 'col_1' (COO_SpMV.cpp:90) in dimension 1 completely.
-@I [XFORM-101] Partitioning array 'val_1' (COO_SpMV.cpp:91) in dimension 1 completely.
-@I [XFORM-101] Partitioning array 'row_nnz' (COO_SpMV.cpp:92) in dimension 1 completely.
-@I [HLS-0] Presyn 1 time: 1 seconds per iteration
-@I [HLS-0] presyn 2: transform -hls -keep-callgraph -scalarrepl -mem2reg  -port-alignment -attach-range -dce  -pipe-mux-gen  -indvars -loop-bound  -inst-simplify -instcombine -dce  -merge-array-access -mem2reg -dce  -clean-region -mergereturn -if-conv  -instcombine -dce -constprop  -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn  -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce  -scalarrepl -mem2reg  -global-constprop -deadargelim -deadargelim  -instcombine -dce -simplifycfg    -ptrArgReplace -mem2reg -function-inline  -globaldce -mem2reg -instcombine -dce -expr-balance  -instcombine -dce  -bitwidthmin  -interface-preproc -directive-preproc  -inst-rectify -instcombine -dce  -functionattrs  -constprop -instcombine -bit-constprop  -simplify-global-access  -globalopt -globaldce  -inst-simplify -instcombine -elimdeaddata -dce  -loop-delete -simplifycfg -loop-simplify -auto-burst   -norm-name /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/a.o.1.tmp.bc -o /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/a.o.2.bc -f  -phase presyn
+@I [HLS-0] Share syncheck's 1.bc for syn flow: copy /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/a.g.1.bc to /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/a.o.1.bc
+@I [HLS-0] presyn 1: transform -hls -tmp /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db -type-info  -function-uniquify -directive-preproc -mem2reg -dse -dce  -disaggr -scalarrepl -norm-name -deadargelim  -mem2reg -instcombine -dce -auto-rom-infer -dce -function-uniquify  -resource-proc  -simplifycfg -mem2reg -globaldce -resolve-double-ptr -dce -deadargelim -dce -instcombine  -clib-intrinsic-prepare -dce  -func-buffer -dce -array-normalize  -func-legal -instcombine -gvn -constprop -dce   -ptrArgReplace -mem2reg -instcombine -dce  -array-seg-normalize -deadargelim  -instcombine -dce  -pointer-simplify -dce  -port-alignment -dce  -interface-preproc  -data-pack -instcombine -dce   -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn  -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce  -loop-simplify -indvars -instcombine  -gvn -loop-simplify -mem2reg -dce -simplifycfg  -find-region -instcombine  -auto-loop-pipeline  -inst-simplify  -interface-preproc  -indvars -auto-loop-unroll -loop-simplify -loop-bound -xunroll  -constprop -instcombine -simplifycfg -indvars  -simplifycfg -dce -globaldce  -attach-range  -gvn -inst-simplify  -constprop -simplifycfg -dce  -pointer-simplify -dce  -globalopt -constprop -dce  -array-promote -constprop -instcombine -dce  -ptrArgReplace -mem2reg  -instcombine -simplifycfg -dce  -auto-par -instcombine -dce  -array-transform-check  -array-reshape -instcombine -simplifycfg -dce  -ptrArgReplace -deadargelim -mem2reg  -instcombine -simplifycfg -dce   -indvars -loop-simplify -loop-bound -xunroll  -constprop -instcombine -simplifycfg -indvars  -simplifycfg -dce -globaldce  -duplicate-dataflow-processes -globaldce  -array-partition -instcombine -simplifycfg -dce  -ptrArgReplace -global-constprop -deadargelim -mem2reg  -func-legal -instcombine -dce -global-constprop -deadargelim -mem2reg  -instcombine -simplifycfg -dce   -globalopt -constprop -dce  -array-promote -constprop -instcombine -dce  -ptrArgReplace -mem2reg  -instcombine -simplifycfg -dce   -mem-intrinsic-preproc -dce  -global-privatize  -mem2reg -globaldce  -promote-global-argument  -ptrArgReplace -mem2reg -instcombine -dce  -globalopt -mergereturn -simplify-global-access -mem2reg -dce  -pointer-simplify -dce  -functionattrs  -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn  -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce  -inst-simplify -dce -norm-name  -function-inline -globaldce  -func-inst -constprop -instcombine -simplifycfg -dce  -func-legal -dce   -loop-bound  -arraycheck -bitwidthmin -on-by-dataflow  -loop-delete -instcombine -simplifycfg  -globaldce -dce -gvn -deadargelim -dce -loop-simplify -clean-region -simplifycfg -propagate-stable-arguments  -loop-stream -instcombine -simplifycfg -dce -globaldce  -stream-intrinsic-preproc -dce  -check-ap-stream -loop-simplify -eliminate-keepreads  -extract-dataflow-in-loop -loop-simplify -dce -gvn -deadargelim -dse  -check-dataflow-syntax  -legalize-stream-variable -legalize-global -legalize-global-1  -extract-subproc -dce -dead-channel-elimination  -canonicalize-gep -globaldce -dce -gvn -deadargelim  -scalar-propagation -deadargelim -globaldce -mem2reg  -check-dataflow-channels -function-stream -annotate-dataflow-channels -dce -globaldce  -prop-fifo-spec -internal-stream-gen  -canonicalize-gep -globaldce -dce -gvn -deadargelim   -mergereturn -indvars -loop-simplify -instcombine  -array-stream -instcombine -simplifycfg -dce  -bundle-memfifo-ops -deadargelim    -function-uniquify -directive-preproc -mem2reg -dse -dce  -group-axi-access    -licm -simplifycfg -dce -loop-delete  -norm-name  /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/a.o.1.bc -o /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/a.o.1.tmp.bc -f
+@I [XFORM-501] Unrolling loop 'LOOP_DEST1' (COO_SpMV.cpp:39) in function 'worker' completely.
+@I [XFORM-101] Partitioning array 'val10_1'  in dimension 1 completely.
+@I [XFORM-101] Partitioning array 'col10_1'  in dimension 1 completely.
+@I [XFORM-101] Partitioning array 'row10_1'  in dimension 1 completely.
+@I [XFORM-101] Partitioning array 'matrix_10'  in dimension 1 completely.
+@I [XFORM-101] Partitioning array 'dest_1' (COO_SpMV.cpp:36) in dimension 1 completely.
+@I [XFORM-622] Instantiating function 'COO_SpMV'(COO_SpMV.cpp:19) to 'COO_SpMV.0' at call site (COO_SpMV.cpp:43) by setting 'dependence' to '0'.
+@I [HLS-0] Presyn 1 time: 0 seconds per iteration
+@I [HLS-0] presyn 2: transform -hls -keep-callgraph -scalarrepl -mem2reg  -port-alignment -attach-range -dce  -pipe-mux-gen  -indvars -loop-bound  -inst-simplify -instcombine -dce  -merge-array-access -mem2reg -dce  -clean-region -mergereturn -if-conv  -instcombine -dce -constprop  -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn  -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce  -scalarrepl -mem2reg  -global-constprop -deadargelim -deadargelim  -instcombine -dce -simplifycfg    -ptrArgReplace -mem2reg -function-inline  -globaldce -mem2reg -instcombine -dce -expr-balance  -instcombine -dce  -bitwidthmin  -interface-preproc -directive-preproc  -inst-rectify -instcombine -dce  -functionattrs  -constprop -instcombine -bit-constprop  -simplify-global-access  -globalopt -globaldce  -inst-simplify -instcombine -elimdeaddata -dce  -loop-delete -simplifycfg -loop-simplify -auto-burst   -norm-name /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/a.o.1.tmp.bc -o /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/a.o.2.bc -f  -phase presyn
 @I [HLS-0] Presyn 2 time: 0 seconds per iteration
-@I [HLS-100] Command "is_encrypted /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/a.o.2.bc "
-@I [HLS-100] Command 'is_encrypted' returned 0; elapsed 0Total elapsed time: 9.425 sec.
-@I [HLS-0] build ssdm: transform -hls  -function-uniquify -auto-function-inline -globaldce  -ptrArgReplace -mem2reg -instcombine -dce  -reset-lda  -loop-simplify -indvars -licm -loop-dep  -loop-bound -licm -loop-simplify -flattenloopnest  -array-flatten -gvn -instcombine -dce  -array-map -dce -func-legal  -gvn -adce -instcombine -cfgopt -simplifycfg -loop-simplify   -array-burst -promote-global-argument -dce  -axi4-lower -array-seg-normalize  -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -gvn -gvn  -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -dse -adse -adce -licm  -inst-simplify -dce  -globaldce -instcombine -array-stream -eliminate-keepreads -instcombine  -dce   -deadargelim -doublePtrSimplify  -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer  -dce -scalarrepl -mem2reg -disaggr -norm-name -mem2reg  -instcombine  -dse -adse -adce -ptrLegalization -dce -auto-rom-infer -array-flatten -dce -instcombine  -loop-rot -constprop -cfgopt -simplifycfg -loop-simplify -indvars -pointer-simplify -dce -loop-bound  -loop-simplify -loop-preproc  -constprop -global-constprop -gvn -mem2reg -instcombine -dce  -loop-merge -dce  -bitwidthmin  -deadargelim -dce  -scalar-propagation -deadargelim -globaldce -mem2reg  -interface-preproc -interface-gen  -deadargelim -directive-preproc -inst-simplify -dce  -gvn -mem2reg -instcombine -dce -adse  -loop-bound  -instcombine -cfgopt -simplifycfg -loop-simplify  -clean-region -io-protocol  -find-region -mem2reg  -bitop-raise  -inst-simplify -inst-rectify -instcombine -adce -deadargelim  -loop-simplify -phi-opt -bitop-raise  -cfgopt -simplifycfg -strip-dead-prototypes  -interface-lower -bitop-lower -intrinsic-lower -auto-function-inline  -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa  -inst-simplify -simplifycfg   -mergereturn -inst-simplify -inst-rectify  -dce -bitop-lower  -loop-rewind -pointer-simplify -dce -cfgopt  -read-loop-dep -dce -bitwidth -norm-name -legalize    -cdfg-build  /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/a.o.2.bc -o /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/a.o.3.bc -f  -phase build-ssdm
-@W [ANALYSIS-52] Found false 'RAW' inter dependency for variable 'output' (COO_SpMV.cpp:19).
-@W [ANALYSIS-52] Asserting false dependency between 'load' operation 'output.load'(COO_SpMV.cpp:24:11) from variable 'output'(COO_SpMV.cpp:19) and 'store' operation to variable 'output'(COO_SpMV.cpp:19), this may lead to incorrect RTL generation.
-@W [ANALYSIS-52] Asserting false dependency between 'store' operation to variable 'output'(COO_SpMV.cpp:19) and 'load' operation 'output.load'(COO_SpMV.cpp:24:11) from variable 'output'(COO_SpMV.cpp:19), this may lead to incorrect RTL generation.
-@I [HLS-0] Build ssdm time: 2 seconds per iteration
-@I [HLS-100] Command "is_encrypted /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/a.o.3.bc "
-@I [HLS-100] Command 'is_encrypted' returned 0; elapsed 0Total elapsed time: 11.784 sec.
+@I [HLS-100] Command "is_encrypted /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/a.o.2.bc "
+@I [HLS-100] Command 'is_encrypted' returned 0; elapsed 0Total elapsed time: 9.649 sec.
+@I [HLS-0] build ssdm: transform -hls  -function-uniquify -auto-function-inline -globaldce  -ptrArgReplace -mem2reg -instcombine -dce  -reset-lda  -loop-simplify -indvars -licm -loop-dep  -loop-bound -licm -loop-simplify -flattenloopnest  -array-flatten -gvn -instcombine -dce  -array-map -dce -func-legal  -gvn -adce -instcombine -cfgopt -simplifycfg -loop-simplify   -array-burst -promote-global-argument -dce  -axi4-lower -array-seg-normalize  -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -gvn -gvn  -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -dse -adse -adce -licm  -inst-simplify -dce  -globaldce -instcombine -array-stream -eliminate-keepreads -instcombine  -dce   -deadargelim -doublePtrSimplify  -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer  -dce -scalarrepl -mem2reg -disaggr -norm-name -mem2reg  -instcombine  -dse -adse -adce -ptrLegalization -dce -auto-rom-infer -array-flatten -dce -instcombine  -loop-rot -constprop -cfgopt -simplifycfg -loop-simplify -indvars -pointer-simplify -dce -loop-bound  -loop-simplify -loop-preproc  -constprop -global-constprop -gvn -mem2reg -instcombine -dce  -loop-merge -dce  -bitwidthmin  -deadargelim -dce  -scalar-propagation -deadargelim -globaldce -mem2reg  -interface-preproc -interface-gen  -deadargelim -directive-preproc -inst-simplify -dce  -gvn -mem2reg -instcombine -dce -adse  -loop-bound  -instcombine -cfgopt -simplifycfg -loop-simplify  -clean-region -io-protocol  -find-region -mem2reg  -bitop-raise  -inst-simplify -inst-rectify -instcombine -adce -deadargelim  -loop-simplify -phi-opt -bitop-raise  -cfgopt -simplifycfg -strip-dead-prototypes  -interface-lower -bitop-lower -intrinsic-lower -auto-function-inline  -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa  -inst-simplify -simplifycfg   -mergereturn -inst-simplify -inst-rectify  -dce -bitop-lower  -loop-rewind -pointer-simplify -dce -cfgopt  -read-loop-dep -dce -bitwidth -norm-name -legalize    -cdfg-build  /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/a.o.2.bc -o /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/a.o.3.bc -f  -phase build-ssdm
+@W [ANALYSIS-52] Found false 'RAW' inter dependency for variable 'output'.
+@W [ANALYSIS-52] Asserting false dependency between 'load' operation 'output.load'(COO_SpMV.cpp:25:11) from variable 'output' and 'store' operation to variable 'output', this may lead to incorrect RTL generation.
+@W [ANALYSIS-52] Asserting false dependency between 'store' operation to variable 'output' and 'load' operation 'output.load'(COO_SpMV.cpp:25:11) from variable 'output', this may lead to incorrect RTL generation.
+@I [HLS-0] Build ssdm time: 0 seconds per iteration
+@I [HLS-100] Command "is_encrypted /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/a.o.3.bc "
+@I [HLS-100] Command 'is_encrypted' returned 0; elapsed 0Total elapsed time: 9.863 sec.
 @I [HLS-0] Finish building internal data model.
-@I [HLS-100] Command 'opt_and_import_c' returned 0; elapsed 3.86Total elapsed time: 11.835 sec.
-@I [HLS-111] Elapsed time: 5.85 seconds; current memory usage: 87.4 MB.
-@I [HLS-100] Command 'elaborate' returned 0; elapsed 5.02Total elapsed time: 11.838 sec.
+@I [HLS-100] Command 'opt_and_import_c' returned 0; elapsed 1.24Total elapsed time: 9.905 sec.
+@I [HLS-111] Elapsed time: 3.11 seconds; current memory usage: 77.3 MB.
+@I [HLS-100] Command 'elaborate' returned 0; elapsed 2.38Total elapsed time: 9.908 sec.
 @I [HLS-100] Command "autosyn "
 @I [HLS-10] Starting hardware synthesis ...
 @0 [HLS-0] Starting hardware synthesis ...
@@ -348,152 +351,72 @@ Source preprocessing: exec clang -fno-limit-debug-info -gcc-toolchain "/opt/xili
 @I [HLS-10] Synthesizing 'worker' ...
 @0 [HLS-0] Synthesizing 'worker' ...
 @I [HLS-100] Command "ap_set_top_model worker "
-@I [HLS-100] Command 'ap_set_top_model' returned 0; elapsed 0Total elapsed time: 11.841 sec.
+@W [SYN-103] Legalizing function name 'worker_COO_SpMV.0' to 'worker_COO_SpMV_0'.
+@I [HLS-100] Command 'ap_set_top_model' returned 0; elapsed 0Total elapsed time: 9.912 sec.
 @I [HLS-100] Command "get_model_list worker -filter all-wo-channel -topdown "
-@I [HLS-100] Command 'get_model_list' returned 0; elapsed 0Total elapsed time: 11.842 sec.
+@I [HLS-100] Command 'get_model_list' returned 0; elapsed 0Total elapsed time: 9.912 sec.
 @I [HLS-100] Command "preproc_iomode -model worker "
-@I [HLS-100] Command 'preproc_iomode' returned 0; elapsed 0Total elapsed time: 11.843 sec.
-@I [HLS-100] Command "preproc_iomode -model worker_COO_SpMV "
-@I [HLS-100] Command 'preproc_iomode' returned 0; elapsed 0Total elapsed time: 11.844 sec.
-@I [HLS-100] Command "preproc_iomode -model worker_create_COO "
-@I [HLS-100] Command 'preproc_iomode' returned 0; elapsed 0Total elapsed time: 11.844 sec.
+@I [HLS-100] Command 'preproc_iomode' returned 0; elapsed 0Total elapsed time: 9.913 sec.
+@I [HLS-100] Command "preproc_iomode -model worker_COO_SpMV.0 "
+@I [HLS-100] Command 'preproc_iomode' returned 0; elapsed 0Total elapsed time: 9.913 sec.
 @I [HLS-100] Command "get_model_list worker -filter all-wo-channel "
-@I [HLS-100] Command 'get_model_list' returned 0; elapsed 0Total elapsed time: 11.844 sec.
-@I [HLS-0] Model list for configure: worker_create_COO worker_COO_SpMV worker
-@I [HLS-0] Configuring Module : worker_create_COO ...
-@I [HLS-100] Command "set_default_model worker_create_COO "
-@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 11.845 sec.
-@I [HLS-100] Command "apply_spec_resource_limit worker_create_COO "
-@I [HLS-100] Command 'apply_spec_resource_limit' returned 0; elapsed 0Total elapsed time: 11.846 sec.
-@I [HLS-0] Configuring Module : worker_COO_SpMV ...
-@I [HLS-100] Command "set_default_model worker_COO_SpMV "
-@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 11.846 sec.
-@I [HLS-100] Command "apply_spec_resource_limit worker_COO_SpMV "
-@I [HLS-100] Command 'apply_spec_resource_limit' returned 0; elapsed 0Total elapsed time: 11.846 sec.
+@I [HLS-100] Command 'get_model_list' returned 0; elapsed 0Total elapsed time: 9.914 sec.
+@I [HLS-0] Model list for configure: worker_COO_SpMV.0 worker
+@I [HLS-0] Configuring Module : worker_COO_SpMV.0 ...
+@I [HLS-100] Command "set_default_model worker_COO_SpMV.0 "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 9.915 sec.
+@I [HLS-100] Command "apply_spec_resource_limit worker_COO_SpMV.0 "
+@I [HLS-100] Command 'apply_spec_resource_limit' returned 0; elapsed 0Total elapsed time: 9.915 sec.
 @I [HLS-0] Configuring Module : worker ...
 @I [HLS-100] Command "set_default_model worker "
-@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 11.847 sec.
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 9.916 sec.
 @I [HLS-100] Command "apply_spec_resource_limit worker "
-@I [HLS-100] Command 'apply_spec_resource_limit' returned 0; elapsed 0Total elapsed time: 11.847 sec.
-@I [HLS-0] Model list for preprocess: worker_create_COO worker_COO_SpMV worker
-@I [HLS-0] Preprocessing Module: worker_create_COO ...
-@I [HLS-100] Command "set_default_model worker_create_COO "
-@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 11.848 sec.
-@I [HLS-100] Command "cdfg_preprocess -model worker_create_COO "
-@I [HLS-100] Command 'cdfg_preprocess' returned 0; elapsed 0Total elapsed time: 11.850 sec.
-@I [HLS-100] Command "rtl_gen_preprocess worker_create_COO "
-@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0.01Total elapsed time: 11.851 sec.
-@I [HLS-0] Preprocessing Module: worker_COO_SpMV ...
-@I [HLS-100] Command "set_default_model worker_COO_SpMV "
-@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 11.851 sec.
-@I [HLS-100] Command "cdfg_preprocess -model worker_COO_SpMV "
-@I [HLS-100] Command 'cdfg_preprocess' returned 0; elapsed 0Total elapsed time: 11.852 sec.
-@I [HLS-100] Command "rtl_gen_preprocess worker_COO_SpMV "
-@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0Total elapsed time: 11.853 sec.
+@I [HLS-100] Command 'apply_spec_resource_limit' returned 0; elapsed 0Total elapsed time: 9.916 sec.
+@I [HLS-0] Model list for preprocess: worker_COO_SpMV.0 worker
+@I [HLS-0] Preprocessing Module: worker_COO_SpMV.0 ...
+@I [HLS-100] Command "set_default_model worker_COO_SpMV.0 "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 9.916 sec.
+@I [HLS-100] Command "cdfg_preprocess -model worker_COO_SpMV.0 "
+@I [HLS-100] Command 'cdfg_preprocess' returned 0; elapsed 0Total elapsed time: 9.917 sec.
+@I [HLS-100] Command "rtl_gen_preprocess worker_COO_SpMV.0 "
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0.01Total elapsed time: 9.920 sec.
 @I [HLS-0] Preprocessing Module: worker ...
 @I [HLS-100] Command "set_default_model worker "
-@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 11.853 sec.
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 9.921 sec.
 @I [HLS-100] Command "cdfg_preprocess -model worker "
-@I [HLS-100] Command 'cdfg_preprocess' returned 0; elapsed 0.01Total elapsed time: 11.862 sec.
+@I [HLS-100] Command 'cdfg_preprocess' returned 0; elapsed 0.01Total elapsed time: 9.936 sec.
 @I [HLS-100] Command "rtl_gen_preprocess worker "
-@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0Total elapsed time: 11.863 sec.
-@I [HLS-0] Model list for synthesis: worker_create_COO worker_COO_SpMV worker
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0Total elapsed time: 9.937 sec.
+@I [HLS-0] Model list for synthesis: worker_COO_SpMV.0 worker
 @I [HLS-10] ----------------------------------------------------------------
 @0 [HLS-0] ----------------------------------------------------------------
-@I [HLS-10] -- Scheduling module 'worker_create_COO' 
-@0 [HLS-0] -- Scheduling module 'worker_create_COO' 
+@I [HLS-10] -- Scheduling module 'worker_COO_SpMV_0' 
+@0 [HLS-0] -- Scheduling module 'worker_COO_SpMV_0' 
 @I [HLS-10] ----------------------------------------------------------------
 @0 [HLS-0] ----------------------------------------------------------------
-@I [HLS-100] Command "set_default_model worker_create_COO "
-@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 11.864 sec.
-@I [HLS-100] Command "schedule -model worker_create_COO "
-@I [SCHED-11] Starting scheduling ...
-@I [SCHED-11] Finished scheduling.
-@I [HLS-100] Command 'schedule' returned 0; elapsed 0.03Total elapsed time: 11.899 sec.
-@I [HLS-111] Elapsed time: 0.06 seconds; current memory usage: 88.1 MB.
-@I [HLS-100] Command "report -o /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker_create_COO.verbose.sched.rpt -verbose -f "
-@I [HLS-100] Command 'report' returned 0; elapsed 0.01Total elapsed time: 11.912 sec.
-@I [HLS-100] Command "db_write -o /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker_create_COO.sched.adb -f "
-@I [HLS-100] Command 'db_write' returned 0; elapsed 0.01Total elapsed time: 11.943 sec.
-@I [HLS-0] Finish scheduling worker_create_COO.
-@I [HLS-10] ----------------------------------------------------------------
-@0 [HLS-0] ----------------------------------------------------------------
-@I [HLS-10] -- Exploring micro-architecture for module 'worker_create_COO' 
-@0 [HLS-0] -- Exploring micro-architecture for module 'worker_create_COO' 
-@I [HLS-10] ----------------------------------------------------------------
-@0 [HLS-0] ----------------------------------------------------------------
-@I [HLS-100] Command "set_default_model worker_create_COO "
-@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 11.948 sec.
-@I [HLS-100] Command "bind -model worker_create_COO "
-@I [BIND-110] clear=
-@I [BIND-110] debug=
-@I [BIND-110] drf=
-@I [BIND-110] effort=
-@I [BIND-110] fast_refine=
-@I [BIND-110] fu_weight=[ 0.0 -- 1.0 ]
-@I [BIND-110] global_opt=
-@I [BIND-110] gsearch=
-@I [BIND-110] help=
-@I [BIND-110] help-hidden=
-@I [BIND-110] min_mem_port=
-@I [BIND-110] min_op=
-@I [BIND-110] minreg=
-@I [BIND-110] ml=
-@I [BIND-110] model=worker_create_COO
-@I [BIND-110] no_false_path=
-@I [BIND-110] no_min_op=
-@I [BIND-110] normalize=
-@I [BIND-110] quiet=
-@I [BIND-110] refine=
-@I [BIND-110] reg_weight=[ 0.0 -- 1.0 ]
-@I [BIND-110] search=
-@I [BIND-110] tight_delay=
-@I [BIND-110] verbose=
-@I [BIND-110] wFF=
-@I [BIND-110] wFU=
-@I [BIND-110] wMUX=
-@I [BIND-110] wNET=
-@I [BIND-100] Starting micro-architecture generation ...
-@I [BIND-101] Performing variable lifetime analysis.
-@I [BIND-101] Exploring resource sharing.
-@I [BIND-101] Binding ...
-@I [BIND-100] Finished micro-architecture generation.
-@I [HLS-100] Command 'bind' returned 0; elapsed 0.01Total elapsed time: 11.961 sec.
-@I [HLS-111] Elapsed time: 0.03 seconds; current memory usage: 88.5 MB.
-@I [HLS-100] Command "report -o /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker_create_COO.verbose.bind.rpt -verbose -f "
-@I [HLS-100] Command 'report' returned 0; elapsed 0.03Total elapsed time: 11.998 sec.
-@I [HLS-100] Command "db_write -o /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker_create_COO.bind.adb -f "
-@I [HLS-100] Command 'db_write' returned 0; elapsed 0.02Total elapsed time: 12.31 sec.
-@I [HLS-0] Finish binding worker_create_COO.
-@I [HLS-10] ----------------------------------------------------------------
-@0 [HLS-0] ----------------------------------------------------------------
-@I [HLS-10] -- Scheduling module 'worker_COO_SpMV' 
-@0 [HLS-0] -- Scheduling module 'worker_COO_SpMV' 
-@I [HLS-10] ----------------------------------------------------------------
-@0 [HLS-0] ----------------------------------------------------------------
-@I [HLS-100] Command "set_default_model worker_COO_SpMV "
-@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 12.33 sec.
-@I [HLS-100] Command "schedule -model worker_COO_SpMV "
+@I [HLS-100] Command "set_default_model worker_COO_SpMV.0 "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 9.937 sec.
+@I [HLS-100] Command "schedule -model worker_COO_SpMV.0 "
 @I [SCHED-11] Starting scheduling ...
 @I [SCHED-61] Pipelining loop 'Loop 1'.
 @I [SCHED-61] Pipelining result: Target II: 1, Final II: 1, Depth: 13.
 @I [SCHED-11] Finished scheduling.
-@I [HLS-100] Command 'schedule' returned 0; elapsed 0.03Total elapsed time: 12.68 sec.
-@I [HLS-111] Elapsed time: 0.08 seconds; current memory usage: 88.9 MB.
-@I [HLS-100] Command "report -o /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker_COO_SpMV.verbose.sched.rpt -verbose -f "
-@I [HLS-100] Command 'report' returned 0; elapsed 0Total elapsed time: 12.77 sec.
-@I [HLS-100] Command "db_write -o /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker_COO_SpMV.sched.adb -f "
-@I [HLS-100] Command 'db_write' returned 0; elapsed 0Total elapsed time: 12.85 sec.
-@I [HLS-0] Finish scheduling worker_COO_SpMV.
+@I [HLS-100] Command 'schedule' returned 0; elapsed 0.03Total elapsed time: 9.968 sec.
+@I [HLS-111] Elapsed time: 0.06 seconds; current memory usage: 77.9 MB.
+@I [HLS-100] Command "report -o /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker_COO_SpMV_0.verbose.sched.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0Total elapsed time: 9.977 sec.
+@I [HLS-100] Command "db_write -o /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker_COO_SpMV_0.sched.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0Total elapsed time: 9.984 sec.
+@I [HLS-0] Finish scheduling worker_COO_SpMV.0.
 @I [HLS-10] ----------------------------------------------------------------
 @0 [HLS-0] ----------------------------------------------------------------
-@I [HLS-10] -- Exploring micro-architecture for module 'worker_COO_SpMV' 
-@0 [HLS-0] -- Exploring micro-architecture for module 'worker_COO_SpMV' 
+@I [HLS-10] -- Exploring micro-architecture for module 'worker_COO_SpMV_0' 
+@0 [HLS-0] -- Exploring micro-architecture for module 'worker_COO_SpMV_0' 
 @I [HLS-10] ----------------------------------------------------------------
 @0 [HLS-0] ----------------------------------------------------------------
-@I [HLS-100] Command "set_default_model worker_COO_SpMV "
-@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 12.86 sec.
-@I [HLS-100] Command "bind -model worker_COO_SpMV "
+@I [HLS-100] Command "set_default_model worker_COO_SpMV.0 "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 9.988 sec.
+@I [HLS-100] Command "bind -model worker_COO_SpMV.0 "
 @I [BIND-110] clear=
 @I [BIND-110] debug=
 @I [BIND-110] drf=
@@ -508,7 +431,7 @@ Source preprocessing: exec clang -fno-limit-debug-info -gcc-toolchain "/opt/xili
 @I [BIND-110] min_op=
 @I [BIND-110] minreg=
 @I [BIND-110] ml=
-@I [BIND-110] model=worker_COO_SpMV
+@I [BIND-110] model=worker_COO_SpMV.0
 @I [BIND-110] no_false_path=
 @I [BIND-110] no_min_op=
 @I [BIND-110] normalize=
@@ -527,13 +450,13 @@ Source preprocessing: exec clang -fno-limit-debug-info -gcc-toolchain "/opt/xili
 @I [BIND-101] Exploring resource sharing.
 @I [BIND-101] Binding ...
 @I [BIND-100] Finished micro-architecture generation.
-@I [HLS-100] Command 'bind' returned 0; elapsed 0Total elapsed time: 12.92 sec.
-@I [HLS-111] Elapsed time: 0.02 seconds; current memory usage: 89.1 MB.
-@I [HLS-100] Command "report -o /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker_COO_SpMV.verbose.bind.rpt -verbose -f "
-@I [HLS-100] Command 'report' returned 0; elapsed 0Total elapsed time: 12.108 sec.
-@I [HLS-100] Command "db_write -o /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker_COO_SpMV.bind.adb -f "
-@I [HLS-100] Command 'db_write' returned 0; elapsed 0.01Total elapsed time: 12.118 sec.
-@I [HLS-0] Finish binding worker_COO_SpMV.
+@I [HLS-100] Command 'bind' returned 0; elapsed 0Total elapsed time: 9.994 sec.
+@I [HLS-111] Elapsed time: 0.01 seconds; current memory usage: 78.1 MB.
+@I [HLS-100] Command "report -o /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker_COO_SpMV_0.verbose.bind.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.01Total elapsed time: 10.9 sec.
+@I [HLS-100] Command "db_write -o /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker_COO_SpMV_0.bind.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0Total elapsed time: 10.18 sec.
+@I [HLS-0] Finish binding worker_COO_SpMV.0.
 @I [HLS-10] ----------------------------------------------------------------
 @0 [HLS-0] ----------------------------------------------------------------
 @I [HLS-10] -- Scheduling module 'worker' 
@@ -541,16 +464,16 @@ Source preprocessing: exec clang -fno-limit-debug-info -gcc-toolchain "/opt/xili
 @I [HLS-10] ----------------------------------------------------------------
 @0 [HLS-0] ----------------------------------------------------------------
 @I [HLS-100] Command "set_default_model worker "
-@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 12.119 sec.
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 10.19 sec.
 @I [HLS-100] Command "schedule -model worker "
 @I [SCHED-11] Starting scheduling ...
 @I [SCHED-11] Finished scheduling.
-@I [HLS-100] Command 'schedule' returned 0; elapsed 0.07Total elapsed time: 12.199 sec.
-@I [HLS-111] Elapsed time: 0.08 seconds; current memory usage: 89.8 MB.
-@I [HLS-100] Command "report -o /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.verbose.sched.rpt -verbose -f "
-@I [HLS-100] Command 'report' returned 0; elapsed 0.02Total elapsed time: 12.222 sec.
-@I [HLS-100] Command "db_write -o /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.sched.adb -f "
-@I [HLS-100] Command 'db_write' returned 0; elapsed 0.02Total elapsed time: 12.279 sec.
+@I [HLS-100] Command 'schedule' returned 0; elapsed 0.1Total elapsed time: 10.113 sec.
+@I [HLS-111] Elapsed time: 0.11 seconds; current memory usage: 78.8 MB.
+@I [HLS-100] Command "report -o /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.verbose.sched.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.01Total elapsed time: 10.127 sec.
+@I [HLS-100] Command "db_write -o /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.sched.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.01Total elapsed time: 10.153 sec.
 @I [HLS-0] Finish scheduling worker.
 @I [HLS-10] ----------------------------------------------------------------
 @0 [HLS-0] ----------------------------------------------------------------
@@ -559,7 +482,7 @@ Source preprocessing: exec clang -fno-limit-debug-info -gcc-toolchain "/opt/xili
 @I [HLS-10] ----------------------------------------------------------------
 @0 [HLS-0] ----------------------------------------------------------------
 @I [HLS-100] Command "set_default_model worker "
-@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 12.280 sec.
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 10.155 sec.
 @I [HLS-100] Command "bind -model worker "
 @I [BIND-110] clear=
 @I [BIND-110] debug=
@@ -594,191 +517,124 @@ Source preprocessing: exec clang -fno-limit-debug-info -gcc-toolchain "/opt/xili
 @I [BIND-101] Exploring resource sharing.
 @I [BIND-101] Binding ...
 @I [BIND-100] Finished micro-architecture generation.
-@I [HLS-100] Command 'bind' returned 0; elapsed 0.08Total elapsed time: 12.358 sec.
-@I [HLS-111] Elapsed time: 0.12 seconds; current memory usage: 90.7 MB.
-@I [HLS-100] Command "report -o /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.verbose.bind.rpt -verbose -f "
-@I [HLS-100] Command 'report' returned 0; elapsed 0.11Total elapsed time: 12.480 sec.
-@I [HLS-100] Command "db_write -o /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.bind.adb -f "
-@I [HLS-100] Command 'db_write' returned 0; elapsed 0.04Total elapsed time: 12.566 sec.
+@I [HLS-100] Command 'bind' returned 0; elapsed 0.03Total elapsed time: 10.183 sec.
+@I [HLS-111] Elapsed time: 0.05 seconds; current memory usage: 79.5 MB.
+@I [HLS-100] Command "report -o /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.verbose.bind.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.02Total elapsed time: 10.217 sec.
+@I [HLS-100] Command "db_write -o /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.bind.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.04Total elapsed time: 10.250 sec.
 @I [HLS-0] Finish binding worker.
 @I [HLS-100] Command "get_model_list worker -filter all-wo-channel "
-@I [HLS-100] Command 'get_model_list' returned 0; elapsed 0Total elapsed time: 12.566 sec.
+@I [HLS-100] Command 'get_model_list' returned 0; elapsed 0Total elapsed time: 10.250 sec.
 @I [HLS-0] Preprocessing for RTLGen ...
-@I [HLS-100] Command "rtl_gen_preprocess worker_create_COO "
-@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0Total elapsed time: 12.568 sec.
-@I [HLS-100] Command "rtl_gen_preprocess worker_COO_SpMV "
-@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0Total elapsed time: 12.568 sec.
+@I [HLS-100] Command "rtl_gen_preprocess worker_COO_SpMV.0 "
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0Total elapsed time: 10.251 sec.
 @I [HLS-100] Command "rtl_gen_preprocess worker "
-@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0Total elapsed time: 12.569 sec.
-@I [HLS-0] Model list for RTL generation: worker_create_COO worker_COO_SpMV worker
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0Total elapsed time: 10.252 sec.
+@I [HLS-0] Model list for RTL generation: worker_COO_SpMV.0 worker
 @I [HLS-10] ----------------------------------------------------------------
 @0 [HLS-0] ----------------------------------------------------------------
-@I [HLS-10] -- Generating RTL for module 'worker_create_COO' 
-@0 [HLS-0] -- Generating RTL for module 'worker_create_COO' 
+@I [HLS-10] -- Generating RTL for module 'worker_COO_SpMV_0' 
+@0 [HLS-0] -- Generating RTL for module 'worker_COO_SpMV_0' 
 @I [HLS-10] ----------------------------------------------------------------
 @0 [HLS-0] ----------------------------------------------------------------
-@I [HLS-100] Command "create_rtl_model worker_create_COO -vendor xilinx -mg_file /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker_create_COO.compgen.tcl "
-@I [RTGEN-100] Generating core module 'worker_fcmp_32ns_32ns_1_1': 1 instance(s).
-@I [RTGEN-100] Finished creating RTL model for 'worker_create_COO'.
-@I [HLS-100] Command 'create_rtl_model' returned 0; elapsed 0.02Total elapsed time: 12.592 sec.
-@I [HLS-111] Elapsed time: 0.17 seconds; current memory usage: 91.3 MB.
-@I [HLS-100] Command "source /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.rtl_wrap.cfg.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 12.602 sec.
-@I [HLS-100] Command "gen_rtl worker_create_COO -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/syn/systemc/worker_create_COO -synmodules worker_create_COO worker_COO_SpMV worker "
-@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0Total elapsed time: 12.610 sec.
-@I [HLS-100] Command "gen_rtl worker_create_COO -style xilinx -f -lang vhdl -o /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/syn/vhdl/worker_create_COO "
-@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0Total elapsed time: 12.614 sec.
-@I [HLS-100] Command "gen_rtl worker_create_COO -style xilinx -f -lang vlog -o /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/syn/verilog/worker_create_COO "
-@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.01Total elapsed time: 12.618 sec.
-@I [HLS-100] Command "gen_tb_info worker_create_COO -o /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker_create_COO -p /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db "
-@I [HLS-100] Command 'gen_tb_info' returned 0; elapsed 0Total elapsed time: 12.633 sec.
-@I [HLS-100] Command "report -model worker_create_COO -o /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/syn/report/worker_create_COO_csynth.rpt -f "
-@I [HLS-100] Command 'report' returned 0; elapsed 0Total elapsed time: 12.644 sec.
-@I [HLS-100] Command "report -model worker_create_COO -o /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/syn/report/worker_create_COO_csynth.xml -f -x "
-@I [HLS-100] Command 'report' returned 0; elapsed 0.01Total elapsed time: 12.652 sec.
-@I [HLS-100] Command "report -model worker_create_COO -o /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker_create_COO.verbose.rpt -verbose -f "
-@I [HLS-100] Command 'report' returned 0; elapsed 0.03Total elapsed time: 12.689 sec.
-@I [HLS-100] Command "db_write -model worker_create_COO -o /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker_create_COO.adb -f "
-@I [HLS-100] Command 'db_write' returned 0; elapsed 0.01Total elapsed time: 12.716 sec.
-@I [HLS-10] ----------------------------------------------------------------
-@0 [HLS-0] ----------------------------------------------------------------
-@I [HLS-10] -- Generating RTL for module 'worker_COO_SpMV' 
-@0 [HLS-0] -- Generating RTL for module 'worker_COO_SpMV' 
-@I [HLS-10] ----------------------------------------------------------------
-@0 [HLS-0] ----------------------------------------------------------------
-@I [HLS-100] Command "create_rtl_model worker_COO_SpMV -vendor xilinx -mg_file /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker_COO_SpMV.compgen.tcl "
+@I [HLS-100] Command "create_rtl_model worker_COO_SpMV.0 -vendor xilinx -mg_file /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker_COO_SpMV_0.compgen.tcl "
 @I [RTGEN-100] Generating core module 'worker_fadd_32ns_32ns_32_5_full_dsp': 1 instance(s).
 @I [RTGEN-100] Generating core module 'worker_fmul_32ns_32ns_32_4_max_dsp': 1 instance(s).
-@I [RTGEN-100] Finished creating RTL model for 'worker_COO_SpMV'.
-@I [HLS-100] Command 'create_rtl_model' returned 0; elapsed 0.01Total elapsed time: 12.764 sec.
-@I [HLS-111] Elapsed time: 0.11 seconds; current memory usage: 93.1 MB.
-@I [HLS-100] Command "source /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.rtl_wrap.cfg.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 12.769 sec.
-@I [HLS-100] Command "gen_rtl worker_COO_SpMV -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/syn/systemc/worker_COO_SpMV -synmodules worker_create_COO worker_COO_SpMV worker "
-@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0Total elapsed time: 12.775 sec.
-@I [HLS-100] Command "gen_rtl worker_COO_SpMV -style xilinx -f -lang vhdl -o /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/syn/vhdl/worker_COO_SpMV "
-@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0Total elapsed time: 12.779 sec.
-@I [HLS-100] Command "gen_rtl worker_COO_SpMV -style xilinx -f -lang vlog -o /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/syn/verilog/worker_COO_SpMV "
-@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0Total elapsed time: 12.783 sec.
-@I [HLS-100] Command "gen_tb_info worker_COO_SpMV -o /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker_COO_SpMV -p /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db "
-@I [HLS-100] Command 'gen_tb_info' returned 0; elapsed 0.01Total elapsed time: 12.797 sec.
-@I [HLS-100] Command "report -model worker_COO_SpMV -o /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/syn/report/worker_COO_SpMV_csynth.rpt -f "
-@I [HLS-100] Command 'report' returned 0; elapsed 0Total elapsed time: 12.805 sec.
-@I [HLS-100] Command "report -model worker_COO_SpMV -o /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/syn/report/worker_COO_SpMV_csynth.xml -f -x "
-@I [HLS-100] Command 'report' returned 0; elapsed 0.01Total elapsed time: 12.816 sec.
-@I [HLS-100] Command "report -model worker_COO_SpMV -o /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker_COO_SpMV.verbose.rpt -verbose -f "
-@I [HLS-100] Command 'report' returned 0; elapsed 0.02Total elapsed time: 12.839 sec.
-@I [HLS-100] Command "db_write -model worker_COO_SpMV -o /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker_COO_SpMV.adb -f "
-@I [HLS-100] Command 'db_write' returned 0; elapsed 0Total elapsed time: 12.855 sec.
+@I [RTGEN-100] Finished creating RTL model for 'worker_COO_SpMV_0'.
+@I [HLS-100] Command 'create_rtl_model' returned 0; elapsed 0.03Total elapsed time: 10.286 sec.
+@I [HLS-111] Elapsed time: 0.09 seconds; current memory usage: 79.9 MB.
+@I [HLS-100] Command "source /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 10.292 sec.
+@I [HLS-100] Command "gen_rtl worker_COO_SpMV.0 -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/syn/systemc/worker_COO_SpMV_0 -synmodules worker_COO_SpMV.0 worker "
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0Total elapsed time: 10.300 sec.
+@I [HLS-100] Command "gen_rtl worker_COO_SpMV.0 -style xilinx -f -lang vhdl -o /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/syn/vhdl/worker_COO_SpMV_0 "
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0Total elapsed time: 10.304 sec.
+@I [HLS-100] Command "gen_rtl worker_COO_SpMV.0 -style xilinx -f -lang vlog -o /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/syn/verilog/worker_COO_SpMV_0 "
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0Total elapsed time: 10.308 sec.
+@I [HLS-100] Command "gen_tb_info worker_COO_SpMV.0 -o /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker_COO_SpMV_0 -p /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db "
+@I [HLS-100] Command 'gen_tb_info' returned 0; elapsed 0.01Total elapsed time: 10.330 sec.
+@I [HLS-100] Command "report -model worker_COO_SpMV.0 -o /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/syn/report/worker_COO_SpMV_0_csynth.rpt -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.01Total elapsed time: 10.343 sec.
+@I [HLS-100] Command "report -model worker_COO_SpMV.0 -o /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/syn/report/worker_COO_SpMV_0_csynth.xml -f -x "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.01Total elapsed time: 10.352 sec.
+@I [HLS-100] Command "report -model worker_COO_SpMV.0 -o /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker_COO_SpMV_0.verbose.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.01Total elapsed time: 10.373 sec.
+@I [HLS-100] Command "db_write -model worker_COO_SpMV.0 -o /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker_COO_SpMV_0.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.01Total elapsed time: 10.386 sec.
 @I [HLS-10] ----------------------------------------------------------------
 @0 [HLS-0] ----------------------------------------------------------------
 @I [HLS-10] -- Generating RTL for module 'worker' 
 @0 [HLS-0] -- Generating RTL for module 'worker' 
 @I [HLS-10] ----------------------------------------------------------------
 @0 [HLS-0] ----------------------------------------------------------------
-@I [HLS-100] Command "create_rtl_model worker -vendor xilinx -mg_file /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.compgen.tcl "
+@I [HLS-100] Command "create_rtl_model worker -vendor xilinx -mg_file /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.compgen.tcl "
 @I [RTGEN-500] Setting interface mode on port 'worker/dest' to 'ap_memory'.
 @I [RTGEN-500] Setting interface mode on function 'worker' to 'ap_ctrl_hs'.
-@I [RTGEN-100] Generating core module 'worker_mux_4to1_sel2_32_1': 1 instance(s).
 @I [RTGEN-100] Finished creating RTL model for 'worker'.
-@I [HLS-100] Command 'create_rtl_model' returned 0; elapsed 0.14Total elapsed time: 13.20 sec.
-@I [HLS-111] Elapsed time: 0.2 seconds; current memory usage: 95.3 MB.
-@I [HLS-100] Command "source /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.rtl_wrap.cfg.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 13.25 sec.
-@I [HLS-100] Command "gen_rtl worker -istop -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/syn/systemc/worker -synmodules worker_create_COO worker_COO_SpMV worker "
-@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0Total elapsed time: 13.36 sec.
-@I [HLS-100] Command "gen_rtl worker -istop -style xilinx -f -lang vhdl -o /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/syn/vhdl/worker "
-@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.03Total elapsed time: 13.71 sec.
-@I [HLS-100] Command "gen_rtl worker -istop -style xilinx -f -lang vlog -o /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/syn/verilog/worker "
-@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.03Total elapsed time: 13.92 sec.
-@I [HLS-100] Command "export_constraint_db -o /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.constraint.tcl -f -tool general "
-@I [HLS-100] Command 'export_constraint_db' returned 0; elapsed 0Total elapsed time: 13.95 sec.
-@I [HLS-100] Command "report -model worker -o /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.design.xml -verbose -f -dv "
-@I [HLS-100] Command 'report' returned 0; elapsed 0.04Total elapsed time: 13.145 sec.
-@I [HLS-100] Command "report -model worker -o /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.sdaccel.xml -verbose -f -sdaccel "
-@I [HLS-100] Command 'report' returned 0; elapsed 0.04Total elapsed time: 13.193 sec.
-@I [HLS-100] Command "gen_tb_info worker -o /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker -p /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db "
-@I [HLS-100] Command 'gen_tb_info' returned 0; elapsed 0.01Total elapsed time: 13.210 sec.
-@I [HLS-100] Command "report -model worker -o /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/syn/report/worker_csynth.rpt -f "
-@I [HLS-100] Command 'report' returned 0; elapsed 0.03Total elapsed time: 13.240 sec.
-@I [HLS-100] Command "report -model worker -o /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/syn/report/worker_csynth.xml -f -x "
-@I [HLS-100] Command 'report' returned 0; elapsed 0.01Total elapsed time: 13.258 sec.
-@I [HLS-100] Command "report -model worker -o /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.verbose.rpt -verbose -f "
-@I [HLS-100] Command 'report' returned 0; elapsed 0.13Total elapsed time: 13.417 sec.
-@I [HLS-100] Command "db_write -model worker -o /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.adb -f "
-@I [HLS-100] Command 'db_write' returned 0; elapsed 0.05Total elapsed time: 13.495 sec.
+@I [HLS-100] Command 'create_rtl_model' returned 0; elapsed 0.08Total elapsed time: 10.485 sec.
+@I [HLS-111] Elapsed time: 0.14 seconds; current memory usage: 81.7 MB.
+@I [HLS-100] Command "source /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 10.492 sec.
+@I [HLS-100] Command "gen_rtl worker -istop -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/syn/systemc/worker -synmodules worker_COO_SpMV.0 worker "
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.01Total elapsed time: 10.506 sec.
+@I [HLS-100] Command "gen_rtl worker -istop -style xilinx -f -lang vhdl -o /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/syn/vhdl/worker "
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.01Total elapsed time: 10.518 sec.
+@I [HLS-100] Command "gen_rtl worker -istop -style xilinx -f -lang vlog -o /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/syn/verilog/worker "
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.01Total elapsed time: 10.528 sec.
+@I [HLS-100] Command "export_constraint_db -o /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.constraint.tcl -f -tool general "
+@I [HLS-100] Command 'export_constraint_db' returned 0; elapsed 0Total elapsed time: 10.531 sec.
+@I [HLS-100] Command "report -model worker -o /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.design.xml -verbose -f -dv "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.01Total elapsed time: 10.547 sec.
+@I [HLS-100] Command "report -model worker -o /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.sdaccel.xml -verbose -f -sdaccel "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.02Total elapsed time: 10.566 sec.
+@I [HLS-100] Command "gen_tb_info worker -o /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker -p /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db "
+@I [HLS-100] Command 'gen_tb_info' returned 0; elapsed 0Total elapsed time: 10.584 sec.
+@I [HLS-100] Command "report -model worker -o /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/syn/report/worker_csynth.rpt -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.01Total elapsed time: 10.601 sec.
+@I [HLS-100] Command "report -model worker -o /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/syn/report/worker_csynth.xml -f -x "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.01Total elapsed time: 10.608 sec.
+@I [HLS-100] Command "report -model worker -o /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.verbose.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.02Total elapsed time: 10.635 sec.
+@I [HLS-100] Command "db_write -model worker -o /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.01Total elapsed time: 10.663 sec.
 @I [HLS-100] Command "sc_get_clocks worker "
-@I [HLS-100] Command 'sc_get_clocks' returned 0; elapsed 0Total elapsed time: 13.610 sec.
+@I [HLS-100] Command 'sc_get_clocks' returned 0; elapsed 0Total elapsed time: 10.722 sec.
 @I [HLS-100] Command "sc_get_portdomain worker "
-@I [HLS-100] Command 'sc_get_portdomain' returned 0; elapsed 0Total elapsed time: 13.611 sec.
-@I [HLS-0] Model list for RTL component generation: worker_create_COO worker_COO_SpMV worker
-@I [HLS-0] Handling components in module [worker_create_COO] ... 
-@I [HLS-100] Command "source /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker_create_COO.compgen.tcl "
-@I [HLS-0] Found component worker_fcmp_32ns_32ns_1_1.
-@I [HLS-0] Append model worker_fcmp_32ns_32ns_1_1
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 13.621 sec.
-@I [HLS-0] Handling components in module [worker_COO_SpMV] ... 
-@I [HLS-100] Command "source /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker_COO_SpMV.compgen.tcl "
+@I [HLS-100] Command 'sc_get_portdomain' returned 0; elapsed 0Total elapsed time: 10.723 sec.
+@I [HLS-0] Model list for RTL component generation: worker_COO_SpMV.0 worker
+@I [HLS-0] Handling components in module [worker_COO_SpMV_0] ... 
+@I [HLS-100] Command "source /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker_COO_SpMV_0.compgen.tcl "
 @I [HLS-0] Found component worker_fadd_32ns_32ns_32_5_full_dsp.
 @I [HLS-0] Append model worker_fadd_32ns_32ns_32_5_full_dsp
 @I [HLS-0] Found component worker_fmul_32ns_32ns_32_4_max_dsp.
 @I [HLS-0] Append model worker_fmul_32ns_32ns_32_4_max_dsp
-@I [HLS-0] Found component worker_COO_SpMV_vector.
-@I [HLS-0] Append model worker_COO_SpMV_vector
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 13.625 sec.
+@I [HLS-0] Found component worker_COO_SpMV_0_row10_1_0.
+@I [HLS-0] Append model worker_COO_SpMV_0_row10_1_0
+@I [HLS-0] Found component worker_COO_SpMV_0_val10_1_0.
+@I [HLS-0] Append model worker_COO_SpMV_0_val10_1_0
+@I [HLS-0] Found component worker_COO_SpMV_0_col10_1_0.
+@I [HLS-0] Append model worker_COO_SpMV_0_col10_1_0
+@I [HLS-0] Found component worker_COO_SpMV_0_vector.
+@I [HLS-0] Append model worker_COO_SpMV_0_vector
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.02Total elapsed time: 10.745 sec.
 @I [HLS-0] Handling components in module [worker] ... 
-@I [HLS-100] Command "source /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.compgen.tcl "
-@I [HLS-0] Found component worker_mux_4to1_sel2_32_1.
-@I [HLS-0] Append model worker_mux_4to1_sel2_32_1
-@I [HLS-0] Found component worker_matrix_1_0.
-@I [HLS-0] Append model worker_matrix_1_0
-@I [HLS-0] Found component worker_row_nnz_0.
-@I [HLS-0] Append model worker_row_nnz_0
-@I [HLS-0] Found component worker_matrix_1_1.
-@I [HLS-0] Append model worker_matrix_1_1
-@I [HLS-0] Found component worker_row_nnz_1.
-@I [HLS-0] Append model worker_row_nnz_1
-@I [HLS-0] Found component worker_matrix_1_2.
-@I [HLS-0] Append model worker_matrix_1_2
-@I [HLS-0] Found component worker_row_nnz_2.
-@I [HLS-0] Append model worker_row_nnz_2
-@I [HLS-0] Found component worker_matrix_1_3.
-@I [HLS-0] Append model worker_matrix_1_3
-@I [HLS-0] Found component worker_row_nnz_3.
-@I [HLS-0] Append model worker_row_nnz_3
+@I [HLS-100] Command "source /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.compgen.tcl "
 @I [HLS-0] Found component worker_dest_1_0.
 @I [HLS-0] Append model worker_dest_1_0
-@I [HLS-0] Found component worker_row_1_0.
-@I [HLS-0] Append model worker_row_1_0
-@I [HLS-0] Found component worker_col_1_0.
-@I [HLS-0] Append model worker_col_1_0
-@I [HLS-0] Found component worker_val_1_0.
-@I [HLS-0] Append model worker_val_1_0
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 13.636 sec.
-@I [HLS-0] Append model worker_create_COO
-@I [HLS-0] Append model worker_COO_SpMV
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 10.750 sec.
+@I [HLS-0] Append model worker_COO_SpMV_0
 @I [HLS-0] Append model worker
 @I [HLS-0] Generating RTL model list ...
-@I [HLS-0] All models in this session: worker_fcmp_32ns_32ns_1_1 worker_fadd_32ns_32ns_32_5_full_dsp worker_fmul_32ns_32ns_32_4_max_dsp worker_COO_SpMV_vector worker_mux_4to1_sel2_32_1 worker_matrix_1_0 worker_row_nnz_0 worker_matrix_1_1 worker_row_nnz_1 worker_matrix_1_2 worker_row_nnz_2 worker_matrix_1_3 worker_row_nnz_3 worker_dest_1_0 worker_row_1_0 worker_col_1_0 worker_val_1_0 worker_create_COO worker_COO_SpMV worker
-@I [HLS-0] To file: write model worker_fcmp_32ns_32ns_1_1
+@I [HLS-0] All models in this session: worker_fadd_32ns_32ns_32_5_full_dsp worker_fmul_32ns_32ns_32_4_max_dsp worker_COO_SpMV_0_row10_1_0 worker_COO_SpMV_0_val10_1_0 worker_COO_SpMV_0_col10_1_0 worker_COO_SpMV_0_vector worker_dest_1_0 worker_COO_SpMV_0 worker
 @I [HLS-0] To file: write model worker_fadd_32ns_32ns_32_5_full_dsp
 @I [HLS-0] To file: write model worker_fmul_32ns_32ns_32_4_max_dsp
-@I [HLS-0] To file: write model worker_COO_SpMV_vector
-@I [HLS-0] To file: write model worker_mux_4to1_sel2_32_1
-@I [HLS-0] To file: write model worker_matrix_1_0
-@I [HLS-0] To file: write model worker_row_nnz_0
-@I [HLS-0] To file: write model worker_matrix_1_1
-@I [HLS-0] To file: write model worker_row_nnz_1
-@I [HLS-0] To file: write model worker_matrix_1_2
-@I [HLS-0] To file: write model worker_row_nnz_2
-@I [HLS-0] To file: write model worker_matrix_1_3
-@I [HLS-0] To file: write model worker_row_nnz_3
+@I [HLS-0] To file: write model worker_COO_SpMV_0_row10_1_0
+@I [HLS-0] To file: write model worker_COO_SpMV_0_val10_1_0
+@I [HLS-0] To file: write model worker_COO_SpMV_0_col10_1_0
+@I [HLS-0] To file: write model worker_COO_SpMV_0_vector
 @I [HLS-0] To file: write model worker_dest_1_0
-@I [HLS-0] To file: write model worker_row_1_0
-@I [HLS-0] To file: write model worker_col_1_0
-@I [HLS-0] To file: write model worker_val_1_0
-@I [HLS-0] To file: write model worker_create_COO
-@I [HLS-0] To file: write model worker_COO_SpMV
+@I [HLS-0] To file: write model worker_COO_SpMV_0
 @I [HLS-0] To file: write model worker
 @I [HLS-0] Finished generating RTL model list.
 
@@ -786,258 +642,240 @@ Source preprocessing: exec clang -fno-limit-debug-info -gcc-toolchain "/opt/xili
 @I [HLS-0] RTL Generation done.
 @I [HLS-0] CAS Generation done.
 @I [HLS-0] CBC Generation done.
-@I [HLS-100] Command "export_ssdm /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/a.export.ll "
-@I [HLS-100] Command 'export_ssdm' returned 0; elapsed 0.02Total elapsed time: 13.663 sec.
-@I [HLS-100] Command "source /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/global.setting.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 13.673 sec.
+@I [HLS-100] Command "export_ssdm /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/a.export.ll "
+@I [HLS-100] Command 'export_ssdm' returned 0; elapsed 0.01Total elapsed time: 10.765 sec.
+@I [HLS-100] Command "source /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 10.775 sec.
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/generic/autopilot/common.gen "
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/generic/autopilot/APCoreGen.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 13.680 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 13.680 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 10.781 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 10.782 sec.
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/generic/autopilot/op.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 13.682 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 10.785 sec.
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/generic/autopilot/op_simcore.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 13.685 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 10.789 sec.
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/generic/autopilot/interface.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 13.688 sec.
-@I [HLS-100] Command "source /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/global.setting.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 13.691 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 10.792 sec.
+@I [HLS-100] Command "source /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 10.799 sec.
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/xilinx/zynq/zynq.gen "
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/xilinx/common/virtex.gen "
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/xilinx/common/xilinx.gen "
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/xilinx/interface/plb46.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 13.694 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 10.805 sec.
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/xilinx/interface/fsl.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 13.695 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 10.807 sec.
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/xilinx/interface/axi4.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 13.697 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 10.811 sec.
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/xilinx/interface/nativeAXI4.gen "
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/xilinx/interface/saxilite.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 13.701 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 10.817 sec.
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/xilinx/interface/maxi.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 13.707 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 13.707 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.02Total elapsed time: 10.824 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.02Total elapsed time: 10.824 sec.
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/xilinx/scripts/xilinxcoregen.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 13.716 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 10.832 sec.
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/xilinx/interface/XilEDKCoreGen.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 13.723 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 10.839 sec.
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/xilinx/ip/dds_compiler.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 13.728 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 10.844 sec.
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/xilinx/ip/util.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 13.729 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 10.845 sec.
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/xilinx/ip/xfft.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.08Total elapsed time: 13.804 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.08Total elapsed time: 10.919 sec.
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/xilinx/ip/xfir.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 13.805 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.12Total elapsed time: 13.805 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 10.920 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.12Total elapsed time: 10.920 sec.
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/xilinx/common/dsp48.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 13.807 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.12Total elapsed time: 13.808 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.12Total elapsed time: 13.808 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 10.922 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.12Total elapsed time: 10.922 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.12Total elapsed time: 10.922 sec.
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/xilinx/zynq/zynq_fpv6.gen "
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/xilinx/common/xilinx_fpv6.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 13.810 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 13.810 sec.
-@I [HLS-100] Command "source /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/global.setting.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 13.814 sec.
-@I [HLS-100] Command "source /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/global.setting.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 13.818 sec.
-@I [HLS-100] Command "source /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/global.setting.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 13.824 sec.
-@I [HLS-100] Command "source /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/global.setting.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 13.828 sec.
-@I [HLS-100] Command "source /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker_create_COO.compgen.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.03Total elapsed time: 13.922 sec.
-@I [HLS-100] Command "source /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker_COO_SpMV.compgen.tcl "
-@I [RTMG-279] Implementing memory 'worker_COO_SpMV_vector_rom' using auto ROMs.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.07Total elapsed time: 14.102 sec.
-@I [HLS-100] Command "source /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.compgen.tcl "
-@W [RTMG-274] Memory 'worker_matrix_1_0' is read-only, switch it to a ROM.
-@I [RTMG-279] Implementing memory 'worker_matrix_1_0_rom' using block ROMs.
-@W [RTMG-274] Memory 'worker_row_nnz_0' is read-only, switch it to a ROM.
-@I [RTMG-279] Implementing memory 'worker_row_nnz_0_rom' using distributed ROMs.
-@W [RTMG-274] Memory 'worker_matrix_1_1' is read-only, switch it to a ROM.
-@I [RTMG-279] Implementing memory 'worker_matrix_1_1_rom' using block ROMs.
-@W [RTMG-274] Memory 'worker_row_nnz_1' is read-only, switch it to a ROM.
-@I [RTMG-279] Implementing memory 'worker_row_nnz_1_rom' using distributed ROMs.
-@W [RTMG-274] Memory 'worker_matrix_1_2' is read-only, switch it to a ROM.
-@I [RTMG-279] Implementing memory 'worker_matrix_1_2_rom' using block ROMs.
-@W [RTMG-274] Memory 'worker_row_nnz_2' is read-only, switch it to a ROM.
-@I [RTMG-279] Implementing memory 'worker_row_nnz_2_rom' using distributed ROMs.
-@W [RTMG-274] Memory 'worker_matrix_1_3' is read-only, switch it to a ROM.
-@I [RTMG-279] Implementing memory 'worker_matrix_1_3_rom' using block ROMs.
-@W [RTMG-274] Memory 'worker_row_nnz_3' is read-only, switch it to a ROM.
-@I [RTMG-279] Implementing memory 'worker_row_nnz_3_rom' using distributed ROMs.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 10.925 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 10.925 sec.
+@I [HLS-100] Command "source /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 10.930 sec.
+@I [HLS-100] Command "source /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 10.934 sec.
+@I [HLS-100] Command "source /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 10.940 sec.
+@I [HLS-100] Command "source /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 10.945 sec.
+@I [HLS-100] Command "source /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker_COO_SpMV_0.compgen.tcl "
+@I [RTMG-279] Implementing memory 'worker_COO_SpMV_0_row10_1_0_rom' using auto ROMs.
+@I [RTMG-279] Implementing memory 'worker_COO_SpMV_0_val10_1_0_rom' using auto ROMs.
+@I [RTMG-279] Implementing memory 'worker_COO_SpMV_0_col10_1_0_rom' using auto ROMs.
+@I [RTMG-279] Implementing memory 'worker_COO_SpMV_0_vector_rom' using auto ROMs.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.4Total elapsed time: 11.527 sec.
+@I [HLS-100] Command "source /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.compgen.tcl "
 @I [RTMG-278] Implementing memory 'worker_dest_1_0_ram' using block RAMs.
-@I [RTMG-278] Implementing memory 'worker_row_1_0_ram' using block RAMs.
-@I [RTMG-278] Implementing memory 'worker_col_1_0_ram' using block RAMs.
-@I [RTMG-278] Implementing memory 'worker_val_1_0_ram' using block RAMs.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.43Total elapsed time: 14.737 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.02Total elapsed time: 11.567 sec.
 @I [HLS-10] Finished generating all RTL models.
 @0 [HLS-0] Finished generating all RTL models.
 @I [SYSC-301] Generating SystemC RTL for worker.
 @I [VHDL-304] Generating VHDL RTL for worker.
 @I [VLOG-307] Generating Verilog RTL for worker.
-@I [HLS-100] Command 'autosyn' returned 0; elapsed 2.18Total elapsed time: 15.688 sec.
-@I [HLS-100] Command 'csynth_design' returned 0; elapsed 7.2Total elapsed time: 15.688 sec.
+@I [HLS-100] Command 'autosyn' returned 0; elapsed 1.29Total elapsed time: 12.92 sec.
+@I [HLS-100] Command 'csynth_design' returned 0; elapsed 3.68Total elapsed time: 12.92 sec.
 @I [HLS-100] Command "cosim_design "
-@I [HLS-100] Command "source /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/global.setting.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 15.696 sec.
-@I [HLS-100] Command "source /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/global.setting.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 15.719 sec.
-@I [HLS-100] Command "source /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/global.setting.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 15.789 sec.
+@I [HLS-100] Command "source /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 12.101 sec.
+@I [HLS-100] Command "source /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 12.125 sec.
+@I [HLS-100] Command "source /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 12.196 sec.
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/generic/autopilot/common.gen "
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/generic/autopilot/APCoreGen.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 15.799 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 15.800 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 12.202 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 12.203 sec.
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/generic/autopilot/op.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 15.802 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 12.204 sec.
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/generic/autopilot/op_simcore.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 15.804 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 12.207 sec.
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/generic/autopilot/interface.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 15.804 sec.
-@I [HLS-100] Command "source /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/global.setting.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 15.810 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 12.207 sec.
+@I [HLS-100] Command "source /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 12.212 sec.
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/xilinx/zynq/zynq.gen "
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/xilinx/common/virtex.gen "
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/xilinx/common/xilinx.gen "
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/xilinx/interface/plb46.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 15.814 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 12.215 sec.
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/xilinx/interface/fsl.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 15.816 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 12.217 sec.
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/xilinx/interface/axi4.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 15.821 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 12.220 sec.
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/xilinx/interface/nativeAXI4.gen "
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/xilinx/interface/saxilite.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 15.826 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 12.225 sec.
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/xilinx/interface/maxi.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.02Total elapsed time: 15.840 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.03Total elapsed time: 15.841 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.02Total elapsed time: 12.234 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.03Total elapsed time: 12.235 sec.
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/xilinx/scripts/xilinxcoregen.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 15.851 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 12.247 sec.
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/xilinx/interface/XilEDKCoreGen.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 15.859 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 12.258 sec.
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/xilinx/ip/dds_compiler.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 15.864 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 12.264 sec.
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/xilinx/ip/util.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 15.864 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 12.265 sec.
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/xilinx/ip/xfft.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.07Total elapsed time: 15.938 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.12Total elapsed time: 12.386 sec.
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/xilinx/ip/xfir.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 15.939 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.13Total elapsed time: 15.939 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 12.387 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.17Total elapsed time: 12.387 sec.
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/xilinx/common/dsp48.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 15.941 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.13Total elapsed time: 15.941 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.13Total elapsed time: 15.942 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 12.389 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.18Total elapsed time: 12.389 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.18Total elapsed time: 12.389 sec.
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/xilinx/zynq/zynq_fpv6.gen "
 @I [HLS-100] Command "source /opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/common/technology/xilinx/common/xilinx_fpv6.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 15.944 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 15.944 sec.
-@I [HLS-100] Command "source /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/global.setting.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 15.949 sec.
-@I [HLS-100] Command "source /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.rtl_wrap.cfg.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 15.957 sec.
-@I [HLS-100] Command "source /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.tbgen.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 15.962 sec.
-@I [HLS-100] Command "is_encrypted /home/ak2425/ece5775/ece5775_project/project/COO_SpMV_test.cpp "
-@I [HLS-100] Command 'is_encrypted' returned 0; elapsed 0Total elapsed time: 15.993 sec.
-@I [HLS-100] Command "is_encrypted /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.cpp "
-@I [HLS-100] Command 'is_encrypted' returned 0; elapsed 0Total elapsed time: 15.993 sec.
-@I [HLS-100] Command "source /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.tbgen.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 15.998 sec.
-@I [HLS-100] Command "source /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.tbgen.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 16.3 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 12.392 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 12.392 sec.
+@I [HLS-100] Command "source /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 12.397 sec.
+@I [HLS-100] Command "source /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 12.404 sec.
+@I [HLS-100] Command "source /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 12.408 sec.
+@I [HLS-100] Command "is_encrypted /home/sec322/ece5775/final_project/project/COO_SpMV_test.cpp "
+@I [HLS-100] Command 'is_encrypted' returned 0; elapsed 0Total elapsed time: 12.423 sec.
+@I [HLS-100] Command "is_encrypted /home/sec322/ece5775/final_project/project/COO_SpMV.cpp "
+@I [HLS-100] Command 'is_encrypted' returned 0; elapsed 0Total elapsed time: 12.423 sec.
+@I [HLS-100] Command "source /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 12.429 sec.
+@I [HLS-100] Command "source /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 12.436 sec.
 @I [COSIM-47] Using XSIM for RTL simulation.
 @I [COSIM-14] Instrumenting C test bench ...
-@I [HLS-100] Command "source /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.rtl_wrap.cfg.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 16.20 sec.
-@I [HLS-100] Command "source /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.rtl_wrap.cfg.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 16.26 sec.
-@I [HLS-100] Command "source /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.rtl_wrap.cfg.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 16.31 sec.
-@I [HLS-100] Command "source /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.tbgen.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 16.36 sec.
-@I [HLS-100] Command "source /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.tbgen.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 16.41 sec.
-@I [HLS-0] Marker-Pragma convertor: /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/./sim/autowrap/testbench/COO_SpMV_test.cpp_pre.cpp /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/./sim/autowrap/testbench/COO_SpMV_test.cpp_pre.cpp.line.cpp ./sim/autowrap/testbench/line.tmp 1
+@I [HLS-100] Command "source /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 12.455 sec.
+@I [HLS-100] Command "source /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 12.461 sec.
+@I [HLS-100] Command "source /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 12.466 sec.
+@I [HLS-100] Command "source /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 12.473 sec.
+@I [HLS-100] Command "source /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 12.478 sec.
+@I [HLS-0] Marker-Pragma convertor: /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/./sim/autowrap/testbench/COO_SpMV_test.cpp_pre.cpp /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/./sim/autowrap/testbench/COO_SpMV_test.cpp_pre.cpp.line.cpp ./sim/autowrap/testbench/line.tmp 1
 @I [HLS-0] Marker-Pragma convertor: ./sim/autowrap/testbench/COO_SpMV_test.cpp_pre.cpp.tb.cpp.line ./sim/autowrap/testbench/COO_SpMV_test.cpp_pre.cpp.tb.cpp ./sim/autowrap/testbench/line.tmp 0
-@I [HLS-0] Marker-Pragma convertor: /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/./sim/autowrap/testbench/COO_SpMV.cpp_pre.cpp /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/./sim/autowrap/testbench/COO_SpMV.cpp_pre.cpp.line.cpp ./sim/autowrap/testbench/line.tmp 1
+@I [HLS-0] Marker-Pragma convertor: /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/./sim/autowrap/testbench/COO_SpMV.cpp_pre.cpp /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/./sim/autowrap/testbench/COO_SpMV.cpp_pre.cpp.line.cpp ./sim/autowrap/testbench/line.tmp 1
 @I [HLS-0] Marker-Pragma convertor: ./sim/autowrap/testbench/COO_SpMV.cpp_pre.cpp.tb.cpp.line ./sim/autowrap/testbench/COO_SpMV.cpp_pre.cpp.tb.cpp ./sim/autowrap/testbench/line.tmp 0
 @I [HLS-100] Command "source .run_sim.tcl "
 @I [COSIM-302] Starting C TB testing ... 
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.02Total elapsed time: 23.847 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.02Total elapsed time: 22.447 sec.
 @I [COSIM-333] Generating C post check test bench ...
 @I [COSIM-12] Generating RTL test bench ...
-@I [HLS-100] Command "source /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.tbgen.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 23.913 sec.
-@I [HLS-100] Command "source /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.tbgen.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 23.920 sec.
-@I [HLS-100] Command "source /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.tbgen.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 23.924 sec.
-@I [HLS-100] Command "source /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.tbgen.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 23.929 sec.
+@I [HLS-100] Command "source /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 22.509 sec.
+@I [HLS-100] Command "source /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 22.514 sec.
+@I [HLS-100] Command "source /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 22.517 sec.
+@I [HLS-100] Command "source /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 22.520 sec.
 @I [HLS-100] Command "source ../tv/cdatafile/ref.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 23.934 sec.
-@I [HLS-100] Command "source /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.tbgen.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 23.939 sec.
-@I [HLS-100] Command "source /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.tbgen.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 23.943 sec.
-@I [HLS-100] Command "source /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.tbgen.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 23.949 sec.
-@I [HLS-100] Command "source /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.tbgen.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 23.955 sec.
-@I [HLS-100] Command "source /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.tbgen.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 23.964 sec.
-@I [HLS-100] Command "source /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.tbgen.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 23.971 sec.
-@I [HLS-100] Command "source /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.tbgen.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 23.984 sec.
-@I [HLS-100] Command "source /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.tbgen.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 23.987 sec.
-@I [HLS-100] Command "source /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.tbgen.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 23.992 sec.
-@I [HLS-100] Command "source /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.tbgen.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 24.8 sec.
-@I [HLS-100] Command "source /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.tbgen.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 24.18 sec.
-@I [HLS-100] Command "source /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.tbgen.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 24.22 sec.
-@I [HLS-100] Command "source /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.tbgen.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 24.26 sec.
-@I [HLS-100] Command "source /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.tbgen.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 24.30 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 22.525 sec.
+@I [HLS-100] Command "source /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 22.530 sec.
+@I [HLS-100] Command "source /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 22.534 sec.
+@I [HLS-100] Command "source /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 22.539 sec.
+@I [HLS-100] Command "source /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 22.544 sec.
+@I [HLS-100] Command "source /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 22.555 sec.
+@I [HLS-100] Command "source /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 22.562 sec.
+@I [HLS-100] Command "source /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 22.575 sec.
+@I [HLS-100] Command "source /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 22.579 sec.
+@I [HLS-100] Command "source /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 22.582 sec.
+@I [HLS-100] Command "source /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 22.599 sec.
+@I [HLS-100] Command "source /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 22.611 sec.
+@I [HLS-100] Command "source /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 22.617 sec.
+@I [HLS-100] Command "source /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 22.622 sec.
+@I [HLS-100] Command "source /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 22.627 sec.
 @I [HLS-100] Command "source ../tv/cdatafile/ref.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 24.36 sec.
-@I [HLS-100] Command "source /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.tbgen.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 24.41 sec.
-@I [HLS-100] Command "source /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.tbgen.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 24.45 sec.
-@I [HLS-100] Command "source /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.tbgen.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 24.50 sec.
-@I [HLS-100] Command "source /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.tbgen.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 24.55 sec.
-@I [HLS-100] Command "source /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.tbgen.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 24.63 sec.
-@I [HLS-100] Command "source /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.tbgen.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 24.70 sec.
-@I [HLS-100] Command "source /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.tbgen.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 24.81 sec.
-@I [HLS-100] Command "source /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.tbgen.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 24.85 sec.
-@I [HLS-100] Command "source /home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.tbgen.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 24.89 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 22.634 sec.
+@I [HLS-100] Command "source /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 22.639 sec.
+@I [HLS-100] Command "source /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 22.645 sec.
+@I [HLS-100] Command "source /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 22.650 sec.
+@I [HLS-100] Command "source /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 22.654 sec.
+@I [HLS-100] Command "source /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 22.663 sec.
+@I [HLS-100] Command "source /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 22.672 sec.
+@I [HLS-100] Command "source /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 22.684 sec.
+@I [HLS-100] Command "source /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 22.688 sec.
+@I [HLS-100] Command "source /home/sec322/ece5775/final_project/project/COO_SpMV.prj/solution1/.autopilot/db/worker.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 22.692 sec.
 @I [HLS-100] Command "source .run_sim.tcl "
 @I [HLS-100] Command "source check_sim.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 45.638 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 41.642 sec.
 @I [HLS-100] Command "source .sim.status.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 45.655 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 41.664 sec.
 @I [COSIM-323] Starting verilog simulation. 
 @I [COSIM-15] Starting XSIM ...
 @I [COSIM-316] Starting C post checking ...
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.06Total elapsed time: 59.987 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.07Total elapsed time: 54.498 sec.
 @I [COSIM-1000] *** C/RTL co-simulation finished: PASS ***
-@I [HLS-100] Command 'cosim_design' returned 0; elapsed 2.2Total elapsed time: 60.103 sec.
+@I [HLS-100] Command 'cosim_design' returned 0; elapsed 2.28Total elapsed time: 54.615 sec.
 @I [HLS-100] Command "cleanup_all "
-@I [HLS-100] Command 'cleanup_all' returned 0; elapsed 0.01Total elapsed time: 60.126 sec.
+@I [HLS-100] Command 'cleanup_all' returned 0; elapsed 0.02Total elapsed time: 54.632 sec.

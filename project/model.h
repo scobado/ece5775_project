@@ -5,9 +5,9 @@
 
 const int size = 100;
 const int matrix_size = size * size;
-const int PE = 25;
+const int PE = 1;
 const int block_size = size / PE;
-const int coo_size = size * block_size;
+const int coo_size = size * block_size / 3;
 const float	alpha = 0.85;
 const float alpha_complement = 1-alpha;
 const float vector_init = 0.01;
@@ -18,6 +18,30 @@ const float vector_const = alpha * vector_init;
 // const float matrix[10][PE][block_size][size] = {
 //     #include"data/sparse.dat"
 // };
+
+const int row10_25[PE][coo_size] = {
+    #include"data/preproc_row10_pe25.dat"
+};
+
+const int col10_25[PE][coo_size] = {
+    #include"data/preproc_col10_pe25.dat"
+};
+
+const float val10_25[PE][coo_size] = {
+    #include"data/preproc_val10_pe25.dat"
+};
+
+const int row10_1[PE][coo_size] = {
+    #include"data/preproc_row10_pe1.dat"
+};
+
+const int col10_1[PE][coo_size] = {
+    #include"data/preproc_col10_pe1.dat"
+};
+
+const float val10_1[PE][coo_size] = {
+    #include"data/preproc_val10_pe1.dat"
+};
 
 const float matrix_1[PE][block_size][size] = {
     #include"data/sparse_1.dat"

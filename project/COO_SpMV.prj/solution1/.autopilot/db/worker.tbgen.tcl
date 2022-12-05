@@ -42,137 +42,40 @@ set NewPortList {[
  	{ "name": "dest_d0", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "dest", "role": "d0" }}  ]}
 
 set RtlHierarchyInfo {[
-	{"Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "29", "33", "37", "39", "41", "43"], "CDFG" : "worker", "VariableLatency" : "1", "AlignedPipeline" : "0", "UnalignedPipeline" : "0", "ProcessNetwork" : "0", "Combinational" : "0", "ControlExist" : "1",
+	{"Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1", "2"], "CDFG" : "worker", "VariableLatency" : "1", "AlignedPipeline" : "0", "UnalignedPipeline" : "0", "ProcessNetwork" : "0", "Combinational" : "0", "ControlExist" : "1",
 		"Port" : [
 		{"Name" : "dest", "Type" : "Memory", "Direction" : "O", "BlockSignal" : [], "SubConnect" : []}, 
-		{"Name" : "matrix_1_0", "Type" : "Memory", "Direction" : "I", "BlockSignal" : [], "SubConnect" : [
-			{"SubInst" : "grp_worker_create_COO_fu_1161", "Port" : "input_r"}]}, 
-		{"Name" : "row_nnz_0", "Type" : "Memory", "Direction" : "I", "BlockSignal" : [], "SubConnect" : [
-			{"SubInst" : "grp_worker_create_COO_fu_1161", "Port" : "nnz"}]}, 
+		{"Name" : "row10_1_0", "Type" : "Memory", "Direction" : "I", "BlockSignal" : [], "SubConnect" : [
+			{"SubInst" : "grp_worker_COO_SpMV_0_fu_1076", "Port" : "row10_1_0"}]}, 
+		{"Name" : "val10_1_0", "Type" : "Memory", "Direction" : "I", "BlockSignal" : [], "SubConnect" : [
+			{"SubInst" : "grp_worker_COO_SpMV_0_fu_1076", "Port" : "val10_1_0"}]}, 
+		{"Name" : "col10_1_0", "Type" : "Memory", "Direction" : "I", "BlockSignal" : [], "SubConnect" : [
+			{"SubInst" : "grp_worker_COO_SpMV_0_fu_1076", "Port" : "col10_1_0"}]}, 
 		{"Name" : "vector", "Type" : "Memory", "Direction" : "I", "BlockSignal" : [], "SubConnect" : [
-			{"SubInst" : "grp_worker_COO_SpMV_fu_1139", "Port" : "vector"}, 
-			{"SubInst" : "grp_worker_COO_SpMV_fu_1150", "Port" : "vector"}, 
-			{"SubInst" : "grp_worker_COO_SpMV_fu_1128", "Port" : "vector"}]}, 
-		{"Name" : "matrix_1_1", "Type" : "Memory", "Direction" : "I", "BlockSignal" : [], "SubConnect" : [
-			{"SubInst" : "grp_worker_create_COO_fu_1161", "Port" : "input_r"}]}, 
-		{"Name" : "row_nnz_1", "Type" : "Memory", "Direction" : "I", "BlockSignal" : [], "SubConnect" : [
-			{"SubInst" : "grp_worker_create_COO_fu_1161", "Port" : "nnz"}]}, 
-		{"Name" : "matrix_1_2", "Type" : "Memory", "Direction" : "I", "BlockSignal" : [], "SubConnect" : [
-			{"SubInst" : "grp_worker_create_COO_fu_1174", "Port" : "input_r"}]}, 
-		{"Name" : "row_nnz_2", "Type" : "Memory", "Direction" : "I", "BlockSignal" : [], "SubConnect" : [
-			{"SubInst" : "grp_worker_create_COO_fu_1174", "Port" : "nnz"}]}, 
-		{"Name" : "matrix_1_3", "Type" : "Memory", "Direction" : "I", "BlockSignal" : [], "SubConnect" : [
-			{"SubInst" : "grp_worker_create_COO_fu_1185", "Port" : "input_r"}]}, 
-		{"Name" : "row_nnz_3", "Type" : "Memory", "Direction" : "I", "BlockSignal" : [], "SubConnect" : [
-			{"SubInst" : "grp_worker_create_COO_fu_1185", "Port" : "nnz"}]}],
+			{"SubInst" : "grp_worker_COO_SpMV_0_fu_1076", "Port" : "vector"}]}],
 		"WaitState" : [
-		{"State" : "ap_ST_st19_fsm_18", "FSM" : "ap_CS_fsm", "SubInst" : "grp_worker_COO_SpMV_fu_1128"},
-		{"State" : "ap_ST_st21_fsm_20", "FSM" : "ap_CS_fsm", "SubInst" : "grp_worker_COO_SpMV_fu_1128"},
-		{"State" : "ap_ST_st21_fsm_20", "FSM" : "ap_CS_fsm", "SubInst" : "grp_worker_COO_SpMV_fu_1139"},
-		{"State" : "ap_ST_st21_fsm_20", "FSM" : "ap_CS_fsm", "SubInst" : "grp_worker_COO_SpMV_fu_1150"},
-		{"State" : "ap_ST_st17_fsm_16", "FSM" : "ap_CS_fsm", "SubInst" : "grp_worker_create_COO_fu_1161"},
-		{"State" : "ap_ST_st19_fsm_18", "FSM" : "ap_CS_fsm", "SubInst" : "grp_worker_create_COO_fu_1161"},
-		{"State" : "ap_ST_st19_fsm_18", "FSM" : "ap_CS_fsm", "SubInst" : "grp_worker_create_COO_fu_1174"},
-		{"State" : "ap_ST_st19_fsm_18", "FSM" : "ap_CS_fsm", "SubInst" : "grp_worker_create_COO_fu_1185"}],
+		{"State" : "ap_ST_st52_fsm_51", "FSM" : "ap_CS_fsm", "SubInst" : "grp_worker_COO_SpMV_0_fu_1076"}],
 		"SubBlockPort" : []},
-	{"Level" : "1", "Path" : "`AUTOTB_DUT_INST.matrix_1_0_U", "Parent" : "0", "Child" : []},
-	{"Level" : "1", "Path" : "`AUTOTB_DUT_INST.row_nnz_0_U", "Parent" : "0", "Child" : []},
-	{"Level" : "1", "Path" : "`AUTOTB_DUT_INST.matrix_1_1_U", "Parent" : "0", "Child" : []},
-	{"Level" : "1", "Path" : "`AUTOTB_DUT_INST.row_nnz_1_U", "Parent" : "0", "Child" : []},
-	{"Level" : "1", "Path" : "`AUTOTB_DUT_INST.matrix_1_2_U", "Parent" : "0", "Child" : []},
-	{"Level" : "1", "Path" : "`AUTOTB_DUT_INST.row_nnz_2_U", "Parent" : "0", "Child" : []},
-	{"Level" : "1", "Path" : "`AUTOTB_DUT_INST.matrix_1_3_U", "Parent" : "0", "Child" : []},
-	{"Level" : "1", "Path" : "`AUTOTB_DUT_INST.row_nnz_3_U", "Parent" : "0", "Child" : []},
 	{"Level" : "1", "Path" : "`AUTOTB_DUT_INST.dest_1_0_U", "Parent" : "0", "Child" : []},
-	{"Level" : "1", "Path" : "`AUTOTB_DUT_INST.dest_1_1_U", "Parent" : "0", "Child" : []},
-	{"Level" : "1", "Path" : "`AUTOTB_DUT_INST.dest_1_2_U", "Parent" : "0", "Child" : []},
-	{"Level" : "1", "Path" : "`AUTOTB_DUT_INST.dest_1_3_U", "Parent" : "0", "Child" : []},
-	{"Level" : "1", "Path" : "`AUTOTB_DUT_INST.row_1_0_U", "Parent" : "0", "Child" : []},
-	{"Level" : "1", "Path" : "`AUTOTB_DUT_INST.row_1_1_U", "Parent" : "0", "Child" : []},
-	{"Level" : "1", "Path" : "`AUTOTB_DUT_INST.row_1_2_U", "Parent" : "0", "Child" : []},
-	{"Level" : "1", "Path" : "`AUTOTB_DUT_INST.row_1_3_U", "Parent" : "0", "Child" : []},
-	{"Level" : "1", "Path" : "`AUTOTB_DUT_INST.col_1_0_U", "Parent" : "0", "Child" : []},
-	{"Level" : "1", "Path" : "`AUTOTB_DUT_INST.col_1_1_U", "Parent" : "0", "Child" : []},
-	{"Level" : "1", "Path" : "`AUTOTB_DUT_INST.col_1_2_U", "Parent" : "0", "Child" : []},
-	{"Level" : "1", "Path" : "`AUTOTB_DUT_INST.col_1_3_U", "Parent" : "0", "Child" : []},
-	{"Level" : "1", "Path" : "`AUTOTB_DUT_INST.val_1_0_U", "Parent" : "0", "Child" : []},
-	{"Level" : "1", "Path" : "`AUTOTB_DUT_INST.val_1_1_U", "Parent" : "0", "Child" : []},
-	{"Level" : "1", "Path" : "`AUTOTB_DUT_INST.val_1_2_U", "Parent" : "0", "Child" : []},
-	{"Level" : "1", "Path" : "`AUTOTB_DUT_INST.val_1_3_U", "Parent" : "0", "Child" : []},
-	{"Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_worker_COO_SpMV_fu_1128", "Parent" : "0", "Child" : ["26", "27", "28"], "CDFG" : "worker_COO_SpMV", "VariableLatency" : "1", "AlignedPipeline" : "0", "UnalignedPipeline" : "0", "ProcessNetwork" : "0", "Combinational" : "0", "ControlExist" : "1",
+	{"Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_worker_COO_SpMV_0_fu_1076", "Parent" : "0", "Child" : ["3", "4", "5", "6", "7", "8"], "CDFG" : "worker_COO_SpMV_0", "VariableLatency" : "1", "AlignedPipeline" : "0", "UnalignedPipeline" : "0", "ProcessNetwork" : "0", "Combinational" : "0", "ControlExist" : "1",
 		"Port" : [
-		{"Name" : "row", "Type" : "Memory", "Direction" : "I", "BlockSignal" : [], "SubConnect" : []}, 
-		{"Name" : "col", "Type" : "Memory", "Direction" : "I", "BlockSignal" : [], "SubConnect" : []}, 
-		{"Name" : "val_r", "Type" : "Memory", "Direction" : "I", "BlockSignal" : [], "SubConnect" : []}, 
 		{"Name" : "output_r", "Type" : "Memory", "Direction" : "IO", "BlockSignal" : [], "SubConnect" : []}, 
-		{"Name" : "nnz", "Type" : "None", "Direction" : "I", "BlockSignal" : [], "SubConnect" : []}, 
+		{"Name" : "row10_1_0", "Type" : "Memory", "Direction" : "I", "BlockSignal" : [], "SubConnect" : []}, 
+		{"Name" : "val10_1_0", "Type" : "Memory", "Direction" : "I", "BlockSignal" : [], "SubConnect" : []}, 
+		{"Name" : "col10_1_0", "Type" : "Memory", "Direction" : "I", "BlockSignal" : [], "SubConnect" : []}, 
 		{"Name" : "vector", "Type" : "Memory", "Direction" : "I", "BlockSignal" : [], "SubConnect" : []}],
 		"WaitState" : [],
 		"SubBlockPort" : []},
-	{"Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_worker_COO_SpMV_fu_1128.vector_U", "Parent" : "25", "Child" : []},
-	{"Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_worker_COO_SpMV_fu_1128.worker_fadd_32ns_32ns_32_5_full_dsp_U7", "Parent" : "25", "Child" : []},
-	{"Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_worker_COO_SpMV_fu_1128.worker_fmul_32ns_32ns_32_4_max_dsp_U8", "Parent" : "25", "Child" : []},
-	{"Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_worker_COO_SpMV_fu_1139", "Parent" : "0", "Child" : ["30", "31", "32"], "CDFG" : "worker_COO_SpMV", "VariableLatency" : "1", "AlignedPipeline" : "0", "UnalignedPipeline" : "0", "ProcessNetwork" : "0", "Combinational" : "0", "ControlExist" : "1",
-		"Port" : [
-		{"Name" : "row", "Type" : "Memory", "Direction" : "I", "BlockSignal" : [], "SubConnect" : []}, 
-		{"Name" : "col", "Type" : "Memory", "Direction" : "I", "BlockSignal" : [], "SubConnect" : []}, 
-		{"Name" : "val_r", "Type" : "Memory", "Direction" : "I", "BlockSignal" : [], "SubConnect" : []}, 
-		{"Name" : "output_r", "Type" : "Memory", "Direction" : "IO", "BlockSignal" : [], "SubConnect" : []}, 
-		{"Name" : "nnz", "Type" : "None", "Direction" : "I", "BlockSignal" : [], "SubConnect" : []}, 
-		{"Name" : "vector", "Type" : "Memory", "Direction" : "I", "BlockSignal" : [], "SubConnect" : []}],
-		"WaitState" : [],
-		"SubBlockPort" : []},
-	{"Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_worker_COO_SpMV_fu_1139.vector_U", "Parent" : "29", "Child" : []},
-	{"Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_worker_COO_SpMV_fu_1139.worker_fadd_32ns_32ns_32_5_full_dsp_U7", "Parent" : "29", "Child" : []},
-	{"Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_worker_COO_SpMV_fu_1139.worker_fmul_32ns_32ns_32_4_max_dsp_U8", "Parent" : "29", "Child" : []},
-	{"Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_worker_COO_SpMV_fu_1150", "Parent" : "0", "Child" : ["34", "35", "36"], "CDFG" : "worker_COO_SpMV", "VariableLatency" : "1", "AlignedPipeline" : "0", "UnalignedPipeline" : "0", "ProcessNetwork" : "0", "Combinational" : "0", "ControlExist" : "1",
-		"Port" : [
-		{"Name" : "row", "Type" : "Memory", "Direction" : "I", "BlockSignal" : [], "SubConnect" : []}, 
-		{"Name" : "col", "Type" : "Memory", "Direction" : "I", "BlockSignal" : [], "SubConnect" : []}, 
-		{"Name" : "val_r", "Type" : "Memory", "Direction" : "I", "BlockSignal" : [], "SubConnect" : []}, 
-		{"Name" : "output_r", "Type" : "Memory", "Direction" : "IO", "BlockSignal" : [], "SubConnect" : []}, 
-		{"Name" : "nnz", "Type" : "None", "Direction" : "I", "BlockSignal" : [], "SubConnect" : []}, 
-		{"Name" : "vector", "Type" : "Memory", "Direction" : "I", "BlockSignal" : [], "SubConnect" : []}],
-		"WaitState" : [],
-		"SubBlockPort" : []},
-	{"Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_worker_COO_SpMV_fu_1150.vector_U", "Parent" : "33", "Child" : []},
-	{"Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_worker_COO_SpMV_fu_1150.worker_fadd_32ns_32ns_32_5_full_dsp_U7", "Parent" : "33", "Child" : []},
-	{"Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_worker_COO_SpMV_fu_1150.worker_fmul_32ns_32ns_32_4_max_dsp_U8", "Parent" : "33", "Child" : []},
-	{"Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_worker_create_COO_fu_1161", "Parent" : "0", "Child" : ["38"], "CDFG" : "worker_create_COO", "VariableLatency" : "1", "AlignedPipeline" : "0", "UnalignedPipeline" : "0", "ProcessNetwork" : "0", "Combinational" : "0", "ControlExist" : "1",
-		"Port" : [
-		{"Name" : "input_r", "Type" : "Memory", "Direction" : "I", "BlockSignal" : [], "SubConnect" : []}, 
-		{"Name" : "row", "Type" : "Memory", "Direction" : "O", "BlockSignal" : [], "SubConnect" : []}, 
-		{"Name" : "col", "Type" : "Memory", "Direction" : "O", "BlockSignal" : [], "SubConnect" : []}, 
-		{"Name" : "val_r", "Type" : "Memory", "Direction" : "O", "BlockSignal" : [], "SubConnect" : []}, 
-		{"Name" : "nnz", "Type" : "Memory", "Direction" : "I", "BlockSignal" : [], "SubConnect" : []}],
-		"WaitState" : [],
-		"SubBlockPort" : []},
-	{"Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_worker_create_COO_fu_1161.worker_fcmp_32ns_32ns_1_1_U1", "Parent" : "37", "Child" : []},
-	{"Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_worker_create_COO_fu_1174", "Parent" : "0", "Child" : ["40"], "CDFG" : "worker_create_COO", "VariableLatency" : "1", "AlignedPipeline" : "0", "UnalignedPipeline" : "0", "ProcessNetwork" : "0", "Combinational" : "0", "ControlExist" : "1",
-		"Port" : [
-		{"Name" : "input_r", "Type" : "Memory", "Direction" : "I", "BlockSignal" : [], "SubConnect" : []}, 
-		{"Name" : "row", "Type" : "Memory", "Direction" : "O", "BlockSignal" : [], "SubConnect" : []}, 
-		{"Name" : "col", "Type" : "Memory", "Direction" : "O", "BlockSignal" : [], "SubConnect" : []}, 
-		{"Name" : "val_r", "Type" : "Memory", "Direction" : "O", "BlockSignal" : [], "SubConnect" : []}, 
-		{"Name" : "nnz", "Type" : "Memory", "Direction" : "I", "BlockSignal" : [], "SubConnect" : []}],
-		"WaitState" : [],
-		"SubBlockPort" : []},
-	{"Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_worker_create_COO_fu_1174.worker_fcmp_32ns_32ns_1_1_U1", "Parent" : "39", "Child" : []},
-	{"Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_worker_create_COO_fu_1185", "Parent" : "0", "Child" : ["42"], "CDFG" : "worker_create_COO", "VariableLatency" : "1", "AlignedPipeline" : "0", "UnalignedPipeline" : "0", "ProcessNetwork" : "0", "Combinational" : "0", "ControlExist" : "1",
-		"Port" : [
-		{"Name" : "input_r", "Type" : "Memory", "Direction" : "I", "BlockSignal" : [], "SubConnect" : []}, 
-		{"Name" : "row", "Type" : "Memory", "Direction" : "O", "BlockSignal" : [], "SubConnect" : []}, 
-		{"Name" : "col", "Type" : "Memory", "Direction" : "O", "BlockSignal" : [], "SubConnect" : []}, 
-		{"Name" : "val_r", "Type" : "Memory", "Direction" : "O", "BlockSignal" : [], "SubConnect" : []}, 
-		{"Name" : "nnz", "Type" : "Memory", "Direction" : "I", "BlockSignal" : [], "SubConnect" : []}],
-		"WaitState" : [],
-		"SubBlockPort" : []},
-	{"Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_worker_create_COO_fu_1185.worker_fcmp_32ns_32ns_1_1_U1", "Parent" : "41", "Child" : []},
-	{"Level" : "1", "Path" : "`AUTOTB_DUT_INST.worker_mux_4to1_sel2_32_1_U15", "Parent" : "0", "Child" : []}]}
+	{"Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_worker_COO_SpMV_0_fu_1076.row10_1_0_U", "Parent" : "2", "Child" : []},
+	{"Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_worker_COO_SpMV_0_fu_1076.val10_1_0_U", "Parent" : "2", "Child" : []},
+	{"Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_worker_COO_SpMV_0_fu_1076.col10_1_0_U", "Parent" : "2", "Child" : []},
+	{"Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_worker_COO_SpMV_0_fu_1076.vector_U", "Parent" : "2", "Child" : []},
+	{"Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_worker_COO_SpMV_0_fu_1076.worker_fadd_32ns_32ns_32_5_full_dsp_U1", "Parent" : "2", "Child" : []},
+	{"Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_worker_COO_SpMV_0_fu_1076.worker_fmul_32ns_32ns_32_4_max_dsp_U2", "Parent" : "2", "Child" : []}]}
 
 set PerformanceInfo {[
-	{"Name" : "Latency", "Min" : "8094", "Max" : "23094"}
-	, {"Name" : "Interval", "Min" : "8095", "Max" : "23095"}
+	{"Name" : "Latency", "Min" : "3598", "Max" : "3598"}
+	, {"Name" : "Interval", "Min" : "3599", "Max" : "3599"}
 ]}
 
 set Spec2ImplPortList { 

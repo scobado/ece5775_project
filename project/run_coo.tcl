@@ -52,13 +52,13 @@ set_directive_array_partition -type complete -dim 1 worker row_nnz
 #set_directive_array_partition -type complete -dim 1 worker col_1
 #set_directive_array_partition -type complete -dim 1 worker val_1
 
-#set_directive_array_partition -type complete -dim 1 worker row10_25
-#set_directive_array_partition -type complete -dim 1 worker col10_25
-#set_directive_array_partition -type complete -dim 1 worker val10_25
+set_directive_array_partition -type complete -dim 1 worker row10_25
+set_directive_array_partition -type complete -dim 1 worker col10_25
+set_directive_array_partition -type complete -dim 1 worker val10_25
 
-set_directive_array_partition -type complete -dim 1 worker row10_1
-set_directive_array_partition -type complete -dim 1 worker col10_1
-set_directive_array_partition -type complete -dim 1 worker val10_1
+#set_directive_array_partition -type complete -dim 1 worker row10_1
+#set_directive_array_partition -type complete -dim 1 worker col10_1
+#set_directive_array_partition -type complete -dim 1 worker val10_1
 
 set_directive_unroll worker/LOOP_PE1
 set_directive_unroll worker/LOOP_PE2
@@ -94,10 +94,10 @@ set_directive_unroll worker/LOOP_DEST1
 
 
 # Simulate the C++ design
-csim_design
+# csim_design
 # Synthesis the design
- csynth_design
+csynth_design
 # Co-simulate the design
- cosim_design
+cosim_design
 
 exit

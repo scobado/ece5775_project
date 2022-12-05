@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Sat Nov 12 12:37:02 2022" VIVADOVERSION="2016.2">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Mon Dec  5 16:58:44 2022" VIVADOVERSION="2016.2">
 
   <SYSTEMINFO ARCH="zynq" DEVICE="7z020" NAME="vivado_system" PACKAGE="clg484" SPEEDGRADE="-1"/>
 
@@ -2999,6 +2999,7 @@
             <CONNECTION INSTANCE="xillybus_lite_0" PORT="S_AXI_WREADY"/>
           </CONNECTIONS>
         </PORT>
+        <PORT DIR="O" NAME="M03_AXI_awid" SIGIS="undef"/>
         <PORT DIR="O" NAME="M03_AXI_awaddr" SIGIS="undef"/>
         <PORT DIR="O" NAME="M03_AXI_awlen" SIGIS="undef"/>
         <PORT DIR="O" NAME="M03_AXI_awsize" SIGIS="undef"/>
@@ -3015,9 +3016,11 @@
         <PORT DIR="O" NAME="M03_AXI_wlast" SIGIS="undef"/>
         <PORT DIR="O" NAME="M03_AXI_wvalid" SIGIS="undef"/>
         <PORT DIR="I" NAME="M03_AXI_wready" SIGIS="undef"/>
+        <PORT DIR="I" NAME="M03_AXI_bid" SIGIS="undef"/>
         <PORT DIR="I" NAME="M03_AXI_bresp" SIGIS="undef"/>
         <PORT DIR="I" NAME="M03_AXI_bvalid" SIGIS="undef"/>
         <PORT DIR="O" NAME="M03_AXI_bready" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M03_AXI_arid" SIGIS="undef"/>
         <PORT DIR="O" NAME="M03_AXI_araddr" SIGIS="undef"/>
         <PORT DIR="O" NAME="M03_AXI_arlen" SIGIS="undef"/>
         <PORT DIR="O" NAME="M03_AXI_arsize" SIGIS="undef"/>
@@ -3029,6 +3032,7 @@
         <PORT DIR="O" NAME="M03_AXI_arqos" SIGIS="undef"/>
         <PORT DIR="O" NAME="M03_AXI_arvalid" SIGIS="undef"/>
         <PORT DIR="I" NAME="M03_AXI_arready" SIGIS="undef"/>
+        <PORT DIR="I" NAME="M03_AXI_rid" SIGIS="undef"/>
         <PORT DIR="I" NAME="M03_AXI_rdata" SIGIS="undef"/>
         <PORT DIR="I" NAME="M03_AXI_rresp" SIGIS="undef"/>
         <PORT DIR="I" NAME="M03_AXI_rlast" SIGIS="undef"/>
@@ -3143,6 +3147,7 @@
         </BUSINTERFACE>
         <BUSINTERFACE BUSNAME="__NOC__" NAME="M03_AXI" TYPE="MASTER" VLNV="xilinx.com:interface:aximm:1.0">
           <PORTMAPS>
+            <PORTMAP LOGICAL="AWID" PHYSICAL="M03_AXI_awid"/>
             <PORTMAP LOGICAL="AWADDR" PHYSICAL="M03_AXI_awaddr"/>
             <PORTMAP LOGICAL="AWLEN" PHYSICAL="M03_AXI_awlen"/>
             <PORTMAP LOGICAL="AWSIZE" PHYSICAL="M03_AXI_awsize"/>
@@ -3159,9 +3164,11 @@
             <PORTMAP LOGICAL="WLAST" PHYSICAL="M03_AXI_wlast"/>
             <PORTMAP LOGICAL="WVALID" PHYSICAL="M03_AXI_wvalid"/>
             <PORTMAP LOGICAL="WREADY" PHYSICAL="M03_AXI_wready"/>
+            <PORTMAP LOGICAL="BID" PHYSICAL="M03_AXI_bid"/>
             <PORTMAP LOGICAL="BRESP" PHYSICAL="M03_AXI_bresp"/>
             <PORTMAP LOGICAL="BVALID" PHYSICAL="M03_AXI_bvalid"/>
             <PORTMAP LOGICAL="BREADY" PHYSICAL="M03_AXI_bready"/>
+            <PORTMAP LOGICAL="ARID" PHYSICAL="M03_AXI_arid"/>
             <PORTMAP LOGICAL="ARADDR" PHYSICAL="M03_AXI_araddr"/>
             <PORTMAP LOGICAL="ARLEN" PHYSICAL="M03_AXI_arlen"/>
             <PORTMAP LOGICAL="ARSIZE" PHYSICAL="M03_AXI_arsize"/>
@@ -3173,6 +3180,7 @@
             <PORTMAP LOGICAL="ARQOS" PHYSICAL="M03_AXI_arqos"/>
             <PORTMAP LOGICAL="ARVALID" PHYSICAL="M03_AXI_arvalid"/>
             <PORTMAP LOGICAL="ARREADY" PHYSICAL="M03_AXI_arready"/>
+            <PORTMAP LOGICAL="RID" PHYSICAL="M03_AXI_rid"/>
             <PORTMAP LOGICAL="RDATA" PHYSICAL="M03_AXI_rdata"/>
             <PORTMAP LOGICAL="RRESP" PHYSICAL="M03_AXI_rresp"/>
             <PORTMAP LOGICAL="RLAST" PHYSICAL="M03_AXI_rlast"/>

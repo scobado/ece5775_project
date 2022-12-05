@@ -47,15 +47,6 @@ void dut(
 // COO Format: 3 arrays representing non-zero elements [row, col, value]
 //==========================================================================
 
-<<<<<<< HEAD
-void COO_SpMV(int row[coo_size], int col[coo_size], float val[coo_size], const float v[size], float output[size], int nnz) {
-    #pragma HLS function_instantiate variable=nnz
-    for(int i = 0; i < coo_size; i++) {
-        #pragma HLS PIPELINE
-        #pragma HLS DEPENDENCE variable=output inter RAW false 
-        if (i < nnz && row[i] >= 0) {
-          output[row[i]] += val[i] * v[col[i]];
-=======
 void COO_SpMV(const int row[coo_size], const int col[coo_size], const float val[coo_size], const float vector[size], float output[size], int dependence) {
     #pragma HLS function_instantiate variable=dependence
     for(int i = 0; i < coo_size; i++) {
@@ -63,7 +54,6 @@ void COO_SpMV(const int row[coo_size], const int col[coo_size], const float val[
         #pragma HLS DEPENDENCE variable=output inter RAW false 
         if (row[i] >= 0) {
           output[row[i]] += val[i] * vector[col[i]];
->>>>>>> 84777ff43bfa8091ed23696a2bda513af1b13b3f
         }
     }
 }
@@ -81,12 +71,7 @@ void worker(float dest[size]) {
         dest_1[i][j] = 0;
     }
 
-<<<<<<< HEAD
-    int nnz = create_COO(matrix_2[i], row_1[i], col_1[i], val_1[i], row_nnz[i], i);
-    COO_SpMV(row_1[i], col_1[i], val_1[i], v, dest_1[i], nnz);
-=======
-    COO_SpMV(row10_1[i], col10_1[i], val10_1[i], vector, dest_1[i], i);
->>>>>>> 84777ff43bfa8091ed23696a2bda513af1b13b3f
+    COO_SpMV(row10_25[i], col10_25[i], val10_25[i], v, dest_1[i], i);
   }
   
   for (int i = 0; i < PE; i++) {

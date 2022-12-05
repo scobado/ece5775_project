@@ -1,10 +1,10 @@
 -- Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2016.2 (lin64) Build 1577090 Thu Jun  2 16:32:35 MDT 2016
--- Date        : Sat Nov 12 12:38:38 2022
--- Host        : en-ec-ecelinux-01.coecis.cornell.edu running 64-bit CentOS Linux release 7.9.2009 (Core)
+-- Date        : Mon Dec  5 17:00:28 2022
+-- Host        : en-ec-ecelinux-06.coecis.cornell.edu running 64-bit CentOS Linux release 7.9.2009 (Core)
 -- Command     : write_vhdl -force -mode synth_stub
---               /home/ak2425/ece5775/project/zedboard_project/vivado-essentials/vga_fifo/vga_fifo_stub.vhdl
+--               /home/ak2425/ece5775/ece5775_project/project/zedboard_project/vivado-essentials/vga_fifo/vga_fifo_stub.vhdl
 -- Design      : vga_fifo
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7z020clg484-1

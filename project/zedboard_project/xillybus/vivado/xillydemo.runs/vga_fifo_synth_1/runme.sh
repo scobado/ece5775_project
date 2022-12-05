@@ -20,7 +20,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='/home/ak2425/ece5775/project/zedboard_project/xillybus/vivado/xillydemo.runs/vga_fifo_synth_1'
+HD_PWD='/home/ak2425/ece5775/ece5775_project/project/zedboard_project/xillybus/vivado/xillydemo.runs/vga_fifo_synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

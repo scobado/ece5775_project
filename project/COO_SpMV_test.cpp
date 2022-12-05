@@ -54,7 +54,6 @@ int main( int argc, char* argv[] ) {
   }
   dut(element,out);
   std::cout << "Testing COO SpMV\n";
-<<<<<<< HEAD
   
   union {float fval;int ival;} u3;
   //read output of DUT
@@ -65,11 +64,7 @@ int main( int argc, char* argv[] ) {
     output[i] = u3.fval;
   }
   timer.stop();
-  verify_results( output, result_2, size );
-=======
-  worker(dest);
-  verify_results( dest, result_10, size );
->>>>>>> 84777ff43bfa8091ed23696a2bda513af1b13b3f
+  verify_results( output, result_10, size );
   return 0;
 }
 

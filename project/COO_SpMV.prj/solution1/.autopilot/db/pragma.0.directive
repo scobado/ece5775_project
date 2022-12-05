@@ -1,6 +1,11 @@
 <AutoPilot:ProjectResources xmlns:AutoPilot="com.autoesl.autopilot.ui.directiveView">
 <sourceFile name="">
 <directive functionLabel="" functionName="COO_SpMV" label="">
+<pragma name="FUNCTION_INSTANTIATE">
+<option name="variable" positionalBoolean="4" value="dependence"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="COO_SpMV" label="">
 <pragma name="PIPELINE"/>
 </directive>
 </sourceFile>

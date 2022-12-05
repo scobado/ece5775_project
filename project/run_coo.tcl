@@ -44,12 +44,21 @@ set_directive_inline -off create_COO
 set_directive_inline -off COO_SpMV
 set_directive_inline -off count_nnz
 
-set_directive_array_partition -type complete -dim 1 worker matrix_2
+set_directive_array_partition -type complete -dim 1 worker matrix_10
 set_directive_array_partition -type complete -dim 1 worker dest_1
-set_directive_array_partition -type complete -dim 1 worker row_1
-set_directive_array_partition -type complete -dim 1 worker col_1
-set_directive_array_partition -type complete -dim 1 worker val_1
 set_directive_array_partition -type complete -dim 1 worker row_nnz 
+
+#set_directive_array_partition -type complete -dim 1 worker row_1
+#set_directive_array_partition -type complete -dim 1 worker col_1
+#set_directive_array_partition -type complete -dim 1 worker val_1
+
+#set_directive_array_partition -type complete -dim 1 worker row10_25
+#set_directive_array_partition -type complete -dim 1 worker col10_25
+#set_directive_array_partition -type complete -dim 1 worker val10_25
+
+set_directive_array_partition -type complete -dim 1 worker row10_1
+set_directive_array_partition -type complete -dim 1 worker col10_1
+set_directive_array_partition -type complete -dim 1 worker val10_1
 
 set_directive_unroll worker/LOOP_PE1
 set_directive_unroll worker/LOOP_PE2

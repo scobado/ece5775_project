@@ -1,0 +1,310 @@
+
+
+================================================================
+== Vivado HLS Report for 'worker_COO_SpMV_0'
+================================================================
+* Date:           Mon Dec  5 14:00:49 2022
+
+* Version:        2016.2 (Build 1577090 on Thu Jun 02 16:59:10 MDT 2016)
+* Project:        COO_SpMV.prj
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|      8.09|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +------+------+------+------+---------+
+    |   Latency   |   Interval  | Pipeline|
+    |  min |  max |  min |  max |   Type  |
+    +------+------+------+------+---------+
+    |  3346|  3346|  3346|  3346|   none  |
+    +------+------+------+------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+------+------+----------+-----------+-----------+------+----------+
+        |          |   Latency   | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name|  min |  max |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+------+------+----------+-----------+-----------+------+----------+
+        |- Loop 1  |  3344|  3344|        13|          1|          1|  3333|    yes   |
+        +----------+------+------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 13
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states: 15
+* Pipeline: 1
+  Pipeline-0: II = 1, D = 13, States = { 2 3 4 5 6 7 8 9 10 11 12 13 14 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	15  / (exitcond)
+	3  / (!exitcond)
+3 --> 
+	4  / true
+4 --> 
+	5  / true
+5 --> 
+	6  / true
+6 --> 
+	7  / true
+7 --> 
+	8  / true
+8 --> 
+	9  / true
+9 --> 
+	10  / true
+10 --> 
+	11  / true
+11 --> 
+	12  / true
+12 --> 
+	13  / true
+13 --> 
+	14  / true
+14 --> 
+	2  / true
+15 --> 
+* FSM state operations: 
+
+ <State 1>: 1.57ns
+ST_1: stg_16 [1/1] 1.57ns
+:0  br label %1
+
+
+ <State 2>: 2.39ns
+ST_2: i [1/1] 0.00ns
+:0  %i = phi i12 [ 0, %0 ], [ %i_1, %._crit_edge ]
+
+ST_2: exitcond [1/1] 2.14ns
+:1  %exitcond = icmp eq i12 %i, -763
+
+ST_2: i_1 [1/1] 1.84ns
+:2  %i_1 = add i12 %i, 1
+
+ST_2: stg_20 [1/1] 0.00ns
+:3  br i1 %exitcond, label %3, label %2
+
+ST_2: tmp [1/1] 0.00ns
+:3  %tmp = zext i12 %i to i64
+
+ST_2: row10_1_0_addr [1/1] 0.00ns
+:4  %row10_1_0_addr = getelementptr [3333 x i8]* @row10_1_0, i64 0, i64 %tmp
+
+ST_2: row10_1_0_load [2/2] 2.39ns
+:5  %row10_1_0_load = load i8* %row10_1_0_addr, align 1
+
+
+ <State 3>: 2.39ns
+ST_3: row10_1_0_load [1/2] 2.39ns
+:5  %row10_1_0_load = load i8* %row10_1_0_addr, align 1
+
+ST_3: row10_1_0_load_cast [1/1] 0.00ns
+:6  %row10_1_0_load_cast = sext i8 %row10_1_0_load to i32
+
+ST_3: tmp_4 [1/1] 0.00ns
+:7  %tmp_4 = call i1 @_ssdm_op_BitSelect.i1.i8.i32(i8 %row10_1_0_load, i32 7)
+
+ST_3: stg_27 [1/1] 0.00ns
+:8  br i1 %tmp_4, label %._crit_edge, label %branch1
+
+ST_3: val10_1_0_addr [1/1] 0.00ns
+branch1:0  %val10_1_0_addr = getelementptr [3333 x float]* @val10_1_0, i64 0, i64 %tmp
+
+ST_3: val10_1_0_load [2/2] 2.39ns
+branch1:1  %val10_1_0_load = load float* %val10_1_0_addr, align 4
+
+ST_3: col10_1_0_addr [1/1] 0.00ns
+branch1:2  %col10_1_0_addr = getelementptr [3333 x i8]* @col10_1_0, i64 0, i64 %tmp
+
+ST_3: col10_1_0_load [2/2] 2.39ns
+branch1:3  %col10_1_0_load = load i8* %col10_1_0_addr, align 1
+
+ST_3: tmp_1 [1/1] 0.00ns
+branch1:8  %tmp_1 = zext i32 %row10_1_0_load_cast to i64
+
+ST_3: output_addr [1/1] 0.00ns
+branch1:9  %output_addr = getelementptr [100 x float]* %output_r, i64 0, i64 %tmp_1
+
+
+ <State 4>: 4.78ns
+ST_4: val10_1_0_load [1/2] 2.39ns
+branch1:1  %val10_1_0_load = load float* %val10_1_0_addr, align 4
+
+ST_4: col10_1_0_load [1/2] 2.39ns
+branch1:3  %col10_1_0_load = load i8* %col10_1_0_addr, align 1
+
+ST_4: tmp_9 [1/1] 0.00ns
+branch1:4  %tmp_9 = sext i8 %col10_1_0_load to i64
+
+ST_4: vector_addr [1/1] 0.00ns
+branch1:5  %vector_addr = getelementptr inbounds [100 x float]* @vector, i64 0, i64 %tmp_9
+
+ST_4: vector_load [2/2] 2.39ns
+branch1:6  %vector_load = load float* %vector_addr, align 4
+
+
+ <State 5>: 8.09ns
+ST_5: vector_load [1/2] 2.39ns
+branch1:6  %vector_load = load float* %vector_addr, align 4
+
+ST_5: tmp_s [4/4] 5.70ns
+branch1:7  %tmp_s = fmul float %val10_1_0_load, %vector_load
+
+
+ <State 6>: 5.70ns
+ST_6: tmp_s [3/4] 5.70ns
+branch1:7  %tmp_s = fmul float %val10_1_0_load, %vector_load
+
+
+ <State 7>: 5.70ns
+ST_7: tmp_s [2/4] 5.70ns
+branch1:7  %tmp_s = fmul float %val10_1_0_load, %vector_load
+
+ST_7: output_load [2/2] 2.71ns
+branch1:10  %output_load = load float* %output_addr, align 4
+
+
+ <State 8>: 5.70ns
+ST_8: tmp_s [1/4] 5.70ns
+branch1:7  %tmp_s = fmul float %val10_1_0_load, %vector_load
+
+ST_8: output_load [1/2] 2.71ns
+branch1:10  %output_load = load float* %output_addr, align 4
+
+
+ <State 9>: 7.26ns
+ST_9: tmp_2 [5/5] 7.26ns
+branch1:11  %tmp_2 = fadd float %output_load, %tmp_s
+
+
+ <State 10>: 7.26ns
+ST_10: tmp_2 [4/5] 7.26ns
+branch1:11  %tmp_2 = fadd float %output_load, %tmp_s
+
+
+ <State 11>: 7.26ns
+ST_11: tmp_2 [3/5] 7.26ns
+branch1:11  %tmp_2 = fadd float %output_load, %tmp_s
+
+
+ <State 12>: 7.26ns
+ST_12: tmp_2 [2/5] 7.26ns
+branch1:11  %tmp_2 = fadd float %output_load, %tmp_s
+
+
+ <State 13>: 7.26ns
+ST_13: tmp_2 [1/5] 7.26ns
+branch1:11  %tmp_2 = fadd float %output_load, %tmp_s
+
+
+ <State 14>: 2.71ns
+ST_14: empty [1/1] 0.00ns
+:0  %empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 3333, i64 3333, i64 3333)
+
+ST_14: tmp_3 [1/1] 0.00ns
+:1  %tmp_3 = call i32 (...)* @_ssdm_op_SpecRegionBegin([12 x i8]* @p_str1) nounwind
+
+ST_14: stg_53 [1/1] 0.00ns
+:2  call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str) nounwind
+
+ST_14: stg_54 [1/1] 2.71ns
+branch1:12  store float %tmp_2, float* %output_addr, align 4
+
+ST_14: stg_55 [1/1] 0.00ns
+branch1:13  br label %._crit_edge
+
+ST_14: empty_8 [1/1] 0.00ns
+._crit_edge:0  %empty_8 = call i32 (...)* @_ssdm_op_SpecRegionEnd([12 x i8]* @p_str1, i32 %tmp_3) nounwind
+
+ST_14: stg_57 [1/1] 0.00ns
+._crit_edge:1  br label %1
+
+
+ <State 15>: 0.00ns
+ST_15: stg_58 [1/1] 0.00ns
+:0  ret void
+
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ No timing violations. 
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

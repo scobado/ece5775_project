@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'worker'" level="0">
-<item name = "Date">Mon Nov 21 17:02:20 2022
+<item name = "Date">Mon Dec  5 14:00:50 2022
 </item>
 <item name = "Version">2016.2 (Build 1577090 on Thu Jun 02 16:59:10 MDT 2016)</item>
 <item name = "Project">COO_SpMV.prj</item>
@@ -15,36 +15,26 @@
 <section name = "" level="1">
 <item name = "Target clock period (ns)">10.00</item>
 <item name = "Clock uncertainty (ns)">1.25</item>
-<item name = "Estimated clock period (ns)">8.16</item>
+<item name = "Estimated clock period (ns)">8.09</item>
 </section>
 </item>
 <item name = "Latency (clock cycles)">
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">, min, max, min, max, Type</keys>
-<column name="">8094, 23094, 8095, 23095, none</column>
+<column name="">3598, 3598, 3599, 3599, none</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="7">Instance, Module, min, max, min, max, Type</keys>
-<column name="grp_worker_COO_SpMV_fu_1128">worker_COO_SpMV, 2513, 2513, 2513, 2513, none</column>
-<column name="grp_worker_COO_SpMV_fu_1139">worker_COO_SpMV, 2513, 2513, 2513, 2513, none</column>
-<column name="grp_worker_COO_SpMV_fu_1150">worker_COO_SpMV, 2513, 2513, 2513, 2513, none</column>
-<column name="grp_worker_create_COO_fu_1161">worker_create_COO, 2628, 10128, 2628, 10128, none</column>
-<column name="grp_worker_create_COO_fu_1174">worker_create_COO, 2628, 10128, 2628, 10128, none</column>
-<column name="grp_worker_create_COO_fu_1185">worker_create_COO, 2628, 10128, 2628, 10128, none</column>
+<column name="grp_worker_COO_SpMV_0_fu_1076">worker_COO_SpMV_0, 3346, 3346, 3346, 3346, none</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- Loop 1">24, 24, 1, -, -, 25, no</column>
-<column name="- Loop 2">24, 24, 1, -, -, 25, no</column>
-<column name="- Loop 3">24, 24, 1, -, -, 25, no</column>
-<column name="- Loop 4">24, 24, 1, -, -, 25, no</column>
-<column name="- Loop 5">208, 208, 52, -, -, 4, no</column>
-<column name=" + Loop 5.1">50, 50, 2, -, -, 25, no</column>
+<column name="- Loop 1">200, 200, 2, -, -, 100, no</column>
 </table>
 </item>
 </section>
@@ -57,27 +47,21 @@
 <item name = "Summary"><table name="" hasTotal="1">
 <keys size="5">Name, BRAM_18K, DSP48E, FF, LUT</keys>
 <column name="DSP">-, -, -, -</column>
-<column name="Expression">-, -, 0, 54</column>
+<column name="Expression">-, -, 0, 10</column>
 <column name="FIFO">-, -, -, -</column>
-<column name="Instance">3, 15, 2598, 4685</column>
-<column name="Memory">88, -, 256, 52</column>
-<column name="Multiplexer">-, -, -, 614</column>
-<column name="Register">-, -, 185, -</column>
+<column name="Instance">13, 5, 524, 750</column>
+<column name="Memory">2, -, 0, 0</column>
+<column name="Multiplexer">-, -, -, 362</column>
+<column name="Register">-, -, 76, -</column>
 <specialColumn name="Available">280, 220, 106400, 53200</specialColumn>
-<specialColumn name="Utilization (%)">32, 6, 2, 10</specialColumn>
+<specialColumn name="Utilization (%)">5, 2, ~0, 2</specialColumn>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="1">
 <keys size="6">Instance, Module, BRAM_18K, DSP48E, FF, LUT</keys>
-<column name="grp_worker_COO_SpMV_fu_1128">worker_COO_SpMV, 1, 5, 523, 760</column>
-<column name="grp_worker_COO_SpMV_fu_1139">worker_COO_SpMV, 1, 5, 523, 760</column>
-<column name="grp_worker_COO_SpMV_fu_1150">worker_COO_SpMV, 1, 5, 523, 760</column>
-<column name="grp_worker_create_COO_fu_1161">worker_create_COO, 0, 0, 343, 791</column>
-<column name="grp_worker_create_COO_fu_1174">worker_create_COO, 0, 0, 343, 791</column>
-<column name="grp_worker_create_COO_fu_1185">worker_create_COO, 0, 0, 343, 791</column>
-<column name="worker_mux_4to1_sel2_32_1_U15">worker_mux_4to1_sel2_32_1, 0, 0, 0, 32</column>
+<column name="grp_worker_COO_SpMV_0_fu_1076">worker_COO_SpMV_0, 13, 5, 524, 750</column>
 </table>
 </item>
 <item name = "DSP48"><table name="" hasTotal="0">
@@ -86,30 +70,7 @@
 </item>
 <item name = "Memory"><table name="" hasTotal="1">
 <keys size="9">Memory, Module, BRAM_18K, FF, LUT, Words, Bits, Banks, W*Bits*Banks</keys>
-<column name="col_1_0_U">worker_col_1_0, 2, 0, 0, 2500, 8, 1, 20000</column>
-<column name="col_1_1_U">worker_col_1_0, 2, 0, 0, 2500, 8, 1, 20000</column>
-<column name="col_1_2_U">worker_col_1_0, 2, 0, 0, 2500, 8, 1, 20000</column>
-<column name="col_1_3_U">worker_col_1_0, 2, 0, 0, 2500, 8, 1, 20000</column>
-<column name="dest_1_0_U">worker_dest_1_0, 2, 0, 0, 25, 32, 1, 800</column>
-<column name="dest_1_1_U">worker_dest_1_0, 2, 0, 0, 25, 32, 1, 800</column>
-<column name="dest_1_2_U">worker_dest_1_0, 2, 0, 0, 25, 32, 1, 800</column>
-<column name="dest_1_3_U">worker_dest_1_0, 2, 0, 0, 25, 32, 1, 800</column>
-<column name="matrix_1_0_U">worker_matrix_1_0, 8, 0, 0, 2500, 32, 1, 80000</column>
-<column name="matrix_1_1_U">worker_matrix_1_1, 8, 0, 0, 2500, 32, 1, 80000</column>
-<column name="matrix_1_2_U">worker_matrix_1_2, 8, 0, 0, 2500, 32, 1, 80000</column>
-<column name="matrix_1_3_U">worker_matrix_1_3, 8, 0, 0, 2500, 32, 1, 80000</column>
-<column name="row_1_0_U">worker_row_1_0, 2, 0, 0, 2500, 6, 1, 15000</column>
-<column name="row_1_1_U">worker_row_1_0, 2, 0, 0, 2500, 6, 1, 15000</column>
-<column name="row_1_2_U">worker_row_1_0, 2, 0, 0, 2500, 6, 1, 15000</column>
-<column name="row_1_3_U">worker_row_1_0, 2, 0, 0, 2500, 6, 1, 15000</column>
-<column name="row_nnz_0_U">worker_row_nnz_0, 0, 64, 13, 25, 32, 1, 800</column>
-<column name="row_nnz_1_U">worker_row_nnz_1, 0, 64, 13, 25, 32, 1, 800</column>
-<column name="row_nnz_2_U">worker_row_nnz_2, 0, 64, 13, 25, 32, 1, 800</column>
-<column name="row_nnz_3_U">worker_row_nnz_3, 0, 64, 13, 25, 32, 1, 800</column>
-<column name="val_1_0_U">worker_val_1_0, 8, 0, 0, 2500, 32, 1, 80000</column>
-<column name="val_1_1_U">worker_val_1_0, 8, 0, 0, 2500, 32, 1, 80000</column>
-<column name="val_1_2_U">worker_val_1_0, 8, 0, 0, 2500, 32, 1, 80000</column>
-<column name="val_1_3_U">worker_val_1_0, 8, 0, 0, 2500, 32, 1, 80000</column>
+<column name="dest_1_0_U">worker_dest_1_0, 2, 0, 0, 100, 32, 1, 3200</column>
 </table>
 </item>
 <item name = "FIFO"><table name="" hasTotal="1">
@@ -118,112 +79,29 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP48E, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="i_fu_1261_p2">+, 0, 0, 3, 3, 1</column>
-<column name="j_1_1_fu_1219_p2">+, 0, 0, 5, 5, 1</column>
-<column name="j_1_2_fu_1231_p2">+, 0, 0, 5, 5, 1</column>
-<column name="j_1_3_fu_1243_p2">+, 0, 0, 5, 5, 1</column>
-<column name="j_1_fu_1207_p2">+, 0, 0, 5, 5, 1</column>
-<column name="j_3_fu_1281_p2">+, 0, 0, 5, 5, 1</column>
-<column name="next_mul_fu_1249_p2">+, 0, 0, 7, 7, 5</column>
-<column name="tmp_2_fu_1295_p2">+, 0, 0, 7, 7, 7</column>
-<column name="exitcond1_fu_1255_p2">icmp, 0, 0, 2, 3, 4</column>
-<column name="exitcond4_1_fu_1213_p2">icmp, 0, 0, 2, 5, 4</column>
-<column name="exitcond4_2_fu_1225_p2">icmp, 0, 0, 2, 5, 4</column>
-<column name="exitcond4_3_fu_1237_p2">icmp, 0, 0, 2, 5, 4</column>
-<column name="exitcond4_fu_1201_p2">icmp, 0, 0, 2, 5, 4</column>
-<column name="exitcond_fu_1275_p2">icmp, 0, 0, 2, 5, 4</column>
+<column name="j_fu_1095_p2">+, 0, 0, 7, 7, 1</column>
+<column name="exitcond_fu_1089_p2">icmp, 0, 0, 3, 7, 6</column>
 </table>
 </item>
 <item name = "Multiplexer"><table name="" hasTotal="1">
 <keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
-<column name="ap_NS_fsm">21, 25, 1, 25</column>
-<column name="col_1_0_address0">12, 3, 12, 36</column>
-<column name="col_1_0_ce0">1, 3, 1, 3</column>
-<column name="col_1_1_address0">12, 3, 12, 36</column>
-<column name="col_1_1_ce0">1, 3, 1, 3</column>
-<column name="col_1_2_address0">12, 3, 12, 36</column>
-<column name="col_1_2_ce0">1, 3, 1, 3</column>
-<column name="col_1_3_address0">12, 3, 12, 36</column>
-<column name="col_1_3_ce0">1, 3, 1, 3</column>
-<column name="dest_1_0_address0">15, 15, 5, 75</column>
-<column name="dest_1_0_address1">15, 15, 5, 75</column>
+<column name="ap_NS_fsm">96, 55, 1, 55</column>
+<column name="dest_1_0_address0">112, 53, 7, 371</column>
+<column name="dest_1_0_address1">112, 52, 7, 364</column>
 <column name="dest_1_0_ce0">1, 3, 1, 3</column>
 <column name="dest_1_0_ce1">1, 3, 1, 3</column>
 <column name="dest_1_0_d1">32, 3, 32, 96</column>
 <column name="dest_1_0_we1">1, 3, 1, 3</column>
-<column name="dest_1_1_address0">15, 15, 5, 75</column>
-<column name="dest_1_1_address1">15, 15, 5, 75</column>
-<column name="dest_1_1_ce0">1, 3, 1, 3</column>
-<column name="dest_1_1_ce1">1, 3, 1, 3</column>
-<column name="dest_1_1_d1">32, 3, 32, 96</column>
-<column name="dest_1_1_we1">1, 3, 1, 3</column>
-<column name="dest_1_2_address0">15, 15, 5, 75</column>
-<column name="dest_1_2_address1">15, 15, 5, 75</column>
-<column name="dest_1_2_ce0">1, 3, 1, 3</column>
-<column name="dest_1_2_ce1">1, 3, 1, 3</column>
-<column name="dest_1_2_d1">32, 3, 32, 96</column>
-<column name="dest_1_2_we1">1, 3, 1, 3</column>
-<column name="dest_1_3_address0">15, 15, 5, 75</column>
-<column name="dest_1_3_address1">15, 15, 5, 75</column>
-<column name="dest_1_3_ce0">1, 3, 1, 3</column>
-<column name="dest_1_3_ce1">1, 3, 1, 3</column>
-<column name="dest_1_3_d1">32, 3, 32, 96</column>
-<column name="dest_1_3_we1">1, 3, 1, 3</column>
-<column name="grp_worker_COO_SpMV_fu_1128_col_q0">8, 3, 8, 24</column>
-<column name="grp_worker_COO_SpMV_fu_1128_output_r_q0">32, 3, 32, 96</column>
-<column name="grp_worker_COO_SpMV_fu_1128_row_q0">6, 3, 6, 18</column>
-<column name="grp_worker_COO_SpMV_fu_1128_val_r_q0">32, 3, 32, 96</column>
-<column name="grp_worker_create_COO_fu_1161_input_r_q0">32, 3, 32, 96</column>
-<column name="grp_worker_create_COO_fu_1161_nnz_q0">32, 3, 32, 96</column>
-<column name="i3_reg_1094">3, 2, 3, 6</column>
-<column name="j4_reg_1117">5, 2, 5, 10</column>
-<column name="j_2_reg_1072">5, 2, 5, 10</column>
-<column name="j_4_reg_1083">5, 2, 5, 10</column>
-<column name="j_reg_1050">5, 2, 5, 10</column>
-<column name="j_s_reg_1061">5, 2, 5, 10</column>
-<column name="phi_mul_reg_1105">7, 2, 7, 14</column>
-<column name="row_1_0_address0">12, 3, 12, 36</column>
-<column name="row_1_0_ce0">1, 3, 1, 3</column>
-<column name="row_1_1_address0">12, 3, 12, 36</column>
-<column name="row_1_1_ce0">1, 3, 1, 3</column>
-<column name="row_1_2_address0">12, 3, 12, 36</column>
-<column name="row_1_2_ce0">1, 3, 1, 3</column>
-<column name="row_1_3_address0">12, 3, 12, 36</column>
-<column name="row_1_3_ce0">1, 3, 1, 3</column>
-<column name="val_1_0_address0">12, 3, 12, 36</column>
-<column name="val_1_0_ce0">1, 3, 1, 3</column>
-<column name="val_1_1_address0">12, 3, 12, 36</column>
-<column name="val_1_1_ce0">1, 3, 1, 3</column>
-<column name="val_1_2_address0">12, 3, 12, 36</column>
-<column name="val_1_2_ce0">1, 3, 1, 3</column>
-<column name="val_1_3_address0">12, 3, 12, 36</column>
-<column name="val_1_3_ce0">1, 3, 1, 3</column>
+<column name="j2_reg_1065">7, 2, 7, 14</column>
 </table>
 </item>
 <item name = "Register"><table name="" hasTotal="1">
 <keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
-<column name="ap_CS_fsm">24, 0, 24, 0</column>
-<column name="ap_reg_grp_worker_COO_SpMV_fu_1128_ap_start">1, 0, 1, 0</column>
-<column name="ap_reg_grp_worker_COO_SpMV_fu_1139_ap_start">1, 0, 1, 0</column>
-<column name="ap_reg_grp_worker_COO_SpMV_fu_1150_ap_start">1, 0, 1, 0</column>
-<column name="ap_reg_grp_worker_create_COO_fu_1161_ap_start">1, 0, 1, 0</column>
-<column name="ap_reg_grp_worker_create_COO_fu_1174_ap_start">1, 0, 1, 0</column>
-<column name="ap_reg_grp_worker_create_COO_fu_1185_ap_start">1, 0, 1, 0</column>
-<column name="i3_reg_1094">3, 0, 3, 0</column>
-<column name="i_reg_1369">3, 0, 3, 0</column>
-<column name="j4_reg_1117">5, 0, 5, 0</column>
-<column name="j_2_reg_1072">5, 0, 5, 0</column>
-<column name="j_3_reg_1382">5, 0, 5, 0</column>
-<column name="j_4_reg_1083">5, 0, 5, 0</column>
-<column name="j_reg_1050">5, 0, 5, 0</column>
-<column name="j_s_reg_1061">5, 0, 5, 0</column>
-<column name="next_mul_reg_1361">7, 0, 7, 0</column>
-<column name="phi_mul_reg_1105">7, 0, 7, 0</column>
-<column name="reg_1196">32, 0, 32, 0</column>
-<column name="tmp_10_reg_1374">2, 0, 2, 0</column>
-<column name="tmp_2_reg_1407">7, 0, 7, 0</column>
-<column name="tmp_7_reg_1351">32, 0, 32, 0</column>
-<column name="tmp_9_reg_1356">32, 0, 32, 0</column>
+<column name="ap_CS_fsm">54, 0, 54, 0</column>
+<column name="ap_reg_grp_worker_COO_SpMV_0_fu_1076_ap_start">1, 0, 1, 0</column>
+<column name="j2_reg_1065">7, 0, 7, 0</column>
+<column name="j_reg_1109">7, 0, 7, 0</column>
+<column name="tmp_4_reg_1114">7, 0, 64, 57</column>
 </table>
 </item>
 </section>
@@ -248,12 +126,12 @@
 </section>
 
 <section name = "Critical Path" level="0">
-<item name = "Max Delay">6.67</item>
+<item name = "Max Delay">5.42</item>
 <item name = "Critical Path Table"><table name="Critical Path Table" hasTotal="0">
 <keys size="15">Name, Operator, Delay, Accumulated Delay, Store Source, Resource, Core, Interface, Type, Port, Array, Scope, Pointer, Callee, Phi Node</keys>
-<column name="'dest_1_0_load', COO_SpMV.cpp:112">load, 2.39, 2.39, -, -, -, -, -, -, &apos;dest_1[0]&apos;, COO_SpMV.cpp:88, -, -, -, -</column>
-<column name="'tmp_11', COO_SpMV.cpp:112">mux, 1.57, 3.96, -, -, -, -, -, -, -, -, -, -, -</column>
-<column name="COO_SpMV.cpp:112">store, 2.71, 6.67, &apos;tmp_11&apos;, COO_SpMV.cpp:112, -, -, -, -, -, &apos;dest&apos;, -, -, -, -</column>
+<column name="'dest_1[0]', COO_SpMV.cpp:36">alloca, 2.71, 2.71, -, -, -, -, -, -, -, -, -, -, -</column>
+<column name="'dest_1_0_addr_1'">getelementptr, 0.00, 2.71, -, -, -, -, -, -, -, -, -, -, -</column>
+<column name="COO_SpMV.cpp:40">store, 2.71, 5.42, , -, -, -, -, -, &apos;dest_1[0]&apos;, COO_SpMV.cpp:36, -, -, -, -</column>
 </table>
 </item>
 </section>

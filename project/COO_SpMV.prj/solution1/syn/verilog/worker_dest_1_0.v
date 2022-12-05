@@ -6,11 +6,11 @@
 // ==============================================================
 
 `timescale 1 ns / 1 ps
-module worker_dest_1_0_ram (addr0, ce0, d0, we0, q0, addr1, ce1, d1, we1, q1,  clk);
+module worker_dest_1_0_ram (addr0, ce0, d0, we0, q0, addr1, ce1, d1, we1,  clk);
 
 parameter DWIDTH = 32;
-parameter AWIDTH = 5;
-parameter MEM_SIZE = 25;
+parameter AWIDTH = 7;
+parameter MEM_SIZE = 100;
 
 input[AWIDTH-1:0] addr0;
 input ce0;
@@ -21,7 +21,6 @@ input[AWIDTH-1:0] addr1;
 input ce1;
 input[DWIDTH-1:0] d1;
 input we1;
-output reg[DWIDTH-1:0] q1;
 input clk;
 
 (* ram_style = "block" *)reg [DWIDTH-1:0] ram[MEM_SIZE-1:0];
@@ -51,10 +50,7 @@ begin
         if (we1) 
         begin 
             ram[addr1] <= d1; 
-            q1 <= d1;
         end 
-        else 
-            q1 <= ram[addr1];
     end
 end
 
@@ -74,12 +70,11 @@ module worker_dest_1_0(
     address1,
     ce1,
     we1,
-    d1,
-    q1);
+    d1);
 
 parameter DataWidth = 32'd32;
-parameter AddressRange = 32'd25;
-parameter AddressWidth = 32'd5;
+parameter AddressRange = 32'd100;
+parameter AddressWidth = 32'd7;
 input reset;
 input clk;
 input[AddressWidth - 1:0] address0;
@@ -91,7 +86,6 @@ input[AddressWidth - 1:0] address1;
 input ce1;
 input we1;
 input[DataWidth - 1:0] d1;
-output[DataWidth - 1:0] q1;
 
 
 
@@ -105,8 +99,7 @@ worker_dest_1_0_ram worker_dest_1_0_ram_U(
     .addr1( address1 ),
     .ce1( ce1 ),
     .d1( d1 ),
-    .we1( we1 ),
-    .q1( q1 ));
+    .we1( we1 ));
 
 endmodule
 

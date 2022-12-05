@@ -17,7 +17,7 @@
         </directive>
         <directive functionName="worker" label="" functionLabel="">
             <pragma name="ARRAY_PARTITION">
-                <option name="variable" value="matrix_1" positionalBoolean="4"/>
+                <option name="variable" value="matrix_10" positionalBoolean="4"/>
                 <option name="complete" value="" positionalBoolean="type"/>
                 <option name="dim" value="1"/>
             </pragma>
@@ -31,28 +31,28 @@
         </directive>
         <directive functionName="worker" label="" functionLabel="">
             <pragma name="ARRAY_PARTITION">
-                <option name="variable" value="row_1" positionalBoolean="4"/>
-                <option name="complete" value="" positionalBoolean="type"/>
-                <option name="dim" value="1"/>
-            </pragma>
-        </directive>
-        <directive functionName="worker" label="" functionLabel="">
-            <pragma name="ARRAY_PARTITION">
-                <option name="variable" value="col_1" positionalBoolean="4"/>
-                <option name="complete" value="" positionalBoolean="type"/>
-                <option name="dim" value="1"/>
-            </pragma>
-        </directive>
-        <directive functionName="worker" label="" functionLabel="">
-            <pragma name="ARRAY_PARTITION">
-                <option name="variable" value="val_1" positionalBoolean="4"/>
-                <option name="complete" value="" positionalBoolean="type"/>
-                <option name="dim" value="1"/>
-            </pragma>
-        </directive>
-        <directive functionName="worker" label="" functionLabel="">
-            <pragma name="ARRAY_PARTITION">
                 <option name="variable" value="row_nnz" positionalBoolean="4"/>
+                <option name="complete" value="" positionalBoolean="type"/>
+                <option name="dim" value="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="worker" label="" functionLabel="">
+            <pragma name="ARRAY_PARTITION">
+                <option name="variable" value="row10_1" positionalBoolean="4"/>
+                <option name="complete" value="" positionalBoolean="type"/>
+                <option name="dim" value="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="worker" label="" functionLabel="">
+            <pragma name="ARRAY_PARTITION">
+                <option name="variable" value="col10_1" positionalBoolean="4"/>
+                <option name="complete" value="" positionalBoolean="type"/>
+                <option name="dim" value="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="worker" label="" functionLabel="">
+            <pragma name="ARRAY_PARTITION">
+                <option name="variable" value="val10_1" positionalBoolean="4"/>
                 <option name="complete" value="" positionalBoolean="type"/>
                 <option name="dim" value="1"/>
             </pragma>

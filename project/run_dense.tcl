@@ -27,7 +27,7 @@ set hls_prj "Dense_SpMV.prj"
 # Open/reset the project
 open_project ${hls_prj} -reset
 # Top function of the design is "Dense SpMV"
-set_top Dense_SpMV
+set_top dut
 
 # Add design and testbench files
 add_files Dense_SpMV.cpp
@@ -44,6 +44,8 @@ create_clock -period 10
 csim_design
 # Synthesis the design
 csynth_design
+
+cosim_design
 
 
 exit

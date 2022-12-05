@@ -22,16 +22,16 @@ file delete -force "./result/${filename}"
 #------------------------------------------------------
 
 # Project name
-set hls_prj "COO_SpMV.prj"
+set hls_prj "COO_SpMV_orig.prj"
 
 # Open/reset the project
 open_project ${hls_prj} -reset
 # Top function of the design is "COO SpMV"
-set_top worker
+set_top dut
 
 # Add design and testbench files
 add_files COO_SpMV_orig.cpp
-add_files -tb COO_SpMV_test.cpp
+add_files -tb COO_SpMV_orig_test.cpp
 
 open_solution "solution1"
 # Use Zynq device
@@ -45,7 +45,7 @@ set_directive_inline -off COO_SpMV
 set_directive_inline -off count_nnz
 
 # Simulate the C++ design
-# csim_design
+ csim_design
 # Synthesis the design
 csynth_design
 # Co-simulate the design

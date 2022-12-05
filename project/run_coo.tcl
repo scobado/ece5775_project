@@ -27,7 +27,7 @@ set hls_prj "COO_SpMV.prj"
 # Open/reset the project
 open_project ${hls_prj} -reset
 # Top function of the design is "COO SpMV"
-set_top worker
+set_top dut
 
 # Add design and testbench files
 add_files COO_SpMV.cpp
@@ -85,10 +85,10 @@ set_directive_unroll worker/LOOP_DEST1
 
 
 # Simulate the C++ design
-# csim_design
+csim_design
 # Synthesis the design
-csynth_design
+ csynth_design
 # Co-simulate the design
-cosim_design
+ cosim_design
 
 exit

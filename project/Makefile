@@ -33,6 +33,10 @@ vivado_coo:
 	@echo "Run Vivado csim and HLS for COO SpMV"
 	vivado_hls -f run_coo.tcl
 
+vivado_base:
+	@echo "Run Vivado csim and HLS for COO SpMV"
+	vivado_hls -f run_coo_baseline.tcl
+
 vivado_pagerank:
 	@echo "Run Vivado csim and HLS for PageRank"
 	vivado_hls -f run_pagerank.tcl

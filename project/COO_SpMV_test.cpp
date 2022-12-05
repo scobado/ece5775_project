@@ -4,8 +4,12 @@
 #include <stdio.h>
 #include "model.h"
 #include "COO_SpMV.h"
+#include <ap_int.h>
+#include <fstream>
+#include "timer.h"
 
 using namespace std;
+typedef ap_uint<32> coo_int;
 
 //==========================================================================
 // verify_results
@@ -34,13 +38,52 @@ void verify_results( float dest[], const float ref[], int size )
 //==========================================================================
 
 int main( int argc, char* argv[] ) {
-  float dest[size];
+   float output[size];
+   coo_int out_temp[size];
 
-  for (int i = 0; i < size; i++ )
-    dest[i] = 0;
+  hls::stream<coo_int> element;
+  hls::stream<coo_int> out;
 
+  union {float fval;int ival;} u;
+  Timer timer("COO SpMV Accelerated");
+  timer.start();
+  for (int i = 0; i < size; i++ ){
+    u.fval = 0.0;
+    coo_int iv = u.ival;
+    element.write(iv);
+  }
+  dut(element,out);
   std::cout << "Testing COO SpMV\n";
-  worker(dest);
-  verify_results( dest, result_2, size );
+  
+  union {float fval;int ival;} u3;
+  //read output of DUT
+  for (int i = 0; i < size; i++) {
+    
+    out_temp[i] = out.read();
+    u3.ival = out_temp[i];
+    output[i] = u3.fval;
+  }
+  timer.stop();
+  verify_results( output, result_2, size );
   return 0;
 }
+
+
+// //commented the top part for trying out the union part
+// //this union model works independently but you might need to see its implementation in our host/dut
+// #include <stdio.h>
+// #include <iostream>
+// using namespace std;
+// int main(){
+// union {float fval; int ival;} u;
+// // union {int ival1;float fval1;} u1;
+// u.fval = 1.01;
+// int iv = u.ival;
+// printf("%d\n",iv);
+// u.ival = iv;
+// float ov = u.fval;
+// // u1.ival1 = iv;
+// // float ov = u1.fval1;
+//  printf("%f\n",ov);
+// return 0;
+// }

@@ -18,6 +18,9 @@ const float vector_const = alpha * vector_init;
 // const float matrix[10][PE][block_size][size] = {
 //     #include"data/sparse.dat"
 // };
+const float matrix_2_dense[size][size] = {
+    #include"data/sparse_2.dat"
+};
 
 const float matrix_1[PE][block_size][size] = {
     #include"data/sparse_1.dat"
@@ -183,11 +186,14 @@ const float pagerank_10[PE][block_size][size] = {
 
 // import vector
 
-const float vector[size] = {
+const float v[size] = {
     #include"data/vector.dat"
 };
 
 // import results
+const float result_0[size] = {
+    #include"data/result_0.dat"
+};
 
 const float result_1[size] = {
     #include"data/result_1.dat"

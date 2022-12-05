@@ -4,8 +4,12 @@
 #include <stdio.h>
 #include "model.h"
 #include "Dense_SpMV.h"
+#include <ap_int.h>
+#include <fstream>
+#include "timer.h"
 
 using namespace std;
+typedef ap_uint<32> coo_int;
 
 //==========================================================================
 // verify_results
@@ -34,42 +38,32 @@ void verify_results( float dest[], const float ref[], int size )
 //==========================================================================
 
 int main( int argc, char* argv[] ) {
-  float dest[size];
+   float output[size];
+   coo_int out_temp[size];
 
-  for (int i = 0; i < size; i++ )
-    dest[i] = 0;
+  hls::stream<coo_int> element;
+  hls::stream<coo_int> out;
 
+  union {float fval;int ival;} u;
+  Timer timer("Dense SpMV");
+  timer.start();
+  for (int i = 0; i < size; i++ ){
+    u.fval = 0.0;
+    coo_int iv = u.ival;
+    element.write(iv);
+  }
+  dut(element,out);
   std::cout << "Testing Dense SpMV\n";
-
-  Dense_SpMV(matrix_1, vector, dest);
-  verify_results( dest, result_1, size );
-
-  // Dense_SpMV(matrix_2, vector, dest);
-  // verify_results( dest, result_2, size );
-
-  // Dense_SpMV(matrix_3, vector, dest);
-  // verify_results( dest, result_3, size );
-
-  // Dense_SpMV(matrix_4, vector, dest);
-  // verify_results( dest, result_4, size );
-
-  // Dense_SpMV(matrix_5, vector, dest);
-  // verify_results( dest, result_5, size );
-
-  // Dense_SpMV(matrix_6, vector, dest);
-  // verify_results( dest, result_6, size );
-
-  // Dense_SpMV(matrix_7, vector, dest);
-  // verify_results( dest, result_7, size );
-
-  // Dense_SpMV(matrix_8, vector, dest);
-  // verify_results( dest, result_8, size );
-
-  // Dense_SpMV(matrix_9, vector, dest);
-  // verify_results( dest, result_9, size );
-
-  // Dense_SpMV(matrix_10, vector, dest);
-  // verify_results( dest, result_10, size );
-
+  
+  union {float fval;int ival;} u3;
+  //read output of DUT
+  for (int i = 0; i < size; i++) {
+    
+    out_temp[i] = out.read();
+    u3.ival = out_temp[i];
+    output[i] = u3.fval;
+  }
+  timer.stop();
+  verify_results( output, result_0, size );
   return 0;
 }

@@ -47,6 +47,10 @@ const float matrix_10[PE][block_size][size] = {
     #include"data/sparse_10.dat"
 };
 
+const float matrix_10_dense[size][size] = {
+    #include"data/sparse_10.dat"
+};
+
 // import pagerank datasets
 
 const float transposed_10[PE][block_size][size] = {

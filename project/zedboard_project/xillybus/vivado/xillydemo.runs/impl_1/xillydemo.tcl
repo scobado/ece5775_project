@@ -70,28 +70,22 @@ set rc [catch {
   read_edif /home/ak2425/ece5775/ece5775_project/project/zedboard_project/vivado-essentials/vivado_system/system/pcores/xillybus_lite_v1_00_a/netlist/xillybus_lite.ngc
   add_files -quiet /home/ak2425/ece5775/ece5775_project/project/zedboard_project/vivado-essentials/vga_fifo/vga_fifo.dcp
   set_property netlist_only true [get_files /home/ak2425/ece5775/ece5775_project/project/zedboard_project/vivado-essentials/vga_fifo/vga_fifo.dcp]
-  add_files -quiet /home/ak2425/ece5775/ece5775_project/project/zedboard_project/vivado-essentials/fifo_32x512/fifo_32x512.dcp
-  set_property netlist_only true [get_files /home/ak2425/ece5775/ece5775_project/project/zedboard_project/vivado-essentials/fifo_32x512/fifo_32x512.dcp]
   add_files -quiet /home/ak2425/ece5775/ece5775_project/project/zedboard_project/vivado-essentials/fifo_8x2048/fifo_8x2048.dcp
   set_property netlist_only true [get_files /home/ak2425/ece5775/ece5775_project/project/zedboard_project/vivado-essentials/fifo_8x2048/fifo_8x2048.dcp]
+  add_files -quiet /home/ak2425/ece5775/ece5775_project/project/zedboard_project/vivado-essentials/fifo_32x512/fifo_32x512.dcp
+  set_property netlist_only true [get_files /home/ak2425/ece5775/ece5775_project/project/zedboard_project/vivado-essentials/fifo_32x512/fifo_32x512.dcp]
+  read_xdc -ref vga_fifo -cells U0 /home/ak2425/ece5775/ece5775_project/project/zedboard_project/vivado-essentials/vga_fifo/vga_fifo/vga_fifo.xdc
+  set_property processing_order EARLY [get_files /home/ak2425/ece5775/ece5775_project/project/zedboard_project/vivado-essentials/vga_fifo/vga_fifo/vga_fifo.xdc]
+  read_xdc -ref fifo_8x2048 -cells U0 /home/ak2425/ece5775/ece5775_project/project/zedboard_project/vivado-essentials/fifo_8x2048/fifo_8x2048/fifo_8x2048.xdc
+  set_property processing_order EARLY [get_files /home/ak2425/ece5775/ece5775_project/project/zedboard_project/vivado-essentials/fifo_8x2048/fifo_8x2048/fifo_8x2048.xdc]
+  read_xdc -ref fifo_32x512 -cells U0 /home/ak2425/ece5775/ece5775_project/project/zedboard_project/vivado-essentials/fifo_32x512/fifo_32x512/fifo_32x512.xdc
+  set_property processing_order EARLY [get_files /home/ak2425/ece5775/ece5775_project/project/zedboard_project/vivado-essentials/fifo_32x512/fifo_32x512/fifo_32x512.xdc]
   read_xdc -ref vivado_system_processing_system7_0_0 -cells inst /home/ak2425/ece5775/ece5775_project/project/zedboard_project/vivado-essentials/vivado_system/ip/vivado_system_processing_system7_0_0/vivado_system_processing_system7_0_0.xdc
   set_property processing_order EARLY [get_files /home/ak2425/ece5775/ece5775_project/project/zedboard_project/vivado-essentials/vivado_system/ip/vivado_system_processing_system7_0_0/vivado_system_processing_system7_0_0.xdc]
   read_xdc -prop_thru_buffers -ref vivado_system_rst_processing_system7_0_100M_0 -cells U0 /home/ak2425/ece5775/ece5775_project/project/zedboard_project/vivado-essentials/vivado_system/ip/vivado_system_rst_processing_system7_0_100M_0/vivado_system_rst_processing_system7_0_100M_0_board.xdc
   set_property processing_order EARLY [get_files /home/ak2425/ece5775/ece5775_project/project/zedboard_project/vivado-essentials/vivado_system/ip/vivado_system_rst_processing_system7_0_100M_0/vivado_system_rst_processing_system7_0_100M_0_board.xdc]
   read_xdc -ref vivado_system_rst_processing_system7_0_100M_0 -cells U0 /home/ak2425/ece5775/ece5775_project/project/zedboard_project/vivado-essentials/vivado_system/ip/vivado_system_rst_processing_system7_0_100M_0/vivado_system_rst_processing_system7_0_100M_0.xdc
   set_property processing_order EARLY [get_files /home/ak2425/ece5775/ece5775_project/project/zedboard_project/vivado-essentials/vivado_system/ip/vivado_system_rst_processing_system7_0_100M_0/vivado_system_rst_processing_system7_0_100M_0.xdc]
-  read_xdc -mode out_of_context -ref vga_fifo -cells U0 /home/ak2425/ece5775/ece5775_project/project/zedboard_project/vivado-essentials/vga_fifo/vga_fifo_ooc.xdc
-  set_property processing_order EARLY [get_files /home/ak2425/ece5775/ece5775_project/project/zedboard_project/vivado-essentials/vga_fifo/vga_fifo_ooc.xdc]
-  read_xdc -ref vga_fifo -cells U0 /home/ak2425/ece5775/ece5775_project/project/zedboard_project/vivado-essentials/vga_fifo/vga_fifo/vga_fifo.xdc
-  set_property processing_order EARLY [get_files /home/ak2425/ece5775/ece5775_project/project/zedboard_project/vivado-essentials/vga_fifo/vga_fifo/vga_fifo.xdc]
-  read_xdc -mode out_of_context -ref fifo_32x512 -cells U0 /home/ak2425/ece5775/ece5775_project/project/zedboard_project/vivado-essentials/fifo_32x512/fifo_32x512_ooc.xdc
-  set_property processing_order EARLY [get_files /home/ak2425/ece5775/ece5775_project/project/zedboard_project/vivado-essentials/fifo_32x512/fifo_32x512_ooc.xdc]
-  read_xdc -ref fifo_32x512 -cells U0 /home/ak2425/ece5775/ece5775_project/project/zedboard_project/vivado-essentials/fifo_32x512/fifo_32x512/fifo_32x512.xdc
-  set_property processing_order EARLY [get_files /home/ak2425/ece5775/ece5775_project/project/zedboard_project/vivado-essentials/fifo_32x512/fifo_32x512/fifo_32x512.xdc]
-  read_xdc -mode out_of_context -ref fifo_8x2048 -cells U0 /home/ak2425/ece5775/ece5775_project/project/zedboard_project/vivado-essentials/fifo_8x2048/fifo_8x2048_ooc.xdc
-  set_property processing_order EARLY [get_files /home/ak2425/ece5775/ece5775_project/project/zedboard_project/vivado-essentials/fifo_8x2048/fifo_8x2048_ooc.xdc]
-  read_xdc -ref fifo_8x2048 -cells U0 /home/ak2425/ece5775/ece5775_project/project/zedboard_project/vivado-essentials/fifo_8x2048/fifo_8x2048/fifo_8x2048.xdc
-  set_property processing_order EARLY [get_files /home/ak2425/ece5775/ece5775_project/project/zedboard_project/vivado-essentials/fifo_8x2048/fifo_8x2048/fifo_8x2048.xdc]
   read_xdc /home/ak2425/ece5775/ece5775_project/project/zedboard_project/vivado-essentials/xillydemo.xdc
   read_xdc -ref vga_fifo -cells U0 /home/ak2425/ece5775/ece5775_project/project/zedboard_project/vivado-essentials/vga_fifo/vga_fifo/vga_fifo_clocks.xdc
   set_property processing_order LATE [get_files /home/ak2425/ece5775/ece5775_project/project/zedboard_project/vivado-essentials/vga_fifo/vga_fifo/vga_fifo_clocks.xdc]

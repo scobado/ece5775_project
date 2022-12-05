@@ -62,10 +62,10 @@ int main( int argc, char* argv[] ) {
     out_temp[i] = out.read();
     u3.ival = out_temp[i];
     output[i] = u3.fval;
-    std::cout <<output[i] << "\n";
+    // std::cout <<output[i] << "\n";
   }
   timer.stop();
-  verify_results( output, result_2, size );
+  verify_results( output, result_10, size );
   return 0;
 }
 

@@ -99,8 +99,8 @@ void worker(float dest[size]) {
   int col_1[matrix_size];
   float val_1[matrix_size];
 
-  int nnz = count_nnz(matrix_2_dense);
-  create_COO(matrix_2_dense,row_1,col_1,val_1);
+  int nnz = count_nnz(matrix_10_dense);
+  create_COO(matrix_10_dense,row_1,col_1,val_1);
   COO_SpMV(row_1,col_1,val_1,v,dest,nnz);
 
 }

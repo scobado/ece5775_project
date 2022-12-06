@@ -10,7 +10,6 @@
 
 #include "timer.h"
 #include "model.h"
-#include "COO_SpMV_orig.h"
 
 typedef ap_uint<32> coo_int;
 
@@ -95,6 +94,6 @@ int main(int argc, char** argv)
   }
 
   timer.stop();
-  verify_results( output_vector, result_10, size );
+  verify_results( output_vector, ranks_10, size );
   return 0;
 }

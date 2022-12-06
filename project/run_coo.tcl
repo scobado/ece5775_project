@@ -52,9 +52,9 @@ set_directive_array_partition -type complete -dim 1 worker row_nnz
 #set_directive_array_partition -type complete -dim 1 worker col_1
 #set_directive_array_partition -type complete -dim 1 worker val_1
 
-set_directive_array_partition -type complete -dim 1 worker row10_25
-set_directive_array_partition -type complete -dim 1 worker col10_25
-set_directive_array_partition -type complete -dim 1 worker val10_25
+#set_directive_array_partition -type complete -dim 1 worker row10_25
+#set_directive_array_partition -type complete -dim 1 worker col10_25
+#set_directive_array_partition -type complete -dim 1 worker val10_25
 
 #set_directive_array_partition -type complete -dim 1 worker row10_1
 #set_directive_array_partition -type complete -dim 1 worker col10_1

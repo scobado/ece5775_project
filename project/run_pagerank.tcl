@@ -27,7 +27,7 @@ set hls_prj "PageRank.prj"
 # Open/reset the project
 open_project ${hls_prj} -reset
 # Top function of the design is "main_function"
-set_top main_function
+set_top dut
 
 # Add design and testbench files
 add_files pagerank.cpp
@@ -50,9 +50,9 @@ set_directive_inline -off COO_SpMV
 
 set_directive_array_partition -type complete -dim 1 SpMV transposed_9
 set_directive_array_partition -type complete -dim 1 SpMV tmp_dest
-set_directive_array_partition -type complete -dim 1 SpMV row
-set_directive_array_partition -type complete -dim 1 SpMV col
-set_directive_array_partition -type complete -dim 1 SpMV val
+set_directive_array_partition -type complete -dim 1 SpMV row10_10
+set_directive_array_partition -type complete -dim 1 SpMV col10_10
+set_directive_array_partition -type complete -dim 1 SpMV val10_10
 set_directive_array_partition -type complete -dim 1 SpMV row_nnz 
 set_directive_array_partition -type complete -dim 1 main_function v_new
 set_directive_array_partition -type complete -dim 1 main_function v_old
@@ -65,7 +65,7 @@ set_directive_unroll SpMV/LOOP_PE2
 set_directive_unroll SpMV/LOOP_DEST1
 
 # Simulate the C++ design
-# csim_design
+#csim_design
 # Synthesis the design
 csynth_design
 # Co-simulate the design

@@ -15,85 +15,127 @@ set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
-set_property webtalk.parent_dir /home/ak2425/ece5775/ece5775_project/project/zedboard_project/xillybus/vivado/xillydemo.cache/wt [current_project]
-set_property parent.project_path /home/ak2425/ece5775/ece5775_project/project/zedboard_project/xillybus/vivado/xillydemo.xpr [current_project]
+set_property webtalk.parent_dir /home/sec322/ece5775/final_project/project/zedboard_project/xillybus/vivado/xillydemo.cache/wt [current_project]
+set_property parent.project_path /home/sec322/ece5775/final_project/project/zedboard_project/xillybus/vivado/xillydemo.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property ip_repo_paths /home/ak2425/ece5775/ece5775_project/project/zedboard_project/vivado-essentials/vivado-ip [current_project]
-add_files -quiet /home/ak2425/ece5775/ece5775_project/project/zedboard_project/vivado-essentials/vga_fifo/vga_fifo.dcp
-set_property used_in_implementation false [get_files /home/ak2425/ece5775/ece5775_project/project/zedboard_project/vivado-essentials/vga_fifo/vga_fifo.dcp]
-add_files -quiet /home/ak2425/ece5775/ece5775_project/project/zedboard_project/vivado-essentials/fifo_8x2048/fifo_8x2048.dcp
-set_property used_in_implementation false [get_files /home/ak2425/ece5775/ece5775_project/project/zedboard_project/vivado-essentials/fifo_8x2048/fifo_8x2048.dcp]
-add_files -quiet /home/ak2425/ece5775/ece5775_project/project/zedboard_project/vivado-essentials/fifo_32x512/fifo_32x512.dcp
-set_property used_in_implementation false [get_files /home/ak2425/ece5775/ece5775_project/project/zedboard_project/vivado-essentials/fifo_32x512/fifo_32x512.dcp]
-read_ip -quiet /home/ak2425/ece5775/ece5775_project/project/zedboard_project/vivado-essentials/vga_fifo/vga_fifo.xci
-set_property used_in_implementation false [get_files -all /home/ak2425/ece5775/ece5775_project/project/zedboard_project/vivado-essentials/vga_fifo/vga_fifo/vga_fifo_clocks.xdc]
-set_property used_in_implementation false [get_files -all /home/ak2425/ece5775/ece5775_project/project/zedboard_project/vivado-essentials/vga_fifo/vga_fifo/vga_fifo.xdc]
-set_property used_in_implementation false [get_files -all /home/ak2425/ece5775/ece5775_project/project/zedboard_project/vivado-essentials/vga_fifo/vga_fifo_ooc.xdc]
-set_property is_locked true [get_files /home/ak2425/ece5775/ece5775_project/project/zedboard_project/vivado-essentials/vga_fifo/vga_fifo.xci]
+set_property ip_repo_paths /home/sec322/ece5775/final_project/project/zedboard_project/vivado-essentials/vivado-ip [current_project]
+add_files -quiet /home/sec322/ece5775/final_project/project/zedboard_project/vivado-essentials/vga_fifo/vga_fifo.dcp
+set_property used_in_implementation false [get_files /home/sec322/ece5775/final_project/project/zedboard_project/vivado-essentials/vga_fifo/vga_fifo.dcp]
+add_files -quiet /home/sec322/ece5775/final_project/project/zedboard_project/vivado-essentials/fifo_8x2048/fifo_8x2048.dcp
+set_property used_in_implementation false [get_files /home/sec322/ece5775/final_project/project/zedboard_project/vivado-essentials/fifo_8x2048/fifo_8x2048.dcp]
+add_files -quiet /home/sec322/ece5775/final_project/project/zedboard_project/vivado-essentials/fifo_32x512/fifo_32x512.dcp
+set_property used_in_implementation false [get_files /home/sec322/ece5775/final_project/project/zedboard_project/vivado-essentials/fifo_32x512/fifo_32x512.dcp]
+read_ip -quiet /home/sec322/ece5775/final_project/project/zedboard_project/vivado-essentials/vga_fifo/vga_fifo.xci
+set_property used_in_implementation false [get_files -all /home/sec322/ece5775/final_project/project/zedboard_project/vivado-essentials/vga_fifo/vga_fifo/vga_fifo_clocks.xdc]
+set_property used_in_implementation false [get_files -all /home/sec322/ece5775/final_project/project/zedboard_project/vivado-essentials/vga_fifo/vga_fifo/vga_fifo.xdc]
+set_property used_in_implementation false [get_files -all /home/sec322/ece5775/final_project/project/zedboard_project/vivado-essentials/vga_fifo/vga_fifo_ooc.xdc]
+set_property is_locked true [get_files /home/sec322/ece5775/final_project/project/zedboard_project/vivado-essentials/vga_fifo/vga_fifo.xci]
 
-read_ip -quiet /home/ak2425/ece5775/ece5775_project/project/zedboard_project/vivado-essentials/fifo_8x2048/fifo_8x2048.xci
-set_property used_in_implementation false [get_files -all /home/ak2425/ece5775/ece5775_project/project/zedboard_project/vivado-essentials/fifo_8x2048/fifo_8x2048/fifo_8x2048.xdc]
-set_property used_in_implementation false [get_files -all /home/ak2425/ece5775/ece5775_project/project/zedboard_project/vivado-essentials/fifo_8x2048/fifo_8x2048_ooc.xdc]
-set_property is_locked true [get_files /home/ak2425/ece5775/ece5775_project/project/zedboard_project/vivado-essentials/fifo_8x2048/fifo_8x2048.xci]
+read_ip -quiet /home/sec322/ece5775/final_project/project/zedboard_project/vivado-essentials/fifo_8x2048/fifo_8x2048.xci
+set_property used_in_implementation false [get_files -all /home/sec322/ece5775/final_project/project/zedboard_project/vivado-essentials/fifo_8x2048/fifo_8x2048/fifo_8x2048.xdc]
+set_property used_in_implementation false [get_files -all /home/sec322/ece5775/final_project/project/zedboard_project/vivado-essentials/fifo_8x2048/fifo_8x2048_ooc.xdc]
+set_property is_locked true [get_files /home/sec322/ece5775/final_project/project/zedboard_project/vivado-essentials/fifo_8x2048/fifo_8x2048.xci]
 
-read_ip -quiet /home/ak2425/ece5775/ece5775_project/project/zedboard_project/vivado-essentials/fifo_32x512/fifo_32x512.xci
-set_property used_in_implementation false [get_files -all /home/ak2425/ece5775/ece5775_project/project/zedboard_project/vivado-essentials/fifo_32x512/fifo_32x512/fifo_32x512.xdc]
-set_property used_in_implementation false [get_files -all /home/ak2425/ece5775/ece5775_project/project/zedboard_project/vivado-essentials/fifo_32x512/fifo_32x512_ooc.xdc]
-set_property is_locked true [get_files /home/ak2425/ece5775/ece5775_project/project/zedboard_project/vivado-essentials/fifo_32x512/fifo_32x512.xci]
+read_ip -quiet /home/sec322/ece5775/final_project/project/zedboard_project/vivado-essentials/fifo_32x512/fifo_32x512.xci
+set_property used_in_implementation false [get_files -all /home/sec322/ece5775/final_project/project/zedboard_project/vivado-essentials/fifo_32x512/fifo_32x512/fifo_32x512.xdc]
+set_property used_in_implementation false [get_files -all /home/sec322/ece5775/final_project/project/zedboard_project/vivado-essentials/fifo_32x512/fifo_32x512_ooc.xdc]
+set_property is_locked true [get_files /home/sec322/ece5775/final_project/project/zedboard_project/vivado-essentials/fifo_32x512/fifo_32x512.xci]
 
-add_files /home/ak2425/ece5775/ece5775_project/project/zedboard_project/vivado-essentials/vivado_system/vivado_system.bd
-set_property used_in_implementation false [get_files -all /home/ak2425/ece5775/ece5775_project/project/zedboard_project/vivado-essentials/vivado_system/ip/vivado_system_processing_system7_0_0/vivado_system_processing_system7_0_0.xdc]
-set_property used_in_implementation false [get_files -all /home/ak2425/ece5775/ece5775_project/project/zedboard_project/vivado-essentials/vivado_system/ip/vivado_system_rst_processing_system7_0_100M_0/vivado_system_rst_processing_system7_0_100M_0_board.xdc]
-set_property used_in_implementation false [get_files -all /home/ak2425/ece5775/ece5775_project/project/zedboard_project/vivado-essentials/vivado_system/ip/vivado_system_rst_processing_system7_0_100M_0/vivado_system_rst_processing_system7_0_100M_0.xdc]
-set_property used_in_implementation false [get_files -all /home/ak2425/ece5775/ece5775_project/project/zedboard_project/vivado-essentials/vivado_system/ip/vivado_system_rst_processing_system7_0_100M_0/vivado_system_rst_processing_system7_0_100M_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/ak2425/ece5775/ece5775_project/project/zedboard_project/vivado-essentials/vivado_system/ip/vivado_system_xbar_0/vivado_system_xbar_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/ak2425/ece5775/ece5775_project/project/zedboard_project/vivado-essentials/vivado_system/ip/vivado_system_auto_pc_0/vivado_system_auto_pc_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/ak2425/ece5775/ece5775_project/project/zedboard_project/vivado-essentials/vivado_system/ip/vivado_system_auto_pc_1/vivado_system_auto_pc_1_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/ak2425/ece5775/ece5775_project/project/zedboard_project/vivado-essentials/vivado_system/ip/vivado_system_auto_pc_2/vivado_system_auto_pc_2_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/ak2425/ece5775/ece5775_project/project/zedboard_project/vivado-essentials/vivado_system/ip/vivado_system_auto_pc_3/vivado_system_auto_pc_3_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/ak2425/ece5775/ece5775_project/project/zedboard_project/vivado-essentials/vivado_system/vivado_system_ooc.xdc]
-set_property is_locked true [get_files /home/ak2425/ece5775/ece5775_project/project/zedboard_project/vivado-essentials/vivado_system/vivado_system.bd]
+add_files /home/sec322/ece5775/final_project/project/zedboard_project/vivado-essentials/vivado_system/vivado_system.bd
+set_property used_in_implementation false [get_files -all /home/sec322/ece5775/final_project/project/zedboard_project/vivado-essentials/vivado_system/ip/vivado_system_processing_system7_0_0/vivado_system_processing_system7_0_0.xdc]
+set_property used_in_implementation false [get_files -all /home/sec322/ece5775/final_project/project/zedboard_project/vivado-essentials/vivado_system/ip/vivado_system_rst_processing_system7_0_100M_0/vivado_system_rst_processing_system7_0_100M_0_board.xdc]
+set_property used_in_implementation false [get_files -all /home/sec322/ece5775/final_project/project/zedboard_project/vivado-essentials/vivado_system/ip/vivado_system_rst_processing_system7_0_100M_0/vivado_system_rst_processing_system7_0_100M_0.xdc]
+set_property used_in_implementation false [get_files -all /home/sec322/ece5775/final_project/project/zedboard_project/vivado-essentials/vivado_system/ip/vivado_system_rst_processing_system7_0_100M_0/vivado_system_rst_processing_system7_0_100M_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/sec322/ece5775/final_project/project/zedboard_project/vivado-essentials/vivado_system/ip/vivado_system_xbar_0/vivado_system_xbar_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/sec322/ece5775/final_project/project/zedboard_project/vivado-essentials/vivado_system/ip/vivado_system_auto_pc_0/vivado_system_auto_pc_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/sec322/ece5775/final_project/project/zedboard_project/vivado-essentials/vivado_system/ip/vivado_system_auto_pc_1/vivado_system_auto_pc_1_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/sec322/ece5775/final_project/project/zedboard_project/vivado-essentials/vivado_system/ip/vivado_system_auto_pc_2/vivado_system_auto_pc_2_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/sec322/ece5775/final_project/project/zedboard_project/vivado-essentials/vivado_system/ip/vivado_system_auto_pc_3/vivado_system_auto_pc_3_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/sec322/ece5775/final_project/project/zedboard_project/vivado-essentials/vivado_system/vivado_system_ooc.xdc]
+set_property is_locked true [get_files /home/sec322/ece5775/final_project/project/zedboard_project/vivado-essentials/vivado_system/vivado_system.bd]
 
-read_ip -quiet /home/ak2425/ece5775/ece5775_project/project/zedboard_project/xillybus/vivado/xillydemo.srcs/sources_1/ip/dut_ap_fadd_3_full_dsp_32/dut_ap_fadd_3_full_dsp_32.xci
-set_property is_locked true [get_files /home/ak2425/ece5775/ece5775_project/project/zedboard_project/xillybus/vivado/xillydemo.srcs/sources_1/ip/dut_ap_fadd_3_full_dsp_32/dut_ap_fadd_3_full_dsp_32.xci]
+read_ip -quiet /home/sec322/ece5775/final_project/project/zedboard_project/xillybus/vivado/xillydemo.srcs/sources_1/ip/dut_ap_fadd_3_full_dsp_32/dut_ap_fadd_3_full_dsp_32.xci
+set_property is_locked true [get_files /home/sec322/ece5775/final_project/project/zedboard_project/xillybus/vivado/xillydemo.srcs/sources_1/ip/dut_ap_fadd_3_full_dsp_32/dut_ap_fadd_3_full_dsp_32.xci]
 
-read_ip -quiet /home/ak2425/ece5775/ece5775_project/project/zedboard_project/xillybus/vivado/xillydemo.srcs/sources_1/ip/dut_ap_fcmp_0_no_dsp_32/dut_ap_fcmp_0_no_dsp_32.xci
-set_property is_locked true [get_files /home/ak2425/ece5775/ece5775_project/project/zedboard_project/xillybus/vivado/xillydemo.srcs/sources_1/ip/dut_ap_fcmp_0_no_dsp_32/dut_ap_fcmp_0_no_dsp_32.xci]
+read_ip -quiet /home/sec322/ece5775/final_project/project/zedboard_project/xillybus/vivado/xillydemo.srcs/sources_1/ip/dut_ap_faddfsub_3_full_dsp_32/dut_ap_faddfsub_3_full_dsp_32.xci
+set_property is_locked true [get_files /home/sec322/ece5775/final_project/project/zedboard_project/xillybus/vivado/xillydemo.srcs/sources_1/ip/dut_ap_faddfsub_3_full_dsp_32/dut_ap_faddfsub_3_full_dsp_32.xci]
 
-read_ip -quiet /home/ak2425/ece5775/ece5775_project/project/zedboard_project/xillybus/vivado/xillydemo.srcs/sources_1/ip/dut_ap_fmul_2_max_dsp_32/dut_ap_fmul_2_max_dsp_32.xci
-set_property is_locked true [get_files /home/ak2425/ece5775/ece5775_project/project/zedboard_project/xillybus/vivado/xillydemo.srcs/sources_1/ip/dut_ap_fmul_2_max_dsp_32/dut_ap_fmul_2_max_dsp_32.xci]
+read_ip -quiet /home/sec322/ece5775/final_project/project/zedboard_project/xillybus/vivado/xillydemo.srcs/sources_1/ip/dut_ap_fcmp_0_no_dsp_32/dut_ap_fcmp_0_no_dsp_32.xci
+set_property is_locked true [get_files /home/sec322/ece5775/final_project/project/zedboard_project/xillybus/vivado/xillydemo.srcs/sources_1/ip/dut_ap_fcmp_0_no_dsp_32/dut_ap_fcmp_0_no_dsp_32.xci]
+
+read_ip -quiet /home/sec322/ece5775/final_project/project/zedboard_project/xillybus/vivado/xillydemo.srcs/sources_1/ip/dut_ap_fmul_2_max_dsp_32/dut_ap_fmul_2_max_dsp_32.xci
+set_property is_locked true [get_files /home/sec322/ece5775/final_project/project/zedboard_project/xillybus/vivado/xillydemo.srcs/sources_1/ip/dut_ap_fmul_2_max_dsp_32/dut_ap_fmul_2_max_dsp_32.xci]
 
 read_verilog -library xil_defaultlib {
-  /home/ak2425/ece5775/ece5775_project/project/zedboard_project/xillybus/src/xillydemo.v
-  /home/ak2425/ece5775/ece5775_project/project/zedboard_project/xillybus/src/xillybus_core.v
-  /home/ak2425/ece5775/ece5775_project/project/zedboard_project/xillybus/src/xillybus.v
-  /home/ak2425/ece5775/ece5775_project/project/zedboard_project/xillybus/src/system.v
-  /home/ak2425/ece5775/ece5775_project/project/zedboard_project/xillybus/src/smbus.v
-  /home/ak2425/ece5775/ece5775_project/project/zedboard_project/xillybus/src/i2s_audio.v
-  /home/ak2425/ece5775/ece5775_project/project/zedboard_project/xillybus/src/fpga-design/dut_val_1.v
-  /home/ak2425/ece5775/ece5775_project/project/zedboard_project/xillybus/src/fpga-design/dut.v
-  /home/ak2425/ece5775/ece5775_project/project/zedboard_project/xillybus/src/fpga-design/dut_row_1.v
-  /home/ak2425/ece5775/ece5775_project/project/zedboard_project/xillybus/src/fpga-design/dut_matrix_10_dense.v
-  /home/ak2425/ece5775/ece5775_project/project/zedboard_project/xillybus/src/fpga-design/dut_fmul_32ns_32ns_32_4_max_dsp.v
-  /home/ak2425/ece5775/ece5775_project/project/zedboard_project/xillybus/src/fpga-design/dut_fcmp_32ns_32ns_1_1.v
-  /home/ak2425/ece5775/ece5775_project/project/zedboard_project/xillybus/src/fpga-design/dut_fadd_32ns_32ns_32_5_full_dsp.v
-  /home/ak2425/ece5775/ece5775_project/project/zedboard_project/xillybus/src/fpga-design/dut_dest.v
-  /home/ak2425/ece5775/ece5775_project/project/zedboard_project/xillybus/src/fpga-design/dut_create_COO.v
-  /home/ak2425/ece5775/ece5775_project/project/zedboard_project/xillybus/src/fpga-design/dut_create_COO_matrix_10_dense.v
-  /home/ak2425/ece5775/ece5775_project/project/zedboard_project/xillybus/src/fpga-design/dut_count_nnz.v
-  /home/ak2425/ece5775/ece5775_project/project/zedboard_project/xillybus/src/fpga-design/dut_COO_SpMV_v.v
-  /home/ak2425/ece5775/ece5775_project/project/zedboard_project/xillybus/src/fpga-design/dut_COO_SpMV.v
-  /home/ak2425/ece5775/ece5775_project/project/zedboard_project/xillybus/src/fifo_8x2048.v
-  /home/ak2425/ece5775/ece5775_project/project/zedboard_project/xillybus/src/fifo_32x512.v
-  /home/ak2425/ece5775/ece5775_project/project/zedboard_project/vivado-essentials/system.v
+  /home/sec322/ece5775/final_project/project/zedboard_project/xillybus/src/xillydemo.v
+  /home/sec322/ece5775/final_project/project/zedboard_project/xillybus/src/xillybus_core.v
+  /home/sec322/ece5775/final_project/project/zedboard_project/xillybus/src/xillybus.v
+  /home/sec322/ece5775/final_project/project/zedboard_project/xillybus/src/system.v
+  /home/sec322/ece5775/final_project/project/zedboard_project/xillybus/src/smbus.v
+  /home/sec322/ece5775/final_project/project/zedboard_project/xillybus/src/i2s_audio.v
+  /home/sec322/ece5775/final_project/project/zedboard_project/xillybus/src/fpga-design/dut_vector_cp.v
+  /home/sec322/ece5775/final_project/project/zedboard_project/xillybus/src/fpga-design/dut.v
+  /home/sec322/ece5775/final_project/project/zedboard_project/xillybus/src/fpga-design/dut_SpMV.v
+  /home/sec322/ece5775/final_project/project/zedboard_project/xillybus/src/fpga-design/dut_SpMV_tmp_dest_0.v
+  /home/sec322/ece5775/final_project/project/zedboard_project/xillybus/src/fpga-design/dut_mux_10to1_sel4_32_1.v
+  /home/sec322/ece5775/final_project/project/zedboard_project/xillybus/src/fpga-design/dut_mux_100to1_sel7_32_1.v
+  /home/sec322/ece5775/final_project/project/zedboard_project/xillybus/src/fpga-design/dut_main_function.v
+  /home/sec322/ece5775/final_project/project/zedboard_project/xillybus/src/fpga-design/dut_is_converged.v
+  /home/sec322/ece5775/final_project/project/zedboard_project/xillybus/src/fpga-design/dut_fmul_32ns_32ns_32_4_max_dsp.v
+  /home/sec322/ece5775/final_project/project/zedboard_project/xillybus/src/fpga-design/dut_fcmp_32ns_32ns_1_1.v
+  /home/sec322/ece5775/final_project/project/zedboard_project/xillybus/src/fpga-design/dut_faddfsub_32ns_32ns_32_5_full_dsp.v
+  /home/sec322/ece5775/final_project/project/zedboard_project/xillybus/src/fpga-design/dut_fadd_32ns_32ns_32_5_full_dsp.v
+  /home/sec322/ece5775/final_project/project/zedboard_project/xillybus/src/fpga-design/dut_COO_SpMV_9_val10_10_0.v
+  /home/sec322/ece5775/final_project/project/zedboard_project/xillybus/src/fpga-design/dut_COO_SpMV_9.v
+  /home/sec322/ece5775/final_project/project/zedboard_project/xillybus/src/fpga-design/dut_COO_SpMV_9_row10_10_0.v
+  /home/sec322/ece5775/final_project/project/zedboard_project/xillybus/src/fpga-design/dut_COO_SpMV_9_col10_10_0.v
+  /home/sec322/ece5775/final_project/project/zedboard_project/xillybus/src/fpga-design/dut_COO_SpMV_8_val10_10_1.v
+  /home/sec322/ece5775/final_project/project/zedboard_project/xillybus/src/fpga-design/dut_COO_SpMV_8.v
+  /home/sec322/ece5775/final_project/project/zedboard_project/xillybus/src/fpga-design/dut_COO_SpMV_8_row10_10_1.v
+  /home/sec322/ece5775/final_project/project/zedboard_project/xillybus/src/fpga-design/dut_COO_SpMV_8_col10_10_1.v
+  /home/sec322/ece5775/final_project/project/zedboard_project/xillybus/src/fpga-design/dut_COO_SpMV_7_val10_10_2.v
+  /home/sec322/ece5775/final_project/project/zedboard_project/xillybus/src/fpga-design/dut_COO_SpMV_7.v
+  /home/sec322/ece5775/final_project/project/zedboard_project/xillybus/src/fpga-design/dut_COO_SpMV_7_row10_10_2.v
+  /home/sec322/ece5775/final_project/project/zedboard_project/xillybus/src/fpga-design/dut_COO_SpMV_7_col10_10_2.v
+  /home/sec322/ece5775/final_project/project/zedboard_project/xillybus/src/fpga-design/dut_COO_SpMV_6_val10_10_3.v
+  /home/sec322/ece5775/final_project/project/zedboard_project/xillybus/src/fpga-design/dut_COO_SpMV_6.v
+  /home/sec322/ece5775/final_project/project/zedboard_project/xillybus/src/fpga-design/dut_COO_SpMV_6_row10_10_3.v
+  /home/sec322/ece5775/final_project/project/zedboard_project/xillybus/src/fpga-design/dut_COO_SpMV_6_col10_10_3.v
+  /home/sec322/ece5775/final_project/project/zedboard_project/xillybus/src/fpga-design/dut_COO_SpMV_5_val10_10_4.v
+  /home/sec322/ece5775/final_project/project/zedboard_project/xillybus/src/fpga-design/dut_COO_SpMV_5.v
+  /home/sec322/ece5775/final_project/project/zedboard_project/xillybus/src/fpga-design/dut_COO_SpMV_5_row10_10_4.v
+  /home/sec322/ece5775/final_project/project/zedboard_project/xillybus/src/fpga-design/dut_COO_SpMV_5_col10_10_4.v
+  /home/sec322/ece5775/final_project/project/zedboard_project/xillybus/src/fpga-design/dut_COO_SpMV_4_val10_10_5.v
+  /home/sec322/ece5775/final_project/project/zedboard_project/xillybus/src/fpga-design/dut_COO_SpMV_4.v
+  /home/sec322/ece5775/final_project/project/zedboard_project/xillybus/src/fpga-design/dut_COO_SpMV_4_row10_10_5.v
+  /home/sec322/ece5775/final_project/project/zedboard_project/xillybus/src/fpga-design/dut_COO_SpMV_4_col10_10_5.v
+  /home/sec322/ece5775/final_project/project/zedboard_project/xillybus/src/fpga-design/dut_COO_SpMV_3_val10_10_6.v
+  /home/sec322/ece5775/final_project/project/zedboard_project/xillybus/src/fpga-design/dut_COO_SpMV_3.v
+  /home/sec322/ece5775/final_project/project/zedboard_project/xillybus/src/fpga-design/dut_COO_SpMV_3_row10_10_6.v
+  /home/sec322/ece5775/final_project/project/zedboard_project/xillybus/src/fpga-design/dut_COO_SpMV_3_col10_10_6.v
+  /home/sec322/ece5775/final_project/project/zedboard_project/xillybus/src/fpga-design/dut_COO_SpMV_2_val10_10_7.v
+  /home/sec322/ece5775/final_project/project/zedboard_project/xillybus/src/fpga-design/dut_COO_SpMV_2.v
+  /home/sec322/ece5775/final_project/project/zedboard_project/xillybus/src/fpga-design/dut_COO_SpMV_2_row10_10_7.v
+  /home/sec322/ece5775/final_project/project/zedboard_project/xillybus/src/fpga-design/dut_COO_SpMV_2_col10_10_7.v
+  /home/sec322/ece5775/final_project/project/zedboard_project/xillybus/src/fpga-design/dut_COO_SpMV_1_val10_10_8.v
+  /home/sec322/ece5775/final_project/project/zedboard_project/xillybus/src/fpga-design/dut_COO_SpMV_1.v
+  /home/sec322/ece5775/final_project/project/zedboard_project/xillybus/src/fpga-design/dut_COO_SpMV_1_row10_10_8.v
+  /home/sec322/ece5775/final_project/project/zedboard_project/xillybus/src/fpga-design/dut_COO_SpMV_1_col10_10_8.v
+  /home/sec322/ece5775/final_project/project/zedboard_project/xillybus/src/fpga-design/dut_COO_SpMV_0_val10_10_9.v
+  /home/sec322/ece5775/final_project/project/zedboard_project/xillybus/src/fpga-design/dut_COO_SpMV_0.v
+  /home/sec322/ece5775/final_project/project/zedboard_project/xillybus/src/fpga-design/dut_COO_SpMV_0_row10_10_9.v
+  /home/sec322/ece5775/final_project/project/zedboard_project/xillybus/src/fpga-design/dut_COO_SpMV_0_col10_10_9.v
+  /home/sec322/ece5775/final_project/project/zedboard_project/xillybus/src/fifo_8x2048.v
+  /home/sec322/ece5775/final_project/project/zedboard_project/xillybus/src/fifo_32x512.v
+  /home/sec322/ece5775/final_project/project/zedboard_project/vivado-essentials/system.v
 }
-set_property edif_extra_search_paths /home/ak2425/ece5775/ece5775_project/project/zedboard_project/cores [current_fileset]
+set_property edif_extra_search_paths /home/sec322/ece5775/final_project/project/zedboard_project/cores [current_fileset]
 foreach dcp [get_files -quiet -all *.dcp] {
   set_property used_in_implementation false $dcp
 }
-read_xdc /home/ak2425/ece5775/ece5775_project/project/zedboard_project/vivado-essentials/xillydemo.xdc
-set_property used_in_implementation false [get_files /home/ak2425/ece5775/ece5775_project/project/zedboard_project/vivado-essentials/xillydemo.xdc]
+read_xdc /home/sec322/ece5775/final_project/project/zedboard_project/vivado-essentials/xillydemo.xdc
+set_property used_in_implementation false [get_files /home/sec322/ece5775/final_project/project/zedboard_project/vivado-essentials/xillydemo.xdc]
 
 read_xdc dont_touch.xdc
 set_property used_in_implementation false [get_files dont_touch.xdc]

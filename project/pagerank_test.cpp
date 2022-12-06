@@ -4,8 +4,12 @@
 #include <stdio.h>
 #include "model.h"
 #include "pagerank.h"
+#include <ap_int.h>
+#include <fstream>
+#include "timer.h"
 
 using namespace std;
+typedef ap_uint<32> coo_int;
 
 //==========================================================================
 // verify_results
@@ -15,8 +19,8 @@ void verify_results( float dest[], const float ref[], int size )
 {
   int i;
   for ( i = 0; i < size; i++ ) {
-    float dest_val = round(dest[i] * 10000) / 10000;
-    float ref_val = round(ref[i] * 10000) / 10000;
+    float dest_val = round(dest[i] * 100) / 100;
+    float ref_val = round(ref[i] * 100) / 100;
     // printf("%1.4f ", dest_val);
     // printf("%1.4f\n", ref_val);
     if ( !( dest_val == ref_val ) ) {
@@ -36,14 +40,32 @@ void verify_results( float dest[], const float ref[], int size )
 //==========================================================================
 
 int main( int argc, char* argv[] ) {
-  float dest[size];
+  float output[size];
+  coo_int out_temp[size];
 
-  for (int i = 0; i < size; i++ )
-    dest[i] = 0;
+  hls::stream<coo_int> element;
+  hls::stream<coo_int> out;
 
+  union {float fval;int ival;} u;
+  Timer timer("PageRank Using COO SpMV");
+  timer.start();
+  for (int i = 0; i < size; i++ ){
+    u.fval = 0.0;
+    coo_int iv = u.ival;
+    element.write(iv);
+  }
+  dut(element,out);
   std::cout << "Testing PageRank\n";
-  main_function(dest);
-//   float result[size] = {0.0250, 0.2375, 0.2375, 0.2375, 0.0250, 0.2375};
-  verify_results( dest, ranks_9, size );
+  
+  union {float fval;int ival;} u3;
+  //read output of DUT
+  for (int i = 0; i < size; i++) {
+    
+    out_temp[i] = out.read();
+    u3.ival = out_temp[i];
+    output[i] = u3.fval;
+  }
+  timer.stop();
+  verify_results( output, ranks_10, size );
   return 0;
 }

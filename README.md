@@ -62,12 +62,12 @@ zedboard
 
 Dense_SpMV : Regular Sparse-Matrix Vector Multiplication
 
-COO_SpMV   : Baseline - COO Format based Sparse-Matrix Vector Multiplication without optimizations (PE=1)
-             Xcel     - COO Format based Sparse-Matrix Vector Multiplication with optimizations    (PE=25)
-
+COO_SpMV   : Baseline - COO Format based Sparse-Matrix Vector Multiplication without optimizations (PE=1) <br>
+             Xcel     - COO Format based Sparse-Matrix Vector Multiplication with optimizations    (PE=25) <br>
+             
 Pagerank   : Recursive call of COO_SpMV 
 
-This project compares the performance of Dense SpMV multiplication, COO SpMV multiplication w&wo HLS optimizations.
+This project compares the performance of Dense SpMV multiplication, COO SpMV multiplication w&wo HLS optimizations and use the optimized COO SpMV recursively to perform pagerank algorithm.
 
 # Dense SpMV Multiplication
 
@@ -172,5 +172,33 @@ This gives the performance of the COO_SpMV multiplication with PE=25 on FPGA
 % exit
 ```
 
+# PageRank Algorithm
 
+To run pagerank on ecelinux
+```
+% cd /project
+% make vivado_pagerank
+% source run_bitstream_pagerank.sh
+creates bitstream file xillydemo.bit for Pagerank
+```
 
+To run pagerank on zedboard FPGA
+```
+% ../
+% zip zedboard.zip zedboard
+% scp zedboard.zip netid@zhang-zedboard-XX-ece.cornell.edu:~ 
+% ssh netid@zhang-zedboard-XX-ece.cornell.edu
+after logging into zedboard XX (replace XX with zedboard number ex. 01)
+% unzip zedboard.zip
+% mount /mnt/sd
+% cd ../zedboard/xillydemo.bit /mnt/sd
+% sudo reboot
+Reboot is required to configure the FPGA with the mounted bitstream
+% ssh netid@zhang-zedboard-XX-ece.cornell.edu
+% cd /zedboard/
+% make sw_pagerank
+This gives the performance of the Pagerank
+% make fpga
+This gives the performance of the Pagerank
+% exit
+```

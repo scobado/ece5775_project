@@ -203,6 +203,6 @@ Reboot is required to configure the FPGA with the mounted bitstream
 % make sw_pagerank
 This gives the performance of the Pagerank on ARM
 % make fpga
-This gives the performance of the Pagerank in FPGA
+This gives the performance of the Pagerank on FPGA
 % exit
 ```

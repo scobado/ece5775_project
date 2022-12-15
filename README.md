@@ -1,6 +1,10 @@
 # ECE5775 Project : SpMV Accelerator Repository
 This Repository is a part of ECE5775 class final project, where we accelerated the Spare-Matrix Vector Multiplication using COO format and HLS Optimization techniques that were learnt as a part of lecture classes.
 
+```
+https://github.com/scobado/ece5775_project
+```
+
 Follow the step by step procedure below to reproduce the results of the whole project.
 
 Firstly clone the Repo :
@@ -197,8 +201,8 @@ Reboot is required to configure the FPGA with the mounted bitstream
 % ssh netid@zhang-zedboard-XX-ece.cornell.edu
 % cd /zedboard/
 % make sw_pagerank
-This gives the performance of the Pagerank
+This gives the performance of the Pagerank on ARM
 % make fpga
-This gives the performance of the Pagerank
+This gives the performance of the Pagerank in FPGA
 % exit
 ```

@@ -1,9 +1,0 @@
-make[1]: Entering directory `/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/csim/build'
-   Compiling ../../../../COO_SpMV_test.cpp in debug mode
-   Compiling ../../../../COO_SpMV.cpp in debug mode
-   Generating csim.exe
-make[1]: Leaving directory `/home/ak2425/ece5775/ece5775_project/project/COO_SpMV.prj/solution1/csim/build'
-Testing COO SpMV
-[32mPassed :)
-[0m
-INFO: [SIM 1] CSim done with 0 errors.
